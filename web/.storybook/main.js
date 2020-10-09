@@ -1,6 +1,5 @@
 const path = require('path');
 
-console.log(__dirname)
 // Export a function. Accept the base config as the only param.
 module.exports = {
   "stories": [

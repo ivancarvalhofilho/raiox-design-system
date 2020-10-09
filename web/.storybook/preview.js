@@ -1,5 +1,10 @@
-import '../../tokens/sass/theme.sass'
-
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+import { ThemeProvider } from 'styled-components';
+import theme from "../../tokens/js";
+import React from 'react'
+export const decorators = [
+  (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+  ),
+];
