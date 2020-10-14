@@ -16,6 +16,7 @@ import {
 } from '@mdi/js'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
+import index from 'babel-plugin-transform-react-remove-prop-types/src'
 // import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
@@ -51,7 +52,9 @@ const Container = styled.div`
   max-height: ${(props) => props.maxheight};
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
   color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) => props.cols.reduce((x) => `${x} 1fr`, '')};
+  grid-template-columns: ${(props) =>
+    (props.color ? '6px ' : '') +
+    props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
 `
 const ContainerInfinite = styled(InfiniteScroll)`
   display: grid;
@@ -66,7 +69,9 @@ const ContainerInfinite = styled(InfiniteScroll)`
   width: 100%;
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
   color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) => props.cols.reduce((x) => `${x} 1fr`, '')};
+  grid-template-columns: ${(props) =>
+    (props.color ? '6px ' : '') +
+    props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
 `
 const Scroll = styled.div`
   background: white;
@@ -109,7 +114,8 @@ const ContainerHeader = styled.div`
   width: ${(props) =>
     !props.optional && props.paddingScroll ? '101%' : '100%'};
   color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) => props.cols.reduce((x) => `${x} 1fr`, '')};
+  grid-template-columns: ${(props) =>
+    (props.color ? '6px ' : '') + props.cols.reduce((x, y) => `${x} 1fr`, '')};
 `
 const Column = styled.div`
   display: grid;
@@ -128,7 +134,8 @@ const Column = styled.div`
 `
 
 const Row = styled.div`
-  display: inherit;
+  display: flex;
+  align-items: center;
   max-height: 45px;
   cursor: ${(props) => props.onClick && 'pointer'};
   border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
@@ -149,18 +156,28 @@ const Value = styled.div`
 const Children = styled.div`
   position: absolute;
   transition: 2s;
+  border-left: 6px ${(props) => props.color} solid;
   left: 0;
   width: 100%;
   top: ${(props) => props.top};
 `
+const Collapse = styled.div`
+  padding-right: 20px;
+  cursor: pointer;
+`
 
 function Table(props) {
+  const hasColor = Object.keys(props.data).find((key) => key === 'colors')
   const keys = Object.keys(props.data)
   const refChildren = useRef()
   const indexOptional =
     keys.findIndex((key) => props.data[key].optional) +
     keys.filter((key) => props.data[key].optional).length
   const colsOriginal = keys.filter((key) => !props.data[key].optional)
+  const colsOriginalWithoutColor = colsOriginal.filter(
+    (key) => key !== 'colors',
+  )
+  console.log('colsOriginalWithoutColor', colsOriginalWithoutColor)
   const cols = keys.slice(indexOptional, keys.length)
   const colsOptional = keys.slice(0, indexOptional)
   const optionalHeader = useRef()
@@ -183,7 +200,12 @@ function Table(props) {
     <div>
       <DisplayGrid>
         {props.complete && (
-          <ContainerHeader optional cols={colsOptional} ref={optionalHeader}>
+          <ContainerHeader
+            optional
+            cols={colsOptional}
+            ref={optionalHeader}
+            color={hasColor}
+          >
             {colsOptional.map((key, indexCol) => (
               <Column key={indexCol} rows={[0]} size={32}>
                 <Row
@@ -218,12 +240,13 @@ function Table(props) {
           </ContainerHeader>
         )}
         <ContainerHeader
+          color={hasColor}
           paddingScroll={
             scrollableDiv.current &&
             scrollableDiv.current.firstChild.firstChild.firstChild
               .scrollHeight > scrollableDiv.current.clientHeight
           }
-          cols={props.complete ? cols : colsOriginal}
+          cols={props.complete ? cols : colsOriginalWithoutColor}
           width={content.current && `${content.current.clientWidth + 13}px`}
         >
           {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
@@ -265,6 +288,7 @@ function Table(props) {
             {props.complete && (
               <Container
                 optional
+                color={hasColor}
                 maxheight={props.height}
                 cols={colsOptional}
                 ref={optionalContent}
@@ -292,23 +316,24 @@ function Table(props) {
                     {props.data[key].values.map((value, indexRow) => (
                       <Row
                         key={indexRow}
-                        onClick={() => props.onRowClick(indexRow)}
                         border={indexRow !== props.data[key].values.length - 1}
                         first={indexCol === 0}
                         last={indexCol === cols.length}
                       >
                         <Value justify={props.data[key].justify}>
-                          {props.data[key].template(
-                            value,
-                            props.data[key].params &&
-                              props.data[key].params.map(
-                                (param) =>
-                                  props.data[param] &&
-                                  props.data[param].values[indexRow],
-                              ),
-                            props.dispatch,
-                            props.subdata && props.subdata[indexRow],
-                          )}
+                          {props.data[key].template
+                            ? props.data[key].template(
+                                value,
+                                props.data[key].params &&
+                                  props.data[key].params.map(
+                                    (param) =>
+                                      props.data[param] &&
+                                      props.data[param].values[indexRow],
+                                  ),
+                                props.dispatch,
+                                props.subdata && props.subdata[indexRow],
+                              )
+                            : value}
                         </Value>
                       </Row>
                     ))}
@@ -331,6 +356,7 @@ function Table(props) {
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
                 className="scroll custom-scrollbar"
+                color={hasColor}
                 hasChildren
                 maxheight={props.height}
                 height={props.height}
@@ -370,7 +396,11 @@ function Table(props) {
                         <Row
                           children={props.indexRowOpened === indexRow}
                           key={indexRow}
-                          onClick={() => props.onRowClick(indexRow)}
+                          color={
+                            indexCol === 0 &&
+                            props.data.colors &&
+                            props.data.colors.values[indexRow]
+                          }
                           border={
                             indexRow !== props.data[key].values.length - 1
                           }
@@ -378,22 +408,40 @@ function Table(props) {
                           last={indexCol === cols.length}
                         >
                           <Value justify={props.data[key].justify}>
-                            {props.data[key].template(
-                              value,
-                              props.data[key].params &&
-                                props.data[key].params.map(
-                                  (param) =>
-                                    props.data[param] &&
-                                    props.data[param].values[indexRow],
-                                ),
-                              props.dispatch,
-                              props.subdata && props.subdata[indexRow],
-                            )}
+                            {props.data[key].template
+                              ? props.data[key].template(
+                                  value,
+                                  props.data[key].params &&
+                                    props.data[key].params.map(
+                                      (param) =>
+                                        props.data[param] &&
+                                        props.data[param].values[indexRow],
+                                    ),
+                                  props.dispatch,
+                                  props.subdata && props.subdata[indexRow],
+                                )
+                              : value}
                           </Value>
-                          {indexCol === colsOriginal.length - 1 &&
+                          {indexCol === colsOriginalWithoutColor.length &&
+                            hasColor && (
+                              <Collapse
+                                onClick={() => props.onRowClick(indexRow)}
+                              >
+                                <Icon
+                                  path={mdiChevronDown}
+                                  size={1}
+                                  style={{ transition: 'transform 2s' }}
+                                  rotate={
+                                    props.indexRowOpened === indexRow ? 180 : 0
+                                  }
+                                />
+                              </Collapse>
+                            )}
+                          {indexCol === colsOriginalWithoutColor.length &&
                             props.indexRowOpened === indexRow && (
                               <Children
                                 id="children"
+                                color={props.data.colors.values[indexRow]}
                                 onClick={(e) => {
                                   e.stopPropagation()
                                 }}
