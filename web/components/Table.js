@@ -113,6 +113,7 @@ const ContainerHeader = styled.div`
 `
 const Column = styled.div`
   display: grid;
+  transition: 2s;
   grid-template-rows: ${(props) =>
     props.rows.reduce(
       (x, y, index) =>
@@ -147,7 +148,7 @@ const Value = styled.div`
 `
 const Children = styled.div`
   position: absolute;
-  padding-top: 20px;
+  transition: 2s;
   left: 0;
   width: 100%;
   top: ${(props) => props.top};
@@ -393,6 +394,9 @@ function Table(props) {
                             props.indexRowOpened === indexRow && (
                               <Children
                                 id="children"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                }}
                                 ref={refChildren}
                                 top={`${(props.indexRowOpened + 1) * 55}px`}
                               >
