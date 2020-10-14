@@ -1,7 +1,9 @@
+import './fontsImport.css'
+
 const fonts = {
     family: {
         head: 'MarkPro',
-        body: 'Roboto-Regular',
+        body: 'Roboto',
         condensed: 'Roboto Condensed',
         monospace: 'Consolas',
     },
@@ -19,3 +21,4 @@ const fonts = {
         md: 18,
     },
 }
+export default fonts

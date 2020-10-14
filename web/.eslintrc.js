@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 const prettierOptions = JSON.parse(
-    fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
+  fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
 )
 
 module.exports = {
@@ -40,7 +40,6 @@ module.exports = {
     'import/no-dynamic-require': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-named-as-default': 0,
-    'import/no-unresolved': 2,
     'import/no-webpack-loader-syntax': 0,
     'import/prefer-default-export': 0,
     'jsx-a11y/aria-props': 2,
@@ -85,12 +84,5 @@ module.exports = {
     'require-yield': 0,
     semi: 2,
     'comma-dangle': ['error', 'always-multiline'],
-  },
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: './internals/webpack/webpack.prod.babel.js',
-      },
-    },
   },
 }
