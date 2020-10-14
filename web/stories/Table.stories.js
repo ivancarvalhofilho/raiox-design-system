@@ -1,16 +1,31 @@
 import React from 'react'
-
-import { Calendar } from '../components/Calendar'
 import Table from '../components/Table'
+import { useState } from '@storybook/addons'
 
 export default {
   title: 'Example/Table',
   component: Table,
 }
 
-const Template = (args) => <Table {...args} />
+const Template = (args) => {
+  const [index, setIndex] = useState(null)
+  return (
+    <Table
+      {...args}
+      indexRowOpened={index}
+      onRowClick={(indexRow) => {
+        if (index === indexRow) {
+          setIndex(null)
+        } else {
+          setIndex(indexRow)
+        }
+      }}
+    />
+  )
+}
 
 export const Default = Template.bind({})
+
 Default.args = {
   data: {
     data: {
@@ -395,6 +410,8 @@ Default.args = {
       template: (value, params) => value || null,
     },
   },
+  children: <div>Teste</div>,
+  indexRowOpened: 0,
   order: 'ASC',
   orderBy: 'data',
   height: 'calc(100vh - 140px - 100px - 65px);',
