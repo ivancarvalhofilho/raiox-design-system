@@ -11,6 +11,11 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   webpackFinal: async (config, { configType }) => {
+    const assetRule = config.module.rules.find(({ test }) => test.test(".svg"));
+    const assetLoader = {
+      loader: assetRule.loader,
+      options: assetRule.options || assetRule.query
+    };
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
@@ -20,6 +25,10 @@ module.exports = {
       test: /\.sass$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../../'),
+    });
+    config.module.rules.unshift({
+      test: /\.svg$/,
+      use: ["@svgr/webpack", assetLoader]
     });
 
     // Return the altered config

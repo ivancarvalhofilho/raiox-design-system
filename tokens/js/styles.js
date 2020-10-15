@@ -73,4 +73,11 @@ export default {
             giant: '200px',
         },
     },
+    icon: {
+        size: {
+            sm: '8px',
+            md: '16px',
+            lg: '24px',
+        },
+    },
 }

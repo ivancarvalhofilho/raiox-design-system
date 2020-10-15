@@ -7,7 +7,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Icon from '@mdi/react'
 import {
   mdiChevronDown,
   mdiChevronUp,
@@ -17,6 +16,8 @@ import {
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import index from 'babel-plugin-transform-react-remove-prop-types/src'
+import theme from '../../tokens/js'
+import Icon from './Icon'
 // import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
@@ -31,7 +32,7 @@ const LoaderContainer = styled.div`
   background-image: linear-gradient(to bottom, transparent, white);
 
   > p {
-    color: #7f7f7f;
+    color: ${(props) => props.theme.colors.neutral.dark.base};
     margin: 0;
   }
 
@@ -46,14 +47,12 @@ const Container = styled.div`
   overflow: overlay;
   font-size: 14px;
   min-width: ${(props) => !props.optional && 'fit-content'};
-  border-bottom: 1px solid #e7e7e7;
   width: 100%;
   height: auto !important;
   max-height: ${(props) => props.maxheight};
-  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
-    (props.color ? '6px ' : '') +
+    (props.color ? '8px ' : '') +
     props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
 `
 const ContainerInfinite = styled(InfiniteScroll)`
@@ -67,10 +66,9 @@ const ContainerInfinite = styled(InfiniteScroll)`
   min-width: ${(props) => !props.optional && 'fit-content'};
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
-  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
-    (props.color ? '6px ' : '') +
+    (props.color ? '8px ' : '') +
     props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
 `
 const Scroll = styled.div`
@@ -105,8 +103,8 @@ const DisplayGrid = styled.div`
 const ContainerHeader = styled.div`
   display: grid;
   font-size: 14px;
-  border-bottom: 1px solid #e7e7e7;
-  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
+  border: ${(props) =>
+    `${props.theme.styles.border.width.hairline} solid ${props.theme.colors.neutral.dark['03']}`};
   overflow: ${(props) => props.optional && 'hidden'};
   padding-right: ${(props) => !props.optional && props.paddingScroll && '13px'};
   background-color: #f2f5f7;
@@ -115,7 +113,7 @@ const ContainerHeader = styled.div`
     !props.optional && props.paddingScroll ? '101%' : '100%'};
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
-    (props.color ? '6px ' : '') + props.cols.reduce((x, y) => `${x} 1fr`, '')};
+    (props.color ? '8px ' : '') + props.cols.reduce((x, y) => `${x} 1fr`, '')};
 `
 const Column = styled.div`
   display: grid;
@@ -156,13 +154,13 @@ const Value = styled.div`
 const Children = styled.div`
   position: absolute;
   transition: 2s;
-  border-left: 6px ${(props) => props.color} solid;
+  border-left: 8px ${(props) => props.color} solid;
   left: 0;
-  width: 100%;
+  width: 99.5%;
   top: ${(props) => props.top};
 `
 const Collapse = styled.div`
-  padding-right: 20px;
+  padding-left: 20px;
   cursor: pointer;
 `
 
@@ -177,7 +175,6 @@ function Table(props) {
   const colsOriginalWithoutColor = colsOriginal.filter(
     (key) => key !== 'colors',
   )
-  console.log('colsOriginalWithoutColor', colsOriginalWithoutColor)
   const cols = keys.slice(indexOptional, keys.length)
   const colsOptional = keys.slice(0, indexOptional)
   const optionalHeader = useRef()
@@ -216,7 +213,7 @@ function Table(props) {
                     props.data[key].ordenable && props.onClickToOrder(key)
                   }}
                   border
-                  color="#f2f5f7"
+                  color={theme.colors.neutral.light['02']}
                   title={props.data[key].title}
                 >
                   <Value justify={props.data[key].justify}>
@@ -225,12 +222,11 @@ function Table(props) {
                       <Icon
                         path={
                           props.orderBy !== key
-                            ? mdiUnfoldMoreHorizontal
+                            ? theme.icons['arrow-horizontal']
                             : props.order === 'ASC'
-                            ? mdiChevronDown
-                            : mdiChevronUp
+                            ? theme.icons['arrow-down']
+                            : theme.icons['arrow-up']
                         }
-                        size={0.6}
                       />
                     )}
                   </Value>
@@ -259,21 +255,23 @@ function Table(props) {
                   props.data[key].ordenable && props.onClickToOrder(key)
                 }}
                 border
-                color="#f2f5f7"
+                color={theme.colors.neutral.light['02']}
                 title={props.data[key].title}
               >
                 <Value justify={props.data[key].justify}>
                   {props.data[key].title}
                   {props.data[key].ordenable && (
                     <Icon
+                      style={{ padding: '5px' }}
+                      appearance="dark"
+                      size="10px"
                       path={
                         props.orderBy !== key
-                          ? mdiUnfoldMoreHorizontal
+                          ? theme.icons['arrow-horizontal']
                           : props.order === 'ASC'
-                          ? mdiChevronDown
-                          : mdiChevronUp
+                          ? theme.icons['arrow-down']
+                          : theme.icons['arrow-top']
                       }
-                      size={0.6}
                     />
                   )}
                 </Value>
@@ -379,7 +377,7 @@ function Table(props) {
                       path={mdiReload}
                       size={1}
                       spin
-                      color="#CECFCF"
+                      color={theme.colors.neutral.light['02']}
                     />
                   </LoaderContainer>
                 }
@@ -428,11 +426,11 @@ function Table(props) {
                                 onClick={() => props.onRowClick(indexRow)}
                               >
                                 <Icon
-                                  path={mdiChevronDown}
-                                  size={1}
-                                  style={{ transition: 'transform 2s' }}
-                                  rotate={
-                                    props.indexRowOpened === indexRow ? 180 : 0
+                                  size="md"
+                                  name={
+                                    props.indexRowOpened === indexRow
+                                      ? 'chevron-down'
+                                      : 'chevron-up'
                                   }
                                 />
                               </Collapse>
