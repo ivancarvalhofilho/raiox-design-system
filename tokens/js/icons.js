@@ -21,5 +21,6 @@ const icons = {
     'arrow-up': `<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 3.75L4 0.25L7.5 3.75H0.5Z"/></svg>`,
     'arrow-down': `<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">    <path d="M0.5 0.25L4 3.75L7.5 0.25H0.5Z" /></svg>`,
     'arrow-horizontal': `<svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.875 0.5L0 3.42578H5.75L2.875 0.5ZM0 4.57422L2.875 7.5L5.75 4.57422H0Z" /></svg>`,
+    'close': `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z" fill="#979899"/></svg>`
 }
 export default icons;
