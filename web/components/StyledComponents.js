@@ -20,4 +20,11 @@ const Card = styled.div`
   border: 1px solid ${(props) => props.theme.colors.neutral.dark['03']};
 `
 
-export { TextRow, Card }
+const Title = styled.div`
+  font-family: ${(props) => props.theme.fonts.family.body};
+  font-weight: ${(props) => props.theme.fonts.weight.medium};
+  font-size: ${(props) => props.theme.fonts.fontSize.xl};
+  color: ${(props) => props.theme.colors.neutral.dark.base};
+`
+
+export { TextRow, Card, Title }

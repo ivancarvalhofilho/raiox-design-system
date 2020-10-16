@@ -36,7 +36,10 @@ const Icon = (props) => {
   }
 
   function getIconSvgSize(props) {
-    if (!Object.keys(theme.styles.icon.size).includes(props.size)) {
+    if (
+      props.size &&
+      !Object.keys(theme.styles.icon.size).includes(props.size)
+    ) {
       return props.size
     }
     return theme.styles.icon.size[props.size] || theme.styles.icon.size.sm
