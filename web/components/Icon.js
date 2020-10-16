@@ -54,5 +54,5 @@ Icon.propTypes = {
   name: PropTypes.string,
   path: PropTypes.string,
   size: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
 }

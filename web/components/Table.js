@@ -7,7 +7,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {mdiReload,} from '@mdi/js'
+import {mdiReload} from '@mdi/js'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../tokens/js'
@@ -473,7 +473,7 @@ Table.propTypes = {
   order: PropTypes.func,
   orderBy: PropTypes.string,
   subdata: PropTypes.array,
-  total: PropTypes.number
+  total: PropTypes.number,
 }
 
 export default Table

@@ -1,0 +1,56 @@
+import PropTypes from 'prop-types'
+import React from 'react'
+import ListHeader from './ListHeader'
+
+import styled from 'styled-components'
+
+const ListContainer = styled.div`
+  width: 342px;
+`
+const Row = styled.div`
+  display: flex;
+  height: 46px;
+  padding: 0px 16px;
+  border-bottom: 1px solid #e0e0e0;
+`
+const Column = styled.div`
+  height: 100%;
+  width: ${(props) => props.width}%;
+  justify-content: ${(props) =>
+    props.align === 'right'
+        ? 'flex-end'
+        : props.align === 'left'
+        ? 'flex-start'
+        : props.align};
+  align-items: center;
+  display: flex;
+`
+const ListData = styled.div``
+const List = (props) => (
+    <ListContainer>
+        <ListHeader data={props.header} align={props.align}/>
+        <ListData>
+            {props.rows.map((row, index) => (
+                <Row key={index}>
+                    {row.map((column, index) => (
+                        <Column
+                            key={index}
+                            align={props.align[index]}
+                            width={100 / row.length}
+                        >
+                            {column}
+                        </Column>
+                    ))}
+                </Row>
+            ))}
+        </ListData>
+    </ListContainer>
+)
+
+export default List
+
+List.propTypes = {
+    align: PropTypes.array,
+    header: PropTypes.array,
+    rows: PropTypes.array,
+}
