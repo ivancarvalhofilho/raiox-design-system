@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import Tab from './Tab'
 import styled from 'styled-components'
@@ -24,22 +25,29 @@ const Bar = styled.div`
 `
 
 const Tabs = (props) => (
-  <Container disabled={props.disabled}>
-    <TabsContainer disabled={props.disabled}>
-      {props.tabs.map((tab, index) => (
-        <Tab
-          key={index}
-          label={tab}
-          width={100 / props.tabs.length}
-          onClick={() => props.onTabClick(index)}
-          active={props.tabActive === index}
-        />
-      ))}
-    </TabsContainer>
+    <Container disabled={props.disabled}>
+        <TabsContainer disabled={props.disabled}>
+            {props.tabs.map((tab, index) => (
+                <Tab
+                    key={index}
+                    label={tab}
+                    width={100 / props.tabs.length}
+                    onClick={() => props.onTabClick(index)}
+                    active={props.tabActive === index}
+                />
+            ))}
+        </TabsContainer>
 
-    <Bar width={100 / props.tabs.length} left={props.tabActive * 100} rounded />
-    <Bar width={100} color={theme.colors.neutral.dark['03']} height={1} />
-  </Container>
+        <Bar width={100 / props.tabs.length} left={props.tabActive * 100} rounded/>
+        <Bar width={100} color={theme.colors.neutral.dark['03']} height={1}/>
+    </Container>
 )
 
 export default Tabs
+
+Tabs.propTypes = {
+    disabled: PropTypes.bool,
+    onTabClick: PropTypes.func,
+    tabActive: PropTypes.number,
+    tabs: PropTypes.array,
+}

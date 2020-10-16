@@ -4,18 +4,12 @@
  *
  */
 
-import React, { useRef, useState, useEffect } from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {
-  mdiChevronDown,
-  mdiChevronUp,
-  mdiReload,
-  mdiUnfoldMoreHorizontal,
-} from '@mdi/js'
+import {mdiReload,} from '@mdi/js'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import index from 'babel-plugin-transform-react-remove-prop-types/src'
 import theme from '../../tokens/js'
 import Icon from './Icon'
 // import styled from 'styled-components';
@@ -467,17 +461,19 @@ function Table(props) {
 }
 
 Table.propTypes = {
+  children: PropTypes.any,
   complete: PropTypes.bool,
   data: PropTypes.object,
   dispatch: PropTypes.any,
-  height: PropTypes.any,
+  height: PropTypes.string,
+  indexRowOpened: PropTypes.number,
   onClickToOrder: PropTypes.func,
   onEndScroll: PropTypes.func,
-  order: PropTypes.any,
-  orderBy: PropTypes.any,
-  subdata: PropTypes.any,
-  total: PropTypes.any,
   onRowClick: PropTypes.func,
+  order: PropTypes.func,
+  orderBy: PropTypes.string,
+  subdata: PropTypes.array,
+  total: PropTypes.number
 }
 
 export default Table

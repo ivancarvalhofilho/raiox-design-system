@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import SVGInline from 'react-svg-inline'
 import theme from '../../tokens/js'
 
@@ -54,4 +54,5 @@ Icon.propTypes = {
   name: PropTypes.string,
   path: PropTypes.string,
   size: PropTypes.string,
+  style: PropTypes.object
 }
