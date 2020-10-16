@@ -1,4 +1,11 @@
-@import url(//db.onlinewebfonts.com/c/8f7b8dc753ec34b0c7c3d748a835c38c?family=Roboto);
-@import url(//db.onlinewebfonts.com/c/0033a2fbc0329740fb86c1cfd134cb94?family=Roboto+Condensed);
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Roboto Condensed*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/*Mark Pro*/
 @import url(//db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro);
+
+/*Consolas*/
 @import url(//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas);

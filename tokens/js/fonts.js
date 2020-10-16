@@ -14,11 +14,11 @@ const fonts = {
         light: '300',
     },
     fontSize: {
-        xxxs: 10,
-        xxs: 12,
-        xs: 14,
-        sm: 16,
-        md: 18,
+        xxxs: '10px',
+        xxs: '12px',
+        xs: '14px',
+        sm: '16px',
+        md: '18px',
     },
 }
 export default fonts
