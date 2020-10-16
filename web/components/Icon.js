@@ -4,7 +4,7 @@ import SVGInline from 'react-svg-inline'
 import theme from '../../tokens/js'
 import styled from 'styled-components'
 
-const IconContainer = styled.div`
+const IconContainer = styled.span`
   cursor: ${(props) => props.onClick && 'pointer'};
 `
 const Icon = (props) => {

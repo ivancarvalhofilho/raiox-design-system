@@ -29,14 +29,14 @@ WithIcon.args = {
   rows: [
     [
       <TextRow bold>
-        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['0']} />{' '}
+        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['41']} />{' '}
         Stone
       </TextRow>,
       <TextRow>1.080,00</TextRow>,
     ],
     [
       <TextRow bold>
-        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['1']} />{' '}
+        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['2']} />{' '}
         Cielo
       </TextRow>,
       <TextRow>500,20</TextRow>,
