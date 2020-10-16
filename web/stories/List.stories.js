@@ -1,7 +1,7 @@
 import React from 'react'
 
 import List from '../components/List'
-import {TextRow} from '../components/StyledComponents'
+import { TextRow } from '../components/StyledComponents'
 import Icon from '../components/Icon'
 import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
 
@@ -29,14 +29,14 @@ WithIcon.args = {
   rows: [
     [
       <TextRow bold>
-        <Icon style={{'margin-right': '5px'}} path={iconsAdquirentes['0']}/>{' '}
+        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['0']} />{' '}
         Stone
       </TextRow>,
       <TextRow>1.080,00</TextRow>,
     ],
     [
       <TextRow bold>
-        <Icon style={{'margin-right': '5px'}} path={iconsAdquirentes['1']}/>{' '}
+        <Icon style={{ 'margin-right': '5px' }} path={iconsAdquirentes['1']} />{' '}
         Cielo
       </TextRow>,
       <TextRow>500,20</TextRow>,

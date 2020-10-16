@@ -16,17 +16,17 @@ const Column = styled.div`
   text-align: ${(props) => props.align};
 `
 const ListHeader = (props) => (
-    <HeaderContainer>
-      {props.data.map((key, index) => (
-          <Column
-              key={index}
-              width={100 / props.data.length}
-              align={props.align[index]}
-          >
-            {key}
-          </Column>
-      ))}
-    </HeaderContainer>
+  <HeaderContainer>
+    {props.data.map((key, index) => (
+      <Column
+        key={index}
+        width={100 / props.data.length}
+        align={props.align[index]}
+      >
+        {key}
+      </Column>
+    ))}
+  </HeaderContainer>
 )
 
 export default ListHeader
