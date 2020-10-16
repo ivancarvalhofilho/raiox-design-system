@@ -31,6 +31,7 @@ WithIcon.args = {
       <TextRow bold>
         <Icon
           style={{ 'margin-right': '5px' }}
+          size="lg"
           path={iconsAdquirentes.minify['41']}
         />{' '}
         Stone
@@ -41,6 +42,7 @@ WithIcon.args = {
       <TextRow bold>
         <Icon
           style={{ 'margin-right': '5px' }}
+          size="lg"
           path={iconsAdquirentes.minify['1']}
         />{' '}
         Cielo
