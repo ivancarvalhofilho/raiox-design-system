@@ -16,3 +16,5 @@ Default.args = {
   onClose: () => {},
   show: true,
 }
+
+Default.parameters = { layout: 'fullscreen' }
