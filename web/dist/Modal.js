@@ -76,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  z-index: ", ";\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -88,7 +88,7 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var BackgroundContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return props.show ? '1000' : '-5';
+  return props.show ? 'flex' : 'none';
 });
 
 var ModalHeader = _styledComponents["default"].div(_templateObject2());

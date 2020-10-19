@@ -35,8 +35,18 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);\n  border-radius: 5px;\n  width: 374px;\n  transition: right 0.5s;\n  position: absolute;\n  right: ", ";\n  padding: 17px;\n  height: 100%;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);\n  border-radius: 5px;\n  width: 374px;\n  background: #ffffff;\n  transition: right 0.5s;\n  position: absolute;\n  right: ", ";\n  padding: 17px;\n  height: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -46,7 +56,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -56,7 +66,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 20px;\n  right: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -66,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  z-index: ", ";\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -78,14 +88,16 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var BackgroundContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return props.show ? '1000' : '-5';
+  return props.show ? 'flex' : 'none';
 });
 
 var LeftModalHeader = _styledComponents["default"].div(_templateObject2());
 
-var LeftModalContent = _styledComponents["default"].div(_templateObject3());
+var Title = _styledComponents["default"].div(_templateObject3());
 
-var LeftModalContainer = _styledComponents["default"].div(_templateObject4(), function (props) {
+var LeftModalContent = _styledComponents["default"].div(_templateObject4());
+
+var LeftModalContainer = _styledComponents["default"].div(_templateObject5(), function (props) {
   return props.show ? "0px" : "-".concat(props.width, "px");
 });
 
@@ -118,8 +130,7 @@ var SideModal = function SideModal(props) {
     ref: ref,
     show: props.show,
     width: width
-  }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: "16px",
+  }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     onClick: props.onClose,
     path: _js["default"].icons.close
   })), /*#__PURE__*/_react["default"].createElement(LeftModalContent, null, props.children)));
@@ -131,5 +142,6 @@ SideModal.propTypes = {
   children: _propTypes["default"].any,
   closable: _propTypes["default"].bool,
   onClose: _propTypes["default"].func,
-  show: _propTypes["default"].bool
+  show: _propTypes["default"].bool,
+  title: _propTypes["default"].string
 };
