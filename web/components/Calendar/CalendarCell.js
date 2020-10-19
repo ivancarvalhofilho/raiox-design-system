@@ -12,14 +12,26 @@ const CalendarCellContainer = styled.div`
   flex-flow: column;
   justify-content: space-between;
   align-items: flex-end;
-  border: 1px solid ${Colors.neutral.dark['03']};
+  border: 1px solid
+    ${(props) =>
+      props.isSelected
+        ? Colors.brand.primary.darkest
+        : Colors.neutral.dark['03']};
+  background: ${(props) =>
+    (props.isHolyday && `${Colors.neutral.light["02"]} !important`) ||
+    (props.isSelected && `${Colors.brand.primary.light} !important`)};
+  cursor: ${(props) => props.currentMonth && 'pointer'};
 `
 const DayNumber = styled.span`
   height: 14px;
-  font-size: ${fonts.fontSize.xs}px;
-  font-weight: ${fonts.weight.medium};
+  font-size: ${fonts.fontSize.xs};
+  font-weight: ${(props) =>
+    (props.isSelected && fonts.weight.medium) || fonts.weight.regular};
   margin: ${styles.spacing.inset.nano};
   font-family: ${fonts.family.body};
+  color: ${(props) =>
+    (props.isSelected && Colors.brand.primary.darkest) ||
+    (!props.currentMonth && Colors.neutral.dark['02'])};
 `
 const DaySales = styled.span`
   & > div {
@@ -31,9 +43,11 @@ const DaySales = styled.span`
 `
 const SalesValue = styled.span`
   height: 14px;
-  font-size: ${fonts.fontSize.xs}px;
+  font-size: ${fonts.fontSize.xs};
+  font-family: ${fonts.family.condensed};
   font-weight: ${fonts.weight.regular};
   margin-right: ${styles.spacing.inset.quarck};
+  color: ${(props) => !props.currentMonth && Colors.neutral.dark['02']};
 `
 const SalesStatusDot = styled.span`
   width: 4px;
@@ -42,22 +56,42 @@ const SalesStatusDot = styled.span`
   background: ${(props) => props.color};
 `
 const CalendarCell = (props) => (
-  <CalendarCellContainer>
-    <DayNumber>{props.date.day}</DayNumber>
-    <DaySales>
-      {props.daySales && (
-        <div>
-          <SalesValue>
-            R${' '}
-            {parseFloat(Math.abs(props.daySales)).toLocaleString('pt-br', {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </SalesValue>
-          <SalesStatusDot color={props.daySales ?  Colors.feedback.success.dark : Colors.feedback.danger.dark}></SalesStatusDot>
-        </div>
-      )}
-    </DaySales>
+  <CalendarCellContainer
+    isSelected={props.date.isSelected}
+    onClick={() => props.date.currentMonth && props.onDayClick()}
+    currentMonth={props.date.currentMonth}
+    isHolyday={props.date.isHolyday}
+  >
+    {props.date.currentMonth && (
+      <DayNumber
+        currentMonth={props.date.currentMonth}
+        isSelected={props.date.isSelected}
+      >
+        {props.date.day}
+      </DayNumber>
+    )}
+    {props.date.currentMonth && (
+      <DaySales>
+        {props.daySales && (
+          <div>
+            <SalesValue currentMonth={props.date.currentMonth}>
+              R${' '}
+              {parseFloat(Math.abs(props.daySales)).toLocaleString('pt-br', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </SalesValue>
+            <SalesStatusDot
+              color={
+                props.daySales
+                  ? Colors.feedback.success.dark
+                  : Colors.feedback.danger.dark
+              }
+            />
+          </div>
+        )}
+      </DaySales>
+    )}
   </CalendarCellContainer>
 )
 

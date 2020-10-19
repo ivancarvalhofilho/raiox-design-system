@@ -8,7 +8,11 @@ const CalendarConst = {
     'QUI',
     'SEX',
     'SÁB',
-  ]
+  ],
+  STATES: {
+    SELECTED: 0,
+    IN_SELECTION: 1
+  }
 }
 
 export default CalendarConst
