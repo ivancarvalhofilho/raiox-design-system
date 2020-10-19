@@ -36,7 +36,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);\n  border-radius: 5px;\n  width: 374px;\n  transition: right 0.5s;\n  position: absolute;\n  right: ", ";\n  padding: 17px;\n  height: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);\n  border-radius: 5px;\n  width: 374px;\n  background: white;\n  transition: right 0.5s;\n  position: absolute;\n  right: ", ";\n  padding: 17px;\n  height: 100%;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
