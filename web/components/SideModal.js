@@ -10,6 +10,7 @@ const BackgroundContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.75);
   top: 0;
   left: 0;
   display: ${(props) => (props.show ? 'flex' : 'none')};

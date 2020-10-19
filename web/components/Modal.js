@@ -9,6 +9,7 @@ const BackgroundContainer = styled.div`
   width: 100%;
   z-index: 1000;
   height: 100%;
+  background: rgba(0, 0, 0, 0.75);
   top: 0;
   overflow: hidden;
   left: 0;

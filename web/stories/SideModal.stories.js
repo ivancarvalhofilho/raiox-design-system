@@ -8,18 +8,13 @@ export default {
   component: SideModal,
 }
 
-const Template = (args) => {
-  const [show, setShow] = useState()
-  return (
-    <>
-      <button onClick={() => setShow(true)}>Abrir</button>
-      <SideModal {...args} show={show} onClose={() => setShow(false)} />
-    </>
-  )
-}
+const Template = (args) => <SideModal {...args} />
+
 export const Default = Template.bind({})
 Default.args = {
   closable: true,
+  onClose: () => {},
+  show: true,
 }
 
 Default.parameters = { layout: 'fullscreen' }
