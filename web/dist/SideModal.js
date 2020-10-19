@@ -98,7 +98,7 @@ var Title = _styledComponents["default"].div(_templateObject3());
 var LeftModalContent = _styledComponents["default"].div(_templateObject4());
 
 var LeftModalContainer = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return props.show ? "0px" : "-".concat(props.width, "px");
+  return props.show ? "0px" : "-".concat(props.width ? props.width : 5000, "px");
 });
 
 var SideModal = function SideModal(props) {
@@ -114,9 +114,9 @@ var SideModal = function SideModal(props) {
 
   var ref = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
+    setWidth(ref.current.clientWidth);
     setTimeout(function () {
       setShow(props.show);
-      setWidth(ref.current.clientWidth);
     }, 500);
   }, [props.show]);
   return /*#__PURE__*/_react["default"].createElement(BackgroundContainer, {

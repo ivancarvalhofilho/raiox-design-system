@@ -98,7 +98,7 @@ var Title = _styledComponents["default"].div(_templateObject3());
 var ModalContent = _styledComponents["default"].div(_templateObject4());
 
 var ModalContainer = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return props.show ? "calc(50% - ".concat(props.top / 2, "px)") : "-".concat(props.top, "px");
+  return props.show ? "calc(50% - ".concat(props.top / 2, "px)") : "-".concat(props.top ? props.top : 5000, "px");
 });
 
 var Modal = function Modal(props) {
@@ -114,8 +114,8 @@ var Modal = function Modal(props) {
 
   var ref = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
+    setHeight(ref.current.clientHeight);
     setTimeout(function () {
-      setHeight(ref.current.clientHeight);
       setShow(props.show);
     }, 500);
   }, [props.show]);
