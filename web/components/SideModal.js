@@ -49,7 +49,7 @@ const SideModal = (props) => {
     <BackgroundContainer show={props.show ? props.show : show}>
       <LeftModalContainer
         ref={ref}
-        show={props.show ? props.show : show}
+        show={!props.show ? props.show : show}
         width={width}
       >
         <LeftModalHeader>

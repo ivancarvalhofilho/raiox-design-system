@@ -50,7 +50,7 @@ const Modal = (props) => {
     <BackgroundContainer show={props.show ? props.show : show}>
       <ModalContainer
         ref={ref}
-        show={props.show ? props.show : show}
+        show={!props.show ? props.show : show}
         top={height}
       >
         <ModalHeader>
