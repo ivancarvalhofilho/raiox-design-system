@@ -2,7 +2,7 @@ import './fontsImport.css'
 
 const fonts = {
     family: {
-        head: 'MarkPro',
+        head: 'Mark Pro',
         body: 'Roboto',
         condensed: 'Roboto Condensed',
         monospace: 'Consolas',
@@ -20,6 +20,7 @@ const fonts = {
         sm: '16px',
         md: '18px',
         lg: '24px',
+        llg: '28px',
         xl: '32px',
     },
 }

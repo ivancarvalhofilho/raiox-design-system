@@ -1,5 +1,5 @@
 import React from 'react'
-import SideValuePanel from '../components/SideValuePanel'
+import SideValuePanel from '../src/components/SideValuePanel'
 import theme from '../../tokens/js'
 
 export default {
@@ -8,12 +8,6 @@ export default {
 }
 
 const Template = (args) => (
-  // const style = fontStyleMaker(theme, 'body', 'regular', 'xs', [
-  //   'neutral',
-  //   'dark',
-  //   'base',
-  // ])
-  // console.log(style)
   <SideValuePanel
     values={['1.580,20', '979,80', '650,40', '- 50,00']}
     checkValue={[true, false, false, true]}

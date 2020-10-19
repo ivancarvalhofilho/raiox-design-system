@@ -1,9 +1,5 @@
 import React from 'react'
-
-import Icon from '../components/Icon'
-import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
 import styled from 'styled-components'
-import { Title } from '../components/StyledComponents'
 import theme from '../../tokens/js'
 
 export default {

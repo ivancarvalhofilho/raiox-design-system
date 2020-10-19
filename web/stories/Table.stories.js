@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from '../components/Table'
+import Table from '../src/components/Table'
 import { useState } from '@storybook/addons'
 
 export default {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Modal from '../components/Modal'
+import Modal from '../src/components/Modal'
 import { useState } from '@storybook/addons'
 
 export default {

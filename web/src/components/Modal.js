@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
-import theme from '../../tokens/js'
+import theme from '../../../tokens/js'
 
 const BackgroundContainer = styled.div`
   position: absolute;

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import List from '../components/List'
-import { TextRow } from '../components/StyledComponents'
-import Icon from '../components/Icon'
+import List from '../src/components/List'
+import { TextRow } from '../src/components/StyledComponents'
+import Icon from '../src/components/Icon'
 import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
 
 export default {

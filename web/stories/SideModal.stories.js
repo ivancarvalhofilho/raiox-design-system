@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SideModal from '../components/SideModal'
+import SideModal from '../src/components/SideModal'
 import { useState } from '@storybook/addons'
 
 export default {

@@ -10,7 +10,7 @@ import styled from 'styled-components'
 import { mdiReload } from '@mdi/js'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import theme from '../../tokens/js'
+import theme from '../../../tokens/js'
 import Icon from './Icon'
 // import styled from 'styled-components';
 
