@@ -123,7 +123,7 @@ var SideModal = function SideModal(props) {
     show: props.show ? props.show : show
   }, /*#__PURE__*/_react["default"].createElement(LeftModalContainer, {
     ref: ref,
-    show: props.show,
+    show: !props.show ? props.show : show,
     width: width
   }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: "16px",
