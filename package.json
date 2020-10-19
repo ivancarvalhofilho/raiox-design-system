@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd web && npm run build",
-    "prepush": "npm build"
+    "precommit": "npm run build && git commit -m 'updating build'"
   },
   "repository": {
     "type": "git",
