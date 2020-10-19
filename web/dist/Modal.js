@@ -76,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  z-index: 1000;\n  height: 100%;\n  display: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  z-index: 1000;\n  height: 100%;\n  top: 0;\n  left: 0;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
