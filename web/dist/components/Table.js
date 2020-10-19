@@ -17,7 +17,7 @@ var _js = require("@mdi/js");
 
 var _reactInfiniteScrollComponent = _interopRequireDefault(require("react-infinite-scroll-component"));
 
-var _js2 = _interopRequireDefault(require("../../tokens/js"));
+var _js2 = _interopRequireDefault(require("../../../tokens/js"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 

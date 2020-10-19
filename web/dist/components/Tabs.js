@@ -13,7 +13,7 @@ var _Tab = _interopRequireDefault(require("./Tab"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _js = _interopRequireDefault(require("../../tokens/js"));
+var _js = _interopRequireDefault(require("../../../tokens/js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
