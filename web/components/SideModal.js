@@ -30,7 +30,8 @@ const LeftModalContainer = styled.div`
   background: white;
   transition: right 0.5s;
   position: absolute;
-  right: ${(props) => (props.show ? `0px` : `-${props.width}px`)};
+  right: ${(props) =>
+    props.show ? `0px` : `-${props.width ? props.width : 5000}px`};
   padding: 17px;
   height: 100%;
 `
@@ -40,9 +41,9 @@ const SideModal = (props) => {
   const ref = useRef()
 
   useEffect(() => {
+    setWidth(ref.current.clientWidth)
     setTimeout(() => {
       setShow(props.show)
-      setWidth(ref.current.clientWidth)
     }, 500)
   }, [props.show])
 

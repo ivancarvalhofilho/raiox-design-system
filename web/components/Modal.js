@@ -31,7 +31,9 @@ const ModalContainer = styled.div`
   background: white;
   position: absolute;
   top: ${(props) =>
-    props.show ? `calc(50% - ${props.top / 2}px)` : `-${props.top}px`};
+    props.show
+      ? `calc(50% - ${props.top / 2}px)`
+      : `-${props.top ? props.top : 5000}px`};
   padding: 17px;
   height: 436px;
 `
@@ -41,8 +43,8 @@ const Modal = (props) => {
   const ref = useRef()
 
   useEffect(() => {
+    setHeight(ref.current.clientHeight)
     setTimeout(() => {
-      setHeight(ref.current.clientHeight)
       setShow(props.show)
     }, 500)
   }, [props.show])
