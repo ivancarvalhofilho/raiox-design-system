@@ -10,6 +10,7 @@ const BackgroundContainer = styled.div`
   z-index: 1000;
   height: 100%;
   top: 0;
+  overflow: hidden;
   left: 0;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   justify-content: center;
@@ -40,8 +41,8 @@ const Modal = (props) => {
   const ref = useRef()
 
   useEffect(() => {
-    setHeight(ref.current.clientHeight)
     setTimeout(() => {
+      setHeight(ref.current.clientHeight)
       setShow(props.show)
     }, 500)
   }, [props.show])

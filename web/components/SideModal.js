@@ -9,6 +9,7 @@ const BackgroundContainer = styled.div`
   z-index: 1000;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   top: 0;
   left: 0;
   display: ${(props) => (props.show ? 'flex' : 'none')};
@@ -39,9 +40,9 @@ const SideModal = (props) => {
   const ref = useRef()
 
   useEffect(() => {
-    setWidth(ref.current.clientWidth)
     setTimeout(() => {
       setShow(props.show)
+      setWidth(ref.current.clientWidth)
     }, 500)
   }, [props.show])
 

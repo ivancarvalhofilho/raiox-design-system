@@ -76,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  z-index: 1000;\n  height: 100%;\n  top: 0;\n  left: 0;\n  display: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  z-index: 1000;\n  height: 100%;\n  top: 0;\n  overflow: hidden;\n  left: 0;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -114,8 +114,8 @@ var Modal = function Modal(props) {
 
   var ref = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
-    setHeight(ref.current.clientHeight);
     setTimeout(function () {
+      setHeight(ref.current.clientHeight);
       setShow(props.show);
     }, 500);
   }, [props.show]);

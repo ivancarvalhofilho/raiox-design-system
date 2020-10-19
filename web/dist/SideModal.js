@@ -76,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  z-index: 1000;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  display: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  z-index: 1000;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  top: 0;\n  left: 0;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -114,9 +114,9 @@ var SideModal = function SideModal(props) {
 
   var ref = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
-    setWidth(ref.current.clientWidth);
     setTimeout(function () {
       setShow(props.show);
+      setWidth(ref.current.clientWidth);
     }, 500);
   }, [props.show]);
   return /*#__PURE__*/_react["default"].createElement(BackgroundContainer, {
