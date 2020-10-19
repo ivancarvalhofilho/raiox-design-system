@@ -49,7 +49,10 @@ const SideModal = (props) => {
   }, [props.show])
 
   return (
-    <BackgroundContainer show={props.show ? props.show : show}>
+    <BackgroundContainer
+      show={props.show ? props.show : show}
+      onClick={() => props.onClickOut()}
+    >
       <LeftModalContainer
         ref={ref}
         show={!props.show ? props.show : show}
@@ -76,6 +79,7 @@ export default SideModal
 SideModal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,
+  onClickOut: PropTypes.func,
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string,

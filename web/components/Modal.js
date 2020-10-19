@@ -51,7 +51,10 @@ const Modal = (props) => {
   }, [props.show])
 
   return (
-    <BackgroundContainer show={props.show ? props.show : show}>
+    <BackgroundContainer
+      show={props.show ? props.show : show}
+      onClick={() => props.onClickOut()}
+    >
       <ModalContainer
         ref={ref}
         show={!props.show ? props.show : show}
@@ -78,6 +81,7 @@ export default Modal
 Modal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,
+  onClickOut: PropTypes.func,
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string,

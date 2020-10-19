@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const TextRow = styled.div`
   display: flex;
   align-items: center;
+  justify-content: ${(props) => props.justifyContent};
   font-family: ${(props) => props.theme.fonts.family.body};
   font-weight: ${(props) =>
     props.bold
@@ -10,7 +11,9 @@ const TextRow = styled.div`
       : props.theme.fonts.weight.regular};
   font-size: ${(props) => props.theme.fonts.fontSize.xs};
   color: ${(props) =>
-    props.danger
+    props.color
+      ? props.color
+      : props.danger
       ? props.theme.colors.feedback.danger.dark
       : props.theme.colors.neutral.dark.base};
 `
@@ -27,4 +30,9 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.neutral.dark.base};
 `
 
-export { TextRow, Card, Title }
+const Divider = styled.div`
+  border-left: 1px solid ${(props) => props.theme.colors.neutral.dark['03']};
+  margin: 1% 0;
+`
+
+export { TextRow, Card, Title, Divider }

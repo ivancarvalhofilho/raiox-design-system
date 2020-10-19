@@ -120,7 +120,10 @@ var SideModal = function SideModal(props) {
     }, 500);
   }, [props.show]);
   return /*#__PURE__*/_react["default"].createElement(BackgroundContainer, {
-    show: props.show ? props.show : show
+    show: props.show ? props.show : show,
+    onClick: function onClick() {
+      return props.onClickOut();
+    }
   }, /*#__PURE__*/_react["default"].createElement(LeftModalContainer, {
     ref: ref,
     show: !props.show ? props.show : show,
@@ -137,6 +140,7 @@ exports["default"] = _default;
 SideModal.propTypes = {
   children: _propTypes["default"].any,
   closable: _propTypes["default"].bool,
+  onClickOut: _propTypes["default"].func,
   onClose: _propTypes["default"].func,
   show: _propTypes["default"].bool,
   title: _propTypes["default"].string

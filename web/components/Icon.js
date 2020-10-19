@@ -31,7 +31,7 @@ const Icon = (props) => {
       case 'primary-disabled':
         return theme.colors.brand.primary.darkest
       default:
-        return theme.colors.neutral.dark['02']
+        return props.appearance || theme.colors.neutral.dark['02']
     }
   }
 
@@ -48,7 +48,7 @@ const Icon = (props) => {
   return (
     <IconContainer onClick={props.onClick}>
       <SVGInline
-        style={props.style}
+        style={{ ...props.style, display: 'flex' }}
         svg={props.path ? props.path : theme.icons[props.name]}
         fill={getIconSvgColor(props)}
         width={getIconSvgSize(props)}
