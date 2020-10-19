@@ -88,7 +88,7 @@ var Container = _styledComponents["default"].div(_templateObject2());
 var Item = _styledComponents["default"].div(_templateObject3());
 
 var Value = _styledComponents["default"].span(_templateObject4(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'head', 'light', 'lg', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', ['neutral', 'dark', 'base']);
 }, function (props) {
   return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
 });

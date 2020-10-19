@@ -23,7 +23,7 @@ const Item = styled.div`
 `
 const Value = styled.span`
   ${(props) =>
-    fontStyleMaker(props.theme, 'head', 'light', 'lg', [
+    fontStyleMaker(props.theme, 'body', 'light', 'lg', [
       'neutral',
       'dark',
       'base',
