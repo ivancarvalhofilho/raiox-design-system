@@ -123,7 +123,7 @@ var Modal = function Modal(props) {
     show: props.show ? props.show : show
   }, /*#__PURE__*/_react["default"].createElement(ModalContainer, {
     ref: ref,
-    show: props.show,
+    show: props.show ? props.show : show,
     top: height
   }, /*#__PURE__*/_react["default"].createElement(ModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: "16px",

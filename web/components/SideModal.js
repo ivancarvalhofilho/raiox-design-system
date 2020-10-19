@@ -26,6 +26,7 @@ const LeftModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
   width: 374px;
+  background: white;
   transition: right 0.5s;
   position: absolute;
   right: ${(props) => (props.show ? `0px` : `-${props.width}px`)};
@@ -46,7 +47,11 @@ const SideModal = (props) => {
 
   return (
     <BackgroundContainer show={props.show ? props.show : show}>
-      <LeftModalContainer ref={ref} show={props.show} width={width}>
+      <LeftModalContainer
+        ref={ref}
+        show={props.show ? props.show : show}
+        width={width}
+      >
         <LeftModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (

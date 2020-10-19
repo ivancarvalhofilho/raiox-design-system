@@ -27,6 +27,7 @@ const ModalContainer = styled.div`
   border-radius: 5px;
   width: 520px;
   transition: top 0.5s;
+  background: white;
   position: absolute;
   top: ${(props) =>
     props.show ? `calc(50% - ${props.top / 2}px)` : `-${props.top}px`};
@@ -47,7 +48,11 @@ const Modal = (props) => {
 
   return (
     <BackgroundContainer show={props.show ? props.show : show}>
-      <ModalContainer ref={ref} show={props.show} top={height}>
+      <ModalContainer
+        ref={ref}
+        show={props.show ? props.show : show}
+        top={height}
+      >
         <ModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
