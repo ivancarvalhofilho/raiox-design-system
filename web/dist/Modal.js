@@ -76,7 +76,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  z-index: 1000;\n  height: 100%;\n  display: ", ";\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -115,22 +115,18 @@ var Modal = function Modal(props) {
   var ref = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     setHeight(ref.current.clientHeight);
-
-    if (!props.show) {
-      setTimeout(function () {
-        setShow(props.show);
-      }, 500);
-    } else {
+    setTimeout(function () {
       setShow(props.show);
-    }
+    }, 500);
   }, [props.show]);
   return /*#__PURE__*/_react["default"].createElement(BackgroundContainer, {
-    show: show
+    show: props.show ? props.show : show
   }, /*#__PURE__*/_react["default"].createElement(ModalContainer, {
     ref: ref,
     show: props.show,
     top: height
   }, /*#__PURE__*/_react["default"].createElement(ModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    size: "16px",
     onClick: props.onClose,
     path: _js["default"].icons.close
   })), /*#__PURE__*/_react["default"].createElement(ModalContent, null, props.children)));
