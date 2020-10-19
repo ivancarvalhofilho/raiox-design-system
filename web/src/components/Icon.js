@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import SVGInline from 'react-svg-inline'
-import theme from '../../tokens/js'
+import theme from '../../../tokens/js'
 import styled from 'styled-components'
 
 const IconContainer = styled.span`

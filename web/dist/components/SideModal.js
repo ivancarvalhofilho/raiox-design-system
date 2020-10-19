@@ -15,7 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _js = _interopRequireDefault(require("../../tokens/js"));
+var _js = _interopRequireDefault(require("../../../tokens/js"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 

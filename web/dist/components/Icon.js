@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactSvgInline = _interopRequireDefault(require("react-svg-inline"));
 
-var _js = _interopRequireDefault(require("../../tokens/js"));
+var _js = _interopRequireDefault(require("../../../tokens/js"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
