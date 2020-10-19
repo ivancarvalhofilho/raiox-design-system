@@ -6,17 +6,16 @@ import theme from '../../tokens/js'
 
 const BackgroundContainer = styled.div`
   position: absolute;
-  z-index: ${(props) => (props.show ? '1000' : '-5')};
   width: 100%;
   height: 100%;
-  display: flex;
+  display: ${(props) => (props.show ? 'flex' : 'none')};
   justify-content: center;
 `
 const LeftModalHeader = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  display: flex;
+  justify-content: space-between;
 `
+const Title = styled.div``
 const LeftModalContent = styled.div`
   padding: 20px;
 `
@@ -24,7 +23,6 @@ const LeftModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
   width: 374px;
-  background: #ffffff;
   transition: right 0.5s;
   position: absolute;
   right: ${(props) => (props.show ? `0px` : `-${props.width}px`)};
@@ -51,12 +49,9 @@ const SideModal = (props) => {
     <BackgroundContainer show={show}>
       <LeftModalContainer ref={ref} show={props.show} width={width}>
         <LeftModalHeader>
+          <Title>{props.title}</Title>
           {props.closable && (
-            <Icon
-              size="16px"
-              onClick={props.onClose}
-              path={theme.icons.close}
-            />
+            <Icon onClick={props.onClose} path={theme.icons.close} />
           )}
         </LeftModalHeader>
         <LeftModalContent>{props.children}</LeftModalContent>
@@ -72,4 +67,5 @@ SideModal.propTypes = {
   closable: PropTypes.bool,
   onClose: PropTypes.func,
   show: PropTypes.bool,
+  title: PropTypes.string,
 }
