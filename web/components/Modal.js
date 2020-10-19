@@ -9,6 +9,8 @@ const BackgroundContainer = styled.div`
   width: 100%;
   z-index: 1000;
   height: 100%;
+  top: 0;
+  left: 0;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   justify-content: center;
 `
