@@ -6,10 +6,9 @@ import theme from '../../tokens/js'
 
 const BackgroundContainer = styled.div`
   position: absolute;
-  z-index: ${(props) => (props.show ? '1000' : '-5')};
   width: 100%;
   height: 100%;
-  display: flex;
+  display: ${(props) => (props.show ? 'flex' : 'none')};
   justify-content: center;
 `
 const ModalHeader = styled.div`
