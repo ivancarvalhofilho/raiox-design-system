@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd web && npm run build",
-    "precommit": "npm run build && git commit -m 'updating build'"
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
   "devDependencies": {
-    "husky": "^4.3.0"
+    "husky": "^5.0.0-beta.0"
   }
 }
