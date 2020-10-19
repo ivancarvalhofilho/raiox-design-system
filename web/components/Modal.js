@@ -7,6 +7,7 @@ import theme from '../../tokens/js'
 const BackgroundContainer = styled.div`
   position: absolute;
   width: 100%;
+  z-index: 1000;
   height: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   justify-content: center;
@@ -37,22 +38,22 @@ const Modal = (props) => {
 
   useEffect(() => {
     setHeight(ref.current.clientHeight)
-    if (!props.show) {
-      setTimeout(() => {
-        setShow(props.show)
-      }, 500)
-    } else {
+    setTimeout(() => {
       setShow(props.show)
-    }
+    }, 500)
   }, [props.show])
 
   return (
-    <BackgroundContainer show={show}>
+    <BackgroundContainer show={props.show ? props.show : show}>
       <ModalContainer ref={ref} show={props.show} top={height}>
         <ModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
-            <Icon onClick={props.onClose} path={theme.icons.close} />
+            <Icon
+              size="16px"
+              onClick={props.onClose}
+              path={theme.icons.close}
+            />
           )}
         </ModalHeader>
         <ModalContent>{props.children}</ModalContent>

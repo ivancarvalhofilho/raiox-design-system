@@ -6,6 +6,7 @@ import theme from '../../tokens/js'
 
 const BackgroundContainer = styled.div`
   position: absolute;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
@@ -36,22 +37,22 @@ const SideModal = (props) => {
 
   useEffect(() => {
     setWidth(ref.current.clientWidth)
-    if (!props.show) {
-      setTimeout(() => {
-        setShow(props.show)
-      }, 500)
-    } else {
+    setTimeout(() => {
       setShow(props.show)
-    }
+    }, 500)
   }, [props.show])
 
   return (
-    <BackgroundContainer show={show}>
+    <BackgroundContainer show={props.show ? props.show : show}>
       <LeftModalContainer ref={ref} show={props.show} width={width}>
         <LeftModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
-            <Icon onClick={props.onClose} path={theme.icons.close} />
+            <Icon
+              size="16px"
+              onClick={props.onClose}
+              path={theme.icons.close}
+            />
           )}
         </LeftModalHeader>
         <LeftModalContent>{props.children}</LeftModalContent>
