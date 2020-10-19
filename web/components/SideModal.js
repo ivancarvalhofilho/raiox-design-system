@@ -44,7 +44,11 @@ const SideModal = (props) => {
 
   return (
     <BackgroundContainer show={props.show ? props.show : show}>
-      <LeftModalContainer ref={ref} show={props.show} width={width}>
+      <LeftModalContainer
+        ref={ref}
+        show={!props.show ? props.show : show}
+        width={width}
+      >
         <LeftModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
