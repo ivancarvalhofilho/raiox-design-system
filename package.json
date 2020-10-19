@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "files": [ "web/dist", "tokens" ],
+  "files": [
+    "web/dist",
+    "tokens"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd web && npm build"
+    "build": "cd web && npm run build",
+    "prepush": "npm build"
   },
   "repository": {
     "type": "git",
@@ -17,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/guhcostan-equals/raiox-design-system/issues"
   },
-  "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme"
+  "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
+  "devDependencies": {
+    "husky": "^4.3.0"
+  }
 }
