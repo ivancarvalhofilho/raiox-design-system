@@ -46,7 +46,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 342px;\n"]);
+  var data = _taggedTemplateLiteral(["\n"]);
 
   _templateObject = function _templateObject() {
     return data;

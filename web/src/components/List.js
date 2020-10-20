@@ -5,7 +5,6 @@ import ListHeader from './ListHeader'
 import styled from 'styled-components'
 
 const ListContainer = styled.div`
-  width: 342px;
 `
 const Row = styled.div`
   display: flex;
