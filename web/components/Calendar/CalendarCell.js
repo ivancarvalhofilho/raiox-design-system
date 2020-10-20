@@ -18,8 +18,9 @@ const CalendarCellContainer = styled.div`
         ? Colors.brand.primary.darkest
         : Colors.neutral.dark['03']};
   background: ${(props) =>
-    (props.isHolyday && `${Colors.neutral.light["02"]} !important`) ||
-    (props.isSelected && `${Colors.brand.primary.light} !important`)};
+    (props.isHolyday && `${Colors.neutral.light['02']} !important`) ||
+    ((props.isSelected || props.isHovered) &&
+      `${Colors.brand.primary.light} !important`)};
   cursor: ${(props) => props.currentMonth && 'pointer'};
 `
 const DayNumber = styled.span`
@@ -58,7 +59,9 @@ const SalesStatusDot = styled.span`
 const CalendarCell = (props) => (
   <CalendarCellContainer
     isSelected={props.date.isSelected}
+    isHovered={props.date.isHovered}
     onClick={() => props.date.currentMonth && props.onDayClick()}
+    onMouseOver={() => props.date.currentMonth && props.onDayHover()}
     currentMonth={props.date.currentMonth}
     isHolyday={props.date.isHolyday}
   >

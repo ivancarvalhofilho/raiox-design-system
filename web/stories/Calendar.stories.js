@@ -12,7 +12,9 @@ export default {
 const Template = (args) => {
   const [selectedDates, setSelectedDates] = useState({
     state: CalendarConst.STATES.SELECTED,
-    days: ['01/09/2020', '01/22/2020'],
+    firstClickDate: null,
+    startDate: '01/09/2020',
+    endDate: '01/22/2020',
   })
 
   return (

@@ -55,21 +55,22 @@ const Calendar = (props) => {
   function currentDayIsSelected(currentDay) {
     const isSelectedDay =
       (props.selectedDates.state === CalendarConst.STATES.SELECTED &&
-        dayjs(props.selectedDates.days[0]).isSameOrBefore(currentDay, 'day') &&
-        !!dayjs(props.selectedDates.days[1]) &&
-        dayjs(props.selectedDates.days[1]).isSameOrAfter(currentDay, 'day')) ||
+        dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+        !!props.selectedDates.endDate &&
+        dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')) ||
       (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
-        dayjs(props.selectedDates.days[0]).isSame(currentDay, 'day'))
+        dayjs(props.selectedDates.startDate).isSame(currentDay, 'day')) ||
+      dayjs(props.selectedDates.endDate).isSame(currentDay, 'day')
     return isSelectedDay
   }
 
   function currentDayIsHovered(currentDay) {
-    const isSelectedDay =
+    const isHoveredDay =
       props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
-      dayjs(props.selectedDates.days[0]).isSameOrBefore(currentDay, 'day') &&
-      !!dayjs(props.selectedDates.days[1]) &&
-      dayjs(props.selectedDates.days[1]).isSameOrAfter(currentDay, 'day')
-    return isSelectedDay
+      dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+      !!props.selectedDates.endDate &&
+      dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')
+    return isHoveredDay
   }
 
   function currentDayIsHolyday(currentDay) {
@@ -82,21 +83,45 @@ const Calendar = (props) => {
   function onDayClick(date) {
     if (props.selectedDates.state === CalendarConst.STATES.SELECTED) {
       props.setSelectedDates({
-        days: [date],
+        startDate: date,
+        endDate: date,
+        firstClickDate: date,
         state: CalendarConst.STATES.IN_SELECTION,
       })
-    } else if (
-      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION
-    ) {
-      if (dayjs(props.selectedDates.days[0]).isAfter(dayjs(date), 'day')) {
+    } else if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
+      if (dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')) {
         props.setSelectedDates({
-          days: [date],
-          state: CalendarConst.STATES.IN_SELECTION,
+          ...props.selectedDates,
+          startDate: date,
+          endDate: props.selectedDates.firstClickDate,
+          state: CalendarConst.STATES.SELECTED,
         })
       } else {
         props.setSelectedDates({
-          days: [props.selectedDates.days[0], date],
+          ...props.selectedDates,
+          startDate: props.selectedDates.firstClickDate,
+          endDate: date,
           state: CalendarConst.STATES.SELECTED,
+        })
+      }
+    }
+  }
+
+  function onDayHover(date) {
+    if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
+      if (dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')) {
+        props.setSelectedDates({
+          ...props.selectedDates,
+          startDate: date,
+          endDate: props.selectedDates.firstClickDate,
+          state: CalendarConst.STATES.IN_SELECTION,
+        })
+      } else if(dayjs(props.selectedDates.firstClickDate).isBefore(dayjs(date), 'day')){
+        props.setSelectedDates({
+          ...props.selectedDates,
+          startDate: props.selectedDates.firstClickDate,
+          endDate: date,
+          state: CalendarConst.STATES.IN_SELECTION,
         })
       }
     }
@@ -163,11 +188,7 @@ const Calendar = (props) => {
         ).map((day) => generateDayObject(day, iterableDay, false))
         totalDays = totalDays.concat(visibleDaysOfNextMonth)
       }
-      setDates(
-          update(totalDays, {
-            $set: newItems,
-          }),
-      )
+
       setDates(totalDays)
     }
   }, [props.month, props.selectedDates])
@@ -187,6 +208,7 @@ const Calendar = (props) => {
               date={date}
               daySales={date.sales}
               onDayClick={() => onDayClick(date.fullDate)}
+              onDayHover={() => onDayHover(date.fullDate)}
             />
           ))}
       </CalendarGrid>
