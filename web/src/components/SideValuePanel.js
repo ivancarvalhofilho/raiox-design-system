@@ -16,6 +16,7 @@ const Title = styled.div`
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
 `
 const Item = styled.div`
   margin: 0px 40px;
