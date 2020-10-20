@@ -24,10 +24,10 @@ export default {
         },
     },
     shadow: {
-        level1: '8px',
-        level2: '24px',
-        level3: '32px',
-        level4: '48px',
+        level1: '0px 0px 8px rgba(0, 39, 64, 0.1)',
+        level2: '0px 0px 24px rgba(0, 39, 64, 0.1)',
+        level3: '0px 0px 32px rgba(0, 39, 64, 0.1)',
+        level4: '0px 0px 48px rgba(0, 39, 64, 0.1)',
     },
     spacing: {
         inset: {

@@ -35,4 +35,8 @@ const Divider = styled.div`
   margin: 1% 0;
 `
 
-export { TextRow, Card, Title, Divider }
+const Container = styled.div`
+  border-radius: ${(props) => props.theme.styles.border.radius.sm};
+  box-shadow: ${(props) => props.theme.styles.shadow.level1};
+`
+export { TextRow, Card, Title, Divider, Container }

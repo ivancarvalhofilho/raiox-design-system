@@ -9,6 +9,16 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  border-radius: ", ";\n  box-shadow: ", ";\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n  border-left: 1px solid ", ";\n  margin: 1% 0;\n"]);
 
@@ -88,3 +98,9 @@ var Divider = _styledComponents["default"].div(_templateObject4(), function (pro
 });
 
 exports.Divider = Divider;
+
+var Container = _styledComponents["default"].div(_templateObject5(), function (props) {
+  return props.theme.styles.border.radius.sm;
+}, function (props) {
+  return props.theme.styles.shadow.level1;
+});
