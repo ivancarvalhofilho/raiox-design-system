@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Calendar } from '../src/components/Calendar/Calendar'
 import { useState } from '@storybook/addons'
-import CalendarConst from "../components/Calendar/const";
+import CalendarConst from '../src/components/Calendar/const'
 
 export default {
   title: 'Example/Calendar',
@@ -30,6 +30,7 @@ export const Default = Template.bind({})
 Default.args = {
   month: 0,
   year: 2020,
+  maxDateRange: 7,
   dayWithSales: [
     { day: '01/01/2020', sale: 50, type: 'A' },
     { day: '01/13/2020', sale: 700.55, type: 'R' },
