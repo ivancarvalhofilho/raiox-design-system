@@ -1,10 +1,10 @@
 export default {
     border: {
         radius: {
-            sm: 4,
-            md: 8,
-            lg: 16,
-            pill: 500,
+            sm: '4px',
+            md: '8px',
+            lg: '16px',
+            pill: '500px',
             cirular: '50%',
         },
         width: {
