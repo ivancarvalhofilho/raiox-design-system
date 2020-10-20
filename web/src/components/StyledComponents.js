@@ -37,6 +37,7 @@ const Divider = styled.div`
 
 const Container = styled.div`
   padding: 16px;
+  background: white;
   border-radius: ${(props) => props.theme.styles.border.radius.sm};
   box-shadow: ${(props) => props.theme.styles.shadow.level1};
 `
