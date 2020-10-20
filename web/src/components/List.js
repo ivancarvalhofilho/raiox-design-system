@@ -4,8 +4,7 @@ import ListHeader from './ListHeader'
 
 import styled from 'styled-components'
 
-const ListContainer = styled.div`
-`
+const ListContainer = styled.div``
 const Row = styled.div`
   display: flex;
   height: 46px;
@@ -17,39 +16,41 @@ const Column = styled.div`
   width: ${(props) => props.width}%;
   justify-content: ${(props) =>
     props.align === 'right'
-        ? 'flex-end'
-        : props.align === 'left'
-        ? 'flex-start'
-        : props.align};
+      ? 'flex-end'
+      : props.align === 'left'
+      ? 'flex-start'
+      : props.align};
   align-items: center;
   display: flex;
 `
 const ListData = styled.div``
 const List = (props) => (
-    <ListContainer>
-        <ListHeader data={props.header} align={props.align}/>
-        <ListData>
-            {props.rows.map((row, index) => (
-                <Row key={index}>
-                    {row.map((column, index) => (
-                        <Column
-                            key={index}
-                            align={props.align[index]}
-                            width={100 / row.length}
-                        >
-                            {column}
-                        </Column>
-                    ))}
-                </Row>
-            ))}
-        </ListData>
-    </ListContainer>
+  <ListContainer style={props.style}>
+    <ListHeader data={props.header} align={props.align} />
+    <ListData style={props.styleData}>
+      {props.rows.map((row, index) => (
+        <Row key={index}>
+          {row.map((column, index) => (
+            <Column
+              key={index}
+              align={props.align[index]}
+              width={100 / row.length}
+            >
+              {column}
+            </Column>
+          ))}
+        </Row>
+      ))}
+    </ListData>
+  </ListContainer>
 )
 
 export default List
 
 List.propTypes = {
-    align: PropTypes.array,
-    header: PropTypes.array,
-    rows: PropTypes.array,
+  align: PropTypes.array,
+  header: PropTypes.array,
+  rows: PropTypes.array,
+  style: PropTypes.object,
+  styleData: PropTypes.object,
 }

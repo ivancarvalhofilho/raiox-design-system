@@ -46,7 +46,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -70,10 +70,14 @@ var Column = _styledComponents["default"].div(_templateObject3(), function (prop
 var ListData = _styledComponents["default"].div(_templateObject4());
 
 var List = function List(props) {
-  return /*#__PURE__*/_react["default"].createElement(ListContainer, null, /*#__PURE__*/_react["default"].createElement(_ListHeader["default"], {
+  return /*#__PURE__*/_react["default"].createElement(ListContainer, {
+    style: props.style
+  }, /*#__PURE__*/_react["default"].createElement(_ListHeader["default"], {
     data: props.header,
     align: props.align
-  }), /*#__PURE__*/_react["default"].createElement(ListData, null, props.rows.map(function (row, index) {
+  }), /*#__PURE__*/_react["default"].createElement(ListData, {
+    style: props.styleData
+  }, props.rows.map(function (row, index) {
     return /*#__PURE__*/_react["default"].createElement(Row, {
       key: index
     }, row.map(function (column, index) {
@@ -91,5 +95,7 @@ exports["default"] = _default;
 List.propTypes = {
   align: _propTypes["default"].array,
   header: _propTypes["default"].array,
-  rows: _propTypes["default"].array
+  rows: _propTypes["default"].array,
+  style: _propTypes["default"].object,
+  styleData: _propTypes["default"].object
 };
