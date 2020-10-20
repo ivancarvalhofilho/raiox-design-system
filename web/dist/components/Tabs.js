@@ -18,7 +18,7 @@ var _js = _interopRequireDefault(require("../../../tokens/js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: ", "px;\n  border-radius: ", ";\n  background-color: ", ";\n  transform: translate(", "%, 0);\n  transition: transform 1s linear;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: ", "px;\n  border-radius: ", ";\n  background-color: ", ";\n  transform: translate(", "%, 0);\n  transition: transform 0.3s linear;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -28,7 +28,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  width: 342px;\n  opacity: ", ";\n  cursor: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  opacity: ", ";\n  cursor: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

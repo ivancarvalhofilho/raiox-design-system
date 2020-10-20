@@ -10,7 +10,6 @@ const TabsContainer = styled.div`
   pointer-events: ${(props) => props.disabled && 'none'};
 `
 const Container = styled.div`
-  width: 342px;
   opacity: ${(props) => props.disabled && '0.5'};
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `
@@ -21,7 +20,7 @@ const Bar = styled.div`
   background-color: ${(props) =>
     props.color || props.theme.colors.brand.primary.darkest};
   transform: translate(${(props) => props.left}%, 0);
-  transition: transform 1s linear;
+  transition: transform 0.3s linear;
 `
 
 const Tabs = (props) => (
