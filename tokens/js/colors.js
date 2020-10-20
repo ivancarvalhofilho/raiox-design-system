@@ -52,6 +52,12 @@ const Colors = {
             medium: '#FFD980',
             light: '#FFFBF2'
         },
+        attention: {
+            darkest: '#B23F00',
+            dark: '#E65100',
+            medium: '#F28C55',
+            light: '#F2B391'
+        }
     }
 }
 
