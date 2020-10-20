@@ -76,7 +76,8 @@ var List = function List(props) {
     data: props.header,
     align: props.align
   }), /*#__PURE__*/_react["default"].createElement(ListData, {
-    style: props.styleData
+    style: props.styleData,
+    className: "custom-scrollbar"
   }, props.rows.map(function (row, index) {
     return /*#__PURE__*/_react["default"].createElement(Row, {
       key: index

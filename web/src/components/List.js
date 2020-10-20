@@ -27,7 +27,7 @@ const ListData = styled.div``
 const List = (props) => (
   <ListContainer style={props.style}>
     <ListHeader data={props.header} align={props.align} />
-    <ListData style={props.styleData}>
+    <ListData style={props.styleData} className="custom-scrollbar">
       {props.rows.map((row, index) => (
         <Row key={index}>
           {row.map((column, index) => (
