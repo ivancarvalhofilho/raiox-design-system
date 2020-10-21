@@ -6,8 +6,6 @@ import CalendarConst from './const'
 import fonts from '../../../../tokens/js/fonts'
 import styles from '../../../../tokens/js/styles'
 import Colors from '../../../../tokens/js/colors'
-import { TooltipText } from '../StyledComponents'
-import Tooltip from '@material-ui/core/Tooltip'
 
 var isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
 var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
@@ -45,13 +43,6 @@ const DayOfWeek = styled.div`
 `
 
 const Calendar = (props) => {
-  const [selectedDates, setSelectedDates] = useState({
-    state: CalendarConst.STATES.SELECTED,
-    firstClickDate: null,
-    startDate: '01/09/2020',
-    endDate: '01/22/2020',
-  })
-
   const [dates, setDates] = useState(null)
 
   function findDayWithSale(currentDay) {
@@ -63,30 +54,30 @@ const Calendar = (props) => {
 
   function currentDayIsSelected(currentDay) {
     const isSelectedDay =
-      (selectedDates.state === CalendarConst.STATES.SELECTED &&
-        dayjs(selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
-        !!selectedDates.endDate &&
-        dayjs(selectedDates.endDate).isSameOrAfter(currentDay, 'day')) ||
-      (selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
-        dayjs(selectedDates.startDate).isSame(currentDay, 'day')) ||
-      dayjs(selectedDates.endDate).isSame(currentDay, 'day')
+      (props.selectedDates.state === CalendarConst.STATES.SELECTED &&
+        dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+        !!props.selectedDates.endDate &&
+        dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')) ||
+      (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+        dayjs(props.selectedDates.startDate).isSame(currentDay, 'day')) ||
+      dayjs(props.selectedDates.endDate).isSame(currentDay, 'day')
     return isSelectedDay
   }
 
   function currentDayIsHovered(currentDay) {
     const isHoveredDay =
-      selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
-      dayjs(selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
-      !!selectedDates.endDate &&
-      dayjs(selectedDates.endDate).isSameOrAfter(currentDay, 'day')
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+      dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+      !!props.selectedDates.endDate &&
+      dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')
     return isHoveredDay
   }
 
   function currentDayIsBlocked(currentDay) {
-    const daysDiff = dayjs(selectedDates.firstClickDate).diff(currentDay, 'day')
+    const daysDiff = dayjs(props.selectedDates.firstClickDate).diff(currentDay, 'day')
     const isBlocked =
       props.maxDateRange &&
-      selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
       (daysDiff >= (props.maxDateRange - 1) || daysDiff <= -props.maxDateRange)
     return isBlocked
   }
@@ -99,25 +90,25 @@ const Calendar = (props) => {
   }
 
   function onDayClick(date) {
-    if (selectedDates.state === CalendarConst.STATES.SELECTED) {
-      setSelectedDates({
+    if (props.selectedDates.state === CalendarConst.STATES.SELECTED) {
+      props.setSelectedDates({
         startDate: date,
         endDate: date,
         firstClickDate: date,
         state: CalendarConst.STATES.IN_SELECTION,
       })
-    } else if (selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
-      if (dayjs(selectedDates.firstClickDate).isAfter(dayjs(date), 'day')) {
-        setSelectedDates({
-          ...selectedDates,
+    } else if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
+      if (dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')) {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: date,
-          endDate: selectedDates.firstClickDate,
+          endDate: props.selectedDates.firstClickDate,
           state: CalendarConst.STATES.SELECTED,
         })
       } else {
-        setSelectedDates({
-          ...selectedDates,
-          startDate: selectedDates.firstClickDate,
+        props.setSelectedDates({
+          ...props.selectedDates,
+          startDate: props.selectedDates.firstClickDate,
           endDate: date,
           state: CalendarConst.STATES.SELECTED,
         })
@@ -126,20 +117,20 @@ const Calendar = (props) => {
   }
 
   function onDayHover(date) {
-    if (selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
-      if (dayjs(selectedDates.firstClickDate).isSameOrAfter(dayjs(date), 'day')) {
-        setSelectedDates({
-          ...selectedDates,
+    if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
+      if (dayjs(props.selectedDates.firstClickDate).isSameOrAfter(dayjs(date), 'day')) {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: date,
-          endDate: selectedDates.firstClickDate,
+          endDate: props.selectedDates.firstClickDate,
           state: CalendarConst.STATES.IN_SELECTION,
         })
       } else if (
-        dayjs(selectedDates.firstClickDate).isSameOrBefore(dayjs(date), 'day')
+        dayjs(props.selectedDates.firstClickDate).isSameOrBefore(dayjs(date), 'day')
       ) {
-        setSelectedDates({
-          ...selectedDates,
-          startDate: selectedDates.firstClickDate,
+        props.setSelectedDates({
+          ...props.selectedDates,
+          startDate: props.selectedDates.firstClickDate,
           endDate: date,
           state: CalendarConst.STATES.IN_SELECTION,
         })
@@ -212,7 +203,7 @@ const Calendar = (props) => {
 
       setDates(totalDays)
     }
-  }, [props.month, selectedDates])
+  }, [props.month, props.selectedDates])
 
   return (
     <CalendarContainer>
@@ -228,6 +219,7 @@ const Calendar = (props) => {
               key={date.fullDate}
               date={date}
               daySales={date.sales}
+              maxDateRange={props.maxDateRange}
               onDayClick={() => onDayClick(date.fullDate)}
               onDayHover={() => onDayHover(date.fullDate)}
             />

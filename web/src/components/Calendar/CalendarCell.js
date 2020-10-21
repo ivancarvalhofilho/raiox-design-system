@@ -63,9 +63,9 @@ const SalesStatusDot = styled.span`
 const CalendarCell = (props) => (
   <Tooltip
     key={`${props.date.fullDate}tooltip`}
-    title={<TooltipText>no puede filtrar más que ysto</TooltipText>}
+    title={<TooltipText>{`Não é possível selecionar um período maior que ${props.maxDateRange} dias`}</TooltipText>}
     disableHoverListener={
-      !(props.date.isBlockedSelection && props.date.currentMonth)
+      !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange)
     }
     arrow
   >
