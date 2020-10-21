@@ -114,7 +114,7 @@ const Column = styled.div`
     props.rows.reduce(
       (x, y, index) =>
         `${x} ${`${
-          (props.size || 55) +
+          (props.size || 48) +
           (index === props.indexRowOpened && props.indexRowOpened != null
             ? props.childrenHeight
             : 0)
@@ -130,7 +130,7 @@ const Row = styled.div`
   border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
   background-color: ${(props) => props.color || 'white'};
   padding: 5px;
-  max-height: 55px;
+  max-height: 48px;
   padding-left: ${(props) => props.first && '10%'};
   padding-right: ${(props) => props.last && '10%'};
 `
@@ -198,7 +198,7 @@ function Table(props) {
             color={hasColor}
           >
             {colsOptional.map((key, indexCol) => (
-              <Column key={indexCol} rows={[0]} size={32}>
+              <Column key={indexCol} rows={[0]} size={28}>
                 <Row
                   first={indexCol === 0}
                   last={indexCol === cols.length}
@@ -236,7 +236,7 @@ function Table(props) {
           width={content.current && `${content.current.clientWidth + 13}px`}
         >
           {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
-            <Column key={indexCol} rows={[0]} size={32}>
+            <Column key={indexCol} rows={[0]} size={28}>
               <Row
                 first={indexCol === 0}
                 last={indexCol === cols.length}
@@ -260,7 +260,7 @@ function Table(props) {
                           ? theme.icons['arrow-horizontal']
                           : props.order === 'ASC'
                           ? theme.icons['arrow-down']
-                          : theme.icons['arrow-top']
+                          : theme.icons['arrow-up']
                       }
                     />
                   )}
@@ -442,7 +442,7 @@ function Table(props) {
                                   e.stopPropagation()
                                 }}
                                 ref={refChildren}
-                                top={`${(props.indexRowOpened + 1) * 55}px`}
+                                top={`${(props.indexRowOpened + 1) * 48}px`}
                               >
                                 {props.children}
                               </Children>

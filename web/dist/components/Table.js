@@ -70,7 +70,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 55px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -211,7 +211,7 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
 
 var Column = _styledComponents["default"].div(_templateObject7(), function (props) {
   return props.rows.reduce(function (x, y, index) {
-    return "".concat(x, " ", "".concat((props.size || 55) + (index === props.indexRowOpened && props.indexRowOpened != null ? props.childrenHeight : 0), "px"));
+    return "".concat(x, " ", "".concat((props.size || 48) + (index === props.indexRowOpened && props.indexRowOpened != null ? props.childrenHeight : 0), "px"));
   }, '');
 });
 
@@ -289,7 +289,7 @@ function Table(props) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       key: indexCol,
       rows: [0],
-      size: 32
+      size: 28
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
       last: indexCol === cols.length,
@@ -314,7 +314,7 @@ function Table(props) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       key: indexCol,
       rows: [0],
-      size: 32
+      size: 28
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
       last: indexCol === cols.length,
@@ -333,7 +333,7 @@ function Table(props) {
       },
       appearance: "dark",
       size: "10px",
-      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-top']
+      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     optional: true,
@@ -451,7 +451,7 @@ function Table(props) {
           e.stopPropagation();
         },
         ref: refChildren,
-        top: "".concat((props.indexRowOpened + 1) * 55, "px")
+        top: "".concat((props.indexRowOpened + 1) * 48, "px")
       }, props.children)));
     }));
   }), /*#__PURE__*/_react["default"].createElement("div", {
