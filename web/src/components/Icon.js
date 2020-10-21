@@ -6,6 +6,8 @@ import styled from 'styled-components'
 
 const IconContainer = styled.span`
   cursor: ${(props) => props.onClick && 'pointer'};
+
+  -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
 `
 const Icon = (props) => {
   function getIconSvgColor(props) {
@@ -46,7 +48,7 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer onClick={props.onClick}>
+    <IconContainer onClick={props.onClick} spin={props.spin}>
       <SVGInline
         style={{ ...props.style, display: 'flex' }}
         svg={props.path ? props.path : theme.icons[props.name]}

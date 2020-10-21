@@ -122,7 +122,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -142,7 +142,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  bottom: 0;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  left: 0;\n  display: flex;\n  justify-content: center;\n  background-image: linear-gradient(to bottom, transparent, white);\n\n  > p {\n    color: ", ";\n    margin: 0;\n  }\n\n  > svg {\n    margin-top: 10px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", "%;\n  justify-content: center;\n  flex-direction: column;\n  height: 60px;\n  align-items: center;\n  background-image: linear-gradient(to bottom, transparent, white);\n\n  > p {\n    color: ", ";\n    margin: 0;\n  }\n\n  > svg {\n    margin-top: 10px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -155,6 +155,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 // import styled from 'styled-components';
 var LoaderContainer = _styledComponents["default"].div(_templateObject(), function (props) {
+  return (props.cols - 1) * '100';
+}, function (props) {
   return props.theme.colors.neutral.dark.base;
 });
 
@@ -403,7 +405,13 @@ function Table(props) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
       }
     },
-    loader: /*#__PURE__*/_react["default"].createElement(LoaderContainer, null, /*#__PURE__*/_react["default"].createElement("p", null, "Carregando"), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    loader: /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
+      cols: props.complete ? cols.length : colsOriginal.length
+    }, /*#__PURE__*/_react["default"].createElement("p", {
+      style: {
+        paddingBottom: '10px'
+      }
+    }, "Carregando"), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       className: "rotating",
       path: _icons["default"].loading,
       size: "16px",

@@ -16,14 +16,12 @@ import icons from '../../../tokens/js/icons'
 // import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  left: 0;
   display: flex;
+  width: ${(props) => (props.cols - 1) * '100'}%;
   justify-content: center;
+  flex-direction: column;
+  height: 60px;
+  align-items: center;
   background-image: linear-gradient(to bottom, transparent, white);
 
   > p {
@@ -52,6 +50,7 @@ const Container = styled.div`
 `
 const ContainerInfinite = styled(InfiniteScroll)`
   display: grid;
+  position: relative;
   margin-right: ${(props) => props.optional && '-12px'};
   overflow: auto;
   font-size: 14px;
@@ -364,8 +363,10 @@ function Table(props) {
                   }
                 }}
                 loader={
-                  <LoaderContainer>
-                    <p>Carregando</p>
+                  <LoaderContainer
+                    cols={props.complete ? cols.length : colsOriginal.length}
+                  >
+                    <p style={{ paddingBottom: '10px' }}>Carregando</p>
                     <Icon
                       className="rotating"
                       path={icons.loading}

@@ -24,7 +24,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  cursor: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  cursor: ", ";\n\n  -webkit-animation: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -37,6 +37,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var IconContainer = _styledComponents["default"].span(_templateObject(), function (props) {
   return props.onClick && 'pointer';
+}, function (props) {
+  return props.spin && 'spin 2s infinite linear';
 });
 
 var Icon = function Icon(props) {
@@ -86,7 +88,8 @@ var Icon = function Icon(props) {
   }
 
   return /*#__PURE__*/_react["default"].createElement(IconContainer, {
-    onClick: props.onClick
+    onClick: props.onClick,
+    spin: props.spin
   }, /*#__PURE__*/_react["default"].createElement(_reactSvgInline["default"], {
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'
