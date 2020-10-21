@@ -17,7 +17,7 @@ import icons from '../../../tokens/js/icons'
 
 const LoaderContainer = styled.div`
   display: flex;
-  width: ${(props) => (props.cols - 1) * '100'}%;
+  width: ${(props) => props.cols * '100'}%;
   justify-content: center;
   flex-direction: column;
   height: 60px;
@@ -138,11 +138,13 @@ const Row = styled.div`
 
 const Value = styled.div`
   white-space: nowrap;
+  display: flex;
   margin: auto 0;
   min-width: 100px;
+  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
-  text-align: ${(props) => props.justify || 'center'};
+  justify-content: ${(props) => props.justify || 'center'};
 `
 const Children = styled.div`
   position: absolute;
@@ -153,7 +155,7 @@ const Children = styled.div`
   top: ${(props) => props.top};
 `
 const Collapse = styled.div`
-  padding-left: 20px;
+  padding: 20px;
   cursor: pointer;
 `
 
@@ -230,11 +232,7 @@ function Table(props) {
         )}
         <ContainerHeader
           color={hasColor}
-          paddingScroll={
-            scrollableDiv.current &&
-            scrollableDiv.current.firstChild.firstChild.firstChild
-              .scrollHeight > scrollableDiv.current.clientHeight
-          }
+          paddingScroll={hasColor}
           cols={props.complete ? cols : colsOriginalWithoutColor}
           width={content.current && `${content.current.clientWidth + 13}px`}
         >
@@ -364,7 +362,11 @@ function Table(props) {
                 }}
                 loader={
                   <LoaderContainer
-                    cols={props.complete ? cols.length : colsOriginal.length}
+                    cols={
+                      props.complete
+                        ? cols.length
+                        : colsOriginalWithoutColor.length
+                    }
                   >
                     <p style={{ paddingBottom: '10px' }}>Carregando</p>
                     <Icon

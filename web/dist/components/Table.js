@@ -42,7 +42,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  padding-left: 20px;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n  cursor: pointer;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -62,7 +62,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  margin: auto 0;\n  min-width: 100px;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  text-align: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  min-width: 100px;\n  width: 100%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  justify-content: ", ";\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -155,7 +155,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 // import styled from 'styled-components';
 var LoaderContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return (props.cols - 1) * '100';
+  return props.cols * '100';
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 });
@@ -310,7 +310,7 @@ function Table(props) {
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     color: hasColor,
-    paddingScroll: scrollableDiv.current && scrollableDiv.current.firstChild.firstChild.firstChild.scrollHeight > scrollableDiv.current.clientHeight,
+    paddingScroll: hasColor,
     cols: props.complete ? cols : colsOriginalWithoutColor,
     width: content.current && "".concat(content.current.clientWidth + 13, "px")
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
@@ -406,7 +406,7 @@ function Table(props) {
       }
     },
     loader: /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
-      cols: props.complete ? cols.length : colsOriginal.length
+      cols: props.complete ? cols.length : colsOriginalWithoutColor.length
     }, /*#__PURE__*/_react["default"].createElement("p", {
       style: {
         paddingBottom: '10px'
