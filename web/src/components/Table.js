@@ -12,6 +12,7 @@ import { mdiReload } from '@mdi/js'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../../tokens/js'
 import Icon from './Icon'
+import icons from '../../../tokens/js/icons'
 // import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
@@ -51,7 +52,6 @@ const Container = styled.div`
 `
 const ContainerInfinite = styled(InfiniteScroll)`
   display: grid;
-  position: relative;
   margin-right: ${(props) => props.optional && '-12px'};
   overflow: auto;
   font-size: 14px;
@@ -368,10 +368,10 @@ function Table(props) {
                     <p>Carregando</p>
                     <Icon
                       className="rotating"
-                      path={mdiReload}
-                      size={1}
+                      path={icons.loading}
+                      size="16px"
                       spin
-                      color={theme.colors.neutral.light['02']}
+                      appearance={theme.colors.neutral.light['02']}
                     />
                   </LoaderContainer>
                 }

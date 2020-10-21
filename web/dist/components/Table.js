@@ -21,6 +21,8 @@ var _js2 = _interopRequireDefault(require("../../../tokens/js"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
+var _icons = _interopRequireDefault(require("../../../tokens/js/icons"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -120,7 +122,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -403,10 +405,10 @@ function Table(props) {
     },
     loader: /*#__PURE__*/_react["default"].createElement(LoaderContainer, null, /*#__PURE__*/_react["default"].createElement("p", null, "Carregando"), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       className: "rotating",
-      path: _js.mdiReload,
-      size: 1,
+      path: _icons["default"].loading,
+      size: "16px",
       spin: true,
-      color: _js2["default"].colors.neutral.light['02']
+      appearance: _js2["default"].colors.neutral.light['02']
     }))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
