@@ -3,11 +3,21 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Container = exports.Divider = exports.Title = exports.Card = exports.TextRow = void 0;
+exports.Container = exports.Divider = exports.Title = exports.Card = exports.TextRow = exports.TooltipText = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 12px;\n  color: #ffffff;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n  padding: 16px;\n  background: white;\n  border-radius: ", ";\n  box-shadow: ", ";\n"]);
@@ -106,3 +116,7 @@ var Container = _styledComponents["default"].div(_templateObject5(), function (p
 });
 
 exports.Container = Container;
+
+var TooltipText = _styledComponents["default"].span(_templateObject6());
+
+exports.TooltipText = TooltipText;
