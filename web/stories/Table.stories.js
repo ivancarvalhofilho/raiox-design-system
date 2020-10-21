@@ -28,9 +28,6 @@ export const Default = Template.bind({})
 
 Default.args = {
   data: {
-    colors: {
-      values: ['#B1DE8F', 'blue'],
-    },
     data: {
       title: 'Data',
       values: [

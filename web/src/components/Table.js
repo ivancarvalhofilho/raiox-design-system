@@ -231,7 +231,7 @@ function Table(props) {
         )}
         <ContainerHeader
           color={hasColor}
-          paddingScroll={hasColor}
+          paddingScroll
           cols={props.complete ? cols : colsOriginalWithoutColor}
           width={content.current && `${content.current.clientWidth + 13}px`}
         >
