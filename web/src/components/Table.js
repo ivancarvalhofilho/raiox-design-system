@@ -127,7 +127,6 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
-  max-height: 45px;
   cursor: ${(props) => props.onClick && 'pointer'};
   border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
   background-color: ${(props) => props.color || 'white'};
@@ -155,7 +154,7 @@ const Children = styled.div`
   top: ${(props) => props.top};
 `
 const Collapse = styled.div`
-  padding: 20px;
+  padding: 0 20px;
   cursor: pointer;
 `
 
