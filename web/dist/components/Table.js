@@ -405,8 +405,12 @@ function Table(props) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
       }
     },
-    loader: /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
-      cols: props.complete ? cols.length : colsOriginalWithoutColor.length
+    loader: /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        position: 'relative'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
+      cols: props.complete ? cols.length : colsOriginal.length - (hasColor ? 1 : 2)
     }, /*#__PURE__*/_react["default"].createElement("p", {
       style: {
         paddingBottom: '10px'
@@ -417,7 +421,7 @@ function Table(props) {
       size: "16px",
       spin: true,
       appearance: _js2["default"].colors.neutral.light['02']
-    }))
+    })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       childrenHeight: childrenSize,
@@ -454,12 +458,8 @@ function Table(props) {
       }, props.children)));
     }));
   }), /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      position: 'relative'
-    }
-  }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "scrollableDiv"
-  })))))));
+  }))))));
 }
 
 Table.propTypes = {

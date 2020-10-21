@@ -361,22 +361,24 @@ function Table(props) {
                   }
                 }}
                 loader={
-                  <LoaderContainer
-                    cols={
-                      props.complete
-                        ? cols.length
-                        : colsOriginalWithoutColor.length
-                    }
-                  >
-                    <p style={{ paddingBottom: '10px' }}>Carregando</p>
-                    <Icon
-                      className="rotating"
-                      path={icons.loading}
-                      size="16px"
-                      spin
-                      appearance={theme.colors.neutral.light['02']}
-                    />
-                  </LoaderContainer>
+                  <div style={{ position: 'relative' }}>
+                    <LoaderContainer
+                      cols={
+                        props.complete
+                          ? cols.length
+                          : colsOriginal.length - (hasColor ? 1 : 2)
+                      }
+                    >
+                      <p style={{ paddingBottom: '10px' }}>Carregando</p>
+                      <Icon
+                        className="rotating"
+                        path={icons.loading}
+                        size="16px"
+                        spin
+                        appearance={theme.colors.neutral.light['02']}
+                      />
+                    </LoaderContainer>
+                  </div>
                 }
               >
                 {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
@@ -451,9 +453,7 @@ function Table(props) {
                     ))}
                   </Column>
                 ))}
-                <div style={{ position: 'relative' }}>
-                  <div id="scrollableDiv" />
-                </div>
+                <div id="scrollableDiv" />
               </ContainerInfinite>
             </div>
           </DisplayGrid>
