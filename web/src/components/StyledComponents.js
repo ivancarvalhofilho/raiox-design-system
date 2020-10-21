@@ -41,4 +41,10 @@ const Container = styled.div`
   border-radius: ${(props) => props.theme.styles.border.radius.sm};
   box-shadow: ${(props) => props.theme.styles.shadow.level1};
 `
+
+export const TooltipText = styled.span`
+  font-size: 12px;
+  color: #ffffff;
+`
+
 export { TextRow, Card, Title, Divider, Container }
