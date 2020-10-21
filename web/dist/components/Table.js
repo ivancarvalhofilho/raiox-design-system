@@ -307,7 +307,7 @@ function Table(props) {
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     color: hasColor,
-    paddingScroll: hasColor,
+    paddingScroll: true,
     cols: props.complete ? cols : colsOriginalWithoutColor,
     width: content.current && "".concat(content.current.clientWidth + 13, "px")
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
