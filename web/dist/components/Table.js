@@ -72,7 +72,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 45px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
