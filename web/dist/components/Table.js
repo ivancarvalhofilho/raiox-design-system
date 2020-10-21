@@ -13,11 +13,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _js = require("@mdi/js");
-
 var _reactInfiniteScrollComponent = _interopRequireDefault(require("react-infinite-scroll-component"));
 
-var _js2 = _interopRequireDefault(require("../../../tokens/js"));
+var _js = _interopRequireDefault(require("../../../tokens/js"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
@@ -142,7 +140,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", "%;\n  justify-content: center;\n  flex-direction: column;\n  height: 60px;\n  align-items: center;\n  background-image: linear-gradient(to bottom, transparent, white);\n\n  > p {\n    color: ", ";\n    margin: 0;\n  }\n\n  > svg {\n    margin-top: 10px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", "%;\n  justify-content: center;\n  flex-direction: column;\n  min-width: fit-content;\n  height: 60px;\n  align-items: center;\n  background-image: linear-gradient(to bottom, transparent, white);\n\n  > p {\n    color: ", ";\n    margin: 0;\n  }\n\n  > svg {\n    margin-top: 10px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -153,7 +151,6 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-// import styled from 'styled-components';
 var LoaderContainer = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.cols * '100';
 }, function (props) {
@@ -301,12 +298,12 @@ function Table(props) {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
       border: true,
-      color: _js2["default"].colors.neutral.light['02'],
+      color: _js["default"].colors.neutral.light['02'],
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, {
       justify: props.data[key].justify
     }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      path: props.orderBy !== key ? _js2["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js2["default"].icons['arrow-down'] : _js2["default"].icons['arrow-up']
+      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     color: hasColor,
@@ -326,7 +323,7 @@ function Table(props) {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
       border: true,
-      color: _js2["default"].colors.neutral.light['02'],
+      color: _js["default"].colors.neutral.light['02'],
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, {
       justify: props.data[key].justify
@@ -336,7 +333,7 @@ function Table(props) {
       },
       appearance: "dark",
       size: "10px",
-      path: props.orderBy !== key ? _js2["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js2["default"].icons['arrow-down'] : _js2["default"].icons['arrow-top']
+      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-top']
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     optional: true,
@@ -420,7 +417,7 @@ function Table(props) {
       path: _icons["default"].loading,
       size: "16px",
       spin: true,
-      appearance: _js2["default"].colors.neutral.light['02']
+      appearance: _js["default"].colors.neutral.light['02']
     })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {

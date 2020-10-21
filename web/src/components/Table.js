@@ -7,19 +7,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { mdiReload } from '@mdi/js'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../../tokens/js'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
-// import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
   display: flex;
   width: ${(props) => props.cols * '100'}%;
   justify-content: center;
   flex-direction: column;
+  min-width: fit-content;
   height: 60px;
   align-items: center;
   background-image: linear-gradient(to bottom, transparent, white);
