@@ -60,7 +60,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  min-width: 100px;\n  width: 100%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  justify-content: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -70,7 +70,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -216,6 +216,8 @@ var Column = _styledComponents["default"].div(_templateObject7(), function (prop
 });
 
 var Row = _styledComponents["default"].div(_templateObject8(), function (props) {
+  return props.justify === 'right' ? 'flex-end' : props.justify === 'left' && 'flex-start' || 'center';
+}, function (props) {
   return props.onClick && 'pointer';
 }, function (props) {
   return props.border && '1px solid #e7e7e7';
@@ -227,9 +229,7 @@ var Row = _styledComponents["default"].div(_templateObject8(), function (props) 
   return props.last && '10%';
 });
 
-var Value = _styledComponents["default"].div(_templateObject9(), function (props) {
-  return props.justify || 'center';
-});
+var Value = _styledComponents["default"].div(_templateObject9());
 
 var Children = _styledComponents["default"].div(_templateObject10(), function (props) {
   return props.color;
@@ -294,15 +294,14 @@ function Table(props) {
       first: indexCol === 0,
       last: indexCol === cols.length,
       key: indexCol,
+      justify: props.data[key].justify,
       onClick: function onClick() {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
       border: true,
       color: _js["default"].colors.neutral.light['02'],
       title: props.data[key].title
-    }, /*#__PURE__*/_react["default"].createElement(Value, {
-      justify: props.data[key].justify
-    }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
@@ -317,6 +316,7 @@ function Table(props) {
       size: 28
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
+      justify: props.data[key].justify,
       last: indexCol === cols.length,
       key: indexCol,
       onClick: function onClick() {
@@ -325,9 +325,7 @@ function Table(props) {
       border: true,
       color: _js["default"].colors.neutral.light['02'],
       title: props.data[key].title
-    }, /*#__PURE__*/_react["default"].createElement(Value, {
-      justify: props.data[key].justify
-    }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       style: {
         padding: '5px'
       },
@@ -361,12 +359,11 @@ function Table(props) {
     }, props.data[key].values.map(function (value, indexRow) {
       return /*#__PURE__*/_react["default"].createElement(Row, {
         key: indexRow,
+        justify: props.data[key].justify,
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
-      }, /*#__PURE__*/_react["default"].createElement(Value, {
-        justify: props.data[key].justify
-      }, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
+      }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
       }), props.dispatch, props.subdata && props.subdata[indexRow]) : value));
     }));
@@ -429,13 +426,12 @@ function Table(props) {
       return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Row, {
         children: props.indexRowOpened === indexRow,
         key: indexRow,
+        justify: props.data[key].justify,
         color: indexCol === 0 && props.data.colors && props.data.colors.values[indexRow],
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
-      }, /*#__PURE__*/_react["default"].createElement(Value, {
-        justify: props.data[key].justify
-      }, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
+      }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
       }), props.dispatch, props.subdata && props.subdata[indexRow]) : value), indexCol === colsOriginalWithoutColor.length && hasColor && /*#__PURE__*/_react["default"].createElement(Collapse, {
         onClick: function onClick() {

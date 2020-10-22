@@ -126,6 +126,10 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
+  justify-content: ${(props) =>
+    props.justify === 'right'
+      ? 'flex-end'
+      : (props.justify === 'left' && 'flex-start') || 'center'};
   cursor: ${(props) => props.onClick && 'pointer'};
   border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
   background-color: ${(props) => props.color || 'white'};
@@ -139,11 +143,8 @@ const Value = styled.div`
   white-space: nowrap;
   display: flex;
   margin: auto 0;
-  min-width: 100px;
-  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
-  justify-content: ${(props) => props.justify || 'center'};
 `
 const Children = styled.div`
   position: absolute;
@@ -203,6 +204,7 @@ function Table(props) {
                   first={indexCol === 0}
                   last={indexCol === cols.length}
                   key={indexCol}
+                  justify={props.data[key].justify}
                   onClick={() => {
                     props.data[key].ordenable && props.onClickToOrder(key)
                   }}
@@ -210,7 +212,7 @@ function Table(props) {
                   color={theme.colors.neutral.light['02']}
                   title={props.data[key].title}
                 >
-                  <Value justify={props.data[key].justify}>
+                  <Value>
                     {props.data[key].title}
                     {props.data[key].ordenable && (
                       <Icon
@@ -239,6 +241,7 @@ function Table(props) {
             <Column key={indexCol} rows={[0]} size={28}>
               <Row
                 first={indexCol === 0}
+                justify={props.data[key].justify}
                 last={indexCol === cols.length}
                 key={indexCol}
                 onClick={() => {
@@ -248,7 +251,7 @@ function Table(props) {
                 color={theme.colors.neutral.light['02']}
                 title={props.data[key].title}
               >
-                <Value justify={props.data[key].justify}>
+                <Value>
                   {props.data[key].title}
                   {props.data[key].ordenable && (
                     <Icon
@@ -304,11 +307,12 @@ function Table(props) {
                     {props.data[key].values.map((value, indexRow) => (
                       <Row
                         key={indexRow}
+                        justify={props.data[key].justify}
                         border={indexRow !== props.data[key].values.length - 1}
                         first={indexCol === 0}
                         last={indexCol === cols.length}
                       >
-                        <Value justify={props.data[key].justify}>
+                        <Value>
                           {props.data[key].template
                             ? props.data[key].template(
                                 value,
@@ -392,6 +396,7 @@ function Table(props) {
                         <Row
                           children={props.indexRowOpened === indexRow}
                           key={indexRow}
+                          justify={props.data[key].justify}
                           color={
                             indexCol === 0 &&
                             props.data.colors &&
@@ -403,7 +408,7 @@ function Table(props) {
                           first={indexCol === 0}
                           last={indexCol === cols.length}
                         >
-                          <Value justify={props.data[key].justify}>
+                          <Value>
                             {props.data[key].template
                               ? props.data[key].template(
                                   value,
