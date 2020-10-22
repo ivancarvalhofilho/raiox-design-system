@@ -52,7 +52,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 48px 103px 103px 103px 103px 103px 103px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -62,7 +62,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 48px 103px 103px 103px 103px 103px 103px;\n\n  & > *:nth-child(7n-6) {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n  height: 100%;\n  grid-auto-rows: 1fr;\n  & > *:nth-child(7n-6) {\n    background: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -72,7 +72,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-flow: column;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-flow: column;\n  height: inherit;\n"]);
 
   _templateObject = function _templateObject() {
     return data;

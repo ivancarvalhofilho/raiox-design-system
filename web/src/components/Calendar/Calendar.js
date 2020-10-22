@@ -12,12 +12,14 @@ dayjs.extend(isSameOrAfter)
 const CalendarContainer = styled.div`
   display: flex;
   flex-flow: column;
+  height: inherit;
 `
 
 const CalendarGrid = styled.div`
   display: grid;
-  grid-template-columns: 48px 103px 103px 103px 103px 103px 103px;
-
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  grid-auto-rows: 1fr;
   & > *:nth-child(7n-6) {
     background: ${props => props.theme.colors.neutral.light['02']};
   }
@@ -25,7 +27,7 @@ const CalendarGrid = styled.div`
 
 const CalendarGridHeader = styled.div`
   display: grid;
-  grid-template-columns: 48px 103px 103px 103px 103px 103px 103px;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
 `
 
 const DayOfWeek = styled.div`

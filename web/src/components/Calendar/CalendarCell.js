@@ -7,7 +7,6 @@ import { TooltipText } from '../StyledComponents'
 import fontStyleMaker from "../../utils/FontUtil";
 
 const CalendarCellContainer = styled.div`
-  height: ${CalendarConst.CELL_HEIGHT};
   border-radius: 0px;
   display: flex;
   flex-flow: column;

@@ -62,7 +62,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  height: ", ";\n  border-radius: 0px;\n  display: flex;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: flex-end;\n  border: 1px solid\n    ", ";\n  background: ", ";\n  cursor: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  border-radius: 0px;\n  display: flex;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: flex-end;\n  border: 1px solid\n    ", ";\n  background: ", ";\n  cursor: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73,7 +73,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), _const["default"].CELL_HEIGHT, function (props) {
+var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.isSelected ? _colors["default"].brand.primary.darkest : _colors["default"].neutral.dark['03'];
 }, function (props) {
   return props.isHolyday && "".concat(_colors["default"].neutral.light['02'], " !important") || (props.isSelected || props.isHovered) && "".concat(_colors["default"].brand.primary.light, " !important");
