@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Calendar = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -251,4 +251,5 @@ var Calendar = function Calendar(props) {
   })));
 };
 
-exports.Calendar = Calendar;
+var _default = Calendar;
+exports["default"] = _default;

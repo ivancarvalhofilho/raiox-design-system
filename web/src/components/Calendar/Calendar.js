@@ -229,4 +229,4 @@ const Calendar = (props) => {
   )
 }
 
-export { Calendar }
+export default Calendar
