@@ -17,12 +17,6 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _const = _interopRequireDefault(require("./const"));
 
-var _fonts = _interopRequireDefault(require("../../../../tokens/js/fonts"));
-
-var _styles = _interopRequireDefault(require("../../../../tokens/js/styles"));
-
-var _colors = _interopRequireDefault(require("../../../../tokens/js/colors"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -99,11 +93,21 @@ _dayjs["default"].extend(isSameOrAfter);
 
 var CalendarContainer = _styledComponents["default"].div(_templateObject());
 
-var CalendarGrid = _styledComponents["default"].div(_templateObject2(), _colors["default"].neutral.light['02']);
+var CalendarGrid = _styledComponents["default"].div(_templateObject2(), function (props) {
+  return props.theme.colors.neutral.light['02'];
+});
 
 var CalendarGridHeader = _styledComponents["default"].div(_templateObject3());
 
-var DayOfWeek = _styledComponents["default"].div(_templateObject4(), _fonts["default"].weight.medium, _fonts["default"].fontSize.xxs, _fonts["default"].family.body, _styles["default"].spacing.stack.quarck);
+var DayOfWeek = _styledComponents["default"].div(_templateObject4(), function (props) {
+  return props.theme.fonts.weight.medium;
+}, function (props) {
+  return props.theme.fonts.fontSize.xxs;
+}, function (props) {
+  return props.theme.fonts.family.body;
+}, function (props) {
+  return props.theme.styles.spacing.stack.quarck;
+});
 
 var Calendar = function Calendar(props) {
   var _useState = (0, _react.useState)(null),

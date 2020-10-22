@@ -3,9 +3,6 @@ import { CalendarCell } from './CalendarCell'
 import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
-import fonts from '../../../../tokens/js/fonts'
-import styles from '../../../../tokens/js/styles'
-import Colors from '../../../../tokens/js/colors'
 
 var isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
 var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
@@ -22,7 +19,7 @@ const CalendarGrid = styled.div`
   grid-template-columns: 48px 103px 103px 103px 103px 103px 103px;
 
   & > *:nth-child(7n-6) {
-    background: ${Colors.neutral.light['02']};
+    background: ${props => props.theme.colors.neutral.light['02']};
   }
 `
 
@@ -35,11 +32,11 @@ const DayOfWeek = styled.div`
   display: flex;
   justify-content: center;
 
-  font-weight: ${fonts.weight.medium};
-  font-size: ${fonts.fontSize.xxs};
-  font-family: ${fonts.family.body};
+  font-weight: ${props => props.theme.fonts.weight.medium};
+  font-size: ${props => props.theme.fonts.fontSize.xxs};
+  font-family: ${props => props.theme.fonts.family.body};
 
-  margin-bottom: ${styles.spacing.stack.quarck};
+  margin-bottom: ${props => props.theme.styles.spacing.stack.quarck};
 `
 
 const Calendar = (props) => {

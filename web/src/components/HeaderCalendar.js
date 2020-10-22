@@ -12,11 +12,7 @@ const Month = styled.div`
 const Date = styled.div`
   margin-left: 11px;
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'md', [
-      'neutral',
-      'dark',
-      'base',
-    ])}
+    fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')}
 `
 const Container = styled.div`
   border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
@@ -34,29 +30,17 @@ const Values = styled.div`
 `
 const Label = styled.div`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'sm', [
-      'neutral',
-      'dark',
-      'base',
-    ])};
+    fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
   color: ${(props) => props.color};
 `
 const Value = styled.div`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'light', 'lg', [
-      'neutral',
-      'dark',
-      'base',
-    ])};
+    fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')};
   margin-right: ${(props) => props.notLast && '24px'};
 `
 const MoneySign = styled.div`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'sm', [
-      'neutral',
-      'dark',
-      'base',
-    ])};
+    fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
   padding: 0 4px 0 8px;
 `
 const HeaderCalendar = (props) => (

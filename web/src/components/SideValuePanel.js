@@ -6,11 +6,7 @@ import Icon from './Icon'
 
 const Title = styled.div`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'xs', [
-      'neutral',
-      'dark',
-      '01',
-    ])};
+    fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.01')};
   margin-bottom: 8px;
 `
 
@@ -24,11 +20,7 @@ const Item = styled.div`
 `
 const Value = styled.span`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'light', 'lg', [
-      'neutral',
-      'dark',
-      'base',
-    ])}
+    fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')}
   color: ${(props) =>
     props.positive === true
       ? props.theme.colors.feedback.success.dark
@@ -36,11 +28,7 @@ const Value = styled.span`
 `
 const DollarSign = styled.span`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'sm', [
-      'neutral',
-      'dark',
-      'base',
-    ])}
+    fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')}
   color: ${(props) =>
     props.positive === true
       ? props.theme.colors.feedback.success.dark
@@ -48,11 +36,7 @@ const DollarSign = styled.span`
 `
 const Subtitle = styled(TextRow)`
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'sm', [
-      'neutral',
-      'dark',
-      'base',
-    ])};
+    fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
   margin-top: 8px;
   display: flex;
   align-items: center;

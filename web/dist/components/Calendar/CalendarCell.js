@@ -13,13 +13,11 @@ var _colors = _interopRequireDefault(require("../../../../tokens/js/colors"));
 
 var _const = _interopRequireDefault(require("./const"));
 
-var _fonts = _interopRequireDefault(require("../../../../tokens/js/fonts"));
-
-var _styles = _interopRequireDefault(require("../../../../tokens/js/styles"));
-
 var _core = require("@material-ui/core");
 
 var _StyledComponents = require("../StyledComponents");
+
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -54,7 +52,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  font-size: ", ";\n  font-weight: ", ";\n  margin: ", ";\n  font-family: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin: ", ";\n  color: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -83,19 +81,35 @@ var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), 
   return props.isBlockedSelection && 'not-allowed' || props.currentMonth && 'pointer';
 });
 
-var DayNumber = _styledComponents["default"].span(_templateObject2(), _fonts["default"].fontSize.xs, function (props) {
-  return props.isSelected && _fonts["default"].weight.medium || _fonts["default"].weight.regular;
-}, _styles["default"].spacing.inset.nano, _fonts["default"].family.body, function (props) {
+var DayNumber = _styledComponents["default"].span(_templateObject2(), function (props) {
+  return (0, _FontUtil["default"])(props.theme, 'body', props.isSelected && 'medium' || 'regular', 'xs', 'neutral.dark.02');
+}, function (props) {
+  return props.theme.styles.spacing.inset.nano;
+}, function (props) {
   return props.isBlockedSelection && _colors["default"].neutral.dark['02'] || props.isSelected && _colors["default"].brand.primary.darkest;
 });
 
-var DaySales = _styledComponents["default"].span(_templateObject3(), _styles["default"].spacing.inset.nano, _fonts["default"].family.body);
+var DaySales = _styledComponents["default"].span(_templateObject3(), function (props) {
+  return props.theme.styles.spacing.inset.nano;
+}, function (props) {
+  return props.theme.fonts.family.body;
+});
 
-var SalesValue = _styledComponents["default"].span(_templateObject4(), _fonts["default"].fontSize.xs, _fonts["default"].family.condensed, _fonts["default"].weight.regular, _styles["default"].spacing.inset.quarck, function (props) {
+var SalesValue = _styledComponents["default"].span(_templateObject4(), function (props) {
+  return props.theme.fonts.fontSize.xs;
+}, function (props) {
+  return props.theme.fonts.family.condensed;
+}, function (props) {
+  return props.theme.fonts.weight.regular;
+}, function (props) {
+  return props.theme.styles.spacing.inset.quarck;
+}, function (props) {
   return !props.currentMonth && _colors["default"].neutral.dark['02'];
 });
 
-var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), _styles["default"].border.radius.cirular, function (props) {
+var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), function (props) {
+  return props.theme.styles.border.radius.cirular;
+}, function (props) {
   return props.color;
 });
 

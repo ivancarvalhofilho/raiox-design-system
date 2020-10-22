@@ -80,7 +80,7 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Title = _styledComponents["default"].div(_templateObject(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', ['neutral', 'dark', '01']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', 'neutral.dark.01');
 });
 
 var Container = _styledComponents["default"].div(_templateObject2());
@@ -88,19 +88,19 @@ var Container = _styledComponents["default"].div(_templateObject2());
 var Item = _styledComponents["default"].div(_templateObject3());
 
 var Value = _styledComponents["default"].span(_templateObject4(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
 }, function (props) {
   return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
 });
 
 var DollarSign = _styledComponents["default"].span(_templateObject5(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
 }, function (props) {
   return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
 });
 
 var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base');
 }, function (props) {
   return props.color;
 });

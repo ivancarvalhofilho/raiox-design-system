@@ -10,7 +10,7 @@ var fontStyleMaker = function fontStyleMaker(theme, fontFamily, fontWeight, font
     fontFamily: theme.fonts.family[fontFamily],
     fontWeight: theme.fonts.weight[fontWeight],
     fontSize: theme.fonts.fontSize[fontSize],
-    color: theme.colors[fontColor[0]][fontColor[1]][fontColor[2]]
+    color: fontColor && theme.colors[fontColor.split('.')]
   };
 };
 

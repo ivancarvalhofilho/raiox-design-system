@@ -96,7 +96,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Month = _styledComponents["default"].div(_templateObject());
 
 var Date = _styledComponents["default"].div(_templateObject2(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'md', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'md', 'neutral.dark.base');
 });
 
 var Container = _styledComponents["default"].div(_templateObject3(), function (props) {
@@ -106,19 +106,19 @@ var Container = _styledComponents["default"].div(_templateObject3(), function (p
 var Values = _styledComponents["default"].div(_templateObject4());
 
 var Label = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base');
 }, function (props) {
   return props.color;
 });
 
 var Value = _styledComponents["default"].div(_templateObject6(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
 }, function (props) {
   return props.notLast && '24px';
 });
 
 var MoneySign = _styledComponents["default"].div(_templateObject7(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', ['neutral', 'dark', 'base']);
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
 });
 
 var HeaderCalendar = function HeaderCalendar(props) {
