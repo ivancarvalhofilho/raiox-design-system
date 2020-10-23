@@ -110,6 +110,7 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(e) {
+    console.log('element', e);
     setShow(true);
     setMessage(e.target.attributes.getNamedItem(attributte).value);
     setHeight(e.target.clientHeight);
@@ -125,14 +126,12 @@ var Tooltip = function Tooltip(props) {
 
   (0, _react.useEffect)(function () {
     var elements = document.querySelectorAll("[".concat(attributte, "]"));
-    console.log('elements', elements);
     elements.forEach(function (element) {
       element.onmouseover = onMouseOver;
       element.onmouseleave = onMouseLeave;
     });
     setInterval(function () {
       elements = document.querySelectorAll("[".concat(attributte, "]"));
-      console.log('elements', elements);
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
         element.onmouseover = onMouseOver;
         element.onmouseleave = onMouseLeave;

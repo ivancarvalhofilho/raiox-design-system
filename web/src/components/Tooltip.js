@@ -43,6 +43,7 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (e) => {
+    console.log('element', e)
     setShow(true)
     setMessage(e.target.attributes.getNamedItem(attributte).value)
     setHeight(e.target.clientHeight)
@@ -58,14 +59,12 @@ const Tooltip = (props) => {
 
   useEffect(() => {
     let elements = document.querySelectorAll(`[${attributte}]`)
-    console.log('elements', elements)
     elements.forEach((element) => {
       element.onmouseover = onMouseOver
       element.onmouseleave = onMouseLeave
     })
     setInterval(() => {
       elements = document.querySelectorAll(`[${attributte}]`)
-      console.log('elements', elements)
       document.querySelectorAll(`[${attributte}]`).forEach((element) => {
         element.onmouseover = onMouseOver
         element.onmouseleave = onMouseLeave
