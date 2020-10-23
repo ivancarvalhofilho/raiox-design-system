@@ -125,9 +125,17 @@ var Tooltip = function Tooltip(props) {
 
   (0, _react.useEffect)(function () {
     document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
+      console.log('element', element);
       element.onmouseover = onMouseOver;
       element.onmouseleave = onMouseLeave;
     });
+    setTimeout(function () {
+      document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
+        console.log('element', element);
+        element.onmouseover = onMouseOver;
+        element.onmouseleave = onMouseLeave;
+      });
+    }, 2000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
