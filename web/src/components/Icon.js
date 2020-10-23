@@ -48,11 +48,7 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer
-      onClick={props.onClick}
-      spin={props.spin}
-      data-tip={props.message}
-    >
+    <IconContainer onClick={props.onClick} spin={props.spin}>
       <SVGInline
         style={{ ...props.style, display: 'flex' }}
         svg={props.path ? props.path : theme.icons[props.name]}
