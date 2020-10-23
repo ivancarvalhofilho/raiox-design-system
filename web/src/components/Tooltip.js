@@ -1,15 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import fontStyleMaker from '../utils/FontUtil'
+import TooltipLite from 'react-tooltip-lite'
+import theme from '../../../tokens/js'
 
-const TooltipContainer = styled.div`
-  position: relative;
-`
+const TooltipContainer = styled.div``
 const TooltipMessage = styled.div`
-  position: absolute;
-  background: ${(props) => props.theme.colors.neutral.dark.base};
-  padding: 8px;
-  opacity: 0.8;
   ${(props) =>
     fontStyleMaker(
       props.theme,
@@ -18,19 +14,6 @@ const TooltipMessage = styled.div`
       'xxs',
       'neutral.light.base',
     )};
-  min-width: 123px;
-  border-radius: 4px;
-  bottom: ${(props) => props.height + 4}px;
-  left: ${(props) => -props.width / 2}px;
-`
-const Arrow = styled.div`
-  position: absolute;
-  bottom: -3px;
-  left: ${(props) => (props.width - 6) / 2}px;
-  background: ${(props) => props.theme.colors.neutral.dark.base};
-  transform: rotate(45deg);
-  width: 6px;
-  height: 6px;
 `
 const Tooltip = (props) => {
   const [show, setShow] = useState(false)
@@ -47,23 +30,12 @@ const Tooltip = (props) => {
     }
   }, [show])
   return props.message ? (
-    <TooltipContainer
-      onMouseEnter={() => {
-        setShow(true)
-      }}
-      ref={container}
-      onMouseLeave={() => {
-        setShow(false)
-      }}
+    <TooltipLite
+      background={theme.colors.neutral.dark.base}
+      content={<TooltipMessage>{props.message}</TooltipMessage>}
     >
-      {show && (
-        <TooltipMessage height={height} width={width} ref={tooltipRef}>
-          {props.message}
-          <Arrow width={widthTooltip} />
-        </TooltipMessage>
-      )}
       {props.children}
-    </TooltipContainer>
+    </TooltipLite>
   ) : (
     props.children
   )

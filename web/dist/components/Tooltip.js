@@ -13,6 +13,10 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
 
+var _reactTooltipLite = _interopRequireDefault(require("react-tooltip-lite"));
+
+var _js = _interopRequireDefault(require("../../../tokens/js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -31,18 +35,8 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  bottom: -3px;\n  left: ", "px;\n  background: ", ";\n  transform: rotate(45deg);\n  width: 6px;\n  height: 6px;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  bottom: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -52,7 +46,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -66,19 +60,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var TooltipContainer = _styledComponents["default"].div(_templateObject());
 
 var TooltipMessage = _styledComponents["default"].div(_templateObject2(), function (props) {
-  return props.theme.colors.neutral.dark.base;
-}, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
-}, function (props) {
-  return props.height + 4;
-}, function (props) {
-  return -props.width / 2;
-});
-
-var Arrow = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return (props.width - 6) / 2;
-}, function (props) {
-  return props.theme.colors.neutral.dark.base;
 });
 
 var Tooltip = function Tooltip(props) {
@@ -111,21 +93,10 @@ var Tooltip = function Tooltip(props) {
       setWidthTooltip(tooltipRef.current.clientWidth);
     }
   }, [show]);
-  return props.message ? /*#__PURE__*/_react["default"].createElement(TooltipContainer, {
-    onMouseEnter: function onMouseEnter() {
-      setShow(true);
-    },
-    ref: container,
-    onMouseLeave: function onMouseLeave() {
-      setShow(false);
-    }
-  }, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
-    height: height,
-    width: width,
-    ref: tooltipRef
-  }, props.message, /*#__PURE__*/_react["default"].createElement(Arrow, {
-    width: widthTooltip
-  })), props.children) : props.children;
+  return props.message ? /*#__PURE__*/_react["default"].createElement(_reactTooltipLite["default"], {
+    background: _js["default"].colors.neutral.dark.base,
+    content: /*#__PURE__*/_react["default"].createElement(TooltipMessage, null, props.message)
+  }, props.children) : props.children;
 };
 
 var _default = Tooltip;

@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/guhcostan-equals/raiox-design-system/issues"
   },
-  "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme"
+  "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
+  "dependencies": {
+    "react-tooltip-lite": "^1.12.0"
+  }
 }
