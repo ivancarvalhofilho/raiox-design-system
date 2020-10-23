@@ -58,9 +58,17 @@ const Tooltip = (props) => {
 
   useEffect(() => {
     document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+      console.log('element', element)
       element.onmouseover = onMouseOver
       element.onmouseleave = onMouseLeave
     })
+    setTimeout(() => {
+      document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+        console.log('element', element)
+        element.onmouseover = onMouseOver
+        element.onmouseleave = onMouseLeave
+      })
+    }, 2000)
   }, [])
 
   return (
