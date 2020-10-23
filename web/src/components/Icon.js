@@ -49,15 +49,17 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer onClick={props.onClick} spin={props.spin}>
-      <Tooltip message={props.tooltip}>
-        <SVGInline
-          style={{ ...props.style, display: 'flex' }}
-          svg={props.path ? props.path : theme.icons[props.name]}
-          fill={getIconSvgColor(props)}
-          width={getIconSvgSize(props)}
-        />
-      </Tooltip>
+    <IconContainer
+      onClick={props.onClick}
+      spin={props.spin}
+      data-tip={props['data-tip']}
+    >
+      <SVGInline
+        style={{ ...props.style, display: 'flex' }}
+        svg={props.path ? props.path : theme.icons[props.name]}
+        fill={getIconSvgColor(props)}
+        width={getIconSvgSize(props)}
+      />
     </IconContainer>
   )
 }
