@@ -15,6 +15,8 @@ var _js = _interopRequireDefault(require("../../../tokens/js"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _Tooltip = _interopRequireDefault(require("./Tooltip"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -90,6 +92,8 @@ var Icon = function Icon(props) {
   return /*#__PURE__*/_react["default"].createElement(IconContainer, {
     onClick: props.onClick,
     spin: props.spin
+  }, /*#__PURE__*/_react["default"].createElement(_Tooltip["default"], {
+    message: props.tooltip
   }, /*#__PURE__*/_react["default"].createElement(_reactSvgInline["default"], {
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'
@@ -97,7 +101,7 @@ var Icon = function Icon(props) {
     svg: props.path ? props.path : _js["default"].icons[props.name],
     fill: getIconSvgColor(props),
     width: getIconSvgSize(props)
-  }));
+  })));
 };
 
 var _default = Icon;

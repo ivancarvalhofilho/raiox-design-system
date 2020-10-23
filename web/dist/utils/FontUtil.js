@@ -6,11 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 
 var fontStyleMaker = function fontStyleMaker(theme, fontFamily, fontWeight, fontSize, fontColor) {
+  var color = fontColor.split('.');
   return {
     fontFamily: theme.fonts.family[fontFamily],
     fontWeight: theme.fonts.weight[fontWeight],
     fontSize: theme.fonts.fontSize[fontSize],
-    color: fontColor && theme.colors[fontColor.split('.')]
+    color: color && color.length === 3 && theme.colors[color[0]][color[1]][color[2]]
   };
 };
 

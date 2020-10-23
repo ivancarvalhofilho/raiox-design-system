@@ -64,7 +64,7 @@ const Template2 = (args) => (
 )
 
 const Template3 = (args) => (
-  <div>
+  <div style={{ padding: '60px' }}>
     <span style={{ display: 'flex', flexDirection: 'row' }}>
       {Object.keys(theme.iconsBanco).map((key) => (
         <span
@@ -76,7 +76,7 @@ const Template3 = (args) => (
             textAlign: 'center',
           }}
         >
-          <Icon path={theme.iconsBanco[key]} {...args} />
+          <Icon tooltip="teste" path={theme.iconsBanco[key]} {...args} />
           {key}
         </span>
       ))}

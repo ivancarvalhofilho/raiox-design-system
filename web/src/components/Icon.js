@@ -3,6 +3,7 @@ import React from 'react'
 import SVGInline from 'react-svg-inline'
 import theme from '../../../tokens/js'
 import styled from 'styled-components'
+import Tooltip from './Tooltip'
 
 const IconContainer = styled.span`
   cursor: ${(props) => props.onClick && 'pointer'};
@@ -49,12 +50,14 @@ const Icon = (props) => {
 
   return (
     <IconContainer onClick={props.onClick} spin={props.spin}>
-      <SVGInline
-        style={{ ...props.style, display: 'flex' }}
-        svg={props.path ? props.path : theme.icons[props.name]}
-        fill={getIconSvgColor(props)}
-        width={getIconSvgSize(props)}
-      />
+      <Tooltip message={props.tooltip}>
+        <SVGInline
+          style={{ ...props.style, display: 'flex' }}
+          svg={props.path ? props.path : theme.icons[props.name]}
+          fill={getIconSvgColor(props)}
+          width={getIconSvgSize(props)}
+        />
+      </Tooltip>
     </IconContainer>
   )
 }
