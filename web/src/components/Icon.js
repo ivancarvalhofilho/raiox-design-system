@@ -3,7 +3,6 @@ import React from 'react'
 import SVGInline from 'react-svg-inline'
 import theme from '../../../tokens/js'
 import styled from 'styled-components'
-import Tooltip from './Tooltip'
 
 const IconContainer = styled.span`
   cursor: ${(props) => props.onClick && 'pointer'};
