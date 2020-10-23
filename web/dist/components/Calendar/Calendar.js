@@ -17,6 +17,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _const = _interopRequireDefault(require("./const"));
 
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -42,7 +44,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n\n  font-weight: ", ";\n  font-size: ", ";\n  font-family: ", ";\n\n  margin-bottom: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  ", ";\n  margin-bottom: ", ";\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -100,13 +102,9 @@ var CalendarGrid = _styledComponents["default"].div(_templateObject2(), function
 var CalendarGridHeader = _styledComponents["default"].div(_templateObject3());
 
 var DayOfWeek = _styledComponents["default"].div(_templateObject4(), function (props) {
-  return props.theme.fonts.weight.medium;
+  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'xxs');
 }, function (props) {
-  return props.theme.fonts.fontSize.xxs;
-}, function (props) {
-  return props.theme.fonts.family.body;
-}, function (props) {
-  return props.theme.styles.spacing.stack.quarck;
+  return props.theme.styles.spacing.stack.nano;
 });
 
 var Calendar = function Calendar(props) {

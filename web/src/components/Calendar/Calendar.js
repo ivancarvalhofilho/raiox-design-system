@@ -3,6 +3,7 @@ import { CalendarCell } from './CalendarCell'
 import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
+import fontStyleMaker from '../../utils/FontUtil'
 
 var isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
 var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
@@ -21,7 +22,7 @@ const CalendarGrid = styled.div`
   height: 100%;
   grid-auto-rows: 1fr;
   & > *:nth-child(7n-6) {
-    background: ${props => props.theme.colors.neutral.light['02']};
+    background: ${(props) => props.theme.colors.neutral.light['02']};
   }
 `
 
@@ -33,12 +34,8 @@ const CalendarGridHeader = styled.div`
 const DayOfWeek = styled.div`
   display: flex;
   justify-content: center;
-
-  font-weight: ${props => props.theme.fonts.weight.medium};
-  font-size: ${props => props.theme.fonts.fontSize.xxs};
-  font-family: ${props => props.theme.fonts.family.body};
-
-  margin-bottom: ${props => props.theme.styles.spacing.stack.quarck};
+  ${(props) => fontStyleMaker(props.theme, 'body', 'medium', 'xxs')};
+  margin-bottom: ${(props) => props.theme.styles.spacing.stack.nano};
 `
 
 const Calendar = (props) => {
@@ -54,7 +51,10 @@ const Calendar = (props) => {
   function currentDayIsSelected(currentDay) {
     const isSelectedDay =
       (props.selectedDates.state === CalendarConst.STATES.SELECTED &&
-        dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+        dayjs(props.selectedDates.startDate).isSameOrBefore(
+          currentDay,
+          'day',
+        ) &&
         !!props.selectedDates.endDate &&
         dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')) ||
       (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
@@ -73,11 +73,14 @@ const Calendar = (props) => {
   }
 
   function currentDayIsBlocked(currentDay) {
-    const daysDiff = dayjs(props.selectedDates.firstClickDate).diff(currentDay, 'day')
+    const daysDiff = dayjs(props.selectedDates.firstClickDate).diff(
+      currentDay,
+      'day',
+    )
     const isBlocked =
       props.maxDateRange &&
       props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
-      (daysDiff >= (props.maxDateRange - 1) || daysDiff <= -props.maxDateRange)
+      (daysDiff >= props.maxDateRange - 1 || daysDiff <= -props.maxDateRange)
     return isBlocked
   }
 
@@ -96,8 +99,12 @@ const Calendar = (props) => {
         firstClickDate: date,
         state: CalendarConst.STATES.IN_SELECTION,
       })
-    } else if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
-      if (dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')) {
+    } else if (
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION
+    ) {
+      if (
+        dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')
+      ) {
         props.setSelectedDates({
           ...props.selectedDates,
           startDate: date,
@@ -117,7 +124,12 @@ const Calendar = (props) => {
 
   function onDayHover(date) {
     if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
-      if (dayjs(props.selectedDates.firstClickDate).isSameOrAfter(dayjs(date), 'day')) {
+      if (
+        dayjs(props.selectedDates.firstClickDate).isSameOrAfter(
+          dayjs(date),
+          'day',
+        )
+      ) {
         props.setSelectedDates({
           ...props.selectedDates,
           startDate: date,
@@ -125,7 +137,10 @@ const Calendar = (props) => {
           state: CalendarConst.STATES.IN_SELECTION,
         })
       } else if (
-        dayjs(props.selectedDates.firstClickDate).isSameOrBefore(dayjs(date), 'day')
+        dayjs(props.selectedDates.firstClickDate).isSameOrBefore(
+          dayjs(date),
+          'day',
+        )
       ) {
         props.setSelectedDates({
           ...props.selectedDates,

@@ -1,5 +1,5 @@
 const fontStyleMaker = (theme, fontFamily, fontWeight, fontSize, fontColor) => {
-  const color = fontColor.split('.')
+  const color = fontColor && fontColor.split('.')
   return {
     fontFamily: theme.fonts.family[fontFamily],
     fontWeight: theme.fonts.weight[fontWeight],

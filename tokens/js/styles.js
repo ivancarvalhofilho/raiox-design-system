@@ -5,7 +5,7 @@ export default {
             md: '8px',
             lg: '16px',
             pill: '500px',
-            cirular: '50%',
+            circular: '50%',
         },
         width: {
             hairline: '1px',

@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Colors from '../../../../tokens/js/colors'
-import CalendarConst from './const'
 import { Tooltip } from '@material-ui/core'
 import { TooltipText } from '../StyledComponents'
-import fontStyleMaker from "../../utils/FontUtil";
+import fontStyleMaker from '../../utils/FontUtil'
 
 const CalendarCellContainer = styled.div`
   border-radius: 0px;
@@ -28,8 +27,13 @@ const CalendarCellContainer = styled.div`
 const DayNumber = styled.span`
   height: 14px;
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', (props.isSelected && 'medium') || 'regular', 'xs','neutral.dark.02')};
-  margin: ${props => props.theme.styles.spacing.inset.nano};
+    fontStyleMaker(
+      props.theme,
+      'body',
+      (props.isSelected && 'medium') || 'regular',
+      'xs',
+    )};
+  margin: ${(props) => props.theme.styles.spacing.inset.nano};
   color: ${(props) =>
     (props.isBlockedSelection && Colors.neutral.dark['02']) ||
     (props.isSelected && Colors.brand.primary.darkest)};
@@ -38,30 +42,34 @@ const DaySales = styled.span`
   & > div {
     display: inline-flex;
     align-items: center;
-    margin: ${props => props.theme.styles.spacing.inset.nano};
+    margin: ${(props) => props.theme.styles.spacing.inset.nano};
   }
-  font-family: ${props => props.theme.fonts.family.body};
+  ${(props) => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
 `
 const SalesValue = styled.span`
   height: 14px;
-  font-size: ${props => props.theme.fonts.fontSize.xs};
-  font-family: ${props => props.theme.fonts.family.condensed};
-  font-weight: ${props => props.theme.fonts.weight.regular};
-  margin-right: ${props => props.theme.styles.spacing.inset.quarck};
+  ${(props) => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
+  margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
   color: ${(props) => !props.currentMonth && Colors.neutral.dark['02']};
 `
 const SalesStatusDot = styled.span`
   width: 4px;
   height: 4px;
-  border-radius: ${props => props.theme.styles.border.radius.cirular};
+  border-radius: ${(props) => props.theme.styles.border.radius.circular};
   background: ${(props) => props.color};
 `
 const CalendarCell = (props) => (
   <Tooltip
     key={`${props.date.fullDate}tooltip`}
-    title={<TooltipText>{`Não é possível selecionar um período maior que ${props.maxDateRange} dias`}</TooltipText>}
+    title={
+      <TooltipText>{`Não é possível selecionar um período maior que ${props.maxDateRange} dias`}</TooltipText>
+    }
     disableHoverListener={
-      !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange)
+      !(
+        props.date.isBlockedSelection &&
+        props.date.currentMonth &&
+        props.maxDateRange
+      )
     }
     arrow
   >
