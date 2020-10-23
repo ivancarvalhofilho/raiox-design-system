@@ -124,14 +124,16 @@ var Tooltip = function Tooltip(props) {
   };
 
   (0, _react.useEffect)(function () {
-    document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-      console.log('element', element);
+    var elements = document.querySelectorAll("[".concat(attributte, "]"));
+    console.log('elements', elements);
+    elements.forEach(function (element) {
       element.onmouseover = onMouseOver;
       element.onmouseleave = onMouseLeave;
     });
-    setTimeout(function () {
+    setInterval(function () {
+      elements = document.querySelectorAll("[".concat(attributte, "]"));
+      console.log('elements', elements);
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-        console.log('element', element);
         element.onmouseover = onMouseOver;
         element.onmouseleave = onMouseLeave;
       });
