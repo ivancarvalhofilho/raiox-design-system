@@ -90,7 +90,7 @@ var Icon = function Icon(props) {
   return /*#__PURE__*/_react["default"].createElement(IconContainer, {
     onClick: props.onClick,
     spin: props.spin,
-    "data-tip": props['data-tip']
+    "data-tip": props.message
   }, /*#__PURE__*/_react["default"].createElement(_reactSvgInline["default"], {
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'

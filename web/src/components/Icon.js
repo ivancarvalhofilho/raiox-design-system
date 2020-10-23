@@ -51,7 +51,7 @@ const Icon = (props) => {
     <IconContainer
       onClick={props.onClick}
       spin={props.spin}
-      data-tip={props['data-tip']}
+      data-tip={props.message}
     >
       <SVGInline
         style={{ ...props.style, display: 'flex' }}
