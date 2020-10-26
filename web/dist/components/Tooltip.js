@@ -44,7 +44,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  display: ", ";\n  opacity: 0.8;\n  text-align: center;\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  display: ", ";\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -59,6 +59,8 @@ var TooltipMessage = _styledComponents["default"].div(_templateObject(), functio
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return !props.show && 'none';
+}, function (props) {
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
   return props.positionY - props.height;
 }, function (props) {
@@ -137,7 +139,8 @@ var Tooltip = function Tooltip(props) {
       });
     }, 5000);
   }, []);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
+  console.log('RENDERIZOU');
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
     height: height,
     width: width,
