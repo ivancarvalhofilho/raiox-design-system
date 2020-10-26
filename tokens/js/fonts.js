@@ -1,4 +1,4 @@
-import './fontsImport.css'
+// import './fontsImport.css'
 
 const fonts = {
     family: {
