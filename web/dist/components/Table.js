@@ -409,8 +409,6 @@ function Table(props) {
     },
     hasMore: props.total !== props.data[keys[0]].values.length,
     onScroll: function onScroll() {
-      console.log(props.complete ? cols : colsOriginal.length > 0 ? colsOriginal : colsOriginal2, colsOriginal, colsOriginal2);
-
       if (props.complete && optionalMouse) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
       }
@@ -420,7 +418,7 @@ function Table(props) {
         position: 'relative'
       }
     }, /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
-      cols: props.complete ? cols.length : colsOriginal.length - (hasColor && props.isMultiple ? 1 : 2)
+      cols: props.complete ? cols.length : colsOriginal.length - (props.isMultiple ? 1 : 2)
     }, /*#__PURE__*/_react["default"].createElement("p", {
       style: {
         paddingBottom: '10px'
@@ -449,7 +447,7 @@ function Table(props) {
         last: indexCol === cols.length
       }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && hasColor && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
         onClick: function onClick() {
           return props.onRowClick(indexRow);
         }
