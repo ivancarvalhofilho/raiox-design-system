@@ -382,15 +382,6 @@ function Table(props) {
                 next={() => props.onEndScroll()}
                 hasMore={props.total !== props.data[keys[0]].values.length}
                 onScroll={() => {
-                  console.log(
-                    props.complete
-                      ? cols
-                      : colsOriginal.length > 0
-                      ? colsOriginal
-                      : colsOriginal2,
-                    colsOriginal,
-                    colsOriginal2,
-                  )
                   if (props.complete && optionalMouse) {
                     optionalContent.current.scrollTop =
                       content.current.el.scrollTop
@@ -402,8 +393,7 @@ function Table(props) {
                       cols={
                         props.complete
                           ? cols.length
-                          : colsOriginal.length -
-                            (hasColor && props.isMultiple ? 1 : 2)
+                          : colsOriginal.length - (props.isMultiple ? 1 : 2)
                       }
                     >
                       <p style={{ paddingBottom: '10px' }}>Carregando</p>
@@ -460,7 +450,6 @@ function Table(props) {
                             )}
                           </Value>
                           {indexCol === colsOriginalWithoutColor.length &&
-                            hasColor &&
                             props.isMultiple && (
                               <Collapse
                                 onClick={() => props.onRowClick(indexRow)}
