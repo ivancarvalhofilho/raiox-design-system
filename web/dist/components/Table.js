@@ -193,7 +193,7 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
+    return "".concat(x, " minmax(50px,").concat(props.cols.length, "%)");
   }, '');
 });
 

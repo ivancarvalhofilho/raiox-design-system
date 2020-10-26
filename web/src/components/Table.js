@@ -65,7 +65,7 @@ const ContainerInfinite = styled(InfiniteScroll)`
     (props.color ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
-      .reduce((x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`, '')};
+      .reduce((x, y) => `${x} minmax(50px,${props.cols.length}%)`, '')};
 `
 const Scroll = styled.div`
   background: white;
