@@ -43,12 +43,12 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (e) => {
-    console.log('element', e)
+    console.log('element', e.target.getBoundingClientRect())
     setShow(true)
     setMessage(e.target.attributes.getNamedItem(attributte).value)
     setHeight(e.target.clientHeight)
     setPositionX(e.target.offsetTop)
-    setPositionY(e.target.offsetLeft)
+    setPositionY(e.clientY)
     setWidthTooltip(tooltipRef.current.clientWidth)
     setWidth(tooltipRef.current.clientWidth - e.target.clientWidth)
   }
