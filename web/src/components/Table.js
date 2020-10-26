@@ -369,7 +369,8 @@ function Table(props) {
                       cols={
                         props.complete
                           ? cols.length
-                          : colsOriginal.length - (hasColor ? 1 : 2)
+                          : colsOriginal.length -
+                            (hasColor && props.isMultiple ? 1 : 2)
                       }
                     >
                       <p style={{ paddingBottom: '10px' }}>Carregando</p>
@@ -424,7 +425,8 @@ function Table(props) {
                               : value}
                           </Value>
                           {indexCol === colsOriginalWithoutColor.length &&
-                            hasColor && (
+                            hasColor &&
+                            props.isMultiple && (
                               <Collapse
                                 onClick={() => props.onRowClick(indexRow)}
                               >
