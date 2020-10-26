@@ -9,14 +9,6 @@ const TooltipMessage = styled.div`
   display: ${(props) => !props.show && 'none'};
   opacity: 0.8;
   text-align: center;
-  ${(props) =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      'regular',
-      'xxs',
-      'neutral.light.base',
-    )};
   min-width: 123px;
   border-radius: 4px;
   top: ${(props) => props.positionY - props.height}px;
