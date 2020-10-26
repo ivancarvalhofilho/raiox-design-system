@@ -160,7 +160,6 @@ const SpanValue = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid #000000;
 `
 const Children = styled.div`
   position: absolute;
