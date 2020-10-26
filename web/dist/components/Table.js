@@ -192,8 +192,8 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,").concat(props.cols.length, "%)");
+  return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y) {
+    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
   }, '');
 });
 
@@ -265,9 +265,6 @@ function Table(props) {
     return props.data[key].optional;
   }).length;
   var colsOriginal = keys.filter(function (key) {
-    return !props.data[key].optional;
-  });
-  var colsOriginal2 = keys.filter(function (key) {
     return !props.data[key].optional;
   });
   var colsOriginalWithoutColor = colsOriginal.filter(function (key) {
@@ -394,7 +391,7 @@ function Table(props) {
       minWidth: 'fit-content'
     }
   }, /*#__PURE__*/_react["default"].createElement(ContainerInfinite, {
-    cols: props.complete ? cols : colsOriginal.length > 0 ? colsOriginal : colsOriginal2,
+    cols: props.complete ? cols : colsOriginalWithoutColor,
     ref: content,
     style: {
       transition: 'all .3s ease'

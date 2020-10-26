@@ -63,9 +63,10 @@ const ContainerInfinite = styled(InfiniteScroll)`
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
     (props.color ? '8px ' : '') +
-    props.cols
-      .splice(props.color ? 1 : 0)
-      .reduce((x, y) => `${x} minmax(50px,${props.cols.length}%)`, '')};
+    props.cols.reduce(
+      (x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`,
+      '',
+    )};
 `
 const Scroll = styled.div`
   background: white;
@@ -188,7 +189,6 @@ function Table(props) {
     keys.findIndex((key) => props.data[key].optional) +
     keys.filter((key) => props.data[key].optional).length
   const colsOriginal = keys.filter((key) => !props.data[key].optional)
-  const colsOriginal2 = keys.filter((key) => !props.data[key].optional)
   const colsOriginalWithoutColor = colsOriginal.filter(
     (key) => key !== 'colors',
   )
@@ -368,13 +368,7 @@ function Table(props) {
               }}
             >
               <ContainerInfinite
-                cols={
-                  props.complete
-                    ? cols
-                    : colsOriginal.length > 0
-                    ? colsOriginal
-                    : colsOriginal2
-                }
+                cols={props.complete ? cols : colsOriginalWithoutColor}
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
                 className="scroll custom-scrollbar"
