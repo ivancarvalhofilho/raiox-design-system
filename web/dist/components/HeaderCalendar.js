@@ -19,10 +19,12 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 
 var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
 
+var _js = _interopRequireDefault(require("../../../tokens/js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  padding: 0 4px 0 8px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  padding: ", ";\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -62,7 +64,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  border: ", " solid #e0e0e0;\n  box-sizing: border-box;\n  border-radius: 5px;\n  padding: 16px;\n  display: flex;\n  align-items: center;\n  height: 56px;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  border: ", " solid #e0e0e0;\n  box-sizing: border-box;\n  border-radius: ", ";\n  padding: ", ";\n  display: flex;\n  align-items: center;\n  height: 56px;\n  justify-content: space-between;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -72,7 +74,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: 11px;\n  ", ";\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  cursor: pointer;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -96,11 +98,17 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Month = _styledComponents["default"].div(_templateObject());
 
 var Date = _styledComponents["default"].div(_templateObject2(), function (props) {
+  return props.theme.styles.spacing.inline.nano;
+}, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'md', 'neutral.dark.base');
 });
 
 var Container = _styledComponents["default"].div(_templateObject3(), function (props) {
   return props.theme.styles.border.width.hairline;
+}, function (props) {
+  return props.theme.styles.border.sm;
+}, function (props) {
+  return props.theme.styles.inset.xs;
 });
 
 var Values = _styledComponents["default"].div(_templateObject4());
@@ -114,11 +122,13 @@ var Label = _styledComponents["default"].div(_templateObject5(), function (props
 var Value = _styledComponents["default"].div(_templateObject6(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
 }, function (props) {
-  return props.notLast && '24px';
+  return props.notLast && props.theme.styles.spacing.inline.xxs;
 });
 
 var MoneySign = _styledComponents["default"].div(_templateObject7(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
+}, function (props) {
+  return "0 ".concat(props.theme.styles.spacing.inline.quarck, " 0 ").concat(props.theme.styles.spacing.inline.nano);
 });
 
 var HeaderCalendar = function HeaderCalendar(props) {
@@ -126,7 +136,7 @@ var HeaderCalendar = function HeaderCalendar(props) {
     size: "14px",
     appearance: "primary",
     style: {
-      marginRight: '16px',
+      marginRight: _js["default"].styles.spacing.inline.nano,
       cursor: 'pointer'
     },
     path: _icons["default"]['chevron-left'],

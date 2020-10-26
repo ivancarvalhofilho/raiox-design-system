@@ -5,12 +5,13 @@ import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
 import dayjs from 'dayjs'
 import fontStyleMaker from '../utils/FontUtil'
+import theme from '../../../tokens/js'
 const Month = styled.div`
   display: flex;
   align-items: center;
 `
 const Date = styled.div`
-  margin-left: 11px;
+  margin-left: ${(props) => props.theme.styles.spacing.inline.nano};
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')};
   cursor: pointer;
@@ -18,8 +19,8 @@ const Date = styled.div`
 const Container = styled.div`
   border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
   box-sizing: border-box;
-  border-radius: 5px;
-  padding: 16px;
+  border-radius: ${(props) => props.theme.styles.border.sm};
+  padding: ${(props) => props.theme.styles.inset.xs};
   display: flex;
   align-items: center;
   height: 56px;
@@ -37,12 +38,14 @@ const Label = styled.div`
 const Value = styled.div`
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')};
-  margin-right: ${(props) => props.notLast && '24px'};
+  margin-right: ${(props) =>
+    props.notLast && props.theme.styles.spacing.inline.xxs};
 `
 const MoneySign = styled.div`
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
-  padding: 0 4px 0 8px;
+  padding: ${(props) =>
+    `0 ${props.theme.styles.spacing.inline.quarck} 0 ${props.theme.styles.spacing.inline.nano}`};
 `
 const HeaderCalendar = (props) => (
   <Container>
@@ -50,7 +53,10 @@ const HeaderCalendar = (props) => (
       <Icon
         size="14px"
         appearance="primary"
-        style={{ marginRight: '16px', cursor: 'pointer' }}
+        style={{
+          marginRight: theme.styles.spacing.inline.nano,
+          cursor: 'pointer',
+        }}
         path={icons['chevron-left']}
         onClick={() => props.onBackMonthClick()}
       />
