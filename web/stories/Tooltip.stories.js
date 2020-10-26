@@ -20,7 +20,7 @@ const Template = (args) => (
         custom-tooltip="teste"
         style={{ backgroundColor: 'blue', width: '50%' }}
       >
-        Teste
+        <h1>Teste</h1>
       </div>{' '}
       <div data-foo="teste">Teste</div> <div data-foo="teste">Teste</div>{' '}
       <div data-foo="teste">Teste</div>{' '}

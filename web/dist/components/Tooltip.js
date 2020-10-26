@@ -13,6 +13,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
 
+var _this = void 0;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -109,12 +111,12 @@ var Tooltip = function Tooltip(props) {
 
   var tooltipRef = (0, _react.useRef)();
 
-  var onMouseOver = function onMouseOver(e) {
+  var onMouseOver = function onMouseOver(element, e) {
     setShow(true);
-    setMessage(e.target.attributes.getNamedItem(attributte).value);
-    setHeight(e.target.clientHeight);
-    setPositionX(e.target.getBoundingClientRect().left);
-    setPositionY(e.target.getBoundingClientRect().top);
+    setMessage(element.attributes.getNamedItem(attributte).value);
+    setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
+    setPositionX(element.getBoundingClientRect().left);
+    setPositionY(element.getBoundingClientRect().top);
     setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
     setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
   };
@@ -126,20 +128,20 @@ var Tooltip = function Tooltip(props) {
   (0, _react.useEffect)(function () {
     var elements = document.querySelectorAll("[".concat(attributte, "]"));
     elements.forEach(function (element) {
-      element.onmouseover = onMouseOver;
-      element.onmouseleave = onMouseLeave;
+      element.onmouseover = onMouseOver.bind(_this, element);
+      element.onmouseleave = onMouseLeave.bind(_this, element);
     });
     setInterval(function () {
       elements = document.querySelectorAll("[".concat(attributte, "]"));
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-        element.onmouseover = onMouseOver;
-        element.onmouseleave = onMouseLeave;
+        element.onmouseover = onMouseOver.bind(_this, element);
+        element.onmouseleave = onMouseLeave.bind(_this, element);
       });
     }, 2000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
-    height: height * 2,
+    height: height,
     width: width,
     positionX: positionX,
     positionY: positionY
