@@ -15,6 +15,7 @@ const Date = styled.div`
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')};
   cursor: pointer;
+  text-decoration: none !important;
 `
 const Container = styled.div`
   border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
