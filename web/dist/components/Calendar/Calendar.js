@@ -19,6 +19,8 @@ var _const = _interopRequireDefault(require("./const"));
 
 var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -117,7 +119,7 @@ var Calendar = function Calendar(props) {
     var dayWithSale = props.dayWithSales.find(function (date) {
       return (0, _dayjs["default"])(date.day).isSame(currentDay, 'day');
     });
-    return dayWithSale && dayWithSale.sale || null;
+    return dayWithSale || null;
   }
 
   function currentDayIsSelected(currentDay) {
@@ -192,7 +194,7 @@ var Calendar = function Calendar(props) {
       day: day + 1,
       fullDate: currentDay.format('MM/DD/YYYY'),
       currentMonth: isCurrentMonth,
-      sales: findDayWithSale(currentDay),
+      sale: findDayWithSale(currentDay),
       isHolyday: currentDayIsHolyday(currentDay),
       isSelected: currentDayIsSelected(currentDay),
       isHovered: currentDayIsHovered(currentDay),
@@ -236,12 +238,14 @@ var Calendar = function Calendar(props) {
     }
   }, [props.month, props.selectedDates]);
   return /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, /*#__PURE__*/_react["default"].createElement(CalendarGridHeader, null, _const["default"].DAYS_OF_WEEK.map(function (day) {
-    return /*#__PURE__*/_react["default"].createElement(DayOfWeek, null, day);
+    return /*#__PURE__*/_react["default"].createElement(DayOfWeek, {
+      key: day
+    }, day);
   })), /*#__PURE__*/_react["default"].createElement(CalendarGrid, null, dates && dates.map(function (date) {
     return /*#__PURE__*/_react["default"].createElement(_CalendarCell.CalendarCell, {
       key: date.fullDate,
       date: date,
-      daySales: date.sales,
+      daySale: date.sale,
       maxDateRange: props.maxDateRange,
       onDayClick: function onDayClick() {
         return _onDayClick(date.fullDate);
@@ -255,3 +259,11 @@ var Calendar = function Calendar(props) {
 
 var _default = Calendar;
 exports["default"] = _default;
+Calendar.propTypes = {
+  selectedDates: _propTypes["default"].object,
+  setSelectedDates: _propTypes["default"].func,
+  month: _propTypes["default"].number,
+  year: _propTypes["default"].number,
+  holydays: _propTypes["default"].array,
+  maxDateRange: _propTypes["default"].number
+};

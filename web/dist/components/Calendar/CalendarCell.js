@@ -17,6 +17,8 @@ var _StyledComponents = require("../StyledComponents");
 
 var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject5() {
@@ -30,7 +32,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  display: flex;\n  align-items: center;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -122,6 +124,7 @@ var CalendarCell = function CalendarCell(props) {
     onMouseOver: function onMouseOver() {
       return props.date.currentMonth && !props.date.isBlockedSelection && props.onDayHover();
     },
+    onFocus: function onFocus() {},
     currentMonth: props.date.currentMonth,
     isHolyday: props.date.isHolyday,
     isBlockedSelection: props.date.isBlockedSelection
@@ -129,14 +132,21 @@ var CalendarCell = function CalendarCell(props) {
     currentMonth: props.date.currentMonth,
     isSelected: props.date.isSelected,
     isBlockedSelection: props.date.isBlockedSelection
-  }, props.date.day), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DaySales, null, props.daySales && /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(SalesValue, {
+  }, props.date.day), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DaySales, null, props.daySale && /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(SalesValue, {
     currentMonth: props.date.currentMonth
-  }, "R$", ' ', parseFloat(Math.abs(props.daySales)).toLocaleString('pt-br', {
+  }, "R$", ' ', parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })), /*#__PURE__*/_react["default"].createElement(SalesStatusDot, {
-    color: props.daySales ? _colors["default"].feedback.success.dark : _colors["default"].feedback.danger.dark
+    color: props.daySale.type === 'R' ? _colors["default"].feedback.success.dark : _colors["default"].feedback.danger.dark
   })))));
 };
 
 exports.CalendarCell = CalendarCell;
+CalendarCell.propTypes = {
+  date: _propTypes["default"].object,
+  daySale: _propTypes["default"].object,
+  onDayHover: _propTypes["default"].func,
+  onDayClick: _propTypes["default"].func,
+  maxDateRange: _propTypes["default"].number
+};

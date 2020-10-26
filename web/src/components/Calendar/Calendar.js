@@ -4,6 +4,7 @@ import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
 import fontStyleMaker from '../../utils/FontUtil'
+import PropTypes from 'prop-types'
 
 var isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
 var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
@@ -45,7 +46,7 @@ const Calendar = (props) => {
     const dayWithSale = props.dayWithSales.find((date) =>
       dayjs(date.day).isSame(currentDay, 'day'),
     )
-    return (dayWithSale && dayWithSale.sale) || null
+    return dayWithSale || null
   }
 
   function currentDayIsSelected(currentDay) {
@@ -158,7 +159,7 @@ const Calendar = (props) => {
       day: day + 1,
       fullDate: currentDay.format('MM/DD/YYYY'),
       currentMonth: isCurrentMonth,
-      sales: findDayWithSale(currentDay),
+      sale: findDayWithSale(currentDay),
       isHolyday: currentDayIsHolyday(currentDay),
       isSelected: currentDayIsSelected(currentDay),
       isHovered: currentDayIsHovered(currentDay),
@@ -223,7 +224,7 @@ const Calendar = (props) => {
     <CalendarContainer>
       <CalendarGridHeader>
         {CalendarConst.DAYS_OF_WEEK.map((day) => (
-          <DayOfWeek>{day}</DayOfWeek>
+          <DayOfWeek key={day}>{day}</DayOfWeek>
         ))}
       </CalendarGridHeader>
       <CalendarGrid>
@@ -232,7 +233,7 @@ const Calendar = (props) => {
             <CalendarCell
               key={date.fullDate}
               date={date}
-              daySales={date.sales}
+              daySale={date.sale}
               maxDateRange={props.maxDateRange}
               onDayClick={() => onDayClick(date.fullDate)}
               onDayHover={() => onDayHover(date.fullDate)}
@@ -244,3 +245,12 @@ const Calendar = (props) => {
 }
 
 export default Calendar
+
+Calendar.propTypes = {
+  selectedDates: PropTypes.object,
+  setSelectedDates: PropTypes.func,
+  month: PropTypes.number,
+  year: PropTypes.number,
+  holydays: PropTypes.array,
+  maxDateRange: PropTypes.number,
+}

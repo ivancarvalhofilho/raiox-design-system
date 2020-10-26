@@ -61,9 +61,7 @@ const HeaderCalendar = (props) => (
         path={icons['chevron-right']}
         onClick={() => props.onNextMonthClick()}
       />
-      <Date
-          onClick={() => props.onMonthClick()}
-      >
+      <Date onClick={() => props.onMonthClick()}>
         {dayjs()
           .set('month', props.month)
           .set('year', props.year)

@@ -4,6 +4,7 @@ import Colors from '../../../../tokens/js/colors'
 import { Tooltip } from '@material-ui/core'
 import { TooltipText } from '../StyledComponents'
 import fontStyleMaker from '../../utils/FontUtil'
+import PropTypes from 'prop-types'
 
 const CalendarCellContainer = styled.div`
   border-radius: 0px;
@@ -51,6 +52,8 @@ const SalesValue = styled.span`
   ${(props) => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
   margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
   color: ${(props) => !props.currentMonth && Colors.neutral.dark['02']};
+  display: flex;
+  align-items: center;
 `
 const SalesStatusDot = styled.span`
   width: 4px;
@@ -86,6 +89,7 @@ const CalendarCell = (props) => (
         !props.date.isBlockedSelection &&
         props.onDayHover()
       }
+      onFocus={() => {}}
       currentMonth={props.date.currentMonth}
       isHolyday={props.date.isHolyday}
       isBlockedSelection={props.date.isBlockedSelection}
@@ -101,18 +105,21 @@ const CalendarCell = (props) => (
       )}
       {props.date.currentMonth && (
         <DaySales>
-          {props.daySales && (
+          {props.daySale && (
             <div>
               <SalesValue currentMonth={props.date.currentMonth}>
                 R${' '}
-                {parseFloat(Math.abs(props.daySales)).toLocaleString('pt-br', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                })}
+                {parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
+                  'pt-br',
+                  {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  },
+                )}
               </SalesValue>
               <SalesStatusDot
                 color={
-                  props.daySales
+                  props.daySale.type === 'R'
                     ? Colors.feedback.success.dark
                     : Colors.feedback.danger.dark
                 }
@@ -126,3 +133,11 @@ const CalendarCell = (props) => (
 )
 
 export { CalendarCell }
+
+CalendarCell.propTypes = {
+  date: PropTypes.object,
+  daySale: PropTypes.object,
+  onDayHover: PropTypes.func,
+  onDayClick: PropTypes.func,
+  maxDateRange: PropTypes.number,
+}
