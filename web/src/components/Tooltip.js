@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import fontStyleMaker from '../utils/FontUtil'
 
 const TooltipMessage = styled.div`
   position: absolute;
@@ -8,14 +7,6 @@ const TooltipMessage = styled.div`
   padding: 8px;
   opacity: 0.8;
   text-align: center;
-  ${(props) =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      'regular',
-      'xxs',
-      'neutral.light.base',
-    )};
   min-width: 123px;
   border-radius: 4px;
   top: ${(props) => (!props.show ? 200 : props.positionY - props.height)}px;
@@ -64,16 +55,16 @@ const Tooltip = (props) => {
   }
 
   useEffect(() => {
-    document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-      element.onmouseover = onMouseOver.bind(this, element)
-      element.onmouseleave = onMouseLeave.bind(this, element)
-    })
+    // document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+    //   element.onmouseover = onMouseOver.bind(this, element)
+    //   element.onmouseleave = onMouseLeave.bind(this, element)
+    // })
     setTimeout(() => {
       document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-        element.onmouseover = onMouseOver.bind(this, element)
+        element.onmouseenter = onMouseOver.bind(this, element)
         element.onmouseleave = onMouseLeave.bind(this, element)
       })
-    }, 5000)
+    }, 2000)
   }, [])
 
   return (
@@ -86,8 +77,8 @@ const Tooltip = (props) => {
         positionX={positionX}
         positionY={positionY}
       >
-        {message}
-        <Arrow width={widthTooltip} />
+        Teste
+        {/* <Arrow width={widthTooltip} /> */}
       </TooltipMessage>
     </>
   )

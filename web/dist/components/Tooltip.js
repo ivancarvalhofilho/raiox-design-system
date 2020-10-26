@@ -11,8 +11,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
-
 var _this = void 0;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -44,7 +42,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  text-align: center;\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -57,8 +55,6 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var TooltipMessage = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.colors.neutral.dark.base;
-}, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
   return !props.show ? 200 : props.positionY - props.height;
 }, function (props) {
@@ -126,16 +122,16 @@ var Tooltip = function Tooltip(props) {
   };
 
   (0, _react.useEffect)(function () {
-    document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-      element.onmouseover = onMouseOver.bind(_this, element);
-      element.onmouseleave = onMouseLeave.bind(_this, element);
-    });
+    // document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+    //   element.onmouseover = onMouseOver.bind(this, element)
+    //   element.onmouseleave = onMouseLeave.bind(this, element)
+    // })
     setTimeout(function () {
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-        element.onmouseover = onMouseOver.bind(_this, element);
+        element.onmouseenter = onMouseOver.bind(_this, element);
         element.onmouseleave = onMouseLeave.bind(_this, element);
       });
-    }, 5000);
+    }, 2000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
@@ -144,9 +140,7 @@ var Tooltip = function Tooltip(props) {
     width: width,
     positionX: positionX,
     positionY: positionY
-  }, message, /*#__PURE__*/_react["default"].createElement(Arrow, {
-    width: widthTooltip
-  })));
+  }, "Teste"));
 };
 
 var _default = Tooltip;
