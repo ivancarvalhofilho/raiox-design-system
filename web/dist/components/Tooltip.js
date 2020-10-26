@@ -11,6 +11,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
+
 var _this = void 0;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -42,7 +44,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  text-align: center;\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  display: ", ";\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -56,9 +58,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var TooltipMessage = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return !props.show ? 200 : props.positionY - props.height;
+  return !props.show && 'none';
 }, function (props) {
-  return props.positionX - props.width / 2;
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
+}, function (props) {
+  return props.positionY - props.height;
+}, function (props) {
+  return props.positionX - props.width;
 });
 
 var Arrow = _styledComponents["default"].div(_templateObject2(), function (props) {
@@ -109,11 +115,11 @@ var Tooltip = function Tooltip(props) {
 
   var onMouseOver = function onMouseOver(element, e) {
     setMessage(element.attributes.getNamedItem(attributte).value);
-    setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
+    setHeight(element.getBoundingClientRect().height + 25);
     setPositionX(element.getBoundingClientRect().left);
     setPositionY(element.getBoundingClientRect().top);
-    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
-    setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
+    setWidthTooltip(tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth : 123);
+    setWidth((tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth / 2 : 62) - element.clientWidth / 2 + 3);
     setShow(true);
   };
 
@@ -122,16 +128,16 @@ var Tooltip = function Tooltip(props) {
   };
 
   (0, _react.useEffect)(function () {
-    // document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-    //   element.onmouseover = onMouseOver.bind(this, element)
-    //   element.onmouseleave = onMouseLeave.bind(this, element)
-    // })
+    document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
+      element.onmouseover = onMouseOver.bind(_this, element);
+      element.onmouseleave = onMouseLeave.bind(_this, element);
+    });
     setTimeout(function () {
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-        element.onmouseenter = onMouseOver.bind(_this, element);
+        element.onmouseover = onMouseOver.bind(_this, element);
         element.onmouseleave = onMouseLeave.bind(_this, element);
       });
-    }, 2000);
+    }, 5000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
@@ -140,7 +146,9 @@ var Tooltip = function Tooltip(props) {
     width: width,
     positionX: positionX,
     positionY: positionY
-  }, "Teste"));
+  }, message, /*#__PURE__*/_react["default"].createElement(Arrow, {
+    width: widthTooltip
+  })));
 };
 
 var _default = Tooltip;

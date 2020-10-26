@@ -1,16 +1,26 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import fontStyleMaker from '../utils/FontUtil'
 
 const TooltipMessage = styled.div`
   position: absolute;
   background: ${(props) => props.theme.colors.neutral.dark.base};
   padding: 8px;
   opacity: 0.8;
+  display: ${(props) => !props.show && 'none'};
   text-align: center;
+  ${(props) =>
+    fontStyleMaker(
+      props.theme,
+      'body',
+      'regular',
+      'xxs',
+      'neutral.light.base',
+    )};
   min-width: 123px;
   border-radius: 4px;
-  top: ${(props) => (!props.show ? 200 : props.positionY - props.height)}px;
-  left: ${(props) => props.positionX - props.width / 2}px;
+  top: ${(props) => props.positionY - props.height}px;
+  left: ${(props) => props.positionX - props.width}px;
 `
 const Arrow = styled.div`
   position: absolute;
@@ -35,17 +45,20 @@ const Tooltip = (props) => {
 
   const onMouseOver = (element, e) => {
     setMessage(element.attributes.getNamedItem(attributte).value)
-    setHeight(
-      element.getBoundingClientRect().height > 34
-        ? element.getBoundingClientRect().height
-        : 34,
-    )
+    setHeight(element.getBoundingClientRect().height + 25)
     setPositionX(element.getBoundingClientRect().left)
     setPositionY(element.getBoundingClientRect().top)
-    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
+    setWidthTooltip(
+      tooltipRef.current && tooltipRef.current.clientWidth > 0
+        ? tooltipRef.current.clientWidth
+        : 123,
+    )
     setWidth(
-      (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
-        e.target.clientWidth,
+      (tooltipRef.current && tooltipRef.current.clientWidth > 0
+        ? tooltipRef.current.clientWidth / 2
+        : 62) -
+        element.clientWidth / 2 +
+        3,
     )
     setShow(true)
   }
@@ -55,16 +68,16 @@ const Tooltip = (props) => {
   }
 
   useEffect(() => {
-    // document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-    //   element.onmouseover = onMouseOver.bind(this, element)
-    //   element.onmouseleave = onMouseLeave.bind(this, element)
-    // })
+    document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+      element.onmouseover = onMouseOver.bind(this, element)
+      element.onmouseleave = onMouseLeave.bind(this, element)
+    })
     setTimeout(() => {
       document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-        element.onmouseenter = onMouseOver.bind(this, element)
+        element.onmouseover = onMouseOver.bind(this, element)
         element.onmouseleave = onMouseLeave.bind(this, element)
       })
-    }, 2000)
+    }, 5000)
   }, [])
 
   return (
@@ -77,8 +90,8 @@ const Tooltip = (props) => {
         positionX={positionX}
         positionY={positionY}
       >
-        Teste
-        {/* <Arrow width={widthTooltip} /> */}
+        {message}
+        <Arrow width={widthTooltip} />
       </TooltipMessage>
     </>
   )
