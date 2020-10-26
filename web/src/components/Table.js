@@ -152,7 +152,7 @@ const Value = styled.div`
   white-space: nowrap;
   display: flex;
   margin: auto 0;
-  max-width: 70%;
+  max-width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
 `
@@ -381,6 +381,7 @@ function Table(props) {
                 next={() => props.onEndScroll()}
                 hasMore={props.total !== props.data[keys[0]].values.length}
                 onScroll={() => {
+                  console.log(props.complete ? cols : colsOriginal)
                   if (props.complete && optionalMouse) {
                     optionalContent.current.scrollTop =
                       content.current.el.scrollTop
