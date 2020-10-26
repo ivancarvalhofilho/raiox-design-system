@@ -43,6 +43,7 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (element, e) => {
+    console.log('element', element)
     setShow(true)
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(
@@ -69,13 +70,13 @@ const Tooltip = (props) => {
       element.onmouseover = onMouseOver.bind(this, element)
       element.onmouseleave = onMouseLeave.bind(this, element)
     })
-    setInterval(() => {
+    setTimeout(() => {
       elements = document.querySelectorAll(`[${attributte}]`)
       document.querySelectorAll(`[${attributte}]`).forEach((element) => {
         element.onmouseover = onMouseOver.bind(this, element)
         element.onmouseleave = onMouseLeave.bind(this, element)
       })
-    }, 2000)
+    }, 5000)
   }, [])
 
   return (

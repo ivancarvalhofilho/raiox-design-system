@@ -112,6 +112,7 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
+    console.log('element', element);
     setShow(true);
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
@@ -131,13 +132,13 @@ var Tooltip = function Tooltip(props) {
       element.onmouseover = onMouseOver.bind(_this, element);
       element.onmouseleave = onMouseLeave.bind(_this, element);
     });
-    setInterval(function () {
+    setTimeout(function () {
       elements = document.querySelectorAll("[".concat(attributte, "]"));
       document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
         element.onmouseover = onMouseOver.bind(_this, element);
         element.onmouseleave = onMouseLeave.bind(_this, element);
       });
-    }, 2000);
+    }, 5000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
