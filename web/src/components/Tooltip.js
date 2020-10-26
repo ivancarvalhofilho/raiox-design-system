@@ -44,7 +44,6 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (element, e) => {
-    setShow(true)
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(
       element.getBoundingClientRect().height > 34
@@ -58,6 +57,7 @@ const Tooltip = (props) => {
       (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
         e.target.clientWidth,
     )
+    setShow(false)
   }
 
   const onMouseLeave = (e) => {
@@ -77,22 +77,21 @@ const Tooltip = (props) => {
     }, 5000)
   }, [])
 
-  console.log('RENDERIZOU')
   return (
-    <div>
-      {/* {props.children} */}
-      <TooltipMessage
-        ref={tooltipRef}
-        height={height}
-        width={width}
-        show={show}
-        positionX={positionX}
-        positionY={positionY}
-      >
-        {message}
-        <Arrow width={widthTooltip} />
-      </TooltipMessage>
-    </div>
+    <>
+      {show && (
+        <TooltipMessage
+          ref={tooltipRef}
+          height={height}
+          width={width}
+          positionX={positionX}
+          positionY={positionY}
+        >
+          {message}
+          <Arrow width={widthTooltip} />
+        </TooltipMessage>
+      )}
+    </>
   )
 }
 
