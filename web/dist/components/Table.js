@@ -263,10 +263,8 @@ function Table(props) {
     return props.data[key].optional;
   }).length;
   var colsOriginal = keys.filter(function (key) {
-    console.log("!props.data[key].optional".concat(key), !props.data[key].optional);
     return !props.data[key].optional;
   });
-  console.log('colsOriginal', colsOriginal);
   var colsOriginalWithoutColor = colsOriginal.filter(function (key) {
     return key !== 'colors';
   });
@@ -409,7 +407,7 @@ function Table(props) {
     },
     hasMore: props.total !== props.data[keys[0]].values.length,
     onScroll: function onScroll() {
-      console.log(props.complete ? cols : colsOriginal);
+      console.log(props.complete ? cols : colsOriginal, cols, colsOriginal);
 
       if (props.complete && optionalMouse) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;

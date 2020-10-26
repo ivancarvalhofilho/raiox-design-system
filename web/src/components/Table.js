@@ -187,12 +187,7 @@ function Table(props) {
   const indexOptional =
     keys.findIndex((key) => props.data[key].optional) +
     keys.filter((key) => props.data[key].optional).length
-  const colsOriginal = keys.filter((key) => {
-    console.log(`!props.data[key].optional${key}`, !props.data[key].optional)
-
-    return !props.data[key].optional
-  })
-  console.log('colsOriginal', colsOriginal)
+  const colsOriginal = keys.filter((key) => !props.data[key].optional)
   const colsOriginalWithoutColor = colsOriginal.filter(
     (key) => key !== 'colors',
   )
@@ -386,7 +381,11 @@ function Table(props) {
                 next={() => props.onEndScroll()}
                 hasMore={props.total !== props.data[keys[0]].values.length}
                 onScroll={() => {
-                  console.log(props.complete ? cols : colsOriginal)
+                  console.log(
+                    props.complete ? cols : colsOriginal,
+                    cols,
+                    colsOriginal,
+                  )
                   if (props.complete && optionalMouse) {
                     optionalContent.current.scrollTop =
                       content.current.el.scrollTop
