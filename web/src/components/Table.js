@@ -368,7 +368,13 @@ function Table(props) {
               }}
             >
               <ContainerInfinite
-                cols={props.complete ? cols : colsOriginal2}
+                cols={
+                  props.complete
+                    ? cols
+                    : colsOriginal.length > 0
+                    ? colsOriginal
+                    : colsOriginal2
+                }
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
                 className="scroll custom-scrollbar"
@@ -382,7 +388,15 @@ function Table(props) {
                 next={() => props.onEndScroll()}
                 hasMore={props.total !== props.data[keys[0]].values.length}
                 onScroll={() => {
-                  console.log(colsOriginal, colsOriginal2)
+                  console.log(
+                    props.complete
+                      ? cols
+                      : colsOriginal.length > 0
+                      ? colsOriginal
+                      : colsOriginal2,
+                    colsOriginal,
+                    colsOriginal2,
+                  )
                   if (props.complete && optionalMouse) {
                     optionalContent.current.scrollTop =
                       content.current.el.scrollTop

@@ -394,7 +394,7 @@ function Table(props) {
       minWidth: 'fit-content'
     }
   }, /*#__PURE__*/_react["default"].createElement(ContainerInfinite, {
-    cols: props.complete ? cols : colsOriginal2,
+    cols: props.complete ? cols : colsOriginal.length > 0 ? colsOriginal : colsOriginal2,
     ref: content,
     style: {
       transition: 'all .3s ease'
@@ -412,7 +412,7 @@ function Table(props) {
     },
     hasMore: props.total !== props.data[keys[0]].values.length,
     onScroll: function onScroll() {
-      console.log(colsOriginal, colsOriginal2);
+      console.log(props.complete ? cols : colsOriginal.length > 0 ? colsOriginal : colsOriginal2, colsOriginal, colsOriginal2);
 
       if (props.complete && optionalMouse) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
