@@ -412,6 +412,8 @@ function Table(props) {
     },
     hasMore: props.total !== props.data[keys[0]].values.length,
     onScroll: function onScroll() {
+      console.log(colsOriginal, colsOriginal2);
+
       if (props.complete && optionalMouse) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
       }
