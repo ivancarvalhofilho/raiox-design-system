@@ -44,7 +44,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  display: ", ";\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -57,6 +57,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var TooltipMessage = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.colors.neutral.dark.base;
+}, function (props) {
+  return props.show && 'none';
 }, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
@@ -112,7 +114,7 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
-    console.log('element', element);
+    console.log('element', element.getBoundingClientRect());
     setShow(true);
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
@@ -131,19 +133,19 @@ var Tooltip = function Tooltip(props) {
     elements.forEach(function (element) {
       element.onmouseover = onMouseOver.bind(_this, element);
       element.onmouseleave = onMouseLeave.bind(_this, element);
-    });
-    setTimeout(function () {
-      elements = document.querySelectorAll("[".concat(attributte, "]"));
-      document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
-        element.onmouseover = onMouseOver.bind(_this, element);
-        element.onmouseleave = onMouseLeave.bind(_this, element);
-      });
-    }, 5000);
+    }); // setTimeout(() => {
+    //   elements = document.querySelectorAll(`[${attributte}]`)
+    //   document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+    //     element.onmouseover = onMouseOver.bind(this, element)
+    //     element.onmouseleave = onMouseLeave.bind(this, element)
+    //   })
+    // }, 5000)
   }, []);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
     height: height,
     width: width,
+    show: show,
     positionX: positionX,
     positionY: positionY
   }, message, /*#__PURE__*/_react["default"].createElement(Arrow, {

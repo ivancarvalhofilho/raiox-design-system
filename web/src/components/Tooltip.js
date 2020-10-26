@@ -6,6 +6,7 @@ const TooltipMessage = styled.div`
   position: absolute;
   background: ${(props) => props.theme.colors.neutral.dark.base};
   padding: 8px;
+  display: ${(props) => props.show && 'none'};
   opacity: 0.8;
   text-align: center;
   ${(props) =>
@@ -43,7 +44,7 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (element, e) => {
-    console.log('element', element)
+    console.log('element', element.getBoundingClientRect())
     setShow(true)
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(
@@ -65,35 +66,34 @@ const Tooltip = (props) => {
   }
 
   useEffect(() => {
-    let elements = document.querySelectorAll(`[${attributte}]`)
+    const elements = document.querySelectorAll(`[${attributte}]`)
     elements.forEach((element) => {
       element.onmouseover = onMouseOver.bind(this, element)
       element.onmouseleave = onMouseLeave.bind(this, element)
     })
-    setTimeout(() => {
-      elements = document.querySelectorAll(`[${attributte}]`)
-      document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-        element.onmouseover = onMouseOver.bind(this, element)
-        element.onmouseleave = onMouseLeave.bind(this, element)
-      })
-    }, 5000)
+    // setTimeout(() => {
+    //   elements = document.querySelectorAll(`[${attributte}]`)
+    //   document.querySelectorAll(`[${attributte}]`).forEach((element) => {
+    //     element.onmouseover = onMouseOver.bind(this, element)
+    //     element.onmouseleave = onMouseLeave.bind(this, element)
+    //   })
+    // }, 5000)
   }, [])
 
   return (
     <>
       {props.children}
-      {show && (
-        <TooltipMessage
-          ref={tooltipRef}
-          height={height}
-          width={width}
-          positionX={positionX}
-          positionY={positionY}
-        >
-          {message}
-          <Arrow width={widthTooltip} />
-        </TooltipMessage>
-      )}
+      <TooltipMessage
+        ref={tooltipRef}
+        height={height}
+        width={width}
+        show={show}
+        positionX={positionX}
+        positionY={positionY}
+      >
+        {message}
+        <Arrow width={widthTooltip} />
+      </TooltipMessage>
     </>
   )
 }
