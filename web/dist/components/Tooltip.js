@@ -58,7 +58,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var TooltipMessage = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return props.show && 'none';
+  return !props.show && 'none';
 }, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
@@ -114,7 +114,6 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
-    console.log('element', element.getBoundingClientRect());
     setShow(true);
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);

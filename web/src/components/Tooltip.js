@@ -6,7 +6,7 @@ const TooltipMessage = styled.div`
   position: absolute;
   background: ${(props) => props.theme.colors.neutral.dark.base};
   padding: 8px;
-  display: ${(props) => props.show && 'none'};
+  display: ${(props) => !props.show && 'none'};
   opacity: 0.8;
   text-align: center;
   ${(props) =>
@@ -44,7 +44,6 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (element, e) => {
-    console.log('element', element.getBoundingClientRect())
     setShow(true)
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(
