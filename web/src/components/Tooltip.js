@@ -41,7 +41,7 @@ const Tooltip = (props) => {
   const [positionX, setPositionX] = useState(0)
   const [positionY, setPositionY] = useState(0)
   const [message, setMessage] = useState('')
-  const tooltipRef = useRef()
+  // const tooltipRef = useRef()
 
   const onMouseOver = (element, e) => {
     setMessage(element.attributes.getNamedItem(attributte).value)
@@ -52,12 +52,12 @@ const Tooltip = (props) => {
     )
     setPositionX(element.getBoundingClientRect().left)
     setPositionY(element.getBoundingClientRect().top)
-    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
-    setWidth(
-      (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
-        e.target.clientWidth,
-    )
-    setShow(false)
+    // setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
+    // setWidth(
+    //   (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
+    //     e.target.clientWidth,
+    // )
+    setShow(true)
   }
 
   const onMouseLeave = (e) => {
@@ -81,7 +81,7 @@ const Tooltip = (props) => {
     <>
       {show && (
         <TooltipMessage
-          ref={tooltipRef}
+          // ref={tooltipRef}
           height={height}
           width={width}
           positionX={positionX}

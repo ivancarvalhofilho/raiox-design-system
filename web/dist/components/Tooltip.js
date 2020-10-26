@@ -109,18 +109,20 @@ var Tooltip = function Tooltip(props) {
   var _useState13 = (0, _react.useState)(''),
       _useState14 = _slicedToArray(_useState13, 2),
       message = _useState14[0],
-      setMessage = _useState14[1];
+      setMessage = _useState14[1]; // const tooltipRef = useRef()
 
-  var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
     setPositionX(element.getBoundingClientRect().left);
-    setPositionY(element.getBoundingClientRect().top);
-    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
-    setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
-    setShow(false);
+    setPositionY(element.getBoundingClientRect().top); // setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
+    // setWidth(
+    //   (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
+    //     e.target.clientWidth,
+    // )
+
+    setShow(true);
   };
 
   var onMouseLeave = function onMouseLeave(e) {
@@ -139,8 +141,8 @@ var Tooltip = function Tooltip(props) {
       });
     }, 5000);
   }, []);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
-    ref: tooltipRef,
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage // ref={tooltipRef}
+  , {
     height: height,
     width: width,
     positionX: positionX,
