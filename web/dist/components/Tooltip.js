@@ -129,17 +129,16 @@ var Tooltip = function Tooltip(props) {
   };
 
   (0, _react.useEffect)(function () {
-    var elements = document.querySelectorAll("[".concat(attributte, "]"));
-    elements.forEach(function (element) {
+    document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
       element.onmouseover = onMouseOver.bind(_this, element);
       element.onmouseleave = onMouseLeave.bind(_this, element);
-    }); // setTimeout(() => {
-    //   elements = document.querySelectorAll(`[${attributte}]`)
-    //   document.querySelectorAll(`[${attributte}]`).forEach((element) => {
-    //     element.onmouseover = onMouseOver.bind(this, element)
-    //     element.onmouseleave = onMouseLeave.bind(this, element)
-    //   })
-    // }, 5000)
+    });
+    setTimeout(function () {
+      document.querySelectorAll("[".concat(attributte, "]")).forEach(function (element) {
+        element.onmouseover = onMouseOver.bind(_this, element);
+        element.onmouseleave = onMouseLeave.bind(_this, element);
+      });
+    }, 5000);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
