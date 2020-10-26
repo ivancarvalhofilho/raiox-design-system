@@ -30,6 +30,7 @@ const CalendarGrid = styled.div`
 const CalendarGridHeader = styled.div`
   display: grid;
   grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  user-select: none;
 `
 
 const DayOfWeek = styled.div`

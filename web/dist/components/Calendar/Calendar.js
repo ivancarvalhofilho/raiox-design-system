@@ -56,7 +56,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n  user-select: none;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;

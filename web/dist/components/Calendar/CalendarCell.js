@@ -52,7 +52,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin: ", ";\n  color: ", ";\n  user-select: none;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

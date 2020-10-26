@@ -38,6 +38,7 @@ const DayNumber = styled.span`
   color: ${(props) =>
     (props.isBlockedSelection && Colors.neutral.dark['02']) ||
     (props.isSelected && Colors.brand.primary.darkest)};
+  user-select: none;
 `
 const DaySales = styled.span`
   & > div {
