@@ -114,13 +114,13 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
-    setShow(true);
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
     setPositionX(element.getBoundingClientRect().left);
     setPositionY(element.getBoundingClientRect().top);
     setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
     setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
+    setShow(false);
   };
 
   var onMouseLeave = function onMouseLeave(e) {
@@ -139,12 +139,10 @@ var Tooltip = function Tooltip(props) {
       });
     }, 5000);
   }, []);
-  console.log('RENDERIZOU');
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
     height: height,
     width: width,
-    show: show,
     positionX: positionX,
     positionY: positionY
   }, message, /*#__PURE__*/_react["default"].createElement(Arrow, {
