@@ -20,7 +20,7 @@ const Container = styled.div`
   border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
   box-sizing: border-box;
   border-radius: ${(props) => props.theme.styles.border.sm};
-  padding: ${(props) => props.theme.styles.inset.xs};
+  padding: ${(props) => props.theme.styles.spacing.inset.xs};
   display: flex;
   align-items: center;
   height: 56px;

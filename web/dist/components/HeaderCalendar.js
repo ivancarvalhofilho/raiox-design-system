@@ -108,7 +108,7 @@ var Container = _styledComponents["default"].div(_templateObject3(), function (p
 }, function (props) {
   return props.theme.styles.border.sm;
 }, function (props) {
-  return props.theme.styles.inset.xs;
+  return props.theme.styles.spacing.inset.xs;
 });
 
 var Values = _styledComponents["default"].div(_templateObject4());
