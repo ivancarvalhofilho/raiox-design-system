@@ -18,8 +18,8 @@ const TooltipMessage = styled.div`
     )};
   min-width: 123px;
   border-radius: 4px;
-  top: ${(props) => props.positionX - props.height}px;
-  left: ${(props) => props.positionY - props.width / 2}px;
+  top: ${(props) => props.positionY - props.height}px;
+  left: ${(props) => props.positionX - props.width / 2}px;
 `
 const Arrow = styled.div`
   position: absolute;
@@ -43,14 +43,16 @@ const Tooltip = (props) => {
   const tooltipRef = useRef()
 
   const onMouseOver = (e) => {
-    console.log('element', e.target.getBoundingClientRect())
     setShow(true)
     setMessage(e.target.attributes.getNamedItem(attributte).value)
     setHeight(e.target.clientHeight)
-    setPositionX(e.target.offsetTop)
-    setPositionY(e.clientY)
-    setWidthTooltip(tooltipRef.current.clientWidth)
-    setWidth(tooltipRef.current.clientWidth - e.target.clientWidth)
+    setPositionX(e.target.getBoundingClientRect().left)
+    setPositionY(e.target.getBoundingClientRect().top)
+    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
+    setWidth(
+      (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
+        e.target.clientWidth,
+    )
   }
 
   const onMouseLeave = (e) => {
@@ -78,7 +80,7 @@ const Tooltip = (props) => {
       {show && (
         <TooltipMessage
           ref={tooltipRef}
-          height={height}
+          height={height * 2}
           width={width}
           positionX={positionX}
           positionY={positionY}

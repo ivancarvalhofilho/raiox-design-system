@@ -12,8 +12,16 @@ const Template = (args) => (
   <div>
     <Tooltip>
       {' '}
-      <div custom-tooltip="teste">Teste</div> <div>Teste</div>{' '}
-      <div data-foo="teste">Teste</div> <div custom-tooltip="teste">Teste</div>{' '}
+      <div custom-tooltip="teste" style={{ backgroundColor: 'red' }}>
+        Teste
+      </div>{' '}
+      <div>Teste</div> <div data-foo="teste">Teste</div>{' '}
+      <div
+        custom-tooltip="teste"
+        style={{ backgroundColor: 'blue', width: '50%' }}
+      >
+        Teste
+      </div>{' '}
       <div data-foo="teste">Teste</div> <div data-foo="teste">Teste</div>{' '}
       <div data-foo="teste">Teste</div>{' '}
     </Tooltip>

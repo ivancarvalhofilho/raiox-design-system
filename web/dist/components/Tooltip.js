@@ -58,9 +58,9 @@ var TooltipMessage = _styledComponents["default"].div(_templateObject(), functio
 }, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
-  return props.positionX - props.height;
+  return props.positionY - props.height;
 }, function (props) {
-  return props.positionY - props.width / 2;
+  return props.positionX - props.width / 2;
 });
 
 var Arrow = _styledComponents["default"].div(_templateObject2(), function (props) {
@@ -110,14 +110,13 @@ var Tooltip = function Tooltip(props) {
   var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(e) {
-    console.log('element', e.target.getBoundingClientRect());
     setShow(true);
     setMessage(e.target.attributes.getNamedItem(attributte).value);
     setHeight(e.target.clientHeight);
-    setPositionX(e.target.offsetTop);
-    setPositionY(e.clientY);
-    setWidthTooltip(tooltipRef.current.clientWidth);
-    setWidth(tooltipRef.current.clientWidth - e.target.clientWidth);
+    setPositionX(e.target.getBoundingClientRect().left);
+    setPositionY(e.target.getBoundingClientRect().top);
+    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
+    setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
   };
 
   var onMouseLeave = function onMouseLeave(e) {
@@ -140,7 +139,7 @@ var Tooltip = function Tooltip(props) {
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, props.children, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
     ref: tooltipRef,
-    height: height,
+    height: height * 2,
     width: width,
     positionX: positionX,
     positionY: positionY
