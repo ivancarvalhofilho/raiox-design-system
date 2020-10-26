@@ -39,8 +39,18 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject11() {
+function _templateObject12() {
   var data = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 99.5%;\n  top: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -50,7 +60,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 99.5%;\n  top: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  border: 1px solid #000000;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -60,7 +70,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  max-width: 70%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -70,7 +80,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  //width: 100%;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -166,8 +176,8 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x) {
-    return "".concat(x, " 1fr");
+  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
+    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
   }, '');
 });
 
@@ -180,8 +190,8 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x) {
-    return "".concat(x, " 1fr");
+  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
+    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
   }, '');
 });
 
@@ -205,7 +215,7 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y) {
-    return "".concat(x, " 1fr");
+    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
   }, '');
 });
 
@@ -231,13 +241,15 @@ var Row = _styledComponents["default"].div(_templateObject8(), function (props) 
 
 var Value = _styledComponents["default"].div(_templateObject9());
 
-var Children = _styledComponents["default"].div(_templateObject10(), function (props) {
+var SpanValue = _styledComponents["default"].span(_templateObject10());
+
+var Children = _styledComponents["default"].div(_templateObject11(), function (props) {
   return props.color;
 }, function (props) {
   return props.top;
 });
 
-var Collapse = _styledComponents["default"].div(_templateObject11());
+var Collapse = _styledComponents["default"].div(_templateObject12());
 
 function Table(props) {
   var hasColor = Object.keys(props.data).find(function (key) {
@@ -365,7 +377,7 @@ function Table(props) {
         last: indexCol === cols.length
       }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value));
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)));
     }));
   })), /*#__PURE__*/_react["default"].createElement("div", {
     onMouseEnter: function onMouseEnter() {
@@ -433,7 +445,7 @@ function Table(props) {
         last: indexCol === cols.length
       }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value), indexCol === colsOriginalWithoutColor.length && hasColor && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && hasColor && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
         onClick: function onClick() {
           return props.onRowClick(indexRow);
         }

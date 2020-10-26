@@ -45,7 +45,9 @@ const Container = styled.div`
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
     (props.color ? '8px ' : '') +
-    props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
+    props.cols
+      .splice(props.color ? 1 : 0)
+      .reduce((x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`, '')};
 `
 const ContainerInfinite = styled(InfiniteScroll)`
   display: grid;
@@ -61,7 +63,9 @@ const ContainerInfinite = styled(InfiniteScroll)`
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
     (props.color ? '8px ' : '') +
-    props.cols.splice(props.color ? 1 : 0).reduce((x) => `${x} 1fr`, '')};
+    props.cols
+      .splice(props.color ? 1 : 0)
+      .reduce((x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`, '')};
 `
 const Scroll = styled.div`
   background: white;
@@ -105,7 +109,11 @@ const ContainerHeader = styled.div`
     !props.optional && props.paddingScroll ? '101%' : '100%'};
   color: ${(props) => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${(props) =>
-    (props.color ? '8px ' : '') + props.cols.reduce((x, y) => `${x} 1fr`, '')};
+    (props.color ? '8px ' : '') +
+    props.cols.reduce(
+      (x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`,
+      '',
+    )};
 `
 const Column = styled.div`
   display: grid;
@@ -125,6 +133,7 @@ const Column = styled.div`
 
 const Row = styled.div`
   display: flex;
+  //width: 100%;
   align-items: center;
   justify-content: ${(props) =>
     props.justify === 'right'
@@ -143,8 +152,15 @@ const Value = styled.div`
   white-space: nowrap;
   display: flex;
   margin: auto 0;
+  max-width: 70%;
   text-overflow: ellipsis;
   overflow: hidden;
+`
+const SpanValue = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #000000;
 `
 const Children = styled.div`
   position: absolute;
@@ -313,19 +329,21 @@ function Table(props) {
                         last={indexCol === cols.length}
                       >
                         <Value>
-                          {props.data[key].template
-                            ? props.data[key].template(
-                                value,
-                                props.data[key].params &&
-                                  props.data[key].params.map(
-                                    (param) =>
-                                      props.data[param] &&
-                                      props.data[param].values[indexRow],
-                                  ),
-                                props.dispatch,
-                                props.subdata && props.subdata[indexRow],
-                              )
-                            : value}
+                          {props.data[key].template ? (
+                            props.data[key].template(
+                              value,
+                              props.data[key].params &&
+                                props.data[key].params.map(
+                                  (param) =>
+                                    props.data[param] &&
+                                    props.data[param].values[indexRow],
+                                ),
+                              props.dispatch,
+                              props.subdata && props.subdata[indexRow],
+                            )
+                          ) : (
+                            <SpanValue>{value}</SpanValue>
+                          )}
                         </Value>
                       </Row>
                     ))}
@@ -410,19 +428,21 @@ function Table(props) {
                           last={indexCol === cols.length}
                         >
                           <Value>
-                            {props.data[key].template
-                              ? props.data[key].template(
-                                  value,
-                                  props.data[key].params &&
-                                    props.data[key].params.map(
-                                      (param) =>
-                                        props.data[param] &&
-                                        props.data[param].values[indexRow],
-                                    ),
-                                  props.dispatch,
-                                  props.subdata && props.subdata[indexRow],
-                                )
-                              : value}
+                            {props.data[key].template ? (
+                              props.data[key].template(
+                                value,
+                                props.data[key].params &&
+                                  props.data[key].params.map(
+                                    (param) =>
+                                      props.data[param] &&
+                                      props.data[param].values[indexRow],
+                                  ),
+                                props.dispatch,
+                                props.subdata && props.subdata[indexRow],
+                              )
+                            ) : (
+                              <SpanValue>{value}</SpanValue>
+                            )}
                           </Value>
                           {indexCol === colsOriginalWithoutColor.length &&
                             hasColor &&
