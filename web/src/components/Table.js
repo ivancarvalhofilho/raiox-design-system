@@ -12,7 +12,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../../tokens/js'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
-
+import clone from 'ramda/src/clone'
 const LoaderContainer = styled.div`
   display: flex;
   width: ${(props) => props.cols * '100'}%;
@@ -188,6 +188,7 @@ function Table(props) {
     keys.findIndex((key) => props.data[key].optional) +
     keys.filter((key) => props.data[key].optional).length
   const colsOriginal = keys.filter((key) => !props.data[key].optional)
+  const colsOriginal2 = keys.filter((key) => !props.data[key].optional)
   const colsOriginalWithoutColor = colsOriginal.filter(
     (key) => key !== 'colors',
   )
@@ -367,7 +368,7 @@ function Table(props) {
               }}
             >
               <ContainerInfinite
-                cols={props.complete ? cols : colsOriginal}
+                cols={props.complete ? cols : colsOriginal2}
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
                 className="scroll custom-scrollbar"
@@ -381,11 +382,6 @@ function Table(props) {
                 next={() => props.onEndScroll()}
                 hasMore={props.total !== props.data[keys[0]].values.length}
                 onScroll={() => {
-                  console.log(
-                    props.complete ? cols : colsOriginal,
-                    cols,
-                    colsOriginal,
-                  )
                   if (props.complete && optionalMouse) {
                     optionalContent.current.scrollTop =
                       content.current.el.scrollTop

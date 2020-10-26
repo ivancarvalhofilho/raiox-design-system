@@ -57,6 +57,7 @@
     "chroma-js": "^2.1.0",
     "dayjs": "^1.9.1",
     "emotion": "^10.0.27",
+    "ramda": "^0.27.1",
     "react-fast-image": "0.0.30",
     "react-redux": "^7.2.1",
     "react-svg": "^11.0.44",
