@@ -190,7 +190,7 @@ function Table(props) {
   const colsOriginal = keys.filter((key) => {
     console.log(`!props.data[key].optional${key}`, !props.data[key].optional)
 
-    !props.data[key].optional
+    return !props.data[key].optional
   })
   console.log('colsOriginal', colsOriginal)
   const colsOriginalWithoutColor = colsOriginal.filter(
