@@ -12,7 +12,8 @@ const Month = styled.div`
 const Date = styled.div`
   margin-left: 11px;
   ${(props) =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')}
+    fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')};
+  cursor: pointer;
 `
 const Container = styled.div`
   border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
@@ -51,14 +52,18 @@ const HeaderCalendar = (props) => (
         appearance="primary"
         style={{ marginRight: '16px', cursor: 'pointer' }}
         path={icons['chevron-left']}
+        onClick={() => props.onBackMonthClick()}
       />
       <Icon
         appearance="primary"
         style={{ cursor: 'pointer' }}
         size="14px"
         path={icons['chevron-right']}
+        onClick={() => props.onNextMonthClick()}
       />
-      <Date>
+      <Date
+          onClick={() => props.onMonthClick()}
+      >
         {dayjs()
           .set('month', props.month)
           .set('year', props.year)
@@ -83,5 +88,8 @@ export default HeaderCalendar
 HeaderCalendar.propTypes = {
   month: PropTypes.number,
   values: PropTypes.array,
-  year: PropTypes.number
+  year: PropTypes.number,
+  onBackMonthClick: PropTypes.func,
+  onNextMonthClick: PropTypes.func,
+  onMonthClick: PropTypes.func,
 }

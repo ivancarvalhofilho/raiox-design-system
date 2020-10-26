@@ -72,7 +72,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: 11px;\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: 11px;\n  ", ";\n  cursor: pointer;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -129,15 +129,25 @@ var HeaderCalendar = function HeaderCalendar(props) {
       marginRight: '16px',
       cursor: 'pointer'
     },
-    path: _icons["default"]['chevron-left']
+    path: _icons["default"]['chevron-left'],
+    onClick: function onClick() {
+      return props.onBackMonthClick();
+    }
   }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     appearance: "primary",
     style: {
       cursor: 'pointer'
     },
     size: "14px",
-    path: _icons["default"]['chevron-right']
-  }), /*#__PURE__*/_react["default"].createElement(Date, null, (0, _dayjs["default"])().set('month', props.month).set('year', props.year).format('MMMM [de] YYYY'))), /*#__PURE__*/_react["default"].createElement(Values, null, props.values && props.values.map(function (_ref, index) {
+    path: _icons["default"]['chevron-right'],
+    onClick: function onClick() {
+      return props.onNextMonthClick();
+    }
+  }), /*#__PURE__*/_react["default"].createElement(Date, {
+    onClick: function onClick() {
+      return props.onMonthClick();
+    }
+  }, (0, _dayjs["default"])().set('month', props.month).set('year', props.year).format('MMMM [de] YYYY'))), /*#__PURE__*/_react["default"].createElement(Values, null, props.values && props.values.map(function (_ref, index) {
     var label = _ref.label,
         value = _ref.value,
         color = _ref.color;
@@ -154,5 +164,8 @@ exports["default"] = _default;
 HeaderCalendar.propTypes = {
   month: _propTypes["default"].number,
   values: _propTypes["default"].array,
-  year: _propTypes["default"].number
+  year: _propTypes["default"].number,
+  onBackMonthClick: _propTypes["default"].func,
+  onNextMonthClick: _propTypes["default"].func,
+  onMonthClick: _propTypes["default"].func
 };
