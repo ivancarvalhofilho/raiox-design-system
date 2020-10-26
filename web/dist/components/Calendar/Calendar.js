@@ -221,7 +221,7 @@ var Calendar = function Calendar(props) {
       var totalDays = visibleDaysOfPreviousMonth.concat(daysOnThisMonth);
       iterableDay = iterableDay.set('year', props.year).set('month', props.month + 1);
 
-      if (35 - totalDays.length > 0) {
+      if (35 - totalDays.length >= 0) {
         var visibleDaysOfNextMonth = Array.from(Array(35 - totalDays.length).keys()).map(function (day) {
           return generateDayObject(day, iterableDay, false);
         });

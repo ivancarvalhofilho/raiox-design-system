@@ -205,7 +205,7 @@ const Calendar = (props) => {
       iterableDay = iterableDay
         .set('year', props.year)
         .set('month', props.month + 1)
-      if (35 - totalDays.length > 0) {
+      if (35 - totalDays.length >= 0) {
         const visibleDaysOfNextMonth = Array.from(
           Array(35 - totalDays.length).keys(),
         ).map((day) => generateDayObject(day, iterableDay, false))
