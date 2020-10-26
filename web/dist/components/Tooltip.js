@@ -44,7 +44,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  display: ", ";\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  background: ", ";\n  padding: 8px;\n  opacity: 0.8;\n  text-align: center;\n  ", ";\n  min-width: 123px;\n  border-radius: 4px;\n  top: ", "px;\n  left: ", "px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -58,11 +58,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var TooltipMessage = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return !props.show && 'none';
-}, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
-  return props.positionY - props.height;
+  return !props.show ? 200 : props.positionY - props.height;
 }, function (props) {
   return props.positionX - props.width / 2;
 });
@@ -109,19 +107,17 @@ var Tooltip = function Tooltip(props) {
   var _useState13 = (0, _react.useState)(''),
       _useState14 = _slicedToArray(_useState13, 2),
       message = _useState14[0],
-      setMessage = _useState14[1]; // const tooltipRef = useRef()
+      setMessage = _useState14[1];
 
+  var tooltipRef = (0, _react.useRef)();
 
   var onMouseOver = function onMouseOver(element, e) {
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height > 34 ? element.getBoundingClientRect().height : 34);
     setPositionX(element.getBoundingClientRect().left);
-    setPositionY(element.getBoundingClientRect().top); // setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0)
-    // setWidth(
-    //   (tooltipRef.current ? tooltipRef.current.clientWidth : 0) -
-    //     e.target.clientWidth,
-    // )
-
+    setPositionY(element.getBoundingClientRect().top);
+    setWidthTooltip(tooltipRef.current ? tooltipRef.current.clientWidth : 0);
+    setWidth((tooltipRef.current ? tooltipRef.current.clientWidth : 0) - e.target.clientWidth);
     setShow(true);
   };
 
@@ -141,9 +137,10 @@ var Tooltip = function Tooltip(props) {
       });
     }, 5000);
   }, []);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, show && /*#__PURE__*/_react["default"].createElement(TooltipMessage // ref={tooltipRef}
-  , {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(TooltipMessage, {
+    ref: tooltipRef,
     height: height,
+    show: show,
     width: width,
     positionX: positionX,
     positionY: positionY
