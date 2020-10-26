@@ -187,7 +187,12 @@ function Table(props) {
   const indexOptional =
     keys.findIndex((key) => props.data[key].optional) +
     keys.filter((key) => props.data[key].optional).length
-  const colsOriginal = keys.filter((key) => !props.data[key].optional)
+  const colsOriginal = keys.filter((key) => {
+    console.log(`!props.data[key].optional${key}`, !props.data[key].optional)
+
+    !props.data[key].optional
+  })
+  console.log('colsOriginal', colsOriginal)
   const colsOriginalWithoutColor = colsOriginal.filter(
     (key) => key !== 'colors',
   )
