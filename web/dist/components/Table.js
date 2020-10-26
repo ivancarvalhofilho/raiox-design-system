@@ -21,6 +21,8 @@ var _Icon = _interopRequireDefault(require("./Icon"));
 
 var _icons = _interopRequireDefault(require("../../../tokens/js/icons"));
 
+var _clone = _interopRequireDefault(require("ramda/src/clone"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -265,6 +267,9 @@ function Table(props) {
   var colsOriginal = keys.filter(function (key) {
     return !props.data[key].optional;
   });
+  var colsOriginal2 = keys.filter(function (key) {
+    return !props.data[key].optional;
+  });
   var colsOriginalWithoutColor = colsOriginal.filter(function (key) {
     return key !== 'colors';
   });
@@ -389,7 +394,7 @@ function Table(props) {
       minWidth: 'fit-content'
     }
   }, /*#__PURE__*/_react["default"].createElement(ContainerInfinite, {
-    cols: props.complete ? cols : colsOriginal,
+    cols: props.complete ? cols : colsOriginal2,
     ref: content,
     style: {
       transition: 'all .3s ease'
@@ -407,8 +412,6 @@ function Table(props) {
     },
     hasMore: props.total !== props.data[keys[0]].values.length,
     onScroll: function onScroll() {
-      console.log(props.complete ? cols : colsOriginal, cols, colsOriginal);
-
       if (props.complete && optionalMouse) {
         optionalContent.current.scrollTop = content.current.el.scrollTop;
       }
