@@ -282,14 +282,6 @@ function Table(props) {
       optionalMouse = _useState2[0],
       setOptionalMouse = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      childrenSize = _useState4[0],
-      setChildrenSize = _useState4[1];
-
-  (0, _react.useEffect)(function () {
-    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-  }, [props.indexRowOpened, refChildren]);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     cols: colsOptional,
@@ -363,7 +355,7 @@ function Table(props) {
   }, colsOptional.map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       indexRowOpened: props.indexRowOpened,
-      childrenHeight: childrenSize,
+      childrenHeight: refChildren.current ? refChildren.current.clientHeight : 0,
       key: indexCol,
       rows: props.data[key].values
     }, props.data[key].values.map(function (value, indexRow) {
@@ -428,7 +420,7 @@ function Table(props) {
     })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
-      childrenHeight: childrenSize,
+      childrenHeight: refChildren.current ? refChildren.current.clientHeight : 0,
       key: indexCol,
       rows: props.data[key].values,
       indexRowOpened: props.indexRowOpened
