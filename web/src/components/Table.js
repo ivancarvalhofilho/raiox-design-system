@@ -201,7 +201,10 @@ function Table(props) {
 
   const [optionalMouse, setOptionalMouse] = useState(false)
 
-  console.log(refChildren.current ? refChildren.current.clientHeight : 0)
+  console.log(
+    refChildren,
+    refChildren.current ? refChildren.current.clientHeight : 0,
+  )
   return (
     <div>
       <DisplayGrid>
