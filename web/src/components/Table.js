@@ -200,17 +200,6 @@ function Table(props) {
   const scrollableDiv = useRef()
 
   const [optionalMouse, setOptionalMouse] = useState(false)
-  const [childrenSize, setChildrenSize] = useState(0)
-
-  useEffect(() => {}, [props.indexRowOpened, refChildren])
-
-  useEffect(() => {
-    setTimeout(() => {
-      setChildrenSize(
-        refChildren.current ? refChildren.current.clientHeight : 0,
-      )
-    }, 500)
-  }, [props.indexRowOpened])
 
   return (
     <div>
@@ -324,7 +313,7 @@ function Table(props) {
                 {colsOptional.map((key, indexCol) => (
                   <Column
                     indexRowOpened={props.indexRowOpened}
-                    childrenHeight={childrenSize}
+                    childrenHeight={props.childrenSize}
                     key={indexCol}
                     rows={props.data[key].values}
                   >
@@ -412,7 +401,7 @@ function Table(props) {
               >
                 {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
                   <Column
-                    childrenHeight={childrenSize}
+                    childrenHeight={props.childrenSize}
                     key={indexCol}
                     rows={props.data[key].values}
                     indexRowOpened={props.indexRowOpened}
