@@ -287,7 +287,7 @@ function Table(props) {
       childrenSize = _useState4[0],
       setChildrenSize = _useState4[1];
 
-  console.log(refChildren.current && refChildren.current.clientHeight);
+  console.log(refChildren, refChildren.current && refChildren.current.clientHeight);
   (0, _react.useEffect)(function () {
     if (refChildren.current) {
       setChildrenSize(refChildren.current.clientHeight);
@@ -446,7 +446,7 @@ function Table(props) {
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
-      }, /*#__PURE__*/_react["default"].createElement(Value, null, childrenSize, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
+      }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
       }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
         onClick: function onClick() {
