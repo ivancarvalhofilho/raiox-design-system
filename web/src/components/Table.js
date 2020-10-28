@@ -232,7 +232,7 @@ function Table(props) {
                         path={
                           props.orderBy !== key
                             ? theme.icons['arrow-horizontal']
-                            : props.order === 'ASC'
+                            : props.order === 'DESC'
                             ? theme.icons['arrow-down']
                             : theme.icons['arrow-up']
                         }
@@ -274,7 +274,7 @@ function Table(props) {
                       path={
                         props.orderBy !== key
                           ? theme.icons['arrow-horizontal']
-                          : props.order === 'ASC'
+                          : props.order === 'DESC'
                           ? theme.icons['arrow-down']
                           : theme.icons['arrow-up']
                       }

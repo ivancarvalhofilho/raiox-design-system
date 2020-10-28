@@ -304,7 +304,7 @@ function Table(props) {
       color: _js["default"].colors.neutral.light['02'],
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
+      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     color: hasColor,
@@ -333,7 +333,7 @@ function Table(props) {
       },
       appearance: "dark",
       size: "10px",
-      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'ASC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
+      path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _js["default"].icons['arrow-down'] : _js["default"].icons['arrow-up']
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     optional: true,
