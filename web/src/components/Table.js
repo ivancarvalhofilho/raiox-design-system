@@ -202,17 +202,9 @@ function Table(props) {
   const [optionalMouse, setOptionalMouse] = useState(false)
   const [childrenSize, setChildrenSize] = useState(0)
 
-  console.log(
-    refChildren,
-    refChildren.current && refChildren.current.clientHeight,
-  )
   useEffect(() => {
-    if (refChildren.current) {
-      setChildrenSize(refChildren.current.clientHeight)
-    } else {
-      setChildrenSize(0)
-    }
-  }, [props.indexRowOpened])
+    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
+  }, [props.indexRowOpened, refChildren])
 
   return (
     <div>
