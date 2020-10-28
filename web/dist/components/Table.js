@@ -287,14 +287,9 @@ function Table(props) {
       childrenSize = _useState4[0],
       setChildrenSize = _useState4[1];
 
-  console.log(refChildren, refChildren.current && refChildren.current.clientHeight);
   (0, _react.useEffect)(function () {
-    if (refChildren.current) {
-      setChildrenSize(refChildren.current.clientHeight);
-    } else {
-      setChildrenSize(0);
-    }
-  }, [props.indexRowOpened]);
+    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
+  }, [props.indexRowOpened, refChildren]);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     cols: colsOptional,
