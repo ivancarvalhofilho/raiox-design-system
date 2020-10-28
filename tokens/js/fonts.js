@@ -19,6 +19,7 @@ const fonts = {
         xs: '14px',
         sm: '16px',
         md: '18px',
+        mdb: '20px',
         lg: '24px',
         llg: '28px',
         xl: '32px',
