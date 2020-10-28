@@ -135,6 +135,7 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   //width: 100%;
+  overflow: auto;
   align-items: center;
   justify-content: ${(props) =>
     props.justify === 'right'
