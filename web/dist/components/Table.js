@@ -282,6 +282,7 @@ function Table(props) {
       optionalMouse = _useState2[0],
       setOptionalMouse = _useState2[1];
 
+  console.log(refChildren.current ? refChildren.current.clientHeight : 0);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     cols: colsOptional,
