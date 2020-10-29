@@ -29,9 +29,7 @@ const Title = styled.div`
   text-align: center;
   margin: 0 auto;
 `
-const LeftModalContent = styled.div`
-  padding: 20px;
-`
+const LeftModalContent = styled.div``
 const LeftModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
