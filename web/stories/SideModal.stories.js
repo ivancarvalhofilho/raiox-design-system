@@ -15,6 +15,7 @@ Default.args = {
   closable: true,
   onClose: () => {},
   show: true,
+  title: 'Dúvidas frequentes sobre os recebimentos:',
 }
 
 Default.parameters = { layout: 'fullscreen' }
