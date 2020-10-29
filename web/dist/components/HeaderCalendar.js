@@ -133,7 +133,7 @@ var MoneySign = _styledComponents["default"].div(_templateObject7(), function (p
 
 var HeaderCalendar = function HeaderCalendar(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Month, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: "14px",
+    size: _js["default"].styles.icon.size.md,
     appearance: "primary",
     style: {
       marginRight: _js["default"].styles.spacing.inline.nano,
@@ -144,11 +144,11 @@ var HeaderCalendar = function HeaderCalendar(props) {
       return props.onBackMonthClick();
     }
   }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    size: _js["default"].styles.icon.size.md,
     appearance: "primary",
     style: {
       cursor: 'pointer'
     },
-    size: "14px",
     path: _icons["default"]['chevron-right'],
     onClick: function onClick() {
       return props.onNextMonthClick();

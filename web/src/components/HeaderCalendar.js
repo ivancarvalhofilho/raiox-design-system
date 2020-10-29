@@ -52,7 +52,7 @@ const HeaderCalendar = (props) => (
   <Container>
     <Month>
       <Icon
-        size="14px"
+        size={theme.styles.icon.size.md}
         appearance="primary"
         style={{
           marginRight: theme.styles.spacing.inline.nano,
@@ -62,9 +62,9 @@ const HeaderCalendar = (props) => (
         onClick={() => props.onBackMonthClick()}
       />
       <Icon
+        size={theme.styles.icon.size.md}
         appearance="primary"
         style={{ cursor: 'pointer' }}
-        size="14px"
         path={icons['chevron-right']}
         onClick={() => props.onNextMonthClick()}
       />

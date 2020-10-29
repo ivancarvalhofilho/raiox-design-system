@@ -106,6 +106,7 @@ var Icon = function Icon(props) {
   }, /*#__PURE__*/_react["default"].createElement(Svg, {
     rotate: props.rotate,
     spin: props.spin,
+    className: props.className,
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'
     }),
