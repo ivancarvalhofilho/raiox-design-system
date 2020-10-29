@@ -38,7 +38,7 @@ const Month = styled.div`
       'body',
       'regular',
       'xs',
-      props.selected ? 'neutral.light.base' : 'neutral.dark.base',
+      props.active ? 'neutral.light.base' : 'neutral.dark.base',
     )};
   user-select: none;
   border-radius: ${theme.styles.border.radius.sm};
@@ -56,7 +56,7 @@ function MonthList(props) {
   const monthsArray = months.map((months, index) => ({
     name: months[0],
     active:
-      props.showAllMonthsActive ||
+      !!props.showAllMonthsActive ||
       props.months.some((month) => month.month === index),
     date: generateDate(months[1]),
   }))

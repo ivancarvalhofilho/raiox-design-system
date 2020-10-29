@@ -54,7 +54,7 @@ var Month = _styledComponents["default"].div(_templateObject2(), function (props
 }, function (props) {
   return !props.active && _js["default"].styles.opacity.light;
 }, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', props.selected ? 'neutral.light.base' : 'neutral.dark.base');
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', props.active ? 'neutral.light.base' : 'neutral.dark.base');
 }, _js["default"].styles.border.radius.sm);
 
 function MonthList(props) {
@@ -65,7 +65,7 @@ function MonthList(props) {
   var monthsArray = months.map(function (months, index) {
     return {
       name: months[0],
-      active: props.showAllMonthsActive || props.months.some(function (month) {
+      active: !!props.showAllMonthsActive || props.months.some(function (month) {
         return month.month === index;
       }),
       date: generateDate(months[1])
