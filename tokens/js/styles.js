@@ -39,12 +39,10 @@ export default {
             lg: '40px',
         },
         squish: {
-            quarck: '4px',
-            nano: '8px',
-            xs: '16px',
-            sm: '24px',
-            md: '32px',
-            lg: '40px',
+            quarck: '4px 8px',
+            nano: '8px 16px',
+            xs: '16px 24px',
+            sm: '16px 32px',
         },
         inline: {
             quarck: '4px',
