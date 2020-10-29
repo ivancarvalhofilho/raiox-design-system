@@ -10,7 +10,6 @@ import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../../tokens/js'
-import { UnmountClosed } from 'react-collapse'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
 import clone from 'ramda/src/clone'
@@ -457,27 +456,20 @@ function Table(props) {
                                 />
                               </Collapse>
                             )}
-                          <UnmountClosed
-                            isOpened={
-                              indexCol === colsOriginalWithoutColor.length &&
-                              props.indexRowOpened === indexRow
-                            }
-                          >
-                            <Children
-                              id="children"
-                              color={
-                                props.data.colors &&
-                                props.data.colors.values[indexRow]
-                              }
-                              onClick={(e) => {
-                                e.stopPropagation()
-                              }}
-                              ref={refChildren}
-                              top={`${(props.indexRowOpened + 1) * 48}px`}
-                            >
-                              {props.children}
-                            </Children>
-                          </UnmountClosed>
+                          {indexCol === colsOriginalWithoutColor.length &&
+                            props.indexRowOpened === indexRow && (
+                              <Children
+                                id="children"
+                                color={props.data.colors.values[indexRow]}
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                }}
+                                ref={refChildren}
+                                top={`${(props.indexRowOpened + 1) * 48}px`}
+                              >
+                                {props.children}
+                              </Children>
+                            )}
                         </Row>
                       </>
                     ))}
