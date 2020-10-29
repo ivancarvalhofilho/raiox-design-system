@@ -28,6 +28,7 @@ const LeftModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
   width: 374px;
+  overflow: auto;
   background: white;
   transition: right 0.5s;
   position: absolute;
