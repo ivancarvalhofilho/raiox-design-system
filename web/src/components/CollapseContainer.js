@@ -11,12 +11,12 @@ import {
 } from './StyledComponents'
 
 const Header = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `
 const Button = styled.div`
-  cursor: pointer;
   padding-left: ${(props) => props.theme.styles.spacing.inline.nano};
 `
 
@@ -48,9 +48,9 @@ const CollapseContainer = (props) => {
   const [opened, setOpened] = useState(false)
   return (
     <Container>
-      <Header>
+      <Header onClick={() => setOpened(!opened)}>
         <Title>{props.title}</Title>
-        <Button onClick={() => setOpened(!opened)}>
+        <Button>
           <Icon
             path={icons['chevron-down']}
             size="16px"

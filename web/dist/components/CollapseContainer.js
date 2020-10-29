@@ -82,7 +82,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  cursor: pointer;\n  padding-left: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-left: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -92,7 +92,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -134,11 +134,11 @@ var CollapseContainer = function CollapseContainer(props) {
       opened = _useState2[0],
       setOpened = _useState2[1];
 
-  return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Header, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), /*#__PURE__*/_react["default"].createElement(Button, {
+  return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Header, {
     onClick: function onClick() {
       return setOpened(!opened);
     }
-  }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), /*#__PURE__*/_react["default"].createElement(Button, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     path: _icons["default"]['chevron-down'],
     size: "16px",
     rotate: opened ? 180 : 0
