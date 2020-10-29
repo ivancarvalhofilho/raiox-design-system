@@ -1,6 +1,7 @@
 export default {
     border: {
         radius: {
+            xs: '2px',
             sm: '4px',
             md: '8px',
             lg: '16px',
@@ -24,6 +25,7 @@ export default {
         },
     },
     shadow: {
+        level0: '0px 0px 3px rgba(0, 0, 0, 0.15)',
         level1: '0px 0px 8px rgba(0, 39, 64, 0.1)',
         level2: '0px 0px 24px rgba(0, 39, 64, 0.1)',
         level3: '0px 0px 32px rgba(0, 39, 64, 0.1)',

@@ -23,6 +23,16 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  transition-duration: 0.2s;\n  transition-property: transform;\n  transform: rotate(-", "deg);\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  cursor: ", ";\n\n  -webkit-animation: ", ";\n"]);
 
@@ -39,6 +49,10 @@ var IconContainer = _styledComponents["default"].span(_templateObject(), functio
   return props.onClick && 'pointer';
 }, function (props) {
   return props.spin && 'spin 2s infinite linear';
+});
+
+var Svg = (0, _styledComponents["default"])(_reactSvgInline["default"])(_templateObject2(), function (props) {
+  return props.rotate;
 });
 
 var Icon = function Icon(props) {
@@ -90,7 +104,8 @@ var Icon = function Icon(props) {
   return /*#__PURE__*/_react["default"].createElement(IconContainer, {
     onClick: props.onClick,
     spin: props.spin
-  }, /*#__PURE__*/_react["default"].createElement(_reactSvgInline["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(Svg, {
+    rotate: props.rotate,
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'
     }),

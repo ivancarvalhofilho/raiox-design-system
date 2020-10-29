@@ -9,6 +9,11 @@ const IconContainer = styled.span`
 
   -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
 `
+const Svg = styled(SVGInline)`
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transform: rotate(-${(props) => props.rotate}deg);
+`
 const Icon = (props) => {
   function getIconSvgColor(props) {
     switch (props.appearance) {
@@ -49,7 +54,8 @@ const Icon = (props) => {
 
   return (
     <IconContainer onClick={props.onClick} spin={props.spin}>
-      <SVGInline
+      <Svg
+        rotate={props.rotate}
         style={{ ...props.style, display: 'flex' }}
         svg={props.path ? props.path : theme.icons[props.name]}
         fill={getIconSvgColor(props)}
