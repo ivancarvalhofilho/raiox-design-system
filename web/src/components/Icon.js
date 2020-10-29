@@ -53,7 +53,7 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer onClick={props.onClick} spin={props.spin}>
+    <IconContainer {...props} onClick={props.onClick} spin={props.spin}>
       <Svg
         rotate={props.rotate}
         style={{ ...props.style, display: 'flex' }}
