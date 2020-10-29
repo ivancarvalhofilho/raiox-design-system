@@ -51,10 +51,13 @@ const SideModal = (props) => {
   return (
     <BackgroundContainer
       show={props.show ? props.show : show}
-      onClick={() => props.onClickOut()}
+      onClick={() => {
+        props.onClickOut()
+      }}
     >
       <LeftModalContainer
         ref={ref}
+        onClick={(e) => e.stopPropagation()}
         show={!props.show ? props.show : show}
         width={width}
       >

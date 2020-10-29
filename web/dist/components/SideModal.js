@@ -122,10 +122,13 @@ var SideModal = function SideModal(props) {
   return /*#__PURE__*/_react["default"].createElement(BackgroundContainer, {
     show: props.show ? props.show : show,
     onClick: function onClick() {
-      return props.onClickOut();
+      props.onClickOut();
     }
   }, /*#__PURE__*/_react["default"].createElement(LeftModalContainer, {
     ref: ref,
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
     show: !props.show ? props.show : show,
     width: width
   }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
