@@ -17,6 +17,8 @@ var _reactInfiniteScrollComponent = _interopRequireDefault(require("react-infini
 
 var _js = _interopRequireDefault(require("../../../tokens/js"));
 
+var _reactCollapse = require("react-collapse");
+
 var _Icon = _interopRequireDefault(require("./Icon"));
 
 var _icons = _interopRequireDefault(require("../../../tokens/js/icons"));
@@ -442,15 +444,17 @@ function Table(props) {
       }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
         size: "md",
         name: props.indexRowOpened === indexRow ? 'chevron-down' : 'chevron-up'
-      })), indexCol === colsOriginalWithoutColor.length && props.indexRowOpened === indexRow && /*#__PURE__*/_react["default"].createElement(Children, {
+      })), /*#__PURE__*/_react["default"].createElement(_reactCollapse.UnmountClosed, {
+        isOpened: indexCol === colsOriginalWithoutColor.length && props.indexRowOpened === indexRow
+      }, /*#__PURE__*/_react["default"].createElement(Children, {
         id: "children",
-        color: props.data.colors.values[indexRow],
+        color: props.data.colors && props.data.colors.values[indexRow],
         onClick: function onClick(e) {
           e.stopPropagation();
         },
         ref: refChildren,
         top: "".concat((props.indexRowOpened + 1) * 48, "px")
-      }, props.children)));
+      }, props.children))));
     }));
   }), /*#__PURE__*/_react["default"].createElement("div", {
     id: "scrollableDiv"
