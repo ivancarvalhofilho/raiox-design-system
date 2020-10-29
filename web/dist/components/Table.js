@@ -355,7 +355,7 @@ function Table(props) {
   }, colsOptional.map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       indexRowOpened: props.indexRowOpened,
-      childrenHeight: props.childrenSize,
+      childrenHeight: props.children && props.childrenSize,
       key: indexCol,
       rows: props.data[key].values
     }, props.data[key].values.map(function (value, indexRow) {
@@ -420,7 +420,7 @@ function Table(props) {
     })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
-      childrenHeight: props.childrenSize,
+      childrenHeight: props.children && props.childrenSize,
       key: indexCol,
       rows: props.data[key].values,
       indexRowOpened: props.indexRowOpened

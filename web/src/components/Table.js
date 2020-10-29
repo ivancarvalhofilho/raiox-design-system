@@ -314,7 +314,7 @@ function Table(props) {
                 {colsOptional.map((key, indexCol) => (
                   <Column
                     indexRowOpened={props.indexRowOpened}
-                    childrenHeight={props.childrenSize}
+                    childrenHeight={props.children && props.childrenSize}
                     key={indexCol}
                     rows={props.data[key].values}
                   >
@@ -402,7 +402,7 @@ function Table(props) {
               >
                 {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
                   <Column
-                    childrenHeight={props.childrenSize}
+                    childrenHeight={props.children && props.childrenSize}
                     key={indexCol}
                     rows={props.data[key].values}
                     indexRowOpened={props.indexRowOpened}
