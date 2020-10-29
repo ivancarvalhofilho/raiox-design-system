@@ -68,7 +68,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

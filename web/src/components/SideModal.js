@@ -18,6 +18,7 @@ const BackgroundContainer = styled.div`
   justify-content: center;
 `
 const LeftModalHeader = styled.div`
+  padding-bottom: 5px;
   display: flex;
   justify-content: flex-end;
 `
