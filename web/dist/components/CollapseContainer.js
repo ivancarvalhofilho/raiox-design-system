@@ -101,7 +101,7 @@ var Container = _styledComponents["default"].div(_templateObject3(), function (p
   return props.theme.styles.shadow.level0;
 });
 
-var Body = (0, _styledComponents["default"])(_reactCollapse.Collapse)(_templateObject4());
+var Body = (0, _styledComponents["default"])(_reactCollapse.UnmountClosed)(_templateObject4());
 
 var Title = _styledComponents["default"].span(_templateObject5(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'brand.secondary.dark');

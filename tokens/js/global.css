@@ -41,3 +41,7 @@
   border-top: 10px solid #303133 !important;
   opacity: 0.8;
 }
+
+.ReactCollapse--collapse {
+  transition: height 300ms;
+}

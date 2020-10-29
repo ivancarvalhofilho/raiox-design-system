@@ -4,7 +4,7 @@ import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
 import styled from 'styled-components'
 import fontStyleMaker from '../utils/FontUtil'
-import { Collapse } from 'react-collapse'
+import { UnmountClosed } from 'react-collapse'
 
 const Header = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ const Container = styled.div`
   padding: 16px;
   background: white;
 `
-const Body = styled(Collapse)``
+const Body = styled(UnmountClosed)``
 const Title = styled.span`
   ${(props) =>
     fontStyleMaker(
