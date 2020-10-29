@@ -5,6 +5,10 @@ import icons from '../../../tokens/js/icons'
 import styled from 'styled-components'
 import fontStyleMaker from '../utils/FontUtil'
 import { UnmountClosed } from 'react-collapse'
+import {
+  Container as StyledContainer,
+  Divider as DividerStyled,
+} from './StyledComponents'
 
 const Header = styled.div`
   display: flex;
@@ -13,21 +17,30 @@ const Header = styled.div`
 `
 const Button = styled.div`
   cursor: pointer;
+  padding-left: ${(props) => props.theme.styles.spacing.inline.nano};
 `
-const Container = styled.div`
-  border-radius: ${(props) => props.theme.styles.border.radius.xs};
+
+const Divider = styled(DividerStyled)`
+  margin-top: ${(props) => props.theme.styles.spacing.stack.xxxs};
+`
+
+const Container = styled(StyledContainer)`
   box-shadow: ${(props) => props.theme.styles.shadow.level0};
-  padding: 16px;
+  padding: ${(props) => props.theme.styles.spacing.inset.xs};
   background: white;
 `
-const Body = styled(UnmountClosed)``
+const Body = styled.div`
+  margin-top: ${(props) => props.theme.styles.spacing.stack.xxxs};
+  ${(props) =>
+    fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base')};
+`
 const Title = styled.span`
   ${(props) =>
     fontStyleMaker(
       props.theme,
       'body',
       'regular',
-      'sm',
+      'xs',
       'brand.secondary.dark',
     )};
 `
@@ -45,7 +58,10 @@ const CollapseContainer = (props) => {
           />
         </Button>
       </Header>
-      <Body isOpened={opened}>{props.children}</Body>
+      <UnmountClosed isOpened={opened}>
+        <Divider horizontal />
+        <Body>{props.children}</Body>
+      </UnmountClosed>
     </Container>
   )
 }

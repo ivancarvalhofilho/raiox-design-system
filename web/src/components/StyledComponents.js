@@ -31,7 +31,9 @@ const Title = styled.div`
 `
 
 const Divider = styled.div`
-  border-left: 1px solid ${(props) => props.theme.colors.neutral.dark['03']};
+  ${(props) =>
+    props.horizontal ? 'border-bottom' : 'border-left'}: 1px solid ${(props) =>
+  props.theme.colors.neutral.dark['03']};
   margin: 1% 0;
 `
 

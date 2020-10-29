@@ -30,7 +30,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  border-left: 1px solid ", ";\n  margin: 1% 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ": 1px solid ", ";\n  margin: 1% 0;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -104,6 +104,8 @@ var Title = _styledComponents["default"].div(_templateObject3(), function (props
 exports.Title = Title;
 
 var Divider = _styledComponents["default"].div(_templateObject4(), function (props) {
+  return props.horizontal ? 'border-bottom' : 'border-left';
+}, function (props) {
   return props.theme.colors.neutral.dark['03'];
 });
 
