@@ -72,7 +72,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  max-width: 100%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n  max-width: 100%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -329,7 +329,7 @@ function Table(props) {
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       style: {
-        padding: '5px'
+        padding: '0 5px'
       },
       appearance: "dark",
       size: "10px",

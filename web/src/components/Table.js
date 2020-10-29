@@ -154,6 +154,7 @@ const Value = styled.div`
   white-space: nowrap;
   display: flex;
   margin: auto 0;
+  align-items: center;
   max-width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -269,7 +270,7 @@ function Table(props) {
                   {props.data[key].title}
                   {props.data[key].ordenable && (
                     <Icon
-                      style={{ padding: '5px' }}
+                      style={{ padding: '0 5px' }}
                       appearance="dark"
                       size="10px"
                       path={

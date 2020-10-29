@@ -5,12 +5,13 @@ import theme from '../../../tokens/js'
 import styled from 'styled-components'
 
 const IconContainer = styled.span`
+  height: fit-content;
   cursor: ${(props) => props.onClick && 'pointer'};
-
-  -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
+  display: flex;
 `
 const Svg = styled(SVGInline)`
   transition-duration: 0.2s;
+  -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
   transition-property: transform;
   transform: rotate(-${(props) => props.rotate}deg);
 `
@@ -53,9 +54,10 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer {...props} onClick={props.onClick} spin={props.spin}>
+    <IconContainer onClick={props.onClick}>
       <Svg
         rotate={props.rotate}
+        spin={props.spin}
         style={{ ...props.style, display: 'flex' }}
         svg={props.path ? props.path : theme.icons[props.name]}
         fill={getIconSvgColor(props)}

@@ -17,8 +17,6 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -26,7 +24,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  transition-duration: 0.2s;\n  transition-property: transform;\n  transform: rotate(-", "deg);\n"]);
+  var data = _taggedTemplateLiteral(["\n  transition-duration: 0.2s;\n  -webkit-animation: ", ";\n  transition-property: transform;\n  transform: rotate(-", "deg);\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -36,7 +34,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  cursor: ", ";\n\n  -webkit-animation: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: fit-content;\n  cursor: ", ";\n  display: flex;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -49,11 +47,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var IconContainer = _styledComponents["default"].span(_templateObject(), function (props) {
   return props.onClick && 'pointer';
-}, function (props) {
-  return props.spin && 'spin 2s infinite linear';
 });
 
 var Svg = (0, _styledComponents["default"])(_reactSvgInline["default"])(_templateObject2(), function (props) {
+  return props.spin && 'spin 2s infinite linear';
+}, function (props) {
   return props.rotate;
 });
 
@@ -103,11 +101,11 @@ var Icon = function Icon(props) {
     return _js["default"].styles.icon.size[props.size] || _js["default"].styles.icon.size.sm;
   }
 
-  return /*#__PURE__*/_react["default"].createElement(IconContainer, _extends({}, props, {
-    onClick: props.onClick,
-    spin: props.spin
-  }), /*#__PURE__*/_react["default"].createElement(Svg, {
+  return /*#__PURE__*/_react["default"].createElement(IconContainer, {
+    onClick: props.onClick
+  }, /*#__PURE__*/_react["default"].createElement(Svg, {
     rotate: props.rotate,
+    spin: props.spin,
     style: _objectSpread(_objectSpread({}, props.style), {}, {
       display: 'flex'
     }),
