@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 import theme from '../../../tokens/js'
+import fontStyleMaker from '../utils/FontUtil'
 
 const BackgroundContainer = styled.div`
   position: absolute;
@@ -18,9 +19,15 @@ const BackgroundContainer = styled.div`
 `
 const LeftModalHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 `
-const Title = styled.div``
+const Title = styled.div`
+  ${(props) =>
+    fontStyleMaker(props.theme, 'head', 'bold', 'md', 'brand.secondary.dark')};
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+`
 const LeftModalContent = styled.div`
   padding: 20px;
 `
@@ -63,7 +70,6 @@ const SideModal = (props) => {
         width={width}
       >
         <LeftModalHeader>
-          <Title>{props.title}</Title>
           {props.closable && (
             <Icon
               size="16px"
@@ -72,6 +78,7 @@ const SideModal = (props) => {
             />
           )}
         </LeftModalHeader>
+        <Title>{props.title}</Title>
         <LeftModalContent>{props.children}</LeftModalContent>
       </LeftModalContainer>
     </BackgroundContainer>

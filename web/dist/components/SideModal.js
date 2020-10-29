@@ -17,6 +17,8 @@ var _Icon = _interopRequireDefault(require("./Icon"));
 
 var _js = _interopRequireDefault(require("../../../tokens/js"));
 
+var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -56,7 +58,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  width: 80%;\n  text-align: center;\n  margin: 0 auto;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -66,7 +68,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -93,7 +95,9 @@ var BackgroundContainer = _styledComponents["default"].div(_templateObject(), fu
 
 var LeftModalHeader = _styledComponents["default"].div(_templateObject2());
 
-var Title = _styledComponents["default"].div(_templateObject3());
+var Title = _styledComponents["default"].div(_templateObject3(), function (props) {
+  return (0, _FontUtil["default"])(props.theme, 'head', 'bold', 'md', 'brand.secondary.dark');
+});
 
 var LeftModalContent = _styledComponents["default"].div(_templateObject4());
 
@@ -131,11 +135,11 @@ var SideModal = function SideModal(props) {
     },
     show: !props.show ? props.show : show,
     width: width
-  }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: "16px",
     onClick: props.onClose,
     path: _js["default"].icons.close
-  })), /*#__PURE__*/_react["default"].createElement(LeftModalContent, null, props.children)));
+  })), /*#__PURE__*/_react["default"].createElement(Title, null, props.title), /*#__PURE__*/_react["default"].createElement(LeftModalContent, null, props.children)));
 };
 
 var _default = SideModal;
