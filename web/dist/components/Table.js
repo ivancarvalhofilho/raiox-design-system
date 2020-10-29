@@ -355,7 +355,7 @@ function Table(props) {
   }, colsOptional.map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       indexRowOpened: props.indexRowOpened,
-      childrenHeight: props.children && props.childrenSize,
+      childrenHeight: props.children ? props.childrenSize : 60,
       key: indexCol,
       rows: props.data[key].values
     }, props.data[key].values.map(function (value, indexRow) {
@@ -420,7 +420,7 @@ function Table(props) {
     })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
-      childrenHeight: props.children && props.childrenSize,
+      childrenHeight: props.children ? props.childrenSize : 60,
       key: indexCol,
       rows: props.data[key].values,
       indexRowOpened: props.indexRowOpened
@@ -450,7 +450,15 @@ function Table(props) {
         },
         ref: refChildren,
         top: "".concat((props.indexRowOpened + 1) * 48, "px")
-      }, props.children)));
+      }, props.children || /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
+        style: {
+          display: 'flex'
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+        spin: true,
+        path: _icons["default"].loading,
+        size: "20px"
+      })))));
     }));
   }), /*#__PURE__*/_react["default"].createElement("div", {
     id: "scrollableDiv"

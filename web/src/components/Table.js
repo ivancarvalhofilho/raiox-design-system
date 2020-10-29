@@ -314,7 +314,7 @@ function Table(props) {
                 {colsOptional.map((key, indexCol) => (
                   <Column
                     indexRowOpened={props.indexRowOpened}
-                    childrenHeight={props.children && props.childrenSize}
+                    childrenHeight={props.children ? props.childrenSize : 60}
                     key={indexCol}
                     rows={props.data[key].values}
                   >
@@ -402,7 +402,7 @@ function Table(props) {
               >
                 {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
                   <Column
-                    childrenHeight={props.children && props.childrenSize}
+                    childrenHeight={props.children ? props.childrenSize : 60}
                     key={indexCol}
                     rows={props.data[key].values}
                     indexRowOpened={props.indexRowOpened}
@@ -467,7 +467,15 @@ function Table(props) {
                                 ref={refChildren}
                                 top={`${(props.indexRowOpened + 1) * 48}px`}
                               >
-                                {props.children}
+                                {props.children || (
+                                  <LoaderContainer style={{ display: 'flex' }}>
+                                    <Icon
+                                      spin
+                                      path={icons.loading}
+                                      size="20px"
+                                    />
+                                  </LoaderContainer>
+                                )}
                               </Children>
                             )}
                         </Row>
