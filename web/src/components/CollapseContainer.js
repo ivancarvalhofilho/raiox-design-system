@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
@@ -35,7 +36,7 @@ const CollapseContainer = (props) => {
   return (
     <Container>
       <Header>
-        <Title>Teste</Title>
+        <Title>{props.title}</Title>
         <Button onClick={() => setOpened(!opened)}>
           <Icon
             path={icons['chevron-down']}
@@ -50,3 +51,8 @@ const CollapseContainer = (props) => {
 }
 
 export default CollapseContainer
+
+CollapseContainer.propTypes = {
+  children: PropTypes.object,
+  title: PropTypes.string,
+}
