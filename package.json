@@ -22,6 +22,5 @@
   },
   "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
   "dependencies": {
-    "react-collapse": "^5.0.1"
   }
 }
