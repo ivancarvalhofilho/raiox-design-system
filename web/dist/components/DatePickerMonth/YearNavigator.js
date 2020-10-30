@@ -70,9 +70,13 @@ function YearNavigator(props) {
     },
     path: _icons["default"]['chevron-left'],
     onClick: function onClick() {
-      return left && props.onChange((0, _dayjs["default"])(props.years[index], 'YYYY').add(-1, 'year').get('year'));
+      return left && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(-1, 'year').get('year'));
     }
-  }), /*#__PURE__*/_react["default"].createElement("div", null, props.yearSelected), /*#__PURE__*/_react["default"].createElement(Arrow, {
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      userSelect: 'none'
+    }
+  }, props.yearSelected), /*#__PURE__*/_react["default"].createElement(Arrow, {
     size: _js["default"].styles.icon.size.md,
     appearance: "primary",
     enabled: right,
@@ -81,7 +85,7 @@ function YearNavigator(props) {
     },
     path: _icons["default"]['chevron-right'],
     onClick: function onClick() {
-      return right && props.onChange((0, _dayjs["default"])(props.years[index], 'YYYY').add(1, 'year').get('year'));
+      return right && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(1, 'year').get('year'));
     }
   }));
 }

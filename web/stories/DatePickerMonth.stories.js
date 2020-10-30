@@ -28,10 +28,15 @@ const Template = (args) => {
   )
 }
 
-export const Default = Template.bind({})
-Default.args = {
+export const ShowAllYears = Template.bind({})
+ShowAllYears.args = {
   showAllYears: true,
-  data: ['2020-01', '2020-03', '2021-04']
+}
+
+export const LimitedYears = Template.bind({})
+LimitedYears.args = {
+  showAllYears: false,
+  data: ['2020-01', '2020-03', '2021-04', '2022-12']
     .map((data) => dayjs(data))
     .map((data) => ({
       year: data.get('year'),

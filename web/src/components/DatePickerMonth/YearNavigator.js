@@ -39,12 +39,15 @@ function YearNavigator(props) {
         onClick={() =>
           left &&
           props.onChange(
-            dayjs(props.years[index], 'YYYY').add(-1, 'year').get('year'),
+            dayjs()
+              .set('year', props.years[index] || props.yearSelected)
+              .add(-1, 'year')
+              .get('year'),
           )
         }
       />
 
-      <div>{props.yearSelected}</div>
+      <div style={{ userSelect: 'none' }}>{props.yearSelected}</div>
 
       <Arrow
         size={theme.styles.icon.size.md}
@@ -55,7 +58,10 @@ function YearNavigator(props) {
         onClick={() =>
           right &&
           props.onChange(
-            dayjs(props.years[index], 'YYYY').add(1, 'year').get('year'),
+            dayjs()
+              .set('year', props.years[index] || props.yearSelected)
+              .add(1, 'year')
+              .get('year'),
           )
         }
       />
