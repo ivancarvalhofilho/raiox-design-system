@@ -24,7 +24,7 @@ const Bar = styled.div`
 `
 
 const Tabs = (props) => (
-  <Container disabled={props.disabled}>
+  <Container disabled={props.disabled} style={props.style}>
     <TabsContainer disabled={props.disabled}>
       {props.tabs.map((tab, index) => (
         <Tab

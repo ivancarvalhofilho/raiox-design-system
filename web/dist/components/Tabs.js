@@ -73,7 +73,8 @@ var Bar = _styledComponents["default"].div(_templateObject3(), function (props) 
 
 var Tabs = function Tabs(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, {
-    disabled: props.disabled
+    disabled: props.disabled,
+    style: props.style
   }, /*#__PURE__*/_react["default"].createElement(TabsContainer, {
     disabled: props.disabled
   }, props.tabs.map(function (tab, index) {
