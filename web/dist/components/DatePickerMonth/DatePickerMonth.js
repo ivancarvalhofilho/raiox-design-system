@@ -23,6 +23,8 @@ var _js = _interopRequireDefault(require("../../../../tokens/js"));
 
 var _StyledComponents = require("../StyledComponents");
 
+var _clickHandleUtil = require("../../utils/clickHandleUtil");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -73,7 +75,12 @@ function DatePickerMonth(props) {
       _useState4 = _slicedToArray(_useState3, 1),
       yearMonth = _useState4[0];
 
-  return /*#__PURE__*/_react["default"].createElement(MonthByYearSelectorStyled, null, /*#__PURE__*/_react["default"].createElement(_YearNavigator["default"], {
+  var wrapperRef = (0, _clickHandleUtil.handleOutsideDivClick)(function () {
+    return !!props.setComponentVisibility && props.setComponentVisibility(false);
+  });
+  return /*#__PURE__*/_react["default"].createElement(MonthByYearSelectorStyled, {
+    ref: wrapperRef
+  }, /*#__PURE__*/_react["default"].createElement(_YearNavigator["default"], {
     yearSelected: year,
     onChange: function onChange(year) {
       return setYear(year);
@@ -99,7 +106,8 @@ function DatePickerMonth(props) {
 DatePickerMonth.propTypes = {
   data: _propTypes["default"].any,
   dateSelected: _propTypes["default"].any,
-  onSelectMonth: _propTypes["default"].any,
+  onSelectMonth: _propTypes["default"].func,
+  setComponentVisibility: _propTypes["default"].func,
   showAllYears: _propTypes["default"].bool
 };
 var _default = DatePickerMonth;

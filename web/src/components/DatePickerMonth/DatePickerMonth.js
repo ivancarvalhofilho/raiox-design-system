@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import YearNavigator from './YearNavigator'
 import MonthList from './MonthList'
 import dayjs from 'dayjs'
 import theme from '../../../../tokens/js'
 import { Divider } from '../StyledComponents'
+import { handleOutsideDivClick } from '../../utils/clickHandleUtil'
 
 const MonthByYearSelectorStyled = styled.div`
   box-shadow: ${theme.styles.shadow.level1};
@@ -29,8 +30,12 @@ function DatePickerMonth(props) {
     props.showAllYears || groupBy(props.data, 'year'),
   )
 
+  const wrapperRef = handleOutsideDivClick(() =>
+    !!props.setComponentVisibility && props.setComponentVisibility(false),
+  )
+
   return (
-    <MonthByYearSelectorStyled>
+    <MonthByYearSelectorStyled ref={wrapperRef}>
       <YearNavigator
         yearSelected={year}
         onChange={(year) => setYear(year)}
@@ -59,7 +64,8 @@ function DatePickerMonth(props) {
 DatePickerMonth.propTypes = {
   data: PropTypes.any,
   dateSelected: PropTypes.any,
-  onSelectMonth: PropTypes.any,
+  onSelectMonth: PropTypes.func,
+  setComponentVisibility: PropTypes.func,
   showAllYears: PropTypes.bool,
 }
 

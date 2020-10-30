@@ -20,6 +20,9 @@ const Template = (args) => {
         onSelectMonth={(newDate) => {
           setSelectedDates(newDate)
         }}
+        setComponentVisibility={() =>
+          alert('Clicks para fora dele, escondem o componente')
+        }
       />
     </div>
   )

@@ -42,6 +42,7 @@ const Month = styled.div`
     )};
   user-select: none;
   border-radius: ${theme.styles.border.radius.sm};
+  min-height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
