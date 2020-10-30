@@ -206,12 +206,8 @@ function Table(props) {
   const [childrenSize, setChildrenSize] = useState(0)
 
   useEffect(() => {
-    setTimeout(() => {
-      setChildrenSize(
-        refChildren.current ? refChildren.current.clientHeight : 0,
-      )
-    }, 200)
-  }, [props.indexRowOpened, refChildren])
+    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
+  }, [props.children])
 
   return (
     <div>

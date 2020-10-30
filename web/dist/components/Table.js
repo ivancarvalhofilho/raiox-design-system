@@ -288,10 +288,8 @@ function Table(props) {
       setChildrenSize = _useState4[1];
 
   (0, _react.useEffect)(function () {
-    setTimeout(function () {
-      setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-    }, 200);
-  }, [props.indexRowOpened, refChildren]);
+    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
+  }, [props.children]);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     cols: colsOptional,
