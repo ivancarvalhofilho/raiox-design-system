@@ -20,7 +20,7 @@ var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  pointer-events: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  ", ";\n  user-select: none;\n  border-radius: ", ";\n  min-width: 50px;\n  min-height: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  pointer-events: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  ", ";\n  user-select: none;\n  border-radius: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
