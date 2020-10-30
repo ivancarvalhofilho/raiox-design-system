@@ -2,6 +2,7 @@ import React from 'react'
 
 import DatePickerMonth from '../src/components/DatePickerMonth/DatePickerMonth'
 import { useState } from '@storybook/addons'
+import dayjs from 'dayjs'
 
 export default {
   title: 'Example/DatePickerMonth',
@@ -27,4 +28,11 @@ const Template = (args) => {
 export const Default = Template.bind({})
 Default.args = {
   showAllYears: true,
+  data: ['2020-01', '2020-03', '2021-04']
+    .map((data) => dayjs(data))
+    .map((data) => ({
+      year: data.get('year'),
+      month: data.get('month'),
+      date: data.format('YYYY-MM'),
+    })),
 }

@@ -52,9 +52,9 @@ var Month = _styledComponents["default"].div(_templateObject2(), function (props
 }, function (props) {
   return props.active && 'pointer';
 }, function (props) {
-  return !props.active && _js["default"].styles.opacity.light;
+  return !props.active && _js["default"].styles.opacity.level.light;
 }, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', props.active ? 'neutral.light.base' : 'neutral.dark.base');
+  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', props.selected ? 'neutral.light.base' : 'neutral.dark.base');
 }, _js["default"].styles.border.radius.sm);
 
 function MonthList(props) {

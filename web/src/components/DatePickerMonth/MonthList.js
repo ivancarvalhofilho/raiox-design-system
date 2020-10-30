@@ -31,14 +31,14 @@ const Month = styled.div`
     props.selected && theme.colors.brand.primary.darkest};
   pointer-events: ${(props) => !props.active && 'none'};
   cursor: ${(props) => props.active && 'pointer'};
-  opacity: ${(props) => !props.active && theme.styles.opacity.light};
+  opacity: ${(props) => !props.active && theme.styles.opacity.level.light};
   ${(props) =>
     fontStyleMaker(
       props.theme,
       'body',
       'regular',
       'xs',
-      props.active ? 'neutral.light.base' : 'neutral.dark.base',
+      props.selected ? 'neutral.light.base' : 'neutral.dark.base',
     )};
   user-select: none;
   border-radius: ${theme.styles.border.radius.sm};
