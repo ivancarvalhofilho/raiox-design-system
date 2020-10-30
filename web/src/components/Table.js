@@ -203,6 +203,16 @@ function Table(props) {
 
   const [optionalMouse, setOptionalMouse] = useState(false)
 
+  const [childrenSize, setChildrenSize] = useState(0)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setChildrenSize(
+        refChildren.current ? refChildren.current.clientHeight : 0,
+      )
+    }, 200)
+  }, [props.indexRowOpened, refChildren])
+
   return (
     <div>
       <DisplayGrid>
@@ -315,7 +325,13 @@ function Table(props) {
                 {colsOptional.map((key, indexCol) => (
                   <Column
                     indexRowOpened={props.indexRowOpened}
-                    childrenHeight={props.children ? props.childrenSize : 60}
+                    childrenHeight={
+                      childrenSize > 30
+                        ? childrenSize
+                        : props.children
+                        ? props.childrenSize
+                        : 60
+                    }
                     key={indexCol}
                     rows={props.data[key].values}
                   >
@@ -403,7 +419,13 @@ function Table(props) {
               >
                 {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
                   <Column
-                    childrenHeight={props.children ? props.childrenSize : 60}
+                    childrenHeight={
+                      childrenSize > 30
+                        ? childrenSize
+                        : props.children
+                        ? props.childrenSize
+                        : 60
+                    }
                     key={indexCol}
                     rows={props.data[key].values}
                     indexRowOpened={props.indexRowOpened}
