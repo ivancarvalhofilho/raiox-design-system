@@ -219,7 +219,7 @@ const Calendar = (props) => {
 
       setDates(totalDays)
     }
-  }, [props.month, props.selectedDates])
+  }, [props.month, props.dayWithSales, props.selectedDates])
 
   return (
     <CalendarContainer>
@@ -254,4 +254,5 @@ Calendar.propTypes = {
   year: PropTypes.number,
   holydays: PropTypes.array,
   maxDateRange: PropTypes.number,
+  dayWithSales: PropTypes.array,
 }

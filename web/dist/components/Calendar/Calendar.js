@@ -236,7 +236,7 @@ var Calendar = function Calendar(props) {
 
       setDates(totalDays);
     }
-  }, [props.month, props.selectedDates]);
+  }, [props.month, props.dayWithSales, props.selectedDates]);
   return /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, /*#__PURE__*/_react["default"].createElement(CalendarGridHeader, null, _const["default"].DAYS_OF_WEEK.map(function (day) {
     return /*#__PURE__*/_react["default"].createElement(DayOfWeek, {
       key: day
@@ -265,5 +265,6 @@ Calendar.propTypes = {
   month: _propTypes["default"].number,
   year: _propTypes["default"].number,
   holydays: _propTypes["default"].array,
-  maxDateRange: _propTypes["default"].number
+  maxDateRange: _propTypes["default"].number,
+  dayWithSales: _propTypes["default"].array
 };
