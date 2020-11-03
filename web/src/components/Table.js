@@ -241,8 +241,8 @@ function Table(props) {
                           props.orderBy !== key
                             ? theme.icons['arrow-horizontal']
                             : props.order === 'DESC'
-                            ? theme.icons['arrow-down']
-                            : theme.icons['arrow-up']
+                            ? theme.icons['arrow-up']
+                            : theme.icons['arrow-down']
                         }
                       />
                     )}
@@ -283,8 +283,8 @@ function Table(props) {
                         props.orderBy !== key
                           ? theme.icons['arrow-horizontal']
                           : props.order === 'DESC'
-                          ? theme.icons['arrow-down']
-                          : theme.icons['arrow-up']
+                          ? theme.icons['arrow-up']
+                          : theme.icons['arrow-down']
                       }
                     />
                   )}
@@ -469,8 +469,8 @@ function Table(props) {
                                   size="md"
                                   name={
                                     props.indexRowOpened === indexRow
-                                      ? 'chevron-down'
-                                      : 'chevron-up'
+                                      ? 'chevron-up'
+                                      : 'chevron-down'
                                   }
                                 />
                               </Collapse>
