@@ -138,7 +138,7 @@ var CalendarCell = function CalendarCell(props) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })), /*#__PURE__*/_react["default"].createElement(SalesStatusDot, {
-    color: props.daySale.type === 'R' ? _colors["default"].feedback.success.dark : _colors["default"].feedback.danger.dark
+    color: props.daySale.type === 'R' ? _colors["default"].feedback.success.dark : _colors["default"].feedback.attention.darkest
   })))));
 };
 
