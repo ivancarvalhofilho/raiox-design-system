@@ -58,6 +58,12 @@ const Colors = {
             medium: '#F28C55',
             light: '#F2B391'
         }
+    },
+    support: {
+        social: {
+            whatsapp: '#455A64',
+            facebook: '#1877F2',
+        },
     }
 }
 
