@@ -443,23 +443,25 @@ function Table(props) {
                           first={indexCol === 0}
                           last={indexCol === cols.length}
                         >
-                          <Value>
-                            {props.data[key].template ? (
-                              props.data[key].template(
-                                value,
-                                props.data[key].params &&
-                                  props.data[key].params.map(
-                                    (param) =>
-                                      props.data[param] &&
-                                      props.data[param].values[indexRow],
-                                  ),
-                                props.dispatch,
-                                props.subdata && props.subdata[indexRow],
-                              )
-                            ) : (
-                              <SpanValue>{value}</SpanValue>
-                            )}
-                          </Value>
+                          {key !== 'colors' && (
+                            <Value>
+                              {props.data[key].template ? (
+                                props.data[key].template(
+                                  value,
+                                  props.data[key].params &&
+                                    props.data[key].params.map(
+                                      (param) =>
+                                        props.data[param] &&
+                                        props.data[param].values[indexRow],
+                                    ),
+                                  props.dispatch,
+                                  props.subdata && props.subdata[indexRow],
+                                )
+                              ) : (
+                                <SpanValue>{value}</SpanValue>
+                              )}
+                            </Value>
+                          )}
                           {indexCol === colsOriginalWithoutColor.length &&
                             props.isMultiple && (
                               <Collapse
