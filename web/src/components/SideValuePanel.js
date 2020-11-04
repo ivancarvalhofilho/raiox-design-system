@@ -29,6 +29,7 @@ const Value = styled.span`
 const DollarSign = styled.span`
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')}
+  margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
   color: ${(props) =>
     props.positive === true
       ? props.theme.colors.feedback.success.dark

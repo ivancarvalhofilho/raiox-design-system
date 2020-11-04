@@ -28,7 +28,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", "\n  margin-right: ", ";\n  color: ", ";\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -95,6 +95,8 @@ var Value = _styledComponents["default"].span(_templateObject4(), function (prop
 
 var DollarSign = _styledComponents["default"].span(_templateObject5(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
+}, function (props) {
+  return props.theme.styles.spacing.inset.quarck;
 }, function (props) {
   return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
 });
