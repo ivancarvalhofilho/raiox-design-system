@@ -5,7 +5,7 @@ const fonts = {
         head: 'Mark Pro',
         body: 'Roboto',
         condensed: 'Roboto Condensed',
-        monospace: 'Consolas',
+        monospace: 'Roboto Mono',
     },
     weight: {
         bold: '700',
