@@ -36,7 +36,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  height: 46px;\n  padding: 0px 16px;\n  border-bottom: 1px solid #e0e0e0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  height: ", "px;\n  padding: 0px 16px;\n  border-bottom: 1px solid #e0e0e0;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -59,7 +59,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var ListContainer = _styledComponents["default"].div(_templateObject());
 
-var Row = _styledComponents["default"].div(_templateObject2());
+var Row = _styledComponents["default"].div(_templateObject2(), function (props) {
+  return props.size || 46;
+});
 
 var Column = _styledComponents["default"].div(_templateObject3(), function (props) {
   return props.width;
@@ -80,7 +82,8 @@ var List = function List(props) {
     className: "custom-scrollbar"
   }, props.rows.map(function (row, index) {
     return /*#__PURE__*/_react["default"].createElement(Row, {
-      key: index
+      key: index,
+      size: props.rowSize
     }, row.map(function (column, index) {
       return /*#__PURE__*/_react["default"].createElement(Column, {
         key: index,
@@ -96,6 +99,7 @@ exports["default"] = _default;
 List.propTypes = {
   align: _propTypes["default"].array,
   header: _propTypes["default"].array,
+  rowSize: _propTypes["default"].number,
   rows: _propTypes["default"].array,
   style: _propTypes["default"].object,
   styleData: _propTypes["default"].object

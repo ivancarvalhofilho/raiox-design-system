@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const ListContainer = styled.div``
 const Row = styled.div`
   display: flex;
-  height: 46px;
+  height: ${(props) => props.size || 46}px;
   padding: 0px 16px;
   border-bottom: 1px solid #e0e0e0;
 `
@@ -29,7 +29,7 @@ const List = (props) => (
     <ListHeader data={props.header} align={props.align} />
     <ListData style={props.styleData} className="custom-scrollbar">
       {props.rows.map((row, index) => (
-        <Row key={index}>
+        <Row key={index} size={props.rowSize}>
           {row.map((column, index) => (
             <Column
               key={index}
@@ -50,6 +50,7 @@ export default List
 List.propTypes = {
   align: PropTypes.array,
   header: PropTypes.array,
+  rowSize: PropTypes.number,
   rows: PropTypes.array,
   style: PropTypes.object,
   styleData: PropTypes.object,
