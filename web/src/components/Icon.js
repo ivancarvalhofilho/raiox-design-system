@@ -4,13 +4,9 @@ import SVGInline from 'react-svg-inline'
 import theme from '../../../tokens/js'
 import styled from 'styled-components'
 
-const IconContainer = styled.span`
-  height: fit-content;
-  cursor: ${(props) => props.onClick && 'pointer'};
-  display: flex;
-`
 const Svg = styled(SVGInline)`
   transition-duration: 0.2s;
+  cursor: ${(props) => props.onClick && 'pointer'};
   -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
   transition-property: transform;
   transform: rotate(-${(props) => props.rotate}deg);
@@ -54,17 +50,17 @@ const Icon = (props) => {
   }
 
   return (
-    <IconContainer onClick={props.onClick}>
-      <Svg
-        rotate={props.rotate}
-        spin={props.spin}
-        className={props.className}
-        style={{ ...props.style, display: 'flex' }}
-        svg={props.path ? props.path : theme.icons[props.name]}
-        fill={getIconSvgColor(props)}
-        width={getIconSvgSize(props)}
-      />
-    </IconContainer>
+    <Svg
+      {...props}
+      onClick={props.onClick}
+      rotate={props.rotate}
+      spin={props.spin}
+      className={props.className}
+      style={{ ...props.style, display: 'flex' }}
+      svg={props.path ? props.path : theme.icons[props.name]}
+      fill={getIconSvgColor(props)}
+      width={getIconSvgSize(props)}
+    />
   )
 }
 export default Icon
