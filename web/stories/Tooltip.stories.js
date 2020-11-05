@@ -10,21 +10,20 @@ export default {
 
 const Template = (args) => (
   <div>
-    <Tooltip>
-      {' '}
-      <div custom-tooltip="teste" style={{ backgroundColor: 'red' }}>
-        Teste
-      </div>{' '}
-      <div>Teste</div> <div data-foo="teste">Teste</div>{' '}
-      <div
-        custom-tooltip="teste"
-        style={{ backgroundColor: 'blue', width: '50%' }}
-      >
-        <h1>Teste</h1>
-      </div>{' '}
-      <div data-foo="teste">Teste</div> <div data-foo="teste">Teste</div>{' '}
-      <div data-foo="teste">Teste</div>{' '}
-    </Tooltip>
+    {' '}
+    <div custom-tooltip="teste" style={{ backgroundColor: 'red' }}>
+      Teste
+    </div>{' '}
+    <div>Teste</div> <div data-foo="teste">Teste</div>{' '}
+    <div
+      custom-tooltip="Entre em contato com sua adquirente para ter mais detalhes sobre esse ajuste"
+      style={{ backgroundColor: 'blue', width: '50%' }}
+    >
+      <h1>Teste</h1>
+    </div>{' '}
+    <div data-foo="teste">Teste</div> <div data-foo="teste">Teste</div>{' '}
+    <div data-foo="teste">Teste</div>
+    <Tooltip />
   </div>
 )
 

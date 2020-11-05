@@ -118,9 +118,9 @@ var Tooltip = function Tooltip(props) {
     setHeight(element.getBoundingClientRect().height + 25);
     setPositionX(element.getBoundingClientRect().left);
     setPositionY(element.getBoundingClientRect().top);
+    setShow(true);
     setWidthTooltip(tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth : 123);
     setWidth((tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth / 2 : 62) - element.clientWidth / 2 + 3);
-    setShow(true);
   };
 
   var onMouseLeave = function onMouseLeave(e) {

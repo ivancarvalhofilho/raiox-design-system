@@ -48,6 +48,7 @@ const Tooltip = (props) => {
     setHeight(element.getBoundingClientRect().height + 25)
     setPositionX(element.getBoundingClientRect().left)
     setPositionY(element.getBoundingClientRect().top)
+    setShow(true)
     setWidthTooltip(
       tooltipRef.current && tooltipRef.current.clientWidth > 0
         ? tooltipRef.current.clientWidth
@@ -60,7 +61,6 @@ const Tooltip = (props) => {
         element.clientWidth / 2 +
         3,
     )
-    setShow(true)
   }
 
   const onMouseLeave = (e) => {
