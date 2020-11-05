@@ -49,4 +49,10 @@ export const TooltipText = styled.span`
   color: #ffffff;
 `
 
+export const FlexCenter = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export { TextRow, Card, Title, Divider, Container }

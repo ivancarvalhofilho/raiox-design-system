@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import fontStyleMaker from '../utils/FontUtil'
-import { Divider, TextRow } from './StyledComponents'
+import {Divider, FlexCenter, TextRow} from './StyledComponents'
 import Icon from './Icon'
 
 const Title = styled.div`
@@ -15,8 +15,8 @@ const Container = styled.div`
   justify-content: center;
 `
 const Item = styled.div`
-  margin: 0px 40px;
   text-align: center;
+  width: 100%;
 `
 const Value = styled.span`
   ${(props) =>
@@ -51,24 +51,26 @@ const SideValuePanel = (props) => (
       <>
         <Item key={index}>
           {props.titles && <Title>{props.titles[index]}</Title>}
-          <DollarSign
-            positive={
-              props.checkValue && props.checkValue[index]
-                ? Number.parseFloat(value) > 0
-                : null
-            }
-          >
-            R$
-          </DollarSign>
-          <Value
-            positive={
-              props.checkValue && props.checkValue[index]
-                ? Number.parseFloat(value) > 0
-                : null
-            }
-          >
-            {value}
-          </Value>
+          <FlexCenter>
+            <DollarSign
+              positive={
+                props.checkValue && props.checkValue[index]
+                  ? Number.parseFloat(value) > 0
+                  : null
+              }
+            >
+              R$
+            </DollarSign>
+            <Value
+              positive={
+                props.checkValue && props.checkValue[index]
+                  ? Number.parseFloat(value) > 0
+                  : null
+              }
+            >
+              {value}
+            </Value>
+          </FlexCenter>
           {props.subtitles && (
             <Subtitle
               color={props.subtitlesColors && props.subtitlesColors[index]}
