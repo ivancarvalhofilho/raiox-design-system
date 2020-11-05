@@ -48,7 +48,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  margin: 0px 40px;\n  text-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  width: 100%;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -111,11 +111,11 @@ var SideValuePanel = function SideValuePanel(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, props.values.map(function (value, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Item, {
       key: index
-    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(DollarSign, {
+    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, null, /*#__PURE__*/_react["default"].createElement(DollarSign, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
     }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
-    }, value), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
+    }, value)), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
       color: props.subtitlesColors && props.subtitlesColors[index],
       justifyContent: "center"
     }, props.subtitlesIcons && props.subtitlesIcons[index] && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
