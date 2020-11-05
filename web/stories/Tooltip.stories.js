@@ -17,7 +17,7 @@ const Template = (args) => (
     <div>Teste</div> <div data-foo="teste">Teste</div>{' '}
     <div
       custom-tooltip="Entre em contato com sua adquirente para ter mais detalhes sobre esse ajuste"
-      style={{ backgroundColor: 'blue', width: '50%' }}
+      style={{ backgroundColor: 'blue', width: '50%', display: 'flex' }}
     >
       <h1>Teste</h1>
       <h2>TESTE2</h2>

@@ -43,6 +43,8 @@ const Tooltip = (props) => {
   const [message, setMessage] = useState('')
   const tooltipRef = useRef()
 
+  console.log('widthTooltip', widthTooltip)
+  console.log('positionX', positionX)
   const onMouseOver = (element, e) => {
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(element.getBoundingClientRect().height + 25)
