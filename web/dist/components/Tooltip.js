@@ -112,6 +112,8 @@ var Tooltip = function Tooltip(props) {
       setMessage = _useState14[1];
 
   var tooltipRef = (0, _react.useRef)();
+  console.log('widthTooltip', widthTooltip);
+  console.log('positionX', positionX);
 
   var onMouseOver = function onMouseOver(element, e) {
     setMessage(element.attributes.getNamedItem(attributte).value);
