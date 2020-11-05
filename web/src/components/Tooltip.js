@@ -19,7 +19,7 @@ const TooltipMessage = styled.div`
     )};
   min-width: 123px;
   border-radius: 4px;
-  top: ${(props) => props.positionY - props.height}px;
+  top: ${(props) => props.positionY}px;
   left: ${(props) => props.positionX - props.width}px;
 `
 const Arrow = styled.div`
@@ -47,8 +47,12 @@ const Tooltip = (props) => {
     setMessage(element.attributes.getNamedItem(attributte).value)
     setHeight(element.getBoundingClientRect().height + 25)
     setPositionX(element.getBoundingClientRect().left)
-    setPositionY(element.getBoundingClientRect().top)
     setShow(true)
+    setPositionY(
+      element.getBoundingClientRect().top -
+        (tooltipRef.current ? tooltipRef.current.clientHeight : 50) -
+        10,
+    )
     setWidthTooltip(
       tooltipRef.current && tooltipRef.current.clientWidth > 0
         ? tooltipRef.current.clientWidth

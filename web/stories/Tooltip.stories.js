@@ -20,9 +20,8 @@ const Template = (args) => (
       style={{ backgroundColor: 'blue', width: '50%' }}
     >
       <h1>Teste</h1>
+      <h2>TESTE2</h2>
     </div>{' '}
-    <div data-foo="teste">Teste</div> <div data-foo="teste">Teste</div>{' '}
-    <div data-foo="teste">Teste</div>
     <Tooltip />
   </div>
 )
