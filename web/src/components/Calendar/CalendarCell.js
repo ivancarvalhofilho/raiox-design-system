@@ -122,7 +122,7 @@ const CalendarCell = (props) => (
                 color={
                   props.daySale.type === 'R'
                     ? Colors.feedback.success.dark
-                    : Colors.feedback.danger.dark
+                    : Colors.feedback.attention.darkest
                 }
               />
             </div>
