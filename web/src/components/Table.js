@@ -160,15 +160,10 @@ const Value = styled.div`
   overflow: hidden;
 `
 const SpanValue = styled.span`
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-
-  &:hover {
-    text-overflow: clip;
-    white-space: normal;
-    word-break: break-all;
-  }
+  text-overflow: clip;
+  white-space: normal;
+  word-break: break-all;
 `
 const Children = styled.div`
   position: absolute;
@@ -342,23 +337,21 @@ function Table(props) {
                         first={indexCol === 0}
                         last={indexCol === cols.length}
                       >
-                        <Value>
-                          {props.data[key].template ? (
-                            props.data[key].template(
-                              value,
-                              props.data[key].params &&
-                                props.data[key].params.map(
-                                  (param) =>
-                                    props.data[param] &&
-                                    props.data[param].values[indexRow],
-                                ),
-                              props.dispatch,
-                              props.subdata && props.subdata[indexRow],
-                            )
-                          ) : (
-                            <SpanValue>{value}</SpanValue>
-                          )}
-                        </Value>
+                        <SpanValue>
+                          {props.data[key].template
+                            ? props.data[key].template(
+                                value,
+                                props.data[key].params &&
+                                  props.data[key].params.map(
+                                    (param) =>
+                                      props.data[param] &&
+                                      props.data[param].values[indexRow],
+                                  ),
+                                props.dispatch,
+                                props.subdata && props.subdata[indexRow],
+                              )
+                            : value}
+                        </SpanValue>
                       </Row>
                     ))}
                   </Column>
@@ -436,7 +429,9 @@ function Table(props) {
                           key={indexRow}
                           justify={props.data[key].justify}
                           clicable={props.isMultiple}
-                          onClick={() => props.onRowClick(indexRow)}
+                          onClick={() =>
+                            props.isMultiple && props.onRowClick(indexRow)
+                          }
                           color={
                             indexCol === 0 &&
                             props.data.colors &&
@@ -449,23 +444,21 @@ function Table(props) {
                           last={indexCol === cols.length}
                         >
                           {key !== 'colors' && (
-                            <Value>
-                              {props.data[key].template ? (
-                                props.data[key].template(
-                                  value,
-                                  props.data[key].params &&
-                                    props.data[key].params.map(
-                                      (param) =>
-                                        props.data[param] &&
-                                        props.data[param].values[indexRow],
-                                    ),
-                                  props.dispatch,
-                                  props.subdata && props.subdata[indexRow],
-                                )
-                              ) : (
-                                <SpanValue>{value}</SpanValue>
-                              )}
-                            </Value>
+                            <SpanValue>
+                              {props.data[key].template
+                                ? props.data[key].template(
+                                    value,
+                                    props.data[key].params &&
+                                      props.data[key].params.map(
+                                        (param) =>
+                                          props.data[param] &&
+                                          props.data[param].values[indexRow],
+                                      ),
+                                    props.dispatch,
+                                    props.subdata && props.subdata[indexRow],
+                                  )
+                                : value}
+                            </SpanValue>
                           )}
                           {indexCol === colsOriginalWithoutColor.length &&
                             props.isMultiple && (

@@ -62,7 +62,7 @@ var TooltipMessage = _styledComponents["default"].div(_templateObject(), functio
 }, function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xxs', 'neutral.light.base');
 }, function (props) {
-  return props.positionY - props.height;
+  return props.positionY;
 }, function (props) {
   return props.positionX - props.width;
 });
@@ -117,10 +117,10 @@ var Tooltip = function Tooltip(props) {
     setMessage(element.attributes.getNamedItem(attributte).value);
     setHeight(element.getBoundingClientRect().height + 25);
     setPositionX(element.getBoundingClientRect().left);
-    setPositionY(element.getBoundingClientRect().top);
+    setShow(true);
+    setPositionY(element.getBoundingClientRect().top - (tooltipRef.current ? tooltipRef.current.clientHeight : 50) - 10);
     setWidthTooltip(tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth : 123);
     setWidth((tooltipRef.current && tooltipRef.current.clientWidth > 0 ? tooltipRef.current.clientWidth / 2 : 62) - element.clientWidth / 2 + 3);
-    setShow(true);
   };
 
   var onMouseLeave = function onMouseLeave(e) {

@@ -62,7 +62,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  &:hover {\n    text-overflow: clip;\n    white-space: normal;\n    word-break: break-all;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  overflow: hidden;\n  text-overflow: clip;\n  white-space: normal;\n  word-break: break-all;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -375,9 +375,9 @@ function Table(props) {
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
-      }, /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
+      }, /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)));
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value));
     }));
   })), /*#__PURE__*/_react["default"].createElement("div", {
     onMouseEnter: function onMouseEnter() {
@@ -441,15 +441,15 @@ function Table(props) {
         justify: props.data[key].justify,
         clicable: props.isMultiple,
         onClick: function onClick() {
-          return props.onRowClick(indexRow);
+          return props.isMultiple && props.onRowClick(indexRow);
         },
         color: indexCol === 0 && props.data.colors && props.data.colors.values[indexRow],
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
-      }, key !== 'colors' && /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
+      }, key !== 'colors' && /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
         size: "md",
         name: props.indexRowOpened === indexRow ? 'chevron-up' : 'chevron-down'
       })), indexCol === colsOriginalWithoutColor.length && props.indexRowOpened === indexRow && /*#__PURE__*/_react["default"].createElement(Children, {
