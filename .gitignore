@@ -63,3 +63,12 @@ node_modules/
 
 # dotenv environment variables file
 .env
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/jsLinters/eslint.xml
+/web/public/index.html
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/raiox-design-system.iml
+/.idea/vcs.xml
+/.idea/watcherTasks.xml
+/.idea/workspace.xml
