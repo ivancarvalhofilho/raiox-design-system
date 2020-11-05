@@ -441,7 +441,7 @@ function Table(props) {
         justify: props.data[key].justify,
         clicable: props.isMultiple,
         onClick: function onClick() {
-          return props.onRowClick(indexRow);
+          return props.isMultiple && props.onRowClick(indexRow);
         },
         color: indexCol === 0 && props.data.colors && props.data.colors.values[indexRow],
         border: indexRow !== props.data[key].values.length - 1,
