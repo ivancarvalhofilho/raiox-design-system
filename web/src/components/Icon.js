@@ -56,7 +56,7 @@ const Icon = (props) => {
       rotate={props.rotate}
       spin={props.spin}
       className={props.className}
-      style={{ ...props.style, display: 'flex' }}
+      style={{ ...props.style }}
       svg={props.path ? props.path : theme.icons[props.name]}
       fill={getIconSvgColor(props)}
       width={getIconSvgSize(props)}

@@ -96,9 +96,7 @@ var Icon = function Icon(props) {
     rotate: props.rotate,
     spin: props.spin,
     className: props.className,
-    style: _objectSpread(_objectSpread({}, props.style), {}, {
-      display: 'flex'
-    }),
+    style: _objectSpread({}, props.style),
     svg: props.path ? props.path : _js["default"].icons[props.name],
     fill: getIconSvgColor(props),
     width: getIconSvgSize(props)
