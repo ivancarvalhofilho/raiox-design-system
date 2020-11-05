@@ -163,7 +163,6 @@ const SpanValue = styled.span`
   overflow: hidden;
   text-overflow: clip;
   white-space: normal;
-  word-break: break-all;
 `
 const Children = styled.div`
   position: absolute;

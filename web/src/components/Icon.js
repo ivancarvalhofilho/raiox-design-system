@@ -5,6 +5,7 @@ import theme from '../../../tokens/js'
 import styled from 'styled-components'
 
 const Svg = styled(SVGInline)`
+  display: inline-flex;
   transition-duration: 0.2s;
   cursor: ${(props) => props.onClick && 'pointer'};
   -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
