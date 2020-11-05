@@ -62,7 +62,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  overflow: hidden;\n  text-overflow: clip;\n  white-space: normal;\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  &:hover {\n    text-overflow: clip;\n    white-space: normal;\n    word-break: break-all;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;

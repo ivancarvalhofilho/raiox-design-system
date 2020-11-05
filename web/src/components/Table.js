@@ -160,9 +160,15 @@ const Value = styled.div`
   overflow: hidden;
 `
 const SpanValue = styled.span`
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
-  white-space: normal;
+  text-overflow: ellipsis;
+
+  &:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+  }
 `
 const Children = styled.div`
   position: absolute;
