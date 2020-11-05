@@ -141,7 +141,7 @@ const Row = styled.div`
     props.justify === 'right'
       ? 'flex-end'
       : (props.justify === 'left' && 'flex-start') || 'center'};
-  cursor: ${(props) => props.onClick && 'pointer'};
+  cursor: ${(props) => props.clicable && 'pointer'};
   border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
   background-color: ${(props) => props.color || 'white'};
   padding: 5px;
@@ -173,6 +173,7 @@ const SpanValue = styled.span`
 const Children = styled.div`
   position: absolute;
   transition: 2s;
+  cursor: auto;
   border-left: 8px ${(props) => props.color} solid;
   left: 0;
   width: 99.5%;
@@ -223,6 +224,7 @@ function Table(props) {
               <Column key={indexCol} rows={[0]} size={28}>
                 <Row
                   first={indexCol === 0}
+                  clicable
                   last={indexCol === cols.length}
                   key={indexCol}
                   justify={props.data[key].justify}
@@ -265,6 +267,7 @@ function Table(props) {
                 justify={props.data[key].justify}
                 last={indexCol === cols.length}
                 key={indexCol}
+                clicable
                 onClick={() => {
                   props.data[key].ordenable && props.onClickToOrder(key)
                 }}
@@ -432,6 +435,8 @@ function Table(props) {
                           children={props.indexRowOpened === indexRow}
                           key={indexRow}
                           justify={props.data[key].justify}
+                          clicable={props.isMultiple}
+                          onClick={() => props.onRowClick(indexRow)}
                           color={
                             indexCol === 0 &&
                             props.data.colors &&
@@ -464,9 +469,7 @@ function Table(props) {
                           )}
                           {indexCol === colsOriginalWithoutColor.length &&
                             props.isMultiple && (
-                              <Collapse
-                                onClick={() => props.onRowClick(indexRow)}
-                              >
+                              <Collapse>
                                 <Icon
                                   size="md"
                                   name={

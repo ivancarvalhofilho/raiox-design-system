@@ -52,7 +52,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 99.5%;\n  top: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 99.5%;\n  top: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -230,7 +230,7 @@ var Column = _styledComponents["default"].div(_templateObject7(), function (prop
 var Row = _styledComponents["default"].div(_templateObject8(), function (props) {
   return props.justify === 'right' ? 'flex-end' : props.justify === 'left' && 'flex-start' || 'center';
 }, function (props) {
-  return props.onClick && 'pointer';
+  return props.clicable && 'pointer';
 }, function (props) {
   return props.border && '1px solid #e7e7e7';
 }, function (props) {
@@ -302,6 +302,7 @@ function Table(props) {
       size: 28
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
+      clicable: true,
       last: indexCol === cols.length,
       key: indexCol,
       justify: props.data[key].justify,
@@ -329,6 +330,7 @@ function Table(props) {
       justify: props.data[key].justify,
       last: indexCol === cols.length,
       key: indexCol,
+      clicable: true,
       onClick: function onClick() {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
@@ -437,17 +439,17 @@ function Table(props) {
         children: props.indexRowOpened === indexRow,
         key: indexRow,
         justify: props.data[key].justify,
+        clicable: props.isMultiple,
+        onClick: function onClick() {
+          return props.onRowClick(indexRow);
+        },
         color: indexCol === 0 && props.data.colors && props.data.colors.values[indexRow],
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
       }, key !== 'colors' && /*#__PURE__*/_react["default"].createElement(Value, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, {
-        onClick: function onClick() {
-          return props.onRowClick(indexRow);
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+      }), props.dispatch, props.subdata && props.subdata[indexRow]) : /*#__PURE__*/_react["default"].createElement(SpanValue, null, value)), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
         size: "md",
         name: props.indexRowOpened === indexRow ? 'chevron-up' : 'chevron-down'
       })), indexCol === colsOriginalWithoutColor.length && props.indexRowOpened === indexRow && /*#__PURE__*/_react["default"].createElement(Children, {
