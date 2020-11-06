@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,11 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Calendar/CalendarCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Calendar/CalendarCell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/DatePickerMonth/DatePickerMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/DatePickerMonth/DatePickerMonth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/DatePickerMonth/MonthList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/DatePickerMonth/MonthList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/DatePickerMonth/YearNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/DatePickerMonth/YearNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1iujQm1UX53MQQR5BoKUrHEpLUT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
