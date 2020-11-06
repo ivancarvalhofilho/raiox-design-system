@@ -71,7 +71,7 @@ function DatePickerMonth(props) {
       year = _useState2[0],
       setYear = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(props.showAllYears || groupBy(props.data, 'year')),
+  var _useState3 = (0, _react.useState)(groupBy(props.data, 'year')),
       _useState4 = _slicedToArray(_useState3, 1),
       yearMonth = _useState4[0];
 

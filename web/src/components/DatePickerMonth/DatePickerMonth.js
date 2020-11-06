@@ -27,7 +27,7 @@ function DatePickerMonth(props) {
   )
 
   const [yearMonth] = useState(
-    props.showAllYears || groupBy(props.data, 'year'),
+    groupBy(props.data, 'year'),
   )
 
   const wrapperRef = handleOutsideDivClick(() =>
