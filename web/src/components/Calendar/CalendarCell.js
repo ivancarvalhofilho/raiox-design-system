@@ -63,74 +63,67 @@ const SalesStatusDot = styled.span`
   background: ${(props) => props.color};
 `
 const CalendarCell = (props) => (
-  <Tooltip
-    key={`${props.date.fullDate}tooltip`}
-    title={
-      <TooltipText>{`Não é possível selecionar um período maior que ${props.maxDateRange} dias`}</TooltipText>
-    }
-    disableHoverListener={
+  <CalendarCellContainer
+    custom-tooltip={
       !(
         props.date.isBlockedSelection &&
         props.date.currentMonth &&
         props.maxDateRange
-      )
+      ) &&
+      `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
     }
-    arrow
+    isSelected={props.date.isSelected}
+    isHovered={props.date.isHovered}
+    onClick={() =>
+      props.date.currentMonth &&
+      !props.date.isBlockedSelection &&
+      props.onDayClick()
+    }
+    onMouseOver={() =>
+      props.date.currentMonth &&
+      !props.date.isBlockedSelection &&
+      props.onDayHover()
+    }
+    onFocus={() => {}}
+    currentMonth={props.date.currentMonth}
+    isHolyday={props.date.isHolyday}
+    isBlockedSelection={props.date.isBlockedSelection}
   >
-    <CalendarCellContainer
-      isSelected={props.date.isSelected}
-      isHovered={props.date.isHovered}
-      onClick={() =>
-        props.date.currentMonth &&
-        !props.date.isBlockedSelection &&
-        props.onDayClick()
-      }
-      onMouseOver={() =>
-        props.date.currentMonth &&
-        !props.date.isBlockedSelection &&
-        props.onDayHover()
-      }
-      onFocus={() => {}}
-      currentMonth={props.date.currentMonth}
-      isHolyday={props.date.isHolyday}
-      isBlockedSelection={props.date.isBlockedSelection}
-    >
-      {props.date.currentMonth && (
-        <DayNumber
-          currentMonth={props.date.currentMonth}
-          isSelected={props.date.isSelected}
-          isBlockedSelection={props.date.isBlockedSelection}
-        >
-          {props.date.day}
-        </DayNumber>
-      )}
-      {props.date.currentMonth && (
-        <DaySales>
-          {props.daySale && (
-            <div>
-              <SalesValue currentMonth={props.date.currentMonth}>
-                R${' '}
-                {parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
-                  'pt-br',
-                  {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  },
-                )}
-              </SalesValue>
-              <SalesStatusDot
-                color={
-                  props.daySale.type === 'R'
-                    ? Colors.feedback.success.dark
-                    : Colors.feedback.attention.darkest
-                }
-              />
-            </div>
-          )}
-        </DaySales>
-      )}
-    </CalendarCellContainer>
-  </Tooltip>
+    {props.date.currentMonth && (
+      <DayNumber
+        currentMonth={props.date.currentMonth}
+        isSelected={props.date.isSelected}
+        isBlockedSelection={props.date.isBlockedSelection}
+      >
+        {props.date.day}
+      </DayNumber>
+    )}
+    {props.date.currentMonth && (
+      <DaySales>
+        {props.daySale && (
+          <div>
+            <SalesValue currentMonth={props.date.currentMonth}>
+              R${' '}
+              {parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
+                'pt-br',
+                {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                },
+              )}
+            </SalesValue>
+            <SalesStatusDot
+              color={
+                props.daySale.type === 'R'
+                  ? Colors.feedback.success.dark
+                  : Colors.feedback.attention.darkest
+              }
+            />
+          </div>
+        )}
+      </DaySales>
+    )}
+  </CalendarCellContainer>
 )
 
 export { CalendarCell }

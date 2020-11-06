@@ -110,12 +110,8 @@ var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), funct
 });
 
 var CalendarCell = function CalendarCell(props) {
-  return /*#__PURE__*/_react["default"].createElement(_core.Tooltip, {
-    key: "".concat(props.date.fullDate, "tooltip"),
-    title: /*#__PURE__*/_react["default"].createElement(_StyledComponents.TooltipText, null, "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias")),
-    disableHoverListener: !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange),
-    arrow: true
-  }, /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
+  return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
+    "custom-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) && "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias"),
     isSelected: props.date.isSelected,
     isHovered: props.date.isHovered,
     onClick: function onClick() {
@@ -139,7 +135,7 @@ var CalendarCell = function CalendarCell(props) {
     maximumFractionDigits: 2
   })), /*#__PURE__*/_react["default"].createElement(SalesStatusDot, {
     color: props.daySale.type === 'R' ? _colors["default"].feedback.success.dark : _colors["default"].feedback.attention.darkest
-  })))));
+  }))));
 };
 
 exports.CalendarCell = CalendarCell;
