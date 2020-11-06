@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Colors from '../../../../tokens/js/colors'
-import { Tooltip } from '@material-ui/core'
-import { TooltipText } from '../StyledComponents'
 import fontStyleMaker from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
 
@@ -64,7 +62,7 @@ const SalesStatusDot = styled.span`
 `
 const CalendarCell = (props) => (
   <CalendarCellContainer
-    custom-tooltip={
+    data-tooltip={
       !(
         props.date.isBlockedSelection &&
         props.date.currentMonth &&

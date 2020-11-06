@@ -11,10 +11,6 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _colors = _interopRequireDefault(require("../../../../tokens/js/colors"));
 
-var _core = require("@material-ui/core");
-
-var _StyledComponents = require("../StyledComponents");
-
 var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -111,7 +107,7 @@ var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), funct
 
 var CalendarCell = function CalendarCell(props) {
   return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
-    "custom-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) && "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias"),
+    "data-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) && "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias"),
     isSelected: props.date.isSelected,
     isHovered: props.date.isHovered,
     onClick: function onClick() {

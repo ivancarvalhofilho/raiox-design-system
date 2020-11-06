@@ -44,11 +44,6 @@ const Container = styled.div`
   box-shadow: ${(props) => props.theme.styles.shadow.level1};
 `
 
-export const TooltipText = styled.span`
-  font-size: 12px;
-  color: #ffffff;
-`
-
 export const FlexCenter = styled.span`
   display: flex;
   justify-content: center;
