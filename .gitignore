@@ -72,3 +72,4 @@ node_modules/
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
 /.idea/workspace.xml
+/web/.idea/
