@@ -99,7 +99,8 @@ function DatePickerMonth(props) {
     showAllMonthsActive: props.showAllYears,
     dateSelected: props.dateSelected,
     onSelectMonth: props.onSelectMonth,
-    yearSelected: year
+    yearSelected: year,
+    disabledTooltipMessage: props.disabledMonthTooltipMessage
   }));
 }
 
@@ -108,7 +109,8 @@ DatePickerMonth.propTypes = {
   dateSelected: _propTypes["default"].any,
   onSelectMonth: _propTypes["default"].func,
   setComponentVisibility: _propTypes["default"].func,
-  showAllYears: _propTypes["default"].bool
+  showAllYears: _propTypes["default"].bool,
+  disabledMonthTooltipMessage: _propTypes["default"].string
 };
 var _default = DatePickerMonth;
 exports["default"] = _default;

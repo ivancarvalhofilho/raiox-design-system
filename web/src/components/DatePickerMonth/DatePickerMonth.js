@@ -56,6 +56,7 @@ function DatePickerMonth(props) {
         dateSelected={props.dateSelected}
         onSelectMonth={props.onSelectMonth}
         yearSelected={year}
+        disabledTooltipMessage={props.disabledMonthTooltipMessage}
       />
     </MonthByYearSelectorStyled>
   )
@@ -67,6 +68,7 @@ DatePickerMonth.propTypes = {
   onSelectMonth: PropTypes.func,
   setComponentVisibility: PropTypes.func,
   showAllYears: PropTypes.bool,
+  disabledMonthTooltipMessage: PropTypes.string,
 }
 
 export default DatePickerMonth

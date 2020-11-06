@@ -23,6 +23,7 @@ const Template = (args) => {
         setComponentVisibility={() =>
           alert('Clicks para fora dele, escondem o componente')
         }
+        disabledMonthTooltipMessage="Não pode selecionar este mes"
       />
     </div>
   )

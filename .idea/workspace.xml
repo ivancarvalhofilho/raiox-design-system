@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Calendar/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Calendar/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Calendar/CalendarCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Calendar/CalendarCell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/StyledComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/StyledComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/DatePickerMonth/DatePickerMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/DatePickerMonth/DatePickerMonth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/DatePickerMonth/MonthList.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/DatePickerMonth/MonthList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/stories/DatePickerMonth.stories.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/stories/DatePickerMonth.stories.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

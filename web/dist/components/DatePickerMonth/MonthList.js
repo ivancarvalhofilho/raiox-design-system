@@ -83,6 +83,7 @@ function MonthList(props) {
       },
       selected: props.dateSelected === month.date,
       active: month.active,
+      "data-tooltip": month.active && props.disabledTooltipMessage,
       key: index
     }, month.name);
   }));
@@ -93,6 +94,7 @@ MonthList.propTypes = {
   months: _propTypes["default"].any,
   onSelectMonth: _propTypes["default"].any,
   yearSelected: _propTypes["default"].any,
+  disabledTooltipMessage: _propTypes["default"].string,
   showAllMonthsActive: _propTypes["default"].bool
 };
 var _default = MonthList;
