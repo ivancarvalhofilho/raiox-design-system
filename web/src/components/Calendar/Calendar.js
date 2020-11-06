@@ -23,7 +23,7 @@ const CalendarGrid = styled.div`
   height: 100%;
   grid-auto-rows: 1fr;
   & > *:nth-child(7n-6) {
-    background: ${(props) => props.theme.colors.neutral.light['02']};
+    background: ${props => props.theme.colors.neutral.light['02']};
   }
 `
 
@@ -36,15 +36,15 @@ const CalendarGridHeader = styled.div`
 const DayOfWeek = styled.div`
   display: flex;
   justify-content: center;
-  ${(props) => fontStyleMaker(props.theme, 'body', 'medium', 'xxs')};
-  margin-bottom: ${(props) => props.theme.styles.spacing.stack.nano};
+  ${props => fontStyleMaker(props.theme, 'body', 'medium', 'xxs')};
+  margin-bottom: ${props => props.theme.styles.spacing.stack.nano};
 `
 
-const Calendar = (props) => {
+const Calendar = props => {
   const [dates, setDates] = useState(null)
 
   function findDayWithSale(currentDay) {
-    const dayWithSale = props.dayWithSales.find((date) =>
+    const dayWithSale = props.dayWithSales.find(date =>
       dayjs(date.day).isSame(currentDay, 'day'),
     )
     return dayWithSale || null
@@ -87,7 +87,7 @@ const Calendar = (props) => {
   }
 
   function currentDayIsHolyday(currentDay) {
-    const holyday = props.holydays.find((date) =>
+    const holyday = props.holydays.find(date =>
       dayjs(date).isSame(currentDay, 'day'),
     )
     return holyday
@@ -178,7 +178,7 @@ const Calendar = (props) => {
             .add(-1, 'month')
             .daysInMonth(),
         ).keys(),
-      ).map((v) => v)
+      ).map(v => v)
 
       const currentMonth = dayjs()
         .set('year', props.year)
@@ -191,14 +191,14 @@ const Calendar = (props) => {
         .set('month', props.month - 1)
       const visibleDaysOfPreviousMonth = numberOfDaysOfPreviousMonth
         .splice(numberOfDaysOfPreviousMonth.length - firstDayOfThisMonth)
-        .map((day) => generateDayObject(day, iterableDay, false))
+        .map(day => generateDayObject(day, iterableDay, false))
 
       iterableDay = iterableDay
         .set('year', props.year)
         .set('month', props.month)
       const daysOnThisMonth = Array.from(
         Array(numberOfDaysOfThisMonth).keys(),
-      ).map((day) => generateDayObject(day, iterableDay, true))
+      ).map(day => generateDayObject(day, iterableDay, true))
 
       let totalDays = visibleDaysOfPreviousMonth.concat(daysOnThisMonth)
 
@@ -208,12 +208,12 @@ const Calendar = (props) => {
       if (35 - totalDays.length >= 0) {
         const visibleDaysOfNextMonth = Array.from(
           Array(35 - totalDays.length).keys(),
-        ).map((day) => generateDayObject(day, iterableDay, false))
+        ).map(day => generateDayObject(day, iterableDay, false))
         totalDays = totalDays.concat(visibleDaysOfNextMonth)
       } else {
         const visibleDaysOfNextMonth = Array.from(
           Array(42 - totalDays.length).keys(),
-        ).map((day) => generateDayObject(day, iterableDay, false))
+        ).map(day => generateDayObject(day, iterableDay, false))
         totalDays = totalDays.concat(visibleDaysOfNextMonth)
       }
 
@@ -224,13 +224,13 @@ const Calendar = (props) => {
   return (
     <CalendarContainer>
       <CalendarGridHeader>
-        {CalendarConst.DAYS_OF_WEEK.map((day) => (
+        {CalendarConst.DAYS_OF_WEEK.map(day => (
           <DayOfWeek key={day}>{day}</DayOfWeek>
         ))}
       </CalendarGridHeader>
       <CalendarGrid>
         {dates &&
-          dates.map((date) => (
+          dates.map(date => (
             <CalendarCell
               key={date.fullDate}
               date={date}
