@@ -83,7 +83,7 @@ function MonthList(props) {
       },
       selected: props.dateSelected === month.date,
       active: month.active,
-      "data-tooltip": month.active && props.disabledTooltipMessage,
+      "data-tooltip": !month.active && props.disabledTooltipMessage,
       key: index
     }, month.name);
   }));
