@@ -107,7 +107,7 @@ var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), funct
 
 var CalendarCell = function CalendarCell(props) {
   return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
-    "data-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) ? "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias") : '',
+    "data-tooltip": props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange ? "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias") : '',
     isSelected: props.date.isSelected,
     isHovered: props.date.isHovered,
     onClick: function onClick() {

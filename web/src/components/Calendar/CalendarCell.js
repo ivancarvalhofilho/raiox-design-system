@@ -63,11 +63,9 @@ const SalesStatusDot = styled.span`
 const CalendarCell = (props) => (
   <CalendarCellContainer
     data-tooltip={
-      !(
-        props.date.isBlockedSelection &&
-        props.date.currentMonth &&
-        props.maxDateRange
-      )
+      props.date.isBlockedSelection &&
+      props.date.currentMonth &&
+      props.maxDateRange
         ? `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
         : ''
     }
