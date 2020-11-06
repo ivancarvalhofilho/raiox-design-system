@@ -67,8 +67,9 @@ const CalendarCell = (props) => (
         props.date.isBlockedSelection &&
         props.date.currentMonth &&
         props.maxDateRange
-      ) &&
-      `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
+      )
+        ? `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
+        : ''
     }
     isSelected={props.date.isSelected}
     isHovered={props.date.isHovered}
