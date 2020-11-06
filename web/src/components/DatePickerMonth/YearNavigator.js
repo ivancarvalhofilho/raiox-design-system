@@ -15,10 +15,6 @@ const YearNavigatorStyle = styled.div`
   ${(props) =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
 `
-const Arrow = styled(Icon)`
-  cursor: ${(props) => props.enabled && 'pointer'};
-  opacity: ${(props) => !props.enabled && theme.styles.opacity.level.light};
-`
 
 function YearNavigator(props) {
   const index = props.years.findIndex(
@@ -30,11 +26,14 @@ function YearNavigator(props) {
 
   return (
     <YearNavigatorStyle>
-      <Arrow
+      <Icon
         size={theme.styles.icon.size.md}
         appearance="primary"
-        enabled={left}
-        style={{ marginRight: theme.styles.spacing.stack.nano }}
+        disabled={!left}
+        style={{
+          marginRight: theme.styles.spacing.stack.nano,
+          opacity: !left ? theme.styles.opacity.level.light : 1,
+        }}
         path={icons['chevron-left']}
         onClick={() =>
           left &&
@@ -49,11 +48,14 @@ function YearNavigator(props) {
 
       <div style={{ userSelect: 'none' }}>{props.yearSelected}</div>
 
-      <Arrow
+      <Icon
         size={theme.styles.icon.size.md}
         appearance="primary"
-        enabled={right}
-        style={{ marginLeft: theme.styles.spacing.stack.nano }}
+        disabled={!right}
+        style={{
+          marginLeft: theme.styles.spacing.stack.nano,
+          opacity: !right ? theme.styles.opacity.level.light : 1,
+        }}
         path={icons['chevron-right']}
         onClick={() =>
           right &&
@@ -74,6 +76,8 @@ YearNavigator.propTypes = {
   yearSelected: PropTypes.any,
   years: PropTypes.any,
   showAllYears: PropTypes.bool,
+  disableRight: PropTypes.bool,
+  disableLeft: PropTypes.bool,
 }
 
 export default YearNavigator

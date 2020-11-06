@@ -27,11 +27,11 @@ function DatePickerMonth(props) {
   )
 
   const [yearMonth] = useState(
-    groupBy(props.data, 'year'),
+    props.showAllYears || groupBy(props.data, 'year'),
   )
 
-  const wrapperRef = handleOutsideDivClick(() =>
-    !!props.setComponentVisibility && props.setComponentVisibility(false),
+  const wrapperRef = handleOutsideDivClick(
+    () => !!props.setComponentVisibility && props.setComponentVisibility(false),
   )
 
   return (
@@ -39,6 +39,8 @@ function DatePickerMonth(props) {
       <YearNavigator
         yearSelected={year}
         onChange={(year) => setYear(year)}
+        disableLeft={props.disableLeftYearPicker}
+        disableRight={props.disableRightYearPicker}
         years={Object.keys(yearMonth).sort()}
         showAllYears={props.showAllYears}
       />
@@ -68,6 +70,8 @@ DatePickerMonth.propTypes = {
   onSelectMonth: PropTypes.func,
   setComponentVisibility: PropTypes.func,
   showAllYears: PropTypes.bool,
+  disableRightYearPicker: PropTypes.bool,
+  disableLeftYearPicker: PropTypes.bool,
   disabledMonthTooltipMessage: PropTypes.string,
 }
 

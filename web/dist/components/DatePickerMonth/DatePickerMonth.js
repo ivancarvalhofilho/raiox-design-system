@@ -71,7 +71,7 @@ function DatePickerMonth(props) {
       year = _useState2[0],
       setYear = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(groupBy(props.data, 'year')),
+  var _useState3 = (0, _react.useState)(props.showAllYears || groupBy(props.data, 'year')),
       _useState4 = _slicedToArray(_useState3, 1),
       yearMonth = _useState4[0];
 
@@ -85,6 +85,8 @@ function DatePickerMonth(props) {
     onChange: function onChange(year) {
       return setYear(year);
     },
+    disableLeft: props.disableLeftYearPicker,
+    disableRight: props.disableRightYearPicker,
     years: Object.keys(yearMonth).sort(),
     showAllYears: props.showAllYears
   }), /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, {
@@ -110,6 +112,8 @@ DatePickerMonth.propTypes = {
   onSelectMonth: _propTypes["default"].func,
   setComponentVisibility: _propTypes["default"].func,
   showAllYears: _propTypes["default"].bool,
+  disableRightYearPicker: _propTypes["default"].bool,
+  disableLeftYearPicker: _propTypes["default"].bool,
   disabledMonthTooltipMessage: _propTypes["default"].string
 };
 var _default = DatePickerMonth;

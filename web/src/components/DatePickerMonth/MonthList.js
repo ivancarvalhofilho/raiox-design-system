@@ -29,7 +29,6 @@ const MonthListStyle = styled.div`
 const Month = styled.div`
   background: ${(props) =>
     props.selected && theme.colors.brand.primary.darkest};
-  pointer-events: ${(props) => !props.active && 'none'};
   cursor: ${(props) => props.active && 'pointer'};
   opacity: ${(props) => !props.active && theme.styles.opacity.level.light};
   ${(props) =>
@@ -68,7 +67,7 @@ function MonthList(props) {
     <MonthListStyle>
       {monthsArray.map((month, index) => (
         <Month
-          onClick={() => onSelectMonth(month)}
+          onClick={() => month.active && onSelectMonth(month)}
           selected={props.dateSelected === month.date}
           active={month.active}
           data-tooltip={!month.active ? props.disabledTooltipMessage : ''}

@@ -20,7 +20,7 @@ var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  pointer-events: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  ", ";\n  user-select: none;\n  border-radius: ", ";\n  min-height: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  ", ";\n  user-select: none;\n  border-radius: ", ";\n  min-height: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -47,8 +47,6 @@ var MonthListStyle = _styledComponents["default"].div(_templateObject(), "".conc
 
 var Month = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.selected && _js["default"].colors.brand.primary.darkest;
-}, function (props) {
-  return !props.active && 'none';
 }, function (props) {
   return props.active && 'pointer';
 }, function (props) {
@@ -79,7 +77,7 @@ function MonthList(props) {
   return /*#__PURE__*/_react["default"].createElement(MonthListStyle, null, monthsArray.map(function (month, index) {
     return /*#__PURE__*/_react["default"].createElement(Month, {
       onClick: function onClick() {
-        return onSelectMonth(month);
+        return month.active && onSelectMonth(month);
       },
       selected: props.dateSelected === month.date,
       active: month.active,
