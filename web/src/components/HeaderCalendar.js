@@ -54,19 +54,25 @@ const HeaderCalendar = (props) => (
       <Icon
         size={theme.styles.icon.size.md}
         appearance="primary"
+        disabled={props.disabledLeft}
         style={{
           marginRight: theme.styles.spacing.inline.nano,
-          cursor: 'pointer',
+          cursor: !props.disabledLeft && 'pointer',
+          opacity: props.disabledLeft ? theme.styles.opacity.level.medium : 1,
         }}
         path={icons['chevron-left']}
-        onClick={() => props.onBackMonthClick()}
+        onClick={() => !props.disabledLeft && props.onBackMonthClick()}
       />
       <Icon
         size={theme.styles.icon.size.md}
         appearance="primary"
-        style={{ cursor: 'pointer' }}
+        disabled={props.disabledRight}
+        style={{
+          cursor: !props.disabledRight && 'pointer',
+          opacity: props.disabledRight ? theme.styles.opacity.level.medium : 1,
+        }}
         path={icons['chevron-right']}
-        onClick={() => props.onNextMonthClick()}
+        onClick={() => !props.disabledRight && props.onNextMonthClick()}
       />
       <Date onClick={() => props.onMonthClick()}>
         {dayjs()
@@ -94,6 +100,8 @@ HeaderCalendar.propTypes = {
   month: PropTypes.number,
   values: PropTypes.array,
   year: PropTypes.number,
+  disabledRight: PropTypes.bool,
+  disabledLeft: PropTypes.bool,
   onBackMonthClick: PropTypes.func,
   onNextMonthClick: PropTypes.func,
   onMonthClick: PropTypes.func,

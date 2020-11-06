@@ -38,7 +38,7 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Svg = (0, _styledComponents["default"])(_reactSvgInline["default"])(_templateObject(), function (props) {
-  return props.onClick && 'pointer';
+  return props.onClick && !props.disabled && 'pointer';
 }, function (props) {
   return props.spin && 'spin 2s infinite linear';
 }, function (props) {

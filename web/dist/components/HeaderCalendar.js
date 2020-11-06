@@ -135,23 +135,27 @@ var HeaderCalendar = function HeaderCalendar(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Month, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: _js["default"].styles.icon.size.md,
     appearance: "primary",
+    disabled: props.disabledLeft,
     style: {
       marginRight: _js["default"].styles.spacing.inline.nano,
-      cursor: 'pointer'
+      cursor: !props.disabledLeft && 'pointer',
+      opacity: props.disabledLeft ? _js["default"].styles.opacity.level.medium : 1
     },
     path: _icons["default"]['chevron-left'],
     onClick: function onClick() {
-      return props.onBackMonthClick();
+      return !props.disabledLeft && props.onBackMonthClick();
     }
   }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: _js["default"].styles.icon.size.md,
     appearance: "primary",
+    disabled: props.disabledRight,
     style: {
-      cursor: 'pointer'
+      cursor: !props.disabledRight && 'pointer',
+      opacity: props.disabledRight ? _js["default"].styles.opacity.level.medium : 1
     },
     path: _icons["default"]['chevron-right'],
     onClick: function onClick() {
-      return props.onNextMonthClick();
+      return !props.disabledRight && props.onNextMonthClick();
     }
   }), /*#__PURE__*/_react["default"].createElement(Date, {
     onClick: function onClick() {
@@ -175,6 +179,8 @@ HeaderCalendar.propTypes = {
   month: _propTypes["default"].number,
   values: _propTypes["default"].array,
   year: _propTypes["default"].number,
+  disabledRight: _propTypes["default"].bool,
+  disabledLeft: _propTypes["default"].bool,
   onBackMonthClick: _propTypes["default"].func,
   onNextMonthClick: _propTypes["default"].func,
   onMonthClick: _propTypes["default"].func

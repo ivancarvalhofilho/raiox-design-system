@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const Svg = styled(SVGInline)`
   display: inline-flex;
   transition-duration: 0.2s;
-  cursor: ${(props) => props.onClick && 'pointer'};
+  cursor: ${(props) => props.onClick && !props.disabled && 'pointer'};
   -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
   transition-property: transform;
   transform: rotate(-${(props) => props.rotate}deg);
