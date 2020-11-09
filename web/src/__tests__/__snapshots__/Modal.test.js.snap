@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c0 {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  top: 0;
+  overflow: hidden;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  padding: 20px;
+}
+
+.c1 {
+  box-shadow: 0px 0px 8px rgba(0,39,64,0.1);
+  border-radius: 5px;
+  width: 520px;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
+  background: white;
+  position: absolute;
+  top: calc(50% - 0px);
+  padding: 17px;
+  height: 436px;
+}
+
+<Modal
+  closable={true}
+  show={true}
+  title="test"
+>
+  <styled.div
+    onClick={[Function]}
+    show={true}
+  >
+    <div
+      className="c0"
+      onClick={[Function]}
+    >
+      <styled.div
+        show={true}
+        top={0}
+      >
+        <div
+          className="c1"
+        >
+          <styled.div>
+            <div
+              className="c2"
+            >
+              <styled.div>
+                <div
+                  className=""
+                >
+                  test
+                </div>
+              </styled.div>
+              <Icon
+                path="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                size="16px"
+              >
+                <Styled(SVGInline)
+                  fill="#979899"
+                  path="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                  size="16px"
+                  style={Object {}}
+                  svg="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                  width="16px"
+                >
+                  <SVGInline
+                    className="c3"
+                    classSuffix="-svg"
+                    cleanup={Array []}
+                    cleanupExceptions={Array []}
+                    component="span"
+                    fill="#979899"
+                    path="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                    size="16px"
+                    style={Object {}}
+                    svg="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                    width="16px"
+                  >
+                    <span
+                      className="SVGInline c3"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c3-svg\\" fill=\\"#979899\\" style=\\"width: 16px;height: 16px;\\" width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>",
+                        }
+                      }
+                      path="<svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.4094L12.5906 0L7 5.5906L1.4094 0L0 1.4094L5.5906 7L0 12.5906L1.4094 14L7 8.4094L12.5906 14L14 12.5906L8.4094 7L14 1.4094Z\\" fill=\\"#979899\\"/></svg>"
+                      size="16px"
+                      style={Object {}}
+                    />
+                  </SVGInline>
+                </Styled(SVGInline)>
+              </Icon>
+            </div>
+          </styled.div>
+          <styled.div>
+            <div
+              className="c4"
+            >
+              TestChildren
+            </div>
+          </styled.div>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Modal>
+`;

@@ -7,12 +7,12 @@ import styled from 'styled-components'
 const Svg = styled(SVGInline)`
   display: inline-flex;
   transition-duration: 0.2s;
-  cursor: ${(props) => props.onClick && !props.disabled && 'pointer'};
-  -webkit-animation: ${(props) => props.spin && 'spin 2s infinite linear'};
+  cursor: ${props => props.onClick && !props.disabled && 'pointer'};
+  -webkit-animation: ${props => props.spin && 'spin 2s infinite linear'};
   transition-property: transform;
-  transform: rotate(-${(props) => props.rotate}deg);
+  transform: rotate(-${props => props.rotate}deg);
 `
-const Icon = (props) => {
+const Icon = props => {
   function getIconSvgColor(props) {
     switch (props.appearance) {
       case 'default':
@@ -68,8 +68,12 @@ export default Icon
 
 Icon.propTypes = {
   appearance: PropTypes.string,
+  className: PropTypes.string,
   name: PropTypes.string,
+  onClick: PropTypes.func,
   path: PropTypes.string,
+  rotate: PropTypes.number,
   size: PropTypes.string,
+  spin: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
   style: PropTypes.object,
 }
