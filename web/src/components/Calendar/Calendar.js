@@ -230,11 +230,12 @@ const Calendar = props => {
       </CalendarGridHeader>
       <CalendarGrid>
         {dates &&
-          dates.map(date => (
+          dates.map((date, index) => (
             <CalendarCell
               key={date.fullDate}
               date={date}
               daySale={date.sale}
+              id={`day${index}`}
               maxDateRange={props.maxDateRange}
               onDayClick={() => onDayClick(date.fullDate)}
               onDayHover={() => onDayHover(date.fullDate)}

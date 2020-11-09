@@ -1,0 +1,4856 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+.c4 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+}
+
+.c5 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+}
+
+.c10 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #008488;
+  background: #F5FBFB !important;
+  cursor: pointer;
+}
+
+.c13 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5 !important;
+  cursor: pointer;
+}
+
+.c6 {
+  height: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11 {
+  height: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 8px;
+  color: #008488;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.c7 > div {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 8px;
+}
+
+.c8 {
+  height: 14px;
+  font-family: Roboto Condensed;
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c9 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #B23F00;
+}
+
+.c12 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2E7D32;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: inherit;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  grid-auto-rows: 1fr;
+}
+
+.c3 > *:nth-child(7n-6) {
+  background: #F5F5F5;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+<Calendar
+  dayWithSales={
+    Array [
+      Object {
+        "day": "01/01/2020",
+        "sale": 50,
+        "type": "A",
+      },
+      Object {
+        "day": "01/13/2020",
+        "sale": 700.55,
+        "type": "R",
+      },
+      Object {
+        "day": "02/01/2020",
+        "sale": 500,
+        "type": "R",
+      },
+    ]
+  }
+  holydays={
+    Array [
+      "01/24/2020",
+      "04/01/2020",
+    ]
+  }
+  maxDateRange={7}
+  month={0}
+  selectedDates={
+    Object {
+      "endDate": "01/22/2020",
+      "firstClickDate": null,
+      "startDate": "01/09/2020",
+      "state": 0,
+    }
+  }
+  setSelectedDates={[Function]}
+  year={2020}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        >
+          <styled.div
+            key="DOM"
+          >
+            <div
+              className="c2"
+            >
+              DOM
+            </div>
+          </styled.div>
+          <styled.div
+            key="SEG"
+          >
+            <div
+              className="c2"
+            >
+              SEG
+            </div>
+          </styled.div>
+          <styled.div
+            key="TER"
+          >
+            <div
+              className="c2"
+            >
+              TER
+            </div>
+          </styled.div>
+          <styled.div
+            key="QUA"
+          >
+            <div
+              className="c2"
+            >
+              QUA
+            </div>
+          </styled.div>
+          <styled.div
+            key="QUI"
+          >
+            <div
+              className="c2"
+            >
+              QUI
+            </div>
+          </styled.div>
+          <styled.div
+            key="SEX"
+          >
+            <div
+              className="c2"
+            >
+              SEX
+            </div>
+          </styled.div>
+          <styled.div
+            key="SÁB"
+          >
+            <div
+              className="c2"
+            >
+              SÁB
+            </div>
+          </styled.div>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="c3"
+        >
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 29,
+                "fullDate": "12/29/2019",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day0"
+            key="12/29/2019"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day0"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day0"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 30,
+                "fullDate": "12/30/2019",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day1"
+            key="12/30/2019"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day1"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day1"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 31,
+                "fullDate": "12/31/2019",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day2"
+            key="12/31/2019"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day2"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day2"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 1,
+                "fullDate": "01/01/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": Object {
+                  "day": "01/01/2020",
+                  "sale": 50,
+                  "type": "A",
+                },
+              }
+            }
+            daySale={
+              Object {
+                "day": "01/01/2020",
+                "sale": 50,
+                "type": "A",
+              }
+            }
+            id="day3"
+            key="01/01/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day3"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day3"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    1
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  >
+                    <div>
+                      <styled.span
+                        currentMonth={true}
+                      >
+                        <span
+                          className="c8"
+                        >
+                          R$
+                           
+                          50,00
+                        </span>
+                      </styled.span>
+                      <styled.span
+                        color="#B23F00"
+                      >
+                        <span
+                          className="c9"
+                          color="#B23F00"
+                        />
+                      </styled.span>
+                    </div>
+                  </span>
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 2,
+                "fullDate": "01/02/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day4"
+            key="01/02/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day4"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day4"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    2
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 3,
+                "fullDate": "01/03/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day5"
+            key="01/03/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day5"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day5"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    3
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 4,
+                "fullDate": "01/04/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day6"
+            key="01/04/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day6"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day6"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    4
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 5,
+                "fullDate": "01/05/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day7"
+            key="01/05/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day7"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day7"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    5
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 6,
+                "fullDate": "01/06/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day8"
+            key="01/06/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day8"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day8"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    6
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 7,
+                "fullDate": "01/07/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day9"
+            key="01/07/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day9"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day9"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    7
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 8,
+                "fullDate": "01/08/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day10"
+            key="01/08/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day10"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day10"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    8
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 9,
+                "fullDate": "01/09/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day11"
+            key="01/09/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day11"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day11"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    9
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 10,
+                "fullDate": "01/10/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day12"
+            key="01/10/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day12"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day12"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    10
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 11,
+                "fullDate": "01/11/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day13"
+            key="01/11/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day13"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day13"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    11
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 12,
+                "fullDate": "01/12/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day14"
+            key="01/12/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day14"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day14"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    12
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 13,
+                "fullDate": "01/13/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": Object {
+                  "day": "01/13/2020",
+                  "sale": 700.55,
+                  "type": "R",
+                },
+              }
+            }
+            daySale={
+              Object {
+                "day": "01/13/2020",
+                "sale": 700.55,
+                "type": "R",
+              }
+            }
+            id="day15"
+            key="01/13/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day15"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day15"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    13
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  >
+                    <div>
+                      <styled.span
+                        currentMonth={true}
+                      >
+                        <span
+                          className="c8"
+                        >
+                          R$
+                           
+                          700,55
+                        </span>
+                      </styled.span>
+                      <styled.span
+                        color="#2E7D32"
+                      >
+                        <span
+                          className="c12"
+                          color="#2E7D32"
+                        />
+                      </styled.span>
+                    </div>
+                  </span>
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 14,
+                "fullDate": "01/14/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day16"
+            key="01/14/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day16"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day16"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    14
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 15,
+                "fullDate": "01/15/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day17"
+            key="01/15/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day17"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day17"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    15
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 16,
+                "fullDate": "01/16/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day18"
+            key="01/16/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day18"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day18"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    16
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 17,
+                "fullDate": "01/17/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day19"
+            key="01/17/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day19"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day19"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    17
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 18,
+                "fullDate": "01/18/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day20"
+            key="01/18/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day20"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day20"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    18
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 19,
+                "fullDate": "01/19/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day21"
+            key="01/19/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day21"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day21"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    19
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 20,
+                "fullDate": "01/20/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day22"
+            key="01/20/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day22"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day22"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    20
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 21,
+                "fullDate": "01/21/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day23"
+            key="01/21/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day23"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day23"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    21
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 22,
+                "fullDate": "01/22/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": true,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day24"
+            key="01/22/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day24"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={true}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c10"
+                data-tooltip=""
+                id="day24"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={true}
+                >
+                  <span
+                    className="c11"
+                  >
+                    22
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 23,
+                "fullDate": "01/23/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day25"
+            key="01/23/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day25"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day25"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    23
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 24,
+                "fullDate": "01/24/2020",
+                "isBlockedSelection": false,
+                "isHolyday": "01/24/2020",
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day26"
+            key="01/24/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day26"
+              isBlockedSelection={false}
+              isHolyday="01/24/2020"
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c13"
+                data-tooltip=""
+                id="day26"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    24
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 25,
+                "fullDate": "01/25/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day27"
+            key="01/25/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day27"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day27"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    25
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 26,
+                "fullDate": "01/26/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day28"
+            key="01/26/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day28"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day28"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    26
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 27,
+                "fullDate": "01/27/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day29"
+            key="01/27/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day29"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day29"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    27
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 28,
+                "fullDate": "01/28/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day30"
+            key="01/28/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day30"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day30"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    28
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 29,
+                "fullDate": "01/29/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day31"
+            key="01/29/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day31"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day31"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    29
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 30,
+                "fullDate": "01/30/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day32"
+            key="01/30/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day32"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day32"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    30
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 31,
+                "fullDate": "01/31/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day33"
+            key="01/31/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day33"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day33"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    31
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 1,
+                "fullDate": "02/01/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": Object {
+                  "day": "02/01/2020",
+                  "sale": 500,
+                  "type": "R",
+                },
+              }
+            }
+            daySale={
+              Object {
+                "day": "02/01/2020",
+                "sale": 500,
+                "type": "R",
+              }
+            }
+            id="day34"
+            key="02/01/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day34"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day34"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Calendar>
+`;
+
+exports[`should render with month 35 days 1`] = `
+.c4 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+}
+
+.c5 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+}
+
+.c6 {
+  height: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.c7 > div {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 8px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: inherit;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  grid-auto-rows: 1fr;
+}
+
+.c3 > *:nth-child(7n-6) {
+  background: #F5F5F5;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+<Calendar
+  dayWithSales={
+    Array [
+      Object {
+        "day": "01/01/2020",
+        "sale": 50,
+        "type": "A",
+      },
+      Object {
+        "day": "01/13/2020",
+        "sale": 700.55,
+        "type": "R",
+      },
+      Object {
+        "day": "02/01/2020",
+        "sale": 500,
+        "type": "R",
+      },
+    ]
+  }
+  holydays={
+    Array [
+      "01/24/2020",
+      "04/01/2020",
+    ]
+  }
+  maxDateRange={7}
+  month={4}
+  selectedDates={
+    Object {
+      "endDate": "01/22/2020",
+      "firstClickDate": null,
+      "startDate": "01/09/2020",
+      "state": 0,
+    }
+  }
+  setSelectedDates={[Function]}
+  year={2020}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        >
+          <styled.div
+            key="DOM"
+          >
+            <div
+              className="c2"
+            >
+              DOM
+            </div>
+          </styled.div>
+          <styled.div
+            key="SEG"
+          >
+            <div
+              className="c2"
+            >
+              SEG
+            </div>
+          </styled.div>
+          <styled.div
+            key="TER"
+          >
+            <div
+              className="c2"
+            >
+              TER
+            </div>
+          </styled.div>
+          <styled.div
+            key="QUA"
+          >
+            <div
+              className="c2"
+            >
+              QUA
+            </div>
+          </styled.div>
+          <styled.div
+            key="QUI"
+          >
+            <div
+              className="c2"
+            >
+              QUI
+            </div>
+          </styled.div>
+          <styled.div
+            key="SEX"
+          >
+            <div
+              className="c2"
+            >
+              SEX
+            </div>
+          </styled.div>
+          <styled.div
+            key="SÁB"
+          >
+            <div
+              className="c2"
+            >
+              SÁB
+            </div>
+          </styled.div>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="c3"
+        >
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 26,
+                "fullDate": "04/26/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day0"
+            key="04/26/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day0"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day0"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 27,
+                "fullDate": "04/27/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day1"
+            key="04/27/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day1"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day1"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 28,
+                "fullDate": "04/28/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day2"
+            key="04/28/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day2"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day2"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 29,
+                "fullDate": "04/29/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day3"
+            key="04/29/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day3"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day3"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 30,
+                "fullDate": "04/30/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day4"
+            key="04/30/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day4"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day4"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 1,
+                "fullDate": "05/01/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day5"
+            key="05/01/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day5"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day5"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    1
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 2,
+                "fullDate": "05/02/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day6"
+            key="05/02/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day6"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day6"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    2
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 3,
+                "fullDate": "05/03/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day7"
+            key="05/03/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day7"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day7"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    3
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 4,
+                "fullDate": "05/04/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day8"
+            key="05/04/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day8"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day8"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    4
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 5,
+                "fullDate": "05/05/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day9"
+            key="05/05/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day9"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day9"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    5
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 6,
+                "fullDate": "05/06/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day10"
+            key="05/06/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day10"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day10"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    6
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 7,
+                "fullDate": "05/07/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day11"
+            key="05/07/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day11"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day11"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    7
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 8,
+                "fullDate": "05/08/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day12"
+            key="05/08/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day12"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day12"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    8
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 9,
+                "fullDate": "05/09/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day13"
+            key="05/09/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day13"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day13"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    9
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 10,
+                "fullDate": "05/10/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day14"
+            key="05/10/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day14"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day14"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    10
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 11,
+                "fullDate": "05/11/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day15"
+            key="05/11/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day15"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day15"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    11
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 12,
+                "fullDate": "05/12/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day16"
+            key="05/12/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day16"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day16"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    12
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 13,
+                "fullDate": "05/13/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day17"
+            key="05/13/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day17"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day17"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    13
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 14,
+                "fullDate": "05/14/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day18"
+            key="05/14/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day18"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day18"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    14
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 15,
+                "fullDate": "05/15/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day19"
+            key="05/15/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day19"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day19"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    15
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 16,
+                "fullDate": "05/16/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day20"
+            key="05/16/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day20"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day20"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    16
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 17,
+                "fullDate": "05/17/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day21"
+            key="05/17/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day21"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day21"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    17
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 18,
+                "fullDate": "05/18/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day22"
+            key="05/18/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day22"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day22"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    18
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 19,
+                "fullDate": "05/19/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day23"
+            key="05/19/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day23"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day23"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    19
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 20,
+                "fullDate": "05/20/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day24"
+            key="05/20/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day24"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day24"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    20
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 21,
+                "fullDate": "05/21/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day25"
+            key="05/21/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day25"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day25"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    21
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 22,
+                "fullDate": "05/22/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day26"
+            key="05/22/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day26"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day26"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    22
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 23,
+                "fullDate": "05/23/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day27"
+            key="05/23/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day27"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day27"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    23
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 24,
+                "fullDate": "05/24/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day28"
+            key="05/24/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day28"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day28"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    24
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 25,
+                "fullDate": "05/25/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day29"
+            key="05/25/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day29"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day29"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    25
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 26,
+                "fullDate": "05/26/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day30"
+            key="05/26/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day30"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day30"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    26
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 27,
+                "fullDate": "05/27/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day31"
+            key="05/27/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day31"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day31"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    27
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 28,
+                "fullDate": "05/28/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day32"
+            key="05/28/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day32"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day32"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    28
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 29,
+                "fullDate": "05/29/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day33"
+            key="05/29/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day33"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day33"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    29
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 30,
+                "fullDate": "05/30/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day34"
+            key="05/30/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day34"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day34"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    30
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": true,
+                "day": 31,
+                "fullDate": "05/31/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day35"
+            key="05/31/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={true}
+              data-tooltip=""
+              id="day35"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="day35"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <styled.span
+                  currentMonth={true}
+                  isBlockedSelection={false}
+                  isSelected={false}
+                >
+                  <span
+                    className="c6"
+                  >
+                    31
+                  </span>
+                </styled.span>
+                <styled.span>
+                  <span
+                    className="c7"
+                  />
+                </styled.span>
+              </div>
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 1,
+                "fullDate": "06/01/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day36"
+            key="06/01/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day36"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day36"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 2,
+                "fullDate": "06/02/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day37"
+            key="06/02/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day37"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day37"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 3,
+                "fullDate": "06/03/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day38"
+            key="06/03/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day38"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day38"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 4,
+                "fullDate": "06/04/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day39"
+            key="06/04/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day39"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day39"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 5,
+                "fullDate": "06/05/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day40"
+            key="06/05/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day40"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day40"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+          <CalendarCell
+            date={
+              Object {
+                "currentMonth": false,
+                "day": 6,
+                "fullDate": "06/06/2020",
+                "isBlockedSelection": false,
+                "isHolyday": undefined,
+                "isHovered": false,
+                "isSelected": false,
+                "sale": null,
+              }
+            }
+            daySale={null}
+            id="day41"
+            key="06/06/2020"
+            maxDateRange={7}
+            onDayClick={[Function]}
+            onDayHover={[Function]}
+          >
+            <styled.div
+              currentMonth={false}
+              data-tooltip=""
+              id="day41"
+              isBlockedSelection={false}
+              isHovered={false}
+              isSelected={false}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c4"
+                data-tooltip=""
+                id="day41"
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              />
+            </styled.div>
+          </CalendarCell>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</Calendar>
+`;

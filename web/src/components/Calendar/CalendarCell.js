@@ -62,6 +62,7 @@ const SalesStatusDot = styled.span`
 `
 const CalendarCell = (props) => (
   <CalendarCellContainer
+      id={props.id}
     data-tooltip={
       props.date.isBlockedSelection &&
       props.date.currentMonth &&
