@@ -1,0 +1,363 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+.c2 {
+  padding: 5px 0px;
+  font-family: Roboto;
+  font-weight: 500;
+  width: 33.333333333333336%;
+  text-align: center;
+  color: #008488;
+  font-size: 12px;
+}
+
+.c3 {
+  padding: 5px 0px;
+  font-family: Roboto;
+  font-weight: 400;
+  width: 33.333333333333336%;
+  text-align: center;
+  color: #595A5C;
+  font-size: 12px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c0 {
+  cursor: pointer;
+}
+
+.c4 {
+  width: 33.333333333333336%;
+  height: 4px;
+  border-radius: 4px 4px 0px 0px;
+  background-color: #008488;
+  -webkit-transform: translate(0%,0);
+  -ms-transform: translate(0%,0);
+  transform: translate(0%,0);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  -webkit-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.c5 {
+  width: 100%;
+  height: 1px;
+  background-color: #E0E0E0;
+  -webkit-transform: translate(%,0);
+  -ms-transform: translate(%,0);
+  transform: translate(%,0);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  -webkit-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+<Tabs
+  onTabClick={[Function]}
+  tabActive={0}
+  tabs={
+    Array [
+      "Categorias",
+      "Maquininhas",
+      "Banco",
+    ]
+  }
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        >
+          <Tab
+            active={true}
+            id="tab0"
+            key="0"
+            label="Categorias"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={true}
+              id="tab0"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c2"
+                id="tab0"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Categorias
+              </div>
+            </styled.div>
+          </Tab>
+          <Tab
+            active={false}
+            id="tab1"
+            key="1"
+            label="Maquininhas"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={false}
+              id="tab1"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c3"
+                id="tab1"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Maquininhas
+              </div>
+            </styled.div>
+          </Tab>
+          <Tab
+            active={false}
+            id="tab2"
+            key="2"
+            label="Banco"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={false}
+              id="tab2"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c3"
+                id="tab2"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Banco
+              </div>
+            </styled.div>
+          </Tab>
+        </div>
+      </styled.div>
+      <styled.div
+        left={0}
+        rounded={true}
+        width={33.333333333333336}
+      >
+        <div
+          className="c4"
+          width={33.333333333333336}
+        />
+      </styled.div>
+      <styled.div
+        color="#E0E0E0"
+        height={1}
+        width={100}
+      >
+        <div
+          className="c5"
+          color="#E0E0E0"
+          height={1}
+          width={100}
+        />
+      </styled.div>
+    </div>
+  </styled.div>
+</Tabs>
+`;
+
+exports[`should render with second tab 1`] = `
+.c2 {
+  padding: 5px 0px;
+  font-family: Roboto;
+  font-weight: 400;
+  width: 33.333333333333336%;
+  text-align: center;
+  color: #595A5C;
+  font-size: 12px;
+}
+
+.c3 {
+  padding: 5px 0px;
+  font-family: Roboto;
+  font-weight: 500;
+  width: 33.333333333333336%;
+  text-align: center;
+  color: #008488;
+  font-size: 12px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c0 {
+  cursor: pointer;
+}
+
+.c4 {
+  width: 33.333333333333336%;
+  height: 4px;
+  border-radius: 4px 4px 0px 0px;
+  background-color: #008488;
+  -webkit-transform: translate(100%,0);
+  -ms-transform: translate(100%,0);
+  transform: translate(100%,0);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  -webkit-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.c5 {
+  width: 100%;
+  height: 1px;
+  background-color: #E0E0E0;
+  -webkit-transform: translate(%,0);
+  -ms-transform: translate(%,0);
+  transform: translate(%,0);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  -webkit-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+<Tabs
+  onTabClick={[Function]}
+  tabActive={1}
+  tabs={
+    Array [
+      "Categorias",
+      "Maquininhas",
+      "Banco",
+    ]
+  }
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <styled.div>
+        <div
+          className="c1"
+        >
+          <Tab
+            active={false}
+            id="tab0"
+            key="0"
+            label="Categorias"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={false}
+              id="tab0"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c2"
+                id="tab0"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Categorias
+              </div>
+            </styled.div>
+          </Tab>
+          <Tab
+            active={true}
+            id="tab1"
+            key="1"
+            label="Maquininhas"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={true}
+              id="tab1"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c3"
+                id="tab1"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Maquininhas
+              </div>
+            </styled.div>
+          </Tab>
+          <Tab
+            active={false}
+            id="tab2"
+            key="2"
+            label="Banco"
+            onClick={[Function]}
+            width={33.333333333333336}
+          >
+            <styled.div
+              active={false}
+              id="tab2"
+              onClick={[Function]}
+              width={33.333333333333336}
+            >
+              <div
+                className="c2"
+                id="tab2"
+                onClick={[Function]}
+                width={33.333333333333336}
+              >
+                Banco
+              </div>
+            </styled.div>
+          </Tab>
+        </div>
+      </styled.div>
+      <styled.div
+        left={100}
+        rounded={true}
+        width={33.333333333333336}
+      >
+        <div
+          className="c4"
+          width={33.333333333333336}
+        />
+      </styled.div>
+      <styled.div
+        color="#E0E0E0"
+        height={1}
+        width={100}
+      >
+        <div
+          className="c5"
+          color="#E0E0E0"
+          height={1}
+          width={100}
+        />
+      </styled.div>
+    </div>
+  </styled.div>
+</Tabs>
+`;

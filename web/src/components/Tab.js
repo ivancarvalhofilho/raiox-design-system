@@ -20,6 +20,7 @@ const TabContainer = styled.div`
 const Tab = (props) => (
   <TabContainer
     width={props.width}
+    id={props.id}
     onClick={props.onClick}
     active={props.active}
   >

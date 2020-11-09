@@ -7,27 +7,28 @@ import theme from '../../../tokens/js'
 const TabsContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  pointer-events: ${(props) => props.disabled && 'none'};
+  pointer-events: ${props => props.disabled && 'none'};
 `
 const Container = styled.div`
-  opacity: ${(props) => props.disabled && '0.5'};
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${props => props.disabled && '0.5'};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
 `
 const Bar = styled.div`
-  width: ${(props) => props.width}%;
-  height: ${(props) => props.height || 4}px;
-  border-radius: ${(props) => props.rounded && '4px 4px 0px 0px'};
-  background-color: ${(props) =>
+  width: ${props => props.width}%;
+  height: ${props => props.height || 4}px;
+  border-radius: ${props => props.rounded && '4px 4px 0px 0px'};
+  background-color: ${props =>
     props.color || props.theme.colors.brand.primary.darkest};
-  transform: translate(${(props) => props.left}%, 0);
+  transform: translate(${props => props.left}%, 0);
   transition: transform 0.3s linear;
 `
 
-const Tabs = (props) => (
+const Tabs = props => (
   <Container disabled={props.disabled} style={props.style}>
     <TabsContainer disabled={props.disabled}>
       {props.tabs.map((tab, index) => (
         <Tab
+          id={`tab${index}`}
           key={index}
           label={tab}
           width={100 / props.tabs.length}
