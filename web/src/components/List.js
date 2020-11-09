@@ -7,14 +7,14 @@ import styled from 'styled-components'
 const ListContainer = styled.div``
 const Row = styled.div`
   display: flex;
-  height: ${(props) => props.size || 46}px;
+  height: ${props => props.size || 46}px;
   padding: 0px 16px;
   border-bottom: 1px solid #e0e0e0;
 `
 const Column = styled.div`
   height: 100%;
-  width: ${(props) => props.width}%;
-  justify-content: ${(props) =>
+  width: ${props => props.width}%;
+  justify-content: ${props =>
     props.align === 'right'
       ? 'flex-end'
       : props.align === 'left'
@@ -24,7 +24,7 @@ const Column = styled.div`
   display: flex;
 `
 const ListData = styled.div``
-const List = (props) => (
+const List = props => (
   <ListContainer style={props.style}>
     <ListHeader data={props.header} align={props.align} />
     <ListData style={props.styleData} className="custom-scrollbar">

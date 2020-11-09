@@ -48,7 +48,7 @@ const CollapseContainer = (props) => {
   const [opened, setOpened] = useState(false)
   return (
     <Container>
-      <Header onClick={() => setOpened(!opened)}>
+      <Header id={'header'} onClick={() => setOpened(!opened)}>
         <Title>{props.title}</Title>
         <Button>
           <Icon
@@ -60,7 +60,7 @@ const CollapseContainer = (props) => {
       </Header>
       <UnmountClosed isOpened={opened}>
         <Divider horizontal />
-        <Body>{props.children}</Body>
+        <Body id={'children'}>{props.children}</Body>
       </UnmountClosed>
     </Container>
   )
@@ -69,6 +69,6 @@ const CollapseContainer = (props) => {
 export default CollapseContainer
 
 CollapseContainer.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
 }

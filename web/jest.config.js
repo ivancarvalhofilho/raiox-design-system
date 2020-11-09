@@ -9,5 +9,8 @@ module.exports = {
       statements: 80,
     },
   },
-  coverageReporters: ['json', 'lcovonly', 'text', 'clover'],
+  coverageReporters: [
+    "json-summary",
+    "text",
+    "lcov"],
 }
