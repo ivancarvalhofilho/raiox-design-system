@@ -1,6 +1,210 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the homepage for the non logged in user 1`] = `
+.c4 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+}
+
+.c5 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+}
+
+.c10 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #008488;
+  background: #F5FBFB !important;
+  cursor: pointer;
+}
+
+.c13 {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5 !important;
+  cursor: pointer;
+}
+
+.c6 {
+  height: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11 {
+  height: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 8px;
+  color: #008488;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.c7 > div {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 8px;
+}
+
+.c8 {
+  height: 14px;
+  font-family: Roboto Condensed;
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c9 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #B23F00;
+}
+
+.c12 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2E7D32;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  height: inherit;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  grid-auto-rows: 1fr;
+}
+
+.c3 > *:nth-child(7n-6) {
+  background: #F5F5F5;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
 <Component
   theme={
     Object {
@@ -1155,17 +1359,17 @@ exports[`should render the homepage for the non logged in user 1`] = `
   >
     <styled.div>
       <div
-        className="sc-jSgupP jdpREv"
+        className="c0"
       >
         <styled.div>
           <div
-            className="sc-iBPRYJ dVRJbz"
+            className="c1"
           >
             <styled.div
               key="DOM"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 DOM
               </div>
@@ -1174,7 +1378,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="SEG"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 SEG
               </div>
@@ -1183,7 +1387,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="TER"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 TER
               </div>
@@ -1192,7 +1396,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="QUA"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 QUA
               </div>
@@ -1201,7 +1405,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="QUI"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 QUI
               </div>
@@ -1210,7 +1414,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="SEX"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 SEX
               </div>
@@ -1219,7 +1423,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
               key="SÁB"
             >
               <div
-                className="sc-fubCfw PBfEi"
+                className="c2"
               >
                 SÁB
               </div>
@@ -1228,7 +1432,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
         </styled.div>
         <styled.div>
           <div
-            className="sc-gKsewC numtw"
+            className="c3"
           >
             <CalendarCell
               date={
@@ -1251,7 +1455,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={false}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1260,8 +1464,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ cvhbcx"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c4"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1289,7 +1493,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={false}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1298,8 +1502,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ cvhbcx"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c4"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1327,7 +1531,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={false}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1336,8 +1540,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ cvhbcx"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c4"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1375,7 +1579,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1384,8 +1588,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1396,21 +1600,21 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       1
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     >
                       <div>
                         <styled.span
                           currentMonth={true}
                         >
                           <span
-                            className="sc-hKgILt fiOegf"
+                            className="c8"
                           >
                             R$
                              
@@ -1421,7 +1625,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
                           color="#B23F00"
                         >
                           <span
-                            className="sc-eCssSg gekMBU"
+                            className="c9"
                             color="#B23F00"
                           />
                         </styled.span>
@@ -1452,7 +1656,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1461,8 +1665,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1473,14 +1677,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       2
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1507,7 +1711,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1516,8 +1720,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1528,14 +1732,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       3
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1562,7 +1766,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1571,8 +1775,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1583,14 +1787,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       4
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1617,7 +1821,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1626,8 +1830,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1638,14 +1842,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       5
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1672,7 +1876,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1681,8 +1885,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1693,14 +1897,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       6
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1727,7 +1931,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1736,8 +1940,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1748,14 +1952,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       7
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1782,7 +1986,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -1791,8 +1995,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1803,14 +2007,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       8
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1837,7 +2041,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -1846,8 +2050,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1858,14 +2062,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       9
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1892,7 +2096,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -1901,8 +2105,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1913,14 +2117,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       10
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -1947,7 +2151,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -1956,8 +2160,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -1968,14 +2172,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       11
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2002,7 +2206,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2011,8 +2215,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2023,14 +2227,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       12
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2067,7 +2271,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2076,8 +2280,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2088,21 +2292,21 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       13
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     >
                       <div>
                         <styled.span
                           currentMonth={true}
                         >
                           <span
-                            className="sc-hKgILt fiOegf"
+                            className="c8"
                           >
                             R$
                              
@@ -2113,7 +2317,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
                           color="#2E7D32"
                         >
                           <span
-                            className="sc-eCssSg la-dtgc"
+                            className="c12"
                             color="#2E7D32"
                           />
                         </styled.span>
@@ -2144,7 +2348,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2153,8 +2357,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2165,14 +2369,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       14
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2199,7 +2403,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2208,8 +2412,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2220,14 +2424,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       15
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2254,7 +2458,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2263,8 +2467,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2275,14 +2479,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       16
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2309,7 +2513,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2318,8 +2522,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2330,14 +2534,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       17
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2364,7 +2568,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2373,8 +2577,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2385,14 +2589,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       18
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2419,7 +2623,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2428,8 +2632,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2440,14 +2644,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       19
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2474,7 +2678,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2483,8 +2687,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2495,14 +2699,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       20
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2529,7 +2733,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2538,8 +2742,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2550,14 +2754,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       21
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2584,7 +2788,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={true}
@@ -2593,8 +2797,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ dDyAbM"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c10"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2605,14 +2809,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={true}
                   >
                     <span
-                      className="sc-gsTCUz ekiPlv"
+                      className="c11"
                     >
                       22
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2639,7 +2843,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2648,8 +2852,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2660,14 +2864,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       23
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2694,7 +2898,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHolyday="01/24/2020"
                 isHovered={false}
@@ -2704,8 +2908,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ljtJGZ"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c13"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2716,14 +2920,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       24
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2750,7 +2954,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2759,8 +2963,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2771,14 +2975,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       25
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2805,7 +3009,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2814,8 +3018,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2826,14 +3030,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       26
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2860,7 +3064,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2869,8 +3073,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2881,14 +3085,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       27
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2915,7 +3119,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2924,8 +3128,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2936,14 +3140,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       28
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -2970,7 +3174,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -2979,8 +3183,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -2991,14 +3195,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       29
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -3025,7 +3229,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -3034,8 +3238,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -3046,14 +3250,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       30
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -3080,7 +3284,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={true}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -3089,8 +3293,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ ixCenW"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c5"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}
@@ -3101,14 +3305,14 @@ exports[`should render the homepage for the non logged in user 1`] = `
                     isSelected={false}
                   >
                     <span
-                      className="sc-gsTCUz dcWgbB"
+                      className="c6"
                     >
                       31
                     </span>
                   </styled.span>
                   <styled.span>
                     <span
-                      className="sc-dlfnbm eUSRzq"
+                      className="c7"
                     />
                   </styled.span>
                 </div>
@@ -3145,7 +3349,7 @@ exports[`should render the homepage for the non logged in user 1`] = `
             >
               <styled.div
                 currentMonth={false}
-                data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                data-tooltip=""
                 isBlockedSelection={false}
                 isHovered={false}
                 isSelected={false}
@@ -3154,8 +3358,8 @@ exports[`should render the homepage for the non logged in user 1`] = `
                 onMouseOver={[Function]}
               >
                 <div
-                  className="sc-bdfBwQ cvhbcx"
-                  data-tooltip="Não é possível selecionar um período maior que 7 dias"
+                  className="c4"
+                  data-tooltip=""
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseOver={[Function]}

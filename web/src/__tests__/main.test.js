@@ -5,6 +5,7 @@ import Calendar from '../components/Calendar/Calendar'
 import theme from '../../../tokens/js'
 import { ThemeProvider } from 'styled-components'
 import CalendarConst from '../components/Calendar/const'
+import 'jest-styled-components'
 
 it('should render the homepage for the non logged in user', () => {
   const spy = jest.spyOn(global.console, 'error')
