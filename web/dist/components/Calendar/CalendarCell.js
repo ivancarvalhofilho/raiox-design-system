@@ -28,7 +28,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  vertical-align: middle;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: block;\n  line-height: 14px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  vertical-align: middle;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: block;\n  line-height: 14px;\n  width: Calc(100% - 8px);\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -38,7 +38,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  & > div {\n    display: inline-flex;\n    align-items: center;\n    margin: ", ";\n    position: absolute;\n    width: Calc(100% - 16px);\n    bottom: 0;\n    justify-content: flex-end;\n  }\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  & > div {\n    display: inline-flex;\n    align-items: center;\n    margin: ", ";\n    position: absolute;\n    width: Calc(100% - 16px);\n    bottom: 0;\n    left: 0;\n    justify-content: flex-end;\n  }\n  ", ";\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;

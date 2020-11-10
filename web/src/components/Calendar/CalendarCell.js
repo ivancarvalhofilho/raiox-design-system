@@ -48,6 +48,7 @@ const DaySales = styled.span`
     position: absolute;
     width: Calc(100% - 16px);
     bottom: 0;
+    left: 0;
     justify-content: flex-end;
   }
   ${(props) => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
@@ -63,6 +64,7 @@ const SalesValue = styled.span`
   text-overflow: ellipsis;
   display: block;
   line-height: 14px;
+  width: Calc(100% - 8px);
 `
 const SalesStatusDot = styled.span`
   width: 4px;
@@ -72,7 +74,7 @@ const SalesStatusDot = styled.span`
 `
 const CalendarCell = (props) => (
   <CalendarCellContainer
-      id={props.id}
+    id={props.id}
     data-tooltip={
       props.date.isBlockedSelection &&
       props.date.currentMonth &&
