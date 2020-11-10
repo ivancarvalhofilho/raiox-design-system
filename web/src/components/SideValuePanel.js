@@ -33,6 +33,9 @@ const Value = styled.span`
     props.positive === true
       ? props.theme.colors.feedback.success.dark
       : props.positive === false && props.theme.colors.feedback.danger.dark};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 const DollarSign = styled.span`
   ${(props) =>
