@@ -213,8 +213,13 @@ function Table(props) {
   const handleResize = () => {
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item && item.clientWidth)
-        .filter(item => item > 0),
+        .map((item, index) => {
+          if (hasColor && index === 0) {
+            return null
+          }
+          return item && item.clientWidth
+        })
+        .filter(item => item !== null),
     )
   }
 

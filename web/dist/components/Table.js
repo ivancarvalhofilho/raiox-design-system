@@ -312,10 +312,14 @@ function Table(props) {
   }, [props.data]);
 
   var handleResize = function handleResize() {
-    setColHeadersWidth(itemsHeader.current.map(function (item) {
+    setColHeadersWidth(itemsHeader.current.map(function (item, index) {
+      if (hasColor && index === 0) {
+        return null;
+      }
+
       return item && item.clientWidth;
     }).filter(function (item) {
-      return item > 0;
+      return item !== null;
     }));
   };
 
