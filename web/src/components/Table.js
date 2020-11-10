@@ -203,7 +203,7 @@ function Table(props) {
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
-  }, [props.indexRowOpened])
+  }, [props.children])
 
   useEffect(() => {
     handleResize()
@@ -222,6 +222,7 @@ function Table(props) {
     )
   }
 
+  console.log(childrenSize, props.children, props.childrenSize)
   useEffect(() => {
     setColsWidth(items.current.map(item => item && item.clientWidth))
   }, [colHeadersWidth])

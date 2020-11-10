@@ -302,7 +302,7 @@ function Table(props) {
 
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-  }, [props.indexRowOpened]);
+  }, [props.children]);
   (0, _react.useEffect)(function () {
     handleResize();
   }, [props.data]);
@@ -319,6 +319,7 @@ function Table(props) {
     }));
   };
 
+  console.log(childrenSize, props.children, props.childrenSize);
   (0, _react.useEffect)(function () {
     setColsWidth(items.current.map(function (item) {
       return item && item.clientWidth;
