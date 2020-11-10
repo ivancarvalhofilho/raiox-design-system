@@ -47,7 +47,10 @@ const Container = styled.div`
     (props.color ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
-      .reduce((x, y) => `${x} minmax(50px,auto)`, '')};
+      .reduce(
+        (x, y, index) => `${x} minmax(${props.colHeadersWidth[index]}px,auto)`,
+        '',
+      )};
 `
 const ContainerInfinite = styled(InfiniteScroll)`
   display: inline-grid;
@@ -63,7 +66,10 @@ const ContainerInfinite = styled(InfiniteScroll)`
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
-    props.cols.reduce((x, y) => `${x} minmax(50px,auto)`, '')};
+    props.cols.reduce(
+      (x, y, index) => `${x} minmax(${props.colHeadersWidth[index]}px,auto)`,
+      '',
+    )};
 `
 const Scroll = styled.div`
   background: white;
@@ -185,19 +191,38 @@ function Table(props) {
 
   const [childrenSize, setChildrenSize] = useState(0)
   const items = useRef([])
+  const itemsHeader = useRef([])
   const [colsWidth, setColsWidth] = useState([])
+  const [colHeadersWidth, setColHeadersWidth] = useState([])
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
+    handleResize()
   }, [props.children])
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleResize()
+    }, 0)
+  }, [])
 
   const handleResize = () => {
     setColsWidth(items.current.map(item => item.clientWidth))
+    setColHeadersWidth(
+      itemsHeader.current
+        .map(item => item.lastChild.clientWidth)
+        .filter(item => item > 0),
+    )
   }
 
   useEffect(() => {
     setColsWidth(items.current.map(item => item.clientWidth))
-  }, [items])
+    setColHeadersWidth(
+      itemsHeader.current
+        .map(item => item.lastChild.clientWidth)
+        .filter(item => item > 0),
+    )
+  }, [items, itemsHeader])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -206,6 +231,7 @@ function Table(props) {
     }
   }, [])
 
+  console.log(colHeadersWidth)
   return (
     <div>
       <DisplayGrid>
@@ -222,6 +248,9 @@ function Table(props) {
                 <Row
                   first={indexCol === 0}
                   clicable
+                  ref={ref => {
+                    itemsHeader.current[indexCol] = ref
+                  }}
                   last={indexCol === cols.length}
                   key={indexCol}
                   justify={props.data[key].justify}
@@ -262,6 +291,9 @@ function Table(props) {
             <Column key={indexCol} rows={[0]} size={28}>
               <Row
                 first={indexCol === 0}
+                ref={ref => {
+                  itemsHeader.current[indexCol] = ref
+                }}
                 justify={props.data[key].justify}
                 last={indexCol === cols.length}
                 key={indexCol}
@@ -301,6 +333,7 @@ function Table(props) {
             {props.complete && (
               <Container
                 optional
+                colHeadersWidth={colHeadersWidth}
                 color={hasColor}
                 maxheight={props.height}
                 cols={colsOptional}
@@ -383,6 +416,7 @@ function Table(props) {
                 className="scroll custom-scrollbar"
                 color={hasColor}
                 hasChildren
+                colHeadersWidth={colHeadersWidth}
                 maxheight={props.height}
                 height={props.height}
                 scrollThreshold="20px"

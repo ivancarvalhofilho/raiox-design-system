@@ -178,8 +178,8 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,auto)");
+  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
   }, '');
 });
 
@@ -192,8 +192,8 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,auto)");
+  return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y, index) {
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
   }, '');
 });
 
@@ -288,19 +288,36 @@ function Table(props) {
       setChildrenSize = _useState4[1];
 
   var items = (0, _react.useRef)([]);
+  var itemsHeader = (0, _react.useRef)([]);
 
   var _useState5 = (0, _react.useState)([]),
       _useState6 = _slicedToArray(_useState5, 2),
       colsWidth = _useState6[0],
       setColsWidth = _useState6[1];
 
+  var _useState7 = (0, _react.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      colHeadersWidth = _useState8[0],
+      setColHeadersWidth = _useState8[1];
+
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
+    handleResize();
   }, [props.children]);
+  (0, _react.useEffect)(function () {
+    setTimeout(function () {
+      handleResize();
+    }, 0);
+  }, []);
 
   var handleResize = function handleResize() {
     setColsWidth(items.current.map(function (item) {
       return item.clientWidth;
+    }));
+    setColHeadersWidth(itemsHeader.current.map(function (item) {
+      return item.lastChild.clientWidth;
+    }).filter(function (item) {
+      return item > 0;
     }));
   };
 
@@ -308,13 +325,19 @@ function Table(props) {
     setColsWidth(items.current.map(function (item) {
       return item.clientWidth;
     }));
-  }, [items]);
+    setColHeadersWidth(itemsHeader.current.map(function (item) {
+      return item.lastChild.clientWidth;
+    }).filter(function (item) {
+      return item > 0;
+    }));
+  }, [items, itemsHeader]);
   (0, _react.useEffect)(function () {
     window.addEventListener('resize', handleResize);
     return function () {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  console.log(colHeadersWidth);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     colsWidth: colsWidth,
@@ -329,6 +352,9 @@ function Table(props) {
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
       clicable: true,
+      ref: function ref(_ref) {
+        itemsHeader.current[indexCol] = _ref;
+      },
       last: indexCol === cols.length,
       key: indexCol,
       justify: props.data[key].justify,
@@ -354,6 +380,9 @@ function Table(props) {
       size: 28
     }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
+      ref: function ref(_ref2) {
+        itemsHeader.current[indexCol] = _ref2;
+      },
       justify: props.data[key].justify,
       last: indexCol === cols.length,
       key: indexCol,
@@ -374,6 +403,7 @@ function Table(props) {
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     optional: true,
+    colHeadersWidth: colHeadersWidth,
     color: hasColor,
     maxheight: props.height,
     cols: colsOptional,
@@ -402,8 +432,8 @@ function Table(props) {
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length,
-        ref: function ref(_ref) {
-          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref : null;
+        ref: function ref(_ref3) {
+          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref3 : null;
         }
       }, /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
@@ -427,6 +457,7 @@ function Table(props) {
     className: "scroll custom-scrollbar",
     color: hasColor,
     hasChildren: true,
+    colHeadersWidth: colHeadersWidth,
     maxheight: props.height,
     height: props.height,
     scrollThreshold: "20px",
@@ -469,8 +500,8 @@ function Table(props) {
         children: props.indexRowOpened === indexRow,
         key: indexRow,
         justify: props.data[key].justify,
-        ref: function ref(_ref2) {
-          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref2 : null;
+        ref: function ref(_ref4) {
+          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref4 : null;
         },
         clicable: props.isMultiple,
         onClick: function onClick() {
