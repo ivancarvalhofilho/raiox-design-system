@@ -40,7 +40,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", "\n  color: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
