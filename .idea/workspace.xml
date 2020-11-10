@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokens/js/iconsBanco.js" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/js/iconsBanco.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -313,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605036167117</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adding table">
+      <created>1605040710956</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1605040710956</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,10 +499,10 @@
     </state>
     <state x="292" y="187" width="1302" height="853" key="VCS.FileHistoryDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1604687715698" />
     <state x="167" y="127" width="1653" height="853" key="VCS.FileHistoryDialog/67.27.3773.1053@67.27.3773.1053" timestamp="1605039286498" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605036168383">
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605040723954">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1605036168383" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1605040723954" />
     <state width="924" height="526" key="XDebugger.FullValuePopup" timestamp="1604933985197">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
