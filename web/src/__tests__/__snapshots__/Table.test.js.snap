@@ -29,7 +29,7 @@ exports[`should render 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px;
+  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
 }
 
 .c25 {
@@ -45,6 +45,7 @@ exports[`should render 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
+  grid-template-columns: minmax(0px,auto) minmax(0px,auto);
 }
 
 .c9 {
@@ -1522,7 +1523,17 @@ exports[`should render 1`] = `
             >
               <Styled(InfiniteScroll)
                 className="scroll custom-scrollbar"
-                colHeadersWidth={Array []}
+                colHeadersWidth={
+                  Array [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ]
+                }
                 cols={
                   Array [
                     "data",
@@ -1582,7 +1593,17 @@ exports[`should render 1`] = `
               >
                 <InfiniteScroll
                   className="c10 scroll custom-scrollbar"
-                  colHeadersWidth={Array []}
+                  colHeadersWidth={
+                    Array [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                    ]
+                  }
                   cols={
                     Array [
                       "data",
@@ -2959,7 +2980,12 @@ exports[`should render 1`] = `
                                               >
                                                 <Styled(InfiniteScroll)
                                                   className="scroll custom-scrollbar"
-                                                  colHeadersWidth={Array []}
+                                                  colHeadersWidth={
+                                                    Array [
+                                                      0,
+                                                      0,
+                                                    ]
+                                                  }
                                                   cols={
                                                     Array [
                                                       "data",
@@ -3013,7 +3039,12 @@ exports[`should render 1`] = `
                                                 >
                                                   <InfiniteScroll
                                                     className="c25 scroll custom-scrollbar"
-                                                    colHeadersWidth={Array []}
+                                                    colHeadersWidth={
+                                                      Array [
+                                                        0,
+                                                        0,
+                                                      ]
+                                                    }
                                                     cols={
                                                       Array [
                                                         "data",
