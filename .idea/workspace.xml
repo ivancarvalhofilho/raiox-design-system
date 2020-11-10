@@ -22,10 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Table.js" afterDir="false" />
-    </list>
+    <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -526,11 +523,11 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="657" y="252" key="run.anything.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1603144665677" />
-    <state x="1266" y="259" width="1369" height="678" key="search.everywhere.popup" timestamp="1605012334027">
+    <state x="1266" y="259" width="1369" height="678" key="search.everywhere.popup" timestamp="1605038721887">
       <screen x="67" y="27" width="3773" height="1053" />
     </state>
     <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1604686460498" />
-    <state x="1266" y="259" width="1369" height="678" key="search.everywhere.popup/67.27.3773.1053@67.27.3773.1053" timestamp="1605012334027" />
+    <state x="1266" y="259" width="1369" height="678" key="search.everywhere.popup/67.27.3773.1053@67.27.3773.1053" timestamp="1605038721887" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605019521613" />
   </component>
   <component name="XDebuggerManager">

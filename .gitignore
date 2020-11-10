@@ -72,7 +72,7 @@ node_modules/
 /.idea/raiox-design-system.iml
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
-/.idea/workspace.xml
+./.idea/workspace.xml
 /web/.idea/
 .idea/raiox-design-system.iml
 .idea/workspace.xml
