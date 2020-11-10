@@ -302,15 +302,11 @@ function Table(props) {
 
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-    handleResize();
   }, [props.children]);
   (0, _react.useEffect)(function () {
     handleResize();
-    setTimeout(function () {
-      handleResize();
-    }, 200);
   }, [props.data]);
-  console.log(props.childrenSize, childrenSize);
+  console.log(props.childrenSize, childrenSize, cols.length);
 
   var handleResize = function handleResize() {
     setColHeadersWidth(itemsHeader.current.map(function (item, index) {

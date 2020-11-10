@@ -200,17 +200,12 @@ function Table(props) {
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
-    handleResize()
-  }, [props.children])
+  }, [props.indexRowOpened])
 
   useEffect(() => {
     handleResize()
-    setTimeout(() => {
-      handleResize()
-    }, 200)
   }, [props.data])
 
-  console.log(props.childrenSize, childrenSize)
   const handleResize = () => {
     setColHeadersWidth(
       itemsHeader.current
