@@ -88,7 +88,9 @@ var Title = _styledComponents["default"].div(_templateObject(), function (props)
 var Container = _styledComponents["default"].div(_templateObject2());
 
 var Item = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return props.fullWidth ? "width: 100%;\n      margin: 0 10px;" : 'margin: 0px 40px';
+  return props.fullWidth ? "width: 100%;\n      margin: 0 ".concat(function (props) {
+    return props.theme.styles.spacing.inline.xxxs;
+  }, ";") : 'margin: 0px 40px';
 });
 
 var Value = _styledComponents["default"].span(_templateObject4(), function (props) {

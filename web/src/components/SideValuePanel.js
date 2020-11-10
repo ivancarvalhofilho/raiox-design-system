@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import fontStyleMaker from '../utils/FontUtil'
-import {Divider, FlexCenter, TextRow} from './StyledComponents'
+import { Divider, FlexCenter, TextRow } from './StyledComponents'
 import Icon from './Icon'
 
 const Title = styled.div`
@@ -19,7 +19,7 @@ const Item = styled.div`
   ${(props) =>
     props.fullWidth
       ? `width: 100%;
-      margin: 0 10px;`
+      margin: 0 ${(props) => props.theme.styles.spacing.inline.xxxs};`
       : 'margin: 0px 40px'};
   white-space: nowrap;
   overflow: hidden;
