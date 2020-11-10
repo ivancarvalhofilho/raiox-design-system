@@ -28,7 +28,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  display: flex;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  vertical-align: middle;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: block;\n  line-height: 14px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -38,7 +38,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  & > div {\n    display: inline-flex;\n    align-items: center;\n    margin: ", ";\n  }\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  & > div {\n    display: inline-flex;\n    align-items: center;\n    margin: ", ";\n    position: absolute;\n    width: Calc(100% - 16px);\n    bottom: 0;\n    justify-content: flex-end;\n  }\n  ", ";\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -58,7 +58,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  border-radius: 0px;\n  display: flex;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: flex-end;\n  border: 1px solid\n    ", ";\n  background: ", ";\n  cursor: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-height: 60px;\n  border-radius: 0px;\n  display: flex;\n  flex-flow: column;\n  justify-content: space-between;\n  align-items: flex-end;\n  border: 1px solid\n    ", ";\n  background: ", ";\n  cursor: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -126,7 +126,11 @@ var CalendarCell = function CalendarCell(props) {
     isSelected: props.date.isSelected,
     isBlockedSelection: props.date.isBlockedSelection
   }, props.date.day), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DaySales, null, props.daySale && /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(SalesValue, {
-    currentMonth: props.date.currentMonth
+    currentMonth: props.date.currentMonth,
+    "data-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) ? "R$ ".concat(parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })) : ''
   }, "R$", ' ', parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2

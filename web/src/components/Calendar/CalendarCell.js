@@ -5,6 +5,8 @@ import fontStyleMaker from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
 
 const CalendarCellContainer = styled.div`
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: flex;
   flex-flow: column;
@@ -43,6 +45,10 @@ const DaySales = styled.span`
     display: inline-flex;
     align-items: center;
     margin: ${(props) => props.theme.styles.spacing.inset.nano};
+    position: absolute;
+    width: Calc(100% - 16px);
+    bottom: 0;
+    justify-content: flex-end;
   }
   ${(props) => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
 `
@@ -51,8 +57,12 @@ const SalesValue = styled.span`
   ${(props) => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
   margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
   color: ${(props) => !props.currentMonth && Colors.neutral.dark['02']};
-  display: flex;
-  align-items: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 14px;
 `
 const SalesStatusDot = styled.span`
   width: 4px;
@@ -100,7 +110,23 @@ const CalendarCell = (props) => (
       <DaySales>
         {props.daySale && (
           <div>
-            <SalesValue currentMonth={props.date.currentMonth}>
+            <SalesValue
+              currentMonth={props.date.currentMonth}
+              data-tooltip={
+                !(
+                  props.date.isBlockedSelection &&
+                  props.date.currentMonth &&
+                  props.maxDateRange
+                )
+                  ? `R$ ${parseFloat(
+                      Math.abs(props.daySale.sale),
+                    ).toLocaleString('pt-br', {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}`
+                  : ''
+              }
+            >
               R${' '}
               {parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
                 'pt-br',
