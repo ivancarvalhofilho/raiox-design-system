@@ -305,20 +305,10 @@ function Table(props) {
     handleResize();
   }, [props.children]);
   (0, _react.useEffect)(function () {
-    setTimeout(function () {
-      handleResize();
-    }, 100);
-  }, []);
-  (0, _react.useEffect)(function () {
-    setTimeout(function () {
-      handleResize();
-    }, 100);
+    handleResize();
   }, [props.data]);
 
   var handleResize = function handleResize() {
-    setColsWidth(items.current.map(function (item) {
-      return item && item.clientWidth;
-    }));
     setColHeadersWidth(itemsHeader.current.map(function (item) {
       return item && item.clientWidth;
     }).filter(function (item) {
@@ -327,8 +317,10 @@ function Table(props) {
   };
 
   (0, _react.useEffect)(function () {
-    handleResize();
-  }, [items, itemsHeader]);
+    setColsWidth(items.current.map(function (item) {
+      return item && item.clientWidth;
+    }));
+  }, [colHeadersWidth]);
   (0, _react.useEffect)(function () {
     window.addEventListener('resize', handleResize);
     return function () {
