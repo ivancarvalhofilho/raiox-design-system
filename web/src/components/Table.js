@@ -108,7 +108,7 @@ const ContainerHeader = styled.div`
   grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
     props.colsWidth.reduce(
-      (x, y, index) => `${x} ${props.colsWidth[index]}px`,
+      (x, y, index) => `${x} minmax(auto, ${props.colsWidth[index]}px)`,
       '',
     )};
 `
