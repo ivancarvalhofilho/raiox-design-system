@@ -210,7 +210,7 @@ function Table(props) {
     setColsWidth(items.current.map(item => item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.lastChild.clientWidth)
+        .map(item => item.lastChild.lastChild.clientWidth)
         .filter(item => item > 0),
     )
   }
@@ -219,10 +219,10 @@ function Table(props) {
     setColsWidth(items.current.map(item => item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.lastChild.clientWidth)
+        .map(item => item.lastChild.lastChild.clientWidth)
         .filter(item => item > 0),
     )
-  }, [items, itemsHeader])
+  }, [items, itemsHeader, cols])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -231,7 +231,6 @@ function Table(props) {
     }
   }, [])
 
-  console.log(colHeadersWidth)
   return (
     <div>
       <DisplayGrid>
@@ -285,7 +284,6 @@ function Table(props) {
           colsWidth={colsWidth}
           paddingScroll
           cols={props.complete ? cols : colsOriginalWithoutColor}
-          width={content.current && `${content.current.clientWidth + 13}px`}
         >
           {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
             <Column key={indexCol} rows={[0]} size={28}>

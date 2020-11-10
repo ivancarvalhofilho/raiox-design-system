@@ -315,7 +315,7 @@ function Table(props) {
       return item.clientWidth;
     }));
     setColHeadersWidth(itemsHeader.current.map(function (item) {
-      return item.lastChild.clientWidth;
+      return item.lastChild.lastChild.clientWidth;
     }).filter(function (item) {
       return item > 0;
     }));
@@ -326,18 +326,17 @@ function Table(props) {
       return item.clientWidth;
     }));
     setColHeadersWidth(itemsHeader.current.map(function (item) {
-      return item.lastChild.clientWidth;
+      return item.lastChild.lastChild.clientWidth;
     }).filter(function (item) {
       return item > 0;
     }));
-  }, [items, itemsHeader]);
+  }, [items, itemsHeader, cols]);
   (0, _react.useEffect)(function () {
     window.addEventListener('resize', handleResize);
     return function () {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(colHeadersWidth);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
     colsWidth: colsWidth,
@@ -371,8 +370,7 @@ function Table(props) {
     color: hasColor,
     colsWidth: colsWidth,
     paddingScroll: true,
-    cols: props.complete ? cols : colsOriginalWithoutColor,
-    width: content.current && "".concat(content.current.clientWidth + 13, "px")
+    cols: props.complete ? cols : colsOriginalWithoutColor
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       key: indexCol,
