@@ -63,7 +63,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
-/.idea/codeStyles/codeStyleConfig.xml
+/.idea/
 /.idea/jsLinters/eslint.xml
 /web/public/index.html
 /.idea/modules.xml

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
@@ -48,7 +50,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  width: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  text-align: center;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -85,7 +87,9 @@ var Title = _styledComponents["default"].div(_templateObject(), function (props)
 
 var Container = _styledComponents["default"].div(_templateObject2());
 
-var Item = _styledComponents["default"].div(_templateObject3());
+var Item = _styledComponents["default"].div(_templateObject3(), function (props) {
+  return props.fullWidth ? 'width: 100%' : 'margin: 0px 40px';
+});
 
 var Value = _styledComponents["default"].span(_templateObject4(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
@@ -110,12 +114,13 @@ var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_tem
 var SideValuePanel = function SideValuePanel(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, props.values.map(function (value, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Item, {
-      key: index
-    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, null, /*#__PURE__*/_react["default"].createElement(DollarSign, {
+      key: index,
+      fullWidth: props.fullWidth
+    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(DollarSign, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
     }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
-    }, value)), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
+    }, value), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
       color: props.subtitlesColors && props.subtitlesColors[index],
       justifyContent: "center"
     }, props.subtitlesIcons && props.subtitlesIcons[index] && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
@@ -131,3 +136,12 @@ var SideValuePanel = function SideValuePanel(props) {
 
 var _default = SideValuePanel;
 exports["default"] = _default;
+SideValuePanel.propTypes = {
+  checkValue: _propTypes["default"].array,
+  fullWidth: _propTypes["default"].bool,
+  subtitles: _propTypes["default"].array,
+  subtitlesColors: _propTypes["default"].array,
+  subtitlesIcons: _propTypes["default"].array,
+  titles: _propTypes["default"].array,
+  values: _propTypes["default"].array
+};
