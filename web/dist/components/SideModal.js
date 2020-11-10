@@ -130,6 +130,7 @@ var SideModal = function SideModal(props) {
     }
   }, /*#__PURE__*/_react["default"].createElement(LeftModalContainer, {
     ref: ref,
+    id: "sideModalContainer",
     onClick: function onClick(e) {
       return e.stopPropagation();
     },

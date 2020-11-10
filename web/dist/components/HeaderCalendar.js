@@ -136,6 +136,7 @@ var HeaderCalendar = function HeaderCalendar(props) {
     size: _js["default"].styles.icon.size.md,
     appearance: "primary",
     disabled: props.disabledLeft,
+    id: "backMonth",
     style: {
       marginRight: _js["default"].styles.spacing.inline.nano,
       cursor: !props.disabledLeft && 'pointer',
@@ -147,6 +148,7 @@ var HeaderCalendar = function HeaderCalendar(props) {
     }
   }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: _js["default"].styles.icon.size.md,
+    id: "nextMonth",
     appearance: "primary",
     disabled: props.disabledRight,
     style: {
@@ -160,12 +162,15 @@ var HeaderCalendar = function HeaderCalendar(props) {
   }), /*#__PURE__*/_react["default"].createElement(Date, {
     onClick: function onClick() {
       return props.onMonthClick();
-    }
+    },
+    id: "date"
   }, (0, _dayjs["default"])().set('month', props.month).set('year', props.year).format('MMMM [de] YYYY'))), /*#__PURE__*/_react["default"].createElement(Values, null, props.values && props.values.map(function (_ref, index) {
     var label = _ref.label,
         value = _ref.value,
         color = _ref.color;
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Label, {
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+      key: index
+    }, /*#__PURE__*/_react["default"].createElement(Label, {
       color: color
     }, label), /*#__PURE__*/_react["default"].createElement(MoneySign, null, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
       notLast: index !== props.values.length - 1

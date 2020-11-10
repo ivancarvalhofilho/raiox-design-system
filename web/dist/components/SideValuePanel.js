@@ -113,8 +113,9 @@ var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_tem
 
 var SideValuePanel = function SideValuePanel(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, props.values.map(function (value, index) {
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Item, {
-      key: index,
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+      key: index
+    }, /*#__PURE__*/_react["default"].createElement(Item, {
       fullWidth: props.fullWidth
     }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(DollarSign, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null

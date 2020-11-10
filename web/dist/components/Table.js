@@ -178,7 +178,7 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
+  return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
     return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
   }, '');
 });
@@ -192,7 +192,7 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y, index) {
+  return (props.hasColor ? '8px ' : '') + props.colHeadersWidth.reduce(function (x, y, index) {
     return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
   }, '');
 });
@@ -216,7 +216,7 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
+  return (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
     return "".concat(x, " minmax(").concat(props.colsWidth[index], "px, auto)");
   }, '');
 });
@@ -335,7 +335,7 @@ function Table(props) {
     colsWidth: colsWidth,
     cols: colsOptional,
     ref: optionalHeader,
-    color: hasColor
+    hasColor: hasColor
   }, colsOptional.map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
       key: indexCol,
@@ -346,6 +346,7 @@ function Table(props) {
       clicable: true,
       last: indexCol === cols.length,
       key: indexCol,
+      id: "header".concat(indexCol),
       justify: props.data[key].justify,
       onClick: function onClick() {
         props.data[key].ordenable && props.onClickToOrder(key);
@@ -361,7 +362,7 @@ function Table(props) {
       path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _js["default"].icons['arrow-up'] : _js["default"].icons['arrow-down']
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
-    color: hasColor,
+    hasColor: hasColor,
     colsWidth: colsWidth,
     paddingScroll: true,
     cols: props.complete ? cols : colsOriginalWithoutColor
@@ -376,6 +377,7 @@ function Table(props) {
       last: indexCol === cols.length,
       key: indexCol,
       clicable: true,
+      id: "header".concat(indexCol),
       onClick: function onClick() {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
@@ -397,7 +399,7 @@ function Table(props) {
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     optional: true,
     colHeadersWidth: colHeadersWidth,
-    color: hasColor,
+    hasColor: hasColor,
     maxheight: props.height,
     cols: colsOptional,
     ref: optionalContent,
@@ -420,6 +422,7 @@ function Table(props) {
       rows: props.data[key].values
     }, props.data[key].values.map(function (value, indexRow) {
       return /*#__PURE__*/_react["default"].createElement(Row, {
+        id: "item".concat(indexCol).concat(indexRow),
         key: indexRow,
         justify: props.data[key].justify,
         border: indexRow !== props.data[key].values.length - 1,
@@ -448,7 +451,7 @@ function Table(props) {
       transition: 'all .3s ease'
     },
     className: "scroll custom-scrollbar",
-    color: hasColor,
+    hasColor: hasColor,
     hasChildren: true,
     colHeadersWidth: colHeadersWidth,
     maxheight: props.height,
@@ -489,9 +492,11 @@ function Table(props) {
       rows: props.data[key].values,
       indexRowOpened: props.indexRowOpened
     }, props.data[key].values.map(function (value, indexRow) {
-      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Row, {
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+        key: indexRow
+      }, /*#__PURE__*/_react["default"].createElement(Row, {
+        id: "item".concat(indexCol).concat(indexRow),
         children: props.indexRowOpened === indexRow,
-        key: indexRow,
         justify: props.data[key].justify,
         ref: function ref(_ref4) {
           indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref4 : null;
@@ -500,7 +505,7 @@ function Table(props) {
         onClick: function onClick() {
           return props.isMultiple && props.onRowClick(indexRow);
         },
-        color: indexCol === 0 && props.data.colors && props.data.colors.values[indexRow],
+        color: indexCol === 0 && props.data.colors ? props.data.colors.values[indexRow] : null,
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
         last: indexCol === cols.length
@@ -534,15 +539,17 @@ function Table(props) {
 
 Table.propTypes = {
   children: _propTypes["default"].any,
+  childrenSize: _propTypes["default"].any,
   complete: _propTypes["default"].bool,
   data: _propTypes["default"].object,
   dispatch: _propTypes["default"].any,
   height: _propTypes["default"].string,
   indexRowOpened: _propTypes["default"].number,
+  isMultiple: _propTypes["default"].any,
   onClickToOrder: _propTypes["default"].func,
   onEndScroll: _propTypes["default"].func,
   onRowClick: _propTypes["default"].func,
-  order: _propTypes["default"].func,
+  order: _propTypes["default"].string,
   orderBy: _propTypes["default"].string,
   subdata: _propTypes["default"].array,
   total: _propTypes["default"].number
