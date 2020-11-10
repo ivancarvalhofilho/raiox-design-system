@@ -50,7 +50,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  text-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  text-align: center;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -88,7 +88,7 @@ var Title = _styledComponents["default"].div(_templateObject(), function (props)
 var Container = _styledComponents["default"].div(_templateObject2());
 
 var Item = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return props.fullWidth ? 'width: 100%' : 'margin: 0px 40px';
+  return props.fullWidth ? "width: 100%;\n      margin: 0 10px;" : 'margin: 0px 40px';
 });
 
 var Value = _styledComponents["default"].span(_templateObject4(), function (props) {
@@ -117,11 +117,13 @@ var SideValuePanel = function SideValuePanel(props) {
       key: index
     }, /*#__PURE__*/_react["default"].createElement(Item, {
       fullWidth: props.fullWidth
-    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(DollarSign, {
+    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, {
+      "data-tooltip": "R$ ".concat(value)
+    }, /*#__PURE__*/_react["default"].createElement(DollarSign, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
     }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
-    }, value), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
+    }, value)), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
       color: props.subtitlesColors && props.subtitlesColors[index],
       justifyContent: "center"
     }, props.subtitlesIcons && props.subtitlesIcons[index] && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
