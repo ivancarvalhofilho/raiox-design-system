@@ -64,7 +64,7 @@ const SalesValue = styled.span`
   text-overflow: ellipsis;
   display: block;
   line-height: 14px;
-  width: Calc(100% - 8px);
+  text-align: end;
 `
 const SalesStatusDot = styled.span`
   width: 4px;
@@ -80,6 +80,14 @@ const CalendarCell = (props) => (
       props.date.currentMonth &&
       props.maxDateRange
         ? `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
+        : props.date.currentMonth && props.daySale
+        ? `R$ ${parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
+            'pt-br',
+            {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            },
+          )}`
         : ''
     }
     isSelected={props.date.isSelected}

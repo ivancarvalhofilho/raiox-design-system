@@ -28,7 +28,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  vertical-align: middle;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: block;\n  line-height: 14px;\n  width: Calc(100% - 8px);\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 14px;\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n  vertical-align: middle;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: block;\n  line-height: 14px;\n  text-align: end;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -108,7 +108,10 @@ var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), funct
 var CalendarCell = function CalendarCell(props) {
   return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
     id: props.id,
-    "data-tooltip": props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange ? "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias") : '',
+    "data-tooltip": props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange ? "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias") : props.date.currentMonth && props.daySale ? "R$ ".concat(parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })) : '',
     isSelected: props.date.isSelected,
     isHovered: props.date.isHovered,
     onClick: function onClick() {
