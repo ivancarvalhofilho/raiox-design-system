@@ -210,19 +210,20 @@ function Table(props) {
     setColsWidth(items.current.map(item => item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.lastChild.lastChild.clientWidth)
+        .map(item => item.clientWidth)
         .filter(item => item > 0),
     )
   }
 
+  console.log(colHeadersWidth)
   useEffect(() => {
     setColsWidth(items.current.map(item => item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.lastChild.lastChild.clientWidth)
+        .map(item => item.clientWidth)
         .filter(item => item > 0),
     )
-  }, [items, itemsHeader, cols])
+  }, [items, itemsHeader, props.data])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -247,9 +248,6 @@ function Table(props) {
                 <Row
                   first={indexCol === 0}
                   clicable
-                  ref={ref => {
-                    itemsHeader.current[indexCol] = ref
-                  }}
                   last={indexCol === cols.length}
                   key={indexCol}
                   justify={props.data[key].justify}
@@ -260,7 +258,11 @@ function Table(props) {
                   color={theme.colors.neutral.light['02']}
                   title={props.data[key].title}
                 >
-                  <Value>
+                  <Value
+                    ref={ref => {
+                      itemsHeader.current[indexCol] = ref
+                    }}
+                  >
                     {props.data[key].title}
                     {props.data[key].ordenable && (
                       <Icon
@@ -289,9 +291,6 @@ function Table(props) {
             <Column key={indexCol} rows={[0]} size={28}>
               <Row
                 first={indexCol === 0}
-                ref={ref => {
-                  itemsHeader.current[indexCol] = ref
-                }}
                 justify={props.data[key].justify}
                 last={indexCol === cols.length}
                 key={indexCol}
@@ -303,7 +302,11 @@ function Table(props) {
                 color={theme.colors.neutral.light['02']}
                 title={props.data[key].title}
               >
-                <Value>
+                <Value
+                  ref={ref => {
+                    itemsHeader.current[indexCol] = ref
+                  }}
+                >
                   {props.data[key].title}
                   {props.data[key].ordenable && (
                     <Icon
