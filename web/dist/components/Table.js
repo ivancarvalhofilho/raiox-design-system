@@ -62,7 +62,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  &:hover {\n    text-overflow: clip;\n    white-space: normal;\n    word-break: break-all;\n  }\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -72,7 +72,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n  max-width: 100%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -82,7 +82,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  //width: 100%;\n  overflow: hidden;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  //width: 100%;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -217,7 +217,7 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.color ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
-    return "".concat(x, " minmax(auto, ").concat(props.colsWidth[index], "px)");
+    return "".concat(x, " minmax(").concat(props.colsWidth[index], "px, auto)");
   }, '');
 });
 

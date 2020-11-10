@@ -108,7 +108,7 @@ const ContainerHeader = styled.div`
   grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
     props.colsWidth.reduce(
-      (x, y, index) => `${x} minmax(auto, ${props.colsWidth[index]}px)`,
+      (x, y, index) => `${x} minmax(${props.colsWidth[index]}px, auto)`,
       '',
     )};
 `
@@ -129,7 +129,6 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   //width: 100%;
-  overflow: hidden;
   align-items: center;
   justify-content: ${props =>
     props.justify === 'right'
@@ -149,21 +148,9 @@ const Value = styled.div`
   display: flex;
   margin: auto 0;
   align-items: center;
-  max-width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
 `
-const SpanValue = styled.span`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 
-  &:hover {
-    text-overflow: clip;
-    white-space: normal;
-    word-break: break-all;
-  }
-`
+const SpanValue = styled.span``
 const Children = styled.div`
   position: absolute;
   transition: 2s;
