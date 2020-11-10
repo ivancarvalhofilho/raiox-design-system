@@ -44,7 +44,7 @@ const Container = styled.div`
   max-height: ${props => props.maxheight};
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
-    (props.color ? '8px ' : '') +
+    (props.hasColor ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
       .reduce(
@@ -65,8 +65,8 @@ const ContainerInfinite = styled(InfiniteScroll)`
   width: 100%;
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
-    (props.color ? '8px ' : '') +
-    props.cols.reduce(
+    (props.hasColor ? '8px ' : '') +
+    props.colHeadersWidth.reduce(
       (x, y, index) => `${x} minmax(${props.colHeadersWidth[index]}px,auto)`,
       '',
     )};
@@ -112,7 +112,7 @@ const ContainerHeader = styled.div`
   width: ${props => (!props.optional && props.paddingScroll ? '101%' : '100%')};
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
-    (props.color ? '8px ' : '') +
+    (props.hasColor ? '8px ' : '') +
     props.colsWidth.reduce(
       (x, y, index) => `${x} minmax(${props.colsWidth[index]}px, auto)`,
       '',
@@ -238,7 +238,7 @@ function Table(props) {
             colsWidth={colsWidth}
             cols={colsOptional}
             ref={optionalHeader}
-            color={hasColor}
+            hasColor={hasColor}
           >
             {colsOptional.map((key, indexCol) => (
               <Column key={indexCol} rows={[0]} size={28}>
@@ -247,6 +247,7 @@ function Table(props) {
                   clicable
                   last={indexCol === cols.length}
                   key={indexCol}
+                  id={`header${indexCol}`}
                   justify={props.data[key].justify}
                   onClick={() => {
                     props.data[key].ordenable && props.onClickToOrder(key)
@@ -279,7 +280,7 @@ function Table(props) {
           </ContainerHeader>
         )}
         <ContainerHeader
-          color={hasColor}
+          hasColor={hasColor}
           colsWidth={colsWidth}
           paddingScroll
           cols={props.complete ? cols : colsOriginalWithoutColor}
@@ -292,6 +293,7 @@ function Table(props) {
                 last={indexCol === cols.length}
                 key={indexCol}
                 clicable
+                id={`header${indexCol}`}
                 onClick={() => {
                   props.data[key].ordenable && props.onClickToOrder(key)
                 }}
@@ -332,7 +334,7 @@ function Table(props) {
               <Container
                 optional
                 colHeadersWidth={colHeadersWidth}
-                color={hasColor}
+                hasColor={hasColor}
                 maxheight={props.height}
                 cols={colsOptional}
                 ref={optionalContent}
@@ -365,6 +367,7 @@ function Table(props) {
                   >
                     {props.data[key].values.map((value, indexRow) => (
                       <Row
+                        id={`item${indexCol}${indexRow}`}
                         key={indexRow}
                         justify={props.data[key].justify}
                         border={indexRow !== props.data[key].values.length - 1}
@@ -412,7 +415,7 @@ function Table(props) {
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
                 className="scroll custom-scrollbar"
-                color={hasColor}
+                hasColor={hasColor}
                 hasChildren
                 colHeadersWidth={colHeadersWidth}
                 maxheight={props.height}
@@ -463,10 +466,10 @@ function Table(props) {
                     indexRowOpened={props.indexRowOpened}
                   >
                     {props.data[key].values.map((value, indexRow) => (
-                      <>
+                      <React.Fragment key={indexRow}>
                         <Row
+                          id={`item${indexCol}${indexRow}`}
                           children={props.indexRowOpened === indexRow}
-                          key={indexRow}
                           justify={props.data[key].justify}
                           ref={ref => {
                             indexRow === 0 && key !== 'colors'
@@ -478,9 +481,9 @@ function Table(props) {
                             props.isMultiple && props.onRowClick(indexRow)
                           }
                           color={
-                            indexCol === 0 &&
-                            props.data.colors &&
-                            props.data.colors.values[indexRow]
+                            indexCol === 0 && props.data.colors
+                              ? props.data.colors.values[indexRow]
+                              : null
                           }
                           border={
                             indexRow !== props.data[key].values.length - 1
@@ -541,7 +544,7 @@ function Table(props) {
                               </Children>
                             )}
                         </Row>
-                      </>
+                      </React.Fragment>
                     ))}
                   </Column>
                 ))}
@@ -557,15 +560,17 @@ function Table(props) {
 
 Table.propTypes = {
   children: PropTypes.any,
+  childrenSize: PropTypes.any,
   complete: PropTypes.bool,
   data: PropTypes.object,
   dispatch: PropTypes.any,
   height: PropTypes.string,
   indexRowOpened: PropTypes.number,
+  isMultiple: PropTypes.any,
   onClickToOrder: PropTypes.func,
   onEndScroll: PropTypes.func,
   onRowClick: PropTypes.func,
-  order: PropTypes.func,
+  order: PropTypes.string,
   orderBy: PropTypes.string,
   subdata: PropTypes.array,
   total: PropTypes.number,
