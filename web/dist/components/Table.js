@@ -62,7 +62,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;

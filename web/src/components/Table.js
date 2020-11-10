@@ -156,7 +156,10 @@ const Value = styled.div`
   align-items: center;
 `
 
-const SpanValue = styled.span``
+const SpanValue = styled.span`
+  display: flex;
+  align-items: center;
+`
 const Children = styled.div`
   position: absolute;
   transition: 2s;
