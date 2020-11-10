@@ -45,6 +45,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+.idea/
 
 # Optional npm cache directory
 .npm
@@ -73,3 +74,5 @@ node_modules/
 /.idea/watcherTasks.xml
 /.idea/workspace.xml
 /web/.idea/
+.idea/raiox-design-system.iml
+.idea/workspace.xml

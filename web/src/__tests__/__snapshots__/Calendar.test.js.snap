@@ -2,6 +2,8 @@
 
 exports[`should render 1`] = `
 .c4 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,6 +24,8 @@ exports[`should render 1`] = `
 }
 
 .c5 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -43,6 +47,8 @@ exports[`should render 1`] = `
 }
 
 .c10 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -65,6 +71,8 @@ exports[`should render 1`] = `
 }
 
 .c13 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -127,6 +135,14 @@ exports[`should render 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 8px;
+  position: absolute;
+  width: Calc(100% - 16px);
+  bottom: 0;
+  left: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .c8 {
@@ -135,14 +151,13 @@ exports[`should render 1`] = `
   font-weight: 400;
   font-size: 14px;
   margin-right: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 14px;
+  text-align: end;
 }
 
 .c9 {
@@ -343,7 +358,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day0"
               isBlockedSelection={false}
               isHovered={false}
@@ -354,7 +368,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day0"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -384,7 +397,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day1"
               isBlockedSelection={false}
               isHovered={false}
@@ -395,7 +407,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day1"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -425,7 +436,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day2"
               isBlockedSelection={false}
               isHovered={false}
@@ -436,7 +446,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day2"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -476,7 +485,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day3"
               isBlockedSelection={false}
               isHovered={false}
@@ -487,7 +495,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day3"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -511,9 +518,11 @@ exports[`should render 1`] = `
                     <div>
                       <styled.span
                         currentMonth={true}
+                        data-tooltip="R$ 50,00"
                       >
                         <span
                           className="c8"
+                          data-tooltip="R$ 50,00"
                         >
                           R$
                            
@@ -556,7 +565,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day4"
               isBlockedSelection={false}
               isHovered={false}
@@ -567,7 +575,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day4"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -614,7 +621,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day5"
               isBlockedSelection={false}
               isHovered={false}
@@ -625,7 +631,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day5"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -672,7 +677,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day6"
               isBlockedSelection={false}
               isHovered={false}
@@ -683,7 +687,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day6"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -730,7 +733,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day7"
               isBlockedSelection={false}
               isHovered={false}
@@ -741,7 +743,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day7"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -788,7 +789,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day8"
               isBlockedSelection={false}
               isHovered={false}
@@ -799,7 +799,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day8"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -846,7 +845,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day9"
               isBlockedSelection={false}
               isHovered={false}
@@ -857,7 +855,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day9"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -904,7 +901,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day10"
               isBlockedSelection={false}
               isHovered={false}
@@ -915,7 +911,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day10"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -962,7 +957,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day11"
               isBlockedSelection={false}
               isHovered={false}
@@ -973,7 +967,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day11"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1020,7 +1013,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day12"
               isBlockedSelection={false}
               isHovered={false}
@@ -1031,7 +1023,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day12"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1078,7 +1069,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day13"
               isBlockedSelection={false}
               isHovered={false}
@@ -1089,7 +1079,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day13"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1136,7 +1125,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day14"
               isBlockedSelection={false}
               isHovered={false}
@@ -1147,7 +1135,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day14"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1204,7 +1191,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day15"
               isBlockedSelection={false}
               isHovered={false}
@@ -1215,7 +1201,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day15"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1239,9 +1224,11 @@ exports[`should render 1`] = `
                     <div>
                       <styled.span
                         currentMonth={true}
+                        data-tooltip="R$ 700,55"
                       >
                         <span
                           className="c8"
+                          data-tooltip="R$ 700,55"
                         >
                           R$
                            
@@ -1284,7 +1271,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day16"
               isBlockedSelection={false}
               isHovered={false}
@@ -1295,7 +1281,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day16"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1342,7 +1327,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day17"
               isBlockedSelection={false}
               isHovered={false}
@@ -1353,7 +1337,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day17"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1400,7 +1383,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day18"
               isBlockedSelection={false}
               isHovered={false}
@@ -1411,7 +1393,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day18"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1458,7 +1439,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day19"
               isBlockedSelection={false}
               isHovered={false}
@@ -1469,7 +1449,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day19"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1516,7 +1495,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day20"
               isBlockedSelection={false}
               isHovered={false}
@@ -1527,7 +1505,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day20"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1574,7 +1551,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day21"
               isBlockedSelection={false}
               isHovered={false}
@@ -1585,7 +1561,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day21"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1632,7 +1607,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day22"
               isBlockedSelection={false}
               isHovered={false}
@@ -1643,7 +1617,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day22"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1690,7 +1663,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day23"
               isBlockedSelection={false}
               isHovered={false}
@@ -1701,7 +1673,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day23"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1748,7 +1719,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day24"
               isBlockedSelection={false}
               isHovered={false}
@@ -1759,7 +1729,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c10"
-                data-tooltip=""
                 id="day24"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1806,7 +1775,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day25"
               isBlockedSelection={false}
               isHovered={false}
@@ -1817,7 +1785,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day25"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1864,7 +1831,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day26"
               isBlockedSelection={false}
               isHolyday="01/24/2020"
@@ -1876,7 +1842,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c13"
-                data-tooltip=""
                 id="day26"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1923,7 +1888,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day27"
               isBlockedSelection={false}
               isHovered={false}
@@ -1934,7 +1898,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day27"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1981,7 +1944,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day28"
               isBlockedSelection={false}
               isHovered={false}
@@ -1992,7 +1954,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day28"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2039,7 +2000,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day29"
               isBlockedSelection={false}
               isHovered={false}
@@ -2050,7 +2010,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day29"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2097,7 +2056,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day30"
               isBlockedSelection={false}
               isHovered={false}
@@ -2108,7 +2066,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day30"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2155,7 +2112,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day31"
               isBlockedSelection={false}
               isHovered={false}
@@ -2166,7 +2122,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day31"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2213,7 +2168,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day32"
               isBlockedSelection={false}
               isHovered={false}
@@ -2224,7 +2178,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day32"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2271,7 +2224,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day33"
               isBlockedSelection={false}
               isHovered={false}
@@ -2282,7 +2234,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day33"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2339,7 +2290,6 @@ exports[`should render 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day34"
               isBlockedSelection={false}
               isHovered={false}
@@ -2350,7 +2300,6 @@ exports[`should render 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day34"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2367,6 +2316,8 @@ exports[`should render 1`] = `
 
 exports[`should render with month 35 days 1`] = `
 .c4 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2387,6 +2338,8 @@ exports[`should render with month 35 days 1`] = `
 }
 
 .c5 {
+  position: relative;
+  min-height: 60px;
   border-radius: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2435,6 +2388,14 @@ exports[`should render with month 35 days 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 8px;
+  position: absolute;
+  width: Calc(100% - 16px);
+  bottom: 0;
+  left: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .c0 {
@@ -2621,7 +2582,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day0"
               isBlockedSelection={false}
               isHovered={false}
@@ -2632,7 +2592,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day0"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2662,7 +2621,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day1"
               isBlockedSelection={false}
               isHovered={false}
@@ -2673,7 +2631,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day1"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2703,7 +2660,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day2"
               isBlockedSelection={false}
               isHovered={false}
@@ -2714,7 +2670,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day2"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2744,7 +2699,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day3"
               isBlockedSelection={false}
               isHovered={false}
@@ -2755,7 +2709,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day3"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2785,7 +2738,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day4"
               isBlockedSelection={false}
               isHovered={false}
@@ -2796,7 +2748,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day4"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2826,7 +2777,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day5"
               isBlockedSelection={false}
               isHovered={false}
@@ -2837,7 +2787,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day5"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2884,7 +2833,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day6"
               isBlockedSelection={false}
               isHovered={false}
@@ -2895,7 +2843,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day6"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2942,7 +2889,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day7"
               isBlockedSelection={false}
               isHovered={false}
@@ -2953,7 +2899,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day7"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3000,7 +2945,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day8"
               isBlockedSelection={false}
               isHovered={false}
@@ -3011,7 +2955,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day8"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3058,7 +3001,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day9"
               isBlockedSelection={false}
               isHovered={false}
@@ -3069,7 +3011,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day9"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3116,7 +3057,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day10"
               isBlockedSelection={false}
               isHovered={false}
@@ -3127,7 +3067,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day10"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3174,7 +3113,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day11"
               isBlockedSelection={false}
               isHovered={false}
@@ -3185,7 +3123,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day11"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3232,7 +3169,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day12"
               isBlockedSelection={false}
               isHovered={false}
@@ -3243,7 +3179,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day12"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3290,7 +3225,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day13"
               isBlockedSelection={false}
               isHovered={false}
@@ -3301,7 +3235,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day13"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3348,7 +3281,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day14"
               isBlockedSelection={false}
               isHovered={false}
@@ -3359,7 +3291,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day14"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3406,7 +3337,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day15"
               isBlockedSelection={false}
               isHovered={false}
@@ -3417,7 +3347,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day15"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3464,7 +3393,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day16"
               isBlockedSelection={false}
               isHovered={false}
@@ -3475,7 +3403,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day16"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3522,7 +3449,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day17"
               isBlockedSelection={false}
               isHovered={false}
@@ -3533,7 +3459,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day17"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3580,7 +3505,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day18"
               isBlockedSelection={false}
               isHovered={false}
@@ -3591,7 +3515,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day18"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3638,7 +3561,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day19"
               isBlockedSelection={false}
               isHovered={false}
@@ -3649,7 +3571,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day19"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3696,7 +3617,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day20"
               isBlockedSelection={false}
               isHovered={false}
@@ -3707,7 +3627,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day20"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3754,7 +3673,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day21"
               isBlockedSelection={false}
               isHovered={false}
@@ -3765,7 +3683,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day21"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3812,7 +3729,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day22"
               isBlockedSelection={false}
               isHovered={false}
@@ -3823,7 +3739,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day22"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3870,7 +3785,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day23"
               isBlockedSelection={false}
               isHovered={false}
@@ -3881,7 +3795,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day23"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3928,7 +3841,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day24"
               isBlockedSelection={false}
               isHovered={false}
@@ -3939,7 +3851,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day24"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3986,7 +3897,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day25"
               isBlockedSelection={false}
               isHovered={false}
@@ -3997,7 +3907,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day25"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4044,7 +3953,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day26"
               isBlockedSelection={false}
               isHovered={false}
@@ -4055,7 +3963,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day26"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4102,7 +4009,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day27"
               isBlockedSelection={false}
               isHovered={false}
@@ -4113,7 +4019,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day27"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4160,7 +4065,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day28"
               isBlockedSelection={false}
               isHovered={false}
@@ -4171,7 +4075,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day28"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4218,7 +4121,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day29"
               isBlockedSelection={false}
               isHovered={false}
@@ -4229,7 +4131,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day29"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4276,7 +4177,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day30"
               isBlockedSelection={false}
               isHovered={false}
@@ -4287,7 +4187,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day30"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4334,7 +4233,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day31"
               isBlockedSelection={false}
               isHovered={false}
@@ -4345,7 +4243,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day31"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4392,7 +4289,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day32"
               isBlockedSelection={false}
               isHovered={false}
@@ -4403,7 +4299,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day32"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4450,7 +4345,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day33"
               isBlockedSelection={false}
               isHovered={false}
@@ -4461,7 +4355,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day33"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4508,7 +4401,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day34"
               isBlockedSelection={false}
               isHovered={false}
@@ -4519,7 +4411,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day34"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4566,7 +4457,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={true}
-              data-tooltip=""
               id="day35"
               isBlockedSelection={false}
               isHovered={false}
@@ -4577,7 +4467,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c5"
-                data-tooltip=""
                 id="day35"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4624,7 +4513,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day36"
               isBlockedSelection={false}
               isHovered={false}
@@ -4635,7 +4523,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day36"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4665,7 +4552,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day37"
               isBlockedSelection={false}
               isHovered={false}
@@ -4676,7 +4562,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day37"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4706,7 +4591,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day38"
               isBlockedSelection={false}
               isHovered={false}
@@ -4717,7 +4601,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day38"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4747,7 +4630,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day39"
               isBlockedSelection={false}
               isHovered={false}
@@ -4758,7 +4640,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day39"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4788,7 +4669,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day40"
               isBlockedSelection={false}
               isHovered={false}
@@ -4799,7 +4679,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day40"
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4829,7 +4708,6 @@ exports[`should render with month 35 days 1`] = `
           >
             <styled.div
               currentMonth={false}
-              data-tooltip=""
               id="day41"
               isBlockedSelection={false}
               isHovered={false}
@@ -4840,7 +4718,6 @@ exports[`should render with month 35 days 1`] = `
             >
               <div
                 className="c4"
-                data-tooltip=""
                 id="day41"
                 onClick={[Function]}
                 onFocus={[Function]}
