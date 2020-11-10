@@ -201,19 +201,13 @@ function Table(props) {
   }, [props.children])
 
   useEffect(() => {
+    handleResize()
     setTimeout(() => {
       handleResize()
-    }, 100)
-  }, [])
-
-  useEffect(() => {
-    setTimeout(() => {
-      handleResize()
-    }, 100)
+    }, 200)
   }, [props.data])
 
   const handleResize = () => {
-    setColsWidth(items.current.map(item => item && item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
         .map(item => item && item.clientWidth)
@@ -222,8 +216,8 @@ function Table(props) {
   }
 
   useEffect(() => {
-    handleResize()
-  }, [items, itemsHeader])
+    setColsWidth(items.current.map(item => item && item.clientWidth))
+  }, [colHeadersWidth])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
