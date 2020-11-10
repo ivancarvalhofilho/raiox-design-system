@@ -15,7 +15,7 @@ import icons from '../../../tokens/js/icons'
 import clone from 'ramda/src/clone'
 const LoaderContainer = styled.div`
   display: flex;
-  width: ${(props) => props.cols * '100'}%;
+  width: ${props => props.cols * '100'}%;
   justify-content: center;
   flex-direction: column;
   min-width: fit-content;
@@ -24,7 +24,7 @@ const LoaderContainer = styled.div`
   background-image: linear-gradient(to bottom, transparent, white);
 
   > p {
-    color: ${(props) => props.theme.colors.neutral.dark.base};
+    color: ${props => props.theme.colors.neutral.dark.base};
     margin: 0;
   }
 
@@ -33,40 +33,37 @@ const LoaderContainer = styled.div`
   }
 `
 const Container = styled.div`
-  display: grid;
+  display: inline-grid;
   position: relative;
-  margin-right: ${(props) => props.optional && '-12px'};
+  margin-right: ${props => props.optional && '-12px'};
   overflow: overlay;
   font-size: 14px;
-  min-width: ${(props) => !props.optional && 'fit-content'};
+  min-width: ${props => !props.optional && 'fit-content'};
   width: 100%;
   height: auto !important;
-  max-height: ${(props) => props.maxheight};
-  color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) =>
+  max-height: ${props => props.maxheight};
+  color: ${props => props.theme.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
-      .reduce((x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`, '')};
+      .reduce((x, y) => `${x} minmax(50px,auto)`, '')};
 `
 const ContainerInfinite = styled(InfiniteScroll)`
-  display: grid;
+  display: inline-grid;
   position: relative;
-  margin-right: ${(props) => props.optional && '-12px'};
+  margin-right: ${props => props.optional && '-12px'};
   overflow: auto;
   font-size: 14px;
   height: auto !important;
-  max-height: ${(props) => props.maxheight};
-  min-width: ${(props) => !props.optional && 'fit-content'};
+  max-height: ${props => props.maxheight};
+  min-width: ${props => !props.optional && 'fit-content'};
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
-  color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) =>
+  color: ${props => props.theme.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
-    props.cols.reduce(
-      (x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`,
-      '',
-    )};
+    props.cols.reduce((x, y) => `${x} minmax(50px,auto)`, '')};
 `
 const Scroll = styled.div`
   background: white;
@@ -75,7 +72,7 @@ const Scroll = styled.div`
 const DisplayGrid = styled.div`
   display: flex;
   flex-direction: row;
-  font-family: ${(props) => props.theme.fonts.family.body};
+  font-family: ${props => props.theme.fonts.family.body};
   flex: 1;
 
   .custom-scrollbar,
@@ -98,36 +95,33 @@ const DisplayGrid = styled.div`
   }
 `
 const ContainerHeader = styled.div`
-  display: grid;
+  display: inline-grid;
   font-size: 14px;
-  border: ${(props) =>
+  border: ${props =>
     `${props.theme.styles.border.width.hairline} solid ${props.theme.colors.neutral.dark['03']}`};
-  overflow: ${(props) => props.optional && 'hidden'};
-  padding-right: ${(props) => !props.optional && props.paddingScroll && '13px'};
+  overflow: ${props => props.optional && 'hidden'};
+  padding-right: ${props => !props.optional && props.paddingScroll && '13px'};
   background-color: #f2f5f7;
-  min-width: ${(props) => !props.optional && 'fit-content'};
-  width: ${(props) =>
-    !props.optional && props.paddingScroll ? '101%' : '100%'};
-  color: ${(props) => props.theme.colors.neutral.dark.base};
-  grid-template-columns: ${(props) =>
+  min-width: ${props => !props.optional && 'fit-content'};
+  width: ${props => (!props.optional && props.paddingScroll ? '101%' : '100%')};
+  color: ${props => props.theme.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
     (props.color ? '8px ' : '') +
-    props.cols.reduce(
-      (x, y) => `${x} minmax(50px,${100 / props.cols.length}%)`,
+    props.colsWidth.reduce(
+      (x, y, index) => `${x} ${props.colsWidth[index]}px`,
       '',
     )};
 `
 const Column = styled.div`
-  display: grid;
+  display: inline-grid;
   transition: 2s;
-  grid-template-rows: ${(props) =>
+  grid-template-rows: ${props =>
     props.rows.reduce(
       (x, y, index) =>
-        `${x} ${`${
-          (props.size || 48) +
+        `${x} ${`${(props.size || 48) +
           (index === props.indexRowOpened && props.indexRowOpened != null
             ? props.childrenHeight
-            : 0)
-        }px`}`,
+            : 0)}px`}`,
       '',
     )};
 `
@@ -137,17 +131,17 @@ const Row = styled.div`
   //width: 100%;
   overflow: hidden;
   align-items: center;
-  justify-content: ${(props) =>
+  justify-content: ${props =>
     props.justify === 'right'
       ? 'flex-end'
       : (props.justify === 'left' && 'flex-start') || 'center'};
-  cursor: ${(props) => props.clicable && 'pointer'};
-  border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
-  background-color: ${(props) => props.color || 'white'};
+  cursor: ${props => props.clicable && 'pointer'};
+  border-bottom: ${props => props.border && '1px solid #e7e7e7'};
+  background-color: ${props => props.color || 'white'};
   padding: 5px;
   max-height: 48px;
-  padding-left: ${(props) => props.first && '10%'};
-  padding-right: ${(props) => props.last && '10%'};
+  padding-left: ${props => props.first && '10%'};
+  padding-right: ${props => props.last && '10%'};
 `
 
 const Value = styled.div`
@@ -174,10 +168,10 @@ const Children = styled.div`
   position: absolute;
   transition: 2s;
   cursor: auto;
-  border-left: 8px ${(props) => props.color} solid;
+  border-left: 8px ${props => props.color} solid;
   left: 0;
   width: 99.5%;
-  top: ${(props) => props.top};
+  top: ${props => props.top};
 `
 const Collapse = styled.div`
   padding: 0 20px;
@@ -185,16 +179,14 @@ const Collapse = styled.div`
 `
 
 function Table(props) {
-  const hasColor = Object.keys(props.data).find((key) => key === 'colors')
+  const hasColor = Object.keys(props.data).find(key => key === 'colors')
   const keys = Object.keys(props.data)
   const refChildren = useRef()
   const indexOptional =
-    keys.findIndex((key) => props.data[key].optional) +
-    keys.filter((key) => props.data[key].optional).length
-  const colsOriginal = keys.filter((key) => !props.data[key].optional)
-  const colsOriginalWithoutColor = colsOriginal.filter(
-    (key) => key !== 'colors',
-  )
+    keys.findIndex(key => props.data[key].optional) +
+    keys.filter(key => props.data[key].optional).length
+  const colsOriginal = keys.filter(key => !props.data[key].optional)
+  const colsOriginalWithoutColor = colsOriginal.filter(key => key !== 'colors')
   const cols = keys.slice(indexOptional, keys.length)
   const colsOptional = keys.slice(0, indexOptional)
   const optionalHeader = useRef()
@@ -205,10 +197,27 @@ function Table(props) {
   const [optionalMouse, setOptionalMouse] = useState(false)
 
   const [childrenSize, setChildrenSize] = useState(0)
+  const items = useRef([])
+  const [colsWidth, setColsWidth] = useState([])
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
   }, [props.children])
+
+  const handleResize = () => {
+    setColsWidth(items.current.map(item => item.clientWidth))
+  }
+
+  useEffect(() => {
+    setColsWidth(items.current.map(item => item.clientWidth))
+  }, [items])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <div>
@@ -216,6 +225,7 @@ function Table(props) {
         {props.complete && (
           <ContainerHeader
             optional
+            colsWidth={colsWidth}
             cols={colsOptional}
             ref={optionalHeader}
             color={hasColor}
@@ -256,6 +266,7 @@ function Table(props) {
         )}
         <ContainerHeader
           color={hasColor}
+          colsWidth={colsWidth}
           paddingScroll
           cols={props.complete ? cols : colsOriginalWithoutColor}
           width={content.current && `${content.current.clientWidth + 13}px`}
@@ -311,7 +322,7 @@ function Table(props) {
                 onMouseEnter={() => {
                   setOptionalMouse(false)
                 }}
-                onScroll={(e) => {
+                onScroll={e => {
                   optionalHeader.current.scrollLeft =
                     optionalContent.current.scrollLeft
 
@@ -341,6 +352,11 @@ function Table(props) {
                         border={indexRow !== props.data[key].values.length - 1}
                         first={indexCol === 0}
                         last={indexCol === cols.length}
+                        ref={ref => {
+                          indexRow === 0 && key !== 'colors'
+                            ? (items.current[indexCol] = ref)
+                            : null
+                        }}
                       >
                         <SpanValue>
                           {props.data[key].template
@@ -348,7 +364,7 @@ function Table(props) {
                                 value,
                                 props.data[key].params &&
                                   props.data[key].params.map(
-                                    (param) =>
+                                    param =>
                                       props.data[param] &&
                                       props.data[param].values[indexRow],
                                   ),
@@ -433,6 +449,11 @@ function Table(props) {
                           children={props.indexRowOpened === indexRow}
                           key={indexRow}
                           justify={props.data[key].justify}
+                          ref={ref => {
+                            indexRow === 0 && key !== 'colors'
+                              ? (items.current[indexCol] = ref)
+                              : null
+                          }}
                           clicable={props.isMultiple}
                           onClick={() =>
                             props.isMultiple && props.onRowClick(indexRow)
@@ -455,7 +476,7 @@ function Table(props) {
                                     value,
                                     props.data[key].params &&
                                       props.data[key].params.map(
-                                        (param) =>
+                                        param =>
                                           props.data[param] &&
                                           props.data[param].values[indexRow],
                                       ),
@@ -483,7 +504,7 @@ function Table(props) {
                               <Children
                                 id="children"
                                 color={props.data.colors.values[indexRow]}
-                                onClick={(e) => {
+                                onClick={e => {
                                   e.stopPropagation()
                                 }}
                                 ref={refChildren}
