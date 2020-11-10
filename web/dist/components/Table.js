@@ -310,6 +310,7 @@ function Table(props) {
       handleResize();
     }, 200);
   }, [props.data]);
+  console.log(props.childrenSize, childrenSize);
 
   var handleResize = function handleResize() {
     setColHeadersWidth(itemsHeader.current.map(function (item, index) {

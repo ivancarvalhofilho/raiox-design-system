@@ -210,6 +210,7 @@ function Table(props) {
     }, 200)
   }, [props.data])
 
+  console.log(props.childrenSize, childrenSize)
   const handleResize = () => {
     setColHeadersWidth(
       itemsHeader.current
