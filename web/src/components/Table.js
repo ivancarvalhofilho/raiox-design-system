@@ -112,11 +112,14 @@ const ContainerHeader = styled.div`
   width: ${props => (!props.optional && props.paddingScroll ? '101%' : '100%')};
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
-    (props.hasColor ? '8px ' : '') +
-    props.colsWidth.reduce(
-      (x, y, index) => `${x} minmax(${props.colsWidth[index]}px, auto)`,
-      '',
-    )};
+    props.colsWidth.length > 0
+      ? (props.hasColor ? '8px ' : '') +
+        props.colsWidth.reduce(
+          (x, y, index) =>
+            `${x} minmax(${`${props.colsWidth[index]}px`}, auto)`,
+          '',
+        )
+      : `${props.hasColor ? '8px ' : ''} repeat(${props.cols.length}, auto)`};
 `
 const Column = styled.div`
   display: inline-grid;
@@ -200,17 +203,12 @@ function Table(props) {
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
-    handleResize()
-  }, [props.children])
+  }, [props.indexRowOpened])
 
   useEffect(() => {
     handleResize()
-    setTimeout(() => {
-      handleResize()
-    }, 200)
   }, [props.data])
 
-  console.log(props.childrenSize, childrenSize)
   const handleResize = () => {
     setColHeadersWidth(
       itemsHeader.current

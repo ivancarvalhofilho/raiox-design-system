@@ -216,9 +216,9 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colsWidth[index], "px, auto)");
-  }, '');
+  return props.colsWidth.length > 0 ? (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
+    return "".concat(x, " minmax(", "".concat(props.colsWidth[index], "px"), ", auto)");
+  }, '') : "".concat(props.hasColor ? '8px ' : '', " repeat(").concat(props.cols.length, ", auto)");
 });
 
 var Column = _styledComponents["default"].div(_templateObject7(), function (props) {
@@ -302,15 +302,10 @@ function Table(props) {
 
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-    handleResize();
-  }, [props.children]);
+  }, [props.indexRowOpened]);
   (0, _react.useEffect)(function () {
     handleResize();
-    setTimeout(function () {
-      handleResize();
-    }, 200);
   }, [props.data]);
-  console.log(props.childrenSize, childrenSize);
 
   var handleResize = function handleResize() {
     setColHeadersWidth(itemsHeader.current.map(function (item, index) {
