@@ -309,6 +309,11 @@ function Table(props) {
       handleResize();
     }, 100);
   }, []);
+  (0, _react.useEffect)(function () {
+    setTimeout(function () {
+      handleResize();
+    }, 100);
+  }, [props.data]);
 
   var handleResize = function handleResize() {
     setColsWidth(items.current.map(function (item) {
@@ -322,18 +327,8 @@ function Table(props) {
   };
 
   (0, _react.useEffect)(function () {
-    console.log(items.current.map(function (item) {
-      return item && item.clientWidth;
-    }));
-    setColsWidth(items.current.map(function (item) {
-      return item && item.clientWidth;
-    }));
-    setColHeadersWidth(itemsHeader.current.map(function (item) {
-      return item && item.clientWidth;
-    }).filter(function (item) {
-      return item > 0;
-    }));
-  }, [items, itemsHeader, props.data]);
+    handleResize();
+  }, [items, itemsHeader]);
   (0, _react.useEffect)(function () {
     window.addEventListener('resize', handleResize);
     return function () {

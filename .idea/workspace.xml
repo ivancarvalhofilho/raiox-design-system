@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8a74e2d-e6ea-4d41-9af1-29cc6985fb75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/dist/components/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/dist/components/Table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +187,7 @@
       <workItem from="1604931718931" duration="11284000" />
       <workItem from="1604947354583" duration="498000" />
       <workItem from="1604951539273" duration="2000" />
-      <workItem from="1605009086459" duration="9883000" />
+      <workItem from="1605009086459" duration="10033000" />
     </task>
     <task id="LOCAL-00001" summary="adding read.me">
       <created>1604675950479</created>
@@ -293,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605020936135</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="adding resize table">
+      <created>1605021033020</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605021033020</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,10 +366,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="754" y="298" width="863" height="511" key="#xdebugger.evaluate/72.27.1848.1053@72.27.1848.1053" timestamp="1604944917831" />
-    <state x="436" y="110" width="1110" height="893" key="CommitChangelistDialog2" timestamp="1605020935877">
+    <state x="436" y="110" width="1110" height="893" key="CommitChangelistDialog2" timestamp="1605021032717">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="436" y="110" width="1110" height="893" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1605020935877" />
+    <state x="436" y="110" width="1110" height="893" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1605021032717" />
     <state width="1305" height="506" key="DebuggerActiveHint" timestamp="1604944357173">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -469,10 +477,10 @@
     </state>
     <state x="292" y="187" width="1302" height="853" key="VCS.FileHistoryDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1604687715698" />
     <state x="167" y="127" width="1653" height="853" key="VCS.FileHistoryDialog/67.27.3773.1053@67.27.3773.1053" timestamp="1603478308204" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605020938296">
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605021034369">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1605020938296" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1605021034369" />
     <state width="924" height="526" key="XDebugger.FullValuePopup" timestamp="1604933985197">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
