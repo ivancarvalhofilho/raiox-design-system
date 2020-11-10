@@ -14,7 +14,7 @@ const BackgroundContainer = styled.div`
   background: rgba(0, 0, 0, 0.75);
   top: 0;
   left: 0;
-  display: ${(props) => (props.show ? 'flex' : 'none')};
+  display: ${props => (props.show ? 'flex' : 'none')};
   justify-content: center;
 `
 const LeftModalHeader = styled.div`
@@ -23,7 +23,7 @@ const LeftModalHeader = styled.div`
   justify-content: flex-end;
 `
 const Title = styled.div`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'head', 'bold', 'md', 'brand.secondary.dark')};
   width: 80%;
   text-align: center;
@@ -38,12 +38,12 @@ const LeftModalContainer = styled.div`
   background: white;
   transition: right 0.5s;
   position: absolute;
-  right: ${(props) =>
+  right: ${props =>
     props.show ? `0px` : `-${props.width ? props.width : 5000}px`};
   padding: 17px;
   height: 100%;
 `
-const SideModal = (props) => {
+const SideModal = props => {
   const [show, setShow] = useState(props.show)
   const [width, setWidth] = useState(0)
   const ref = useRef()
@@ -64,7 +64,8 @@ const SideModal = (props) => {
     >
       <LeftModalContainer
         ref={ref}
-        onClick={(e) => e.stopPropagation()}
+        id="sideModalContainer"
+        onClick={e => e.stopPropagation()}
         show={!props.show ? props.show : show}
         width={width}
       >

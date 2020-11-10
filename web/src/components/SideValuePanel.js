@@ -49,8 +49,8 @@ const Subtitle = styled(TextRow)`
 const SideValuePanel = props => (
   <Container>
     {props.values.map((value, index) => (
-      <>
-        <Item key={index} fullWidth={props.fullWidth}>
+      <React.Fragment key={index}>
+        <Item fullWidth={props.fullWidth}>
           {props.titles && <Title>{props.titles[index]}</Title>}
           <DollarSign
             positive={
@@ -90,7 +90,7 @@ const SideValuePanel = props => (
           )}
         </Item>
         {index < props.values.length - 1 && <Divider />}
-      </>
+      </React.Fragment>
     ))}
   </Container>
 )
