@@ -107,8 +107,12 @@ var _default = Icon;
 exports["default"] = _default;
 Icon.propTypes = {
   appearance: _propTypes["default"].string,
+  className: _propTypes["default"].string,
   name: _propTypes["default"].string,
+  onClick: _propTypes["default"].func,
   path: _propTypes["default"].string,
+  rotate: _propTypes["default"].number,
   size: _propTypes["default"].string,
+  spin: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].bool]),
   style: _propTypes["default"].object
 };

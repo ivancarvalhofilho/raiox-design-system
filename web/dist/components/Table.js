@@ -92,7 +92,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  transition: 2s;\n  grid-template-rows: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  transition: 2s;\n  grid-template-rows: ", ";\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -102,7 +102,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  padding-right: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  padding-right: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -132,7 +132,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -142,7 +142,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: overlay;\n  font-size: 14px;\n  min-width: ", ";\n  width: 100%;\n  height: auto !important;\n  max-height: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: overlay;\n  font-size: 14px;\n  min-width: ", ";\n  width: 100%;\n  height: auto !important;\n  max-height: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -179,7 +179,7 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.color ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
+    return "".concat(x, " minmax(50px,auto)");
   }, '');
 });
 
@@ -193,7 +193,7 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
+    return "".concat(x, " minmax(50px,auto)");
   }, '');
 });
 
@@ -216,8 +216,8 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.color ? '8px ' : '') + props.cols.reduce(function (x, y) {
-    return "".concat(x, " minmax(50px,").concat(100 / props.cols.length, "%)");
+  return (props.color ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
+    return "".concat(x, " ").concat(props.colsWidth[index], "px");
   }, '');
 });
 
@@ -287,11 +287,37 @@ function Table(props) {
       childrenSize = _useState4[0],
       setChildrenSize = _useState4[1];
 
+  var items = (0, _react.useRef)([]);
+
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      colsWidth = _useState6[0],
+      setColsWidth = _useState6[1];
+
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
   }, [props.children]);
+
+  var handleResize = function handleResize() {
+    setColsWidth(items.current.map(function (item) {
+      return item.clientWidth;
+    }));
+  };
+
+  (0, _react.useEffect)(function () {
+    setColsWidth(items.current.map(function (item) {
+      return item.clientWidth;
+    }));
+  }, [items]);
+  (0, _react.useEffect)(function () {
+    window.addEventListener('resize', handleResize);
+    return function () {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     optional: true,
+    colsWidth: colsWidth,
     cols: colsOptional,
     ref: optionalHeader,
     color: hasColor
@@ -317,6 +343,7 @@ function Table(props) {
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     color: hasColor,
+    colsWidth: colsWidth,
     paddingScroll: true,
     cols: props.complete ? cols : colsOriginalWithoutColor,
     width: content.current && "".concat(content.current.clientWidth + 13, "px")
@@ -374,7 +401,10 @@ function Table(props) {
         justify: props.data[key].justify,
         border: indexRow !== props.data[key].values.length - 1,
         first: indexCol === 0,
-        last: indexCol === cols.length
+        last: indexCol === cols.length,
+        ref: function ref(_ref) {
+          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref : null;
+        }
       }, /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
         return props.data[param] && props.data[param].values[indexRow];
       }), props.dispatch, props.subdata && props.subdata[indexRow]) : value));
@@ -439,6 +469,9 @@ function Table(props) {
         children: props.indexRowOpened === indexRow,
         key: indexRow,
         justify: props.data[key].justify,
+        ref: function ref(_ref2) {
+          indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref2 : null;
+        },
         clicable: props.isMultiple,
         onClick: function onClick() {
           return props.isMultiple && props.onRowClick(indexRow);

@@ -241,11 +241,12 @@ var Calendar = function Calendar(props) {
     return /*#__PURE__*/_react["default"].createElement(DayOfWeek, {
       key: day
     }, day);
-  })), /*#__PURE__*/_react["default"].createElement(CalendarGrid, null, dates && dates.map(function (date) {
+  })), /*#__PURE__*/_react["default"].createElement(CalendarGrid, null, dates && dates.map(function (date, index) {
     return /*#__PURE__*/_react["default"].createElement(_CalendarCell.CalendarCell, {
       key: date.fullDate,
       date: date,
       daySale: date.sale,
+      id: "day".concat(index),
       maxDateRange: props.maxDateRange,
       onDayClick: function onDayClick() {
         return _onDayClick(date.fullDate);

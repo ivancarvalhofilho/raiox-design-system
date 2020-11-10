@@ -79,6 +79,7 @@ var Tabs = function Tabs(props) {
     disabled: props.disabled
   }, props.tabs.map(function (tab, index) {
     return /*#__PURE__*/_react["default"].createElement(_Tab["default"], {
+      id: "tab".concat(index),
       key: index,
       label: tab,
       width: 100 / props.tabs.length,

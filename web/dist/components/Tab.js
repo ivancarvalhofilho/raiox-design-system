@@ -40,6 +40,7 @@ var TabContainer = _styledComponents["default"].div(_templateObject(), function 
 var Tab = function Tab(props) {
   return /*#__PURE__*/_react["default"].createElement(TabContainer, {
     width: props.width,
+    id: props.id,
     onClick: props.onClick,
     active: props.active
   }, props.label);

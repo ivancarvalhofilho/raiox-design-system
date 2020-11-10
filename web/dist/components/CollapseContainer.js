@@ -135,6 +135,7 @@ var CollapseContainer = function CollapseContainer(props) {
       setOpened = _useState2[1];
 
   return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Header, {
+    id: 'header',
     onClick: function onClick() {
       return setOpened(!opened);
     }
@@ -146,12 +147,14 @@ var CollapseContainer = function CollapseContainer(props) {
     isOpened: opened
   }, /*#__PURE__*/_react["default"].createElement(Divider, {
     horizontal: true
-  }), /*#__PURE__*/_react["default"].createElement(Body, null, props.children)));
+  }), /*#__PURE__*/_react["default"].createElement(Body, {
+    id: 'children'
+  }, props.children)));
 };
 
 var _default = CollapseContainer;
 exports["default"] = _default;
 CollapseContainer.propTypes = {
-  children: _propTypes["default"].object,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].string]),
   title: _propTypes["default"].string
 };
