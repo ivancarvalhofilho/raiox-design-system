@@ -112,8 +112,9 @@ const ContainerHeader = styled.div`
   width: ${props => (!props.optional && props.paddingScroll ? '101%' : '100%')};
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
-    (props.hasColor ? '8px ' : '') + props.colsWidth.length > 0
-      ? props.colsWidth.reduce(
+    props.colsWidth.length > 0
+      ? (props.hasColor ? '8px ' : '') +
+        props.colsWidth.reduce(
           (x, y, index) =>
             `${x} minmax(${
               props.colsWidth < 1000 ? `${props.colsWidth[index]}px` : 'auto'
