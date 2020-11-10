@@ -305,29 +305,29 @@ function Table(props) {
     handleResize();
   }, [props.children]);
   (0, _react.useEffect)(function () {
-    setTimeout(function () {
-      handleResize();
-    }, 0);
+    handleResize();
   }, []);
 
   var handleResize = function handleResize() {
     setColsWidth(items.current.map(function (item) {
-      return item.clientWidth;
+      return item && item.clientWidth;
     }));
     setColHeadersWidth(itemsHeader.current.map(function (item) {
-      return item.clientWidth;
+      return item && item.clientWidth;
     }).filter(function (item) {
       return item > 0;
     }));
   };
 
-  console.log(colHeadersWidth);
   (0, _react.useEffect)(function () {
+    console.log(items.current.map(function (item) {
+      return item && item.clientWidth;
+    }));
     setColsWidth(items.current.map(function (item) {
-      return item.clientWidth;
+      return item && item.clientWidth;
     }));
     setColHeadersWidth(itemsHeader.current.map(function (item) {
-      return item.clientWidth;
+      return item && item.clientWidth;
     }).filter(function (item) {
       return item > 0;
     }));

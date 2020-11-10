@@ -201,26 +201,24 @@ function Table(props) {
   }, [props.children])
 
   useEffect(() => {
-    setTimeout(() => {
-      handleResize()
-    }, 0)
+    handleResize()
   }, [])
 
   const handleResize = () => {
-    setColsWidth(items.current.map(item => item.clientWidth))
+    setColsWidth(items.current.map(item => item && item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.clientWidth)
+        .map(item => item && item.clientWidth)
         .filter(item => item > 0),
     )
   }
 
-  console.log(colHeadersWidth)
   useEffect(() => {
-    setColsWidth(items.current.map(item => item.clientWidth))
+    console.log(items.current.map(item => item && item.clientWidth))
+    setColsWidth(items.current.map(item => item && item.clientWidth))
     setColHeadersWidth(
       itemsHeader.current
-        .map(item => item.clientWidth)
+        .map(item => item && item.clientWidth)
         .filter(item => item > 0),
     )
   }, [items, itemsHeader, props.data])
