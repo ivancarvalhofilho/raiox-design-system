@@ -75,21 +75,11 @@ const SalesStatusDot = styled.span`
 const CalendarCell = (props) => (
   <CalendarCellContainer
     id={props.id}
-    data-tooltip={
-      props.date.isBlockedSelection &&
+    {...(props.date.isBlockedSelection &&
       props.date.currentMonth &&
-      props.maxDateRange
-        ? `Não é possível selecionar um período maior que ${props.maxDateRange} dias`
-        : props.date.currentMonth && props.daySale
-        ? `R$ ${parseFloat(Math.abs(props.daySale.sale)).toLocaleString(
-            'pt-br',
-            {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            },
-          )}`
-        : ''
-    }
+      props.maxDateRange && {
+        'data-tooltip': `Não é possível selecionar um período maior que ${props.maxDateRange} dias`,
+      })}
     isSelected={props.date.isSelected}
     isHovered={props.date.isHovered}
     onClick={() =>
@@ -122,20 +112,18 @@ const CalendarCell = (props) => (
           <div>
             <SalesValue
               currentMonth={props.date.currentMonth}
-              data-tooltip={
-                !(
-                  props.date.isBlockedSelection &&
-                  props.date.currentMonth &&
-                  props.maxDateRange
-                )
-                  ? `R$ ${parseFloat(
-                      Math.abs(props.daySale.sale),
-                    ).toLocaleString('pt-br', {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}`
-                  : ''
-              }
+              {...(!(
+                props.date.isBlockedSelection &&
+                props.date.currentMonth &&
+                props.maxDateRange
+              ) && {
+                'data-tooltip': `R$ ${parseFloat(
+                  Math.abs(props.daySale.sale),
+                ).toLocaleString('pt-br', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}`,
+              })}
             >
               R${' '}
               {parseFloat(Math.abs(props.daySale.sale)).toLocaleString(

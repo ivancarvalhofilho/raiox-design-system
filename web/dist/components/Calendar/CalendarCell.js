@@ -17,6 +17,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n  width: 4px;\n  height: 4px;\n  border-radius: ", ";\n  background: ", ";\n"]);
 
@@ -106,12 +108,11 @@ var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), funct
 });
 
 var CalendarCell = function CalendarCell(props) {
-  return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, {
-    id: props.id,
-    "data-tooltip": props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange ? "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias") : props.date.currentMonth && props.daySale ? "R$ ".concat(parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    })) : '',
+  return /*#__PURE__*/_react["default"].createElement(CalendarCellContainer, _extends({
+    id: props.id
+  }, props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange && {
+    'data-tooltip': "N\xE3o \xE9 poss\xEDvel selecionar um per\xEDodo maior que ".concat(props.maxDateRange, " dias")
+  }, {
     isSelected: props.date.isSelected,
     isHovered: props.date.isHovered,
     onClick: function onClick() {
@@ -124,17 +125,18 @@ var CalendarCell = function CalendarCell(props) {
     currentMonth: props.date.currentMonth,
     isHolyday: props.date.isHolyday,
     isBlockedSelection: props.date.isBlockedSelection
-  }, props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DayNumber, {
+  }), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DayNumber, {
     currentMonth: props.date.currentMonth,
     isSelected: props.date.isSelected,
     isBlockedSelection: props.date.isBlockedSelection
-  }, props.date.day), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DaySales, null, props.daySale && /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(SalesValue, {
-    currentMonth: props.date.currentMonth,
-    "data-tooltip": !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) ? "R$ ".concat(parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
+  }, props.date.day), props.date.currentMonth && /*#__PURE__*/_react["default"].createElement(DaySales, null, props.daySale && /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(SalesValue, _extends({
+    currentMonth: props.date.currentMonth
+  }, !(props.date.isBlockedSelection && props.date.currentMonth && props.maxDateRange) && {
+    'data-tooltip': "R$ ".concat(parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
-    })) : ''
-  }, "R$", ' ', parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
+    }))
+  }), "R$", ' ', parseFloat(Math.abs(props.daySale.sale)).toLocaleString('pt-br', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })), /*#__PURE__*/_react["default"].createElement(SalesStatusDot, {
