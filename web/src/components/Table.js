@@ -116,9 +116,7 @@ const ContainerHeader = styled.div`
       ? (props.hasColor ? '8px ' : '') +
         props.colsWidth.reduce(
           (x, y, index) =>
-            `${x} minmax(${
-              props.colsWidth < 1000 ? `${props.colsWidth[index]}px` : 'auto'
-            }, auto)`,
+            `${x} minmax(${`${props.colsWidth[index]}px`}, auto)`,
           '',
         )
       : `${props.hasColor ? '8px ' : ''} repeat(${props.cols.length}, auto)`};
