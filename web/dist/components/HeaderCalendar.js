@@ -24,7 +24,7 @@ var _js = _interopRequireDefault(require("../../../tokens/js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  padding: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  padding: ", ";\n  white-space: nowrap;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -34,7 +34,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  margin-left: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -44,7 +44,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  white-space: nowrap;\n  margin-left: ", ";\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -54,7 +54,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  width: Calc(70% - 24px);\n  margin-left: 24px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -74,7 +74,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  cursor: pointer;\n  user-select: none;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  cursor: pointer;\n  user-select: none;\n  white-space: nowrap;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -84,7 +84,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  width: 30%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -117,12 +117,12 @@ var Label = _styledComponents["default"].div(_templateObject5(), function (props
   return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base');
 }, function (props) {
   return props.color;
+}, function (props) {
+  return props.theme.styles.spacing.inline.xxs;
 });
 
 var Value = _styledComponents["default"].div(_templateObject6(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
-}, function (props) {
-  return props.theme.styles.spacing.inline.xxs;
 });
 
 var MoneySign = _styledComponents["default"].div(_templateObject7(), function (props) {
