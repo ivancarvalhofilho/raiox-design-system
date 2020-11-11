@@ -8,7 +8,7 @@ export default {
   component: Tabs,
 }
 
-const Template = (args) => {
+const Template = args => {
   const [tabActive, setTabActive] = useState(0)
   return <Tabs {...args} tabActive={tabActive} onTabClick={setTabActive} />
 }

@@ -1,7 +1,7 @@
 import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
-import { CollapseContainer, SideValuePanel } from '../components'
+import { SideValuePanel } from '../components'
 import theme from '../../../tokens/js'
 
 it('should render', () => {

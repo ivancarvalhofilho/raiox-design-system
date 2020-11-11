@@ -1,19 +1,14 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import Calendar from '../components/Calendar/Calendar'
-import theme from '../../../tokens/js'
-import { ThemeProvider } from 'styled-components'
-import CalendarConst from '../components/Calendar/const'
 import 'jest-styled-components'
 import { mountWithTheme } from '../utils/testUtil'
-import Tabs from '../components/Tabs'
 import { DatePickerMonth } from '../components'
 import dayjs from 'dayjs'
 
 import { act } from 'react-dom/test-utils'
 
 import ReactDOM from 'react-dom'
+
 const mockProps = {
   showAllYears: false,
   data: ['2020-01', '2020-03', '2021-04', '2022-12']

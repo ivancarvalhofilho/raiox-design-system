@@ -9,20 +9,20 @@ export default {
 const ColorShower = styled.div`
   height: 40px;
   width: 40px;
-  background: ${(props) => props.color};
+  background: ${props => props.color};
 `
 
-const Template = (args) => (
+const Template = args => (
   <div>
     <span style={{ display: 'flex', flexDirection: 'column' }}>
-      {Object.keys(theme.colors).map((key) => (
+      {Object.keys(theme.colors).map(key => (
         <div>
           <h1>{key}</h1>
-          {Object.keys(theme.colors[key]).map((keyStyle) => (
+          {Object.keys(theme.colors[key]).map(keyStyle => (
             <div>
               <h2>{keyStyle}</h2>
               <span style={{ display: 'flex', flexDirection: 'row' }}>
-                {Object.keys(theme.colors[key][keyStyle]).map((keyColor) => (
+                {Object.keys(theme.colors[key][keyStyle]).map(keyColor => (
                   <span
                     style={{
                       display: 'flex',

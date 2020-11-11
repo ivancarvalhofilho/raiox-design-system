@@ -4,7 +4,6 @@ import Icon from '../src/components/Icon'
 import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
 import styled from 'styled-components'
 import theme from '../../tokens/js'
-import iconsBanco from '../../tokens/js/iconsBanco'
 
 export default {
   title: 'Example/Icon',

@@ -1,12 +1,12 @@
 import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
-import { CollapseContainer, Modal } from '../components'
-import PropTypes from 'prop-types'
+import { Modal } from '../components'
 
 import 'jest-styled-components'
 
 import { act } from 'react-dom/test-utils'
+
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {

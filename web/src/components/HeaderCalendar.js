@@ -6,6 +6,7 @@ import icons from '../../../tokens/js/icons'
 import dayjs from 'dayjs'
 import fontStyleMaker from '../utils/FontUtil'
 import theme from '../../../tokens/js'
+
 const Month = styled.div`
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 import theme from '../../../tokens/js'
@@ -13,7 +13,7 @@ const BackgroundContainer = styled.div`
   top: 0;
   overflow: hidden;
   left: 0;
-  display: ${(props) => (props.show ? 'flex' : 'none')};
+  display: ${props => (props.show ? 'flex' : 'none')};
   justify-content: center;
 `
 const ModalHeader = styled.div`
@@ -31,14 +31,14 @@ const ModalContainer = styled.div`
   transition: top 0.5s;
   background: white;
   position: absolute;
-  top: ${(props) =>
+  top: ${props =>
     props.show
       ? `calc(50% - ${props.top / 2}px)`
       : `-${props.top ? props.top : 5000}px`};
   padding: 17px;
   height: 436px;
 `
-const Modal = (props) => {
+const Modal = props => {
   const [show, setShow] = useState(props.show)
   const [height, setHeight] = useState(0)
   const ref = useRef()

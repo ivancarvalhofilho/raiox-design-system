@@ -8,16 +8,16 @@ export default {
   component: HeaderCalendar,
 }
 
-const Template = (args) => <HeaderCalendar {...args} />
+const Template = args => <HeaderCalendar {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
   month: 0,
   year: 2020,
   disabledLeft: true,
-  onBackMonthClick: () => alert("back"),
-  onNextMonthClick: () => alert("next"),
-  onMonthClick: () => alert("month"),
+  onBackMonthClick: () => alert('back'),
+  onNextMonthClick: () => alert('next'),
+  onMonthClick: () => alert('month'),
   values: [
     {
       label: 'Recebido',

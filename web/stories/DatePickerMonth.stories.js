@@ -9,7 +9,7 @@ export default {
   component: DatePickerMonth,
 }
 
-const Template = (args) => {
+const Template = args => {
   const [dateSelected, setSelectedDates] = useState('2020-01')
 
   return (
@@ -17,7 +17,7 @@ const Template = (args) => {
       <DatePickerMonth
         {...args}
         dateSelected={dateSelected}
-        onSelectMonth={(newDate) => {
+        onSelectMonth={newDate => {
           setSelectedDates(newDate)
         }}
         setComponentVisibility={() =>
@@ -38,8 +38,8 @@ export const LimitedYears = Template.bind({})
 LimitedYears.args = {
   showAllYears: false,
   data: ['2020-01', '2020-03', '2021-04', '2022-12']
-    .map((data) => dayjs(data))
-    .map((data) => ({
+    .map(data => dayjs(data))
+    .map(data => ({
       year: data.get('year'),
       month: data.get('month'),
       date: data.format('YYYY-MM'),

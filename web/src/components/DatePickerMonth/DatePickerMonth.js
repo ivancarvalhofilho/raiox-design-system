@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import YearNavigator from './YearNavigator'
 import MonthList from './MonthList'

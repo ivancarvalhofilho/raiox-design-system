@@ -12,7 +12,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import theme from '../../../tokens/js'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
-import clone from 'ramda/src/clone'
+
 const LoaderContainer = styled.div`
   display: flex;
   width: ${props => props.cols * '100'}%;

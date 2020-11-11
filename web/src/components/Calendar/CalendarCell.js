@@ -13,29 +13,29 @@ const CalendarCellContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   border: 1px solid
-    ${(props) =>
+    ${props =>
       props.isSelected
         ? Colors.brand.primary.darkest
         : Colors.neutral.dark['03']};
-  background: ${(props) =>
+  background: ${props =>
     (props.isHolyday && `${Colors.neutral.light['02']} !important`) ||
     ((props.isSelected || props.isHovered) &&
       `${Colors.brand.primary.light} !important`)};
-  cursor: ${(props) =>
+  cursor: ${props =>
     (props.isBlockedSelection && 'not-allowed') ||
     (props.currentMonth && 'pointer')};
 `
 const DayNumber = styled.span`
   height: 14px;
-  ${(props) =>
+  ${props =>
     fontStyleMaker(
       props.theme,
       'body',
       (props.isSelected && 'medium') || 'regular',
       'xs',
     )};
-  margin: ${(props) => props.theme.styles.spacing.inset.nano};
-  color: ${(props) =>
+  margin: ${props => props.theme.styles.spacing.inset.nano};
+  color: ${props =>
     (props.isBlockedSelection && Colors.neutral.dark['02']) ||
     (props.isSelected && Colors.brand.primary.darkest)};
   user-select: none;
@@ -44,20 +44,20 @@ const DaySales = styled.span`
   & > div {
     display: inline-flex;
     align-items: center;
-    margin: ${(props) => props.theme.styles.spacing.inset.nano};
+    margin: ${props => props.theme.styles.spacing.inset.nano};
     position: absolute;
     width: Calc(100% - 16px);
     bottom: 0;
     left: 0;
     justify-content: flex-end;
   }
-  ${(props) => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
+  ${props => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
 `
 const SalesValue = styled.span`
   height: 14px;
-  ${(props) => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
-  margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
-  color: ${(props) => !props.currentMonth && Colors.neutral.dark['02']};
+  ${props => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
+  margin-right: ${props => props.theme.styles.spacing.inset.quarck};
+  color: ${props => !props.currentMonth && Colors.neutral.dark['02']};
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
@@ -69,10 +69,10 @@ const SalesValue = styled.span`
 const SalesStatusDot = styled.span`
   width: 4px;
   height: 4px;
-  border-radius: ${(props) => props.theme.styles.border.radius.circular};
-  background: ${(props) => props.color};
+  border-radius: ${props => props.theme.styles.border.radius.circular};
+  background: ${props => props.color};
 `
-const CalendarCell = (props) => (
+const CalendarCell = props => (
   <CalendarCellContainer
     id={props.id}
     {...(props.date.isBlockedSelection &&

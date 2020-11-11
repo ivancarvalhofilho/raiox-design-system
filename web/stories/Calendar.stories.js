@@ -9,7 +9,7 @@ export default {
   component: Calendar,
 }
 
-const Template = (args) => {
+const Template = args => {
   const [selectedDates, setSelectedDates] = useState({
     state: CalendarConst.STATES.SELECTED,
     firstClickDate: null,

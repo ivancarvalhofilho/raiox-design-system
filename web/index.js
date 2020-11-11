@@ -1,2 +1,2 @@
-export * from './dist/components';
-export * from './dist/utils';
+export * from './dist/components'
+export * from './dist/utils'

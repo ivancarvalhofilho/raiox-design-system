@@ -7,7 +7,7 @@ export default {
   component: SideValuePanel,
 }
 
-const Template = (args) => (
+const Template = args => (
   <SideValuePanel
     values={['1.580,20', '979,80', '650,40', '- 50,00']}
     checkValue={[true, false, false, true]}

@@ -1,11 +1,7 @@
 import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
-import {
-  CollapseContainer,
-  HeaderCalendar,
-  SideValuePanel,
-} from '../components'
+import { HeaderCalendar } from '../components'
 import theme from '../../../tokens/js'
 
 it('should render', () => {

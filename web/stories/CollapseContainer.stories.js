@@ -7,7 +7,7 @@ export default {
   component: CollapseContainer,
 }
 
-const Template = (args) => <CollapseContainer {...args} />
+const Template = args => <CollapseContainer {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

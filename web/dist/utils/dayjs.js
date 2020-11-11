@@ -1,21 +1,23 @@
-"use strict";
+'use strict'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+})
+exports.default = void 0
 
-var _dayjs = _interopRequireDefault(require("dayjs"));
+var _dayjs = _interopRequireDefault(require('dayjs'))
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj }
+}
 
-var weekday = require('dayjs/plugin/weekday');
+var weekday = require('dayjs/plugin/weekday')
 
-_dayjs["default"].extend(weekday);
+_dayjs.default.extend(weekday)
 
-require('dayjs/locale/pt-br');
+require('dayjs/locale/pt-br')
 
-_dayjs["default"].locale('pt-br');
+_dayjs.default.locale('pt-br')
 
-var _default = _dayjs["default"];
-exports["default"] = _default;
+var _default = _dayjs.default
+exports.default = _default

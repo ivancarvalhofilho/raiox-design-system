@@ -1,8 +1,7 @@
 import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
-import { CollapseContainer, Modal, SideModal } from '../components'
-import PropTypes from 'prop-types'
+import { SideModal } from '../components'
 
 import 'jest-styled-components'
 

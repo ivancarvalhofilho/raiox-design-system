@@ -4,20 +4,20 @@ import styled from 'styled-components'
 
 const TabContainer = styled.div`
   padding: 5px 0px;
-  font-family: ${(props) => props.theme.fonts.family.body};
-  font-weight: ${(props) =>
+  font-family: ${props => props.theme.fonts.family.body};
+  font-weight: ${props =>
     props.active
       ? props.theme.fonts.weight.medium
       : props.theme.fonts.weight.regular};
-  width: ${(props) => props.width}%;
+  width: ${props => props.width}%;
   text-align: center;
-  color: ${(props) =>
+  color: ${props =>
     props.active
       ? props.theme.colors.brand.primary.darkest
       : props.theme.colors.neutral.dark['01']};
-  font-size: ${(props) => props.theme.fonts.fontSize.xxs};
+  font-size: ${props => props.theme.fonts.fontSize.xxs};
 `
-const Tab = (props) => (
+const Tab = props => (
   <TabContainer
     width={props.width}
     id={props.id}
