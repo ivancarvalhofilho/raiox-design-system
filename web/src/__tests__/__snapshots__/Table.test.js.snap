@@ -678,17 +678,7 @@ exports[`should render 1`] = `
         className="c0"
       >
         <styled.div
-          cols={
-            Array [
-              "data",
-              "nomeAdquirente",
-              "nomeEstabelecimento",
-              "contaCorrente",
-              "nomeModalidade",
-              "nomeCategoriaRecebimento",
-              "valor",
-            ]
-          }
+          cols={Array []}
           colsWidth={
             Array [
               undefined,
@@ -706,17 +696,7 @@ exports[`should render 1`] = `
         >
           <div
             className="c1"
-            cols={
-              Array [
-                "data",
-                "nomeAdquirente",
-                "nomeEstabelecimento",
-                "contaCorrente",
-                "nomeModalidade",
-                "nomeCategoriaRecebimento",
-                "valor",
-              ]
-            }
+            cols={Array []}
           >
             <styled.div
               key="0"
@@ -1552,22 +1532,13 @@ exports[`should render 1`] = `
                     0,
                   ]
                 }
-                cols={
-                  Array [
-                    "data",
-                    "nomeAdquirente",
-                    "nomeEstabelecimento",
-                    "contaCorrente",
-                    "nomeModalidade",
-                    "nomeCategoriaRecebimento",
-                    "valor",
-                  ]
-                }
+                cols={Array []}
                 dataLength={4}
                 hasChildren={true}
                 hasColor="colors"
                 hasMore={true}
                 height="calc(100vh - 140px - 100px - 65px)"
+                id="container"
                 loader={
                   <div
                     style={
@@ -1622,22 +1593,13 @@ exports[`should render 1`] = `
                       0,
                     ]
                   }
-                  cols={
-                    Array [
-                      "data",
-                      "nomeAdquirente",
-                      "nomeEstabelecimento",
-                      "contaCorrente",
-                      "nomeModalidade",
-                      "nomeCategoriaRecebimento",
-                      "valor",
-                    ]
-                  }
+                  cols={Array []}
                   dataLength={4}
                   hasChildren={true}
                   hasColor="colors"
                   hasMore={true}
                   height="calc(100vh - 140px - 100px - 65px)"
+                  id="container"
                   loader={
                     <div
                       style={
@@ -1696,7 +1658,6 @@ exports[`should render 1`] = `
                     >
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="0"
                         rows={
@@ -1710,7 +1671,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "#7BD6FB",
@@ -1788,7 +1748,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="1"
                         rows={
@@ -1802,7 +1761,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "01 Abr 2020",
@@ -1916,7 +1874,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="2"
                         rows={
@@ -1930,7 +1887,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Cielo",
@@ -2044,7 +2000,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="3"
                         rows={
@@ -2058,7 +2013,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "TONILU CAFÉ  ",
@@ -2172,7 +2126,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="4"
                         rows={
@@ -2186,7 +2139,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Ag. 65 c/c 00000130034723",
@@ -2300,7 +2252,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="5"
                         rows={
@@ -2314,7 +2265,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Débito",
@@ -2428,7 +2378,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="6"
                         rows={
@@ -2442,7 +2391,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Vendas",
@@ -2556,7 +2504,6 @@ exports[`should render 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="7"
                         rows={
@@ -2570,7 +2517,6 @@ exports[`should render 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               395.65,
@@ -2752,12 +2698,7 @@ exports[`should render 1`] = `
                                           className="c0"
                                         >
                                           <styled.div
-                                            cols={
-                                              Array [
-                                                "data",
-                                                "nomeEstabelecimento",
-                                              ]
-                                            }
+                                            cols={Array []}
                                             colsWidth={
                                               Array [
                                                 0,
@@ -2768,12 +2709,7 @@ exports[`should render 1`] = `
                                           >
                                             <div
                                               className="c23"
-                                              cols={
-                                                Array [
-                                                  "data",
-                                                  "nomeEstabelecimento",
-                                                ]
-                                              }
+                                              cols={Array []}
                                             >
                                               <styled.div
                                                 key="0"
@@ -3021,16 +2957,12 @@ exports[`should render 1`] = `
                                                       0,
                                                     ]
                                                   }
-                                                  cols={
-                                                    Array [
-                                                      "data",
-                                                      "nomeEstabelecimento",
-                                                    ]
-                                                  }
+                                                  cols={Array []}
                                                   dataLength={30}
                                                   hasChildren={true}
                                                   hasMore={true}
                                                   height="200px"
+                                                  id="container"
                                                   loader={
                                                     <div
                                                       style={
@@ -3080,16 +3012,12 @@ exports[`should render 1`] = `
                                                         0,
                                                       ]
                                                     }
-                                                    cols={
-                                                      Array [
-                                                        "data",
-                                                        "nomeEstabelecimento",
-                                                      ]
-                                                    }
+                                                    cols={Array []}
                                                     dataLength={30}
                                                     hasChildren={true}
                                                     hasMore={true}
                                                     height="200px"
+                                                    id="container"
                                                     loader={
                                                       <div
                                                         style={
@@ -3147,7 +3075,6 @@ exports[`should render 1`] = `
                                                         }
                                                       >
                                                         <styled.div
-                                                          id="container"
                                                           key="0"
                                                           rows={
                                                             Array [
@@ -3186,7 +3113,6 @@ exports[`should render 1`] = `
                                                         >
                                                           <div
                                                             className="c26"
-                                                            id="container"
                                                             rows={
                                                               Array [
                                                                 "14 Set 2020",
@@ -3945,7 +3871,6 @@ exports[`should render 1`] = `
                                                           </div>
                                                         </styled.div>
                                                         <styled.div
-                                                          id="container"
                                                           key="1"
                                                           rows={
                                                             Array [
@@ -3984,7 +3909,6 @@ exports[`should render 1`] = `
                                                         >
                                                           <div
                                                             className="c26"
-                                                            id="container"
                                                             rows={
                                                               Array [
                                                                 "TONILU CAFÉ  ",
@@ -5030,7 +4954,7 @@ exports[`should render complete 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(undefinedpx,auto);
 }
 
 .c10 {
@@ -5969,15 +5893,7 @@ exports[`should render complete 1`] = `
           </div>
         </styled.div>
         <styled.div
-          cols={
-            Array [
-              "contaCorrente",
-              "nomeBandeira",
-              "nomeModalidade",
-              "nomeCategoriaRecebimento",
-              "valor",
-            ]
-          }
+          cols={Array []}
           colsWidth={
             Array [
               0,
@@ -5992,15 +5908,7 @@ exports[`should render complete 1`] = `
         >
           <div
             className="c7"
-            cols={
-              Array [
-                "contaCorrente",
-                "nomeBandeira",
-                "nomeModalidade",
-                "nomeCategoriaRecebimento",
-                "valor",
-              ]
-            }
+            cols={Array []}
           >
             <styled.div
               key="0"
@@ -7147,20 +7055,13 @@ exports[`should render complete 1`] = `
                     0,
                   ]
                 }
-                cols={
-                  Array [
-                    "contaCorrente",
-                    "nomeBandeira",
-                    "nomeModalidade",
-                    "nomeCategoriaRecebimento",
-                    "valor",
-                  ]
-                }
+                cols={Array []}
                 dataLength={4}
                 hasChildren={true}
                 hasColor="colors"
                 hasMore={true}
                 height="calc(100vh - 140px - 100px - 65px)"
+                id="container"
                 loader={
                   <div
                     style={
@@ -7212,20 +7113,13 @@ exports[`should render complete 1`] = `
                       0,
                     ]
                   }
-                  cols={
-                    Array [
-                      "contaCorrente",
-                      "nomeBandeira",
-                      "nomeModalidade",
-                      "nomeCategoriaRecebimento",
-                      "valor",
-                    ]
-                  }
+                  cols={Array []}
                   dataLength={4}
                   hasChildren={true}
                   hasColor="colors"
                   hasMore={true}
                   height="calc(100vh - 140px - 100px - 65px)"
+                  id="container"
                   loader={
                     <div
                       style={
@@ -7284,7 +7178,6 @@ exports[`should render complete 1`] = `
                     >
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="0"
                         rows={
@@ -7298,7 +7191,6 @@ exports[`should render complete 1`] = `
                       >
                         <div
                           className="c12"
-                          id="container"
                           rows={
                             Array [
                               "Ag. 65 c/c 00000130034723",
@@ -7412,7 +7304,6 @@ exports[`should render complete 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="1"
                         rows={
@@ -7426,7 +7317,6 @@ exports[`should render complete 1`] = `
                       >
                         <div
                           className="c12"
-                          id="container"
                           rows={
                             Array [
                               "Elo",
@@ -7540,7 +7430,6 @@ exports[`should render complete 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="2"
                         rows={
@@ -7554,7 +7443,6 @@ exports[`should render complete 1`] = `
                       >
                         <div
                           className="c12"
-                          id="container"
                           rows={
                             Array [
                               "Débito",
@@ -7668,7 +7556,6 @@ exports[`should render complete 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="3"
                         rows={
@@ -7682,7 +7569,6 @@ exports[`should render complete 1`] = `
                       >
                         <div
                           className="c12"
-                          id="container"
                           rows={
                             Array [
                               "Vendas",
@@ -7796,7 +7682,6 @@ exports[`should render complete 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="4"
                         rows={
@@ -7810,7 +7695,6 @@ exports[`should render complete 1`] = `
                       >
                         <div
                           className="c12"
-                          id="container"
                           rows={
                             Array [
                               395.65,
@@ -8617,17 +8501,7 @@ exports[`should resize 1`] = `
         className="c0"
       >
         <styled.div
-          cols={
-            Array [
-              "data",
-              "nomeAdquirente",
-              "nomeEstabelecimento",
-              "contaCorrente",
-              "nomeModalidade",
-              "nomeCategoriaRecebimento",
-              "valor",
-            ]
-          }
+          cols={Array []}
           colsWidth={
             Array [
               undefined,
@@ -8645,17 +8519,7 @@ exports[`should resize 1`] = `
         >
           <div
             className="c1"
-            cols={
-              Array [
-                "data",
-                "nomeAdquirente",
-                "nomeEstabelecimento",
-                "contaCorrente",
-                "nomeModalidade",
-                "nomeCategoriaRecebimento",
-                "valor",
-              ]
-            }
+            cols={Array []}
           >
             <styled.div
               key="0"
@@ -9491,22 +9355,13 @@ exports[`should resize 1`] = `
                     0,
                   ]
                 }
-                cols={
-                  Array [
-                    "data",
-                    "nomeAdquirente",
-                    "nomeEstabelecimento",
-                    "contaCorrente",
-                    "nomeModalidade",
-                    "nomeCategoriaRecebimento",
-                    "valor",
-                  ]
-                }
+                cols={Array []}
                 dataLength={4}
                 hasChildren={true}
                 hasColor="colors"
                 hasMore={true}
                 height="calc(100vh - 140px - 100px - 65px)"
+                id="container"
                 loader={
                   <div
                     style={
@@ -9561,22 +9416,13 @@ exports[`should resize 1`] = `
                       0,
                     ]
                   }
-                  cols={
-                    Array [
-                      "data",
-                      "nomeAdquirente",
-                      "nomeEstabelecimento",
-                      "contaCorrente",
-                      "nomeModalidade",
-                      "nomeCategoriaRecebimento",
-                      "valor",
-                    ]
-                  }
+                  cols={Array []}
                   dataLength={4}
                   hasChildren={true}
                   hasColor="colors"
                   hasMore={true}
                   height="calc(100vh - 140px - 100px - 65px)"
+                  id="container"
                   loader={
                     <div
                       style={
@@ -9635,7 +9481,6 @@ exports[`should resize 1`] = `
                     >
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="0"
                         rows={
@@ -9649,7 +9494,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "#7BD6FB",
@@ -9727,7 +9571,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="1"
                         rows={
@@ -9741,7 +9584,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "01 Abr 2020",
@@ -9855,7 +9697,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="2"
                         rows={
@@ -9869,7 +9710,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Cielo",
@@ -9983,7 +9823,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="3"
                         rows={
@@ -9997,7 +9836,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "TONILU CAFÉ  ",
@@ -10111,7 +9949,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="4"
                         rows={
@@ -10125,7 +9962,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Ag. 65 c/c 00000130034723",
@@ -10239,7 +10075,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="5"
                         rows={
@@ -10253,7 +10088,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Débito",
@@ -10367,7 +10201,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="6"
                         rows={
@@ -10381,7 +10214,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               "Vendas",
@@ -10495,7 +10327,6 @@ exports[`should resize 1`] = `
                       </styled.div>
                       <styled.div
                         childrenHeight={200}
-                        id="container"
                         indexRowOpened={0}
                         key="7"
                         rows={
@@ -10509,7 +10340,6 @@ exports[`should resize 1`] = `
                       >
                         <div
                           className="c11"
-                          id="container"
                           rows={
                             Array [
                               395.65,
@@ -10691,12 +10521,7 @@ exports[`should resize 1`] = `
                                           className="c0"
                                         >
                                           <styled.div
-                                            cols={
-                                              Array [
-                                                "data",
-                                                "nomeEstabelecimento",
-                                              ]
-                                            }
+                                            cols={Array []}
                                             colsWidth={
                                               Array [
                                                 0,
@@ -10707,12 +10532,7 @@ exports[`should resize 1`] = `
                                           >
                                             <div
                                               className="c23"
-                                              cols={
-                                                Array [
-                                                  "data",
-                                                  "nomeEstabelecimento",
-                                                ]
-                                              }
+                                              cols={Array []}
                                             >
                                               <styled.div
                                                 key="0"
@@ -10960,16 +10780,12 @@ exports[`should resize 1`] = `
                                                       0,
                                                     ]
                                                   }
-                                                  cols={
-                                                    Array [
-                                                      "data",
-                                                      "nomeEstabelecimento",
-                                                    ]
-                                                  }
+                                                  cols={Array []}
                                                   dataLength={30}
                                                   hasChildren={true}
                                                   hasMore={true}
                                                   height="200px"
+                                                  id="container"
                                                   loader={
                                                     <div
                                                       style={
@@ -11019,16 +10835,12 @@ exports[`should resize 1`] = `
                                                         0,
                                                       ]
                                                     }
-                                                    cols={
-                                                      Array [
-                                                        "data",
-                                                        "nomeEstabelecimento",
-                                                      ]
-                                                    }
+                                                    cols={Array []}
                                                     dataLength={30}
                                                     hasChildren={true}
                                                     hasMore={true}
                                                     height="200px"
+                                                    id="container"
                                                     loader={
                                                       <div
                                                         style={
@@ -11086,7 +10898,6 @@ exports[`should resize 1`] = `
                                                         }
                                                       >
                                                         <styled.div
-                                                          id="container"
                                                           key="0"
                                                           rows={
                                                             Array [
@@ -11125,7 +10936,6 @@ exports[`should resize 1`] = `
                                                         >
                                                           <div
                                                             className="c26"
-                                                            id="container"
                                                             rows={
                                                               Array [
                                                                 "14 Set 2020",
@@ -11884,7 +11694,6 @@ exports[`should resize 1`] = `
                                                           </div>
                                                         </styled.div>
                                                         <styled.div
-                                                          id="container"
                                                           key="1"
                                                           rows={
                                                             Array [
@@ -11923,7 +11732,6 @@ exports[`should resize 1`] = `
                                                         >
                                                           <div
                                                             className="c26"
-                                                            id="container"
                                                             rows={
                                                               Array [
                                                                 "TONILU CAFÉ  ",

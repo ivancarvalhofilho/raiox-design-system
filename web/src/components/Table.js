@@ -66,10 +66,13 @@ const ContainerInfinite = styled(InfiniteScroll)`
   color: ${props => props.theme.colors.neutral.dark.base};
   grid-template-columns: ${props =>
     (props.hasColor ? '8px ' : '') +
-    props.colHeadersWidth.reduce(
-      (x, y, index) => `${x} minmax(${props.colHeadersWidth[index]}px,auto)`,
-      '',
-    )};
+    props.cols
+      .splice(props.color ? 1 : 0)
+      .reduce(
+        (x, y, index) =>
+          `${x} minmax(${`${props.colHeadersWidth[index]}px` || 'auto'},auto)`,
+        '',
+      )};
 `
 const Scroll = styled.div`
   background: white;

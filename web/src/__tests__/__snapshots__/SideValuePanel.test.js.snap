@@ -80,7 +80,7 @@ exports[`should render 1`] = `
                 positive={true}
               >
                 <span
-                  className="sc-AzgDb dcaHEm"
+                  className="sc-AzgDb cKKXzh"
                 >
                   1.580,20
                 </span>
@@ -196,7 +196,7 @@ exports[`should render 1`] = `
                 positive={null}
               >
                 <span
-                  className="sc-AzgDb fOCvbU"
+                  className="sc-AzgDb foUkQf"
                 >
                   979,80
                 </span>
@@ -312,7 +312,7 @@ exports[`should render 1`] = `
                 positive={null}
               >
                 <span
-                  className="sc-AzgDb fOCvbU"
+                  className="sc-AzgDb foUkQf"
                 >
                   650,40
                 </span>
@@ -364,7 +364,7 @@ exports[`should render 1`] = `
                 positive={false}
               >
                 <span
-                  className="sc-AzgDb ioZOBk"
+                  className="sc-AzgDb dXvhvL"
                 >
                   - 50,00
                 </span>
@@ -439,7 +439,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty cAIqQP"
+          className="sc-cOajty hMjJvv"
         >
           <styled.div>
             <div
@@ -468,7 +468,7 @@ exports[`should render full width 1`] = `
                 positive={true}
               >
                 <span
-                  className="sc-AzgDb dcaHEm"
+                  className="sc-AzgDb cKKXzh"
                 >
                   1.580,20
                 </span>
@@ -557,7 +557,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty cAIqQP"
+          className="sc-cOajty hMjJvv"
         >
           <styled.div>
             <div
@@ -586,7 +586,7 @@ exports[`should render full width 1`] = `
                 positive={null}
               >
                 <span
-                  className="sc-AzgDb fOCvbU"
+                  className="sc-AzgDb foUkQf"
                 >
                   979,80
                 </span>
@@ -675,7 +675,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty cAIqQP"
+          className="sc-cOajty hMjJvv"
         >
           <styled.div>
             <div
@@ -704,7 +704,7 @@ exports[`should render full width 1`] = `
                 positive={null}
               >
                 <span
-                  className="sc-AzgDb fOCvbU"
+                  className="sc-AzgDb foUkQf"
                 >
                   650,40
                 </span>
@@ -729,7 +729,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty cAIqQP"
+          className="sc-cOajty hMjJvv"
         >
           <styled.div>
             <div
@@ -758,7 +758,7 @@ exports[`should render full width 1`] = `
                 positive={false}
               >
                 <span
-                  className="sc-AzgDb ioZOBk"
+                  className="sc-AzgDb dXvhvL"
                 >
                   - 50,00
                 </span>
