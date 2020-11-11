@@ -65,6 +65,7 @@ node_modules/
 # dotenv environment variables file
 .env
 /.idea/
+/.idea/*
 /.idea/jsLinters/eslint.xml
 /web/public/index.html
 /.idea/modules.xml
@@ -72,7 +73,7 @@ node_modules/
 /.idea/raiox-design-system.iml
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
-./.idea/workspace.xml
+workspace.xml
 /web/.idea/
 .idea/raiox-design-system.iml
 .idea/workspace.xml
