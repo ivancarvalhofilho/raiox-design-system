@@ -60,12 +60,9 @@ exports[`should render 1`] = `
               Valor recebido
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 1.580,20"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 1.580,20"
             >
               <styled.span
                 positive={true}
@@ -176,12 +173,9 @@ exports[`should render 1`] = `
               Vendas
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 979,80"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 979,80"
             >
               <styled.span
                 positive={null}
@@ -292,12 +286,9 @@ exports[`should render 1`] = `
               Antecipações
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 650,40"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 650,40"
             >
               <styled.span
                 positive={null}
@@ -344,12 +335,9 @@ exports[`should render 1`] = `
               Ajustes
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ - 50,00"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ - 50,00"
             >
               <styled.span
                 positive={false}
@@ -448,12 +436,9 @@ exports[`should render full width 1`] = `
               Valor recebido
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 1.580,20"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 1.580,20"
             >
               <styled.span
                 positive={true}
@@ -566,12 +551,9 @@ exports[`should render full width 1`] = `
               Vendas
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 979,80"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 979,80"
             >
               <styled.span
                 positive={null}
@@ -684,12 +666,9 @@ exports[`should render full width 1`] = `
               Antecipações
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ 650,40"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ 650,40"
             >
               <styled.span
                 positive={null}
@@ -738,12 +717,9 @@ exports[`should render full width 1`] = `
               Ajustes
             </div>
           </styled.div>
-          <styled.span
-            data-tooltip="R$ - 50,00"
-          >
+          <styled.span>
             <span
               className="sc-kEjbxe jcfUNz"
-              data-tooltip="R$ - 50,00"
             >
               <styled.span
                 positive={false}

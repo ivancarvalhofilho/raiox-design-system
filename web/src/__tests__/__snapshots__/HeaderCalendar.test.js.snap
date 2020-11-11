@@ -29,7 +29,7 @@ exports[`should render 1`] = `
     >
       <styled.div>
         <div
-          className="sc-gsTCUz kforPu"
+          className="sc-gsTCUz dYSnHp"
         >
           <Icon
             appearance="primary"
@@ -188,7 +188,7 @@ exports[`should render 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-dlfnbm jbMwCp"
+              className="sc-dlfnbm fxVRkx"
               id="date"
               onClick={[Function]}
             >
@@ -199,13 +199,13 @@ exports[`should render 1`] = `
       </styled.div>
       <styled.div>
         <div
-          className="sc-eCssSg lffWUo"
+          className="sc-eCssSg gMzTxd"
         >
           <styled.div
             color="#2E7D32"
           >
             <div
-              className="sc-jSgupP iCwCmj"
+              className="sc-jSgupP beRTsV"
               color="#2E7D32"
             >
               Recebido
@@ -213,16 +213,17 @@ exports[`should render 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-iBPRYJ cBJcQN"
+              className="sc-iBPRYJ dsuRap"
             >
               R$
             </div>
           </styled.div>
           <styled.div
-            notLast={true}
+            data-tooltip="R$ 2.502,16"
           >
             <div
-              className="sc-gKsewC dAGjqn"
+              className="sc-gKsewC rnIlx"
+              data-tooltip="R$ 2.502,16"
             >
               2.502,16
             </div>
@@ -231,7 +232,7 @@ exports[`should render 1`] = `
             color="#D32F2F"
           >
             <div
-              className="sc-jSgupP NYaJV"
+              className="sc-jSgupP NfvZP"
               color="#D32F2F"
             >
               Previsto
@@ -239,16 +240,17 @@ exports[`should render 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-iBPRYJ cBJcQN"
+              className="sc-iBPRYJ dsuRap"
             >
               R$
             </div>
           </styled.div>
           <styled.div
-            notLast={false}
+            data-tooltip="R$ 8.660,07"
           >
             <div
-              className="sc-gKsewC dcSRol"
+              className="sc-gKsewC rnIlx"
+              data-tooltip="R$ 8.660,07"
             >
               8.660,07
             </div>
