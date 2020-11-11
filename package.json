@@ -5,7 +5,7 @@
   "main": "index.js",
   "files": [
     "web/dist",
-    "tokens"
+    "tokens/theme"
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",
