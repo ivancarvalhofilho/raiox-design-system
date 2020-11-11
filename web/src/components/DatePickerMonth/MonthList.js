@@ -27,11 +27,10 @@ const MonthListStyle = styled.div`
   margin-top: ${theme.styles.spacing.stack.nano};
 `
 const Month = styled.div`
-  background: ${(props) =>
-    props.selected && theme.colors.brand.primary.darkest};
-  cursor: ${(props) => props.active && 'pointer'};
-  opacity: ${(props) => !props.active && theme.styles.opacity.level.light};
-  ${(props) =>
+  background: ${props => props.selected && theme.colors.brand.primary.darkest};
+  cursor: ${props => props.active && 'pointer'};
+  opacity: ${props => !props.active && theme.styles.opacity.level.light};
+  ${props =>
     fontStyleMaker(
       props.theme,
       'body',
@@ -55,7 +54,7 @@ function MonthList(props) {
     name: months[0],
     active:
       !!props.showAllMonthsActive ||
-      props.months.some((month) => month.month === index),
+      props.months.some(month => month.month === index),
     date: generateDate(months[1]),
   }))
 
@@ -69,6 +68,7 @@ function MonthList(props) {
         <Month
           onClick={() => month.active && onSelectMonth(month)}
           selected={props.dateSelected === month.date}
+          id={`month${index}`}
           active={month.active}
           data-tooltip={!month.active ? props.disabledTooltipMessage : ''}
           key={index}

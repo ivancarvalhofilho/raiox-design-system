@@ -1,0 +1,1122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c4 {
+  border-bottom: 1px solid #E0E0E0;
+  margin: 1% 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  color: #303133;
+}
+
+.c5 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 8px 32px;
+  margin-top: 8px;
+}
+
+.c6 {
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303133;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 4px;
+  min-height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  opacity: 0.2;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303133;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 4px;
+  min-height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  box-shadow: 0px 0px 8px rgba(0,39,64,0.1);
+  border-radius: 4px;
+  padding: 16px 24px;
+}
+
+<DatePickerMonth
+  data={
+    Array [
+      Object {
+        "date": "2020-01",
+        "month": 0,
+        "year": 2020,
+      },
+      Object {
+        "date": "2020-03",
+        "month": 2,
+        "year": 2020,
+      },
+      Object {
+        "date": "2021-04",
+        "month": 3,
+        "year": 2021,
+      },
+      Object {
+        "date": "2022-12",
+        "month": 11,
+        "year": 2022,
+      },
+    ]
+  }
+  showAllYears={false}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <YearNavigator
+        onChange={[Function]}
+        showAllYears={false}
+        yearSelected={2020}
+        years={
+          Array [
+            "2020",
+            "2021",
+            "2022",
+          ]
+        }
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <Icon
+              appearance="primary"
+              disabled={true}
+              id="yearLeft"
+              onClick={[Function]}
+              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+              size="16px"
+              style={
+                Object {
+                  "marginRight": "8px",
+                  "opacity": 0.2,
+                }
+              }
+            >
+              <Styled(SVGInline)
+                appearance="primary"
+                disabled={true}
+                fill="#008488"
+                id="yearLeft"
+                onClick={[Function]}
+                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                size="16px"
+                style={
+                  Object {
+                    "marginRight": "8px",
+                    "opacity": 0.2,
+                  }
+                }
+                svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                width="16px"
+              >
+                <SVGInline
+                  appearance="primary"
+                  className="c2"
+                  classSuffix="-svg"
+                  cleanup={Array []}
+                  cleanupExceptions={Array []}
+                  component="span"
+                  disabled={true}
+                  fill="#008488"
+                  id="yearLeft"
+                  onClick={[Function]}
+                  path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                  size="16px"
+                  style={
+                    Object {
+                      "marginRight": "8px",
+                      "opacity": 0.2,
+                    }
+                  }
+                  svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                  width="16px"
+                >
+                  <span
+                    appearance="primary"
+                    className="SVGInline c2"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
+                      }
+                    }
+                    disabled={true}
+                    id="yearLeft"
+                    onClick={[Function]}
+                    path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                    size="16px"
+                    style={
+                      Object {
+                        "marginRight": "8px",
+                        "opacity": 0.2,
+                      }
+                    }
+                  />
+                </SVGInline>
+              </Styled(SVGInline)>
+            </Icon>
+            <div
+              id="year"
+              style={
+                Object {
+                  "userSelect": "none",
+                }
+              }
+            >
+              2020
+            </div>
+            <Icon
+              appearance="primary"
+              disabled={false}
+              id="yearRight"
+              onClick={[Function]}
+              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+              size="16px"
+              style={
+                Object {
+                  "marginLeft": "8px",
+                  "opacity": 1,
+                }
+              }
+            >
+              <Styled(SVGInline)
+                appearance="primary"
+                disabled={false}
+                fill="#008488"
+                id="yearRight"
+                onClick={[Function]}
+                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                size="16px"
+                style={
+                  Object {
+                    "marginLeft": "8px",
+                    "opacity": 1,
+                  }
+                }
+                svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                width="16px"
+              >
+                <SVGInline
+                  appearance="primary"
+                  className="c3"
+                  classSuffix="-svg"
+                  cleanup={Array []}
+                  cleanupExceptions={Array []}
+                  component="span"
+                  disabled={false}
+                  fill="#008488"
+                  id="yearRight"
+                  onClick={[Function]}
+                  path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                  size="16px"
+                  style={
+                    Object {
+                      "marginLeft": "8px",
+                      "opacity": 1,
+                    }
+                  }
+                  svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                  width="16px"
+                >
+                  <span
+                    appearance="primary"
+                    className="SVGInline c3"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c3-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
+                      }
+                    }
+                    disabled={false}
+                    id="yearRight"
+                    onClick={[Function]}
+                    path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                    size="16px"
+                    style={
+                      Object {
+                        "marginLeft": "8px",
+                        "opacity": 1,
+                      }
+                    }
+                  />
+                </SVGInline>
+              </Styled(SVGInline)>
+            </Icon>
+          </div>
+        </styled.div>
+      </YearNavigator>
+      <styled.div
+        horizontal={true}
+        style={
+          Object {
+            "left": "-24px",
+            "position": "relative",
+            "width": "Calc(100% + 24px + 24px)",
+          }
+        }
+      >
+        <div
+          className="c4"
+          style={
+            Object {
+              "left": "-24px",
+              "position": "relative",
+              "width": "Calc(100% + 24px + 24px)",
+            }
+          }
+        />
+      </styled.div>
+      <MonthList
+        months={
+          Array [
+            Object {
+              "date": "2020-01",
+              "month": 0,
+              "year": 2020,
+            },
+            Object {
+              "date": "2020-03",
+              "month": 2,
+              "year": 2020,
+            },
+          ]
+        }
+        showAllMonthsActive={false}
+        yearSelected={2020}
+      >
+        <styled.div>
+          <div
+            className="c5"
+          >
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month0"
+              key="0"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c6"
+                data-tooltip=""
+                id="month0"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jan
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month1"
+              key="1"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month1"
+                onClick={[Function]}
+                selected={false}
+              >
+                Fev
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month2"
+              key="2"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c6"
+                data-tooltip=""
+                id="month2"
+                onClick={[Function]}
+                selected={false}
+              >
+                Mar
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month3"
+              key="3"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month3"
+                onClick={[Function]}
+                selected={false}
+              >
+                Abr
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month4"
+              key="4"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month4"
+                onClick={[Function]}
+                selected={false}
+              >
+                Mai
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month5"
+              key="5"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month5"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jun
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month6"
+              key="6"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month6"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jul
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month7"
+              key="7"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month7"
+                onClick={[Function]}
+                selected={false}
+              >
+                Ago
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month8"
+              key="8"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month8"
+                onClick={[Function]}
+                selected={false}
+              >
+                Set
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month9"
+              key="9"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month9"
+                onClick={[Function]}
+                selected={false}
+              >
+                Out
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month10"
+              key="10"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month10"
+                onClick={[Function]}
+                selected={false}
+              >
+                Nov
+              </div>
+            </styled.div>
+            <styled.div
+              active={false}
+              id="month11"
+              key="11"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c7"
+                id="month11"
+                onClick={[Function]}
+                selected={false}
+              >
+                Dez
+              </div>
+            </styled.div>
+          </div>
+        </styled.div>
+      </MonthList>
+    </div>
+  </styled.div>
+</DatePickerMonth>
+`;
+
+exports[`should render withShowYears 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c3 {
+  border-bottom: 1px solid #E0E0E0;
+  margin: 1% 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  color: #303133;
+}
+
+.c4 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 8px 32px;
+  margin-top: 8px;
+}
+
+.c5 {
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303133;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 4px;
+  min-height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  box-shadow: 0px 0px 8px rgba(0,39,64,0.1);
+  border-radius: 4px;
+  padding: 16px 24px;
+}
+
+<DatePickerMonth
+  data={
+    Array [
+      Object {
+        "date": "2020-01",
+        "month": 0,
+        "year": 2020,
+      },
+      Object {
+        "date": "2020-03",
+        "month": 2,
+        "year": 2020,
+      },
+      Object {
+        "date": "2021-04",
+        "month": 3,
+        "year": 2021,
+      },
+      Object {
+        "date": "2022-12",
+        "month": 11,
+        "year": 2022,
+      },
+    ]
+  }
+  showAllYears={true}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <YearNavigator
+        onChange={[Function]}
+        showAllYears={true}
+        yearSelected={2020}
+        years={Array []}
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <Icon
+              appearance="primary"
+              disabled={false}
+              id="yearLeft"
+              onClick={[Function]}
+              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+              size="16px"
+              style={
+                Object {
+                  "marginRight": "8px",
+                  "opacity": 1,
+                }
+              }
+            >
+              <Styled(SVGInline)
+                appearance="primary"
+                disabled={false}
+                fill="#008488"
+                id="yearLeft"
+                onClick={[Function]}
+                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                size="16px"
+                style={
+                  Object {
+                    "marginRight": "8px",
+                    "opacity": 1,
+                  }
+                }
+                svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                width="16px"
+              >
+                <SVGInline
+                  appearance="primary"
+                  className="c2"
+                  classSuffix="-svg"
+                  cleanup={Array []}
+                  cleanupExceptions={Array []}
+                  component="span"
+                  disabled={false}
+                  fill="#008488"
+                  id="yearLeft"
+                  onClick={[Function]}
+                  path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                  size="16px"
+                  style={
+                    Object {
+                      "marginRight": "8px",
+                      "opacity": 1,
+                    }
+                  }
+                  svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                  width="16px"
+                >
+                  <span
+                    appearance="primary"
+                    className="SVGInline c2"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
+                      }
+                    }
+                    disabled={false}
+                    id="yearLeft"
+                    onClick={[Function]}
+                    path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>"
+                    size="16px"
+                    style={
+                      Object {
+                        "marginRight": "8px",
+                        "opacity": 1,
+                      }
+                    }
+                  />
+                </SVGInline>
+              </Styled(SVGInline)>
+            </Icon>
+            <div
+              id="year"
+              style={
+                Object {
+                  "userSelect": "none",
+                }
+              }
+            >
+              2020
+            </div>
+            <Icon
+              appearance="primary"
+              disabled={false}
+              id="yearRight"
+              onClick={[Function]}
+              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+              size="16px"
+              style={
+                Object {
+                  "marginLeft": "8px",
+                  "opacity": 1,
+                }
+              }
+            >
+              <Styled(SVGInline)
+                appearance="primary"
+                disabled={false}
+                fill="#008488"
+                id="yearRight"
+                onClick={[Function]}
+                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                size="16px"
+                style={
+                  Object {
+                    "marginLeft": "8px",
+                    "opacity": 1,
+                  }
+                }
+                svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                width="16px"
+              >
+                <SVGInline
+                  appearance="primary"
+                  className="c2"
+                  classSuffix="-svg"
+                  cleanup={Array []}
+                  cleanupExceptions={Array []}
+                  component="span"
+                  disabled={false}
+                  fill="#008488"
+                  id="yearRight"
+                  onClick={[Function]}
+                  path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                  size="16px"
+                  style={
+                    Object {
+                      "marginLeft": "8px",
+                      "opacity": 1,
+                    }
+                  }
+                  svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                  width="16px"
+                >
+                  <span
+                    appearance="primary"
+                    className="SVGInline c2"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
+                      }
+                    }
+                    disabled={false}
+                    id="yearRight"
+                    onClick={[Function]}
+                    path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>"
+                    size="16px"
+                    style={
+                      Object {
+                        "marginLeft": "8px",
+                        "opacity": 1,
+                      }
+                    }
+                  />
+                </SVGInline>
+              </Styled(SVGInline)>
+            </Icon>
+          </div>
+        </styled.div>
+      </YearNavigator>
+      <styled.div
+        horizontal={true}
+        style={
+          Object {
+            "left": "-24px",
+            "position": "relative",
+            "width": "Calc(100% + 24px + 24px)",
+          }
+        }
+      >
+        <div
+          className="c3"
+          style={
+            Object {
+              "left": "-24px",
+              "position": "relative",
+              "width": "Calc(100% + 24px + 24px)",
+            }
+          }
+        />
+      </styled.div>
+      <MonthList
+        showAllMonthsActive={true}
+        yearSelected={2020}
+      >
+        <styled.div>
+          <div
+            className="c4"
+          >
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month0"
+              key="0"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month0"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jan
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month1"
+              key="1"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month1"
+                onClick={[Function]}
+                selected={false}
+              >
+                Fev
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month2"
+              key="2"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month2"
+                onClick={[Function]}
+                selected={false}
+              >
+                Mar
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month3"
+              key="3"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month3"
+                onClick={[Function]}
+                selected={false}
+              >
+                Abr
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month4"
+              key="4"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month4"
+                onClick={[Function]}
+                selected={false}
+              >
+                Mai
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month5"
+              key="5"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month5"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jun
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month6"
+              key="6"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month6"
+                onClick={[Function]}
+                selected={false}
+              >
+                Jul
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month7"
+              key="7"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month7"
+                onClick={[Function]}
+                selected={false}
+              >
+                Ago
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month8"
+              key="8"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month8"
+                onClick={[Function]}
+                selected={false}
+              >
+                Set
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month9"
+              key="9"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month9"
+                onClick={[Function]}
+                selected={false}
+              >
+                Out
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month10"
+              key="10"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month10"
+                onClick={[Function]}
+                selected={false}
+              >
+                Nov
+              </div>
+            </styled.div>
+            <styled.div
+              active={true}
+              data-tooltip=""
+              id="month11"
+              key="11"
+              onClick={[Function]}
+              selected={false}
+            >
+              <div
+                className="c5"
+                data-tooltip=""
+                id="month11"
+                onClick={[Function]}
+                selected={false}
+              >
+                Dez
+              </div>
+            </styled.div>
+          </div>
+        </styled.div>
+      </MonthList>
+    </div>
+  </styled.div>
+</DatePickerMonth>
+`;

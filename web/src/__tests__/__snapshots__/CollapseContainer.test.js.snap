@@ -6,27 +6,27 @@ exports[`should render 1`] = `
 >
   <Styled(styled.div)>
     <div
-      className="sc-iqHYGH sc-hBEYos hmRvQo akcvU"
+      className="sc-jrAGrp sc-bqyKva cgjqqC kaQVhs"
     >
       <styled.div
         id="header"
         onClick={[Function]}
       >
         <div
-          className="sc-dQppl XyQTX"
+          className="sc-iqHYGH eKgapE"
           id="header"
           onClick={[Function]}
         >
           <styled.span>
             <span
-              className="sc-fFubgz eJExlT"
+              className="sc-hBEYos iSvsZD"
             >
               Teste
             </span>
           </styled.span>
           <styled.div>
             <div
-              className="sc-bqyKva bcvEpr"
+              className="sc-crrsfI iwGNqK"
             >
               <Icon
                 path="<svg width=\\"8\\" height=\\"5\\" viewBox=\\"0 0 8 5\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M6.67969 -2.70123e-07L4 2.63608L1.32031 -3.5857e-08L0.5 0.806962L4 4.25L7.5 0.806962L6.67969 -2.70123e-07Z\\" /></svg>"

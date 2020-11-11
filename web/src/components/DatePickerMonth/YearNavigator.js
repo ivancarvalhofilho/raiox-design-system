@@ -12,13 +12,13 @@ const YearNavigatorStyle = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: ${theme.styles.spacing.stack.xxxs};
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
 `
 
 function YearNavigator(props) {
   const index = props.years.findIndex(
-    (item) => item === props.yearSelected.toString(),
+    item => item === props.yearSelected.toString(),
   )
 
   const left = index > 0 || props.showAllYears
@@ -30,6 +30,7 @@ function YearNavigator(props) {
         size={theme.styles.icon.size.md}
         appearance="primary"
         disabled={!left}
+        id="yearLeft"
         style={{
           marginRight: theme.styles.spacing.stack.nano,
           opacity: !left ? theme.styles.opacity.level.light : 1,
@@ -46,12 +47,15 @@ function YearNavigator(props) {
         }
       />
 
-      <div style={{ userSelect: 'none' }}>{props.yearSelected}</div>
+      <div style={{ userSelect: 'none' }} id="year">
+        {props.yearSelected}
+      </div>
 
       <Icon
         size={theme.styles.icon.size.md}
         appearance="primary"
         disabled={!right}
+        id="yearRight"
         style={{
           marginLeft: theme.styles.spacing.stack.nano,
           opacity: !right ? theme.styles.opacity.level.light : 1,

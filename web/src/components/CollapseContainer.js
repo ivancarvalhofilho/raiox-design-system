@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Icon from './Icon'
 import icons from '../../../tokens/js/icons'
 import styled from 'styled-components'
-import fontStyleMaker from '../utils/FontUtil'
+import { fontStyleMaker } from '../utils'
 import { UnmountClosed } from 'react-collapse'
 import {
   Container as StyledContainer,
@@ -17,25 +17,25 @@ const Header = styled.div`
   justify-content: space-between;
 `
 const Button = styled.div`
-  padding-left: ${(props) => props.theme.styles.spacing.inline.nano};
+  padding-left: ${props => props.theme.styles.spacing.inline.nano};
 `
 
 const Divider = styled(DividerStyled)`
-  margin-top: ${(props) => props.theme.styles.spacing.stack.xxxs};
+  margin-top: ${props => props.theme.styles.spacing.stack.xxxs};
 `
 
 const Container = styled(StyledContainer)`
-  box-shadow: ${(props) => props.theme.styles.shadow.level0};
-  padding: ${(props) => props.theme.styles.spacing.inset.xs};
+  box-shadow: ${props => props.theme.styles.shadow.level0};
+  padding: ${props => props.theme.styles.spacing.inset.xs};
   background: white;
 `
 const Body = styled.div`
-  margin-top: ${(props) => props.theme.styles.spacing.stack.xxxs};
-  ${(props) =>
+  margin-top: ${props => props.theme.styles.spacing.stack.xxxs};
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base')};
 `
 const Title = styled.span`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(
       props.theme,
       'body',
@@ -44,11 +44,11 @@ const Title = styled.span`
       'brand.secondary.dark',
     )};
 `
-const CollapseContainer = (props) => {
+const CollapseContainer = props => {
   const [opened, setOpened] = useState(false)
   return (
     <Container>
-      <Header id={'header'} onClick={() => setOpened(!opened)}>
+      <Header id="header" onClick={() => setOpened(!opened)}>
         <Title>{props.title}</Title>
         <Button>
           <Icon
@@ -60,7 +60,7 @@ const CollapseContainer = (props) => {
       </Header>
       <UnmountClosed isOpened={opened}>
         <Divider horizontal />
-        <Body id={'children'}>{props.children}</Body>
+        <Body id="children">{props.children}</Body>
       </UnmountClosed>
     </Container>
   )

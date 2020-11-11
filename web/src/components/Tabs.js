@@ -32,7 +32,7 @@ const Tabs = props => (
           key={index}
           label={tab}
           width={100 / props.tabs.length}
-          onClick={() => props.onTabClick(index)}
+          onClick={() => !props.disabled && props.onTabClick(index)}
           active={props.tabActive === index}
         />
       ))}
