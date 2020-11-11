@@ -227,7 +227,7 @@ exports[`should render 1`] = `
                     className="SVGInline c2"
                     dangerouslySetInnerHTML={
                       Object {
-                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
+                        "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
                       }
                     }
                     disabled={true}
@@ -313,7 +313,7 @@ exports[`should render 1`] = `
                     className="SVGInline c3"
                     dangerouslySetInnerHTML={
                       Object {
-                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c3-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
+                        "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c3-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
                       }
                     }
                     disabled={false}
@@ -761,7 +761,7 @@ exports[`should render withShowYears 1`] = `
                     className="SVGInline c2"
                     dangerouslySetInnerHTML={
                       Object {
-                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
+                        "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
                       }
                     }
                     disabled={false}
@@ -847,7 +847,7 @@ exports[`should render withShowYears 1`] = `
                     className="SVGInline c2"
                     dangerouslySetInnerHTML={
                       Object {
-                        "__html": "<svg class=\\"SVGInline-svg sc-crrsfI-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
+                        "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
                       }
                     }
                     disabled={false}
