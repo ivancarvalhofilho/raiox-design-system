@@ -2,5 +2,5 @@ projectKey=rx-design-system
 serverUrl=http://192.168.121.245:9000
 serverVersion=8.5.1.38104
 dashboardUrl=http://192.168.121.245:9000/dashboard?id=rx-design-system
-ceTaskId=AXW4WQYYp49a221yX3jY
-ceTaskUrl=http://192.168.121.245:9000/api/ce/task?id=AXW4WQYYp49a221yX3jY
+ceTaskId=AXW4YSH8p49a221yX3je
+ceTaskUrl=http://192.168.121.245:9000/api/ce/task?id=AXW4YSH8p49a221yX3je

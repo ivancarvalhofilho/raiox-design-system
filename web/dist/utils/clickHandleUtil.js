@@ -1,35 +1,32 @@
-'use strict'
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
-})
-exports.handleOutsideDivClick = void 0
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handleOutsideDivClick = void 0;
 
-var _react = require('react')
+var _react = require("react");
 
 var handleOutsideDivClick = function handleOutsideDivClick(callbackAction) {
-  var wrapperRef = (0, _react.useRef)(null)
-  useOutsideAlerter(wrapperRef)
+  var wrapperRef = (0, _react.useRef)(null);
+  useOutsideAlerter(wrapperRef);
 
   function useOutsideAlerter(ref) {
-    ;(0, _react.useEffect)(
-      function() {
-        function handleClickOutside(event) {
-          if (ref.current && !ref.current.contains(event.target)) {
-            callbackAction()
-          }
+    (0, _react.useEffect)(function () {
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          callbackAction();
         }
+      }
 
-        document.addEventListener('mousedown', handleClickOutside)
-        return function() {
-          document.removeEventListener('mousedown', handleClickOutside)
-        }
-      },
-      [ref],
-    )
+      document.addEventListener('mousedown', handleClickOutside);
+      return function () {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [ref]);
   }
 
-  return wrapperRef
-}
+  return wrapperRef;
+};
 
-exports.handleOutsideDivClick = handleOutsideDivClick
+exports.handleOutsideDivClick = handleOutsideDivClick;

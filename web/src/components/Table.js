@@ -389,11 +389,11 @@ function Table(props) {
                         border={indexRow !== props.data[key].values.length - 1}
                         first={indexCol === 0}
                         last={indexCol === cols.length}
-                        ref={ref => {
+                        ref={ref =>
                           indexRow === 0 && key !== 'colors'
                             ? (items.current[indexCol] = ref)
                             : null
-                        }}
+                        }
                       >
                         <SpanValue>
                           {props.data[key].template
@@ -489,11 +489,11 @@ function Table(props) {
                           id={`item${indexCol}${indexRow}`}
                           children={props.indexRowOpened === indexRow}
                           justify={props.data[key].justify}
-                          ref={ref => {
+                          ref={ref =>
                             indexRow === 0 && key !== 'colors'
                               ? (items.current[indexCol] = ref)
                               : null
-                          }}
+                          }
                           clicable={props.isMultiple}
                           onClick={() =>
                             props.isMultiple && props.onRowClick(indexRow)
