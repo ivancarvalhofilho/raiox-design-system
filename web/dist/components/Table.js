@@ -179,7 +179,7 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
 });
 
@@ -193,7 +193,7 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat("".concat(props.colHeadersWidth[index], "px") || 'auto', ",auto)");
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
 });
 

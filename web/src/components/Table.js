@@ -48,7 +48,12 @@ const Container = styled.div`
     props.cols
       .splice(props.color ? 1 : 0)
       .reduce(
-        (x, y, index) => `${x} minmax(${props.colHeadersWidth[index]}px,auto)`,
+        (x, y, index) =>
+          `${x} minmax(${
+            props.colHeadersWidth[index]
+              ? `${props.colHeadersWidth[index]}px`
+              : 'auto'
+          },auto)`,
         '',
       )};
 `
@@ -70,7 +75,11 @@ const ContainerInfinite = styled(InfiniteScroll)`
       .splice(props.color ? 1 : 0)
       .reduce(
         (x, y, index) =>
-          `${x} minmax(${`${props.colHeadersWidth[index]}px` || 'auto'},auto)`,
+          `${x} minmax(${
+            props.colHeadersWidth[index]
+              ? `${props.colHeadersWidth[index]}px`
+              : 'auto'
+          },auto)`,
         '',
       )};
 `
