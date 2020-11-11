@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Icon from '../src/components/Icon'
-import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
+import iconsAdquirentes from '../../tokens/theme/iconsAdquirente'
 import styled from 'styled-components'
-import theme from '../../tokens/js'
+import theme from '../../tokens/theme'
 
 export default {
   title: 'Example/Icon',

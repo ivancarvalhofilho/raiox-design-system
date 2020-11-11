@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../tokens/js'
+import theme from '../../tokens/theme'
 
 export default {
   title: 'Example/Color',

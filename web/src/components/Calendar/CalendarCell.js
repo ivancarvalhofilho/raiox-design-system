@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Colors from '../../../../tokens/js/colors'
+import Colors from '../../../../tokens/theme/colors'
 import fontStyleMaker from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
 

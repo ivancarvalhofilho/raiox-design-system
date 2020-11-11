@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Icon from './Icon'
-import icons from '../../../tokens/js/icons'
+import icons from '../../../tokens/theme/icons'
 import styled from 'styled-components'
 import { fontStyleMaker } from '../utils'
 import { UnmountClosed } from 'react-collapse'

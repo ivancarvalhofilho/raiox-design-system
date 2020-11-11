@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import theme from '../../../../tokens/js'
+import theme from '../../../../tokens/theme'
 import fontStyleMaker from '../../utils/FontUtil'
-import icons from '../../../../tokens/js/icons'
+import icons from '../../../../tokens/theme/icons'
 import Icon from '../Icon'
 
 const YearNavigatorStyle = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import HeaderCalendar from '../src/components/HeaderCalendar'
-import theme from '../../tokens/js'
+import theme from '../../tokens/theme'
 
 export default {
   title: 'Example/HeaderCalendar',

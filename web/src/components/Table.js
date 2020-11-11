@@ -9,9 +9,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import theme from '../../../tokens/js'
+import theme from '../../../tokens/theme'
 import Icon from './Icon'
-import icons from '../../../tokens/js/icons'
+import icons from '../../../tokens/theme/icons'
 
 const LoaderContainer = styled.div`
   display: flex;

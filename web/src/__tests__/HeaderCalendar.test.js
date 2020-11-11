@@ -2,7 +2,7 @@ import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import { HeaderCalendar } from '../components'
-import theme from '../../../tokens/js'
+import theme from '../../../tokens/theme'
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')

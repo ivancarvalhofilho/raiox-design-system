@@ -2,8 +2,8 @@ import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import Icon from '../components/Icon'
-import iconsBanco from '../../../tokens/js/iconsBanco'
-import iconsAdquirentes from '../../../tokens/js/iconsAdquirente'
+import iconsBanco from '../../../tokens/theme/iconsBanco'
+import iconsAdquirentes from '../../../tokens/theme/iconsAdquirente'
 
 const testIcon = (appearance, size, disabled, spin) => {
   const spy = jest.spyOn(global.console, 'error')
