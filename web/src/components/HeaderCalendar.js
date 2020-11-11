@@ -12,17 +12,17 @@ const Month = styled.div`
   align-items: center;
 `
 const Date = styled.div`
-  margin-left: ${props => props.theme.styles.spacing.inline.nano};
-  ${props =>
+  margin-left: ${(props) => props.theme.styles.spacing.inline.nano};
+  ${(props) =>
     fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')};
   cursor: pointer;
   user-select: none;
 `
 const Container = styled.div`
-  border: ${props => props.theme.styles.border.width.hairline} solid #e0e0e0;
+  border: ${(props) => props.theme.styles.border.width.hairline} solid #e0e0e0;
   box-sizing: border-box;
-  border-radius: ${props => props.theme.styles.border.sm};
-  padding: ${props => props.theme.styles.spacing.inset.xs};
+  border-radius: ${(props) => props.theme.styles.border.sm};
+  padding: ${(props) => props.theme.styles.spacing.inset.xs};
   display: flex;
   align-items: center;
   height: 56px;
@@ -33,23 +33,25 @@ const Values = styled.div`
   align-items: center;
 `
 const Label = styled.div`
-  ${props =>
+  ${(props) =>
     fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 `
 const Value = styled.div`
-  ${props =>
+  ${(props) =>
     fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')};
-  margin-right: ${props =>
-    props.notLast && props.theme.styles.spacing.inline.xxs};
+  margin-left: ${(props) => props.theme.styles.spacing.inline.xxs};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 const MoneySign = styled.div`
-  ${props =>
+  ${(props) =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
-  padding: ${props =>
+  padding: ${(props) =>
     `0 ${props.theme.styles.spacing.inline.quarck} 0 ${props.theme.styles.spacing.inline.nano}`};
 `
-const HeaderCalendar = props => (
+const HeaderCalendar = (props) => (
   <Container>
     <Month>
       <Icon
@@ -90,7 +92,7 @@ const HeaderCalendar = props => (
           <React.Fragment key={index}>
             <Label color={color}>{label}</Label>
             <MoneySign>R$</MoneySign>
-            <Value notLast={index !== props.values.length - 1}>{value}</Value>
+            <Value data-tooltip={`R$ ${value}`}>{value}</Value>
           </React.Fragment>
         ))}
     </Values>

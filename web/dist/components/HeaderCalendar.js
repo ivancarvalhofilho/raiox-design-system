@@ -34,7 +34,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  margin-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  margin-left: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -122,7 +122,7 @@ var Label = _styledComponents["default"].div(_templateObject5(), function (props
 var Value = _styledComponents["default"].div(_templateObject6(), function (props) {
   return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
 }, function (props) {
-  return props.notLast && props.theme.styles.spacing.inline.xxs;
+  return props.theme.styles.spacing.inline.xxs;
 });
 
 var MoneySign = _styledComponents["default"].div(_templateObject7(), function (props) {
@@ -173,7 +173,7 @@ var HeaderCalendar = function HeaderCalendar(props) {
     }, /*#__PURE__*/_react["default"].createElement(Label, {
       color: color
     }, label), /*#__PURE__*/_react["default"].createElement(MoneySign, null, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
-      notLast: index !== props.values.length - 1
+      "data-tooltip": "R$ ".concat(value)
     }, value));
   })));
 };
