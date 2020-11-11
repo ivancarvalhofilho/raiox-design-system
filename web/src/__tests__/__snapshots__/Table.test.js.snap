@@ -29,7 +29,7 @@ exports[`should render 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
 }
 
 .c25 {
@@ -45,7 +45,7 @@ exports[`should render 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: minmax(auto,auto) minmax(auto,auto);
 }
 
 .c9 {
@@ -90,7 +90,6 @@ exports[`should render 1`] = `
   display: inline-grid;
   font-size: 14px;
   border: 1px solid #E0E0E0;
-  padding-right: 13px;
   background-color: #f2f5f7;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -104,7 +103,6 @@ exports[`should render 1`] = `
   display: inline-grid;
   font-size: 14px;
   border: 1px solid #E0E0E0;
-  padding-right: 13px;
   background-color: #f2f5f7;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -4938,7 +4936,7 @@ exports[`should render complete 1`] = `
   height: auto !important;
   max-height: calc(100vh - 140px - 100px - 65px);
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(undefinedpx,auto);
+  grid-template-columns: 8px minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
 }
 
 .c18 {
@@ -4954,7 +4952,7 @@ exports[`should render complete 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(undefinedpx,auto);
+  grid-template-columns: 8px minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
 }
 
 .c10 {
@@ -5010,7 +5008,6 @@ exports[`should render complete 1`] = `
   display: inline-grid;
   font-size: 14px;
   border: 1px solid #E0E0E0;
-  padding-right: 13px;
   background-color: #f2f5f7;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -7851,7 +7848,7 @@ exports[`should resize 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
 }
 
 .c25 {
@@ -7867,7 +7864,7 @@ exports[`should resize 1`] = `
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: #303133;
-  grid-template-columns: minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: minmax(auto,auto) minmax(auto,auto);
 }
 
 .c9 {
@@ -7912,7 +7909,6 @@ exports[`should resize 1`] = `
   display: inline-grid;
   font-size: 14px;
   border: 1px solid #E0E0E0;
-  padding-right: 13px;
   background-color: #f2f5f7;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -7926,7 +7922,6 @@ exports[`should resize 1`] = `
   display: inline-grid;
   font-size: 14px;
   border: 1px solid #E0E0E0;
-  padding-right: 13px;
   background-color: #f2f5f7;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;

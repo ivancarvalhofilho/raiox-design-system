@@ -118,7 +118,6 @@ const ContainerHeader = styled.div`
   border: ${props =>
     `${props.theme.styles.border.width.hairline} solid ${props.theme.colors.neutral.dark['03']}`};
   overflow: ${props => props.optional && 'hidden'};
-  padding-right: ${props => !props.optional && props.paddingScroll && '13px'};
   background-color: #f2f5f7;
   min-width: ${props => !props.optional && 'fit-content'};
   width: ${props => (!props.optional && props.paddingScroll ? '101%' : '100%')};

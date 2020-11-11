@@ -102,7 +102,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  padding-right: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -207,8 +207,6 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return "".concat(props.theme.styles.border.width.hairline, " solid ").concat(props.theme.colors.neutral.dark['03']);
 }, function (props) {
   return props.optional && 'hidden';
-}, function (props) {
-  return !props.optional && props.paddingScroll && '13px';
 }, function (props) {
   return !props.optional && 'fit-content';
 }, function (props) {
