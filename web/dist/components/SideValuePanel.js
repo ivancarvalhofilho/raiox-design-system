@@ -117,8 +117,8 @@ var SideValuePanel = function SideValuePanel(props) {
       key: index
     }, /*#__PURE__*/_react["default"].createElement(Item, {
       fullWidth: props.fullWidth
-    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, {
-      "data-tooltip": "R$ ".concat(value)
+    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, props.showTooltip && {
+      'data-tooltip': "R$ ".concat(value)
     }, /*#__PURE__*/_react["default"].createElement(DollarSign, {
       positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
     }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
@@ -140,6 +140,7 @@ var SideValuePanel = function SideValuePanel(props) {
 var _default = SideValuePanel;
 exports["default"] = _default;
 SideValuePanel.propTypes = {
+  showTooltip: _propTypes["default"].bool,
   checkValue: _propTypes["default"].array,
   fullWidth: _propTypes["default"].bool,
   subtitles: _propTypes["default"].array,
