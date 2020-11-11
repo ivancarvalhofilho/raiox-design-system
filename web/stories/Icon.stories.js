@@ -3,7 +3,6 @@ import React from 'react'
 import Icon from '../src/components/Icon'
 import iconsAdquirentes from '../../tokens/js/iconsAdquirente'
 import styled from 'styled-components'
-import { Title } from '../src/components/StyledComponents'
 import theme from '../../tokens/js'
 import iconsBanco from '../../tokens/js/iconsBanco'
 
@@ -12,10 +11,17 @@ export default {
   component: Icon,
 }
 
-const Template = (args) => (
+const Title = styled.div`
+  font-family: ${props => props.theme.fonts.family.body};
+  font-weight: ${props => props.theme.fonts.weight.medium};
+  font-size: ${props => props.theme.fonts.fontSize.xl};
+  color: ${props => props.theme.colors.neutral.dark.base};
+`
+
+const Template = args => (
   <div>
     <span style={{ display: 'flex', flexDirection: 'row' }}>
-      {Object.keys(theme.icons).map((key) => (
+      {Object.keys(theme.icons).map(key => (
         <span
           style={{
             display: 'flex',
@@ -33,13 +39,13 @@ const Template = (args) => (
   </div>
 )
 
-const Template2 = (args) => (
+const Template2 = args => (
   <div>
-    {Object.keys(iconsAdquirentes).map((key) => (
+    {Object.keys(iconsAdquirentes).map(key => (
       <div style={{ margin: '0 0 50px 0' }}>
         <Title>{key.toUpperCase()}</Title>
         <span style={{ display: 'flex', flexDirection: 'row' }}>
-          {Object.keys(iconsAdquirentes[key]).map((keyIcon) => (
+          {Object.keys(iconsAdquirentes[key]).map(keyIcon => (
             <span
               style={{
                 display: 'flex',
@@ -63,10 +69,10 @@ const Template2 = (args) => (
   </div>
 )
 
-const Template3 = (args) => (
+const Template3 = args => (
   <div style={{ padding: '60px' }}>
     <span style={{ display: 'flex', flexDirection: 'row' }}>
-      {Object.keys(theme.iconsBanco).map((key) => (
+      {Object.keys(theme.iconsBanco).map(key => (
         <span
           style={{
             display: 'flex',

@@ -102,7 +102,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  padding-right: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -179,7 +179,7 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
 });
 
@@ -192,8 +192,8 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
-  return (props.hasColor ? '8px ' : '') + props.colHeadersWidth.reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index], "px,auto)");
+  return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
+    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
 });
 
@@ -207,8 +207,6 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return "".concat(props.theme.styles.border.width.hairline, " solid ").concat(props.theme.colors.neutral.dark['03']);
 }, function (props) {
   return props.optional && 'hidden';
-}, function (props) {
-  return !props.optional && props.paddingScroll && '13px';
 }, function (props) {
   return !props.optional && 'fit-content';
 }, function (props) {
@@ -319,7 +317,6 @@ function Table(props) {
     }));
   };
 
-  console.log(childrenSize, props.children, props.childrenSize);
   (0, _react.useEffect)(function () {
     setColsWidth(items.current.map(function (item) {
       return item && item.clientWidth;
@@ -347,7 +344,7 @@ function Table(props) {
       clicable: true,
       last: indexCol === cols.length,
       key: indexCol,
-      id: "header".concat(indexCol),
+      id: "headerOptional".concat(indexCol),
       justify: props.data[key].justify,
       onClick: function onClick() {
         props.data[key].ordenable && props.onClickToOrder(key);
@@ -398,6 +395,7 @@ function Table(props) {
       path: props.orderBy !== key ? _js["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _js["default"].icons['arrow-up'] : _js["default"].icons['arrow-down']
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
+    id: "containerOptional",
     optional: true,
     colHeadersWidth: colHeadersWidth,
     hasColor: hasColor,
@@ -440,12 +438,14 @@ function Table(props) {
     onMouseEnter: function onMouseEnter() {
       setOptionalMouse(true);
     },
+    id: "scrollableDiv",
     ref: scrollableDiv,
     style: {
       width: '100%',
       minWidth: 'fit-content'
     }
   }, /*#__PURE__*/_react["default"].createElement(ContainerInfinite, {
+    id: "container",
     cols: props.complete ? cols : colsOriginalWithoutColor,
     ref: content,
     style: {

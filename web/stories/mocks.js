@@ -20,6 +20,14 @@ export const tableMock = {
       ordenable: true,
       params: ['data', 'nomeBandeira', 'modalidade'],
     },
+    optional: {
+      title: 'Optional',
+      values: ['Cielo', 'Cielo', 'GetNet', 'Cielo'],
+      justify: 'left',
+      ordenable: true,
+      optional: true,
+      params: ['data', 'nomeBandeira', 'modalidade'],
+    },
     nomeEstabelecimento: {
       title: 'Estabelecimento',
       values: ['TONILU CAFÉ  ', 'TONILU CAFÉ  ', '71363', 'TONILU CAFÉ  '],

@@ -6,7 +6,7 @@ import { Divider, FlexCenter, TextRow } from './StyledComponents'
 import Icon from './Icon'
 
 const Title = styled.div`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.01')};
   margin-bottom: 8px;
 `
@@ -16,10 +16,9 @@ const Container = styled.div`
   justify-content: center;
 `
 const Item = styled.div`
-  ${(props) =>
+  ${props =>
     props.fullWidth
-      ? `width: 100%;
-      margin: 0 ${(props) => props.theme.styles.spacing.inline.xxxs};`
+      ? `width: 100%; margin: 0 ${props.theme.styles.spacing.inline.xxxs};`
       : 'margin: 0px 40px'};
   white-space: nowrap;
   overflow: hidden;
@@ -27,9 +26,9 @@ const Item = styled.div`
   text-align: center;
 `
 const Value = styled.span`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')}
-  color: ${(props) =>
+  color: ${props =>
     props.positive === true
       ? props.theme.colors.feedback.success.dark
       : props.positive === false && props.theme.colors.feedback.danger.dark};
@@ -38,25 +37,25 @@ const Value = styled.span`
   text-overflow: ellipsis;
 `
 const DollarSign = styled.span`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')}
-  margin-right: ${(props) => props.theme.styles.spacing.inset.quarck};
-  color: ${(props) =>
+  margin-right: ${props => props.theme.styles.spacing.inset.quarck};
+  color: ${props =>
     props.positive === true
       ? props.theme.colors.feedback.success.dark
       : props.positive === false && props.theme.colors.feedback.danger.dark};
 `
 const Subtitle = styled(TextRow)`
-  ${(props) =>
+  ${props =>
     fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
   margin-top: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.color};
+  color: ${props => props.color};
 `
 
-const SideValuePanel = (props) => (
+const SideValuePanel = props => (
   <Container>
     {props.values.map((value, index) => (
       <React.Fragment key={index}>

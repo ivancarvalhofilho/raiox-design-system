@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 import 'jest-styled-components'
 
+import { act } from 'react-dom/test-utils'
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {
@@ -27,28 +28,38 @@ it('should open', () => {
     title: 'test',
   }
 
-  const modal = mountWithTheme(
-    <Modal
-      {...props}
-      onClickOut={() => {
-        mockClick()
-        props = { ...props, show: !props.show }
-      }}
-    >
-      TestChildren
-    </Modal>,
-  )
+  let modal = null
+
+  act(() => {
+    modal = mountWithTheme(
+      <Modal
+        {...props}
+        onClickOut={() => {
+          mockClick()
+          props = { ...props, show: !props.show }
+        }}
+      >
+        TestChildren
+      </Modal>,
+    )
+  })
   jest.useFakeTimers()
   expect(modal).toHaveStyleRule('display', 'none')
-  props = { ...props, show: true }
-  modal.setProps(props)
-  modal.update()
-  jest.advanceTimersByTime(600)
+  act(() => {
+    props = { ...props, show: true }
+    modal.setProps(props)
+    modal.update()
+    jest.advanceTimersByTime(600)
+  })
   expect(modal).toHaveStyleRule('display', 'flex')
-  modal.simulate('click')
-  modal.setProps(props)
-  jest.advanceTimersByTime(600)
-  modal.update()
+  act(() => {
+    modal.simulate('click')
+    modal.setProps(props)
+  })
+  act(() => {
+    modal.update()
+    jest.advanceTimersByTime(600)
+  })
   expect(modal).toHaveStyleRule('display', 'none')
   expect(mockClick).toHaveBeenCalled()
 })

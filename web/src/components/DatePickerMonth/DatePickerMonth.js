@@ -14,8 +14,8 @@ const MonthByYearSelectorStyled = styled.div`
   padding: ${theme.styles.spacing.squish.xs};
 `
 
-const groupBy = function (xs, key) {
-  return xs.reduce(function (rv, x) {
+const groupBy = function(xs, key) {
+  return xs.reduce(function(rv, x) {
     ;(rv[x[key]] = rv[x[key]] || []).push(x)
     return rv
   }, {})
@@ -38,7 +38,9 @@ function DatePickerMonth(props) {
     <MonthByYearSelectorStyled ref={wrapperRef}>
       <YearNavigator
         yearSelected={year}
-        onChange={(year) => setYear(year)}
+        onChange={year => {
+          setYear(year)
+        }}
         disableLeft={props.disableLeftYearPicker}
         disableRight={props.disableRightYearPicker}
         years={Object.keys(yearMonth).sort()}
@@ -67,12 +69,12 @@ function DatePickerMonth(props) {
 DatePickerMonth.propTypes = {
   data: PropTypes.any,
   dateSelected: PropTypes.any,
+  disableLeftYearPicker: PropTypes.bool,
+  disableRightYearPicker: PropTypes.bool,
+  disabledMonthTooltipMessage: PropTypes.string,
   onSelectMonth: PropTypes.func,
   setComponentVisibility: PropTypes.func,
   showAllYears: PropTypes.bool,
-  disableRightYearPicker: PropTypes.bool,
-  disableLeftYearPicker: PropTypes.bool,
-  disabledMonthTooltipMessage: PropTypes.string,
 }
 
 export default DatePickerMonth
