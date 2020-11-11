@@ -51,7 +51,7 @@ exports[`should render 1`] = `
     >
       <styled.div>
         <div
-          className="sc-cOajty kFjZhL"
+          className="sc-cOajty QQGxY"
         >
           <styled.div>
             <div
@@ -61,21 +61,30 @@ exports[`should render 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={true}
+            data-tooltip="R$ 1.580,20"
           >
             <span
-              className="sc-khAkjo jhWwdN"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 1.580,20"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={true}
-          >
-            <span
-              className="sc-AzgDb dcaHEm"
-            >
-              1.580,20
+              <styled.span
+                positive={true}
+              >
+                <span
+                  className="sc-khAkjo jhWwdN"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={true}
+              >
+                <span
+                  className="sc-AzgDb dcaHEm"
+                >
+                  1.580,20
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -158,7 +167,7 @@ exports[`should render 1`] = `
       </styled.div>
       <styled.div>
         <div
-          className="sc-cOajty kFjZhL"
+          className="sc-cOajty QQGxY"
         >
           <styled.div>
             <div
@@ -168,21 +177,30 @@ exports[`should render 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={null}
+            data-tooltip="R$ 979,80"
           >
             <span
-              className="sc-khAkjo CysKv"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 979,80"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={null}
-          >
-            <span
-              className="sc-AzgDb fOCvbU"
-            >
-              979,80
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-khAkjo CysKv"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-AzgDb fOCvbU"
+                >
+                  979,80
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -265,7 +283,7 @@ exports[`should render 1`] = `
       </styled.div>
       <styled.div>
         <div
-          className="sc-cOajty kFjZhL"
+          className="sc-cOajty QQGxY"
         >
           <styled.div>
             <div
@@ -275,21 +293,30 @@ exports[`should render 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={null}
+            data-tooltip="R$ 650,40"
           >
             <span
-              className="sc-khAkjo CysKv"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 650,40"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={null}
-          >
-            <span
-              className="sc-AzgDb fOCvbU"
-            >
-              650,40
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-khAkjo CysKv"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-AzgDb fOCvbU"
+                >
+                  650,40
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -308,7 +335,7 @@ exports[`should render 1`] = `
       </styled.div>
       <styled.div>
         <div
-          className="sc-cOajty kFjZhL"
+          className="sc-cOajty QQGxY"
         >
           <styled.div>
             <div
@@ -318,21 +345,30 @@ exports[`should render 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={false}
+            data-tooltip="R$ - 50,00"
           >
             <span
-              className="sc-khAkjo iYwESb"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ - 50,00"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={false}
-          >
-            <span
-              className="sc-AzgDb ioZOBk"
-            >
-              - 50,00
+              <styled.span
+                positive={false}
+              >
+                <span
+                  className="sc-khAkjo iYwESb"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={false}
+              >
+                <span
+                  className="sc-AzgDb ioZOBk"
+                >
+                  - 50,00
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -403,7 +439,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty bFllMX"
+          className="sc-cOajty cAIqQP"
         >
           <styled.div>
             <div
@@ -413,21 +449,30 @@ exports[`should render full width 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={true}
+            data-tooltip="R$ 1.580,20"
           >
             <span
-              className="sc-khAkjo jhWwdN"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 1.580,20"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={true}
-          >
-            <span
-              className="sc-AzgDb dcaHEm"
-            >
-              1.580,20
+              <styled.span
+                positive={true}
+              >
+                <span
+                  className="sc-khAkjo jhWwdN"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={true}
+              >
+                <span
+                  className="sc-AzgDb dcaHEm"
+                >
+                  1.580,20
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -512,7 +557,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty bFllMX"
+          className="sc-cOajty cAIqQP"
         >
           <styled.div>
             <div
@@ -522,21 +567,30 @@ exports[`should render full width 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={null}
+            data-tooltip="R$ 979,80"
           >
             <span
-              className="sc-khAkjo CysKv"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 979,80"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={null}
-          >
-            <span
-              className="sc-AzgDb fOCvbU"
-            >
-              979,80
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-khAkjo CysKv"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-AzgDb fOCvbU"
+                >
+                  979,80
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -621,7 +675,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty bFllMX"
+          className="sc-cOajty cAIqQP"
         >
           <styled.div>
             <div
@@ -631,21 +685,30 @@ exports[`should render full width 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={null}
+            data-tooltip="R$ 650,40"
           >
             <span
-              className="sc-khAkjo CysKv"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ 650,40"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={null}
-          >
-            <span
-              className="sc-AzgDb fOCvbU"
-            >
-              650,40
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-khAkjo CysKv"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={null}
+              >
+                <span
+                  className="sc-AzgDb fOCvbU"
+                >
+                  650,40
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)
@@ -666,7 +729,7 @@ exports[`should render full width 1`] = `
         fullWidth={true}
       >
         <div
-          className="sc-cOajty bFllMX"
+          className="sc-cOajty cAIqQP"
         >
           <styled.div>
             <div
@@ -676,21 +739,30 @@ exports[`should render full width 1`] = `
             </div>
           </styled.div>
           <styled.span
-            positive={false}
+            data-tooltip="R$ - 50,00"
           >
             <span
-              className="sc-khAkjo iYwESb"
+              className="sc-crrsfI gJxcab"
+              data-tooltip="R$ - 50,00"
             >
-              R$
-            </span>
-          </styled.span>
-          <styled.span
-            positive={false}
-          >
-            <span
-              className="sc-AzgDb ioZOBk"
-            >
-              - 50,00
+              <styled.span
+                positive={false}
+              >
+                <span
+                  className="sc-khAkjo iYwESb"
+                >
+                  R$
+                </span>
+              </styled.span>
+              <styled.span
+                positive={false}
+              >
+                <span
+                  className="sc-AzgDb ioZOBk"
+                >
+                  - 50,00
+                </span>
+              </styled.span>
             </span>
           </styled.span>
           <Styled(styled.div)

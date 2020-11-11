@@ -222,7 +222,6 @@ function Table(props) {
     )
   }
 
-  console.log(childrenSize, props.children, props.childrenSize)
   useEffect(() => {
     setColsWidth(items.current.map(item => item && item.clientWidth))
   }, [colHeadersWidth])
@@ -252,7 +251,7 @@ function Table(props) {
                   clicable
                   last={indexCol === cols.length}
                   key={indexCol}
-                  id={`header${indexCol}`}
+                  id={`headerOptional${indexCol}`}
                   justify={props.data[key].justify}
                   onClick={() => {
                     props.data[key].ordenable && props.onClickToOrder(key)
@@ -337,6 +336,7 @@ function Table(props) {
           <DisplayGrid>
             {props.complete && (
               <Container
+                id="containerOptional"
                 optional
                 colHeadersWidth={colHeadersWidth}
                 hasColor={hasColor}
@@ -409,6 +409,7 @@ function Table(props) {
               onMouseEnter={() => {
                 setOptionalMouse(true)
               }}
+              id="scrollableDiv"
               ref={scrollableDiv}
               style={{
                 width: '100%',
@@ -416,6 +417,7 @@ function Table(props) {
               }}
             >
               <ContainerInfinite
+                id="container"
                 cols={props.complete ? cols : colsOriginalWithoutColor}
                 ref={content}
                 style={{ transition: 'all .3s ease' }}
