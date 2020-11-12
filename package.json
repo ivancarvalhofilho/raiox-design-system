@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",
-    "build": "cd tokens && npm run build && cd ../web && npm run build",
-    "install": "cd tokens && npm install && cd ../web && npm install"
+    "build": "cd tokens && npm run build && cd ../web && npm run build"
   },
   "repository": {
     "type": "git",
