@@ -3,8 +3,6 @@ import { act } from 'react-dom/test-utils'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import { Table } from '../components'
-
-import 'jest-styled-components'
 import { tableMock } from '../../stories/mocks'
 
 it('should render', () => {

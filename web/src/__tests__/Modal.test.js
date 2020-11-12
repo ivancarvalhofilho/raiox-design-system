@@ -3,8 +3,6 @@ import toJson from 'enzyme-to-json'
 import React from 'react'
 import { Modal } from '../components'
 
-import 'jest-styled-components'
-
 import { act } from 'react-dom/test-utils'
 
 it('should render', () => {

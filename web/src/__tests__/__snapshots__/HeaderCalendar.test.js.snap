@@ -1,6 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: rotate(-deg);
+  -ms-transform: rotate(-deg);
+  transform: rotate(-deg);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 30%;
+}
+
+.c4 {
+  margin-left: 8px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  color: #303133;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.c0 {
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 56px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: Calc(70% - 24px);
+  margin-left: 24px;
+}
+
+.c6 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303133;
+  color: #2E7D32;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+
+.c9 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  color: #303133;
+  color: #D32F2F;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+
+.c8 {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 24px;
+  color: #303133;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c7 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  color: #303133;
+  padding: 0 4px 0 8px;
+  white-space: nowrap;
+}
+
 <HeaderCalendar
   disabledLeft={true}
   month={0}
@@ -25,11 +157,11 @@ exports[`should render 1`] = `
 >
   <styled.div>
     <div
-      className="sc-hKgILt bvAxfA"
+      className="c0"
     >
       <styled.div>
         <div
-          className="sc-gsTCUz dYSnHp"
+          className="c1"
         >
           <Icon
             appearance="primary"
@@ -66,7 +198,7 @@ exports[`should render 1`] = `
             >
               <SVGInline
                 appearance="primary"
-                className="sc-bdfBwQ joEHIz"
+                className="c2"
                 classSuffix="-svg"
                 cleanup={Array []}
                 cleanupExceptions={Array []}
@@ -89,10 +221,10 @@ exports[`should render 1`] = `
               >
                 <span
                   appearance="primary"
-                  className="SVGInline sc-bdfBwQ joEHIz"
+                  className="SVGInline c2"
                   dangerouslySetInnerHTML={
                     Object {
-                      "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg joEHIz-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
+                      "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c2-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 12.3594L3.72785 7L9 1.64062L7.38608 0L0.5 7L7.38608 14L9 12.3594Z\\"/></svg>",
                     }
                   }
                   disabled={true}
@@ -142,7 +274,7 @@ exports[`should render 1`] = `
             >
               <SVGInline
                 appearance="primary"
-                className="sc-bdfBwQ cNtyuA"
+                className="c3"
                 classSuffix="-svg"
                 cleanup={Array []}
                 cleanupExceptions={Array []}
@@ -163,10 +295,10 @@ exports[`should render 1`] = `
               >
                 <span
                   appearance="primary"
-                  className="SVGInline sc-bdfBwQ cNtyuA"
+                  className="SVGInline c3"
                   dangerouslySetInnerHTML={
                     Object {
-                      "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg cNtyuA-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
+                      "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c3-svg\\" fill=\\"#008488\\" style=\\"width: 16px;height: 16px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.08049e-06 1.64063L5.27215 7L1.43428e-07 12.3594L1.61392 14L8.5 7L1.61393 3.51674e-07L1.08049e-06 1.64063Z\\"/></svg>",
                     }
                   }
                   id="nextMonth"
@@ -188,7 +320,7 @@ exports[`should render 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-dlfnbm fxVRkx"
+              className="c4"
               id="date"
               onClick={[Function]}
             >
@@ -199,13 +331,13 @@ exports[`should render 1`] = `
       </styled.div>
       <styled.div>
         <div
-          className="sc-eCssSg gMzTxd"
+          className="c5"
         >
           <styled.div
             color="#2E7D32"
           >
             <div
-              className="sc-jSgupP beRTsV"
+              className="c6"
               color="#2E7D32"
             >
               Recebido
@@ -213,7 +345,7 @@ exports[`should render 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-iBPRYJ dsuRap"
+              className="c7"
             >
               R$
             </div>
@@ -222,7 +354,7 @@ exports[`should render 1`] = `
             data-tooltip="R$ 2.502,16"
           >
             <div
-              className="sc-gKsewC rnIlx"
+              className="c8"
               data-tooltip="R$ 2.502,16"
             >
               2.502,16
@@ -232,7 +364,7 @@ exports[`should render 1`] = `
             color="#D32F2F"
           >
             <div
-              className="sc-jSgupP NfvZP"
+              className="c9"
               color="#D32F2F"
             >
               Previsto
@@ -240,7 +372,7 @@ exports[`should render 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-iBPRYJ dsuRap"
+              className="c7"
             >
               R$
             </div>
@@ -249,7 +381,7 @@ exports[`should render 1`] = `
             data-tooltip="R$ 8.660,07"
           >
             <div
-              className="sc-gKsewC rnIlx"
+              className="c8"
               data-tooltip="R$ 8.660,07"
             >
               8.660,07

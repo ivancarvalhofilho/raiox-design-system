@@ -3,8 +3,6 @@ import toJson from 'enzyme-to-json'
 import React from 'react'
 import { SideModal } from '../components'
 
-import 'jest-styled-components'
-
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {

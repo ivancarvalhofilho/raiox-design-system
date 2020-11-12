@@ -1,6 +1,5 @@
 import React from 'react'
 import toJson from 'enzyme-to-json'
-import 'jest-styled-components'
 import { mountWithTheme } from '../utils/testUtil'
 import { DatePickerMonth } from '../components'
 import dayjs from 'dayjs'

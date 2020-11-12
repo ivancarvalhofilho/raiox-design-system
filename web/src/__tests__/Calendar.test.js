@@ -2,7 +2,6 @@ import React from 'react'
 import toJson from 'enzyme-to-json'
 import Calendar from '../components/Calendar/Calendar'
 import CalendarConst from '../components/Calendar/const'
-import 'jest-styled-components'
 import { mountWithTheme } from '../utils/testUtil'
 
 it('should render', () => {
