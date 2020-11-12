@@ -56,7 +56,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n  user-select: none;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;\n  user-select: none;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -66,7 +66,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;\n  height: 100%;\n  grid-auto-rows: 1fr;\n  & > *:nth-child(7n-6) {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;\n  height: 100%;\n  grid-auto-rows: 1fr;\n  & > *:nth-child(7n-6) {\n    background: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

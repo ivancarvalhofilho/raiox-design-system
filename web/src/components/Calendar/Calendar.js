@@ -19,7 +19,7 @@ const CalendarContainer = styled.div`
 
 const CalendarGrid = styled.div`
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   grid-auto-rows: 1fr;
   & > *:nth-child(7n-6) {
@@ -29,7 +29,7 @@ const CalendarGrid = styled.div`
 
 const CalendarGridHeader = styled.div`
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   user-select: none;
 `
 
