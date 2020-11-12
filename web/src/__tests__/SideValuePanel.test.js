@@ -7,7 +7,7 @@ import theme from '../../../tokens/theme'
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {
-    values: ['1.580,20', '979,80', '650,40', '- 50,00'],
+    values: ['1.580,20', '979,80', '650,40', '0'],
     checkValue: [true, false, false, true],
     titles: ['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes'],
     subtitles: ['Recebido', 'Previsto'],
@@ -28,7 +28,7 @@ it('should render', () => {
 it('should render full width', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {
-    values: ['1.580,20', '979,80', '650,40', '- 50,00'],
+    values: ['1.580,20', '979,80', '650,40', '0'],
     checkValue: [true, false, false, true],
     titles: ['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes'],
     subtitles: ['Recebido', 'Previsto'],

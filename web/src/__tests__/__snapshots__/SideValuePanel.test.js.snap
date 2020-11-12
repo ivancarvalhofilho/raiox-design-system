@@ -141,17 +141,6 @@ exports[`should render 1`] = `
   text-overflow: ellipsis;
 }
 
-.c17 {
-  font-family: Roboto;
-  font-weight: 300;
-  font-size: 24px;
-  color: #303133;
-  color: #D32F2F;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .c4 {
   font-family: Roboto;
   font-weight: 400;
@@ -167,15 +156,6 @@ exports[`should render 1`] = `
   font-size: 16px;
   color: #303133;
   margin-right: 4px;
-}
-
-.c16 {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  color: #303133;
-  margin-right: 4px;
-  color: #D32F2F;
 }
 
 .c7 {
@@ -280,7 +260,7 @@ exports[`should render 1`] = `
       "1.580,20",
       "979,80",
       "650,40",
-      "- 50,00",
+      "0",
     ]
   }
 >
@@ -579,21 +559,21 @@ exports[`should render 1`] = `
               className="c3"
             >
               <styled.span
-                positive={false}
+                positive={null}
               >
                 <span
-                  className="c16"
+                  className="c10"
                 >
                   R$
                 </span>
               </styled.span>
               <styled.span
-                positive={false}
+                positive={null}
               >
                 <span
-                  className="c17"
+                  className="c11"
                 >
-                  - 50,00
+                  0
                 </span>
               </styled.span>
             </span>
@@ -754,17 +734,6 @@ exports[`should render full width 1`] = `
   text-overflow: ellipsis;
 }
 
-.c17 {
-  font-family: Roboto;
-  font-weight: 300;
-  font-size: 24px;
-  color: #303133;
-  color: #D32F2F;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .c4 {
   font-family: Roboto;
   font-weight: 400;
@@ -780,15 +749,6 @@ exports[`should render full width 1`] = `
   font-size: 16px;
   color: #303133;
   margin-right: 4px;
-}
-
-.c16 {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  color: #303133;
-  margin-right: 4px;
-  color: #D32F2F;
 }
 
 .c7 {
@@ -894,7 +854,7 @@ exports[`should render full width 1`] = `
       "1.580,20",
       "979,80",
       "650,40",
-      "- 50,00",
+      "0",
     ]
   }
 >
@@ -1201,21 +1161,21 @@ exports[`should render full width 1`] = `
               className="c3"
             >
               <styled.span
-                positive={false}
+                positive={null}
               >
                 <span
-                  className="c16"
+                  className="c10"
                 >
                   R$
                 </span>
               </styled.span>
               <styled.span
-                positive={false}
+                positive={null}
               >
                 <span
-                  className="c17"
+                  className="c11"
                 >
-                  - 50,00
+                  0
                 </span>
               </styled.span>
             </span>
