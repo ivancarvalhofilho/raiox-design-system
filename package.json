@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",
-    "build": "cd tokens && npm run build && cd ../web && npm run build"
+    "build": "cd tokens && npm run build && cd ../web && npm run build",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "url": "https://github.com/guhcostan-equals/raiox-design-system/issues"
   },
   "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^5.0.0-beta.0"
+  }
 }

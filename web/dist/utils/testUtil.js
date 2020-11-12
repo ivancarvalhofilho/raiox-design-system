@@ -13,6 +13,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _enzyme = require("enzyme");
 
+require("jest-styled-components");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function mountWithTheme(child) {
