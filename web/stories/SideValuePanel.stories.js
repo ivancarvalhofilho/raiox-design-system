@@ -9,7 +9,7 @@ export default {
 
 const Template = args => (
   <SideValuePanel
-    values={['1.580,20', '979,80', '650,40', '- 50,00']}
+    values={['1.580,20', '979,80', '650,40', 0]}
     checkValue={[true, false, false, true]}
     titles={['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes']}
     subtitles={['Recebido', 'Previsto']}

@@ -120,9 +120,9 @@ var SideValuePanel = function SideValuePanel(props) {
     }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, props.showTooltip && {
       'data-tooltip': "R$ ".concat(value)
     }, /*#__PURE__*/_react["default"].createElement(DollarSign, {
-      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
+      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) !== 0 ? Number.parseFloat(value) > 0 : null : null
     }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
-      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) > 0 : null
+      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) !== 0 ? Number.parseFloat(value) > 0 : null : null
     }, value)), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
       color: props.subtitlesColors && props.subtitlesColors[index],
       justifyContent: "center"
