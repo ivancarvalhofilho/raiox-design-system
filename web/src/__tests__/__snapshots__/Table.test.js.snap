@@ -533,6 +533,10 @@ exports[`should render 1`] = `
 .c21 {
   padding: 0 20px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <Table
@@ -8352,6 +8356,10 @@ exports[`should resize 1`] = `
 .c21 {
   padding: 0 20px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <Table

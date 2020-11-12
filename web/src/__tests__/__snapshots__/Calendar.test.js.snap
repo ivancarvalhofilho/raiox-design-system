@@ -187,7 +187,7 @@ exports[`should render 1`] = `
 
 .c3 {
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   grid-auto-rows: 1fr;
 }
@@ -198,7 +198,7 @@ exports[`should render 1`] = `
 
 .c1 {
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2411,7 +2411,7 @@ exports[`should render with month 35 days 1`] = `
 
 .c3 {
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   grid-auto-rows: 1fr;
 }
@@ -2422,7 +2422,7 @@ exports[`should render with month 35 days 1`] = `
 
 .c1 {
   display: grid;
-  grid-template-columns: 45px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

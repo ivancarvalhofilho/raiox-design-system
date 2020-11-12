@@ -40,7 +40,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n  display: flex;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
