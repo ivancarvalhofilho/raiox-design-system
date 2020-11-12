@@ -50,7 +50,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 99.5%;\n  top: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 100%;\n  top: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -100,7 +100,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -207,8 +207,6 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return props.optional && 'hidden';
 }, function (props) {
   return !props.optional && 'fit-content';
-}, function (props) {
-  return !props.optional && props.paddingScroll ? '101%' : '100%';
 }, function (props) {
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
