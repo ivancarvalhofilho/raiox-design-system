@@ -13,5 +13,9 @@
   },
   "type": "module",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "core-js": "^3.7.0"
+  }
 }
