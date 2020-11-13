@@ -296,12 +296,10 @@ function Table(props) {
 
   (0, _react.useEffect)(function () {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
+    handleResize();
   }, [props.children]);
   (0, _react.useEffect)(function () {
     handleResize();
-    setTimeout(function () {
-      handleResize();
-    }, 100);
   }, [props.data]);
 
   var handleResize = function handleResize() {

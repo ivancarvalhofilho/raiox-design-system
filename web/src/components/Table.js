@@ -215,13 +215,11 @@ function Table(props) {
 
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
+    handleResize()
   }, [props.children])
 
   useEffect(() => {
     handleResize()
-    setTimeout(() => {
-      handleResize()
-    }, 100)
   }, [props.data])
 
   const handleResize = () => {
