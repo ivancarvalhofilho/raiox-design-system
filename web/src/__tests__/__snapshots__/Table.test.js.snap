@@ -96,7 +96,7 @@ exports[`should render 1`] = `
   min-width: fit-content;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px 0px 0px 0px 0px 0px 0px 0px;
 }
 
 .c23 {
@@ -109,7 +109,7 @@ exports[`should render 1`] = `
   min-width: fit-content;
   width: 100%;
   color: #303133;
-  grid-template-columns: minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 0px 0px;
 }
 
 .c2 {
@@ -5005,7 +5005,7 @@ exports[`should render complete 1`] = `
   background-color: #f2f5f7;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px 0px 0px 0px 0px 0px;
 }
 
 .c7 {
@@ -5018,7 +5018,7 @@ exports[`should render complete 1`] = `
   min-width: fit-content;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px 0px 0px 0px 0px 0px;
 }
 
 .c2 {
@@ -7919,7 +7919,7 @@ exports[`should resize 1`] = `
   min-width: fit-content;
   width: 100%;
   color: #303133;
-  grid-template-columns: 8px minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 8px 0px 0px 0px 0px 0px 0px 0px;
 }
 
 .c23 {
@@ -7932,7 +7932,7 @@ exports[`should resize 1`] = `
   min-width: fit-content;
   width: 100%;
   color: #303133;
-  grid-template-columns: minmax(0px,auto) minmax(0px,auto);
+  grid-template-columns: 0px 0px;
 }
 
 .c2 {
