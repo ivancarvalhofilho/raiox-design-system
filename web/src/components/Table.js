@@ -157,9 +157,14 @@ const Row = styled.div`
   cursor: ${props => props.clicable && 'pointer'};
   border-bottom: ${props => props.border && '1px solid #e7e7e7'};
   background-color: ${props => props.color || 'white'};
+  padding: 5px;
   max-height: 48px;
   padding-left: ${props => props.first && '10%'};
   padding-right: ${props => props.last && '10%'};
+`
+
+const RowHeader = styled(Row)`
+  padding: 0;
 `
 
 const Value = styled.div`
@@ -257,7 +262,7 @@ function Table(props) {
           >
             {colsOptional.map((key, indexCol) => (
               <Column key={indexCol} rows={[0]} size={28}>
-                <Row
+                <RowHeader
                   first={indexCol === 0}
                   clicable
                   last={indexCol === cols.length}
@@ -289,7 +294,7 @@ function Table(props) {
                       />
                     )}
                   </Value>
-                </Row>
+                </RowHeader>
               </Column>
             ))}
           </ContainerHeader>
@@ -302,7 +307,7 @@ function Table(props) {
         >
           {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
             <Column key={indexCol} rows={[0]} size={28}>
-              <Row
+              <RowHeader
                 first={indexCol === 0}
                 justify={props.data[key].justify}
                 last={indexCol === cols.length}
@@ -337,7 +342,7 @@ function Table(props) {
                     />
                   )}
                 </Value>
-              </Row>
+              </RowHeader>
             </Column>
           ))}
         </ContainerHeader>
