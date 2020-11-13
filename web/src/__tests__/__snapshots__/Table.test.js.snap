@@ -149,7 +149,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -170,7 +169,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -190,7 +188,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -211,7 +208,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -231,7 +227,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -252,7 +247,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F8979A;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -272,7 +266,6 @@ exports[`should render 1`] = `
   justify-content: center;
   cursor: pointer;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -293,7 +286,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -312,7 +304,6 @@ exports[`should render 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -332,7 +323,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -352,7 +342,6 @@ exports[`should render 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -373,7 +362,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -393,7 +381,6 @@ exports[`should render 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -413,7 +400,6 @@ exports[`should render 1`] = `
   justify-content: flex-start;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -432,7 +418,6 @@ exports[`should render 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -452,7 +437,6 @@ exports[`should render 1`] = `
   justify-content: flex-start;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -471,7 +455,6 @@ exports[`should render 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -491,7 +474,6 @@ exports[`should render 1`] = `
   justify-content: flex-end;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5051,7 +5033,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5072,7 +5053,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5092,7 +5072,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5113,7 +5092,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5132,7 +5110,6 @@ exports[`should render complete 1`] = `
   justify-content: center;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5151,7 +5128,6 @@ exports[`should render complete 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5171,7 +5147,6 @@ exports[`should render complete 1`] = `
   justify-content: flex-start;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5189,7 +5164,6 @@ exports[`should render complete 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5209,7 +5183,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5230,7 +5203,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F8979A;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5250,7 +5222,6 @@ exports[`should render complete 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -5271,7 +5242,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5290,7 +5260,6 @@ exports[`should render complete 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5310,7 +5279,6 @@ exports[`should render complete 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -5329,7 +5297,6 @@ exports[`should render complete 1`] = `
   justify-content: flex-end;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -7972,7 +7939,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -7993,7 +7959,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -8013,7 +7978,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -8034,7 +7998,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -8054,7 +8017,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8075,7 +8037,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F8979A;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8095,7 +8056,6 @@ exports[`should resize 1`] = `
   justify-content: center;
   cursor: pointer;
   background-color: #7BD6FB;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8116,7 +8076,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -8135,7 +8094,6 @@ exports[`should resize 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -8155,7 +8113,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -8175,7 +8132,6 @@ exports[`should resize 1`] = `
   justify-content: flex-start;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -8196,7 +8152,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 
@@ -8216,7 +8171,6 @@ exports[`should resize 1`] = `
   cursor: pointer;
   border-bottom: 1px solid #e7e7e7;
   background-color: #F5F5F5;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8236,7 +8190,6 @@ exports[`should resize 1`] = `
   justify-content: flex-start;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8255,7 +8208,6 @@ exports[`should resize 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-left: 10%;
 }
@@ -8275,7 +8227,6 @@ exports[`should resize 1`] = `
   justify-content: flex-start;
   border-bottom: 1px solid #e7e7e7;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -8294,7 +8245,6 @@ exports[`should resize 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
   padding-right: 10%;
 }
@@ -8314,7 +8264,6 @@ exports[`should resize 1`] = `
   justify-content: flex-end;
   cursor: pointer;
   background-color: white;
-  padding: 5px;
   max-height: 48px;
 }
 

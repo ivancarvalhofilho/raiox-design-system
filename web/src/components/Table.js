@@ -157,7 +157,6 @@ const Row = styled.div`
   cursor: ${props => props.clicable && 'pointer'};
   border-bottom: ${props => props.border && '1px solid #e7e7e7'};
   background-color: ${props => props.color || 'white'};
-  padding: 5px;
   max-height: 48px;
   padding-left: ${props => props.first && '10%'};
   padding-right: ${props => props.last && '10%'};
