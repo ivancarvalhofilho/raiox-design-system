@@ -163,10 +163,6 @@ const Row = styled.div`
   padding-right: ${props => props.last && '10%'};
 `
 
-const RowHeader = styled(Row)`
-  padding: 0;
-`
-
 const Value = styled.div`
   white-space: nowrap;
   display: flex;
@@ -262,7 +258,7 @@ function Table(props) {
           >
             {colsOptional.map((key, indexCol) => (
               <Column key={indexCol} rows={[0]} size={28}>
-                <RowHeader
+                <Row
                   first={indexCol === 0}
                   clicable
                   last={indexCol === cols.length}
@@ -294,7 +290,7 @@ function Table(props) {
                       />
                     )}
                   </Value>
-                </RowHeader>
+                </Row>
               </Column>
             ))}
           </ContainerHeader>
@@ -307,7 +303,7 @@ function Table(props) {
         >
           {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
             <Column key={indexCol} rows={[0]} size={28}>
-              <RowHeader
+              <Row
                 first={indexCol === 0}
                 justify={props.data[key].justify}
                 last={indexCol === cols.length}
@@ -342,7 +338,7 @@ function Table(props) {
                     />
                   )}
                 </Value>
-              </RowHeader>
+              </Row>
             </Column>
           ))}
         </ContainerHeader>

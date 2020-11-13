@@ -39,18 +39,8 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n  display: flex;\n"]);
-
-  _templateObject13 = function _templateObject13() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 100%;\n  top: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n  display: flex;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -60,7 +50,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 100%;\n  top: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -70,7 +60,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -80,7 +70,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -245,19 +235,17 @@ var Row = _styledComponents["default"].div(_templateObject8(), function (props) 
   return props.last && '10%';
 });
 
-var RowHeader = (0, _styledComponents["default"])(Row)(_templateObject9());
+var Value = _styledComponents["default"].div(_templateObject9());
 
-var Value = _styledComponents["default"].div(_templateObject10());
+var SpanValue = _styledComponents["default"].span(_templateObject10());
 
-var SpanValue = _styledComponents["default"].span(_templateObject11());
-
-var Children = _styledComponents["default"].div(_templateObject12(), function (props) {
+var Children = _styledComponents["default"].div(_templateObject11(), function (props) {
   return props.color;
 }, function (props) {
   return props.top;
 });
 
-var Collapse = _styledComponents["default"].div(_templateObject13());
+var Collapse = _styledComponents["default"].div(_templateObject12());
 
 function Table(props) {
   var hasColor = Object.keys(props.data).find(function (key) {
@@ -347,7 +335,7 @@ function Table(props) {
       key: indexCol,
       rows: [0],
       size: 28
-    }, /*#__PURE__*/_react["default"].createElement(RowHeader, {
+    }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
       clicable: true,
       last: indexCol === cols.length,
@@ -377,7 +365,7 @@ function Table(props) {
       key: indexCol,
       rows: [0],
       size: 28
-    }, /*#__PURE__*/_react["default"].createElement(RowHeader, {
+    }, /*#__PURE__*/_react["default"].createElement(Row, {
       first: indexCol === 0,
       justify: props.data[key].justify,
       last: indexCol === cols.length,
