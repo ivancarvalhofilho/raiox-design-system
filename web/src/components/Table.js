@@ -219,6 +219,9 @@ function Table(props) {
 
   useEffect(() => {
     handleResize()
+    setTimeout(() => {
+      handleResize()
+    }, 100)
   }, [props.data])
 
   const handleResize = () => {

@@ -299,6 +299,9 @@ function Table(props) {
   }, [props.children]);
   (0, _react.useEffect)(function () {
     handleResize();
+    setTimeout(function () {
+      handleResize();
+    }, 100);
   }, [props.data]);
 
   var handleResize = function handleResize() {
