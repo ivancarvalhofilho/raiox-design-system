@@ -40,6 +40,10 @@ exports[`should render 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   padding-left: 8px;
 }
 

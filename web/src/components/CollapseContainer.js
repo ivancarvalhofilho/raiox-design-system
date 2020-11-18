@@ -17,6 +17,7 @@ const Header = styled.div`
   justify-content: space-between;
 `
 const Button = styled.div`
+  display: flex;
   padding-left: ${props => props.theme.styles.spacing.inline.nano};
 `
 
