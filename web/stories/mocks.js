@@ -75,7 +75,7 @@ export const tableMock = {
   order: 'ASC',
   orderBy: 'data',
   isMultiple: true,
-  height: 'calc(100vh - 140px - 100px - 65px)',
+  height: '400px',
   total: 3637,
   childrenSize: 200,
   children: (
