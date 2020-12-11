@@ -1,5 +1,5 @@
 # RaioX Design System
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guhcostan-equals_raiox-design-system&metric=alert_status)](https://sonarcloud.io/dashboard?id=guhcostan-equals_raiox-design-system)
 ## Web
 
 ### Instalação
