@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from './index'
+import ReactDOM from 'react-dom'
 import theme from '../../../tokens/theme'
 import { Divider } from './StyledComponents'
 import { fontStyleMaker } from '../utils'
@@ -15,6 +16,9 @@ const ButtonContainer = styled.div`
   cursor: pointer;
   justify-content: space-between;
   background: #ffffff;
+`
+const ContainerDatepicker = styled.div`
+  position: relative;
 `
 
 const CalendarIcon = styled.div`
@@ -52,10 +56,21 @@ const DatepickerContainer = styled.div`
   background: #ffffff;
   box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  width: 639px;
-  height: 315px;
+  width: 640px;
+  left: -150px;
+  top: 48px;
   position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+const Container = styled.div`
+  background: #ffffff;
+  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  display: flex;
+  height: 315px;
   justify-content: space-between;
 `
 
@@ -89,6 +104,21 @@ const CalendarContainer = styled.div`
   row-gap: 5px;
   height: 245px;
   padding: 0 13px;
+`
+const BlockMessage = styled.div`
+  height: 58px;
+  background: ${props => props.theme.colors.feedback.danger.light};
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+  ${props =>
+    fontStyleMaker(
+      props.theme,
+      'body',
+      'medium',
+      'xs',
+      'feedback.danger.dark',
+    )};
 `
 
 const Day = styled.div`
@@ -184,9 +214,21 @@ const Datepicker = props => {
     }
     setMonths(newMonths)
   }
+  const ref = useRef(null)
+  const handleClickOutside = event => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpened(false)
+    }
+  }
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
 
   return (
-    <>
+    <ContainerDatepicker ref={ref}>
       <ButtonContainer
         onClick={() => {
           setOpened(!opened)
@@ -206,111 +248,130 @@ const Datepicker = props => {
       </ButtonContainer>
       {opened && (
         <DatepickerContainer>
-          {months.map((date, index) => (
-            <>
-              <MonthContainer>
-                <MonthHeader>
-                  <div>
-                    <Icon
-                      path={theme.icons['double-arrow-left']}
-                      size="14px"
-                      onClick={() => changeYear(index, false)}
-                    />
-                    <Icon
-                      path={theme.icons['single-arrow-left']}
-                      size="14px"
-                      onClick={() => changeMonth(index, false)}
-                    />
-                  </div>
-                  <MonthTitle>{date.format('MMMM YYYY')}</MonthTitle>
-                  <div>
-                    <Icon
-                      path={theme.icons['single-arrow-right']}
-                      size="14px"
-                      onClick={() => changeMonth(index, true)}
-                    />
-                    <Icon
-                      path={theme.icons['double-arrow-right']}
-                      size="14px"
-                      onClick={() => changeYear(index, true)}
-                    />
-                  </div>
-                </MonthHeader>
-                <Divider horizontal />
-                <CalendarContainer>
-                  {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(day => (
-                    <DayHeader>{day}</DayHeader>
-                  ))}
-                  {daysCalendar[index] &&
-                    daysCalendar[index].map((day, indexDay) => {
-                      const dayMonth = months[index]
-                        .set('date', Math.abs(day))
-                        .add(Math.sign(day) === -1 ? -1 : 0, 'month')
-                      return (
-                        <DayBackground
-                          firstInLine={indexDay % 7 === 0}
-                          lastInLine={(indexDay + 1) % 7 === 0}
-                          first={day >= 0 && dayMonth.isSame(props.dates[0])}
-                          last={
-                            day >= 0 &&
-                            firstClick &&
-                            dayMonth.isSame(props.dates[1])
-                          }
-                          selected={
-                            (dayMonth.isSameOrAfter(props.dates[0]) &&
-                              dayMonth.isSameOrBefore(
-                                !firstClick ? secondDateHover : props.dates[1],
-                              )) ||
-                            (dayMonth.isSameOrBefore(props.dates[0]) &&
-                              dayMonth.isSameOrAfter(
-                                !firstClick ? secondDateHover : props.dates[1],
-                              ))
-                          }
-                          disabled={
-                            (props.maxDate &&
-                              dayMonth.isSameOrAfter(props.maxDate)) ||
-                            (props.minDate &&
-                              dayMonth.isSameOrBefore(props.minDate))
-                          }
-                        >
-                          <Day
-                            onMouseOver={() => {
-                              if (!firstClick) {
-                                setSecondDateHover(dayMonth)
-                                if (props.maxRange) {
-                                  setBlockRange(
-                                    dayMonth.diff(props.dates[0], 'day') >
-                                      props.maxRange,
-                                  )
-                                }
-                              }
-                            }}
+          <Container>
+            {months.map((date, index) => (
+              <>
+                <MonthContainer>
+                  <MonthHeader>
+                    <div>
+                      <Icon
+                        path={theme.icons['double-arrow-left']}
+                        size="14px"
+                        onClick={() => changeYear(index, false)}
+                      />
+                      <Icon
+                        path={theme.icons['single-arrow-left']}
+                        size="14px"
+                        onClick={() => changeMonth(index, false)}
+                      />
+                    </div>
+                    <MonthTitle>{date.format('MMMM YYYY')}</MonthTitle>
+                    <div>
+                      <Icon
+                        path={theme.icons['single-arrow-right']}
+                        size="14px"
+                        onClick={() => changeMonth(index, true)}
+                      />
+                      <Icon
+                        path={theme.icons['double-arrow-right']}
+                        size="14px"
+                        onClick={() => changeYear(index, true)}
+                      />
+                    </div>
+                  </MonthHeader>
+                  <Divider horizontal />
+                  <CalendarContainer>
+                    {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(day => (
+                      <DayHeader>{day}</DayHeader>
+                    ))}
+                    {daysCalendar[index] &&
+                      daysCalendar[index].map((day, indexDay) => {
+                        const dayMonth = months[index]
+                          .set('date', Math.abs(day))
+                          .add(Math.sign(day) === -1 ? -1 : 0, 'month')
+                        return (
+                          <DayBackground
+                            firstInLine={indexDay % 7 === 0}
+                            lastInLine={(indexDay + 1) % 7 === 0}
                             first={day >= 0 && dayMonth.isSame(props.dates[0])}
                             last={
                               day >= 0 &&
                               firstClick &&
                               dayMonth.isSame(props.dates[1])
                             }
-                            onClick={() => {
-                              props.onSelectDay(dayMonth, firstClick ? 0 : 1)
-                              setFirstClick(!firstClick)
-                              setOpened(firstClick)
-                            }}
-                            disabled={Math.sign(day) === -1}
+                            selected={
+                              (dayMonth.isSameOrAfter(props.dates[0]) &&
+                                dayMonth.isSameOrBefore(
+                                  !firstClick
+                                    ? secondDateHover
+                                    : props.dates[1],
+                                )) ||
+                              (dayMonth.isSameOrBefore(props.dates[0]) &&
+                                dayMonth.isSameOrAfter(
+                                  !firstClick
+                                    ? secondDateHover
+                                    : props.dates[1],
+                                ))
+                            }
+                            disabled={
+                              (props.maxDate &&
+                                dayMonth.isSameOrAfter(props.maxDate)) ||
+                              (props.minDate &&
+                                dayMonth.isSameOrBefore(props.minDate))
+                            }
                           >
-                            {Math.abs(day)}
-                          </Day>
-                        </DayBackground>
-                      )
-                    })}
-                </CalendarContainer>
-              </MonthContainer>
-              {index < props.dates.length && <Divider />}
-            </>
-          ))}
+                            <Day
+                              onMouseOver={() => {
+                                if (!firstClick) {
+                                  setSecondDateHover(dayMonth)
+                                  if (props.maxRange) {
+                                    setBlockRange(
+                                      dayMonth.diff(props.dates[0], 'day') >
+                                        props.maxRange,
+                                    )
+                                  }
+                                }
+                              }}
+                              first={
+                                day >= 0 && dayMonth.isSame(props.dates[0])
+                              }
+                              last={
+                                day >= 0 &&
+                                firstClick &&
+                                dayMonth.isSame(props.dates[1])
+                              }
+                              onClick={() => {
+                                if (!blockRange) {
+                                  props.onSelectDay(
+                                    dayMonth,
+                                    firstClick ? 0 : 1,
+                                  )
+                                  setFirstClick(!firstClick)
+                                  setOpened(firstClick)
+                                }
+                              }}
+                              disabled={Math.sign(day) === -1}
+                            >
+                              {Math.abs(day)}
+                            </Day>
+                          </DayBackground>
+                        )
+                      })}
+                  </CalendarContainer>
+                </MonthContainer>
+                {index < props.dates.length && <Divider />}
+              </>
+            ))}
+          </Container>
+          {blockRange && (
+            <BlockMessage>
+              Não é possível selecionar períodos maiores que {props.maxRange}{' '}
+              dias.
+            </BlockMessage>
+          )}
         </DatepickerContainer>
       )}
-    </>
+    </ContainerDatepicker>
   )
 }
 
