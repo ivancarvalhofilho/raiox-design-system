@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from './index'
@@ -86,6 +87,7 @@ const CalendarContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
+  row-gap: 5px;
   height: 245px;
   padding: 0 13px;
 `
@@ -113,6 +115,8 @@ const Day = styled.div`
 const DayBackground = styled.div`
   background-color: ${props =>
     props.selected && theme.colors.brand.primary.medium};
+  border-radius: ${props => props.first && '5px 0 0  5px'};
+  border-radius: ${props => props.last && '0 5px 5px 0'};
 `
 
 const DayHeader = styled(Day)`
@@ -120,7 +124,7 @@ const DayHeader = styled(Day)`
 `
 
 const Datepicker = props => {
-  const [opened, setOpened] = useState(true)
+  const [opened, setOpened] = useState(false)
   const [daysCalendar, setDaysCalendar] = useState([])
   const [months, setMonths] = useState(props.dates)
   const [firstClick, setFirstClick] = useState(true)
@@ -234,28 +238,39 @@ const Datepicker = props => {
                     <DayHeader>{day}</DayHeader>
                   ))}
                   {daysCalendar[index] &&
-                    daysCalendar[index].map(day => {
+                    daysCalendar[index].map((day, indexDay) => {
                       const dayMonth = months[index]
                         .set('date', Math.abs(day))
                         .add(Math.sign(day) === -1 ? -1 : 0, 'month')
                       return (
                         <DayBackground
+                          first={indexDay % 7 === 0}
+                          last={(indexDay + 1) % 7 === 0}
                           selected={
-                            dayMonth.isSameOrAfter(props.dates[0]) &&
-                            dayMonth.isSameOrBefore(
-                              !firstClick ? secondDateHover : props.dates[1],
-                            )
+                            (dayMonth.isSameOrAfter(props.dates[0]) &&
+                              dayMonth.isSameOrBefore(
+                                !firstClick ? secondDateHover : props.dates[1],
+                              )) ||
+                            (dayMonth.isSameOrBefore(props.dates[0]) &&
+                              dayMonth.isSameOrAfter(
+                                !firstClick ? secondDateHover : props.dates[1],
+                              ))
                           }
                         >
                           <Day
                             onMouseOver={() =>
                               !firstClick && setSecondDateHover(dayMonth)
                             }
-                            first={dayMonth.isSame(props.dates[0])}
-                            last={firstClick && dayMonth.isSame(props.dates[1])}
+                            first={day >= 0 && dayMonth.isSame(props.dates[0])}
+                            last={
+                              day >= 0 &&
+                              firstClick &&
+                              dayMonth.isSame(props.dates[1])
+                            }
                             onClick={() => {
                               props.onSelectDay(dayMonth, firstClick ? 0 : 1)
                               setFirstClick(!firstClick)
+                              setOpened(firstClick)
                             }}
                             disabled={Math.sign(day) === -1}
                           >
@@ -276,3 +291,8 @@ const Datepicker = props => {
 }
 
 export default Datepicker
+
+Datepicker.propTypes = {
+  dates: PropTypes.array,
+  onSelectDay: PropTypes.func,
+}
