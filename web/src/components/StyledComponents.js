@@ -21,7 +21,6 @@ const TextRow = styled.div`
 const Divider = styled.div`
   ${props => (props.horizontal ? 'border-bottom' : 'border-left')}: 1px solid
     ${props => props.theme.colors.neutral.dark['03']};
-  margin: 1% 0;
 `
 
 const Container = styled.div`
