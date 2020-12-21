@@ -19,8 +19,6 @@ var _theme = _interopRequireDefault(require("../../../tokens/theme"));
 
 var _StyledComponents = require("./StyledComponents");
 
-var _dayjs = _interopRequireDefault(require("dayjs"));
-
 var _utils = require("../utils");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -60,7 +58,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -226,6 +224,12 @@ var Day = _styledComponents["default"].div(_templateObject11(), function (props)
 var DayBackground = _styledComponents["default"].div(_templateObject12(), function (props) {
   return props.selected && _theme["default"].colors.brand.primary.medium;
 }, function (props) {
+  return props.disabled && _theme["default"].colors.neutral.dark['03'];
+}, function (props) {
+  return props.firstInLine && '5px 0 0  5px';
+}, function (props) {
+  return props.lastInLine && '0 5px 5px 0';
+}, function (props) {
   return props.first && '5px 0 0  5px';
 }, function (props) {
   return props.last && '0 5px 5px 0';
@@ -256,10 +260,15 @@ var Datepicker = function Datepicker(props) {
       firstClick = _useState8[0],
       setFirstClick = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(null),
+  var _useState9 = (0, _react.useState)(false),
       _useState10 = _slicedToArray(_useState9, 2),
-      secondDateHover = _useState10[0],
-      setSecondDateHover = _useState10[1];
+      blockRange = _useState10[0],
+      setBlockRange = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(null),
+      _useState12 = _slicedToArray(_useState11, 2),
+      secondDateHover = _useState12[0],
+      setSecondDateHover = _useState12[1];
 
   var createArray = function createArray(size, firstNumber) {
     var firstNumberCounter = firstNumber ? firstNumber + 1 : 1;
@@ -356,12 +365,21 @@ var Datepicker = function Datepicker(props) {
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = months[index].set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
-        first: indexDay % 7 === 0,
-        last: (indexDay + 1) % 7 === 0,
-        selected: dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1])
+        firstInLine: indexDay % 7 === 0,
+        lastInLine: (indexDay + 1) % 7 === 0,
+        first: day >= 0 && dayMonth.isSame(props.dates[0]),
+        last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
+        selected: dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]),
+        disabled: props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate)
       }, /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {
-          return !firstClick && setSecondDateHover(dayMonth);
+          if (!firstClick) {
+            setSecondDateHover(dayMonth);
+
+            if (props.maxRange) {
+              setBlockRange(dayMonth.diff(props.dates[0], 'day') > props.maxRange);
+            }
+          }
         },
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
