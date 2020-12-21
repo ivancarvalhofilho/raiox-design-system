@@ -12,6 +12,7 @@ const Template = args => {
   return (
     <Datepicker
       dates={dates}
+      maxRange={120}
       onSelectDay={(data, index) => {
         const datesUpdate = dates.map((date, indexDate) =>
           indexDate === index ? data : date,
