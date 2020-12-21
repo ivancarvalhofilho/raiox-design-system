@@ -75,7 +75,6 @@ exports[`should render 1`] = `
 
 .c9 {
   border-left: 1px solid #E0E0E0;
-  margin: 1% 0;
 }
 
 .c3 {
@@ -667,7 +666,6 @@ exports[`should render full width 1`] = `
 
 .c9 {
   border-left: 1px solid #E0E0E0;
-  margin: 1% 0;
 }
 
 .c3 {

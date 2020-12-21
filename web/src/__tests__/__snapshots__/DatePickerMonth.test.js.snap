@@ -34,7 +34,6 @@ exports[`should render 1`] = `
 
 .c4 {
   border-bottom: 1px solid #E0E0E0;
-  margin: 1% 0;
 }
 
 .c1 {
@@ -600,7 +599,6 @@ exports[`should render withShowYears 1`] = `
 
 .c3 {
   border-bottom: 1px solid #E0E0E0;
-  margin: 1% 0;
 }
 
 .c1 {
