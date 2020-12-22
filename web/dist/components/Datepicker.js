@@ -430,7 +430,8 @@ var Datepicker = function Datepicker(props) {
       }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = (0, _dayjs["default"])(months[index]).set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
-      var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate) || props.maxRange && !firstClick && Math.abs(props.dates[0].diff(dayMonth, 'day')) > props.maxRange;
+      var disabledByRange = props.maxRange && !firstClick && Math.abs(props.dates[0].diff(dayMonth, 'day')) > props.maxRange;
+      var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate) || disabledByRange;
       var isToday = dayMonth.isSame(today, 'day');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
         key: date + indexDay,
@@ -438,7 +439,7 @@ var Datepicker = function Datepicker(props) {
         lastInLine: (indexDay + 1) % 7 === 0,
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
-        "data-tooltip": disabled ? 'Não é possível selecionar um período maior que 120 dias' : '',
+        "data-tooltip": disabledByRange ? 'Não é possível selecionar um período maior que 120 dias' : '',
         selected: Math.sign(day) === 1 && (dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]))
       }, Math.sign(day) === 1 && /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {

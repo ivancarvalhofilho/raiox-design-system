@@ -300,15 +300,17 @@ const Datepicker = props => {
                         const dayMonth = dayjs(months[index])
                           .set('date', Math.abs(day))
                           .add(Math.sign(day) === -1 ? -1 : 0, 'month')
+                        const disabledByRange =
+                          props.maxRange &&
+                          !firstClick &&
+                          Math.abs(props.dates[0].diff(dayMonth, 'day')) >
+                            props.maxRange
                         const disabled =
                           (props.maxDate &&
                             dayMonth.isSameOrAfter(props.maxDate)) ||
                           (props.minDate &&
                             dayMonth.isSameOrBefore(props.minDate)) ||
-                          (props.maxRange &&
-                            !firstClick &&
-                            Math.abs(props.dates[0].diff(dayMonth, 'day')) >
-                              props.maxRange)
+                          disabledByRange
                         const isToday = dayMonth.isSame(today, 'day')
                         return (
                           <DayBackground
@@ -322,7 +324,7 @@ const Datepicker = props => {
                               dayMonth.isSame(props.dates[1])
                             }
                             data-tooltip={
-                              disabled
+                              disabledByRange
                                 ? 'Não é possível selecionar um período maior que 120 dias'
                                 : ''
                             }
