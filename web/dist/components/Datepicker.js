@@ -15,6 +15,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _index = require("./index");
 
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
 var _theme = _interopRequireDefault(require("../../../tokens/theme"));
 
 var _StyledComponents = require("./StyledComponents");
@@ -47,8 +49,38 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject13() {
+function _templateObject16() {
   var data = _taggedTemplateLiteral(["\n  color: ", ";\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  cursor: ", ";\n  background-color: ", ";\n  ", ";\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  height: 58px;\n  background: ", ";\n  padding: 8px 13px;\n  display: flex;\n  align-items: center;\n  ", ";\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -58,7 +90,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n  border-radius: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  row-gap: 5px;\n  height: 245px;\n  padding: 0 13px;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -68,7 +100,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  cursor: ", ";\n  background-color: ", ";\n  ", ";\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n  justify-content: space-between;\n  flex: 1;\n  align-items: center;\n  height: 57px;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -78,7 +110,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  row-gap: 5px;\n  height: 245px;\n  padding: 0 13px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -88,7 +120,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n  justify-content: space-between;\n  flex: 1;\n  align-items: center;\n  height: 57px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  flex: 1;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -98,7 +130,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  display: flex;\n  height: 315px;\n  justify-content: space-between;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -108,7 +140,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  flex: 1;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  width: 640px;\n  left: -150px;\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -118,7 +150,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  width: 639px;\n  height: 315px;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: #008488;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -128,7 +160,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: #008488;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -138,7 +170,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -148,7 +180,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #008488;\n  border-radius: 0 5px 5px 0;\n  width: 40px;\n  height: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -158,7 +190,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: #008488;\n  border-radius: 0 5px 5px 0;\n  width: 40px;\n  height: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -181,31 +213,41 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var ButtonContainer = _styledComponents["default"].div(_templateObject());
 
-var CalendarIcon = _styledComponents["default"].div(_templateObject2());
+var ContainerDatepicker = _styledComponents["default"].div(_templateObject2());
 
-var ContainerDate = _styledComponents["default"].div(_templateObject3());
+var CalendarIcon = _styledComponents["default"].div(_templateObject3());
 
-var Text = _styledComponents["default"].div(_templateObject4(), function (props) {
+var ContainerDate = _styledComponents["default"].div(_templateObject4());
+
+var Text = _styledComponents["default"].div(_templateObject5(), function (props) {
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
 });
 
-var Date = _styledComponents["default"].div(_templateObject5(), function (props) {
+var Date = _styledComponents["default"].div(_templateObject6(), function (props) {
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
 });
 
-var DatepickerContainer = _styledComponents["default"].div(_templateObject6());
+var DatepickerContainer = _styledComponents["default"].div(_templateObject7());
 
-var MonthContainer = _styledComponents["default"].div(_templateObject7());
+var Container = _styledComponents["default"].div(_templateObject8());
 
-var MonthTitle = _styledComponents["default"].div(_templateObject8(), function (props) {
+var MonthContainer = _styledComponents["default"].div(_templateObject9());
+
+var MonthTitle = _styledComponents["default"].div(_templateObject10(), function (props) {
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xs', 'brand.secondary.dark');
 });
 
-var MonthHeader = _styledComponents["default"].div(_templateObject9());
+var MonthHeader = _styledComponents["default"].div(_templateObject11());
 
-var CalendarContainer = _styledComponents["default"].div(_templateObject10());
+var CalendarContainer = _styledComponents["default"].div(_templateObject12());
 
-var Day = _styledComponents["default"].div(_templateObject11(), function (props) {
+var BlockMessage = _styledComponents["default"].div(_templateObject13(), function (props) {
+  return props.theme.colors.feedback.danger.light;
+}, function (props) {
+  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xs', 'feedback.danger.dark');
+});
+
+var Day = _styledComponents["default"].div(_templateObject14(), function (props) {
   return props.onClick && 'pointer';
 }, function (props) {
   return props.selected && _theme["default"].colors.brand.primary.medium;
@@ -221,7 +263,7 @@ var Day = _styledComponents["default"].div(_templateObject11(), function (props)
   return props.last && "  border-radius: 5px";
 });
 
-var DayBackground = _styledComponents["default"].div(_templateObject12(), function (props) {
+var DayBackground = _styledComponents["default"].div(_templateObject15(), function (props) {
   return props.selected && _theme["default"].colors.brand.primary.medium;
 }, function (props) {
   return props.disabled && _theme["default"].colors.neutral.dark['03'];
@@ -235,7 +277,7 @@ var DayBackground = _styledComponents["default"].div(_templateObject12(), functi
   return props.last && '0 5px 5px 0';
 });
 
-var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject13(), function (props) {
+var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject16(), function (props) {
   return props.theme.colors.brand.secondary.dark;
 });
 
@@ -325,7 +367,23 @@ var Datepicker = function Datepicker(props) {
     setMonths(newMonths);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ButtonContainer, {
+  var ref = (0, _react.useRef)(null);
+
+  var handleClickOutside = function handleClickOutside(event) {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpened(false);
+    }
+  };
+
+  (0, _react.useEffect)(function () {
+    document.addEventListener('click', handleClickOutside, true);
+    return function () {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
+  return /*#__PURE__*/_react["default"].createElement(ContainerDatepicker, {
+    ref: ref
+  }, /*#__PURE__*/_react["default"].createElement(ButtonContainer, {
     onClick: function onClick() {
       setOpened(!opened);
     }
@@ -333,7 +391,7 @@ var Datepicker = function Datepicker(props) {
     path: _theme["default"].icons.calendar,
     size: "22px",
     appearance: "light"
-  }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, null, months.map(function (date, index) {
+  }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, null, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
@@ -384,14 +442,16 @@ var Datepicker = function Datepicker(props) {
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         onClick: function onClick() {
-          props.onSelectDay(dayMonth, firstClick ? 0 : 1);
-          setFirstClick(!firstClick);
-          setOpened(firstClick);
+          if (!blockRange) {
+            props.onSelectDay(dayMonth, firstClick ? 0 : 1);
+            setFirstClick(!firstClick);
+            setOpened(firstClick);
+          }
         },
         disabled: Math.sign(day) === -1
       }, Math.abs(day)));
     }))), index < props.dates.length && /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, null));
-  })));
+  })), blockRange && /*#__PURE__*/_react["default"].createElement(BlockMessage, null, "N\xE3o \xE9 poss\xEDvel selecionar per\xEDodos maiores que ", props.maxRange, ' ', "dias.")));
 };
 
 var _default = Datepicker;
