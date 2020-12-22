@@ -439,7 +439,7 @@ var Datepicker = function Datepicker(props) {
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         "data-tooltip": disabled ? 'Não é possível selecionar um período maior que 120 dias' : '',
-        selected: Math.sign(day) === 1 && dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1])
+        selected: Math.sign(day) === 1 && (dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]))
       }, Math.sign(day) === 1 && /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {
           if (!firstClick) {
