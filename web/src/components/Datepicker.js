@@ -169,6 +169,7 @@ const Datepicker = props => {
       ? [props.dates[0], dayjs(props.dates[1]).add(1, 'month')]
       : props.dates,
   )
+  const today = useState(dayjs())
   const [firstClick, setFirstClick] = useState(true)
   const [blockRange, setBlockRange] = useState(false)
   const [secondDateHover, setSecondDateHover] = useState(null)
@@ -315,6 +316,7 @@ const Datepicker = props => {
                             dayMonth.isSameOrAfter(props.maxDate)) ||
                           (props.minDate &&
                             dayMonth.isSameOrBefore(props.minDate))
+                        const isToday = dayMonth.isSame(today)
                         return (
                           <DayBackground
                             key={date + indexDay}
@@ -375,7 +377,7 @@ const Datepicker = props => {
                               }}
                               disabled={Math.sign(day) === -1}
                             >
-                              {Math.abs(day)}
+                              {isToday ? 'Hoje' : Math.abs(day)}
                             </Day>
                           </DayBackground>
                         )
