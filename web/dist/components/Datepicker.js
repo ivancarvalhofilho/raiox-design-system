@@ -50,7 +50,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -90,7 +90,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  row-gap: 5px;\n  height: 245px;\n  padding: 0 13px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n  grid-template-rows: repeat(7, 1fr);\n  row-gap: 8px;\n  height: 250px;\n  padding: 0 16px 16px 16px;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -100,7 +100,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n  justify-content: space-between;\n  flex: 1;\n  align-items: center;\n  height: 57px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 16px;\n  display: flex;\n  justify-content: space-between;\n  flex: 1;\n  align-items: center;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -130,7 +130,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  display: flex;\n  height: 315px;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  display: flex;\n  //height: 315px;\n  justify-content: space-between;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -140,7 +140,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  width: 640px;\n  ", ";\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 548px;\n  ", ";\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -170,7 +170,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0 16px;\n  display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0 ", ";\n  display: flex;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -217,7 +217,9 @@ var ContainerDatepicker = _styledComponents["default"].div(_templateObject2());
 
 var CalendarIcon = _styledComponents["default"].div(_templateObject3());
 
-var ContainerDate = _styledComponents["default"].div(_templateObject4());
+var ContainerDate = _styledComponents["default"].div(_templateObject4(), function (props) {
+  return props.theme.styles.spacing.inset.xs;
+});
 
 var Text = _styledComponents["default"].div(_templateObject5(), function (props) {
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
@@ -228,6 +230,10 @@ var Date = _styledComponents["default"].div(_templateObject6(), function (props)
 });
 
 var DatepickerContainer = _styledComponents["default"].div(_templateObject7(), function (props) {
+  return props.theme.styles.shadow.level1;
+}, function (props) {
+  return props.theme.styles.border.sm;
+}, function (props) {
   return props.alignContainer === 'center' ? 'left: -150px' : "".concat(props.alignContainer, ": 0");
 });
 
@@ -236,7 +242,7 @@ var Container = _styledComponents["default"].div(_templateObject8());
 var MonthContainer = _styledComponents["default"].div(_templateObject9());
 
 var MonthTitle = _styledComponents["default"].div(_templateObject10(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xs', 'brand.secondary.dark');
+  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base');
 });
 
 var MonthHeader = _styledComponents["default"].div(_templateObject11());
@@ -250,13 +256,13 @@ var BlockMessage = _styledComponents["default"].div(_templateObject13(), functio
 });
 
 var Day = _styledComponents["default"].div(_templateObject14(), function (props) {
-  return props.onClick && 'pointer';
+  return props.disabled ? 'not-allowed' : props.onClick && 'pointer';
 }, function (props) {
   return props.selected && _theme["default"].colors.brand.primary.medium;
 }, function (props) {
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
 }, function (props) {
-  return props.disabled && '#979899';
+  return props.disabled && props.theme.colors.neutral.dark['02'];
 }, function (props) {
   return (props.first || props.last) && "color: ".concat(_theme["default"].colors.neutral.light.base, ";\n  background: #008488;");
 }, function (props) {
@@ -280,7 +286,7 @@ var DayBackground = _styledComponents["default"].div(_templateObject15(), functi
 });
 
 var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject16(), function (props) {
-  return props.theme.colors.brand.secondary.dark;
+  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xxs', 'neutral.dark.01');
 });
 
 var Datepicker = function Datepicker(props) {
@@ -294,20 +300,19 @@ var Datepicker = function Datepicker(props) {
       daysCalendar = _useState4[0],
       setDaysCalendar = _useState4[1];
 
-  var _useState5 = (0, _react.useState)(props.dates && props.dates[0].get('month') === props.dates[1].get('month') && props.dates[0].get('year') === props.dates[1].get('year') ? [props.dates[0], (0, _dayjs["default"])(props.dates[1]).add(1, 'month')] : props.dates),
+  var _useState5 = (0, _react.useState)([props.dates[0], (0, _dayjs["default"])(props.dates[0]).add(1, 'month')]),
       _useState6 = _slicedToArray(_useState5, 2),
       months = _useState6[0],
       setMonths = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(true),
-      _useState8 = _slicedToArray(_useState7, 2),
-      firstClick = _useState8[0],
-      setFirstClick = _useState8[1];
+  var _useState7 = (0, _react.useState)((0, _dayjs["default"])()),
+      _useState8 = _slicedToArray(_useState7, 1),
+      today = _useState8[0];
 
-  var _useState9 = (0, _react.useState)(false),
+  var _useState9 = (0, _react.useState)(true),
       _useState10 = _slicedToArray(_useState9, 2),
-      blockRange = _useState10[0],
-      setBlockRange = _useState10[1];
+      firstClick = _useState10[0],
+      setFirstClick = _useState10[1];
 
   var _useState11 = (0, _react.useState)(null),
       _useState12 = _slicedToArray(_useState11, 2),
@@ -338,34 +343,16 @@ var Datepicker = function Datepicker(props) {
   }, [months]);
 
   var changeYear = function changeYear(index, plus) {
-    var newMonths = months.map(function (month, indexMonth) {
-      return (0, _dayjs["default"])(month).add(indexMonth === index ? plus ? 1 : -1 : 0, 'year');
+    var newMonths = months.map(function (month) {
+      return (0, _dayjs["default"])(month).add(plus ? 1 : -1, 'year');
     });
-
-    if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = (0, _dayjs["default"])(newMonths[0]).add(1, 'month');
-    }
-
-    if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = (0, _dayjs["default"])(newMonths[1]).add(-1, 'month');
-    }
-
     setMonths(newMonths);
   };
 
   var changeMonth = function changeMonth(index, plus) {
     var newMonths = months.map(function (month, indexMonth) {
-      return (0, _dayjs["default"])(month).add(indexMonth === index ? plus ? 1 : -1 : 0, 'month');
+      return (0, _dayjs["default"])(month).add(plus ? 1 : -1, 'month');
     });
-
-    if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = (0, _dayjs["default"])(newMonths[0]).add(1, 'month');
-    }
-
-    if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = (0, _dayjs["default"])(newMonths[1]).add(-1, 'month');
-    }
-
     setMonths(newMonths);
   };
 
@@ -401,7 +388,11 @@ var Datepicker = function Datepicker(props) {
   }, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
       key: index
-    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: '30px'
+      }
+    }, index === 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
       id: "previousYear".concat(index),
@@ -415,7 +406,11 @@ var Datepicker = function Datepicker(props) {
       onClick: function onClick() {
         return changeMonth(index, false);
       }
-    })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    }))), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", {
+      style: {
+        minWidth: '30px'
+      }
+    }, index === 1 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-right'],
       size: "14px",
       id: "nextMonth".concat(index),
@@ -429,47 +424,42 @@ var Datepicker = function Datepicker(props) {
       onClick: function onClick() {
         return changeYear(index, true);
       }
-    }))), /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, {
-      horizontal: true
-    }), /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(function (day, index) {
+    })))), /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map(function (day, index) {
       return /*#__PURE__*/_react["default"].createElement(DayHeader, {
         key: index
       }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = (0, _dayjs["default"])(months[index]).set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
-      var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate);
+      var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate) || props.maxRange && !firstClick && Math.abs(props.dates[0].diff(dayMonth, 'day')) > props.maxRange;
+      var isToday = dayMonth.isSame(today, 'day');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
         key: date + indexDay,
         firstInLine: indexDay % 7 === 0,
         lastInLine: (indexDay + 1) % 7 === 0,
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
-        selected: dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]),
-        disabled: disabled
-      }, /*#__PURE__*/_react["default"].createElement(Day, {
+        "data-tooltip": disabled ? 'Não é possível selecionar um período maior que 120 dias' : '',
+        selected: Math.sign(day) === 1 && dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1])
+      }, Math.sign(day) === 1 && /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {
           if (!firstClick) {
             setSecondDateHover(dayMonth);
-
-            if (props.maxRange) {
-              setBlockRange(dayMonth.diff(props.dates[0], 'day') > props.maxRange);
-            }
           }
         },
         id: "day".concat(dayMonth.format('DDMMYY')),
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
-        last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
+        last: day >= 0 && dayMonth.isSame(firstClick ? props.dates[1] : secondDateHover),
         onClick: function onClick() {
-          if (!blockRange && !disabled) {
+          if (!disabled) {
             props.onSelectDay(dayMonth, firstClick ? 0 : 1);
             setFirstClick(!firstClick);
             setOpened(firstClick);
           }
         },
-        disabled: Math.sign(day) === -1
-      }, Math.abs(day)));
+        disabled: disabled
+      }, isToday ? 'Hoje' : Math.abs(day)));
     }))), index < props.dates.length && /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, null));
-  })), blockRange && /*#__PURE__*/_react["default"].createElement(BlockMessage, null, "N\xE3o \xE9 poss\xEDvel selecionar per\xEDodos maiores que ", props.maxRange, ' ', "dias.")));
+  }))));
 };
 
 var _default = Datepicker;

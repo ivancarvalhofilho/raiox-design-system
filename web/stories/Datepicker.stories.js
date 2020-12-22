@@ -15,6 +15,7 @@ const Template = args => {
         {...args}
         dates={dates}
         maxRange={120}
+        minDate={dayjs().add(-1, 'month')}
         onSelectDay={(data, index) => {
           const datesUpdate = dates.map((date, indexDate) =>
             indexDate === index ? data : date,
