@@ -649,6 +649,11 @@ exports[`should render 2`] = `
                           onClick={[Function]}
                           path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                           size="14px"
+                          style={
+                            Object {
+                              "marginRight": "8px",
+                            }
+                          }
                         >
                           <Styled(SVGInline)
                             fill="#979899"
@@ -656,7 +661,11 @@ exports[`should render 2`] = `
                             onClick={[Function]}
                             path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                             size="14px"
-                            style={Object {}}
+                            style={
+                              Object {
+                                "marginRight": "8px",
+                              }
+                            }
                             svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                             width="14px"
                           >
@@ -671,7 +680,11 @@ exports[`should render 2`] = `
                               onClick={[Function]}
                               path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                               size="14px"
-                              style={Object {}}
+                              style={
+                                Object {
+                                  "marginRight": "8px",
+                                }
+                              }
                               svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                               width="14px"
                             >
@@ -686,7 +699,11 @@ exports[`should render 2`] = `
                                 onClick={[Function]}
                                 path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
                                 size="14px"
-                                style={Object {}}
+                                style={
+                                  Object {
+                                    "marginRight": "8px",
+                                  }
+                                }
                               />
                             </SVGInline>
                           </Styled(SVGInline)>
@@ -1900,6 +1917,11 @@ exports[`should render 2`] = `
                           onClick={[Function]}
                           path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                           size="14px"
+                          style={
+                            Object {
+                              "marginRight": "8px",
+                            }
+                          }
                         >
                           <Styled(SVGInline)
                             fill="#979899"
@@ -1907,7 +1929,11 @@ exports[`should render 2`] = `
                             onClick={[Function]}
                             path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                             size="14px"
-                            style={Object {}}
+                            style={
+                              Object {
+                                "marginRight": "8px",
+                              }
+                            }
                             svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                             width="14px"
                           >
@@ -1922,7 +1948,11 @@ exports[`should render 2`] = `
                               onClick={[Function]}
                               path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                               size="14px"
-                              style={Object {}}
+                              style={
+                                Object {
+                                  "marginRight": "8px",
+                                }
+                              }
                               svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                               width="14px"
                             >
@@ -1937,7 +1967,11 @@ exports[`should render 2`] = `
                                 onClick={[Function]}
                                 path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
                                 size="14px"
-                                style={Object {}}
+                                style={
+                                  Object {
+                                    "marginRight": "8px",
+                                  }
+                                }
                               />
                             </SVGInline>
                           </Styled(SVGInline)>

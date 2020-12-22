@@ -396,6 +396,9 @@ var Datepicker = function Datepicker(props) {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
       id: "previousYear".concat(index),
+      style: {
+        marginRight: '8px'
+      },
       onClick: function onClick() {
         return changeYear(index, false);
       }
@@ -413,6 +416,9 @@ var Datepicker = function Datepicker(props) {
     }, index === 1 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-right'],
       size: "14px",
+      style: {
+        marginRight: '8px'
+      },
       id: "nextMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, true);
