@@ -384,6 +384,7 @@ var Datepicker = function Datepicker(props) {
   return /*#__PURE__*/_react["default"].createElement(ContainerDatepicker, {
     ref: ref
   }, /*#__PURE__*/_react["default"].createElement(ButtonContainer, {
+    id: "button",
     onClick: function onClick() {
       setOpened(!opened);
     }
@@ -391,38 +392,49 @@ var Datepicker = function Datepicker(props) {
     path: _theme["default"].icons.calendar,
     size: "22px",
     appearance: "light"
-  }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, null, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+  }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, {
+    id: "container"
+  }, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+      key: index
+    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
+      id: "previousYear".concat(index),
       onClick: function onClick() {
         return changeYear(index, false);
       }
     }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-left'],
       size: "14px",
+      id: "previousMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, false);
       }
     })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-right'],
       size: "14px",
+      id: "nextMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, true);
       }
     }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-right'],
       size: "14px",
+      id: "nextYear".concat(index),
       onClick: function onClick() {
         return changeYear(index, true);
       }
     }))), /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, {
       horizontal: true
-    }), /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(function (day) {
-      return /*#__PURE__*/_react["default"].createElement(DayHeader, null, day);
+    }), /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(function (day, index) {
+      return /*#__PURE__*/_react["default"].createElement(DayHeader, {
+        key: index
+      }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = months[index].set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
+        key: date + indexDay,
         firstInLine: indexDay % 7 === 0,
         lastInLine: (indexDay + 1) % 7 === 0,
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
@@ -439,6 +451,7 @@ var Datepicker = function Datepicker(props) {
             }
           }
         },
+        id: "day".concat(dayMonth.format('DDMMYY')),
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         onClick: function onClick() {
@@ -458,5 +471,8 @@ var _default = Datepicker;
 exports["default"] = _default;
 Datepicker.propTypes = {
   dates: _propTypes["default"].array,
+  maxDate: _propTypes["default"].object,
+  maxRange: _propTypes["default"].number,
+  minDate: _propTypes["default"].object,
   onSelectDay: _propTypes["default"].func
 };
