@@ -87,6 +87,12 @@ Object.defineProperty(exports, "Tabs", {
     return _Tabs["default"];
   }
 });
+Object.defineProperty(exports, "Datepicker", {
+  enumerable: true,
+  get: function get() {
+    return _Datepicker["default"];
+  }
+});
 
 var _HeaderCalendar = _interopRequireDefault(require("./HeaderCalendar"));
 
@@ -115,5 +121,7 @@ var _Tab = _interopRequireDefault(require("./Tab"));
 var _Table = _interopRequireDefault(require("./Table"));
 
 var _Tabs = _interopRequireDefault(require("./Tabs"));
+
+var _Datepicker = _interopRequireDefault(require("./Datepicker"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
