@@ -230,6 +230,7 @@ const Datepicker = props => {
   return (
     <ContainerDatepicker ref={ref}>
       <ButtonContainer
+        id="button"
         onClick={() => {
           setOpened(!opened)
         }}
@@ -247,21 +248,23 @@ const Datepicker = props => {
         </CalendarIcon>
       </ButtonContainer>
       {opened && (
-        <DatepickerContainer>
+        <DatepickerContainer id="container">
           <Container>
             {months.map((date, index) => (
-              <>
+              <React.Fragment key={index}>
                 <MonthContainer>
                   <MonthHeader>
                     <div>
                       <Icon
                         path={theme.icons['double-arrow-left']}
                         size="14px"
+                        id={`previousYear${index}`}
                         onClick={() => changeYear(index, false)}
                       />
                       <Icon
                         path={theme.icons['single-arrow-left']}
                         size="14px"
+                        id={`previousMonth${index}`}
                         onClick={() => changeMonth(index, false)}
                       />
                     </div>
@@ -270,19 +273,21 @@ const Datepicker = props => {
                       <Icon
                         path={theme.icons['single-arrow-right']}
                         size="14px"
+                        id={`nextMonth${index}`}
                         onClick={() => changeMonth(index, true)}
                       />
                       <Icon
                         path={theme.icons['double-arrow-right']}
                         size="14px"
+                        id={`nextYear${index}`}
                         onClick={() => changeYear(index, true)}
                       />
                     </div>
                   </MonthHeader>
                   <Divider horizontal />
                   <CalendarContainer>
-                    {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(day => (
-                      <DayHeader>{day}</DayHeader>
+                    {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((day, index) => (
+                      <DayHeader key={index}>{day}</DayHeader>
                     ))}
                     {daysCalendar[index] &&
                       daysCalendar[index].map((day, indexDay) => {
@@ -291,6 +296,7 @@ const Datepicker = props => {
                           .add(Math.sign(day) === -1 ? -1 : 0, 'month')
                         return (
                           <DayBackground
+                            key={date + indexDay}
                             firstInLine={indexDay % 7 === 0}
                             lastInLine={(indexDay + 1) % 7 === 0}
                             first={day >= 0 && dayMonth.isSame(props.dates[0])}
@@ -332,6 +338,7 @@ const Datepicker = props => {
                                   }
                                 }
                               }}
+                              id={`day${dayMonth.format('DDMMYY')}`}
                               first={
                                 day >= 0 && dayMonth.isSame(props.dates[0])
                               }
@@ -360,7 +367,7 @@ const Datepicker = props => {
                   </CalendarContainer>
                 </MonthContainer>
                 {index < props.dates.length && <Divider />}
-              </>
+              </React.Fragment>
             ))}
           </Container>
           {blockRange && (
@@ -379,5 +386,8 @@ export default Datepicker
 
 Datepicker.propTypes = {
   dates: PropTypes.array,
+  maxDate: PropTypes.object,
+  maxRange: PropTypes.number,
+  minDate: PropTypes.object,
   onSelectDay: PropTypes.func,
 }

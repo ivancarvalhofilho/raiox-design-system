@@ -47,6 +47,7 @@
     "eslint-plugin-react-hooks": "2.2.0",
     "eslint-plugin-standard": "^4.0.1",
     "handlebars": "^4.5.0",
+    "mockdate": "^3.0.2",
     "prop-types": "^15.7.2",
     "react-infinite-scroll-component": "^5.1.0",
     "react-is": "^16.13.1",
