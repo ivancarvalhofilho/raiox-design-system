@@ -12,6 +12,7 @@ const Template = args => {
   return (
     <div style={{ width: '900px', display: 'flex', justifyContent: 'center' }}>
       <Datepicker
+        {...args}
         dates={dates}
         maxRange={120}
         onSelectDay={(data, index) => {

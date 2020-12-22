@@ -322,7 +322,9 @@ exports[`should render 2`] = `
   box-shadow: 0px 9px 46px rgba(0,0,0,0.12);
   border-radius: 4px;
   width: 640px;
-  left: -150px;
+  -webkit-undefined: 0;
+  -ms-flex-undefined: 0;
+  undefined: 0;
   top: 48px;
   position: absolute;
   display: -webkit-box;
