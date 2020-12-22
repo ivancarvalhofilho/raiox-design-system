@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from './index'
-import ReactDOM from 'react-dom'
 import theme from '../../../tokens/theme'
 import { Divider } from './StyledComponents'
 import { fontStyleMaker } from '../utils'
+import dayjs from 'dayjs'
 
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
@@ -137,8 +137,8 @@ const Day = styled.div`
     (props.first || props.last) &&
     `color: ${theme.colors.neutral.light.base};
   background: #008488;`}
-  ${props => props.first && ` border-radius: 5px`}
-  ${props => props.last && `  border-radius: 5px`}
+      ${props => props.first && ` border-radius: 5px`}
+      ${props => props.last && `  border-radius: 5px`}
 `
 
 const DayBackground = styled.div`
@@ -176,7 +176,9 @@ const Datepicker = props => {
     const dates = []
     months.forEach((date, index) => {
       const numberOfDaysOfThisMonth = date.daysInMonth()
-      const numberOfDaysOfPastMonth = date.add(-1, 'month').daysInMonth()
+      const numberOfDaysOfPastMonth = dayjs(date)
+        .add(-1, 'month')
+        .daysInMonth()
       const firstDayOfThisMonth = date.startOf('month').weekday()
       dates[index] = [
         ...createArray(
@@ -191,35 +193,37 @@ const Datepicker = props => {
 
   const changeYear = (index, plus) => {
     const newMonths = months.map((month, indexMonth) =>
-      month.add(indexMonth === index ? (plus ? 1 : -1) : 0, 'year'),
+      dayjs(month).add(indexMonth === index ? (plus ? 1 : -1) : 0, 'year'),
     )
     if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = newMonths[0].add(1, 'month')
+      newMonths[1] = dayjs(newMonths[0]).add(1, 'month')
     }
     if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = newMonths[1].add(-1, 'month')
+      newMonths[0] = dayjs(newMonths[1]).add(-1, 'month')
     }
     setMonths(newMonths)
   }
 
   const changeMonth = (index, plus) => {
     const newMonths = months.map((month, indexMonth) =>
-      month.add(indexMonth === index ? (plus ? 1 : -1) : 0, 'month'),
+      dayjs(month).add(indexMonth === index ? (plus ? 1 : -1) : 0, 'month'),
     )
     if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = newMonths[0].add(1, 'month')
+      newMonths[1] = dayjs(newMonths[0]).add(1, 'month')
     }
     if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = newMonths[1].add(-1, 'month')
+      newMonths[0] = dayjs(newMonths[1]).add(-1, 'month')
     }
     setMonths(newMonths)
   }
+
   const ref = useRef(null)
   const handleClickOutside = event => {
     if (ref.current && !ref.current.contains(event.target)) {
       setOpened(false)
     }
   }
+
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)
     return () => {
@@ -228,7 +232,7 @@ const Datepicker = props => {
   }, [])
 
   return (
-    <ContainerDatepicker ref={ref}>
+    <ContainerDatepicker ref={ref} style={props.style}>
       <ButtonContainer
         id="button"
         onClick={() => {
@@ -291,7 +295,7 @@ const Datepicker = props => {
                     ))}
                     {daysCalendar[index] &&
                       daysCalendar[index].map((day, indexDay) => {
-                        const dayMonth = months[index]
+                        const dayMonth = dayjs(months[index])
                           .set('date', Math.abs(day))
                           .add(Math.sign(day) === -1 ? -1 : 0, 'month')
                         return (
@@ -390,4 +394,5 @@ Datepicker.propTypes = {
   maxRange: PropTypes.number,
   minDate: PropTypes.object,
   onSelectDay: PropTypes.func,
+  style: PropTypes.object,
 }

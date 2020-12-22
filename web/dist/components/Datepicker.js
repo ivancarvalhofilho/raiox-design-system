@@ -13,15 +13,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _index = require("./index");
+var _Icon = _interopRequireDefault(require("raiox-design-system/web/dist/components/Icon"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
+var _theme = _interopRequireDefault(require("raiox-design-system/tokens/theme"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _StyledComponents = require("raiox-design-system/web/dist/components/StyledComponents");
 
-var _StyledComponents = require("./StyledComponents");
+var _utils = require("raiox-design-system/web/dist/utils");
 
-var _utils = require("../utils");
+var _dayjs = _interopRequireDefault(require("dayjs"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -70,7 +70,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  cursor: ", ";\n  background-color: ", ";\n  ", ";\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  cursor: ", ";\n  background-color: ", ";\n  ", ";\n  color: ", ";\n  ", "\n      ", "\n      ", "\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -326,7 +326,7 @@ var Datepicker = function Datepicker(props) {
     var dates = [];
     months.forEach(function (date, index) {
       var numberOfDaysOfThisMonth = date.daysInMonth();
-      var numberOfDaysOfPastMonth = date.add(-1, 'month').daysInMonth();
+      var numberOfDaysOfPastMonth = (0, _dayjs["default"])(date).add(-1, 'month').daysInMonth();
       var firstDayOfThisMonth = date.startOf('month').weekday();
       dates[index] = [].concat(_toConsumableArray(createArray(firstDayOfThisMonth, numberOfDaysOfPastMonth - firstDayOfThisMonth).map(function (value) {
         return -value;
@@ -337,15 +337,15 @@ var Datepicker = function Datepicker(props) {
 
   var changeYear = function changeYear(index, plus) {
     var newMonths = months.map(function (month, indexMonth) {
-      return month.add(indexMonth === index ? plus ? 1 : -1 : 0, 'year');
+      return (0, _dayjs["default"])(month).add(indexMonth === index ? plus ? 1 : -1 : 0, 'year');
     });
 
     if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = newMonths[0].add(1, 'month');
+      newMonths[1] = (0, _dayjs["default"])(newMonths[0]).add(1, 'month');
     }
 
     if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = newMonths[1].add(-1, 'month');
+      newMonths[0] = (0, _dayjs["default"])(newMonths[1]).add(-1, 'month');
     }
 
     setMonths(newMonths);
@@ -353,15 +353,15 @@ var Datepicker = function Datepicker(props) {
 
   var changeMonth = function changeMonth(index, plus) {
     var newMonths = months.map(function (month, indexMonth) {
-      return month.add(indexMonth === index ? plus ? 1 : -1 : 0, 'month');
+      return (0, _dayjs["default"])(month).add(indexMonth === index ? plus ? 1 : -1 : 0, 'month');
     });
 
     if (index === 0 && newMonths[0].isSameOrAfter(newMonths[1])) {
-      newMonths[1] = newMonths[0].add(1, 'month');
+      newMonths[1] = (0, _dayjs["default"])(newMonths[0]).add(1, 'month');
     }
 
     if (index === 1 && newMonths[1].isSameOrBefore(newMonths[0])) {
-      newMonths[0] = newMonths[1].add(-1, 'month');
+      newMonths[0] = (0, _dayjs["default"])(newMonths[1]).add(-1, 'month');
     }
 
     setMonths(newMonths);
@@ -382,13 +382,14 @@ var Datepicker = function Datepicker(props) {
     };
   }, []);
   return /*#__PURE__*/_react["default"].createElement(ContainerDatepicker, {
-    ref: ref
+    ref: ref,
+    style: props.style
   }, /*#__PURE__*/_react["default"].createElement(ButtonContainer, {
     id: "button",
     onClick: function onClick() {
       setOpened(!opened);
     }
-  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat(props.dates[0].format('DD MMM'), " - ").concat(props.dates[1].format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat(props.dates[0].format('DD MMM'), " - ").concat(props.dates[1].format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     path: _theme["default"].icons.calendar,
     size: "22px",
     appearance: "light"
@@ -397,28 +398,28 @@ var Datepicker = function Datepicker(props) {
   }, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
       key: index
-    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
       id: "previousYear".concat(index),
       onClick: function onClick() {
         return changeYear(index, false);
       }
-    }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       path: _theme["default"].icons['single-arrow-left'],
       size: "14px",
       id: "previousMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, false);
       }
-    })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       path: _theme["default"].icons['single-arrow-right'],
       size: "14px",
       id: "nextMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, true);
       }
-    }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+    }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       path: _theme["default"].icons['double-arrow-right'],
       size: "14px",
       id: "nextYear".concat(index),
@@ -432,7 +433,7 @@ var Datepicker = function Datepicker(props) {
         key: index
       }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
-      var dayMonth = months[index].set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
+      var dayMonth = (0, _dayjs["default"])(months[index]).set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
         key: date + indexDay,
         firstInLine: indexDay % 7 === 0,
@@ -474,5 +475,6 @@ Datepicker.propTypes = {
   maxDate: _propTypes["default"].object,
   maxRange: _propTypes["default"].number,
   minDate: _propTypes["default"].object,
-  onSelectDay: _propTypes["default"].func
+  onSelectDay: _propTypes["default"].func,
+  style: _propTypes["default"].object
 };
