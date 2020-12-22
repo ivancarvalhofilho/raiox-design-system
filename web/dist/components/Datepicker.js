@@ -13,13 +13,13 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Icon = _interopRequireDefault(require("raiox-design-system/web/dist/components/Icon"));
+var _index = require("./index");
 
-var _theme = _interopRequireDefault(require("raiox-design-system/tokens/theme"));
+var _theme = _interopRequireDefault(require("../../../tokens/theme"));
 
-var _StyledComponents = require("raiox-design-system/web/dist/components/StyledComponents");
+var _StyledComponents = require("./StyledComponents");
 
-var _utils = require("raiox-design-system/web/dist/utils");
+var _utils = require("../utils");
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
@@ -140,7 +140,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  width: 640px;\n  left: -150px;\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);\n  border-radius: 4px;\n  width: 640px;\n  ", ";\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -227,7 +227,9 @@ var Date = _styledComponents["default"].div(_templateObject6(), function (props)
   return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
 });
 
-var DatepickerContainer = _styledComponents["default"].div(_templateObject7());
+var DatepickerContainer = _styledComponents["default"].div(_templateObject7(), function (props) {
+  return props.alignContainer === 'center' ? 'left: -150px' : "".concat(props.alignContainer, ": 0");
+});
 
 var Container = _styledComponents["default"].div(_templateObject8());
 
@@ -389,37 +391,38 @@ var Datepicker = function Datepicker(props) {
     onClick: function onClick() {
       setOpened(!opened);
     }
-  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat(props.dates[0].format('DD MMM'), " - ").concat(props.dates[1].format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat(props.dates[0].format('DD MMM'), " - ").concat(props.dates[1].format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
     path: _theme["default"].icons.calendar,
     size: "22px",
     appearance: "light"
   }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, {
-    id: "container"
+    id: "container",
+    alignContainer: props.alignContainer
   }, /*#__PURE__*/_react["default"].createElement(Container, null, months.map(function (date, index) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
       key: index
-    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    }, /*#__PURE__*/_react["default"].createElement(MonthContainer, null, /*#__PURE__*/_react["default"].createElement(MonthHeader, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-left'],
       size: "14px",
       id: "previousYear".concat(index),
       onClick: function onClick() {
         return changeYear(index, false);
       }
-    }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-left'],
       size: "14px",
       id: "previousMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, false);
       }
-    })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    })), /*#__PURE__*/_react["default"].createElement(MonthTitle, null, date.format('MMMM YYYY')), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['single-arrow-right'],
       size: "14px",
       id: "nextMonth".concat(index),
       onClick: function onClick() {
         return changeMonth(index, true);
       }
-    }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
       path: _theme["default"].icons['double-arrow-right'],
       size: "14px",
       id: "nextYear".concat(index),
@@ -471,6 +474,7 @@ var Datepicker = function Datepicker(props) {
 var _default = Datepicker;
 exports["default"] = _default;
 Datepicker.propTypes = {
+  alignContainer: _propTypes["default"].string,
   dates: _propTypes["default"].array,
   maxDate: _propTypes["default"].object,
   maxRange: _propTypes["default"].number,

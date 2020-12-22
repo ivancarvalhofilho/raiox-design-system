@@ -57,7 +57,10 @@ const DatepickerContainer = styled.div`
   box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   width: 640px;
-  left: -150px;
+  ${props =>
+    props.alignContainer === 'center'
+      ? 'left: -150px'
+      : `${props.alignContainer}: 0`};
   top: 48px;
   position: absolute;
   display: flex;
@@ -252,7 +255,10 @@ const Datepicker = props => {
         </CalendarIcon>
       </ButtonContainer>
       {opened && (
-        <DatepickerContainer id="container">
+        <DatepickerContainer
+          id="container"
+          alignContainer={props.alignContainer}
+        >
           <Container>
             {months.map((date, index) => (
               <React.Fragment key={index}>
@@ -389,6 +395,7 @@ const Datepicker = props => {
 export default Datepicker
 
 Datepicker.propTypes = {
+  alignContainer: PropTypes.string,
   dates: PropTypes.array,
   maxDate: PropTypes.object,
   maxRange: PropTypes.number,
