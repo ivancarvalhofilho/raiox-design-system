@@ -304,6 +304,11 @@ const Datepicker = props => {
                         const dayMonth = dayjs(months[index])
                           .set('date', Math.abs(day))
                           .add(Math.sign(day) === -1 ? -1 : 0, 'month')
+                        const disabled =
+                          (props.maxDate &&
+                            dayMonth.isSameOrAfter(props.maxDate)) ||
+                          (props.minDate &&
+                            dayMonth.isSameOrBefore(props.minDate))
                         return (
                           <DayBackground
                             key={date + indexDay}
@@ -329,12 +334,7 @@ const Datepicker = props => {
                                     : props.dates[1],
                                 ))
                             }
-                            disabled={
-                              (props.maxDate &&
-                                dayMonth.isSameOrAfter(props.maxDate)) ||
-                              (props.minDate &&
-                                dayMonth.isSameOrBefore(props.minDate))
-                            }
+                            disabled={disabled}
                           >
                             <Day
                               onMouseOver={() => {
@@ -358,7 +358,7 @@ const Datepicker = props => {
                                 dayMonth.isSame(props.dates[1])
                               }
                               onClick={() => {
-                                if (!blockRange) {
+                                if (!blockRange && !disabled) {
                                   props.onSelectDay(
                                     dayMonth,
                                     firstClick ? 0 : 1,
