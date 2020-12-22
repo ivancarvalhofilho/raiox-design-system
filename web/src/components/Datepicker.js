@@ -326,19 +326,19 @@ const Datepicker = props => {
                                 : ''
                             }
                             selected={
-                              (Math.sign(day) === 1 &&
-                                dayMonth.isSameOrAfter(props.dates[0]) &&
+                              Math.sign(day) === 1 &&
+                              ((dayMonth.isSameOrAfter(props.dates[0]) &&
                                 dayMonth.isSameOrBefore(
                                   !firstClick
                                     ? secondDateHover
                                     : props.dates[1],
                                 )) ||
-                              (dayMonth.isSameOrBefore(props.dates[0]) &&
-                                dayMonth.isSameOrAfter(
-                                  !firstClick
-                                    ? secondDateHover
-                                    : props.dates[1],
-                                ))
+                                (dayMonth.isSameOrBefore(props.dates[0]) &&
+                                  dayMonth.isSameOrAfter(
+                                    !firstClick
+                                      ? secondDateHover
+                                      : props.dates[1],
+                                  )))
                             }
                           >
                             {Math.sign(day) === 1 && (
