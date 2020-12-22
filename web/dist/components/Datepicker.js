@@ -140,7 +140,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 548px;\n  ", ";\n  top: 48px;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #ffffff;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 514px;\n  ", ";\n  top: 48px;\n  z-index: 1000;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;

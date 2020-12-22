@@ -56,12 +56,13 @@ const DatepickerContainer = styled.div`
   background: #ffffff;
   box-shadow: ${props => props.theme.styles.shadow.level1};
   border-radius: ${props => props.theme.styles.border.sm};
-  width: 548px;
+  width: 514px;
   ${props =>
     props.alignContainer === 'center'
       ? 'left: -150px'
       : `${props.alignContainer}: 0`};
   top: 48px;
+  z-index: 1000;
   position: absolute;
   display: flex;
   flex-direction: column;
