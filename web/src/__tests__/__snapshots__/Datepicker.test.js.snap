@@ -228,11 +228,7 @@ exports[`should render 2`] = `
   transform: rotate(-deg);
 }
 
-.c13 {
-  border-bottom: 1px solid #E0E0E0;
-}
-
-.c26 {
+.c24 {
   border-left: 1px solid #E0E0E0;
 }
 
@@ -319,9 +315,8 @@ exports[`should render 2`] = `
 
 .c7 {
   background: #ffffff;
-  box-shadow: 0px 9px 46px rgba(0,0,0,0.12);
-  border-radius: 4px;
-  width: 640px;
+  box-shadow: 0px 0px 8px rgba(0,39,64,0.1);
+  width: 548px;
   -webkit-undefined: 0;
   -ms-flex-undefined: 0;
   undefined: 0;
@@ -348,7 +343,6 @@ exports[`should render 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 315px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -363,13 +357,13 @@ exports[`should render 2`] = `
 
 .c12 {
   font-family: Roboto;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
-  color: #003A60;
+  color: #303133;
 }
 
 .c10 {
-  padding: 0 16px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -385,19 +379,18 @@ exports[`should render 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 57px;
 }
 
-.c14 {
+.c13 {
   display: grid;
   grid-template-columns: repeat(7,1fr);
   grid-template-rows: repeat(7,1fr);
-  row-gap: 5px;
-  height: 245px;
-  padding: 0 13px;
+  row-gap: 8px;
+  height: 250px;
+  padding: 0 16px 16px 16px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -416,138 +409,118 @@ exports[`should render 2`] = `
   font-weight: 500;
   font-size: 12px;
   color: #303133;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 12px;
-  color: #303133;
-  color: #979899;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 12px;
-  color: #303133;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 12px;
-  color: #303133;
-  color: #FFFFFF;
-  background: #008488;
-  border-radius: 5px;
-}
-
-.c28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 12px;
-  color: #303133;
-  color: #FFFFFF;
-  background: #008488;
-  border-radius: 5px;
 }
 
 .c17 {
-  border-radius: 5px 0 0 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  color: #303133;
 }
 
 .c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  color: #303133;
+  color: #FFFFFF;
+  background: #008488;
+  border-radius: 5px;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  color: #303133;
+  color: #FFFFFF;
+  background: #008488;
+  border-radius: 5px;
+}
+
+.c16 {
+  border-radius: 5px 0 0 5px;
+}
+
+.c18 {
   border-radius: 0 5px 5px 0;
+}
+
+.c19 {
+  background-color: #9FDBDC;
+  border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 .c21 {
   background-color: #9FDBDC;
-  border-radius: 5px 0 0 5px;
-  border-radius: 5px 0 0 5px;
+}
+
+.c22 {
+  background-color: #9FDBDC;
+  border-radius: 0 5px 5px 0;
 }
 
 .c23 {
   background-color: #9FDBDC;
-}
-
-.c24 {
-  background-color: #9FDBDC;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
 }
 
 .c25 {
   background-color: #9FDBDC;
-  border-radius: 5px 0 0 5px;
-}
-
-.c27 {
-  background-color: #9FDBDC;
   border-radius: 0 5px 5px 0;
 }
 
-.c16 {
-  color: #003A60;
+.c15 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  color: #595A5C;
 }
 
 <Datepicker
@@ -663,7 +636,13 @@ exports[`should render 2`] = `
                     <div
                       className="c10"
                     >
-                      <div>
+                      <div
+                        style={
+                          Object {
+                            "minWidth": "30px",
+                          }
+                        }
+                      >
                         <Icon
                           id="previousYear0"
                           onClick={[Function]}
@@ -766,179 +745,84 @@ exports[`should render 2`] = `
                           Junho 2015
                         </div>
                       </styled.div>
-                      <div>
-                        <Icon
-                          id="nextMonth0"
-                          onClick={[Function]}
-                          path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                          size="14px"
-                        >
-                          <Styled(SVGInline)
-                            fill="#979899"
-                            id="nextMonth0"
-                            onClick={[Function]}
-                            path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                            size="14px"
-                            style={Object {}}
-                            svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                            width="14px"
-                          >
-                            <SVGInline
-                              className="c11"
-                              classSuffix="-svg"
-                              cleanup={Array []}
-                              cleanupExceptions={Array []}
-                              component="span"
-                              fill="#979899"
-                              id="nextMonth0"
-                              onClick={[Function]}
-                              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                              size="14px"
-                              style={Object {}}
-                              svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                              width="14px"
-                            >
-                              <span
-                                className="SVGInline c11"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c11-svg\\" fill=\\"#979899\\" style=\\"width: 14px;height: 14px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>",
-                                  }
-                                }
-                                id="nextMonth0"
-                                onClick={[Function]}
-                                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M-2.16022e-06 12.355L5.25371 7L-2.87621e-07 1.645L1.61741 2.82797e-07L8.5 7L1.61741 14L-2.16022e-06 12.355Z\\" fill=\\"#008488\\"/></svg>"
-                                size="14px"
-                                style={Object {}}
-                              />
-                            </SVGInline>
-                          </Styled(SVGInline)>
-                        </Icon>
-                        <Icon
-                          id="nextYear0"
-                          onClick={[Function]}
-                          path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                          size="14px"
-                        >
-                          <Styled(SVGInline)
-                            fill="#979899"
-                            id="nextYear0"
-                            onClick={[Function]}
-                            path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                            size="14px"
-                            style={Object {}}
-                            svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                            width="14px"
-                          >
-                            <SVGInline
-                              className="c11"
-                              classSuffix="-svg"
-                              cleanup={Array []}
-                              cleanupExceptions={Array []}
-                              component="span"
-                              fill="#979899"
-                              id="nextYear0"
-                              onClick={[Function]}
-                              path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                              size="14px"
-                              style={Object {}}
-                              svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                              width="14px"
-                            >
-                              <span
-                                className="SVGInline c11"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c11-svg\\" fill=\\"#979899\\" style=\\"width: 14px;height: 14px;\\" width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>",
-                                  }
-                                }
-                                id="nextYear0"
-                                onClick={[Function]}
-                                path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1.07661e-06 10.5937L1.46853 12L7.73427 6L1.46853 -1.09554e-06L1.87981e-06 1.40625L4.7972 6L1.07661e-06 10.5937ZM6.26573 10.5937L7.73427 12L14 6L7.73427 -5.47768e-07L6.26574 1.40625L11.0629 6L6.26573 10.5937Z\\" fill=\\"#008488\\"/></svg>"
-                                size="14px"
-                                style={Object {}}
-                              />
-                            </SVGInline>
-                          </Styled(SVGInline)>
-                        </Icon>
-                      </div>
+                      <div
+                        style={
+                          Object {
+                            "minWidth": "30px",
+                          }
+                        }
+                      />
                     </div>
-                  </styled.div>
-                  <styled.div
-                    horizontal={true}
-                  >
-                    <div
-                      className="c13"
-                    />
                   </styled.div>
                   <styled.div>
                     <div
-                      className="c14"
+                      className="c13"
                     >
                       <Styled(styled.div)
                         key="0"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          D
+                          Dom
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="1"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Seg
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="2"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          T
+                          Ter
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="3"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          Q
+                          Qua
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="4"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          Q
+                          Qui
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="5"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Sex
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="6"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Sáb
                         </div>
                       </Styled(styled.div)>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1434319925275"
@@ -947,30 +831,13 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c17"
+                          className="c16"
+                          data-tooltip=""
                           selected={false}
-                        >
-                          <styled.div
-                            disabled={true}
-                            first={false}
-                            id="day010615"
-                            last={false}
-                            onClick={[Function]}
-                            onMouseOver={[Function]}
-                          >
-                            <div
-                              className="c18"
-                              disabled={true}
-                              id="day010615"
-                              onClick={[Function]}
-                              onMouseOver={[Function]}
-                            >
-                              31
-                            </div>
-                          </styled.div>
-                        </div>
+                        />
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925276"
@@ -980,6 +847,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -991,7 +859,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day010615"
                               onClick={[Function]}
@@ -1003,6 +871,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925277"
@@ -1012,6 +881,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1023,7 +893,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day020615"
                               onClick={[Function]}
@@ -1035,6 +905,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925278"
@@ -1044,6 +915,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1055,7 +927,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day030615"
                               onClick={[Function]}
@@ -1067,6 +939,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925279"
@@ -1076,6 +949,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1087,7 +961,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day040615"
                               onClick={[Function]}
@@ -1099,6 +973,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925280"
@@ -1108,6 +983,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1119,7 +995,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day050615"
                               onClick={[Function]}
@@ -1131,6 +1007,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925281"
@@ -1139,7 +1016,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c20"
+                          className="c18"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1151,7 +1029,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day060615"
                               onClick={[Function]}
@@ -1163,6 +1041,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1434319925282"
@@ -1171,7 +1050,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c17"
+                          className="c16"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1183,7 +1063,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day070615"
                               onClick={[Function]}
@@ -1195,6 +1075,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925283"
@@ -1204,6 +1085,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1215,7 +1097,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day080615"
                               onClick={[Function]}
@@ -1227,6 +1109,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925284"
@@ -1236,6 +1119,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1247,7 +1131,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day090615"
                               onClick={[Function]}
@@ -1259,6 +1143,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925285"
@@ -1268,6 +1153,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1279,7 +1165,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day100615"
                               onClick={[Function]}
@@ -1291,6 +1177,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925286"
@@ -1300,6 +1187,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1311,7 +1199,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day110615"
                               onClick={[Function]}
@@ -1323,6 +1211,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925287"
@@ -1332,6 +1221,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1343,7 +1233,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day120615"
                               onClick={[Function]}
@@ -1355,6 +1245,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925288"
@@ -1363,7 +1254,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c20"
+                          className="c18"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -1375,7 +1267,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day130615"
                               onClick={[Function]}
@@ -1387,6 +1279,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={true}
                         firstInLine={true}
                         key="1434319925289"
@@ -1395,7 +1288,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c21"
+                          className="c19"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1407,18 +1301,19 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c22"
+                              className="c20"
                               disabled={false}
                               id="day140615"
                               onClick={[Function]}
                               onMouseOver={[Function]}
                             >
-                              14
+                              Hoje
                             </div>
                           </styled.div>
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925290"
@@ -1427,7 +1322,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1439,7 +1335,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day150615"
                               onClick={[Function]}
@@ -1451,6 +1347,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925291"
@@ -1459,7 +1356,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1471,7 +1369,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day160615"
                               onClick={[Function]}
@@ -1483,6 +1381,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925292"
@@ -1491,7 +1390,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1503,7 +1403,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day170615"
                               onClick={[Function]}
@@ -1515,6 +1415,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925293"
@@ -1523,7 +1424,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1535,7 +1437,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day180615"
                               onClick={[Function]}
@@ -1547,6 +1449,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925294"
@@ -1555,7 +1458,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1567,7 +1471,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day190615"
                               onClick={[Function]}
@@ -1579,6 +1483,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925295"
@@ -1587,7 +1492,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c24"
+                          className="c22"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1599,7 +1505,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day200615"
                               onClick={[Function]}
@@ -1611,6 +1517,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1434319925296"
@@ -1619,7 +1526,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c25"
+                          className="c23"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1631,7 +1539,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day210615"
                               onClick={[Function]}
@@ -1643,6 +1551,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925297"
@@ -1651,7 +1560,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1663,7 +1573,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day220615"
                               onClick={[Function]}
@@ -1675,6 +1585,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925298"
@@ -1683,7 +1594,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1695,7 +1607,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day230615"
                               onClick={[Function]}
@@ -1707,6 +1619,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925299"
@@ -1715,7 +1628,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1727,7 +1641,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day240615"
                               onClick={[Function]}
@@ -1739,6 +1653,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925300"
@@ -1747,7 +1662,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1759,7 +1675,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day250615"
                               onClick={[Function]}
@@ -1771,6 +1687,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925301"
@@ -1779,7 +1696,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1791,7 +1709,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day260615"
                               onClick={[Function]}
@@ -1803,6 +1721,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925302"
@@ -1811,7 +1730,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c24"
+                          className="c22"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1823,7 +1743,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day270615"
                               onClick={[Function]}
@@ -1835,6 +1755,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1434319925303"
@@ -1843,7 +1764,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c25"
+                          className="c23"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1855,7 +1777,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day280615"
                               onClick={[Function]}
@@ -1867,6 +1789,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925304"
@@ -1875,7 +1798,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1887,7 +1811,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day290615"
                               onClick={[Function]}
@@ -1899,6 +1823,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1434319925305"
@@ -1907,7 +1832,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -1919,7 +1845,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day300615"
                               onClick={[Function]}
@@ -1936,7 +1862,7 @@ exports[`should render 2`] = `
               </styled.div>
               <styled.div>
                 <div
-                  className="c26"
+                  className="c24"
                 />
               </styled.div>
               <styled.div>
@@ -1947,102 +1873,13 @@ exports[`should render 2`] = `
                     <div
                       className="c10"
                     >
-                      <div>
-                        <Icon
-                          id="previousYear1"
-                          onClick={[Function]}
-                          path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                          size="14px"
-                        >
-                          <Styled(SVGInline)
-                            fill="#979899"
-                            id="previousYear1"
-                            onClick={[Function]}
-                            path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                            size="14px"
-                            style={Object {}}
-                            svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                            width="14px"
-                          >
-                            <SVGInline
-                              className="c11"
-                              classSuffix="-svg"
-                              cleanup={Array []}
-                              cleanupExceptions={Array []}
-                              component="span"
-                              fill="#979899"
-                              id="previousYear1"
-                              onClick={[Function]}
-                              path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                              size="14px"
-                              style={Object {}}
-                              svg="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                              width="14px"
-                            >
-                              <span
-                                className="SVGInline c11"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c11-svg\\" fill=\\"#979899\\" style=\\"width: 14px;height: 14px;\\" width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>",
-                                  }
-                                }
-                                id="previousYear1"
-                                onClick={[Function]}
-                                path="<svg width=\\"14\\" height=\\"12\\" viewBox=\\"0 0 14 12\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M14 1.40625L12.5315 0L6.26573 6L12.5315 12L14 10.5938L9.2028 6L14 1.40625ZM7.73427 1.40625L6.26573 0L0 6L6.26573 12L7.73427 10.5938L2.93706 6L7.73427 1.40625Z\\" fill=\\"#008488\\"/></svg>"
-                                size="14px"
-                                style={Object {}}
-                              />
-                            </SVGInline>
-                          </Styled(SVGInline)>
-                        </Icon>
-                        <Icon
-                          id="previousMonth1"
-                          onClick={[Function]}
-                          path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                          size="14px"
-                        >
-                          <Styled(SVGInline)
-                            fill="#979899"
-                            id="previousMonth1"
-                            onClick={[Function]}
-                            path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                            size="14px"
-                            style={Object {}}
-                            svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                            width="14px"
-                          >
-                            <SVGInline
-                              className="c11"
-                              classSuffix="-svg"
-                              cleanup={Array []}
-                              cleanupExceptions={Array []}
-                              component="span"
-                              fill="#979899"
-                              id="previousMonth1"
-                              onClick={[Function]}
-                              path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                              size="14px"
-                              style={Object {}}
-                              svg="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                              width="14px"
-                            >
-                              <span
-                                className="SVGInline c11"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "<svg class=\\"SVGInline-svg sc-bdfBwQ-svg c11-svg\\" fill=\\"#979899\\" style=\\"width: 14px;height: 14px;\\" width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>",
-                                  }
-                                }
-                                id="previousMonth1"
-                                onClick={[Function]}
-                                path="<svg width=\\"9\\" height=\\"14\\" viewBox=\\"0 0 9 14\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M9 1.645L3.74629 7L9 12.355L7.38259 14L0.500001 7L7.38259 -1.41398e-07L9 1.645Z\\" fill=\\"#008488\\"/></svg>"
-                                size="14px"
-                                style={Object {}}
-                              />
-                            </SVGInline>
-                          </Styled(SVGInline)>
-                        </Icon>
-                      </div>
+                      <div
+                        style={
+                          Object {
+                            "minWidth": "30px",
+                          }
+                        }
+                      />
                       <styled.div>
                         <div
                           className="c12"
@@ -2050,7 +1887,13 @@ exports[`should render 2`] = `
                           Julho 2015
                         </div>
                       </styled.div>
-                      <div>
+                      <div
+                        style={
+                          Object {
+                            "minWidth": "30px",
+                          }
+                        }
+                      >
                         <Icon
                           id="nextMonth1"
                           onClick={[Function]}
@@ -2148,177 +1991,120 @@ exports[`should render 2`] = `
                       </div>
                     </div>
                   </styled.div>
-                  <styled.div
-                    horizontal={true}
-                  >
-                    <div
-                      className="c13"
-                    />
-                  </styled.div>
                   <styled.div>
                     <div
-                      className="c14"
+                      className="c13"
                     >
                       <Styled(styled.div)
                         key="0"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          D
+                          Dom
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="1"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Seg
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="2"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          T
+                          Ter
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="3"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          Q
+                          Qua
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="4"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          Q
+                          Qui
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="5"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Sex
                         </div>
                       </Styled(styled.div)>
                       <Styled(styled.div)
                         key="6"
                       >
                         <div
-                          className="c15 c16"
+                          className="c14 c15"
                         >
-                          S
+                          Sáb
                         </div>
                       </Styled(styled.div)>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1436911925275"
                         last={false}
                         lastInLine={false}
-                        selected={true}
+                        selected={false}
                       >
                         <div
-                          className="c25"
-                          selected={true}
-                        >
-                          <styled.div
-                            disabled={true}
-                            first={false}
-                            id="day280615"
-                            last={false}
-                            onClick={[Function]}
-                            onMouseOver={[Function]}
-                          >
-                            <div
-                              className="c18"
-                              disabled={true}
-                              id="day280615"
-                              onClick={[Function]}
-                              onMouseOver={[Function]}
-                            >
-                              28
-                            </div>
-                          </styled.div>
-                        </div>
+                          className="c16"
+                          data-tooltip=""
+                          selected={false}
+                        />
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925276"
                         last={false}
                         lastInLine={false}
-                        selected={true}
+                        selected={false}
                       >
                         <div
-                          className="c23"
-                          selected={true}
-                        >
-                          <styled.div
-                            disabled={true}
-                            first={false}
-                            id="day290615"
-                            last={false}
-                            onClick={[Function]}
-                            onMouseOver={[Function]}
-                          >
-                            <div
-                              className="c18"
-                              disabled={true}
-                              id="day290615"
-                              onClick={[Function]}
-                              onMouseOver={[Function]}
-                            >
-                              29
-                            </div>
-                          </styled.div>
-                        </div>
+                          className=""
+                          data-tooltip=""
+                          selected={false}
+                        />
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925277"
                         last={false}
                         lastInLine={false}
-                        selected={true}
+                        selected={false}
                       >
                         <div
-                          className="c23"
-                          selected={true}
-                        >
-                          <styled.div
-                            disabled={true}
-                            first={false}
-                            id="day300615"
-                            last={false}
-                            onClick={[Function]}
-                            onMouseOver={[Function]}
-                          >
-                            <div
-                              className="c18"
-                              disabled={true}
-                              id="day300615"
-                              onClick={[Function]}
-                              onMouseOver={[Function]}
-                            >
-                              30
-                            </div>
-                          </styled.div>
-                        </div>
+                          className=""
+                          data-tooltip=""
+                          selected={false}
+                        />
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925278"
@@ -2327,7 +2113,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2339,7 +2126,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day010715"
                               onClick={[Function]}
@@ -2351,6 +2138,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925279"
@@ -2359,7 +2147,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2371,7 +2160,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day020715"
                               onClick={[Function]}
@@ -2383,6 +2172,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925280"
@@ -2391,7 +2181,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2403,7 +2194,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day030715"
                               onClick={[Function]}
@@ -2415,6 +2206,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925281"
@@ -2423,7 +2215,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c24"
+                          className="c22"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2435,7 +2228,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day040715"
                               onClick={[Function]}
@@ -2447,6 +2240,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1436911925282"
@@ -2455,7 +2249,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c25"
+                          className="c23"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2467,7 +2262,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day050715"
                               onClick={[Function]}
@@ -2479,6 +2274,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925283"
@@ -2487,7 +2283,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2499,7 +2296,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day060715"
                               onClick={[Function]}
@@ -2511,6 +2308,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925284"
@@ -2519,7 +2317,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2531,7 +2330,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day070715"
                               onClick={[Function]}
@@ -2543,6 +2342,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925285"
@@ -2551,7 +2351,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2563,7 +2364,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day080715"
                               onClick={[Function]}
@@ -2575,6 +2376,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925286"
@@ -2583,7 +2385,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2595,7 +2398,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day090715"
                               onClick={[Function]}
@@ -2607,6 +2410,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925287"
@@ -2615,7 +2419,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2627,7 +2432,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day100715"
                               onClick={[Function]}
@@ -2639,6 +2444,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925288"
@@ -2647,7 +2453,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c24"
+                          className="c22"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2659,7 +2466,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day110715"
                               onClick={[Function]}
@@ -2671,6 +2478,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1436911925289"
@@ -2679,7 +2487,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c25"
+                          className="c23"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2691,7 +2500,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day120715"
                               onClick={[Function]}
@@ -2703,6 +2512,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925290"
@@ -2711,7 +2521,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c23"
+                          className="c21"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2723,7 +2534,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day130715"
                               onClick={[Function]}
@@ -2735,6 +2546,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925291"
@@ -2743,7 +2555,8 @@ exports[`should render 2`] = `
                         selected={true}
                       >
                         <div
-                          className="c27"
+                          className="c25"
+                          data-tooltip=""
                           selected={true}
                         >
                           <styled.div
@@ -2755,7 +2568,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c28"
+                              className="c26"
                               disabled={false}
                               id="day140715"
                               onClick={[Function]}
@@ -2767,6 +2580,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925292"
@@ -2776,6 +2590,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2787,7 +2602,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day150715"
                               onClick={[Function]}
@@ -2799,6 +2614,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925293"
@@ -2808,6 +2624,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2819,7 +2636,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day160715"
                               onClick={[Function]}
@@ -2831,6 +2648,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925294"
@@ -2840,6 +2658,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2851,7 +2670,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day170715"
                               onClick={[Function]}
@@ -2863,6 +2682,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925295"
@@ -2871,7 +2691,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c20"
+                          className="c18"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2883,7 +2704,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day180715"
                               onClick={[Function]}
@@ -2895,6 +2716,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1436911925296"
@@ -2903,7 +2725,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c17"
+                          className="c16"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2915,7 +2738,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day190715"
                               onClick={[Function]}
@@ -2927,6 +2750,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925297"
@@ -2936,6 +2760,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2947,7 +2772,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day200715"
                               onClick={[Function]}
@@ -2959,6 +2784,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925298"
@@ -2968,6 +2794,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -2979,7 +2806,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day210715"
                               onClick={[Function]}
@@ -2991,6 +2818,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925299"
@@ -3000,6 +2828,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3011,7 +2840,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day220715"
                               onClick={[Function]}
@@ -3023,6 +2852,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925300"
@@ -3032,6 +2862,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3043,7 +2874,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day230715"
                               onClick={[Function]}
@@ -3055,6 +2886,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925301"
@@ -3064,6 +2896,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3075,7 +2908,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day240715"
                               onClick={[Function]}
@@ -3087,6 +2920,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925302"
@@ -3095,7 +2929,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c20"
+                          className="c18"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3107,7 +2942,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day250715"
                               onClick={[Function]}
@@ -3119,6 +2954,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={true}
                         key="1436911925303"
@@ -3127,7 +2963,8 @@ exports[`should render 2`] = `
                         selected={false}
                       >
                         <div
-                          className="c17"
+                          className="c16"
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3139,7 +2976,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day260715"
                               onClick={[Function]}
@@ -3151,6 +2988,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925304"
@@ -3160,6 +2998,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3171,7 +3010,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day270715"
                               onClick={[Function]}
@@ -3183,6 +3022,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925305"
@@ -3192,6 +3032,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3203,7 +3044,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day280715"
                               onClick={[Function]}
@@ -3215,6 +3056,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925306"
@@ -3224,6 +3066,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3235,7 +3078,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day290715"
                               onClick={[Function]}
@@ -3247,6 +3090,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925307"
@@ -3256,6 +3100,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3267,7 +3112,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day300715"
                               onClick={[Function]}
@@ -3279,6 +3124,7 @@ exports[`should render 2`] = `
                         </div>
                       </styled.div>
                       <styled.div
+                        data-tooltip=""
                         first={false}
                         firstInLine={false}
                         key="1436911925308"
@@ -3288,6 +3134,7 @@ exports[`should render 2`] = `
                       >
                         <div
                           className=""
+                          data-tooltip=""
                           selected={false}
                         >
                           <styled.div
@@ -3299,7 +3146,7 @@ exports[`should render 2`] = `
                             onMouseOver={[Function]}
                           >
                             <div
-                              className="c19"
+                              className="c17"
                               disabled={false}
                               id="day310715"
                               onClick={[Function]}
@@ -3316,7 +3163,7 @@ exports[`should render 2`] = `
               </styled.div>
               <styled.div>
                 <div
-                  className="c26"
+                  className="c24"
                 />
               </styled.div>
             </div>
