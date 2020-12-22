@@ -294,7 +294,7 @@ var Datepicker = function Datepicker(props) {
       daysCalendar = _useState4[0],
       setDaysCalendar = _useState4[1];
 
-  var _useState5 = (0, _react.useState)(props.dates),
+  var _useState5 = (0, _react.useState)(props.dates && props.dates[0].get('month') === props.dates[1].get('month') && props.dates[0].get('year') === props.dates[1].get('year') ? [props.dates[0], (0, _dayjs["default"])(props.dates[1]).add(1, 'month')] : props.dates),
       _useState6 = _slicedToArray(_useState5, 2),
       months = _useState6[0],
       setMonths = _useState6[1];

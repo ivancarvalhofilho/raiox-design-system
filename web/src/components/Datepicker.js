@@ -162,7 +162,13 @@ const DayHeader = styled(Day)`
 const Datepicker = props => {
   const [opened, setOpened] = useState(false)
   const [daysCalendar, setDaysCalendar] = useState([])
-  const [months, setMonths] = useState(props.dates)
+  const [months, setMonths] = useState(
+    props.dates &&
+      props.dates[0].get('month') === props.dates[1].get('month') &&
+      props.dates[0].get('year') === props.dates[1].get('year')
+      ? [props.dates[0], dayjs(props.dates[1]).add(1, 'month')]
+      : props.dates,
+  )
   const [firstClick, setFirstClick] = useState(true)
   const [blockRange, setBlockRange] = useState(false)
   const [secondDateHover, setSecondDateHover] = useState(null)
