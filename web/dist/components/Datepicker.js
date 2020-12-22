@@ -437,6 +437,7 @@ var Datepicker = function Datepicker(props) {
       }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = (0, _dayjs["default"])(months[index]).set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
+      var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate);
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
         key: date + indexDay,
         firstInLine: indexDay % 7 === 0,
@@ -444,7 +445,7 @@ var Datepicker = function Datepicker(props) {
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         selected: dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]),
-        disabled: props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate)
+        disabled: disabled
       }, /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {
           if (!firstClick) {
@@ -459,7 +460,7 @@ var Datepicker = function Datepicker(props) {
         first: day >= 0 && dayMonth.isSame(props.dates[0]),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         onClick: function onClick() {
-          if (!blockRange) {
+          if (!blockRange && !disabled) {
             props.onSelectDay(dayMonth, firstClick ? 0 : 1);
             setFirstClick(!firstClick);
             setOpened(firstClick);
