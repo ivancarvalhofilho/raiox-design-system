@@ -195,6 +195,7 @@ const Datepicker = props => {
 
   useEffect(() => {
     if (!opened) {
+      setFirstClick(true)
       props.onClose && props.onClose()
     }
   }, [opened])
