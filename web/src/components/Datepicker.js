@@ -159,7 +159,7 @@ const Datepicker = props => {
   const [opened, setOpened] = useState(false)
   const [daysCalendar, setDaysCalendar] = useState([])
   const [months, setMonths] = useState([
-    props.dates[0],
+    dayjs(props.dates[0]),
     dayjs(props.dates[0]).add(1, 'month'),
   ])
   const [today] = useState(dayjs())
@@ -238,9 +238,9 @@ const Datepicker = props => {
         <ContainerDate>
           <Text>Período</Text>
           <Date>
-            {`${props.dates[0].format('DD MMM')} - ${props.dates[1].format(
-              'DD MMM',
-            )}`}
+            {`${dayjs(props.dates[0]).format('DD MMM')} - ${dayjs(
+              props.dates[1],
+            ).format('DD MMM')}`}
           </Date>
         </ContainerDate>
         <CalendarIcon>
@@ -311,8 +311,9 @@ const Datepicker = props => {
                         const disabledByRange =
                           props.maxRange &&
                           !firstClick &&
-                          Math.abs(props.dates[0].diff(dayMonth, 'day')) >
-                            props.maxRange
+                          Math.abs(
+                            dayjs(props.dates[0]).diff(dayMonth, 'day'),
+                          ) > props.maxRange
                         const disabled =
                           (props.maxDate &&
                             dayMonth.isSameOrAfter(props.maxDate)) ||
@@ -325,7 +326,9 @@ const Datepicker = props => {
                             key={date + indexDay}
                             firstInLine={indexDay % 7 === 0}
                             lastInLine={(indexDay + 1) % 7 === 0}
-                            first={day >= 0 && dayMonth.isSame(props.dates[0])}
+                            first={
+                              day >= 0 && dayMonth.isSame(dayjs(props.dates[0]))
+                            }
                             last={
                               day >= 0 &&
                               firstClick &&
@@ -338,17 +341,19 @@ const Datepicker = props => {
                             }
                             selected={
                               Math.sign(day) === 1 &&
-                              ((dayMonth.isSameOrAfter(props.dates[0]) &&
+                              ((dayMonth.isSameOrAfter(dayjs(props.dates[0])) &&
                                 dayMonth.isSameOrBefore(
                                   !firstClick
                                     ? secondDateHover
                                     : props.dates[1],
                                 )) ||
-                                (dayMonth.isSameOrBefore(props.dates[0]) &&
+                                (dayMonth.isSameOrBefore(
+                                  dayjs(props.dates[0]),
+                                ) &&
                                   dayMonth.isSameOrAfter(
                                     !firstClick
                                       ? secondDateHover
-                                      : props.dates[1],
+                                      : dayjs(props.dates[1]),
                                   )))
                             }
                           >
@@ -361,13 +366,14 @@ const Datepicker = props => {
                                 }}
                                 id={`day${dayMonth.format('DDMMYY')}`}
                                 first={
-                                  day >= 0 && dayMonth.isSame(props.dates[0])
+                                  day >= 0 &&
+                                  dayMonth.isSame(dayjs(props.dates[0]))
                                 }
                                 last={
                                   day >= 0 &&
                                   dayMonth.isSame(
                                     firstClick
-                                      ? props.dates[1]
+                                      ? dayjs(props.dates[1])
                                       : secondDateHover,
                                   )
                                 }

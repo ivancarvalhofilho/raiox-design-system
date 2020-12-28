@@ -300,7 +300,7 @@ var Datepicker = function Datepicker(props) {
       daysCalendar = _useState4[0],
       setDaysCalendar = _useState4[1];
 
-  var _useState5 = (0, _react.useState)([props.dates[0], (0, _dayjs["default"])(props.dates[0]).add(1, 'month')]),
+  var _useState5 = (0, _react.useState)([(0, _dayjs["default"])(props.dates[0]), (0, _dayjs["default"])(props.dates[0]).add(1, 'month')]),
       _useState6 = _slicedToArray(_useState5, 2),
       months = _useState6[0],
       setMonths = _useState6[1];
@@ -343,7 +343,7 @@ var Datepicker = function Datepicker(props) {
   }, [months]);
   (0, _react.useEffect)(function () {
     if (!opened) {
-      props.onClose();
+      props.onClose && props.onClose();
     }
   });
 
@@ -383,7 +383,7 @@ var Datepicker = function Datepicker(props) {
     onClick: function onClick() {
       setOpened(!opened);
     }
-  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat(props.dates[0].format('DD MMM'), " - ").concat(props.dates[1].format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
+  }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat((0, _dayjs["default"])(props.dates[0]).format('DD MMM'), " - ").concat((0, _dayjs["default"])(props.dates[1]).format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
     path: _theme["default"].icons.calendar,
     size: "22px",
     appearance: "light"
@@ -441,17 +441,17 @@ var Datepicker = function Datepicker(props) {
       }, day);
     }), daysCalendar[index] && daysCalendar[index].map(function (day, indexDay) {
       var dayMonth = (0, _dayjs["default"])(months[index]).set('date', Math.abs(day)).add(Math.sign(day) === -1 ? -1 : 0, 'month');
-      var disabledByRange = props.maxRange && !firstClick && Math.abs(props.dates[0].diff(dayMonth, 'day')) > props.maxRange;
+      var disabledByRange = props.maxRange && !firstClick && Math.abs((0, _dayjs["default"])(props.dates[0]).diff(dayMonth, 'day')) > props.maxRange;
       var disabled = props.maxDate && dayMonth.isSameOrAfter(props.maxDate) || props.minDate && dayMonth.isSameOrBefore(props.minDate) || disabledByRange;
       var isToday = dayMonth.isSame(today, 'day');
       return /*#__PURE__*/_react["default"].createElement(DayBackground, {
         key: date + indexDay,
         firstInLine: indexDay % 7 === 0,
         lastInLine: (indexDay + 1) % 7 === 0,
-        first: day >= 0 && dayMonth.isSame(props.dates[0]),
+        first: day >= 0 && dayMonth.isSame((0, _dayjs["default"])(props.dates[0])),
         last: day >= 0 && firstClick && dayMonth.isSame(props.dates[1]),
         "data-tooltip": disabledByRange ? 'Não é possível selecionar um período maior que 120 dias' : '',
-        selected: Math.sign(day) === 1 && (dayMonth.isSameOrAfter(props.dates[0]) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore(props.dates[0]) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : props.dates[1]))
+        selected: Math.sign(day) === 1 && (dayMonth.isSameOrAfter((0, _dayjs["default"])(props.dates[0])) && dayMonth.isSameOrBefore(!firstClick ? secondDateHover : props.dates[1]) || dayMonth.isSameOrBefore((0, _dayjs["default"])(props.dates[0])) && dayMonth.isSameOrAfter(!firstClick ? secondDateHover : (0, _dayjs["default"])(props.dates[1])))
       }, Math.sign(day) === 1 && /*#__PURE__*/_react["default"].createElement(Day, {
         onMouseOver: function onMouseOver() {
           if (!firstClick) {
@@ -459,8 +459,8 @@ var Datepicker = function Datepicker(props) {
           }
         },
         id: "day".concat(dayMonth.format('DDMMYY')),
-        first: day >= 0 && dayMonth.isSame(props.dates[0]),
-        last: day >= 0 && dayMonth.isSame(firstClick ? props.dates[1] : secondDateHover),
+        first: day >= 0 && dayMonth.isSame((0, _dayjs["default"])(props.dates[0])),
+        last: day >= 0 && dayMonth.isSame(firstClick ? (0, _dayjs["default"])(props.dates[1]) : secondDateHover),
         onClick: function onClick() {
           if (!disabled) {
             props.onSelectDay(dayMonth, firstClick ? 0 : 1);
