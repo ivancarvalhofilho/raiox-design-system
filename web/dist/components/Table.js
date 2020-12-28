@@ -211,7 +211,7 @@ var ContainerHeader = _styledComponents["default"].div(_templateObject6(), funct
   return props.theme.colors.neutral.dark.base;
 }, function (props) {
   return props.colsWidth.length > 0 ? (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
-    return "".concat(x, " ").concat(props.colsWidth[index], "px");
+    return props.colsWidth[index] ? "".concat(x, " ").concat(props.colsWidth[index], "px") : x;
   }, '') : "".concat(props.hasColor ? '8px ' : '', " repeat(").concat(props.cols.length, ", auto)");
 });
 

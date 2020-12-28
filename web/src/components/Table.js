@@ -126,7 +126,8 @@ const ContainerHeader = styled.div`
     props.colsWidth.length > 0
       ? (props.hasColor ? '8px ' : '') +
         props.colsWidth.reduce(
-          (x, y, index) => `${x} ${props.colsWidth[index]}px`,
+          (x, y, index) =>
+            props.colsWidth[index] ? `${x} ${props.colsWidth[index]}px` : x,
           '',
         )
       : `${props.hasColor ? '8px ' : ''} repeat(${props.cols.length}, auto)`};
