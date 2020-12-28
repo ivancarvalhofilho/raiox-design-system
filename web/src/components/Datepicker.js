@@ -197,7 +197,7 @@ const Datepicker = props => {
     if (!opened) {
       props.onClose && props.onClose()
     }
-  })
+  }, [opened])
 
   const changeYear = (index, plus) => {
     const newMonths = months.map(month =>
