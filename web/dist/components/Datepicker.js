@@ -343,9 +343,10 @@ var Datepicker = function Datepicker(props) {
   }, [months]);
   (0, _react.useEffect)(function () {
     if (!opened) {
+      setFirstClick(true);
       props.onClose && props.onClose();
     }
-  });
+  }, [opened]);
 
   var changeYear = function changeYear(index, plus) {
     var newMonths = months.map(function (month) {
