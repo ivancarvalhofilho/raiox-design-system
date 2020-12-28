@@ -341,6 +341,11 @@ var Datepicker = function Datepicker(props) {
     });
     setDaysCalendar(dates);
   }, [months]);
+  (0, _react.useEffect)(function () {
+    if (!opened) {
+      props.onClose();
+    }
+  });
 
   var changeYear = function changeYear(index, plus) {
     var newMonths = months.map(function (month) {
@@ -477,6 +482,7 @@ Datepicker.propTypes = {
   maxDate: _propTypes["default"].object,
   maxRange: _propTypes["default"].number,
   minDate: _propTypes["default"].object,
+  onClose: _propTypes["default"].func,
   onSelectDay: _propTypes["default"].func,
   style: _propTypes["default"].object
 };

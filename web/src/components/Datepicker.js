@@ -193,6 +193,12 @@ const Datepicker = props => {
     setDaysCalendar(dates)
   }, [months])
 
+  useEffect(() => {
+    if (!opened) {
+      props.onClose && props.onClose()
+    }
+  })
+
   const changeYear = (index, plus) => {
     const newMonths = months.map(month =>
       dayjs(month).add(plus ? 1 : -1, 'year'),
@@ -403,6 +409,7 @@ Datepicker.propTypes = {
   maxDate: PropTypes.object,
   maxRange: PropTypes.number,
   minDate: PropTypes.object,
+  onClose: PropTypes.func,
   onSelectDay: PropTypes.func,
   style: PropTypes.object,
 }
