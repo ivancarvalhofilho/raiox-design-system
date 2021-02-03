@@ -7,12 +7,12 @@ A instalação do pacote deve ser feita via npm ou adicionado no package.json
 
 npm
 ```
-npm install github:guhcostan-equals/raiox-design-system
+npm install github:ivancarvalhofilho/raiox-design-system
 ```
 
 package.json
 ```
-"raiox-design-system": "github:guhcostan-equals/raiox-design-system#main",
+"raiox-design-system": "github:ivancarvalhofilho/raiox-design-system#main",
 ```
 
 ### Guia Utilização

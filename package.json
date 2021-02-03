@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guhcostan-equals/raiox-design-system.git"
+    "url": "git+https://github.com/ivancarvalhofilho/raiox-design-system.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guhcostan-equals/raiox-design-system/issues"
+    "url": "https://github.com/ivancarvalhofilho/raiox-design-system/issues"
   },
-  "homepage": "https://github.com/guhcostan-equals/raiox-design-system#readme",
+  "homepage": "https://github.com/ivancarvalhofilho/raiox-design-system#readme",
   "dependencies": {},
   "devDependencies": {
     "husky": "^5.0.0-beta.0"
