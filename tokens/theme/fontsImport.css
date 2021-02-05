@@ -45,17 +45,3 @@
     font-weight: 700;
     src: local('Mark Pro Bold'), url('font-files/MARKPROBOLD.woff') format('woff');
 }
-
-@font-face {
-    font-family: 'Consolas';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Mark Pro Bold'), url('font-files/Consolas.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Consolas';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Mark Pro Bold'), url('font-files/Consolas-Bold.woff') format('woff');
-}
