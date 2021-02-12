@@ -13,7 +13,7 @@ var _Tab = _interopRequireDefault(require("./Tab"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -66,7 +66,7 @@ var Bar = _styledComponents["default"].div(_templateObject3(), function (props) 
 }, function (props) {
   return props.rounded && '4px 4px 0px 0px';
 }, function (props) {
-  return props.color || props.theme.colors.brand.primary.darkest;
+  return props.color || _tokens["default"].colors.brand.primary.darkest;
 }, function (props) {
   return props.left;
 });
@@ -94,7 +94,7 @@ var Tabs = function Tabs(props) {
     rounded: true
   }), /*#__PURE__*/_react["default"].createElement(Bar, {
     width: 100,
-    color: _theme["default"].colors.neutral.dark['03'],
+    color: _tokens["default"].colors.neutral.dark['03'],
     height: 1
   }));
 };

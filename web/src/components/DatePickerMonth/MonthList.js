@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import theme from '../../../../tokens/theme'
-import fontStyleMaker from '../../utils/FontUtil'
+import Tokens from '../../../tokens'
+import { fontStyleMaker } from '../../utils/FontUtil'
 
 const months = [
   ['Jan', '01'],
@@ -23,23 +23,22 @@ const months = [
 const MonthListStyle = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: ${`${theme.styles.spacing.stack.nano} ${theme.styles.spacing.inline.xs}`};
-  margin-top: ${theme.styles.spacing.stack.nano};
+  grid-gap: ${`${Tokens.spacing.stack.nano} ${Tokens.spacing.inline.xs}`};
+  margin-top: ${Tokens.spacing.stack.nano};
 `
 const Month = styled.div`
-  background: ${props => props.selected && theme.colors.brand.primary.darkest};
+  background: ${props => props.selected && Tokens.colors.brand.primary.darkest};
   cursor: ${props => props.active && 'pointer'};
-  opacity: ${props => !props.active && theme.styles.opacity.level.light};
-  ${props =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      'regular',
-      'xs',
-      props.selected ? 'neutral.light.base' : 'neutral.dark.base',
-    )};
+  opacity: ${props => !props.active && Tokens.opacity.level.light};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
+  color: ${(props) => props.selected ? Tokens.colors.neutral.light.base : Tokens.colors.neutral.dark.base}
   user-select: none;
-  border-radius: ${theme.styles.border.radius.sm};
+  border-radius: ${Tokens.border.radius.sm};
   min-height: 30px;
   display: flex;
   justify-content: center;

@@ -1,17 +1,10 @@
-/**
- *
- * Table
- *
- */
-
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 import Icon from './Icon'
-import icons from '../../../tokens/theme/icons'
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -24,7 +17,7 @@ const LoaderContainer = styled.div`
   background-image: linear-gradient(to bottom, transparent, white);
 
   > p {
-    color: ${props => props.theme.colors.neutral.dark.base};
+    color: ${Tokens.colors.neutral.dark.base};
     margin: 0;
   }
 
@@ -42,7 +35,7 @@ const Container = styled.div`
   width: 100%;
   height: auto !important;
   max-height: ${props => props.maxheight};
-  color: ${props => props.theme.colors.neutral.dark.base};
+  color: ${Tokens.colors.neutral.dark.base};
   grid-template-columns: ${props =>
     (props.hasColor ? '8px ' : '') +
     props.cols
@@ -68,7 +61,7 @@ const ContainerInfinite = styled(InfiniteScroll)`
   min-width: ${props => !props.optional && 'fit-content'};
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
-  color: ${props => props.theme.colors.neutral.dark.base};
+  color: ${Tokens.colors.neutral.dark.base};
   grid-template-columns: ${props =>
     (props.hasColor ? '8px ' : '') +
     props.cols
@@ -90,7 +83,7 @@ const Scroll = styled.div`
 const DisplayGrid = styled.div`
   display: flex;
   flex-direction: row;
-  font-family: ${props => props.theme.fonts.family.body};
+  font-family: ${Tokens.fonts.family.body};
   flex: 1;
 
   .custom-scrollbar,
@@ -116,12 +109,12 @@ const ContainerHeader = styled.div`
   display: inline-grid;
   font-size: 14px;
   border: ${props =>
-    `${props.theme.styles.border.width.hairline} solid ${props.theme.colors.neutral.dark['03']}`};
+    `${Tokens.border.width.hairline} solid ${Tokens.colors.neutral.dark['03']}`};
   overflow: ${props => props.optional && 'hidden'};
   background-color: #f2f5f7;
   min-width: ${props => !props.optional && 'fit-content'};
   width: 100%;
-  color: ${props => props.theme.colors.neutral.dark.base};
+  color: ${Tokens.colors.neutral.dark.base};
   grid-template-columns: ${props =>
     props.colsWidth.length > 0
       ? (props.hasColor ? '8px ' : '') +
@@ -270,7 +263,7 @@ function Table(props) {
                     props.data[key].ordenable && props.onClickToOrder(key)
                   }}
                   border
-                  color={theme.colors.neutral.light['02']}
+                  color={Tokens.colors.neutral.light['02']}
                   title={props.data[key].title}
                 >
                   <Value
@@ -283,10 +276,10 @@ function Table(props) {
                       <Icon
                         path={
                           props.orderBy !== key
-                            ? theme.icons['arrow-horizontal']
+                            ? Tokens.icons['arrow-horizontal']
                             : props.order === 'DESC'
-                            ? theme.icons['arrow-up']
-                            : theme.icons['arrow-down']
+                            ? Tokens.icons['arrow-up']
+                            : Tokens.icons['arrow-down']
                         }
                       />
                     )}
@@ -315,7 +308,7 @@ function Table(props) {
                   props.data[key].ordenable && props.onClickToOrder(key)
                 }}
                 border
-                color={theme.colors.neutral.light['02']}
+                color={Tokens.colors.neutral.light['02']}
                 title={props.data[key].title}
               >
                 <Value
@@ -331,10 +324,10 @@ function Table(props) {
                       size="10px"
                       path={
                         props.orderBy !== key
-                          ? theme.icons['arrow-horizontal']
+                          ? Tokens.icons['arrow-horizontal']
                           : props.order === 'DESC'
-                          ? theme.icons['arrow-up']
-                          : theme.icons['arrow-down']
+                          ? Tokens.icons['arrow-up']
+                          : Tokens.icons['arrow-down']
                       }
                     />
                   )}
@@ -463,10 +456,10 @@ function Table(props) {
                       <p style={{ paddingBottom: '10px' }}>Carregando</p>
                       <Icon
                         className="rotating"
-                        path={icons.loading}
+                        path={Tokens.icons.loading}
                         size="16px"
                         spin
-                        appearance={theme.colors.neutral.light['02']}
+                        appearance={Tokens.colors.neutral.light['02']}
                       />
                     </LoaderContainer>
                   </div>
@@ -556,7 +549,7 @@ function Table(props) {
                                   <LoaderContainer style={{ display: 'flex' }}>
                                     <Icon
                                       spin
-                                      path={icons.loading}
+                                      path={Tokens.icons.loading}
                                       size="20px"
                                     />
                                   </LoaderContainer>

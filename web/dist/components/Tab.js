@@ -11,6 +11,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _tokens = _interopRequireDefault(require("../../tokens"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
@@ -25,17 +27,13 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var TabContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return props.theme.fonts.family.body;
-}, function (props) {
-  return props.active ? props.theme.fonts.weight.medium : props.theme.fonts.weight.regular;
+var TabContainer = _styledComponents["default"].div(_templateObject(), _tokens["default"].fonts.family.body, function (props) {
+  return props.active ? _tokens["default"].fonts.weight.medium : _tokens["default"].fonts.weight.regular;
 }, function (props) {
   return props.width;
 }, function (props) {
-  return props.active ? props.theme.colors.brand.primary.darkest : props.theme.colors.neutral.dark['01'];
-}, function (props) {
-  return props.theme.fonts.fontSize.xxs;
-});
+  return props.active ? _tokens["default"].colors.brand.primary.darkest : _tokens["default"].colors.neutral.dark['01'];
+}, _tokens["default"].fonts.fontSize.xxs);
 
 var Tab = function Tab(props) {
   return /*#__PURE__*/_react["default"].createElement(TabContainer, {

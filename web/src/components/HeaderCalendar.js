@@ -2,10 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
-import icons from '../../../tokens/theme/icons'
 import dayjs from 'dayjs'
-import fontStyleMaker from '../utils/FontUtil'
-import theme from '../../../tokens/theme'
+import { fontStyleMaker } from '../utils/FontUtil'
+import Tokens from '../../tokens'
 
 const Month = styled.div`
   display: flex;
@@ -13,18 +12,24 @@ const Month = styled.div`
   width: 30%;
 `
 const Date = styled.div`
-  margin-left: ${props => props.theme.styles.spacing.inline.nano};
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'md', 'neutral.dark.base')};
+  margin-left: ${Tokens.spacing.inline.nano};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "md"
+  })};
+  
+  color: ${Tokens.colors.neutral.dark.base}
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
 `
 const Container = styled.div`
-  border: ${props => props.theme.styles.border.width.hairline} solid #e0e0e0;
+  border: ${Tokens.border.width.hairline} solid #e0e0e0;
   box-sizing: border-box;
-  border-radius: ${props => props.theme.styles.border.sm};
-  padding: ${props => props.theme.styles.spacing.inset.xs};
+  border-radius: ${Tokens.border.sm};
+  padding: ${Tokens.spacing.inset.xs};
   display: flex;
   align-items: center;
   height: 56px;
@@ -38,52 +43,65 @@ const Values = styled.div`
   margin-left: 24px;
 `
 const Label = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "sm"
+  })};
   color: ${props => props.color};
   white-space: nowrap;
-  margin-left: ${props => props.theme.styles.spacing.inline.xxs};
+  margin-left: ${Tokens.spacing.inline.xxs};
 `
 const Value = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "light",
+    fontSize: "lg"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `
 const MoneySign = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
-  padding: ${props =>
-    `0 ${props.theme.styles.spacing.inline.quarck} 0 ${props.theme.styles.spacing.inline.nano}`};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "sm"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
+  padding: ${`0 ${Tokens.spacing.inline.quarck} 0 ${Tokens.spacing.inline.nano}`};
   white-space: nowrap;
 `
 const HeaderCalendar = props => (
   <Container>
     <Month>
       <Icon
-        size={theme.styles.icon.size.md}
+        size={Tokens.iconSize.md}
         appearance="primary"
         disabled={props.disabledLeft}
         id="backMonth"
         style={{
-          marginRight: theme.styles.spacing.inline.nano,
+          marginRight: Tokens.spacing.inline.nano,
           cursor: !props.disabledLeft && 'pointer',
-          opacity: props.disabledLeft ? theme.styles.opacity.level.medium : 1,
+          opacity: props.disabledLeft ? Tokens.opacity.level.medium : 1,
         }}
-        path={icons['chevron-left']}
+        path={Tokens.icons['chevron-left']}
         onClick={() => !props.disabledLeft && props.onBackMonthClick()}
       />
       <Icon
-        size={theme.styles.icon.size.md}
+        size={Tokens.iconSize.md}
         id="nextMonth"
         appearance="primary"
         disabled={props.disabledRight}
         style={{
           cursor: !props.disabledRight && 'pointer',
-          opacity: props.disabledRight ? theme.styles.opacity.level.medium : 1,
+          opacity: props.disabledRight ? Tokens.opacity.level.medium : 1,
         }}
-        path={icons['chevron-right']}
+        path={Tokens.icons['chevron-right']}
         onClick={() => !props.disabledRight && props.onNextMonthClick()}
       />
       <Date onClick={() => props.onMonthClick()} id="date">

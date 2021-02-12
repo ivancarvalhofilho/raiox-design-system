@@ -7,7 +7,7 @@ exports.mountWithTheme = mountWithTheme;
 
 var _styledComponents = require("styled-components");
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -22,7 +22,7 @@ function mountWithTheme(child) {
     wrappingComponent: function wrappingComponent(_ref) {
       var children = _ref.children;
       return /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeProvider, {
-        theme: _theme["default"]
+        Tokens: _tokens["default"]
       }, children);
     }
   });

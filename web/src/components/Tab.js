@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import Tokens from "../../tokens";
 
 const TabContainer = styled.div`
   padding: 5px 0px;
-  font-family: ${props => props.theme.fonts.family.body};
+  font-family: ${Tokens.fonts.family.body};
   font-weight: ${props =>
     props.active
-      ? props.theme.fonts.weight.medium
-      : props.theme.fonts.weight.regular};
+      ? Tokens.fonts.weight.medium
+      : Tokens.fonts.weight.regular};
   width: ${props => props.width}%;
   text-align: center;
   color: ${props =>
     props.active
-      ? props.theme.colors.brand.primary.darkest
-      : props.theme.colors.neutral.dark['01']};
-  font-size: ${props => props.theme.fonts.fontSize.xxs};
+      ? Tokens.colors.brand.primary.darkest
+      : Tokens.colors.neutral.dark['01']};
+  font-size: ${Tokens.fonts.fontSize.xxs};
 `
 const Tab = props => (
   <TabContainer

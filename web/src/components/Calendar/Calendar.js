@@ -3,11 +3,12 @@ import { CalendarCell } from './CalendarCell'
 import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
-import fontStyleMaker from '../../utils/FontUtil'
+import { fontStyleMaker } from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
+import Tokens from "../../../tokens";
 
-var isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
-var isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
+const isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
+const isSameOrAfter = require('dayjs/plugin/isSameOrAfter');
 dayjs.extend(isSameOrBefore)
 dayjs.extend(isSameOrAfter)
 
@@ -23,7 +24,7 @@ const CalendarGrid = styled.div`
   height: 100%;
   grid-auto-rows: 1fr;
   & > *:nth-child(7n-6) {
-    background: ${props => props.theme.colors.neutral.light['02']};
+    background: ${Tokens.colors.neutral.light['02']};
   }
 `
 
@@ -36,8 +37,13 @@ const CalendarGridHeader = styled.div`
 const DayOfWeek = styled.div`
   display: flex;
   justify-content: center;
-  ${props => fontStyleMaker(props.theme, 'body', 'medium', 'xxs')};
-  margin-bottom: ${props => props.theme.styles.spacing.stack.nano};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  margin-bottom: ${Tokens.spacing.stack.nano};
 `
 
 const Calendar = props => {

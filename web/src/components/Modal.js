@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 
 const BackgroundContainer = styled.div`
   position: absolute;
@@ -66,7 +66,7 @@ const Modal = props => {
             <Icon
               size="16px"
               onClick={props.onClose}
-              path={theme.icons.close}
+              path={Tokens.icons.close}
             />
           )}
         </ModalHeader>

@@ -2,18 +2,22 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import theme from '../../../../tokens/theme'
-import fontStyleMaker from '../../utils/FontUtil'
-import icons from '../../../../tokens/theme/icons'
+import { fontStyleMaker } from '../../utils/FontUtil'
 import Icon from '../Icon'
+import Tokens from "../../../tokens";
 
 const YearNavigatorStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: ${theme.styles.spacing.stack.xxxs};
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')};
+  margin-bottom: ${Tokens.spacing.stack.xxxs};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
 `
 
 function YearNavigator(props) {
@@ -27,15 +31,15 @@ function YearNavigator(props) {
   return (
     <YearNavigatorStyle>
       <Icon
-        size={theme.styles.icon.size.md}
+        size={Tokens.iconSize.md}
         appearance="primary"
         disabled={!left}
         id="yearLeft"
         style={{
-          marginRight: theme.styles.spacing.stack.nano,
-          opacity: !left ? theme.styles.opacity.level.light : 1,
+          marginRight: Tokens.spacing.stack.nano,
+          opacity: !left ? Tokens.opacity.level.light : 1,
         }}
-        path={icons['chevron-left']}
+        path={Tokens.icons['chevron-left']}
         onClick={() =>
           left &&
           props.onChange(
@@ -52,15 +56,15 @@ function YearNavigator(props) {
       </div>
 
       <Icon
-        size={theme.styles.icon.size.md}
+        size={Tokens.iconSize.md}
         appearance="primary"
         disabled={!right}
         id="yearRight"
         style={{
-          marginLeft: theme.styles.spacing.stack.nano,
-          opacity: !right ? theme.styles.opacity.level.light : 1,
+          marginLeft: Tokens.spacing.stack.nano,
+          opacity: !right ? Tokens.opacity.level.light : 1,
         }}
-        path={icons['chevron-right']}
+        path={Tokens.icons['chevron-right']}
         onClick={() =>
           right &&
           props.onChange(

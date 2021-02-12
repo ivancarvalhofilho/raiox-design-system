@@ -35,15 +35,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var HeaderContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return props.theme.colors.neutral.light['02'];
-}, function (props) {
-  return props.theme.colors.neutral.dark['01'];
-}, function (props) {
-  return props.theme.fonts.family.body;
-}, function (props) {
-  return props.theme.fonts.fontSize.xxs;
-});
+var HeaderContainer = _styledComponents["default"].div(_templateObject(), Tokens.colors.neutral.light['02'], Tokens.colors.neutral.dark['01'], Tokens.fonts.family.body, Tokens.fonts.fontSize.xxs);
 
 var Column = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.width;

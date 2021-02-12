@@ -2,8 +2,7 @@ import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import Icon from '../components/Icon'
-import iconsBanco from '../../../tokens/theme/iconsBanco'
-import iconsAdquirentes from '../../../tokens/theme/iconsAdquirente'
+import iconsBanco from '../../tokens/iconsBanco'
 
 const testIcon = (appearance, size, disabled, spin) => {
   const spy = jest.spyOn(global.console, 'error')
@@ -39,7 +38,7 @@ it('should render icon adquirente', () => {
   const spy = jest.spyOn(global.console, 'error')
   const props = {
     appearance: 'default',
-    path: iconsAdquirentes.minify['1'],
+    path: Tokens.iconsAdquirentes.minify['1'],
     size: 'md',
     disabled: 0,
     spin: 0,

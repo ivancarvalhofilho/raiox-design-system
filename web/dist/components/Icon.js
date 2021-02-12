@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactSvgInline = _interopRequireDefault(require("react-svg-inline"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -49,46 +49,46 @@ var Icon = function Icon(props) {
   function getIconSvgColor(props) {
     switch (props.appearance) {
       case 'default':
-        return _theme["default"].colors.neutral.dark['02'];
+        return _tokens["default"].colors.neutral.dark['02'];
 
       case 'primary':
-        return _theme["default"].colors.brand.primary.darkest;
+        return _tokens["default"].colors.brand.primary.darkest;
 
       case 'light':
-        return _theme["default"].colors.neutral.light.base;
+        return _tokens["default"].colors.neutral.light.base;
 
       case 'danger':
-        return _theme["default"].colors.feedback.danger.dark;
+        return _tokens["default"].colors.feedback.danger.dark;
 
       case 'info':
-        return _theme["default"].colors.feedback.info.dark;
+        return _tokens["default"].colors.feedback.info.dark;
 
       case 'warning':
-        return _theme["default"].colors.feedback.warning.dark;
+        return _tokens["default"].colors.feedback.warning.dark;
 
       case 'success':
-        return _theme["default"].colors.feedback.success.dark;
+        return _tokens["default"].colors.feedback.success.dark;
 
       case 'dark':
-        return _theme["default"].colors.neutral.dark.base;
+        return _tokens["default"].colors.neutral.dark.base;
 
       case 'default-disabled':
-        return _theme["default"].colors.neutral.dark['02'];
+        return _tokens["default"].colors.neutral.dark['02'];
 
       case 'primary-disabled':
-        return _theme["default"].colors.brand.primary.darkest;
+        return _tokens["default"].colors.brand.primary.darkest;
 
       default:
-        return props.appearance || _theme["default"].colors.neutral.dark['02'];
+        return props.appearance || _tokens["default"].colors.neutral.dark['02'];
     }
   }
 
   function getIconSvgSize(props) {
-    if (props.size && !Object.keys(_theme["default"].styles.icon.size).includes(props.size)) {
+    if (props.size && !Object.keys(_tokens["default"].iconSize).includes(props.size)) {
       return props.size;
     }
 
-    return _theme["default"].styles.icon.size[props.size] || _theme["default"].styles.icon.size.sm;
+    return _tokens["default"].iconSize[props.size] || _tokens["default"].iconSize.sm;
   }
 
   return /*#__PURE__*/_react["default"].createElement(Svg, _extends({}, props, {
@@ -97,7 +97,7 @@ var Icon = function Icon(props) {
     spin: props.spin,
     className: props.className,
     style: _objectSpread({}, props.style),
-    svg: props.path ? props.path : _theme["default"].icons[props.name],
+    svg: props.path ? props.path : _tokens["default"].icons[props.name],
     fill: getIconSvgColor(props),
     width: getIconSvgSize(props)
   }));

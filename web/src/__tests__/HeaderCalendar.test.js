@@ -2,7 +2,7 @@ import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import { HeaderCalendar } from '../components'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
@@ -17,12 +17,12 @@ it('should render', () => {
       {
         label: 'Recebido',
         value: '2.502,16',
-        color: theme.colors.feedback.success.dark,
+        color: Tokens.colors.feedback.success.dark,
       },
       {
         label: 'Previsto',
         value: '8.660,07',
-        color: theme.colors.feedback.danger.dark,
+        color: Tokens.colors.feedback.danger.dark,
       },
     ],
   }
@@ -49,12 +49,12 @@ it('should navigate months', () => {
       {
         label: 'Recebido',
         value: '2.502,16',
-        color: theme.colors.feedback.success.dark,
+        color: Tokens.colors.feedback.success.dark,
       },
       {
         label: 'Previsto',
         value: '8.660,07',
-        color: theme.colors.feedback.danger.dark,
+        color: Tokens.colors.feedback.danger.dark,
       },
     ],
   }
@@ -94,12 +94,12 @@ it('should navigate months with disabled navigate', () => {
       {
         label: 'Recebido',
         value: '2.502,16',
-        color: theme.colors.feedback.success.dark,
+        color: Tokens.colors.feedback.success.dark,
       },
       {
         label: 'Previsto',
         value: '8.660,07',
-        color: theme.colors.feedback.danger.dark,
+        color: Tokens.colors.feedback.danger.dark,
       },
     ],
   }

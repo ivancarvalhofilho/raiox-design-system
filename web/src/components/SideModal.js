@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
-import theme from '../../../tokens/theme'
-import fontStyleMaker from '../utils/FontUtil'
+import Tokens from '../../tokens'
+import { fontStyleMaker } from '../utils/FontUtil'
 
 const BackgroundContainer = styled.div`
   position: absolute;
@@ -23,8 +23,13 @@ const LeftModalHeader = styled.div`
   justify-content: flex-end;
 `
 const Title = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'head', 'bold', 'md', 'brand.secondary.dark')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "head",
+    fontWeight: "bold",
+    fontSize: "md"
+  })};
+  color: ${Tokens.colors.brand.secondary.dark}
   width: 80%;
   text-align: center;
   margin: 0 auto;
@@ -74,7 +79,7 @@ const SideModal = props => {
             <Icon
               size="16px"
               onClick={props.onClose}
-              path={theme.icons.close}
+              path={Tokens.icons.close}
             />
           )}
         </LeftModalHeader>

@@ -13,18 +13,16 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _theme = _interopRequireDefault(require("../../../../tokens/theme"));
-
-var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
-
-var _icons = _interopRequireDefault(require("../../../../tokens/theme/icons"));
+var _FontUtil = require("../../utils/FontUtil");
 
 var _Icon = _interopRequireDefault(require("../Icon"));
+
+var _tokens = _interopRequireDefault(require("../../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: ", ";\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: ", ";\n  ", ";\n  color: ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -35,9 +33,12 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var YearNavigatorStyle = _styledComponents["default"].div(_templateObject(), _theme["default"].styles.spacing.stack.xxxs, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
-});
+var YearNavigatorStyle = _styledComponents["default"].div(_templateObject(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xxs"
+}), _tokens["default"].colors.neutral.dark.base);
 
 function YearNavigator(props) {
   var index = props.years.findIndex(function (item) {
@@ -46,15 +47,15 @@ function YearNavigator(props) {
   var left = index > 0 || props.showAllYears;
   var right = props.years.length > index + 1 || props.showAllYears;
   return /*#__PURE__*/_react["default"].createElement(YearNavigatorStyle, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _theme["default"].styles.icon.size.md,
+    size: _tokens["default"].iconSize.md,
     appearance: "primary",
     disabled: !left,
     id: "yearLeft",
     style: {
-      marginRight: _theme["default"].styles.spacing.stack.nano,
-      opacity: !left ? _theme["default"].styles.opacity.level.light : 1
+      marginRight: _tokens["default"].spacing.stack.nano,
+      opacity: !left ? _tokens["default"].opacity.level.light : 1
     },
-    path: _icons["default"]['chevron-left'],
+    path: _tokens["default"].icons['chevron-left'],
     onClick: function onClick() {
       return left && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(-1, 'year').get('year'));
     }
@@ -64,15 +65,15 @@ function YearNavigator(props) {
     },
     id: "year"
   }, props.yearSelected), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _theme["default"].styles.icon.size.md,
+    size: _tokens["default"].iconSize.md,
     appearance: "primary",
     disabled: !right,
     id: "yearRight",
     style: {
-      marginLeft: _theme["default"].styles.spacing.stack.nano,
-      opacity: !right ? _theme["default"].styles.opacity.level.light : 1
+      marginLeft: _tokens["default"].spacing.stack.nano,
+      opacity: !right ? _tokens["default"].opacity.level.light : 1
     },
-    path: _icons["default"]['chevron-right'],
+    path: _tokens["default"].icons['chevron-right'],
     onClick: function onClick() {
       return right && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(1, 'year').get('year'));
     }

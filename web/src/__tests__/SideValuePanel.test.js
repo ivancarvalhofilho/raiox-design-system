@@ -2,7 +2,7 @@ import { mountWithTheme } from '../utils/testUtil'
 import toJson from 'enzyme-to-json'
 import React from 'react'
 import { SideValuePanel } from '../components'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
@@ -11,10 +11,10 @@ it('should render', () => {
     checkValue: [true, false, false, true],
     titles: ['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes'],
     subtitles: ['Recebido', 'Previsto'],
-    subtitlesIcons: [theme.icons.check, theme.icons.clock],
+    subtitlesIcons: [Tokens.icons.check, Tokens.icons.clock],
     subtitlesColors: [
-      theme.colors.feedback.success.dark,
-      theme.colors.feedback.danger.dark,
+      Tokens.colors.feedback.success.dark,
+      Tokens.colors.feedback.danger.dark,
     ],
   }
 
@@ -32,10 +32,10 @@ it('should render full width', () => {
     checkValue: [true, false, false, true],
     titles: ['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes'],
     subtitles: ['Recebido', 'Previsto'],
-    subtitlesIcons: [theme.icons.check, theme.icons.clock],
+    subtitlesIcons: [Tokens.icons.check, Tokens.icons.clock],
     subtitlesColors: [
-      theme.colors.feedback.success.dark,
-      theme.colors.feedback.danger.dark,
+      Tokens.colors.feedback.success.dark,
+      Tokens.colors.feedback.danger.dark,
     ],
     fullWidth: true,
   }

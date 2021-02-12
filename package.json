@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "files": [
-    "web/dist",
-    "tokens/theme"
+    "web/dist"
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",
-    "build": "cd tokens && npm run build && cd ../web && npm run build"
+    "build": "cd web && npm run build"
   },
   "repository": {
     "type": "git",

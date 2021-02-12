@@ -15,13 +15,13 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _index = require("./index");
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _StyledComponents = require("./StyledComponents");
 
-var _utils = require("../utils");
-
 var _dayjs = _interopRequireDefault(require("dayjs"));
+
+var _FontUtil = require("../utils/FontUtil");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -50,7 +50,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -80,7 +80,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  height: 58px;\n  background: ", ";\n  padding: 8px 13px;\n  display: flex;\n  align-items: center;\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 58px;\n  background: ", ";\n  padding: 8px 13px;\n  display: flex;\n  align-items: center;\n  ", ";\n  color: ", "\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -110,7 +110,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -150,7 +150,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: #008488;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -160,7 +160,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -180,7 +180,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  background: #008488;\n  border-radius: 0 5px 5px 0;\n  width: 40px;\n  height: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border-radius: 0 5px 5px 0;\n  width: 40px;\n  height: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -215,25 +215,25 @@ var ButtonContainer = _styledComponents["default"].div(_templateObject());
 
 var ContainerDatepicker = _styledComponents["default"].div(_templateObject2());
 
-var CalendarIcon = _styledComponents["default"].div(_templateObject3());
+var CalendarIcon = _styledComponents["default"].div(_templateObject3(), _tokens["default"].colors.brand.primary.darkest);
 
-var ContainerDate = _styledComponents["default"].div(_templateObject4(), function (props) {
-  return props.theme.styles.spacing.inset.xs;
-});
+var ContainerDate = _styledComponents["default"].div(_templateObject4(), _tokens["default"].spacing.inset.xs);
 
-var Text = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
-});
+var Text = _styledComponents["default"].div(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xxs"
+}), _tokens["default"].colors.neutral.dark.base);
 
-var Date = _styledComponents["default"].div(_templateObject6(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
-});
+var Date = _styledComponents["default"].div(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xxs"
+}), _tokens["default"].colors.neutral.dark.base, _tokens["default"].colors.neutral.dark["03"]);
 
-var DatepickerContainer = _styledComponents["default"].div(_templateObject7(), function (props) {
-  return props.theme.styles.shadow.level1;
-}, function (props) {
-  return props.theme.styles.border.sm;
-}, function (props) {
+var DatepickerContainer = _styledComponents["default"].div(_templateObject7(), _tokens["default"].shadow.level1, _tokens["default"].border.sm, function (props) {
   return props.alignContainer === 'center' ? 'left: -150px' : "".concat(props.alignContainer, ": 0");
 });
 
@@ -241,30 +241,37 @@ var Container = _styledComponents["default"].div(_templateObject8());
 
 var MonthContainer = _styledComponents["default"].div(_templateObject9());
 
-var MonthTitle = _styledComponents["default"].div(_templateObject10(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base');
-});
+var MonthTitle = _styledComponents["default"].div(_templateObject10(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xs"
+}), _tokens["default"].colors.neutral.dark.base);
 
 var MonthHeader = _styledComponents["default"].div(_templateObject11());
 
 var CalendarContainer = _styledComponents["default"].div(_templateObject12());
 
-var BlockMessage = _styledComponents["default"].div(_templateObject13(), function (props) {
-  return props.theme.colors.feedback.danger.light;
-}, function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xs', 'feedback.danger.dark');
-});
+var BlockMessage = _styledComponents["default"].div(_templateObject13(), _tokens["default"].colors.feedback.danger.light, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xs"
+}), _tokens["default"].colors.neutral.dark.dark);
 
 var Day = _styledComponents["default"].div(_templateObject14(), function (props) {
   return props.disabled ? 'not-allowed' : props.onClick && 'pointer';
 }, function (props) {
-  return props.selected && _theme["default"].colors.brand.primary.medium;
+  return props.selected && _tokens["default"].colors.brand.primary.medium;
+}, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xxs"
+}), function (props) {
+  return props.disabled ? _tokens["default"].colors.neutral.dark['02'] : _tokens["default"].colors.neutral.dark.base;
 }, function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base');
-}, function (props) {
-  return props.disabled && props.theme.colors.neutral.dark['02'];
-}, function (props) {
-  return (props.first || props.last) && "color: ".concat(_theme["default"].colors.neutral.light.base, ";\n  background: #008488;");
+  return (props.first || props.last) && "color: ".concat(_tokens["default"].colors.neutral.light.base, ";\n  background: ").concat(_tokens["default"].colors.brand.primary.darkest, ";");
 }, function (props) {
   return props.first && " border-radius: 5px";
 }, function (props) {
@@ -272,9 +279,9 @@ var Day = _styledComponents["default"].div(_templateObject14(), function (props)
 });
 
 var DayBackground = _styledComponents["default"].div(_templateObject15(), function (props) {
-  return props.selected && _theme["default"].colors.brand.primary.medium;
+  return props.selected && _tokens["default"].colors.brand.primary.medium;
 }, function (props) {
-  return props.disabled && _theme["default"].colors.neutral.dark['03'];
+  return props.disabled && _tokens["default"].colors.neutral.dark['03'];
 }, function (props) {
   return props.firstInLine && '5px 0 0  5px';
 }, function (props) {
@@ -285,9 +292,12 @@ var DayBackground = _styledComponents["default"].div(_templateObject15(), functi
   return props.last && '0 5px 5px 0';
 });
 
-var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject16(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xxs', 'neutral.dark.01');
-});
+var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject16(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xxs"
+}), _tokens["default"].colors.neutral.dark['01']);
 
 var Datepicker = function Datepicker(props) {
   var _useState = (0, _react.useState)(false),
@@ -385,7 +395,7 @@ var Datepicker = function Datepicker(props) {
       setOpened(!opened);
     }
   }, /*#__PURE__*/_react["default"].createElement(ContainerDate, null, /*#__PURE__*/_react["default"].createElement(Text, null, "Per\xEDodo"), /*#__PURE__*/_react["default"].createElement(Date, null, "".concat((0, _dayjs["default"])(props.dates[0]).format('DD MMM'), " - ").concat((0, _dayjs["default"])(props.dates[1]).format('DD MMM')))), /*#__PURE__*/_react["default"].createElement(CalendarIcon, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
-    path: _theme["default"].icons.calendar,
+    path: _tokens["default"].icons.calendar,
     size: "22px",
     appearance: "light"
   }))), opened && /*#__PURE__*/_react["default"].createElement(DatepickerContainer, {
@@ -399,7 +409,7 @@ var Datepicker = function Datepicker(props) {
         minWidth: '30px'
       }
     }, index === 0 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
-      path: _theme["default"].icons['double-arrow-left'],
+      path: _tokens["default"].icons['double-arrow-left'],
       size: "14px",
       id: "previousYear".concat(index),
       style: {
@@ -409,7 +419,7 @@ var Datepicker = function Datepicker(props) {
         return changeYear(index, false);
       }
     }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
-      path: _theme["default"].icons['single-arrow-left'],
+      path: _tokens["default"].icons['single-arrow-left'],
       size: "14px",
       id: "previousMonth".concat(index),
       onClick: function onClick() {
@@ -420,7 +430,7 @@ var Datepicker = function Datepicker(props) {
         minWidth: '30px'
       }
     }, index === 1 && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_index.Icon, {
-      path: _theme["default"].icons['single-arrow-right'],
+      path: _tokens["default"].icons['single-arrow-right'],
       size: "14px",
       style: {
         marginRight: '8px'
@@ -430,7 +440,7 @@ var Datepicker = function Datepicker(props) {
         return changeMonth(index, true);
       }
     }), /*#__PURE__*/_react["default"].createElement(_index.Icon, {
-      path: _theme["default"].icons['double-arrow-right'],
+      path: _tokens["default"].icons['double-arrow-right'],
       size: "14px",
       id: "nextYear".concat(index),
       onClick: function onClick() {

@@ -13,15 +13,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _icons = _interopRequireDefault(require("../../../tokens/theme/icons"));
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _utils = require("../utils");
 
 var _reactCollapse = require("react-collapse");
 
 var _StyledComponents = require("./StyledComponents");
+
+var _tokens = _interopRequireDefault(require("../../tokens"));
+
+var _FontUtil = require("../utils/FontUtil");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -42,7 +42,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -52,7 +52,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  ", ";\n  color: ", "\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -105,28 +105,24 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Header = _styledComponents["default"].div(_templateObject());
 
-var Button = _styledComponents["default"].div(_templateObject2(), function (props) {
-  return props.theme.styles.spacing.inline.nano;
-});
+var Button = _styledComponents["default"].div(_templateObject2(), _tokens["default"].spacing.inline.nano);
 
-var Divider = (0, _styledComponents["default"])(_StyledComponents.Divider)(_templateObject3(), function (props) {
-  return props.theme.styles.spacing.stack.xxxs;
-});
-var Container = (0, _styledComponents["default"])(_StyledComponents.Container)(_templateObject4(), function (props) {
-  return props.theme.styles.shadow.level0;
-}, function (props) {
-  return props.theme.styles.spacing.inset.xs;
-});
+var Divider = (0, _styledComponents["default"])(_StyledComponents.Divider)(_templateObject3(), _tokens["default"].spacing.stack.xxxs);
+var Container = (0, _styledComponents["default"])(_StyledComponents.Container)(_templateObject4(), _tokens["default"].shadow.level0, _tokens["default"].spacing.inset.xs);
 
-var Body = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return props.theme.styles.spacing.stack.xxxs;
-}, function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base');
-});
+var Body = _styledComponents["default"].div(_templateObject5(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xs"
+}), _tokens["default"].colors.neutral.dark.base);
 
-var Title = _styledComponents["default"].span(_templateObject6(), function (props) {
-  return (0, _utils.fontStyleMaker)(props.theme, 'body', 'regular', 'xs', 'brand.secondary.dark');
-});
+var Title = _styledComponents["default"].span(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xs"
+}), _tokens["default"].colors.brand.secondary.dark);
 
 var CollapseContainer = function CollapseContainer(props) {
   var _useState = (0, _react.useState)(false),
@@ -140,7 +136,7 @@ var CollapseContainer = function CollapseContainer(props) {
       return setOpened(!opened);
     }
   }, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), /*#__PURE__*/_react["default"].createElement(Button, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    path: _icons["default"]['chevron-down'],
+    path: _tokens["default"].icons['chevron-down'],
     size: "16px",
     rotate: opened ? 180 : 0
   }))), /*#__PURE__*/_react["default"].createElement(_reactCollapse.UnmountClosed, {

@@ -19,7 +19,7 @@ var _MonthList = _interopRequireDefault(require("./MonthList"));
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _theme = _interopRequireDefault(require("../../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../../tokens"));
 
 var _StyledComponents = require("../StyledComponents");
 
@@ -55,7 +55,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var MonthByYearSelectorStyled = _styledComponents["default"].div(_templateObject(), _theme["default"].styles.shadow.level1, _theme["default"].styles.border.radius.sm, _theme["default"].styles.spacing.squish.xs);
+var MonthByYearSelectorStyled = _styledComponents["default"].div(_templateObject(), _tokens["default"].shadow.level1, _tokens["default"].border.radius.sm, _tokens["default"].spacing.squish.xs);
 
 var groupBy = function groupBy(xs, key) {
   return xs.reduce(function (rv, x) {

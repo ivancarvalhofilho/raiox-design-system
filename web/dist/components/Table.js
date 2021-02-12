@@ -15,11 +15,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactInfiniteScrollComponent = _interopRequireDefault(require("react-infinite-scroll-component"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
-
-var _icons = _interopRequireDefault(require("../../../tokens/theme/icons"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -163,9 +161,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var LoaderContainer = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.cols * '100';
-}, function (props) {
-  return props.theme.colors.neutral.dark.base;
-});
+}, _tokens["default"].colors.neutral.dark.base);
 
 var Container = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.optional && '-12px';
@@ -173,9 +169,7 @@ var Container = _styledComponents["default"].div(_templateObject2(), function (p
   return !props.optional && 'fit-content';
 }, function (props) {
   return props.maxheight;
-}, function (props) {
-  return props.theme.colors.neutral.dark.base;
-}, function (props) {
+}, _tokens["default"].colors.neutral.dark.base, function (props) {
   return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
     return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
@@ -187,9 +181,7 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
   return props.maxheight;
 }, function (props) {
   return !props.optional && 'fit-content';
-}, function (props) {
-  return props.theme.colors.neutral.dark.base;
-}, function (props) {
+}, _tokens["default"].colors.neutral.dark.base, function (props) {
   return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
     return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
   }, '');
@@ -197,19 +189,15 @@ var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollCo
 
 var Scroll = _styledComponents["default"].div(_templateObject4());
 
-var DisplayGrid = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return props.theme.fonts.family.body;
-});
+var DisplayGrid = _styledComponents["default"].div(_templateObject5(), _tokens["default"].fonts.family.body);
 
 var ContainerHeader = _styledComponents["default"].div(_templateObject6(), function (props) {
-  return "".concat(props.theme.styles.border.width.hairline, " solid ").concat(props.theme.colors.neutral.dark['03']);
+  return "".concat(_tokens["default"].border.width.hairline, " solid ").concat(_tokens["default"].colors.neutral.dark['03']);
 }, function (props) {
   return props.optional && 'hidden';
 }, function (props) {
   return !props.optional && 'fit-content';
-}, function (props) {
-  return props.theme.colors.neutral.dark.base;
-}, function (props) {
+}, _tokens["default"].colors.neutral.dark.base, function (props) {
   return props.colsWidth.length > 0 ? (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
     return props.colsWidth[index] ? "".concat(x, " ").concat(props.colsWidth[index], "px") : x;
   }, '') : "".concat(props.hasColor ? '8px ' : '', " repeat(").concat(props.cols.length, ", auto)");
@@ -347,14 +335,14 @@ function Table(props) {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
       border: true,
-      color: _theme["default"].colors.neutral.light['02'],
+      color: _tokens["default"].colors.neutral.light['02'],
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, {
       ref: function ref(_ref) {
         itemsHeader.current[indexCol] = _ref;
       }
     }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      path: props.orderBy !== key ? _theme["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _theme["default"].icons['arrow-up'] : _theme["default"].icons['arrow-down']
+      path: props.orderBy !== key ? _tokens["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _tokens["default"].icons['arrow-up'] : _tokens["default"].icons['arrow-down']
     }))));
   })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
     hasColor: hasColor,
@@ -377,7 +365,7 @@ function Table(props) {
         props.data[key].ordenable && props.onClickToOrder(key);
       },
       border: true,
-      color: _theme["default"].colors.neutral.light['02'],
+      color: _tokens["default"].colors.neutral.light['02'],
       title: props.data[key].title
     }, /*#__PURE__*/_react["default"].createElement(Value, {
       ref: function ref(_ref2) {
@@ -389,7 +377,7 @@ function Table(props) {
       },
       appearance: "dark",
       size: "10px",
-      path: props.orderBy !== key ? _theme["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _theme["default"].icons['arrow-up'] : _theme["default"].icons['arrow-down']
+      path: props.orderBy !== key ? _tokens["default"].icons['arrow-horizontal'] : props.order === 'DESC' ? _tokens["default"].icons['arrow-up'] : _tokens["default"].icons['arrow-down']
     }))));
   }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
     id: "containerOptional",
@@ -478,10 +466,10 @@ function Table(props) {
       }
     }, "Carregando"), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       className: "rotating",
-      path: _icons["default"].loading,
+      path: _tokens["default"].icons.loading,
       size: "16px",
       spin: true,
-      appearance: _theme["default"].colors.neutral.light['02']
+      appearance: _tokens["default"].colors.neutral.light['02']
     })))
   }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
     return /*#__PURE__*/_react["default"].createElement(Column, {
@@ -526,7 +514,7 @@ function Table(props) {
         }
       }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
         spin: true,
-        path: _icons["default"].loading,
+        path: _tokens["default"].icons.loading,
         size: "20px"
       })))));
     }));

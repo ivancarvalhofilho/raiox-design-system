@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import SVGInline from 'react-svg-inline'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 import styled from 'styled-components'
 
 const Svg = styled(SVGInline)`
@@ -16,38 +16,38 @@ const Icon = props => {
   function getIconSvgColor(props) {
     switch (props.appearance) {
       case 'default':
-        return theme.colors.neutral.dark['02']
+        return Tokens.colors.neutral.dark['02']
       case 'primary':
-        return theme.colors.brand.primary.darkest
+        return Tokens.colors.brand.primary.darkest
       case 'light':
-        return theme.colors.neutral.light.base
+        return Tokens.colors.neutral.light.base
       case 'danger':
-        return theme.colors.feedback.danger.dark
+        return Tokens.colors.feedback.danger.dark
       case 'info':
-        return theme.colors.feedback.info.dark
+        return Tokens.colors.feedback.info.dark
       case 'warning':
-        return theme.colors.feedback.warning.dark
+        return Tokens.colors.feedback.warning.dark
       case 'success':
-        return theme.colors.feedback.success.dark
+        return Tokens.colors.feedback.success.dark
       case 'dark':
-        return theme.colors.neutral.dark.base
+        return Tokens.colors.neutral.dark.base
       case 'default-disabled':
-        return theme.colors.neutral.dark['02']
+        return Tokens.colors.neutral.dark['02']
       case 'primary-disabled':
-        return theme.colors.brand.primary.darkest
+        return Tokens.colors.brand.primary.darkest
       default:
-        return props.appearance || theme.colors.neutral.dark['02']
+        return props.appearance || Tokens.colors.neutral.dark['02']
     }
   }
 
   function getIconSvgSize(props) {
     if (
       props.size &&
-      !Object.keys(theme.styles.icon.size).includes(props.size)
+      !Object.keys(Tokens.iconSize).includes(props.size)
     ) {
       return props.size
     }
-    return theme.styles.icon.size[props.size] || theme.styles.icon.size.sm
+    return Tokens.iconSize[props.size] || Tokens.iconSize.sm
   }
 
   return (
@@ -58,7 +58,7 @@ const Icon = props => {
       spin={props.spin}
       className={props.className}
       style={{ ...props.style }}
-      svg={props.path ? props.path : theme.icons[props.name]}
+      svg={props.path ? props.path : Tokens.icons[props.name]}
       fill={getIconSvgColor(props)}
       width={getIconSvgSize(props)}
     />

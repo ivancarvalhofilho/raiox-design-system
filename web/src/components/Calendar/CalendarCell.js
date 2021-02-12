@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Colors from '../../../../tokens/theme/colors'
-import fontStyleMaker from '../../utils/FontUtil'
+import { fontStyleMaker } from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
+import Tokens from "../../../tokens";
 
 const CalendarCellContainer = styled.div`
   position: relative;
@@ -15,49 +15,58 @@ const CalendarCellContainer = styled.div`
   border: 1px solid
     ${props =>
       props.isSelected
-        ? Colors.brand.primary.darkest
-        : Colors.neutral.dark['03']};
+        ? Tokens.colors.brand.primary.darkest
+        : Tokens.colors.neutral.dark['03']};
   background: ${props =>
-    (props.isHolyday && `${Colors.neutral.light['02']} !important`) ||
+    (props.isHolyday && `${Tokens.colors.neutral.light['02']} !important`) ||
     ((props.isSelected || props.isHovered) &&
-      `${Colors.brand.primary.light} !important`)};
+      `${Tokens.colors.brand.primary.light} !important`)};
   cursor: ${props =>
     (props.isBlockedSelection && 'not-allowed') ||
     (props.currentMonth && 'pointer')};
 `
 const DayNumber = styled.span`
   height: 14px;
-  ${props =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      (props.isSelected && 'medium') || 'regular',
-      'xs',
-    )};
-  margin: ${props => props.theme.styles.spacing.inset.nano};
+  ${(props) => fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: (props.isSelected && 'medium') || 'regular',
+    fontSize: "xs"
+  })};
+  margin: ${Tokens.spacing.inset.nano};
   color: ${props =>
-    (props.isBlockedSelection && Colors.neutral.dark['02']) ||
-    (props.isSelected && Colors.brand.primary.darkest)};
+    (props.isBlockedSelection && Tokens.colors.neutral.dark['02']) ||
+    (props.isSelected && Tokens.colors.brand.primary.darkest)};
   user-select: none;
 `
 const DaySales = styled.span`
   & > div {
     display: inline-flex;
     align-items: center;
-    margin: ${props => props.theme.styles.spacing.inset.nano};
+    margin: ${Tokens.spacing.inset.nano};
     position: absolute;
     width: Calc(100% - 16px);
     bottom: 0;
     left: 0;
     justify-content: flex-end;
   }
-  ${props => fontStyleMaker(props.theme, 'body', 'regular', 'xs')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
 `
 const SalesValue = styled.span`
   height: 14px;
-  ${props => fontStyleMaker(props.theme, 'condensed', 'regular', 'xs')};
-  margin-right: ${props => props.theme.styles.spacing.inset.quarck};
-  color: ${props => !props.currentMonth && Colors.neutral.dark['02']};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "condensed",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
+  margin-right: ${Tokens.spacing.inset.quarck};
+  color: ${props => !props.currentMonth && Tokens.colors.neutral.dark['02']};
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
@@ -69,7 +78,7 @@ const SalesValue = styled.span`
 const SalesStatusDot = styled.span`
   width: 4px;
   height: 4px;
-  border-radius: ${props => props.theme.styles.border.radius.circular};
+  border-radius: ${Tokens.border.radius.circular};
   background: ${props => props.color};
 `
 const CalendarCell = props => (
@@ -137,8 +146,8 @@ const CalendarCell = props => (
             <SalesStatusDot
               color={
                 props.daySale.type === 'R'
-                  ? Colors.feedback.success.dark
-                  : Colors.feedback.attention.darkest
+                  ? Tokens.colors.feedback.success.dark
+                  : Tokens.colors.feedback.attention.darkest
               }
             />
           </div>

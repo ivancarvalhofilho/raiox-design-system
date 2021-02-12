@@ -5,11 +5,11 @@ import styled from 'styled-components'
 const HeaderContainer = styled.div`
   display: flex;
   padding: 8px 16px;
-  background: ${props => props.theme.colors.neutral.light['02']};
-  color: ${props => props.theme.colors.neutral.dark['01']};
+  background: ${Tokens.colors.neutral.light['02']};
+  color: ${Tokens.colors.neutral.dark['01']};
   border-bottom: 1px solid #e0e0e0;
-  font-family: ${props => props.theme.fonts.family.body};
-  font-size: ${props => props.theme.fonts.fontSize.xxs};
+  font-family: ${Tokens.fonts.family.body};
+  font-size: ${Tokens.fonts.fontSize.xxs};
 `
 const Column = styled.div`
   width: ${props => props.width}%;

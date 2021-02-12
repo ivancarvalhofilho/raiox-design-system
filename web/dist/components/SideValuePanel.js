@@ -11,11 +11,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
+var _FontUtil = require("../utils/FontUtil.tsx");
 
 var _StyledComponents = require("./StyledComponents");
 
 var _Icon = _interopRequireDefault(require("./Icon"));
+
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -30,7 +32,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  margin-right: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -40,7 +42,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  color: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -70,7 +72,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  margin-bottom: 8px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  margin-bottom: 8px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -81,33 +83,43 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Title = _styledComponents["default"].div(_templateObject(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs', 'neutral.dark.01');
-});
+var Title = _styledComponents["default"].div(_templateObject(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "xxs"
+}), _tokens["default"].colors.neutral.dark["01"]);
 
 var Container = _styledComponents["default"].div(_templateObject2());
 
 var Item = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return props.fullWidth ? "width: 100%; margin: 0 ".concat(props.theme.styles.spacing.inline.xxxs, ";") : 'margin: 0px 40px';
+  return props.fullWidth ? "width: 100%; margin: 0 ".concat(_tokens["default"].spacing.inline.xxxs, ";") : 'margin: 0px 40px';
 });
 
-var Value = _styledComponents["default"].span(_templateObject4(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
-}, function (props) {
-  return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
+var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "light",
+  fontSize: "lg"
+}), function (props) {
+  return props.positive === true ? _tokens["default"].colors.feedback.success.dark : props.positive === false && _tokens["default"].colors.feedback.danger.dark;
 });
 
-var DollarSign = _styledComponents["default"].span(_templateObject5(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
-}, function (props) {
-  return props.theme.styles.spacing.inset.quarck;
-}, function (props) {
-  return props.positive === true ? props.theme.colors.feedback.success.dark : props.positive === false && props.theme.colors.feedback.danger.dark;
+var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "sm"
+}), _tokens["default"].spacing.inset.quarck, function (props) {
+  return props.positive === true ? _tokens["default"].colors.feedback.success.dark : props.positive === false && _tokens["default"].colors.feedback.danger.dark;
 });
 
-var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base');
-}, function (props) {
+var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "sm"
+}), function (props) {
   return props.color;
 });
 

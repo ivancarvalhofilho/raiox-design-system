@@ -15,7 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -131,7 +131,7 @@ var Modal = function Modal(props) {
   }, /*#__PURE__*/_react["default"].createElement(ModalHeader, null, /*#__PURE__*/_react["default"].createElement(Title, null, props.title), props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: "16px",
     onClick: props.onClose,
-    path: _theme["default"].icons.close
+    path: _tokens["default"].icons.close
   })), /*#__PURE__*/_react["default"].createElement(ModalContent, null, props.children)));
 };
 

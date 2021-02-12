@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../tokens/theme'
+import Tokens from '../tokens'
 
 export default {
   title: 'Example/Color',
@@ -15,14 +15,14 @@ const ColorShower = styled.div`
 const Template = args => (
   <div>
     <span style={{ display: 'flex', flexDirection: 'column' }}>
-      {Object.keys(theme.colors).map(key => (
+      {Object.keys(Tokens.colors).map(key => (
         <div>
           <h1>{key}</h1>
-          {Object.keys(theme.colors[key]).map(keyStyle => (
+          {Object.keys(Tokens.colors[key]).map(keyStyle => (
             <div>
               <h2>{keyStyle}</h2>
               <span style={{ display: 'flex', flexDirection: 'row' }}>
-                {Object.keys(theme.colors[key][keyStyle]).map(keyColor => (
+                {Object.keys(Tokens.colors[key][keyStyle]).map(keyColor => (
                   <span
                     style={{
                       display: 'flex',
@@ -33,7 +33,7 @@ const Template = args => (
                     }}
                   >
                     <ColorShower
-                      color={theme.colors[key][keyStyle][keyColor]}
+                      color={Tokens.colors[key][keyStyle][keyColor]}
                     />
                     {keyColor}
                   </span>

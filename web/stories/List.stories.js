@@ -3,7 +3,6 @@ import React from 'react'
 import List from '../src/components/List'
 import { TextRow } from '../src/components/StyledComponents'
 import Icon from '../src/components/Icon'
-import iconsAdquirentes from '../../tokens/theme/iconsAdquirente'
 
 export default {
   title: 'Example/List',
@@ -32,7 +31,7 @@ WithIcon.args = {
         <Icon
           style={{ 'margin-right': '5px' }}
           size="lg"
-          path={iconsAdquirentes.minify['41']}
+          path={Tokens.iconsAdquirentes.minify['41']}
         />{' '}
         Stone
       </TextRow>,
@@ -43,7 +42,7 @@ WithIcon.args = {
         <Icon
           style={{ 'margin-right': '5px' }}
           size="lg"
-          path={iconsAdquirentes.minify['1']}
+          path={Tokens.iconsAdquirentes.minify['1']}
         />{' '}
         Cielo
       </TextRow>,

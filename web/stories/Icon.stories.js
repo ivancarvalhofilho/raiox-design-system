@@ -1,9 +1,8 @@
 import React from 'react'
 
 import Icon from '../src/components/Icon'
-import iconsAdquirentes from '../../tokens/theme/iconsAdquirente'
 import styled from 'styled-components'
-import theme from '../../tokens/theme'
+import Tokens from '../tokens'
 
 export default {
   title: 'Example/Icon',
@@ -11,16 +10,16 @@ export default {
 }
 
 const Title = styled.div`
-  font-family: ${props => props.theme.fonts.family.body};
-  font-weight: ${props => props.theme.fonts.weight.medium};
-  font-size: ${props => props.theme.fonts.fontSize.xl};
-  color: ${props => props.theme.colors.neutral.dark.base};
+  font-family: ${Tokens.fonts.family.body};
+  font-weight: ${Tokens.fonts.weight.medium};
+  font-size: ${Tokens.fonts.fontSize.xl};
+  color: ${Tokens.colors.neutral.dark.base};
 `
 
 const Template = args => (
   <div>
     <span style={{ display: 'flex', flexDirection: 'row' }}>
-      {Object.keys(theme.icons).map(key => (
+      {Object.keys(Tokens.icons).map(key => (
         <span
           style={{
             display: 'flex',
@@ -30,7 +29,7 @@ const Template = args => (
             textAlign: 'center',
           }}
         >
-          <Icon path={theme.icons[key]} {...args} />
+          <Icon path={Tokens.icons[key]} {...args} />
           {key}
         </span>
       ))}
@@ -40,11 +39,11 @@ const Template = args => (
 
 const Template2 = args => (
   <div>
-    {Object.keys(iconsAdquirentes).map(key => (
+    {Object.keys(Tokens.iconsAdquirentes).map(key => (
       <div style={{ margin: '0 0 50px 0' }}>
         <Title>{key.toUpperCase()}</Title>
         <span style={{ display: 'flex', flexDirection: 'row' }}>
-          {Object.keys(iconsAdquirentes[key]).map(keyIcon => (
+          {Object.keys(Tokens.iconsAdquirentes[key]).map(keyIcon => (
             <span
               style={{
                 display: 'flex',
@@ -56,7 +55,7 @@ const Template2 = args => (
             >
               <Icon
                 key={`${key}/${keyIcon}`}
-                path={iconsAdquirentes[key][keyIcon]}
+                path={Tokens.iconsAdquirentes[key][keyIcon]}
                 {...args}
               />
               {keyIcon}
@@ -71,7 +70,7 @@ const Template2 = args => (
 const Template3 = args => (
   <div style={{ padding: '60px' }}>
     <span style={{ display: 'flex', flexDirection: 'row' }}>
-      {Object.keys(theme.iconsBanco).map(key => (
+      {Object.keys(Tokens.iconsBanco).map(key => (
         <span
           style={{
             display: 'flex',
@@ -81,7 +80,7 @@ const Template3 = args => (
             textAlign: 'center',
           }}
         >
-          <Icon tooltip="teste" path={theme.iconsBanco[key]} {...args} />
+          <Icon tooltip="teste" path={Tokens.iconsBanco[key]} {...args} />
           {key}
         </span>
       ))}

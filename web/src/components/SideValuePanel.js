@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import fontStyleMaker from '../utils/FontUtil'
+import { fontStyleMaker } from '../utils/FontUtil.tsx'
 import { Divider, FlexCenter, TextRow } from './StyledComponents'
 import Icon from './Icon'
+import Tokens from "../../tokens";
 
 const Title = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.01')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark["01"]}
   margin-bottom: 8px;
 `
 
@@ -18,7 +24,7 @@ const Container = styled.div`
 const Item = styled.div`
   ${props =>
     props.fullWidth
-      ? `width: 100%; margin: 0 ${props.theme.styles.spacing.inline.xxxs};`
+      ? `width: 100%; margin: 0 ${Tokens.spacing.inline.xxxs};`
       : 'margin: 0px 40px'};
   white-space: nowrap;
   overflow: hidden;
@@ -26,28 +32,40 @@ const Item = styled.div`
   text-align: center;
 `
 const Value = styled.span`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'light', 'lg', 'neutral.dark.base')}
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "light",
+    fontSize: "lg"
+  })};
   color: ${props =>
     props.positive === true
-      ? props.theme.colors.feedback.success.dark
-      : props.positive === false && props.theme.colors.feedback.danger.dark};
+      ? Tokens.colors.feedback.success.dark
+      : props.positive === false && Tokens.colors.feedback.danger.dark};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `
 const DollarSign = styled.span`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base')}
-  margin-right: ${props => props.theme.styles.spacing.inset.quarck};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "sm"
+  })};
+  margin-right: ${Tokens.spacing.inset.quarck};
   color: ${props =>
     props.positive === true
-      ? props.theme.colors.feedback.success.dark
-      : props.positive === false && props.theme.colors.feedback.danger.dark};
+      ? Tokens.colors.feedback.success.dark
+      : props.positive === false && Tokens.colors.feedback.danger.dark};
 `
 const Subtitle = styled(TextRow)`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "sm"
+  })};
   margin-top: 8px;
   display: flex;
   align-items: center;

@@ -9,11 +9,11 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _colors = _interopRequireDefault(require("../../../../tokens/theme/colors"));
-
-var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
+var _FontUtil = require("../../utils/FontUtil");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _tokens = _interopRequireDefault(require("../../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -72,38 +72,41 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), function (props) {
-  return props.isSelected ? _colors["default"].brand.primary.darkest : _colors["default"].neutral.dark['03'];
+  return props.isSelected ? _tokens["default"].colors.brand.primary.darkest : _tokens["default"].colors.neutral.dark['03'];
 }, function (props) {
-  return props.isHolyday && "".concat(_colors["default"].neutral.light['02'], " !important") || (props.isSelected || props.isHovered) && "".concat(_colors["default"].brand.primary.light, " !important");
+  return props.isHolyday && "".concat(_tokens["default"].colors.neutral.light['02'], " !important") || (props.isSelected || props.isHovered) && "".concat(_tokens["default"].colors.brand.primary.light, " !important");
 }, function (props) {
   return props.isBlockedSelection && 'not-allowed' || props.currentMonth && 'pointer';
 });
 
 var DayNumber = _styledComponents["default"].span(_templateObject2(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', props.isSelected && 'medium' || 'regular', 'xs');
-}, function (props) {
-  return props.theme.styles.spacing.inset.nano;
-}, function (props) {
-  return props.isBlockedSelection && _colors["default"].neutral.dark['02'] || props.isSelected && _colors["default"].brand.primary.darkest;
+  return (0, _FontUtil.fontStyleMaker)({
+    Tokens: _tokens["default"],
+    fontFamily: "body",
+    fontWeight: props.isSelected && 'medium' || 'regular',
+    fontSize: "xs"
+  });
+}, _tokens["default"].spacing.inset.nano, function (props) {
+  return props.isBlockedSelection && _tokens["default"].colors.neutral.dark['02'] || props.isSelected && _tokens["default"].colors.brand.primary.darkest;
 });
 
-var DaySales = _styledComponents["default"].span(_templateObject3(), function (props) {
-  return props.theme.styles.spacing.inset.nano;
-}, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'xs');
+var DaySales = _styledComponents["default"].span(_templateObject3(), _tokens["default"].spacing.inset.nano, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xs"
+}));
+
+var SalesValue = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "condensed",
+  fontWeight: "regular",
+  fontSize: "xs"
+}), _tokens["default"].spacing.inset.quarck, function (props) {
+  return !props.currentMonth && _tokens["default"].colors.neutral.dark['02'];
 });
 
-var SalesValue = _styledComponents["default"].span(_templateObject4(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'condensed', 'regular', 'xs');
-}, function (props) {
-  return props.theme.styles.spacing.inset.quarck;
-}, function (props) {
-  return !props.currentMonth && _colors["default"].neutral.dark['02'];
-});
-
-var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), function (props) {
-  return props.theme.styles.border.radius.circular;
-}, function (props) {
+var SalesStatusDot = _styledComponents["default"].span(_templateObject5(), _tokens["default"].border.radius.circular, function (props) {
   return props.color;
 });
 
@@ -140,7 +143,7 @@ var CalendarCell = function CalendarCell(props) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })), /*#__PURE__*/_react["default"].createElement(SalesStatusDot, {
-    color: props.daySale.type === 'R' ? _colors["default"].feedback.success.dark : _colors["default"].feedback.attention.darkest
+    color: props.daySale.type === 'R' ? _tokens["default"].colors.feedback.success.dark : _tokens["default"].colors.feedback.attention.darkest
   }))));
 };
 

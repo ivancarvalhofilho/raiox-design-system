@@ -4,7 +4,6 @@ import { mountWithTheme } from '../utils/testUtil'
 import { TextRow } from '../components/StyledComponents'
 import List from '../components/List'
 import Icon from '../components/Icon'
-import iconsAdquirentes from '../../../tokens/theme/iconsAdquirente'
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
@@ -33,7 +32,7 @@ it('should change tab', () => {
           <Icon
             style={{ marginRight: '5px' }}
             size="lg"
-            path={iconsAdquirentes.minify['41']}
+            path={Tokens.iconsAdquirentes.minify['41']}
           />{' '}
           Stone
         </TextRow>,
@@ -44,7 +43,7 @@ it('should change tab', () => {
           <Icon
             style={{ marginRight: '5px' }}
             size="lg"
-            path={iconsAdquirentes.minify['1']}
+            path={Tokens.iconsAdquirentes.minify['1']}
           />{' '}
           Cielo
         </TextRow>,

@@ -1,6 +1,6 @@
 import React from 'react'
 import SideValuePanel from '../src/components/SideValuePanel'
-import theme from '../../tokens/theme'
+import Tokens from '../tokens'
 
 export default {
   title: 'Example/SideValuePanel',
@@ -13,10 +13,10 @@ const Template = args => (
     checkValue={[true, false, false, true]}
     titles={['Valor recebido', 'Vendas', 'Antecipações', 'Ajustes']}
     subtitles={['Recebido', 'Previsto']}
-    subtitlesIcons={[theme.icons.check, theme.icons.clock]}
+    subtitlesIcons={[Tokens.icons.check, Tokens.icons.clock]}
     subtitlesColors={[
-      theme.colors.feedback.success.dark,
-      theme.colors.feedback.danger.dark,
+      Tokens.colors.feedback.success.dark,
+      Tokens.colors.feedback.danger.dark,
     ]}
   />
 )

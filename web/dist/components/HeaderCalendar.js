@@ -13,18 +13,16 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _icons = _interopRequireDefault(require("../../../tokens/theme/icons"));
-
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
+var _FontUtil = require("../utils/FontUtil");
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  padding: ", ";\n  white-space: nowrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  padding: ", ";\n  white-space: nowrap;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -34,7 +32,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -74,7 +72,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  cursor: pointer;\n  user-select: none;\n  white-space: nowrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  \n  color: ", "\n  cursor: pointer;\n  user-select: none;\n  white-space: nowrap;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -97,65 +95,65 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Month = _styledComponents["default"].div(_templateObject());
 
-var Date = _styledComponents["default"].div(_templateObject2(), function (props) {
-  return props.theme.styles.spacing.inline.nano;
-}, function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'md', 'neutral.dark.base');
-});
+var Date = _styledComponents["default"].div(_templateObject2(), _tokens["default"].spacing.inline.nano, (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "md"
+}), _tokens["default"].colors.neutral.dark.base);
 
-var Container = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return props.theme.styles.border.width.hairline;
-}, function (props) {
-  return props.theme.styles.border.sm;
-}, function (props) {
-  return props.theme.styles.spacing.inset.xs;
-});
+var Container = _styledComponents["default"].div(_templateObject3(), _tokens["default"].border.width.hairline, _tokens["default"].border.sm, _tokens["default"].spacing.inset.xs);
 
 var Values = _styledComponents["default"].div(_templateObject4());
 
-var Label = _styledComponents["default"].div(_templateObject5(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'medium', 'sm', 'neutral.dark.base');
-}, function (props) {
+var Label = _styledComponents["default"].div(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "medium",
+  fontSize: "sm"
+}), function (props) {
   return props.color;
-}, function (props) {
-  return props.theme.styles.spacing.inline.xxs;
-});
+}, _tokens["default"].spacing.inline.xxs);
 
-var Value = _styledComponents["default"].div(_templateObject6(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'light', 'lg', 'neutral.dark.base');
-});
+var Value = _styledComponents["default"].div(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "light",
+  fontSize: "lg"
+}), _tokens["default"].colors.neutral.dark.base);
 
-var MoneySign = _styledComponents["default"].div(_templateObject7(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'body', 'regular', 'sm', 'neutral.dark.base');
-}, function (props) {
-  return "0 ".concat(props.theme.styles.spacing.inline.quarck, " 0 ").concat(props.theme.styles.spacing.inline.nano);
-});
+var MoneySign = _styledComponents["default"].div(_templateObject7(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "sm"
+}), _tokens["default"].colors.neutral.dark.base, "0 ".concat(_tokens["default"].spacing.inline.quarck, " 0 ").concat(_tokens["default"].spacing.inline.nano));
 
 var HeaderCalendar = function HeaderCalendar(props) {
   return /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(Month, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _theme["default"].styles.icon.size.md,
+    size: _tokens["default"].iconSize.md,
     appearance: "primary",
     disabled: props.disabledLeft,
     id: "backMonth",
     style: {
-      marginRight: _theme["default"].styles.spacing.inline.nano,
+      marginRight: _tokens["default"].spacing.inline.nano,
       cursor: !props.disabledLeft && 'pointer',
-      opacity: props.disabledLeft ? _theme["default"].styles.opacity.level.medium : 1
+      opacity: props.disabledLeft ? _tokens["default"].opacity.level.medium : 1
     },
-    path: _icons["default"]['chevron-left'],
+    path: _tokens["default"].icons['chevron-left'],
     onClick: function onClick() {
       return !props.disabledLeft && props.onBackMonthClick();
     }
   }), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _theme["default"].styles.icon.size.md,
+    size: _tokens["default"].iconSize.md,
     id: "nextMonth",
     appearance: "primary",
     disabled: props.disabledRight,
     style: {
       cursor: !props.disabledRight && 'pointer',
-      opacity: props.disabledRight ? _theme["default"].styles.opacity.level.medium : 1
+      opacity: props.disabledRight ? _tokens["default"].opacity.level.medium : 1
     },
-    path: _icons["default"]['chevron-right'],
+    path: _tokens["default"].icons['chevron-right'],
     onClick: function onClick() {
       return !props.disabledRight && props.onNextMonthClick();
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import HeaderCalendar from '../src/components/HeaderCalendar'
-import theme from '../../tokens/theme'
+import Tokens from '../tokens'
 
 export default {
   title: 'Example/HeaderCalendar',
@@ -22,12 +22,12 @@ Default.args = {
     {
       label: 'Recebido',
       value: '2.502,16',
-      color: theme.colors.feedback.success.dark,
+      color: Tokens.colors.feedback.success.dark,
     },
     {
       label: 'Previsto',
       value: '8.660,07',
-      color: theme.colors.feedback.danger.dark,
+      color: Tokens.colors.feedback.danger.dark,
     },
   ],
 }

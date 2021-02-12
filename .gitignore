@@ -75,5 +75,6 @@ node_modules/
 /.idea/watcherTasks.xml
 workspace.xml
 /web/.idea/
+/web/node_modules/
 .idea/raiox-design-system.iml
 .idea/workspace.xml

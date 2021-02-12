@@ -93,6 +93,12 @@ Object.defineProperty(exports, "Datepicker", {
     return _Datepicker["default"];
   }
 });
+Object.defineProperty(exports, "InputLabel", {
+  enumerable: true,
+  get: function get() {
+    return _InputLabel["default"];
+  }
+});
 
 var _HeaderCalendar = _interopRequireDefault(require("./HeaderCalendar"));
 
@@ -123,5 +129,7 @@ var _Table = _interopRequireDefault(require("./Table"));
 var _Tabs = _interopRequireDefault(require("./Tabs"));
 
 var _Datepicker = _interopRequireDefault(require("./Datepicker"));
+
+var _InputLabel = _interopRequireDefault(require("./InputLabel"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

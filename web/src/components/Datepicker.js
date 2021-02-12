@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from './index'
-import theme from '../../../tokens/theme'
+import Tokens from '../../tokens'
 import { Divider } from './StyledComponents'
-import { fontStyleMaker } from '../utils'
 import dayjs from 'dayjs'
+import {fontStyleMaker} from "../utils/FontUtil";
 
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
@@ -22,7 +22,7 @@ const ContainerDatepicker = styled.div`
 `
 
 const CalendarIcon = styled.div`
-  background: #008488;
+  background: ${Tokens.colors.brand.primary.darkest};
   border-radius: 0 5px 5px 0;
   width: 40px;
   height: 40px;
@@ -32,30 +32,40 @@ const CalendarIcon = styled.div`
 `
 
 const ContainerDate = styled.div`
-  padding: 0 ${props => props.theme.styles.spacing.inset.xs};
+  padding: 0 ${Tokens.spacing.inset.xs};
   display: flex;
 `
 const Text = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
   display: flex;
   align-items: center;
   margin-right: 8px;
 `
 const Date = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
   line-height: 15px;
   display: flex;
   align-items: center;
 
-  color: #008488;
+  color: ${Tokens.colors.neutral.dark["03"]};
 `
 
 const DatepickerContainer = styled.div`
   background: #ffffff;
-  box-shadow: ${props => props.theme.styles.shadow.level1};
-  border-radius: ${props => props.theme.styles.border.sm};
+  box-shadow: ${Tokens.shadow.level1};
+  border-radius: ${Tokens.border.sm};
   width: 514px;
   ${props =>
     props.alignContainer === 'center'
@@ -82,8 +92,13 @@ const MonthContainer = styled.div`
   flex: 1;
 `
 const MonthTitle = styled.div`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
 `
 
 const MonthHeader = styled.div`
@@ -104,18 +119,17 @@ const CalendarContainer = styled.div`
 `
 const BlockMessage = styled.div`
   height: 58px;
-  background: ${props => props.theme.colors.feedback.danger.light};
+  background: ${Tokens.colors.feedback.danger.light};
   padding: 8px 13px;
   display: flex;
   align-items: center;
-  ${props =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      'medium',
-      'xs',
-      'feedback.danger.dark',
-    )};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xs"
+  })};
+  color: ${Tokens.colors.neutral.dark.dark}
 `
 
 const Day = styled.div`
@@ -127,23 +141,27 @@ const Day = styled.div`
   cursor: ${props =>
     props.disabled ? 'not-allowed' : props.onClick && 'pointer'};
   background-color: ${props =>
-    props.selected && theme.colors.brand.primary.medium};
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'medium', 'xxs', 'neutral.dark.base')};
-  color: ${props => props.disabled && props.theme.colors.neutral.dark['02']};
+    props.selected && Tokens.colors.brand.primary.medium};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${props => props.disabled ? Tokens.colors.neutral.dark['02'] : Tokens.colors.neutral.dark.base};
   ${props =>
     (props.first || props.last) &&
-    `color: ${theme.colors.neutral.light.base};
-  background: #008488;`}
+    `color: ${Tokens.colors.neutral.light.base};
+  background: ${Tokens.colors.brand.primary.darkest};`}
       ${props => props.first && ` border-radius: 5px`}
       ${props => props.last && `  border-radius: 5px`}
 `
 
 const DayBackground = styled.div`
   background-color: ${props =>
-    props.selected && theme.colors.brand.primary.medium};
+    props.selected && Tokens.colors.brand.primary.medium};
   background-color: ${props =>
-    props.disabled && theme.colors.neutral.dark['03']};
+    props.disabled && Tokens.colors.neutral.dark['03']};
   border-radius: ${props => props.firstInLine && '5px 0 0  5px'};
   border-radius: ${props => props.lastInLine && '0 5px 5px 0'};
   border-radius: ${props => props.first && '5px 0 0  5px'};
@@ -151,8 +169,13 @@ const DayBackground = styled.div`
 `
 
 const DayHeader = styled(Day)`
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'xxs', 'neutral.dark.01')};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark['01']}
 `
 
 const Datepicker = props => {
@@ -245,7 +268,7 @@ const Datepicker = props => {
           </Date>
         </ContainerDate>
         <CalendarIcon>
-          <Icon path={theme.icons.calendar} size="22px" appearance="light" />
+          <Icon path={Tokens.icons.calendar} size="22px" appearance="light" />
         </CalendarIcon>
       </ButtonContainer>
       {opened && (
@@ -262,14 +285,14 @@ const Datepicker = props => {
                       {index === 0 && (
                         <>
                           <Icon
-                            path={theme.icons['double-arrow-left']}
+                            path={Tokens.icons['double-arrow-left']}
                             size="14px"
                             id={`previousYear${index}`}
                             style={{ marginRight: '8px' }}
                             onClick={() => changeYear(index, false)}
                           />
                           <Icon
-                            path={theme.icons['single-arrow-left']}
+                            path={Tokens.icons['single-arrow-left']}
                             size="14px"
                             id={`previousMonth${index}`}
                             onClick={() => changeMonth(index, false)}
@@ -282,14 +305,14 @@ const Datepicker = props => {
                       {index === 1 && (
                         <>
                           <Icon
-                            path={theme.icons['single-arrow-right']}
+                            path={Tokens.icons['single-arrow-right']}
                             size="14px"
                             style={{ marginRight: '8px' }}
                             id={`nextMonth${index}`}
                             onClick={() => changeMonth(index, true)}
                           />
                           <Icon
-                            path={theme.icons['double-arrow-right']}
+                            path={Tokens.icons['double-arrow-right']}
                             size="14px"
                             id={`nextYear${index}`}
                             onClick={() => changeYear(index, true)}

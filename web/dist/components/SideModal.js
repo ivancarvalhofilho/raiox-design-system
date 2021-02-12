@@ -15,9 +15,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _theme = _interopRequireDefault(require("../../../tokens/theme"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
-var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
+var _FontUtil = require("../utils/FontUtil");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -58,7 +58,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  width: 80%;\n  text-align: center;\n  margin: 0 auto;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  width: 80%;\n  text-align: center;\n  margin: 0 auto;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -95,9 +95,12 @@ var BackgroundContainer = _styledComponents["default"].div(_templateObject(), fu
 
 var LeftModalHeader = _styledComponents["default"].div(_templateObject2());
 
-var Title = _styledComponents["default"].div(_templateObject3(), function (props) {
-  return (0, _FontUtil["default"])(props.theme, 'head', 'bold', 'md', 'brand.secondary.dark');
-});
+var Title = _styledComponents["default"].div(_templateObject3(), (0, _FontUtil.fontStyleMaker)({
+  Tokens: _tokens["default"],
+  fontFamily: "head",
+  fontWeight: "bold",
+  fontSize: "md"
+}), _tokens["default"].colors.brand.secondary.dark);
 
 var LeftModalContent = _styledComponents["default"].div(_templateObject4());
 
@@ -139,7 +142,7 @@ var SideModal = function SideModal(props) {
   }, /*#__PURE__*/_react["default"].createElement(LeftModalHeader, null, props.closable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     size: "16px",
     onClick: props.onClose,
-    path: _theme["default"].icons.close
+    path: _tokens["default"].icons.close
   })), /*#__PURE__*/_react["default"].createElement(Title, null, props.title), /*#__PURE__*/_react["default"].createElement(LeftModalContent, null, props.children)));
 };
 

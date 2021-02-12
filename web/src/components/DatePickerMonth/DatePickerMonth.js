@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import YearNavigator from './YearNavigator'
 import MonthList from './MonthList'
 import dayjs from 'dayjs'
-import theme from '../../../../tokens/theme'
+import Tokens from '../../../tokens'
 import { Divider } from '../StyledComponents'
 import { handleOutsideDivClick } from '../../utils/clickHandleUtil'
 
 const MonthByYearSelectorStyled = styled.div`
-  box-shadow: ${theme.styles.shadow.level1};
-  border-radius: ${theme.styles.border.radius.sm};
-  padding: ${theme.styles.spacing.squish.xs};
+  box-shadow: ${Tokens.shadow.level1};
+  border-radius: ${Tokens.border.radius.sm};
+  padding: ${Tokens.spacing.squish.xs};
 `
 
 const groupBy = function(xs, key) {

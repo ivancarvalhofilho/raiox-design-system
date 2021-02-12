@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Icon from './Icon'
-import icons from '../../../tokens/theme/icons'
 import styled from 'styled-components'
-import { fontStyleMaker } from '../utils'
 import { UnmountClosed } from 'react-collapse'
 import {
   Container as StyledContainer,
   Divider as DividerStyled,
 } from './StyledComponents'
+import Tokens from "../../tokens";
+import {fontStyleMaker} from "../utils/FontUtil";
 
 const Header = styled.div`
   cursor: pointer;
@@ -18,32 +18,36 @@ const Header = styled.div`
 `
 const Button = styled.div`
   display: flex;
-  padding-left: ${props => props.theme.styles.spacing.inline.nano};
+  padding-left: ${Tokens.spacing.inline.nano};
 `
 
 const Divider = styled(DividerStyled)`
-  margin-top: ${props => props.theme.styles.spacing.stack.xxxs};
+  margin-top: ${Tokens.spacing.stack.xxxs};
 `
 
 const Container = styled(StyledContainer)`
-  box-shadow: ${props => props.theme.styles.shadow.level0};
-  padding: ${props => props.theme.styles.spacing.inset.xs};
+  box-shadow: ${Tokens.shadow.level0};
+  padding: ${Tokens.spacing.inset.xs};
   background: white;
 `
 const Body = styled.div`
-  margin-top: ${props => props.theme.styles.spacing.stack.xxxs};
-  ${props =>
-    fontStyleMaker(props.theme, 'body', 'regular', 'xs', 'neutral.dark.base')};
+  margin-top: ${Tokens.spacing.stack.xxxs};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base}
 `
 const Title = styled.span`
-  ${props =>
-    fontStyleMaker(
-      props.theme,
-      'body',
-      'regular',
-      'xs',
-      'brand.secondary.dark',
-    )};
+  ${fontStyleMaker({
+    Tokens,
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "xs"
+  })};
+  color: ${Tokens.colors.brand.secondary.dark}
 `
 const CollapseContainer = props => {
   const [opened, setOpened] = useState(false)
@@ -53,7 +57,7 @@ const CollapseContainer = props => {
         <Title>{props.title}</Title>
         <Button>
           <Icon
-            path={icons['chevron-down']}
+            path={Tokens.icons['chevron-down']}
             size="16px"
             rotate={opened ? 180 : 0}
           />
