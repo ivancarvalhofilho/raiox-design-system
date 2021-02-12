@@ -111,14 +111,12 @@ var Divider = (0, _styledComponents["default"])(_StyledComponents.Divider)(_temp
 var Container = (0, _styledComponents["default"])(_StyledComponents.Container)(_templateObject4(), _tokens["default"].shadow.level0, _tokens["default"].spacing.inset.xs);
 
 var Body = _styledComponents["default"].div(_templateObject5(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
 }), _tokens["default"].colors.neutral.dark.base);
 
 var Title = _styledComponents["default"].span(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"

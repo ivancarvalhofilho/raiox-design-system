@@ -52,7 +52,6 @@ var Month = _styledComponents["default"].div(_templateObject2(), function (props
 }, function (props) {
   return !props.active && _tokens["default"].opacity.level.light;
 }, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"

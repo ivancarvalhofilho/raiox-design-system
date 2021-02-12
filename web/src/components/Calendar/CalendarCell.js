@@ -28,7 +28,6 @@ const CalendarCellContainer = styled.div`
 const DayNumber = styled.span`
   height: 14px;
   ${(props) => fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: (props.isSelected && 'medium') || 'regular',
     fontSize: "xs"
@@ -51,7 +50,6 @@ const DaySales = styled.span`
     justify-content: flex-end;
   }
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"
@@ -60,7 +58,6 @@ const DaySales = styled.span`
 const SalesValue = styled.span`
   height: 14px;
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "condensed",
     fontWeight: "regular",
     fontSize: "xs"

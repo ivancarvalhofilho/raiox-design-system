@@ -1,16 +1,23 @@
 import React from 'react'
 
 import InputLabel from '../src/components/InputLabel'
-import Tokens from '../tokens'
+import {useAddonState} from "@storybook/client-api";
 
 export default {
   title: 'Example/InputLabel',
   component: InputLabel,
 }
 
-const Template = args => <InputLabel {...args} />
+const Template = args => {
+  const [text, setText] = useAddonState('text', '')
+
+  return (<InputLabel {...args} text={text} setText={setText}/>)
+}
 
 export const Default = Template.bind({})
 Default.args = {
-  state: '1',
+  label: 'Label do Input',
+  error: false,
+  errorLabel: 'Mensagem de erro',
+  disabled: false,
 }

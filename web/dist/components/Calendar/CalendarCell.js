@@ -81,7 +81,6 @@ var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), 
 
 var DayNumber = _styledComponents["default"].span(_templateObject2(), function (props) {
   return (0, _FontUtil.fontStyleMaker)({
-    Tokens: _tokens["default"],
     fontFamily: "body",
     fontWeight: props.isSelected && 'medium' || 'regular',
     fontSize: "xs"
@@ -91,14 +90,12 @@ var DayNumber = _styledComponents["default"].span(_templateObject2(), function (
 });
 
 var DaySales = _styledComponents["default"].span(_templateObject3(), _tokens["default"].spacing.inset.nano, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
 }));
 
 var SalesValue = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "condensed",
   fontWeight: "regular",
   fontSize: "xs"

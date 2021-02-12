@@ -96,7 +96,6 @@ var BackgroundContainer = _styledComponents["default"].div(_templateObject(), fu
 var LeftModalHeader = _styledComponents["default"].div(_templateObject2());
 
 var Title = _styledComponents["default"].div(_templateObject3(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "head",
   fontWeight: "bold",
   fontSize: "md"

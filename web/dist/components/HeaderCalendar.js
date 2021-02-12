@@ -96,7 +96,6 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Month = _styledComponents["default"].div(_templateObject());
 
 var Date = _styledComponents["default"].div(_templateObject2(), _tokens["default"].spacing.inline.nano, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "md"
@@ -107,7 +106,6 @@ var Container = _styledComponents["default"].div(_templateObject3(), _tokens["de
 var Values = _styledComponents["default"].div(_templateObject4());
 
 var Label = _styledComponents["default"].div(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "sm"
@@ -116,14 +114,12 @@ var Label = _styledComponents["default"].div(_templateObject5(), (0, _FontUtil.f
 }, _tokens["default"].spacing.inline.xxs);
 
 var Value = _styledComponents["default"].div(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "light",
   fontSize: "lg"
 }), _tokens["default"].colors.neutral.dark.base);
 
 var MoneySign = _styledComponents["default"].div(_templateObject7(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "sm"

@@ -57,6 +57,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@storybook/addons": "^6.1.11",
+    "@storybook/client-api": "^6.1.17",
     "chroma-js": "^2.1.0",
     "dayjs": "^1.9.1",
     "emotion": "^10.0.27",

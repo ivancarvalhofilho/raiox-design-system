@@ -14,7 +14,6 @@ const Month = styled.div`
 const Date = styled.div`
   margin-left: ${Tokens.spacing.inline.nano};
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "md"
@@ -44,7 +43,6 @@ const Values = styled.div`
 `
 const Label = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "sm"
@@ -54,9 +52,7 @@ const Label = styled.div`
   margin-left: ${Tokens.spacing.inline.xxs};
 `
 const Value = styled.div`
-  ${fontStyleMaker({
-    Tokens,
-    fontFamily: "body",
+  ${fontStyleMaker({fontFamily: "body",
     fontWeight: "light",
     fontSize: "lg"
   })};
@@ -66,9 +62,7 @@ const Value = styled.div`
   text-overflow: ellipsis;
 `
 const MoneySign = styled.div`
-  ${fontStyleMaker({
-    Tokens,
-    fontFamily: "body",
+  ${fontStyleMaker({fontFamily: "body",
     fontWeight: "regular",
     fontSize: "sm"
   })};

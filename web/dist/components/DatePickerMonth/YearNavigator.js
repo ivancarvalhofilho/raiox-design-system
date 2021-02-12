@@ -34,7 +34,6 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var YearNavigatorStyle = _styledComponents["default"].div(_templateObject(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"

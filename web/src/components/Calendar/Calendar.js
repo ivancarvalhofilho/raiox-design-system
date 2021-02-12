@@ -38,7 +38,7 @@ const DayOfWeek = styled.div`
   display: flex;
   justify-content: center;
   ${fontStyleMaker({
-    Tokens,
+    
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"

@@ -12,7 +12,6 @@ const YearNavigatorStyle = styled.div`
   align-items: center;
   margin-bottom: ${Tokens.spacing.stack.xxxs};
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"

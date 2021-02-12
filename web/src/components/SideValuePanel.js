@@ -8,7 +8,6 @@ import Tokens from "../../tokens";
 
 const Title = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"
@@ -33,7 +32,6 @@ const Item = styled.div`
 `
 const Value = styled.span`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "light",
     fontSize: "lg"
@@ -48,7 +46,6 @@ const Value = styled.span`
 `
 const DollarSign = styled.span`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "sm"
@@ -61,7 +58,6 @@ const DollarSign = styled.span`
 `
 const Subtitle = styled(TextRow)`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "sm"

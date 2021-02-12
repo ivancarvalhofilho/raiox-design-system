@@ -24,7 +24,6 @@ const LeftModalHeader = styled.div`
 `
 const Title = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "head",
     fontWeight: "bold",
     fontSize: "md"

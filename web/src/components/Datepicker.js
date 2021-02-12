@@ -37,7 +37,6 @@ const ContainerDate = styled.div`
 `
 const Text = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"
@@ -49,7 +48,6 @@ const Text = styled.div`
 `
 const Date = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"
@@ -93,7 +91,6 @@ const MonthContainer = styled.div`
 `
 const MonthTitle = styled.div`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"
@@ -124,7 +121,6 @@ const BlockMessage = styled.div`
   display: flex;
   align-items: center;
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xs"
@@ -143,7 +139,6 @@ const Day = styled.div`
   background-color: ${props =>
     props.selected && Tokens.colors.brand.primary.medium};
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "xxs"
@@ -170,7 +165,6 @@ const DayBackground = styled.div`
 
 const DayHeader = styled(Day)`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xxs"

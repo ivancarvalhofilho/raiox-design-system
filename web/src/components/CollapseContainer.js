@@ -33,7 +33,6 @@ const Container = styled(StyledContainer)`
 const Body = styled.div`
   margin-top: ${Tokens.spacing.stack.xxxs};
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"
@@ -42,7 +41,6 @@ const Body = styled.div`
 `
 const Title = styled.span`
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"

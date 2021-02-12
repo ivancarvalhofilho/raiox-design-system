@@ -220,14 +220,12 @@ var CalendarIcon = _styledComponents["default"].div(_templateObject3(), _tokens[
 var ContainerDate = _styledComponents["default"].div(_templateObject4(), _tokens["default"].spacing.inset.xs);
 
 var Text = _styledComponents["default"].div(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"
 }), _tokens["default"].colors.neutral.dark.base);
 
 var Date = _styledComponents["default"].div(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"
@@ -242,7 +240,6 @@ var Container = _styledComponents["default"].div(_templateObject8());
 var MonthContainer = _styledComponents["default"].div(_templateObject9());
 
 var MonthTitle = _styledComponents["default"].div(_templateObject10(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
@@ -253,7 +250,6 @@ var MonthHeader = _styledComponents["default"].div(_templateObject11());
 var CalendarContainer = _styledComponents["default"].div(_templateObject12());
 
 var BlockMessage = _styledComponents["default"].div(_templateObject13(), _tokens["default"].colors.feedback.danger.light, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xs"
@@ -264,7 +260,6 @@ var Day = _styledComponents["default"].div(_templateObject14(), function (props)
 }, function (props) {
   return props.selected && _tokens["default"].colors.brand.primary.medium;
 }, (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"
@@ -293,7 +288,6 @@ var DayBackground = _styledComponents["default"].div(_templateObject15(), functi
 });
 
 var DayHeader = (0, _styledComponents["default"])(Day)(_templateObject16(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xxs"

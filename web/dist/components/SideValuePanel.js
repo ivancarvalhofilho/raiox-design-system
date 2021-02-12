@@ -84,7 +84,6 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Title = _styledComponents["default"].div(_templateObject(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"
@@ -97,7 +96,6 @@ var Item = _styledComponents["default"].div(_templateObject3(), function (props)
 });
 
 var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "light",
   fontSize: "lg"
@@ -106,7 +104,6 @@ var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.
 });
 
 var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "sm"
@@ -115,7 +112,6 @@ var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _Font
 });
 
 var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "sm"

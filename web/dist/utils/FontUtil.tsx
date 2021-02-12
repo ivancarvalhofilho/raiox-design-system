@@ -1,3 +1,4 @@
+import Tokens from "../../tokens";
 import {FontFamilyType, FontSizeType, FontWeightType} from "../../tokens/fonts";
 
 interface FontStyleMakerParams {
@@ -8,7 +9,6 @@ interface FontStyleMakerParams {
 }
 
 export const fontStyleMaker = ({
-  Tokens,
   fontFamily,
   fontWeight,
   fontSize,

@@ -104,7 +104,6 @@ var CalendarGrid = _styledComponents["default"].div(_templateObject2(), _tokens[
 var CalendarGridHeader = _styledComponents["default"].div(_templateObject3());
 
 var DayOfWeek = _styledComponents["default"].div(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
-  Tokens: _tokens["default"],
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"

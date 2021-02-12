@@ -31,7 +31,6 @@ const Month = styled.div`
   cursor: ${props => props.active && 'pointer'};
   opacity: ${props => !props.active && Tokens.opacity.level.light};
   ${fontStyleMaker({
-    Tokens,
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"
