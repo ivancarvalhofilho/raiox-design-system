@@ -70,7 +70,8 @@
     "react-scripts": "2.1.1",
     "react-svg": "^11.0.44",
     "react-svg-inline": "^2.1.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "typescript": "^4.1.5"
   },
   "standard": {
     "globals": [

@@ -22,7 +22,7 @@ var _tokens = _interopRequireDefault(require("../../../tokens"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: ", ";\n  ", ";\n  color: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: ", ";\n  ", ";\n  color: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;

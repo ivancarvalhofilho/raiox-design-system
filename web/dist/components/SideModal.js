@@ -58,7 +58,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  width: 80%;\n  text-align: center;\n  margin: 0 auto;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  width: 80%;\n  text-align: center;\n  margin: 0 auto;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;

@@ -22,7 +22,7 @@ var _tokens = _interopRequireDefault(require("../../tokens"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  padding: ", ";\n  white-space: nowrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  padding: ", ";\n  white-space: nowrap;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -32,7 +32,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -72,7 +72,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  \n  color: ", "\n  cursor: pointer;\n  user-select: none;\n  white-space: nowrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  ", ";\n  \n  color: ", ";\n  cursor: pointer;\n  user-select: none;\n  white-space: nowrap;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

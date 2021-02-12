@@ -80,7 +80,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  height: 58px;\n  background: ", ";\n  padding: 8px 13px;\n  display: flex;\n  align-items: center;\n  ", ";\n  color: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 58px;\n  background: ", ";\n  padding: 8px 13px;\n  display: flex;\n  align-items: center;\n  ", ";\n  color: ", ";\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -110,7 +110,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -150,7 +150,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  line-height: 15px;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -160,7 +160,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  display: flex;\n  align-items: center;\n  margin-right: 8px;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;

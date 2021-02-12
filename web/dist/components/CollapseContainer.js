@@ -42,7 +42,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -52,7 +52,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  ", ";\n  color: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  ", ";\n  color: ", ";\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
