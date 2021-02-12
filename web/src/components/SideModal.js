@@ -29,7 +29,7 @@ const Title = styled.div`
     fontWeight: "bold",
     fontSize: "md"
   })};
-  color: ${Tokens.colors.brand.secondary.dark}
+  color: ${Tokens.colors.brand.secondary.dark};
   width: 80%;
   text-align: center;
   margin: 0 auto;

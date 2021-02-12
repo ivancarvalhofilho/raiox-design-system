@@ -20,7 +20,7 @@ const Date = styled.div`
     fontSize: "md"
   })};
   
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
@@ -60,7 +60,7 @@ const Value = styled.div`
     fontWeight: "light",
     fontSize: "lg"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -72,7 +72,7 @@ const MoneySign = styled.div`
     fontWeight: "regular",
     fontSize: "sm"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
   padding: ${`0 ${Tokens.spacing.inline.quarck} 0 ${Tokens.spacing.inline.nano}`};
   white-space: nowrap;
 `

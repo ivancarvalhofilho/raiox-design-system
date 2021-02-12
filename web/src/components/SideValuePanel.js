@@ -13,7 +13,7 @@ const Title = styled.div`
     fontWeight: "medium",
     fontSize: "xxs"
   })};
-  color: ${Tokens.colors.neutral.dark["01"]}
+  color: ${Tokens.colors.neutral.dark["01"]};
   margin-bottom: 8px;
 `
 

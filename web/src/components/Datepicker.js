@@ -42,7 +42,7 @@ const Text = styled.div`
     fontWeight: "medium",
     fontSize: "xxs"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
   display: flex;
   align-items: center;
   margin-right: 8px;
@@ -54,7 +54,7 @@ const Date = styled.div`
     fontWeight: "medium",
     fontSize: "xxs"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
   line-height: 15px;
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ const MonthTitle = styled.div`
     fontWeight: "regular",
     fontSize: "xs"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
 `
 
 const MonthHeader = styled.div`
@@ -129,7 +129,7 @@ const BlockMessage = styled.div`
     fontWeight: "medium",
     fontSize: "xs"
   })};
-  color: ${Tokens.colors.neutral.dark.dark}
+  color: ${Tokens.colors.neutral.dark.dark};
 `
 
 const Day = styled.div`

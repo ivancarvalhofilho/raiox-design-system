@@ -17,7 +17,7 @@ const YearNavigatorStyle = styled.div`
     fontWeight: "medium",
     fontSize: "xxs"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
 `
 
 function YearNavigator(props) {

@@ -36,7 +36,7 @@ const Month = styled.div`
     fontWeight: "regular",
     fontSize: "xs"
   })};
-  color: ${(props) => props.selected ? Tokens.colors.neutral.light.base : Tokens.colors.neutral.dark.base}
+  color: ${(props) => props.selected ? Tokens.colors.neutral.light.base : Tokens.colors.neutral.dark.base};
   user-select: none;
   border-radius: ${Tokens.border.radius.sm};
   min-height: 30px;

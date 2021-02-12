@@ -38,7 +38,7 @@ const Body = styled.div`
     fontWeight: "regular",
     fontSize: "xs"
   })};
-  color: ${Tokens.colors.neutral.dark.base}
+  color: ${Tokens.colors.neutral.dark.base};
 `
 const Title = styled.span`
   ${fontStyleMaker({
@@ -47,7 +47,7 @@ const Title = styled.span`
     fontWeight: "regular",
     fontSize: "xs"
   })};
-  color: ${Tokens.colors.brand.secondary.dark}
+  color: ${Tokens.colors.brand.secondary.dark};
 `
 const CollapseContainer = props => {
   const [opened, setOpened] = useState(false)
