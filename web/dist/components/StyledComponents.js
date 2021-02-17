@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Container = exports.Divider = exports.TextRow = exports.FlexCenter = void 0;
+exports["default"] = exports.FlexCenter = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -61,18 +61,18 @@ var TextRow = _styledComponents["default"].div(_templateObject(), function (prop
   return props.color ? props.color : props.danger ? _tokens["default"].colors.feedback.danger.dark : _tokens["default"].colors.neutral.dark.base;
 });
 
-exports.TextRow = TextRow;
-
 var Divider = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.horizontal ? 'border-bottom' : 'border-left';
 }, _tokens["default"].colors.neutral.dark['03']);
 
-exports.Divider = Divider;
-
 var Container = _styledComponents["default"].div(_templateObject3(), _tokens["default"].border.radius.sm, _tokens["default"].shadow.level1);
-
-exports.Container = Container;
 
 var FlexCenter = _styledComponents["default"].span(_templateObject4());
 
 exports.FlexCenter = FlexCenter;
+var _default = {
+  TextRow: TextRow,
+  Divider: Divider,
+  Container: Container
+};
+exports["default"] = _default;
