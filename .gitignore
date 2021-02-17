@@ -74,7 +74,8 @@ node_modules/
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
 workspace.xml
-/web/.idea/
+/web/storybook-static/*bundle*
+/web/storybook-static/static
 /web/node_modules/
 .idea/raiox-design-system.iml
 .idea/workspace.xml
