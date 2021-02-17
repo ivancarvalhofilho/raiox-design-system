@@ -10,7 +10,7 @@ import illustrations from "./tokens/icons/illustrations";
 import iconsBanco from "./tokens/icons/iconsBanco";
 import './tokens/global.css'
 
-const Tokens = {
+export const Tokens = {
 	colors,
 	fonts,
 	icons,
@@ -19,8 +19,6 @@ const Tokens = {
 	illustrations,
 	...tokens
 }
-
-export default Tokens
 
 export { default as HeaderCalendar } from './components/HeaderCalendar'
 export { default as Icon } from './components/Icon'

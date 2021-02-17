@@ -123,7 +123,7 @@ Object.defineProperty(exports, "InputLabel", {
     return _InputLabel["default"];
   }
 });
-exports["default"] = void 0;
+exports.Tokens = void 0;
 
 var _clickHandleUtil = _interopRequireDefault(require("./utils/clickHandleUtil"));
 
@@ -194,5 +194,4 @@ var Tokens = _objectSpread({
   illustrations: _illustrations["default"]
 }, _tokens["default"]);
 
-var _default = Tokens;
-exports["default"] = _default;
+exports.Tokens = Tokens;
