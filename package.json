@@ -1,10 +1,11 @@
 {
   "name": "raiox-design-system",
-  "version": "1.1.1",
+  "version": "1.2.4",
   "description": "",
   "main": "index.js",
   "files": [
-    "web/dist"
+    "web/dist",
+    "web/index.js"
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",
@@ -24,6 +25,6 @@
     "@storybook/api": "^6.1.17"
   },
   "devDependencies": {
-    "husky": "^5.0.0-beta.0"
+    "husky": "^5.0.9"
   }
 }
