@@ -1,2 +1,2 @@
 export * from './clickHandleUtil'
-export * from './FontUtil'
+export {fontStyleMaker} from './FontUtil'

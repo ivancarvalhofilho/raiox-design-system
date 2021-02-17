@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 import Tokens from '../tokens'
-import fontStyleMaker from '../utils/FontUtil'
+import {fontStyleMaker} from '../utils/FontUtil'
 
 const BackgroundContainer = styled.div`
   position: absolute;
