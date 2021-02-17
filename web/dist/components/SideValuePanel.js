@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _FontUtil = require("../utils/FontUtil.tsx");
+var _FontUtil = _interopRequireDefault(require("../utils/FontUtil.tsx"));
 
 var _StyledComponents = require("./StyledComponents");
 
@@ -83,7 +83,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Title = _styledComponents["default"].div(_templateObject(), (0, _FontUtil.fontStyleMaker)({
+var Title = _styledComponents["default"].div(_templateObject(), (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"
@@ -95,7 +95,7 @@ var Item = _styledComponents["default"].div(_templateObject3(), function (props)
   return props.fullWidth ? "width: 100%; margin: 0 ".concat(_tokens["default"].spacing.inline.xxxs, ";") : 'margin: 0px 40px';
 });
 
-var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
+var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "light",
   fontSize: "lg"
@@ -103,7 +103,7 @@ var Value = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.
   return props.positive === true ? _tokens["default"].colors.feedback.success.dark : props.positive === false && _tokens["default"].colors.feedback.danger.dark;
 });
 
-var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _FontUtil.fontStyleMaker)({
+var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "sm"
@@ -111,7 +111,7 @@ var DollarSign = _styledComponents["default"].span(_templateObject5(), (0, _Font
   return props.positive === true ? _tokens["default"].colors.feedback.success.dark : props.positive === false && _tokens["default"].colors.feedback.danger.dark;
 });
 
-var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), (0, _FontUtil.fontStyleMaker)({
+var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6(), (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "sm"

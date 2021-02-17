@@ -17,7 +17,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _const = _interopRequireDefault(require("./const"));
 
-var _FontUtil = require("../../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -103,7 +103,7 @@ var CalendarGrid = _styledComponents["default"].div(_templateObject2(), _tokens[
 
 var CalendarGridHeader = _styledComponents["default"].div(_templateObject3());
 
-var DayOfWeek = _styledComponents["default"].div(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
+var DayOfWeek = _styledComponents["default"].div(_templateObject4(), (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"

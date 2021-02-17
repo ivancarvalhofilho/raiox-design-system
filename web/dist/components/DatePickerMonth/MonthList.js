@@ -15,7 +15,7 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 
 var _tokens = _interopRequireDefault(require("../../tokens"));
 
-var _FontUtil = require("../../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -51,7 +51,7 @@ var Month = _styledComponents["default"].div(_templateObject2(), function (props
   return props.active && 'pointer';
 }, function (props) {
   return !props.active && _tokens["default"].opacity.level.light;
-}, (0, _FontUtil.fontStyleMaker)({
+}, (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"

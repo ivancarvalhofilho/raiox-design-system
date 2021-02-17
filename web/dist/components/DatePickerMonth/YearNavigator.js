@@ -13,7 +13,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _FontUtil = require("../../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 var _Icon = _interopRequireDefault(require("../Icon"));
 
@@ -33,7 +33,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var YearNavigatorStyle = _styledComponents["default"].div(_templateObject(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
+var YearNavigatorStyle = _styledComponents["default"].div(_templateObject(), _tokens["default"].spacing.stack.xxxs, (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "medium",
   fontSize: "xxs"

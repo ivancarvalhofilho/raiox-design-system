@@ -13,7 +13,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _tokens = _interopRequireDefault(require("../tokens"));
 
-var _FontUtil = require("../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -65,7 +65,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var SuspendedLabel = _styledComponents["default"].div(_templateObject(), _tokens["default"].colors.neutral.dark["01"], (0, _FontUtil.fontStyleMaker)({
+var SuspendedLabel = _styledComponents["default"].div(_templateObject(), _tokens["default"].colors.neutral.dark["01"], (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
@@ -76,14 +76,14 @@ var SuspendedLabel = _styledComponents["default"].div(_templateObject(), _tokens
 function makeLabelSuspended() {
   return _objectSpread({
     top: '-7px'
-  }, (0, _FontUtil.fontStyleMaker)({
+  }, (0, _FontUtil["default"])({
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xxs"
   }));
 }
 
-var InputLabelStyled = _styledComponents["default"].input(_templateObject2(), _tokens["default"].colors.neutral.dark["03"], _tokens["default"].colors.neutral.light.base, _tokens["default"].colors.neutral.dark.base, (0, _FontUtil.fontStyleMaker)({
+var InputLabelStyled = _styledComponents["default"].input(_templateObject2(), _tokens["default"].colors.neutral.dark["03"], _tokens["default"].colors.neutral.light.base, _tokens["default"].colors.neutral.dark.base, (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
@@ -95,7 +95,7 @@ var InputLabelContainer = _styledComponents["default"].div(_templateObject3(), _
   return props.disabled && "\n    opacity:".concat(_tokens["default"].opacity.level.medium, ";\n    pointer-events: none;\n  ");
 });
 
-var SpanError = _styledComponents["default"].span(_templateObject4(), _tokens["default"].colors.feedback.danger.dark, (0, _FontUtil.fontStyleMaker)({
+var SpanError = _styledComponents["default"].span(_templateObject4(), _tokens["default"].colors.feedback.danger.dark, (0, _FontUtil["default"])({
   fontWeight: "regular",
   fontFamily: "body",
   fontSize: "xs"

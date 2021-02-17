@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _FontUtil = require("../../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../../utils/FontUtil"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -80,7 +80,7 @@ var CalendarCellContainer = _styledComponents["default"].div(_templateObject(), 
 });
 
 var DayNumber = _styledComponents["default"].span(_templateObject2(), function (props) {
-  return (0, _FontUtil.fontStyleMaker)({
+  return (0, _FontUtil["default"])({
     fontFamily: "body",
     fontWeight: props.isSelected && 'medium' || 'regular',
     fontSize: "xs"
@@ -89,13 +89,13 @@ var DayNumber = _styledComponents["default"].span(_templateObject2(), function (
   return props.isBlockedSelection && _tokens["default"].colors.neutral.dark['02'] || props.isSelected && _tokens["default"].colors.brand.primary.darkest;
 });
 
-var DaySales = _styledComponents["default"].span(_templateObject3(), _tokens["default"].spacing.inset.nano, (0, _FontUtil.fontStyleMaker)({
+var DaySales = _styledComponents["default"].span(_templateObject3(), _tokens["default"].spacing.inset.nano, (0, _FontUtil["default"])({
   fontFamily: "body",
   fontWeight: "regular",
   fontSize: "xs"
 }));
 
-var SalesValue = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil.fontStyleMaker)({
+var SalesValue = _styledComponents["default"].span(_templateObject4(), (0, _FontUtil["default"])({
   fontFamily: "condensed",
   fontWeight: "regular",
   fontSize: "xs"

@@ -2,10 +2,9 @@
   "name": "raiox-design-system",
   "version": "1.2.4",
   "description": "",
-  "main": "index.js",
+  "main": "web/dist/index.js",
   "files": [
-    "web/dist",
-    "web/index.js"
+    "web/dist"
   ],
   "scripts": {
     "test": "cd web && npm run test:coverage",

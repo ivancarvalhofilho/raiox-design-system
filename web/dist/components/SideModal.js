@@ -17,7 +17,7 @@ var _Icon = _interopRequireDefault(require("./Icon"));
 
 var _tokens = _interopRequireDefault(require("../tokens"));
 
-var _FontUtil = require("../utils/FontUtil");
+var _FontUtil = _interopRequireDefault(require("../utils/FontUtil"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -95,7 +95,7 @@ var BackgroundContainer = _styledComponents["default"].div(_templateObject(), fu
 
 var LeftModalHeader = _styledComponents["default"].div(_templateObject2());
 
-var Title = _styledComponents["default"].div(_templateObject3(), (0, _FontUtil.fontStyleMaker)({
+var Title = _styledComponents["default"].div(_templateObject3(), (0, _FontUtil["default"])({
   fontFamily: "head",
   fontWeight: "bold",
   fontSize: "md"
