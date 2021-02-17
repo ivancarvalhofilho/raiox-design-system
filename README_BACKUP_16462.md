@@ -12,7 +12,11 @@ npm install github:ivancarvalhofilho/raiox-design-system
 
 package.json
 ```
+<<<<<<< HEAD
+"raiox-design-system": "github:ivancarvalhofilho/raiox-design-system#main",
+=======
 "raiox-design-system": "github:ivancarvalhofilho/raiox-design-system#master",
+>>>>>>> main
 ```
 Ficar atento a versão do projeto a ser utilizada, no exemplo está a branch master. Mas deve procurar a tag mais recente e usar ela. Exemplo: #1.1.2
 Listagem de tags:
