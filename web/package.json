@@ -6,7 +6,7 @@
   "scripts": {
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006",
-    "build": "rm -rf dist && NODE_ENV=production babel src/components --out-dir dist/components --copy-files && NODE_ENV=production babel src/utils --out-dir dist/utils --copy-files && NODE_ENV=production babel src/index.js --out-file dist/index.js --copy-files",
+    "build": "rm -rf dist && NODE_ENV=production babel src/components --out-dir dist/components --copy-files && NODE_ENV=production babel src/utils --out-dir dist/utils --copy-files && NODE_ENV=production babel src/index.js --out-file dist/index.js --copy-files && NODE_ENV=production babel src/tokens --out-dir dist/tokens --copy-files",
     "build-storybook": "build-storybook",
     "deploy": "build-storybook && firebase deploy",
     "test:coverage": "npm test -- --coverage",
