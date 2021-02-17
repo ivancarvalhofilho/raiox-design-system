@@ -37,4 +37,4 @@ export const FlexCenter = styled.span`
   align-items: center;
 `
 
-export default { TextRow, Divider, Container }
+export  { TextRow, Divider, Container }

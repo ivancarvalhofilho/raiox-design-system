@@ -8,7 +8,7 @@ import {
   Divider as DividerStyled,
 } from './StyledComponents'
 import Tokens from "../tokens";
-import {fontStyleMaker} from "../utils/FontUtil";
+import fontStyleMaker from "../utils/FontUtil";
 
 const Header = styled.div`
   cursor: pointer;

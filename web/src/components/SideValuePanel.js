@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { fontStyleMaker } from '../utils/FontUtil.tsx'
+import fontStyleMaker from '../utils/FontUtil.tsx'
 import { Divider, FlexCenter, TextRow } from './StyledComponents'
 import Icon from './Icon'
 import Tokens from "../tokens";

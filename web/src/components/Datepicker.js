@@ -5,7 +5,7 @@ import { Icon } from './index'
 import Tokens from '../tokens'
 import { Divider } from './StyledComponents'
 import dayjs from 'dayjs'
-import {fontStyleMaker} from "../utils/FontUtil";
+import fontStyleMaker from "../utils/FontUtil";
 
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);

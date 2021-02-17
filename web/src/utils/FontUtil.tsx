@@ -8,7 +8,7 @@ interface FontStyleMakerParams {
   fontSize: FontSizeType
 }
 
-export const fontStyleMaker = ({
+const fontStyleMaker = ({
   fontFamily,
   fontWeight,
   fontSize,
@@ -19,3 +19,4 @@ export const fontStyleMaker = ({
     fontSize: Tokens.fonts.fontSize[fontSize],
   }
 }
+export default fontStyleMaker;

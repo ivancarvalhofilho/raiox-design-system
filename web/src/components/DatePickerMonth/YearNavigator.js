@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import { fontStyleMaker } from '../../utils/FontUtil'
+import fontStyleMaker from '../../utils/FontUtil'
 import Icon from '../Icon'
 import Tokens from "../../tokens";
 

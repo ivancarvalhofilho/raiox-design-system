@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import Tokens from '../tokens'
-import {fontStyleMaker} from '../utils/FontUtil'
+import fontStyleMaker from '../utils/FontUtil'
 
 const SuspendedLabel = styled.div`
   position: absolute;

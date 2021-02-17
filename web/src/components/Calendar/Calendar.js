@@ -3,7 +3,7 @@ import { CalendarCell } from './CalendarCell'
 import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
-import { fontStyleMaker } from '../../utils/FontUtil'
+import fontStyleMaker from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
 import Tokens from "../../tokens";
 

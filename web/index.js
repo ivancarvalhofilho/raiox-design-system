@@ -3,24 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _exportNames = {
-  HeaderCalendar: true,
-  Icon: true,
-  CollapseContainer: true,
-  List: true,
-  DatePickerMonth: true,
-  Calendar: true,
-  ListHeader: true,
-  Modal: true,
-  SideModal: true,
-  SideValuePanel: true,
-  StyledComponents: true,
-  Tab: true,
-  Table: true,
-  Tabs: true,
-  Datepicker: true,
-  InputLabel: true
-};
+Object.defineProperty(exports, "handleOutsideDivClick", {
+  enumerable: true,
+  get: function get() {
+    return _clickHandleUtil["default"];
+  }
+});
+Object.defineProperty(exports, "fontStyleMaker", {
+  enumerable: true,
+  get: function get() {
+    return _FontUtil["default"];
+  }
+});
 Object.defineProperty(exports, "HeaderCalendar", {
   enumerable: true,
   get: function get() {
@@ -81,10 +75,22 @@ Object.defineProperty(exports, "SideValuePanel", {
     return _SideValuePanel["default"];
   }
 });
-Object.defineProperty(exports, "StyledComponents", {
+Object.defineProperty(exports, "TextRow", {
   enumerable: true,
   get: function get() {
-    return _StyledComponents["default"];
+    return _StyledComponents.TextRow;
+  }
+});
+Object.defineProperty(exports, "Divider", {
+  enumerable: true,
+  get: function get() {
+    return _StyledComponents.Divider;
+  }
+});
+Object.defineProperty(exports, "Container", {
+  enumerable: true,
+  get: function get() {
+    return _StyledComponents.Container;
   }
 });
 Object.defineProperty(exports, "Tab", {
@@ -117,34 +123,27 @@ Object.defineProperty(exports, "InputLabel", {
     return _InputLabel["default"];
   }
 });
+exports["default"] = void 0;
 
-var _utils = require("./utils");
+var _clickHandleUtil = _interopRequireDefault(require("./utils/clickHandleUtil"));
 
-Object.keys(_utils).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _utils[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _utils[key];
-    }
-  });
-});
+var _FontUtil = _interopRequireDefault(require("./utils/FontUtil"));
 
-var _tokens = require("./tokens");
+var _fonts = _interopRequireDefault(require("./tokens/fonts.tsx"));
 
-Object.keys(_tokens).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _tokens[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _tokens[key];
-    }
-  });
-});
+var _tokens = _interopRequireDefault(require("./tokens/tokens.tsx"));
+
+var _icons = _interopRequireDefault(require("./tokens/icons/icons"));
+
+var _colors = _interopRequireDefault(require("./tokens/colors.tsx"));
+
+var _iconsAdquirente = _interopRequireDefault(require("./tokens/icons/iconsAdquirente"));
+
+var _illustrations = _interopRequireDefault(require("./tokens/icons/illustrations"));
+
+var _iconsBanco = _interopRequireDefault(require("./tokens/icons/iconsBanco"));
+
+require("./tokens/global.css");
 
 var _HeaderCalendar = _interopRequireDefault(require("./components/HeaderCalendar"));
 
@@ -166,7 +165,7 @@ var _SideModal = _interopRequireDefault(require("./components/SideModal"));
 
 var _SideValuePanel = _interopRequireDefault(require("./components/SideValuePanel"));
 
-var _StyledComponents = _interopRequireDefault(require("./components/StyledComponents"));
+var _StyledComponents = require("./components/StyledComponents");
 
 var _Tab = _interopRequireDefault(require("./components/Tab"));
 
@@ -179,3 +178,21 @@ var _Datepicker = _interopRequireDefault(require("./components/Datepicker"));
 var _InputLabel = _interopRequireDefault(require("./components/InputLabel"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Tokens = _objectSpread({
+  colors: _colors["default"],
+  fonts: _fonts["default"],
+  icons: _icons["default"],
+  iconsAdquirentes: _iconsAdquirente["default"],
+  iconsBanco: _iconsBanco["default"],
+  illustrations: _illustrations["default"]
+}, _tokens["default"]);
+
+var _default = Tokens;
+exports["default"] = _default;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleOutsideDivClick = void 0;
+exports["default"] = void 0;
 
 var _react = require("react");
 
@@ -29,4 +29,5 @@ var handleOutsideDivClick = function handleOutsideDivClick(callbackAction) {
   return wrapperRef;
 };
 
-exports.handleOutsideDivClick = handleOutsideDivClick;
+var _default = handleOutsideDivClick;
+exports["default"] = _default;
