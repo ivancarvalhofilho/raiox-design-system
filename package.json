@@ -7,7 +7,7 @@
     "web/dist"
   ],
   "exports": {
-    "./utils": "web/dist/utils/index.js"
+    "./utils/*": "web/dist/utils/*"
   },
   "scripts": {
     "test": "cd web && npm run test:coverage",
