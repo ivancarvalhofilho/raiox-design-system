@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from './index'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 import { Divider } from './StyledComponents'
 import dayjs from 'dayjs'
 import {fontStyleMaker} from "../utils/FontUtil";

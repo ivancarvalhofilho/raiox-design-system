@@ -7,7 +7,7 @@ exports.Container = exports.Divider = exports.TextRow = exports.FlexCenter = voi
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

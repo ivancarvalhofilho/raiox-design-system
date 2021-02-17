@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import YearNavigator from './YearNavigator'
 import MonthList from './MonthList'
 import dayjs from 'dayjs'
-import Tokens from '../../../tokens'
+import Tokens from '../../tokens'
 import { Divider } from '../StyledComponents'
 import { handleOutsideDivClick } from '../../utils/clickHandleUtil'
 

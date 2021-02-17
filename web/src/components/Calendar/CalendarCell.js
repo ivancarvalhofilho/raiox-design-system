@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { fontStyleMaker } from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
-import Tokens from "../../../tokens";
+import Tokens from "../../tokens";
 
 const CalendarCellContainer = styled.div`
   position: relative;

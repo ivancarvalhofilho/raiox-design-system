@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Tab from './Tab'
 import styled from 'styled-components'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 
 const TabsContainer = styled.div`
   display: flex;

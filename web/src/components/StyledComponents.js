@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Tokens from "../../tokens";
+import Tokens from "../tokens";
 
 const TextRow = styled.div`
   display: flex;

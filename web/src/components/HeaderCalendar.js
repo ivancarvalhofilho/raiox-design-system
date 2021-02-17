@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Icon from './Icon'
 import dayjs from 'dayjs'
 import { fontStyleMaker } from '../utils/FontUtil'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 
 const Month = styled.div`
   display: flex;

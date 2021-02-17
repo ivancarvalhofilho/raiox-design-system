@@ -15,7 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _index = require("./index");
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 var _StyledComponents = require("./StyledComponents");
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 import Icon from './Icon'
 
 const LoaderContainer = styled.div`

@@ -19,7 +19,7 @@ var _MonthList = _interopRequireDefault(require("./MonthList"));
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _tokens = _interopRequireDefault(require("../../../tokens"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _StyledComponents = require("../StyledComponents");
 

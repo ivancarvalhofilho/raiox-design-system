@@ -2,7 +2,7 @@ import React from 'react'
 
 import Icon from '../src/components/Icon'
 import styled from 'styled-components'
-import Tokens from '../tokens'
+import Tokens from '../src/tokens'
 
 export default {
   title: 'Example/Icon',

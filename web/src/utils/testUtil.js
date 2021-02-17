@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 import React from 'react'
 import { mount } from 'enzyme'
 import 'jest-styled-components'

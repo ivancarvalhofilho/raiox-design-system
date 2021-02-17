@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 var _FontUtil = require("../utils/FontUtil");
 

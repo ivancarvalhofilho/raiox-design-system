@@ -1,5 +1,5 @@
-import Tokens from "../../tokens";
-import {FontFamilyType, FontSizeType, FontWeightType} from "../../tokens/fonts";
+import Tokens from "../tokens";
+import {FontFamilyType, FontSizeType, FontWeightType} from "../tokens/fonts";
 
 interface FontStyleMakerParams {
   Tokens: any

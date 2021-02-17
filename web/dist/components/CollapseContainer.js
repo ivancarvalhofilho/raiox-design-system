@@ -19,7 +19,7 @@ var _reactCollapse = require("react-collapse");
 
 var _StyledComponents = require("./StyledComponents");
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 var _FontUtil = require("../utils/FontUtil");
 

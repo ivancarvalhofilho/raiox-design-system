@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import CalendarConst from './const'
 import { fontStyleMaker } from '../../utils/FontUtil'
 import PropTypes from 'prop-types'
-import Tokens from "../../../tokens";
+import Tokens from "../../tokens";
 
 const isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
 const isSameOrAfter = require('dayjs/plugin/isSameOrAfter');

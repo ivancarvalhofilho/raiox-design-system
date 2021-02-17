@@ -13,7 +13,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _tokens = _interopRequireDefault(require("../../../tokens"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 var _FontUtil = require("../../utils/FontUtil");
 

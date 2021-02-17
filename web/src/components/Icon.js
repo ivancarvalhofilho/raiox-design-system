@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import SVGInline from 'react-svg-inline'
-import Tokens from '../../tokens'
+import Tokens from '../tokens'
 import styled from 'styled-components'
 
 const Svg = styled(SVGInline)`

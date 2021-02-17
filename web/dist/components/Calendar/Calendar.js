@@ -21,7 +21,7 @@ var _FontUtil = require("../../utils/FontUtil");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _tokens = _interopRequireDefault(require("../../../tokens"));
+var _tokens = _interopRequireDefault(require("../../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

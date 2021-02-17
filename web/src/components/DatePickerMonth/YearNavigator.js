@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import dayjs from 'dayjs'
 import { fontStyleMaker } from '../../utils/FontUtil'
 import Icon from '../Icon'
-import Tokens from "../../../tokens";
+import Tokens from "../../tokens";
 
 const YearNavigatorStyle = styled.div`
   display: flex;

@@ -7,7 +7,7 @@ exports.mountWithTheme = mountWithTheme;
 
 var _styledComponents = require("styled-components");
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 var _react = _interopRequireDefault(require("react"));
 

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import Tokens from '../../../tokens'
+import Tokens from '../../tokens'
 import { fontStyleMaker } from '../../utils/FontUtil'
 
 const months = [

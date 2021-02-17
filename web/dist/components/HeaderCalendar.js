@@ -17,7 +17,7 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 
 var _FontUtil = require("../utils/FontUtil");
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

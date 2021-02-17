@@ -15,7 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _Icon = _interopRequireDefault(require("./Icon"));
 
-var _tokens = _interopRequireDefault(require("../../tokens"));
+var _tokens = _interopRequireDefault(require("../tokens"));
 
 var _FontUtil = require("../utils/FontUtil");
 
