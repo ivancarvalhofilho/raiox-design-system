@@ -7,30 +7,20 @@ A instalação do pacote deve ser feita via npm ou adicionado no package.json
 
 npm
 ```
-npm install github:guhcostan-equals/raiox-design-system
+npm install github:ivancarvalhofilho/raiox-design-system
 ```
 
 package.json
 ```
-"raiox-design-system": "github:guhcostan-equals/raiox-design-system#main",
+"raiox-design-system": "github:ivancarvalhofilho/raiox-design-system#master",
 ```
+Ficar atento a versão do projeto a ser utilizada, no exemplo está a branch master. Mas deve procurar a tag mais recente e usar ela. Exemplo: #1.1.2
+Listagem de tags:
+https://github.com/ivancarvalhofilho/raiox-design-system/tags
 
 ### Guia Utilização
 
-Para que os tokens e temas funcionem corretamente, é nescessario importa-los ao projeto.
-
-#### Tema
-
-Caso deseje usar os tokens em javascript, o tema pode ser importado da seguinte forma.
-```
-import theme from 'raiox-design-system/tokens/js'
-```
-_Recomendo utilizar a lib 'styled-components' pois ela possui suporte a temas, facilitando o uso do mesmo_
-```
-<ThemeProvider theme={theme}>
-    <App />
-</ThemeProvider>
-```
+Para que o Design System funcione corretamente, é nescessario importa-lo ao projeto.
 
 #### Componentes
 
@@ -51,6 +41,12 @@ import { TextRow } from 'raiox-design-system/web/dist/components/StyledComponent
 _As documentações dos componentes podem ser encontradas no storybook._
 
 https://raiox-design-system.web.app/
+
+Para atualizar a versão do DS hospedada no link, é necessário 
+- Ter acesso ao firebase do design system
+- Instalar a CLI do firebase: https://firebase.google.com/docs/cli#mac-linux-npm
+- Fazer o login usando o comando: firebase login
+- E por fim rodar: npm deploy
 
 ## Contribuições
 
