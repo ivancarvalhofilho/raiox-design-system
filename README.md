@@ -15,6 +15,7 @@ package.json
 "raiox-design-system": "github:ivancarvalhofilho/raiox-design-system#master",
 ```
 Ficar atento a versão do projeto a ser utilizada, no exemplo está a branch master. Mas deve procurar a tag mais recente e usar ela. Exemplo: #1.1.2
+'
 Listagem de tags:
 https://github.com/ivancarvalhofilho/raiox-design-system/tags
 
