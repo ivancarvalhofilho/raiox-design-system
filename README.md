@@ -20,6 +20,23 @@ Ficar atento a versão do projeto a ser utilizada, no exemplo está a branch mas
 Listagem de tags:
 https://github.com/ivancarvalhofilho/raiox-design-system/tags
 
+### Versionamento com tags:
+Não estamos usando o versionamento por packages, por compatibilidade de repositórios... Então estamos usando as tags para o mesmo.
+Comandos úteis:
+Lista as tags
+```
+git tag
+```
+Cria uma nota Tag 1.1.1 com a versão atual da branch
+```
+git tag 1.1.1
+```
+Faz o upload das tags novas
+```
+git push --tags
+```
+Obs: antes de criar uma tag, certificar que rodou npm build e commitou as mudanças
+
 ### Guia Utilização
 
 Para que o Design System funcione corretamente, é nescessario importa-lo ao projeto.
