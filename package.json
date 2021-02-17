@@ -6,6 +6,9 @@
   "files": [
     "web/dist"
   ],
+  "exports": {
+    "./utils": "web/dist/utils/index.js"
+  },
   "scripts": {
     "test": "cd web && npm run test:coverage",
     "build": "cd web && npm run build"

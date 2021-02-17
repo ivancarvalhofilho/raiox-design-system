@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.Tokens = void 0;
 
 var _fonts = _interopRequireDefault(require("./fonts.tsx"));
 
@@ -38,5 +38,4 @@ var Tokens = _objectSpread({
   illustrations: _illustrations["default"]
 }, _tokens["default"]);
 
-var _default = Tokens;
-exports["default"] = _default;
+exports.Tokens = Tokens;

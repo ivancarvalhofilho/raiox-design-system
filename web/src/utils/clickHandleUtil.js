@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const handleOutsideDivClick = callbackAction => {
+export const handleOutsideDivClick = callbackAction => {
   const wrapperRef = useRef(null)
   useOutsideAlerter(wrapperRef)
 
@@ -21,4 +21,3 @@ const handleOutsideDivClick = callbackAction => {
 
   return wrapperRef
 }
-export default handleOutsideDivClick;

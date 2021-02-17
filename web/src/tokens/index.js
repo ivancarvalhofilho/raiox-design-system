@@ -7,7 +7,7 @@ import illustrations from "./icons/illustrations";
 import iconsBanco from "./icons/iconsBanco";
 import './global.css'
 
-const Tokens = {
+export const Tokens = {
     colors,
     fonts,
     icons,
@@ -16,5 +16,3 @@ const Tokens = {
     illustrations,
     ...tokens
 }
-
-export default Tokens
