@@ -1,26 +1,3 @@
-export { handleOutsideDivClick } from './utils/clickHandleUtil'
-export { fontStyleMaker } from './utils/FontUtil'
-
-import {default as fonts} from "./tokens/fonts.tsx";
-import tokenList from "./tokens/tokens.tsx";
-import icons from "./tokens/icons/icons";
-import colors from "./tokens/colors.tsx";
-import iconsAdquirentes from "./tokens/icons/iconsAdquirente";
-import illustrations from "./tokens/icons/illustrations";
-import iconsBanco from "./tokens/icons/iconsBanco";
-import './tokens/global.css'
-
-const Tokens = {
-	colors,
-	fonts,
-	icons,
-	iconsAdquirentes,
-	iconsBanco,
-	illustrations,
-	...tokenList
-}
-export default Tokens
-
 export { default as HeaderCalendar } from './components/HeaderCalendar'
 export { default as Icon } from './components/Icon'
 export { default as CollapseContainer } from './components/CollapseContainer'

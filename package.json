@@ -4,11 +4,10 @@
   "description": "",
   "main": "web/dist/index.js",
   "files": [
-    "web/dist"
+    "web/dist",
+    "web/src/tokens",
+    "web/src/utils"
   ],
-  "exports": {
-    "./utils/*": "web/dist/utils/*"
-  },
   "scripts": {
     "test": "cd web && npm run test:coverage",
     "build": "cd web && npm run build"
