@@ -2,15 +2,20 @@
   "name": "raiox-design-system",
   "version": "1.2.4",
   "description": "",
-  "main": "web/dist/index.js",
+  "main": "dist/index.js",
   "files": [
-    "web/dist",
-    "web/src/tokens",
-    "web/src/utils"
+    "dist",
+    "tokens",
+    "utils"
   ],
   "scripts": {
-    "test": "cd web && npm run test:coverage",
-    "build": "cd web && npm run build"
+    "test": "react-scripts test",
+    "storybook": "start-storybook -p 6006",
+    "build": "rm -rf dist && mkdir dist && NODE_ENV=production cp -R src/components dist/components && NODE_ENV=production cp -R src/index.js dist/index.js && cp -R src/tokens dist/tokens && cp -R src/utils dist/utils",
+    "build-storybook": "build-storybook",
+    "deploy": "build-storybook && firebase deploy",
+    "test:coverage": "npm test -- --coverage",
+    "test:update": "npm test -- --coverage -u"
   },
   "repository": {
     "type": "git",
@@ -22,10 +27,70 @@
     "url": "https://github.com/ivancarvalhofilho/raiox-design-system/issues"
   },
   "homepage": "https://github.com/ivancarvalhofilho/raiox-design-system#readme",
-  "dependencies": {
-    "@storybook/api": "^6.1.17"
-  },
   "devDependencies": {
-    "husky": "^5.0.9"
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.4.0",
+    "@storybook/addon-actions": "6.1.11",
+    "@storybook/addon-essentials": "6.1.11",
+    "@storybook/addon-links": "6.1.11",
+    "@storybook/react": "6.1.11",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "2.2.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "handlebars": "^4.7.7",
+    "mockdate": "^3.0.2",
+    "prop-types": "^15.7.2",
+    "react-infinite-scroll-component": "^5.1.0",
+    "react-is": "^16.13.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^10.1.1"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@storybook/addons": "^6.1.11",
+    "@storybook/client-api": "^6.1.11",
+    "chroma-js": "^2.1.0",
+    "dayjs": "^1.10.4",
+    "emotion": "^10.0.27",
+    "jest-styled-components": "^7.0.3",
+    "ramda": "^0.27.1",
+    "react": "^16.6.1",
+    "react-collapse": "^5.1.0",
+    "react-dom": "^16.6.1",
+    "react-fast-image": "0.0.30",
+    "react-redux": "^7.2.1",
+    "react-scripts": "2.1.1",
+    "react-svg": "^11.2.4",
+    "react-svg-inline": "^2.1.1",
+    "styled-components": "^5.2.0",
+    "typescript": "^4.1.5"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "test",
+      "jest",
+      "expect",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element",
+      "keycloak"
+    ]
   }
 }
