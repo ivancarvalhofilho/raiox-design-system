@@ -1,83 +1,90 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import dayjs from 'dayjs'
+import { fontStyleMaker }from '../../utils/FontUtil'
+import Icon from '../Icon'
+import { Tokens } from "../../tokens";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _dayjs = _interopRequireDefault(require("dayjs"));
-
-var _FontUtil = require("../../utils/FontUtil");
-
-var _Icon = _interopRequireDefault(require("../Icon"));
-
-var _tokens = require("../../tokens");
-
-var _templateObject;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var YearNavigatorStyle = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: ", ";\n  ", ";\n  color: ", ";\n"])), _tokens.Tokens.spacing.stack.xxxs, (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "medium",
-  fontSize: "xxs"
-}), _tokens.Tokens.colors.neutral.dark.base);
+const YearNavigatorStyle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: ${Tokens.spacing.stack.xxxs};
+  ${fontStyleMaker({
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark.base};
+`
 
 function YearNavigator(props) {
-  var index = props.years.findIndex(function (item) {
-    return item === props.yearSelected.toString();
-  });
-  var left = index > 0 || props.showAllYears;
-  var right = props.years.length > index + 1 || props.showAllYears;
-  return /*#__PURE__*/_react["default"].createElement(YearNavigatorStyle, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _tokens.Tokens.iconSize.md,
-    appearance: "primary",
-    disabled: !left,
-    id: "yearLeft",
-    style: {
-      marginRight: _tokens.Tokens.spacing.stack.nano,
-      opacity: !left ? _tokens.Tokens.opacity.level.light : 1
-    },
-    path: _tokens.Tokens.icons['chevron-left'],
-    onClick: function onClick() {
-      return left && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(-1, 'year').get('year'));
-    }
-  }), /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      userSelect: 'none'
-    },
-    id: "year"
-  }, props.yearSelected), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-    size: _tokens.Tokens.iconSize.md,
-    appearance: "primary",
-    disabled: !right,
-    id: "yearRight",
-    style: {
-      marginLeft: _tokens.Tokens.spacing.stack.nano,
-      opacity: !right ? _tokens.Tokens.opacity.level.light : 1
-    },
-    path: _tokens.Tokens.icons['chevron-right'],
-    onClick: function onClick() {
-      return right && props.onChange((0, _dayjs["default"])().set('year', props.years[index] || props.yearSelected).add(1, 'year').get('year'));
-    }
-  }));
+  const index = props.years.findIndex(
+    item => item === props.yearSelected.toString(),
+  )
+
+  const left = index > 0 || props.showAllYears
+  const right = props.years.length > index + 1 || props.showAllYears
+
+  return (
+    <YearNavigatorStyle>
+      <Icon
+        size={Tokens.iconSize.md}
+        appearance="primary"
+        disabled={!left}
+        id="yearLeft"
+        style={{
+          marginRight: Tokens.spacing.stack.nano,
+          opacity: !left ? Tokens.opacity.level.light : 1,
+        }}
+        path={Tokens.icons['chevron-left']}
+        onClick={() =>
+          left &&
+          props.onChange(
+            dayjs()
+              .set('year', props.years[index] || props.yearSelected)
+              .add(-1, 'year')
+              .get('year'),
+          )
+        }
+      />
+
+      <div style={{ userSelect: 'none' }} id="year">
+        {props.yearSelected}
+      </div>
+
+      <Icon
+        size={Tokens.iconSize.md}
+        appearance="primary"
+        disabled={!right}
+        id="yearRight"
+        style={{
+          marginLeft: Tokens.spacing.stack.nano,
+          opacity: !right ? Tokens.opacity.level.light : 1,
+        }}
+        path={Tokens.icons['chevron-right']}
+        onClick={() =>
+          right &&
+          props.onChange(
+            dayjs()
+              .set('year', props.years[index] || props.yearSelected)
+              .add(1, 'year')
+              .get('year'),
+          )
+        }
+      />
+    </YearNavigatorStyle>
+  )
 }
 
 YearNavigator.propTypes = {
-  onChange: _propTypes["default"].any,
-  yearSelected: _propTypes["default"].any,
-  years: _propTypes["default"].any,
-  showAllYears: _propTypes["default"].bool,
-  disableRight: _propTypes["default"].bool,
-  disableLeft: _propTypes["default"].bool
-};
-var _default = YearNavigator;
-exports["default"] = _default;
+  onChange: PropTypes.any,
+  yearSelected: PropTypes.any,
+  years: PropTypes.any,
+  showAllYears: PropTypes.bool,
+  disableRight: PropTypes.bool,
+  disableLeft: PropTypes.bool,
+}
+
+export default YearNavigator

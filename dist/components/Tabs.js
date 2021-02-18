@@ -1,81 +1,53 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import Tab from './Tab'
+import styled from 'styled-components'
+import { Tokens } from '../tokens'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+const TabsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  pointer-events: ${props => props.disabled && 'none'};
+`
+const Container = styled.div`
+  opacity: ${props => props.disabled && '0.5'};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+`
+const Bar = styled.div`
+  width: ${props => props.width}%;
+  height: ${props => props.height || 4}px;
+  border-radius: ${props => props.rounded && '4px 4px 0px 0px'};
+  background-color: ${props =>
+    props.color || Tokens.colors.brand.primary.darkest};
+  transform: translate(${props => props.left}%, 0);
+  transition: transform 0.3s linear;
+`
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+const Tabs = props => (
+  <Container disabled={props.disabled} style={props.style}>
+    <TabsContainer disabled={props.disabled}>
+      {props.tabs.map((tab, index) => (
+        <Tab
+          id={`tab${index}`}
+          key={index}
+          label={tab}
+          width={100 / props.tabs.length}
+          onClick={() => !props.disabled && props.onTabClick(index)}
+          active={props.tabActive === index}
+        />
+      ))}
+    </TabsContainer>
 
-var _react = _interopRequireDefault(require("react"));
+    <Bar width={100 / props.tabs.length} left={props.tabActive * 100} rounded />
+    <Bar width={100} color={Tokens.colors.neutral.dark['03']} height={1} />
+  </Container>
+)
 
-var _Tab = _interopRequireDefault(require("./Tab"));
+export default Tabs
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _tokens = require("../tokens");
-
-var _templateObject, _templateObject2, _templateObject3;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var TabsContainer = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  pointer-events: ", ";\n"])), function (props) {
-  return props.disabled && 'none';
-});
-
-var Container = _styledComponents["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  opacity: ", ";\n  cursor: ", ";\n"])), function (props) {
-  return props.disabled && '0.5';
-}, function (props) {
-  return props.disabled ? 'not-allowed' : 'pointer';
-});
-
-var Bar = _styledComponents["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: ", "px;\n  border-radius: ", ";\n  background-color: ", ";\n  transform: translate(", "%, 0);\n  transition: transform 0.3s linear;\n"])), function (props) {
-  return props.width;
-}, function (props) {
-  return props.height || 4;
-}, function (props) {
-  return props.rounded && '4px 4px 0px 0px';
-}, function (props) {
-  return props.color || _tokens.Tokens.colors.brand.primary.darkest;
-}, function (props) {
-  return props.left;
-});
-
-var Tabs = function Tabs(props) {
-  return /*#__PURE__*/_react["default"].createElement(Container, {
-    disabled: props.disabled,
-    style: props.style
-  }, /*#__PURE__*/_react["default"].createElement(TabsContainer, {
-    disabled: props.disabled
-  }, props.tabs.map(function (tab, index) {
-    return /*#__PURE__*/_react["default"].createElement(_Tab["default"], {
-      id: "tab".concat(index),
-      key: index,
-      label: tab,
-      width: 100 / props.tabs.length,
-      onClick: function onClick() {
-        return !props.disabled && props.onTabClick(index);
-      },
-      active: props.tabActive === index
-    });
-  })), /*#__PURE__*/_react["default"].createElement(Bar, {
-    width: 100 / props.tabs.length,
-    left: props.tabActive * 100,
-    rounded: true
-  }), /*#__PURE__*/_react["default"].createElement(Bar, {
-    width: 100,
-    color: _tokens.Tokens.colors.neutral.dark['03'],
-    height: 1
-  }));
-};
-
-var _default = Tabs;
-exports["default"] = _default;
 Tabs.propTypes = {
-  disabled: _propTypes["default"].bool,
-  onTabClick: _propTypes["default"].func,
-  tabActive: _propTypes["default"].number,
-  tabs: _propTypes["default"].array
-};
+  disabled: PropTypes.bool,
+  onTabClick: PropTypes.func,
+  tabActive: PropTypes.number,
+  tabs: PropTypes.array,
+}

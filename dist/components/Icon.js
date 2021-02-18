@@ -1,110 +1,79 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import SVGInline from 'react-svg-inline'
+import { Tokens } from '../tokens'
+import styled from 'styled-components'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactSvgInline = _interopRequireDefault(require("react-svg-inline"));
-
-var _tokens = require("../tokens");
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _templateObject;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Svg = (0, _styledComponents["default"])(_reactSvgInline["default"])(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: inline-flex;\n  transition-duration: 0.2s;\n  cursor: ", ";\n  -webkit-animation: ", ";\n  transition-property: transform;\n  transform: rotate(-", "deg);\n"])), function (props) {
-  return props.onClick && !props.disabled && 'pointer';
-}, function (props) {
-  return props.spin && 'spin 2s infinite linear';
-}, function (props) {
-  return props.rotate;
-});
-
-var Icon = function Icon(props) {
+const Svg = styled(SVGInline)`
+  display: inline-flex;
+  transition-duration: 0.2s;
+  cursor: ${props => props.onClick && !props.disabled && 'pointer'};
+  -webkit-animation: ${props => props.spin && 'spin 2s infinite linear'};
+  transition-property: transform;
+  transform: rotate(-${props => props.rotate}deg);
+`
+const Icon = props => {
   function getIconSvgColor(props) {
     switch (props.appearance) {
       case 'default':
-        return _tokens.Tokens.colors.neutral.dark['02'];
-
+        return Tokens.colors.neutral.dark['02']
       case 'primary':
-        return _tokens.Tokens.colors.brand.primary.darkest;
-
+        return Tokens.colors.brand.primary.darkest
       case 'light':
-        return _tokens.Tokens.colors.neutral.light.base;
-
+        return Tokens.colors.neutral.light.base
       case 'danger':
-        return _tokens.Tokens.colors.feedback.danger.dark;
-
+        return Tokens.colors.feedback.danger.dark
       case 'info':
-        return _tokens.Tokens.colors.feedback.info.dark;
-
+        return Tokens.colors.feedback.info.dark
       case 'warning':
-        return _tokens.Tokens.colors.feedback.warning.dark;
-
+        return Tokens.colors.feedback.warning.dark
       case 'success':
-        return _tokens.Tokens.colors.feedback.success.dark;
-
+        return Tokens.colors.feedback.success.dark
       case 'dark':
-        return _tokens.Tokens.colors.neutral.dark.base;
-
+        return Tokens.colors.neutral.dark.base
       case 'default-disabled':
-        return _tokens.Tokens.colors.neutral.dark['02'];
-
+        return Tokens.colors.neutral.dark['02']
       case 'primary-disabled':
-        return _tokens.Tokens.colors.brand.primary.darkest;
-
+        return Tokens.colors.brand.primary.darkest
       default:
-        return props.appearance || _tokens.Tokens.colors.neutral.dark['02'];
+        return props.appearance || Tokens.colors.neutral.dark['02']
     }
   }
 
   function getIconSvgSize(props) {
-    if (props.size && !Object.keys(_tokens.Tokens.iconSize).includes(props.size)) {
-      return props.size;
+    if (
+      props.size &&
+      !Object.keys(Tokens.iconSize).includes(props.size)
+    ) {
+      return props.size
     }
-
-    return _tokens.Tokens.iconSize[props.size] || _tokens.Tokens.iconSize.sm;
+    return Tokens.iconSize[props.size] || Tokens.iconSize.sm
   }
 
-  return /*#__PURE__*/_react["default"].createElement(Svg, _extends({}, props, {
-    onClick: props.onClick,
-    rotate: props.rotate,
-    spin: props.spin,
-    className: props.className,
-    style: _objectSpread({}, props.style),
-    svg: props.path ? props.path : _tokens.Tokens.icons[props.name],
-    fill: getIconSvgColor(props),
-    width: getIconSvgSize(props)
-  }));
-};
+  return (
+    <Svg
+      {...props}
+      onClick={props.onClick}
+      rotate={props.rotate}
+      spin={props.spin}
+      className={props.className}
+      style={{ ...props.style }}
+      svg={props.path ? props.path : Tokens.icons[props.name]}
+      fill={getIconSvgColor(props)}
+      width={getIconSvgSize(props)}
+    />
+  )
+}
+export default Icon
 
-var _default = Icon;
-exports["default"] = _default;
 Icon.propTypes = {
-  appearance: _propTypes["default"].string,
-  className: _propTypes["default"].string,
-  name: _propTypes["default"].string,
-  onClick: _propTypes["default"].func,
-  path: _propTypes["default"].string,
-  rotate: _propTypes["default"].number,
-  size: _propTypes["default"].string,
-  spin: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].bool]),
-  style: _propTypes["default"].object
-};
+  appearance: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.string,
+  onClick: PropTypes.func,
+  path: PropTypes.string,
+  rotate: PropTypes.number,
+  size: PropTypes.string,
+  spin: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+  style: PropTypes.object,
+}

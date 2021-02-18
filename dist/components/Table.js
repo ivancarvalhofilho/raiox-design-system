@@ -1,426 +1,592 @@
-"use strict";
+import React, { useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+import InfiniteScroll from 'react-infinite-scroll-component'
+import { Tokens } from '../tokens'
+import Icon from './Icon'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+const LoaderContainer = styled.div`
+  display: flex;
+  width: ${props => props.cols * '100'}%;
+  justify-content: center;
+  flex-direction: column;
+  min-width: fit-content;
+  height: 60px;
+  align-items: center;
+  background-image: linear-gradient(to bottom, transparent, white);
 
-var _react = _interopRequireWildcard(require("react"));
+  > p {
+    color: ${Tokens.colors.neutral.dark.base};
+    margin: 0;
+  }
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+  > svg {
+    margin-top: 10px;
+  }
+`
+const Container = styled.div`
+  display: inline-grid;
+  position: relative;
+  margin-right: ${props => props.optional && '-12px'};
+  overflow: overlay;
+  font-size: 14px;
+  min-width: ${props => !props.optional && 'fit-content'};
+  width: 100%;
+  height: auto !important;
+  max-height: ${props => props.maxheight};
+  color: ${Tokens.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
+    (props.hasColor ? '8px ' : '') +
+    props.cols
+      .splice(props.color ? 1 : 0)
+      .reduce(
+        (x, y, index) =>
+          `${x} minmax(${
+            props.colHeadersWidth[index]
+              ? `${props.colHeadersWidth[index]}px`
+              : 'auto'
+          },auto)`,
+        '',
+      )};
+`
+const ContainerInfinite = styled(InfiniteScroll)`
+  display: inline-grid;
+  position: relative;
+  margin-right: ${props => props.optional && '-12px'};
+  overflow: auto;
+  font-size: 14px;
+  height: auto !important;
+  max-height: ${props => props.maxheight};
+  min-width: ${props => !props.optional && 'fit-content'};
+  border-bottom: 1px solid #e7e7e7;
+  width: 100%;
+  color: ${Tokens.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
+    (props.hasColor ? '8px ' : '') +
+    props.cols
+      .splice(props.color ? 1 : 0)
+      .reduce(
+        (x, y, index) =>
+          `${x} minmax(${
+            props.colHeadersWidth[index]
+              ? `${props.colHeadersWidth[index]}px`
+              : 'auto'
+          },auto)`,
+        '',
+      )};
+`
+const Scroll = styled.div`
+  background: white;
+  position: relative;
+`
+const DisplayGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-family: ${Tokens.fonts.family.body};
+  flex: 1;
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+  .custom-scrollbar,
+  .select__menu-list {
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
 
-var _reactInfiniteScrollComponent = _interopRequireDefault(require("react-infinite-scroll-component"));
+    &::-webkit-scrollbar {
+      width: 14px;
+    }
 
-var _tokens = require("../tokens");
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(216, 216, 216, 1);
+      border-radius: 20px;
+      border: 4px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      width: 4px;
+    }
+  }
+`
+const ContainerHeader = styled.div`
+  display: inline-grid;
+  font-size: 14px;
+  border: ${props =>
+    `${Tokens.border.width.hairline} solid ${Tokens.colors.neutral.dark['03']}`};
+  overflow: ${props => props.optional && 'hidden'};
+  background-color: #f2f5f7;
+  min-width: ${props => !props.optional && 'fit-content'};
+  width: 100%;
+  color: ${Tokens.colors.neutral.dark.base};
+  grid-template-columns: ${props =>
+    props.colsWidth.length > 0
+      ? (props.hasColor ? '8px ' : '') +
+        props.colsWidth.reduce(
+          (x, y, index) =>
+            props.colsWidth[index] ? `${x} ${props.colsWidth[index]}px` : x,
+          '',
+        )
+      : `${props.hasColor ? '8px ' : ''} repeat(${props.cols.length}, auto)`};
+`
+const Column = styled.div`
+  display: inline-grid;
+  transition: 2s;
+  grid-template-rows: ${props =>
+    props.rows.reduce(
+      (x, y, index) =>
+        `${x} ${`${(props.size || 48) +
+          (index === props.indexRowOpened && props.indexRowOpened != null
+            ? props.childrenHeight
+            : 0)}px`}`,
+      '',
+    )};
+`
 
-var _Icon = _interopRequireDefault(require("./Icon"));
+const Row = styled.div`
+  display: flex;
+  //width: 100%;
+  align-items: center;
+  justify-content: ${props =>
+    props.justify === 'right'
+      ? 'flex-end'
+      : (props.justify === 'left' && 'flex-start') || 'center'};
+  cursor: ${props => props.clicable && 'pointer'};
+  border-bottom: ${props => props.border && '1px solid #e7e7e7'};
+  background-color: ${props => props.color || 'white'};
+  padding: 5px;
+  max-height: 48px;
+  padding-left: ${props => props.first && '10%'};
+  padding-right: ${props => props.last && '10%'};
+`
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
+const Value = styled.div`
+  white-space: nowrap;
+  display: flex;
+  margin: auto 0;
+  align-items: center;
+`
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var LoaderContainer = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", "%;\n  justify-content: center;\n  flex-direction: column;\n  min-width: fit-content;\n  height: 60px;\n  align-items: center;\n  background-image: linear-gradient(to bottom, transparent, white);\n\n  > p {\n    color: ", ";\n    margin: 0;\n  }\n\n  > svg {\n    margin-top: 10px;\n  }\n"])), function (props) {
-  return props.cols * '100';
-}, _tokens.Tokens.colors.neutral.dark.base);
-
-var Container = _styledComponents["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: inline-grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: overlay;\n  font-size: 14px;\n  min-width: ", ";\n  width: 100%;\n  height: auto !important;\n  max-height: ", ";\n  color: ", ";\n  grid-template-columns: ", ";\n"])), function (props) {
-  return props.optional && '-12px';
-}, function (props) {
-  return !props.optional && 'fit-content';
-}, function (props) {
-  return props.maxheight;
-}, _tokens.Tokens.colors.neutral.dark.base, function (props) {
-  return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
-  }, '');
-});
-
-var ContainerInfinite = (0, _styledComponents["default"])(_reactInfiniteScrollComponent["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: inline-grid;\n  position: relative;\n  margin-right: ", ";\n  overflow: auto;\n  font-size: 14px;\n  height: auto !important;\n  max-height: ", ";\n  min-width: ", ";\n  border-bottom: 1px solid #e7e7e7;\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"])), function (props) {
-  return props.optional && '-12px';
-}, function (props) {
-  return props.maxheight;
-}, function (props) {
-  return !props.optional && 'fit-content';
-}, _tokens.Tokens.colors.neutral.dark.base, function (props) {
-  return (props.hasColor ? '8px ' : '') + props.cols.splice(props.color ? 1 : 0).reduce(function (x, y, index) {
-    return "".concat(x, " minmax(").concat(props.colHeadersWidth[index] ? "".concat(props.colHeadersWidth[index], "px") : 'auto', ",auto)");
-  }, '');
-});
-
-var Scroll = _styledComponents["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  background: white;\n  position: relative;\n"])));
-
-var DisplayGrid = _styledComponents["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  font-family: ", ";\n  flex: 1;\n\n  .custom-scrollbar,\n  .select__menu-list {\n    &::-webkit-scrollbar-track {\n      background-color: transparent;\n    }\n\n    &::-webkit-scrollbar {\n      width: 14px;\n    }\n\n    &::-webkit-scrollbar-thumb {\n      background-color: rgba(216, 216, 216, 1);\n      border-radius: 20px;\n      border: 4px solid rgba(0, 0, 0, 0);\n      background-clip: padding-box;\n      width: 4px;\n    }\n  }\n"])), _tokens.Tokens.fonts.family.body);
-
-var ContainerHeader = _styledComponents["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: inline-grid;\n  font-size: 14px;\n  border: ", ";\n  overflow: ", ";\n  background-color: #f2f5f7;\n  min-width: ", ";\n  width: 100%;\n  color: ", ";\n  grid-template-columns: ", ";\n"])), function (props) {
-  return "".concat(_tokens.Tokens.border.width.hairline, " solid ").concat(_tokens.Tokens.colors.neutral.dark['03']);
-}, function (props) {
-  return props.optional && 'hidden';
-}, function (props) {
-  return !props.optional && 'fit-content';
-}, _tokens.Tokens.colors.neutral.dark.base, function (props) {
-  return props.colsWidth.length > 0 ? (props.hasColor ? '8px ' : '') + props.colsWidth.reduce(function (x, y, index) {
-    return props.colsWidth[index] ? "".concat(x, " ").concat(props.colsWidth[index], "px") : x;
-  }, '') : "".concat(props.hasColor ? '8px ' : '', " repeat(").concat(props.cols.length, ", auto)");
-});
-
-var Column = _styledComponents["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: inline-grid;\n  transition: 2s;\n  grid-template-rows: ", ";\n"])), function (props) {
-  return props.rows.reduce(function (x, y, index) {
-    return "".concat(x, " ", "".concat((props.size || 48) + (index === props.indexRowOpened && props.indexRowOpened != null ? props.childrenHeight : 0), "px"));
-  }, '');
-});
-
-var Row = _styledComponents["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  //width: 100%;\n  align-items: center;\n  justify-content: ", ";\n  cursor: ", ";\n  border-bottom: ", ";\n  background-color: ", ";\n  padding: 5px;\n  max-height: 48px;\n  padding-left: ", ";\n  padding-right: ", ";\n"])), function (props) {
-  return props.justify === 'right' ? 'flex-end' : props.justify === 'left' && 'flex-start' || 'center';
-}, function (props) {
-  return props.clicable && 'pointer';
-}, function (props) {
-  return props.border && '1px solid #e7e7e7';
-}, function (props) {
-  return props.color || 'white';
-}, function (props) {
-  return props.first && '10%';
-}, function (props) {
-  return props.last && '10%';
-});
-
-var Value = _styledComponents["default"].div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  white-space: nowrap;\n  display: flex;\n  margin: auto 0;\n  align-items: center;\n"])));
-
-var SpanValue = _styledComponents["default"].span(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n"])));
-
-var Children = _styledComponents["default"].div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  position: absolute;\n  transition: 2s;\n  cursor: auto;\n  border-left: 8px ", " solid;\n  left: 0;\n  width: 100%;\n  top: ", ";\n"])), function (props) {
-  return props.color;
-}, function (props) {
-  return props.top;
-});
-
-var Collapse = _styledComponents["default"].div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  padding: 0 20px;\n  cursor: pointer;\n  display: flex;\n"])));
+const SpanValue = styled.span`
+  display: flex;
+  align-items: center;
+`
+const Children = styled.div`
+  position: absolute;
+  transition: 2s;
+  cursor: auto;
+  border-left: 8px ${props => props.color} solid;
+  left: 0;
+  width: 100%;
+  top: ${props => props.top};
+`
+const Collapse = styled.div`
+  padding: 0 20px;
+  cursor: pointer;
+  display: flex;
+`
 
 function Table(props) {
-  var hasColor = Object.keys(props.data).find(function (key) {
-    return key === 'colors';
-  });
-  var keys = Object.keys(props.data);
-  var refChildren = (0, _react.useRef)();
-  var indexOptional = keys.findIndex(function (key) {
-    return props.data[key].optional;
-  }) + keys.filter(function (key) {
-    return props.data[key].optional;
-  }).length;
-  var colsOriginal = keys.filter(function (key) {
-    return !props.data[key].optional;
-  });
-  var colsOriginalWithoutColor = colsOriginal.filter(function (key) {
-    return key !== 'colors';
-  });
-  var cols = keys.slice(indexOptional, keys.length);
-  var colsOptional = keys.slice(0, indexOptional);
-  var optionalHeader = (0, _react.useRef)();
-  var optionalContent = (0, _react.useRef)();
-  var content = (0, _react.useRef)();
-  var scrollableDiv = (0, _react.useRef)();
+  const hasColor = Object.keys(props.data).find(key => key === 'colors')
+  const keys = Object.keys(props.data)
+  const refChildren = useRef()
+  const indexOptional =
+    keys.findIndex(key => props.data[key].optional) +
+    keys.filter(key => props.data[key].optional).length
+  const colsOriginal = keys.filter(key => !props.data[key].optional)
+  const colsOriginalWithoutColor = colsOriginal.filter(key => key !== 'colors')
+  const cols = keys.slice(indexOptional, keys.length)
+  const colsOptional = keys.slice(0, indexOptional)
+  const optionalHeader = useRef()
+  const optionalContent = useRef()
+  const content = useRef()
+  const scrollableDiv = useRef()
 
-  var _useState = (0, _react.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      optionalMouse = _useState2[0],
-      setOptionalMouse = _useState2[1];
+  const [optionalMouse, setOptionalMouse] = useState(false)
 
-  var _useState3 = (0, _react.useState)(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      childrenSize = _useState4[0],
-      setChildrenSize = _useState4[1];
+  const [childrenSize, setChildrenSize] = useState(0)
+  const items = useRef([])
+  const itemsHeader = useRef([])
+  const [colsWidth, setColsWidth] = useState([])
+  const [colHeadersWidth, setColHeadersWidth] = useState([])
 
-  var items = (0, _react.useRef)([]);
-  var itemsHeader = (0, _react.useRef)([]);
+  useEffect(() => {
+    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
+    handleResize()
+  }, [props.children])
 
-  var _useState5 = (0, _react.useState)([]),
-      _useState6 = _slicedToArray(_useState5, 2),
-      colsWidth = _useState6[0],
-      setColsWidth = _useState6[1];
+  useEffect(() => {
+    handleResize()
+  }, [props.data])
 
-  var _useState7 = (0, _react.useState)([]),
-      _useState8 = _slicedToArray(_useState7, 2),
-      colHeadersWidth = _useState8[0],
-      setColHeadersWidth = _useState8[1];
+  const handleResize = () => {
+    setColHeadersWidth(
+      itemsHeader.current
+        .map((item, index) => {
+          if (hasColor && index === 0) {
+            return null
+          }
+          return item && item.clientWidth
+        })
+        .filter(item => item !== null),
+    )
+  }
 
-  (0, _react.useEffect)(function () {
-    setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0);
-    handleResize();
-  }, [props.children]);
-  (0, _react.useEffect)(function () {
-    handleResize();
-  }, [props.data]);
+  useEffect(() => {
+    setColsWidth(items.current.map(item => item && item.clientWidth))
+  }, [colHeadersWidth])
 
-  var handleResize = function handleResize() {
-    setColHeadersWidth(itemsHeader.current.map(function (item, index) {
-      if (hasColor && index === 0) {
-        return null;
-      }
-
-      return item && item.clientWidth;
-    }).filter(function (item) {
-      return item !== null;
-    }));
-  };
-
-  (0, _react.useEffect)(function () {
-    setColsWidth(items.current.map(function (item) {
-      return item && item.clientWidth;
-    }));
-  }, [colHeadersWidth]);
-  (0, _react.useEffect)(function () {
-    window.addEventListener('resize', handleResize);
-    return function () {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
-    optional: true,
-    colsWidth: colsWidth,
-    cols: colsOptional,
-    ref: optionalHeader,
-    hasColor: hasColor
-  }, colsOptional.map(function (key, indexCol) {
-    return /*#__PURE__*/_react["default"].createElement(Column, {
-      key: indexCol,
-      rows: [0],
-      size: 28
-    }, /*#__PURE__*/_react["default"].createElement(Row, {
-      first: indexCol === 0,
-      clicable: true,
-      last: indexCol === cols.length,
-      key: indexCol,
-      id: "headerOptional".concat(indexCol),
-      justify: props.data[key].justify,
-      onClick: function onClick() {
-        props.data[key].ordenable && props.onClickToOrder(key);
-      },
-      border: true,
-      color: _tokens.Tokens.colors.neutral.light['02'],
-      title: props.data[key].title
-    }, /*#__PURE__*/_react["default"].createElement(Value, {
-      ref: function ref(_ref) {
-        itemsHeader.current[indexCol] = _ref;
-      }
-    }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      path: props.orderBy !== key ? _tokens.Tokens.icons['arrow-horizontal'] : props.order === 'DESC' ? _tokens.Tokens.icons['arrow-up'] : _tokens.Tokens.icons['arrow-down']
-    }))));
-  })), /*#__PURE__*/_react["default"].createElement(ContainerHeader, {
-    hasColor: hasColor,
-    colsWidth: colsWidth,
-    paddingScroll: true,
-    cols: props.complete ? cols : colsOriginalWithoutColor
-  }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
-    return /*#__PURE__*/_react["default"].createElement(Column, {
-      key: indexCol,
-      rows: [0],
-      size: 28
-    }, /*#__PURE__*/_react["default"].createElement(Row, {
-      first: indexCol === 0,
-      justify: props.data[key].justify,
-      last: indexCol === cols.length,
-      key: indexCol,
-      clicable: true,
-      id: "header".concat(indexCol),
-      onClick: function onClick() {
-        props.data[key].ordenable && props.onClickToOrder(key);
-      },
-      border: true,
-      color: _tokens.Tokens.colors.neutral.light['02'],
-      title: props.data[key].title
-    }, /*#__PURE__*/_react["default"].createElement(Value, {
-      ref: function ref(_ref2) {
-        itemsHeader.current[indexCol] = _ref2;
-      }
-    }, props.data[key].title, props.data[key].ordenable && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      style: {
-        padding: '0 5px'
-      },
-      appearance: "dark",
-      size: "10px",
-      path: props.orderBy !== key ? _tokens.Tokens.icons['arrow-horizontal'] : props.order === 'DESC' ? _tokens.Tokens.icons['arrow-up'] : _tokens.Tokens.icons['arrow-down']
-    }))));
-  }))), props.data[keys[0]] && props.data[keys[0]].values && /*#__PURE__*/_react["default"].createElement(Scroll, null, /*#__PURE__*/_react["default"].createElement(DisplayGrid, null, props.complete && /*#__PURE__*/_react["default"].createElement(Container, {
-    id: "containerOptional",
-    optional: true,
-    colHeadersWidth: colHeadersWidth,
-    hasColor: hasColor,
-    maxheight: props.height,
-    cols: colsOptional,
-    ref: optionalContent,
-    className: "custom-scrollbar",
-    onMouseEnter: function onMouseEnter() {
-      setOptionalMouse(false);
-    },
-    onScroll: function onScroll(e) {
-      optionalHeader.current.scrollLeft = optionalContent.current.scrollLeft;
-
-      if (!optionalMouse) {
-        content.current.el.scrollTop = optionalContent.current.scrollTop;
-      }
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
     }
-  }, colsOptional.map(function (key, indexCol) {
-    return /*#__PURE__*/_react["default"].createElement(Column, {
-      indexRowOpened: props.indexRowOpened,
-      childrenHeight: childrenSize > 30 ? childrenSize : props.children ? props.childrenSize : 60,
-      key: indexCol,
-      rows: props.data[key].values
-    }, props.data[key].values.map(function (value, indexRow) {
-      return /*#__PURE__*/_react["default"].createElement(Row, {
-        id: "item".concat(indexCol).concat(indexRow),
-        key: indexRow,
-        justify: props.data[key].justify,
-        border: indexRow !== props.data[key].values.length - 1,
-        first: indexCol === 0,
-        last: indexCol === cols.length,
-        ref: function ref(_ref3) {
-          return indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref3 : null;
-        }
-      }, /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
-        return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value));
-    }));
-  })), /*#__PURE__*/_react["default"].createElement("div", {
-    onMouseEnter: function onMouseEnter() {
-      setOptionalMouse(true);
-    },
-    id: "scrollableDiv",
-    ref: scrollableDiv,
-    style: {
-      width: '100%',
-      minWidth: 'fit-content'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(ContainerInfinite, {
-    id: "container",
-    cols: props.complete ? cols : colsOriginalWithoutColor,
-    ref: content,
-    style: {
-      transition: 'all .3s ease'
-    },
-    className: "scroll custom-scrollbar",
-    hasColor: hasColor,
-    hasChildren: true,
-    colHeadersWidth: colHeadersWidth,
-    maxheight: props.height,
-    height: props.height,
-    scrollThreshold: "20px",
-    scrollableTarget: "scrollableDiv",
-    dataLength: props.data[keys[0]].values.length,
-    next: function next() {
-      return props.onEndScroll();
-    },
-    hasMore: props.total !== props.data[keys[0]].values.length,
-    onScroll: function onScroll() {
-      if (props.complete && optionalMouse) {
-        optionalContent.current.scrollTop = content.current.el.scrollTop;
-      }
-    },
-    loader: /*#__PURE__*/_react["default"].createElement("div", {
-      style: {
-        position: 'relative'
-      }
-    }, /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
-      cols: props.complete ? cols.length : colsOriginal.length - (props.isMultiple ? 1 : 2)
-    }, /*#__PURE__*/_react["default"].createElement("p", {
-      style: {
-        paddingBottom: '10px'
-      }
-    }, "Carregando"), /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      className: "rotating",
-      path: _tokens.Tokens.icons.loading,
-      size: "16px",
-      spin: true,
-      appearance: _tokens.Tokens.colors.neutral.light['02']
-    })))
-  }, (props.complete ? cols : colsOriginal).map(function (key, indexCol) {
-    return /*#__PURE__*/_react["default"].createElement(Column, {
-      childrenHeight: childrenSize > 30 ? childrenSize : props.children ? props.childrenSize : 60,
-      key: indexCol,
-      rows: props.data[key].values,
-      indexRowOpened: props.indexRowOpened
-    }, props.data[key].values.map(function (value, indexRow) {
-      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
-        key: indexRow
-      }, /*#__PURE__*/_react["default"].createElement(Row, {
-        id: "item".concat(indexCol).concat(indexRow),
-        children: props.indexRowOpened === indexRow,
-        justify: props.data[key].justify,
-        ref: function ref(_ref4) {
-          return indexRow === 0 && key !== 'colors' ? items.current[indexCol] = _ref4 : null;
-        },
-        clicable: props.isMultiple,
-        onClick: function onClick() {
-          return props.isMultiple && props.onRowClick(indexRow);
-        },
-        color: indexCol === 0 && props.data.colors ? props.data.colors.values[indexRow] : null,
-        border: indexRow !== props.data[key].values.length - 1,
-        first: indexCol === 0,
-        last: indexCol === cols.length
-      }, key !== 'colors' && /*#__PURE__*/_react["default"].createElement(SpanValue, null, props.data[key].template ? props.data[key].template(value, props.data[key].params && props.data[key].params.map(function (param) {
-        return props.data[param] && props.data[param].values[indexRow];
-      }), props.dispatch, props.subdata && props.subdata[indexRow]) : value), indexCol === colsOriginalWithoutColor.length && props.isMultiple && /*#__PURE__*/_react["default"].createElement(Collapse, null, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-        size: "md",
-        name: props.indexRowOpened === indexRow ? 'chevron-up' : 'chevron-down'
-      })), indexCol === colsOriginalWithoutColor.length && props.indexRowOpened === indexRow && /*#__PURE__*/_react["default"].createElement(Children, {
-        id: "children",
-        color: props.data.colors.values[indexRow],
-        onClick: function onClick(e) {
-          e.stopPropagation();
-        },
-        ref: refChildren,
-        top: "".concat((props.indexRowOpened + 1) * 48, "px")
-      }, props.children || /*#__PURE__*/_react["default"].createElement(LoaderContainer, {
-        style: {
-          display: 'flex'
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-        spin: true,
-        path: _tokens.Tokens.icons.loading,
-        size: "20px"
-      })))));
-    }));
-  }), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "scrollableDiv"
-  }))))));
+  }, [])
+
+  return (
+    <div>
+      <DisplayGrid>
+        {props.complete && (
+          <ContainerHeader
+            optional
+            colsWidth={colsWidth}
+            cols={colsOptional}
+            ref={optionalHeader}
+            hasColor={hasColor}
+          >
+            {colsOptional.map((key, indexCol) => (
+              <Column key={indexCol} rows={[0]} size={28}>
+                <Row
+                  first={indexCol === 0}
+                  clicable
+                  last={indexCol === cols.length}
+                  key={indexCol}
+                  id={`headerOptional${indexCol}`}
+                  justify={props.data[key].justify}
+                  onClick={() => {
+                    props.data[key].ordenable && props.onClickToOrder(key)
+                  }}
+                  border
+                  color={Tokens.colors.neutral.light['02']}
+                  title={props.data[key].title}
+                >
+                  <Value
+                    ref={ref => {
+                      itemsHeader.current[indexCol] = ref
+                    }}
+                  >
+                    {props.data[key].title}
+                    {props.data[key].ordenable && (
+                      <Icon
+                        path={
+                          props.orderBy !== key
+                            ? Tokens.icons['arrow-horizontal']
+                            : props.order === 'DESC'
+                            ? Tokens.icons['arrow-up']
+                            : Tokens.icons['arrow-down']
+                        }
+                      />
+                    )}
+                  </Value>
+                </Row>
+              </Column>
+            ))}
+          </ContainerHeader>
+        )}
+        <ContainerHeader
+          hasColor={hasColor}
+          colsWidth={colsWidth}
+          paddingScroll
+          cols={props.complete ? cols : colsOriginalWithoutColor}
+        >
+          {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
+            <Column key={indexCol} rows={[0]} size={28}>
+              <Row
+                first={indexCol === 0}
+                justify={props.data[key].justify}
+                last={indexCol === cols.length}
+                key={indexCol}
+                clicable
+                id={`header${indexCol}`}
+                onClick={() => {
+                  props.data[key].ordenable && props.onClickToOrder(key)
+                }}
+                border
+                color={Tokens.colors.neutral.light['02']}
+                title={props.data[key].title}
+              >
+                <Value
+                  ref={ref => {
+                    itemsHeader.current[indexCol] = ref
+                  }}
+                >
+                  {props.data[key].title}
+                  {props.data[key].ordenable && (
+                    <Icon
+                      style={{ padding: '0 5px' }}
+                      appearance="dark"
+                      size="10px"
+                      path={
+                        props.orderBy !== key
+                          ? Tokens.icons['arrow-horizontal']
+                          : props.order === 'DESC'
+                          ? Tokens.icons['arrow-up']
+                          : Tokens.icons['arrow-down']
+                      }
+                    />
+                  )}
+                </Value>
+              </Row>
+            </Column>
+          ))}
+        </ContainerHeader>
+      </DisplayGrid>
+      {props.data[keys[0]] && props.data[keys[0]].values && (
+        <Scroll>
+          <DisplayGrid>
+            {props.complete && (
+              <Container
+                id="containerOptional"
+                optional
+                colHeadersWidth={colHeadersWidth}
+                hasColor={hasColor}
+                maxheight={props.height}
+                cols={colsOptional}
+                ref={optionalContent}
+                className="custom-scrollbar"
+                onMouseEnter={() => {
+                  setOptionalMouse(false)
+                }}
+                onScroll={e => {
+                  optionalHeader.current.scrollLeft =
+                    optionalContent.current.scrollLeft
+
+                  if (!optionalMouse) {
+                    content.current.el.scrollTop =
+                      optionalContent.current.scrollTop
+                  }
+                }}
+              >
+                {colsOptional.map((key, indexCol) => (
+                  <Column
+                    indexRowOpened={props.indexRowOpened}
+                    childrenHeight={
+                      childrenSize > 30
+                        ? childrenSize
+                        : props.children
+                        ? props.childrenSize
+                        : 60
+                    }
+                    key={indexCol}
+                    rows={props.data[key].values}
+                  >
+                    {props.data[key].values.map((value, indexRow) => (
+                      <Row
+                        id={`item${indexCol}${indexRow}`}
+                        key={indexRow}
+                        justify={props.data[key].justify}
+                        border={indexRow !== props.data[key].values.length - 1}
+                        first={indexCol === 0}
+                        last={indexCol === cols.length}
+                        ref={ref =>
+                          indexRow === 0 && key !== 'colors'
+                            ? (items.current[indexCol] = ref)
+                            : null
+                        }
+                      >
+                        <SpanValue>
+                          {props.data[key].template
+                            ? props.data[key].template(
+                                value,
+                                props.data[key].params &&
+                                  props.data[key].params.map(
+                                    param =>
+                                      props.data[param] &&
+                                      props.data[param].values[indexRow],
+                                  ),
+                                props.dispatch,
+                                props.subdata && props.subdata[indexRow],
+                              )
+                            : value}
+                        </SpanValue>
+                      </Row>
+                    ))}
+                  </Column>
+                ))}
+              </Container>
+            )}
+            <div
+              onMouseEnter={() => {
+                setOptionalMouse(true)
+              }}
+              id="scrollableDiv"
+              ref={scrollableDiv}
+              style={{
+                width: '100%',
+                minWidth: 'fit-content',
+              }}
+            >
+              <ContainerInfinite
+                id="container"
+                cols={props.complete ? cols : colsOriginalWithoutColor}
+                ref={content}
+                style={{ transition: 'all .3s ease' }}
+                className="scroll custom-scrollbar"
+                hasColor={hasColor}
+                hasChildren
+                colHeadersWidth={colHeadersWidth}
+                maxheight={props.height}
+                height={props.height}
+                scrollThreshold="20px"
+                scrollableTarget="scrollableDiv"
+                dataLength={props.data[keys[0]].values.length}
+                next={() => props.onEndScroll()}
+                hasMore={props.total !== props.data[keys[0]].values.length}
+                onScroll={() => {
+                  if (props.complete && optionalMouse) {
+                    optionalContent.current.scrollTop =
+                      content.current.el.scrollTop
+                  }
+                }}
+                loader={
+                  <div style={{ position: 'relative' }}>
+                    <LoaderContainer
+                      cols={
+                        props.complete
+                          ? cols.length
+                          : colsOriginal.length - (props.isMultiple ? 1 : 2)
+                      }
+                    >
+                      <p style={{ paddingBottom: '10px' }}>Carregando</p>
+                      <Icon
+                        className="rotating"
+                        path={Tokens.icons.loading}
+                        size="16px"
+                        spin
+                        appearance={Tokens.colors.neutral.light['02']}
+                      />
+                    </LoaderContainer>
+                  </div>
+                }
+              >
+                {(props.complete ? cols : colsOriginal).map((key, indexCol) => (
+                  <Column
+                    childrenHeight={
+                      childrenSize > 30
+                        ? childrenSize
+                        : props.children
+                        ? props.childrenSize
+                        : 60
+                    }
+                    key={indexCol}
+                    rows={props.data[key].values}
+                    indexRowOpened={props.indexRowOpened}
+                  >
+                    {props.data[key].values.map((value, indexRow) => (
+                      <React.Fragment key={indexRow}>
+                        <Row
+                          id={`item${indexCol}${indexRow}`}
+                          children={props.indexRowOpened === indexRow}
+                          justify={props.data[key].justify}
+                          ref={ref =>
+                            indexRow === 0 && key !== 'colors'
+                              ? (items.current[indexCol] = ref)
+                              : null
+                          }
+                          clicable={props.isMultiple}
+                          onClick={() =>
+                            props.isMultiple && props.onRowClick(indexRow)
+                          }
+                          color={
+                            indexCol === 0 && props.data.colors
+                              ? props.data.colors.values[indexRow]
+                              : null
+                          }
+                          border={
+                            indexRow !== props.data[key].values.length - 1
+                          }
+                          first={indexCol === 0}
+                          last={indexCol === cols.length}
+                        >
+                          {key !== 'colors' && (
+                            <SpanValue>
+                              {props.data[key].template
+                                ? props.data[key].template(
+                                    value,
+                                    props.data[key].params &&
+                                      props.data[key].params.map(
+                                        param =>
+                                          props.data[param] &&
+                                          props.data[param].values[indexRow],
+                                      ),
+                                    props.dispatch,
+                                    props.subdata && props.subdata[indexRow],
+                                  )
+                                : value}
+                            </SpanValue>
+                          )}
+                          {indexCol === colsOriginalWithoutColor.length &&
+                            props.isMultiple && (
+                              <Collapse>
+                                <Icon
+                                  size="md"
+                                  name={
+                                    props.indexRowOpened === indexRow
+                                      ? 'chevron-up'
+                                      : 'chevron-down'
+                                  }
+                                />
+                              </Collapse>
+                            )}
+                          {indexCol === colsOriginalWithoutColor.length &&
+                            props.indexRowOpened === indexRow && (
+                              <Children
+                                id="children"
+                                color={props.data.colors.values[indexRow]}
+                                onClick={e => {
+                                  e.stopPropagation()
+                                }}
+                                ref={refChildren}
+                                top={`${(props.indexRowOpened + 1) * 48}px`}
+                              >
+                                {props.children || (
+                                  <LoaderContainer style={{ display: 'flex' }}>
+                                    <Icon
+                                      spin
+                                      path={Tokens.icons.loading}
+                                      size="20px"
+                                    />
+                                  </LoaderContainer>
+                                )}
+                              </Children>
+                            )}
+                        </Row>
+                      </React.Fragment>
+                    ))}
+                  </Column>
+                ))}
+                <div id="scrollableDiv" />
+              </ContainerInfinite>
+            </div>
+          </DisplayGrid>
+        </Scroll>
+      )}
+    </div>
+  )
 }
 
 Table.propTypes = {
-  children: _propTypes["default"].any,
-  childrenSize: _propTypes["default"].any,
-  complete: _propTypes["default"].bool,
-  data: _propTypes["default"].object,
-  dispatch: _propTypes["default"].any,
-  height: _propTypes["default"].string,
-  indexRowOpened: _propTypes["default"].number,
-  isMultiple: _propTypes["default"].any,
-  onClickToOrder: _propTypes["default"].func,
-  onEndScroll: _propTypes["default"].func,
-  onRowClick: _propTypes["default"].func,
-  order: _propTypes["default"].string,
-  orderBy: _propTypes["default"].string,
-  subdata: _propTypes["default"].array,
-  total: _propTypes["default"].number
-};
-var _default = Table;
-exports["default"] = _default;
+  children: PropTypes.any,
+  childrenSize: PropTypes.any,
+  complete: PropTypes.bool,
+  data: PropTypes.object,
+  dispatch: PropTypes.any,
+  height: PropTypes.string,
+  indexRowOpened: PropTypes.number,
+  isMultiple: PropTypes.any,
+  onClickToOrder: PropTypes.func,
+  onEndScroll: PropTypes.func,
+  onRowClick: PropTypes.func,
+  order: PropTypes.string,
+  orderBy: PropTypes.string,
+  subdata: PropTypes.array,
+  total: PropTypes.number,
+}
+
+export default Table

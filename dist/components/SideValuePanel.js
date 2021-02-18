@@ -1,101 +1,143 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import { fontStyleMaker }from '../utils/FontUtil.tsx'
+import { Divider, FlexCenter, TextRow } from './StyledComponents'
+import Icon from './Icon'
+import { Tokens } from "../tokens";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+const Title = styled.div`
+  ${fontStyleMaker({
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  color: ${Tokens.colors.neutral.dark["01"]};
+  margin-bottom: 8px;
+`
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Item = styled.div`
+  ${props =>
+    props.fullWidth
+      ? `width: 100%; margin: 0 ${Tokens.spacing.inline.xxxs};`
+      : 'margin: 0px 40px'};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+`
+const Value = styled.span`
+  ${fontStyleMaker({
+    fontFamily: "body",
+    fontWeight: "light",
+    fontSize: "lg"
+  })};
+  color: ${props =>
+    props.positive === true
+      ? Tokens.colors.feedback.success.dark
+      : props.positive === false && Tokens.colors.feedback.danger.dark};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+const DollarSign = styled.span`
+  ${fontStyleMaker({
+    fontFamily: "body",
+    fontWeight: "regular",
+    fontSize: "sm"
+  })};
+  margin-right: ${Tokens.spacing.inset.quarck};
+  color: ${props =>
+    props.positive === true
+      ? Tokens.colors.feedback.success.dark
+      : props.positive === false && Tokens.colors.feedback.danger.dark};
+`
+const Subtitle = styled(TextRow)`
+  ${fontStyleMaker({
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "sm"
+  })};
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.color};
+`
 
-var _react = _interopRequireDefault(require("react"));
+const SideValuePanel = props => (
+  <Container>
+    {props.values.map((value, index) => (
+      <React.Fragment key={index}>
+        <Item fullWidth={props.fullWidth}>
+          {props.titles && <Title>{props.titles[index]}</Title>}
+          <FlexCenter
+            {...(props.showTooltip && {
+              'data-tooltip': `R$ ${value}`,
+            })}
+          >
+            <DollarSign
+              positive={
+                props.checkValue && props.checkValue[index]
+                  ? Number.parseFloat(value) !== 0
+                    ? Number.parseFloat(value) > 0
+                    : null
+                  : null
+              }
+            >
+              R$
+            </DollarSign>
+            <Value
+              positive={
+                props.checkValue && props.checkValue[index]
+                  ? Number.parseFloat(value) !== 0
+                    ? Number.parseFloat(value) > 0
+                    : null
+                  : null
+              }
+            >
+              {value}
+            </Value>
+          </FlexCenter>
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+          {props.subtitles && (
+            <Subtitle
+              color={props.subtitlesColors && props.subtitlesColors[index]}
+              justifyContent="center"
+            >
+              {props.subtitlesIcons && props.subtitlesIcons[index] && (
+                <Icon
+                  path={props.subtitlesIcons[index]}
+                  size="14px"
+                  appearance={
+                    props.subtitlesColors && props.subtitlesColors[index]
+                  }
+                  style={{ marginRight: '5px' }}
+                />
+              )}
+              {props.subtitles[index]}
+            </Subtitle>
+          )}
+        </Item>
+        {index < props.values.length - 1 && <Divider />}
+      </React.Fragment>
+    ))}
+  </Container>
+)
 
-var _FontUtil = require("../utils/FontUtil.tsx");
+export default SideValuePanel
 
-var _StyledComponents = require("./StyledComponents");
-
-var _Icon = _interopRequireDefault(require("./Icon"));
-
-var _tokens = require("../tokens");
-
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Title = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  margin-bottom: 8px;\n"])), (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "medium",
-  fontSize: "xxs"
-}), _tokens.Tokens.colors.neutral.dark["01"]);
-
-var Container = _styledComponents["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n"])));
-
-var Item = _styledComponents["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  text-align: center;\n"])), function (props) {
-  return props.fullWidth ? "width: 100%; margin: 0 ".concat(_tokens.Tokens.spacing.inline.xxxs, ";") : 'margin: 0px 40px';
-});
-
-var Value = _styledComponents["default"].span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  ", ";\n  color: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])), (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "light",
-  fontSize: "lg"
-}), function (props) {
-  return props.positive === true ? _tokens.Tokens.colors.feedback.success.dark : props.positive === false && _tokens.Tokens.colors.feedback.danger.dark;
-});
-
-var DollarSign = _styledComponents["default"].span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  ", ";\n  margin-right: ", ";\n  color: ", ";\n"])), (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "regular",
-  fontSize: "sm"
-}), _tokens.Tokens.spacing.inset.quarck, function (props) {
-  return props.positive === true ? _tokens.Tokens.colors.feedback.success.dark : props.positive === false && _tokens.Tokens.colors.feedback.danger.dark;
-});
-
-var Subtitle = (0, _styledComponents["default"])(_StyledComponents.TextRow)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  ", ";\n  margin-top: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: ", ";\n"])), (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "medium",
-  fontSize: "sm"
-}), function (props) {
-  return props.color;
-});
-
-var SideValuePanel = function SideValuePanel(props) {
-  return /*#__PURE__*/_react["default"].createElement(Container, null, props.values.map(function (value, index) {
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
-      key: index
-    }, /*#__PURE__*/_react["default"].createElement(Item, {
-      fullWidth: props.fullWidth
-    }, props.titles && /*#__PURE__*/_react["default"].createElement(Title, null, props.titles[index]), /*#__PURE__*/_react["default"].createElement(_StyledComponents.FlexCenter, props.showTooltip && {
-      'data-tooltip': "R$ ".concat(value)
-    }, /*#__PURE__*/_react["default"].createElement(DollarSign, {
-      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) !== 0 ? Number.parseFloat(value) > 0 : null : null
-    }, "R$"), /*#__PURE__*/_react["default"].createElement(Value, {
-      positive: props.checkValue && props.checkValue[index] ? Number.parseFloat(value) !== 0 ? Number.parseFloat(value) > 0 : null : null
-    }, value)), props.subtitles && /*#__PURE__*/_react["default"].createElement(Subtitle, {
-      color: props.subtitlesColors && props.subtitlesColors[index],
-      justifyContent: "center"
-    }, props.subtitlesIcons && props.subtitlesIcons[index] && /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
-      path: props.subtitlesIcons[index],
-      size: "14px",
-      appearance: props.subtitlesColors && props.subtitlesColors[index],
-      style: {
-        marginRight: '5px'
-      }
-    }), props.subtitles[index])), index < props.values.length - 1 && /*#__PURE__*/_react["default"].createElement(_StyledComponents.Divider, null));
-  }));
-};
-
-var _default = SideValuePanel;
-exports["default"] = _default;
 SideValuePanel.propTypes = {
-  showTooltip: _propTypes["default"].bool,
-  checkValue: _propTypes["default"].array,
-  fullWidth: _propTypes["default"].bool,
-  subtitles: _propTypes["default"].array,
-  subtitlesColors: _propTypes["default"].array,
-  subtitlesIcons: _propTypes["default"].array,
-  titles: _propTypes["default"].array,
-  values: _propTypes["default"].array
-};
+  showTooltip: PropTypes.bool,
+  checkValue: PropTypes.array,
+  fullWidth: PropTypes.bool,
+  subtitles: PropTypes.array,
+  subtitlesColors: PropTypes.array,
+  subtitlesIcons: PropTypes.array,
+  titles: PropTypes.array,
+  values: PropTypes.array,
+}

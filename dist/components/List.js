@@ -1,68 +1,57 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import ListHeader from './ListHeader'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+import styled from 'styled-components'
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+const ListContainer = styled.div``
+const Row = styled.div`
+  display: flex;
+  height: ${props => props.size || 46}px;
+  padding: 0px 16px;
+  border-bottom: 1px solid #e0e0e0;
+`
+const Column = styled.div`
+  height: 100%;
+  width: ${props => props.width}%;
+  justify-content: ${props =>
+    props.align === 'right'
+      ? 'flex-end'
+      : props.align === 'left'
+      ? 'flex-start'
+      : props.align};
+  align-items: center;
+  display: flex;
+`
+const ListData = styled.div``
+const List = props => (
+  <ListContainer style={props.style}>
+    <ListHeader data={props.header} align={props.align} />
+    <ListData style={props.styleData} className="custom-scrollbar">
+      {props.rows.map((row, index) => (
+        <Row key={index} size={props.rowSize}>
+          {row.map((column, index) => (
+            <Column
+              key={index}
+              align={props.align[index]}
+              width={100 / row.length}
+            >
+              {column}
+            </Column>
+          ))}
+        </Row>
+      ))}
+    </ListData>
+  </ListContainer>
+)
 
-var _react = _interopRequireDefault(require("react"));
+export default List
 
-var _ListHeader = _interopRequireDefault(require("./ListHeader"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var ListContainer = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
-
-var Row = _styledComponents["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  height: ", "px;\n  padding: 0px 16px;\n  border-bottom: 1px solid #e0e0e0;\n"])), function (props) {
-  return props.size || 46;
-});
-
-var Column = _styledComponents["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  height: 100%;\n  width: ", "%;\n  justify-content: ", ";\n  align-items: center;\n  display: flex;\n"])), function (props) {
-  return props.width;
-}, function (props) {
-  return props.align === 'right' ? 'flex-end' : props.align === 'left' ? 'flex-start' : props.align;
-});
-
-var ListData = _styledComponents["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([""])));
-
-var List = function List(props) {
-  return /*#__PURE__*/_react["default"].createElement(ListContainer, {
-    style: props.style
-  }, /*#__PURE__*/_react["default"].createElement(_ListHeader["default"], {
-    data: props.header,
-    align: props.align
-  }), /*#__PURE__*/_react["default"].createElement(ListData, {
-    style: props.styleData,
-    className: "custom-scrollbar"
-  }, props.rows.map(function (row, index) {
-    return /*#__PURE__*/_react["default"].createElement(Row, {
-      key: index,
-      size: props.rowSize
-    }, row.map(function (column, index) {
-      return /*#__PURE__*/_react["default"].createElement(Column, {
-        key: index,
-        align: props.align[index],
-        width: 100 / row.length
-      }, column);
-    }));
-  })));
-};
-
-var _default = List;
-exports["default"] = _default;
 List.propTypes = {
-  align: _propTypes["default"].array,
-  header: _propTypes["default"].array,
-  rowSize: _propTypes["default"].number,
-  rows: _propTypes["default"].array,
-  style: _propTypes["default"].object,
-  styleData: _propTypes["default"].object
-};
+  align: PropTypes.array,
+  header: PropTypes.array,
+  rowSize: PropTypes.number,
+  rows: PropTypes.array,
+  style: PropTypes.object,
+  styleData: PropTypes.object,
+}

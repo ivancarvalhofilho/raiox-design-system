@@ -1,157 +1,167 @@
-"use strict";
+import React, { useEffect, useState } from 'react'
+import { CalendarCell } from './CalendarCell'
+import dayjs from '../../utils/dayjs'
+import styled from 'styled-components'
+import CalendarConst from './const'
+import { fontStyleMaker }from '../../utils/FontUtil'
+import PropTypes from 'prop-types'
+import { Tokens } from "../../tokens";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+const isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
+const isSameOrAfter = require('dayjs/plugin/isSameOrAfter');
+dayjs.extend(isSameOrBefore)
+dayjs.extend(isSameOrAfter)
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+const CalendarContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  height: inherit;
+`
 
-var _react = _interopRequireWildcard(require("react"));
+const CalendarGrid = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+  grid-auto-rows: 1fr;
+  & > *:nth-child(7n-6) {
+    background: ${Tokens.colors.neutral.light['02']};
+  }
+`
 
-var _CalendarCell = require("./CalendarCell");
+const CalendarGridHeader = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  user-select: none;
+`
 
-var _dayjs = _interopRequireDefault(require("../../utils/dayjs"));
+const DayOfWeek = styled.div`
+  display: flex;
+  justify-content: center;
+  ${fontStyleMaker({
+    
+    fontFamily: "body",
+    fontWeight: "medium",
+    fontSize: "xxs"
+  })};
+  margin-bottom: ${Tokens.spacing.stack.nano};
+`
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _const = _interopRequireDefault(require("./const"));
-
-var _FontUtil = require("../../utils/FontUtil");
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _tokens = require("../../tokens");
-
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
-
-var isSameOrAfter = require('dayjs/plugin/isSameOrAfter');
-
-_dayjs["default"].extend(isSameOrBefore);
-
-_dayjs["default"].extend(isSameOrAfter);
-
-var CalendarContainer = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-flow: column;\n  height: inherit;\n"])));
-
-var CalendarGrid = _styledComponents["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;\n  height: 100%;\n  grid-auto-rows: 1fr;\n  & > *:nth-child(7n-6) {\n    background: ", ";\n  }\n"])), _tokens.Tokens.colors.neutral.light['02']);
-
-var CalendarGridHeader = _styledComponents["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;\n  user-select: none;\n"])));
-
-var DayOfWeek = _styledComponents["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  ", ";\n  margin-bottom: ", ";\n"])), (0, _FontUtil.fontStyleMaker)({
-  fontFamily: "body",
-  fontWeight: "medium",
-  fontSize: "xxs"
-}), _tokens.Tokens.spacing.stack.nano);
-
-var Calendar = function Calendar(props) {
-  var _useState = (0, _react.useState)(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      dates = _useState2[0],
-      setDates = _useState2[1];
+const Calendar = props => {
+  const [dates, setDates] = useState(null)
 
   function findDayWithSale(currentDay) {
-    var dayWithSale = props.dayWithSales.find(function (date) {
-      return (0, _dayjs["default"])(date.day).isSame(currentDay, 'day');
-    });
-    return dayWithSale || null;
+    const dayWithSale = props.dayWithSales.find(date =>
+      dayjs(date.day).isSame(currentDay, 'day'),
+    )
+    return dayWithSale || null
   }
 
   function currentDayIsSelected(currentDay) {
-    var isSelectedDay = props.selectedDates.state === _const["default"].STATES.SELECTED && (0, _dayjs["default"])(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') && !!props.selectedDates.endDate && (0, _dayjs["default"])(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day') || props.selectedDates.state === _const["default"].STATES.IN_SELECTION && (0, _dayjs["default"])(props.selectedDates.startDate).isSame(currentDay, 'day') || (0, _dayjs["default"])(props.selectedDates.endDate).isSame(currentDay, 'day');
-    return isSelectedDay;
+    const isSelectedDay =
+      (props.selectedDates.state === CalendarConst.STATES.SELECTED &&
+        dayjs(props.selectedDates.startDate).isSameOrBefore(
+          currentDay,
+          'day',
+        ) &&
+        !!props.selectedDates.endDate &&
+        dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')) ||
+      (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+        dayjs(props.selectedDates.startDate).isSame(currentDay, 'day')) ||
+      dayjs(props.selectedDates.endDate).isSame(currentDay, 'day')
+    return isSelectedDay
   }
 
   function currentDayIsHovered(currentDay) {
-    var isHoveredDay = props.selectedDates.state === _const["default"].STATES.IN_SELECTION && (0, _dayjs["default"])(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') && !!props.selectedDates.endDate && (0, _dayjs["default"])(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day');
-    return isHoveredDay;
+    const isHoveredDay =
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+      dayjs(props.selectedDates.startDate).isSameOrBefore(currentDay, 'day') &&
+      !!props.selectedDates.endDate &&
+      dayjs(props.selectedDates.endDate).isSameOrAfter(currentDay, 'day')
+    return isHoveredDay
   }
 
   function currentDayIsBlocked(currentDay) {
-    var daysDiff = (0, _dayjs["default"])(props.selectedDates.firstClickDate).diff(currentDay, 'day');
-    var isBlocked = props.maxDateRange && props.selectedDates.state === _const["default"].STATES.IN_SELECTION && (daysDiff >= props.maxDateRange - 1 || daysDiff <= -props.maxDateRange);
-    return isBlocked;
+    const daysDiff = dayjs(props.selectedDates.firstClickDate).diff(
+      currentDay,
+      'day',
+    )
+    const isBlocked =
+      props.maxDateRange &&
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION &&
+      (daysDiff >= props.maxDateRange - 1 || daysDiff <= -props.maxDateRange)
+    return isBlocked
   }
 
   function currentDayIsHolyday(currentDay) {
-    var holyday = props.holydays.find(function (date) {
-      return (0, _dayjs["default"])(date).isSame(currentDay, 'day');
-    });
-    return holyday;
+    const holyday = props.holydays.find(date =>
+      dayjs(date).isSame(currentDay, 'day'),
+    )
+    return holyday
   }
 
-  function _onDayClick(date) {
-    if (props.selectedDates.state === _const["default"].STATES.SELECTED) {
+  function onDayClick(date) {
+    if (props.selectedDates.state === CalendarConst.STATES.SELECTED) {
       props.setSelectedDates({
         startDate: date,
         endDate: date,
         firstClickDate: date,
-        state: _const["default"].STATES.IN_SELECTION
-      });
-    } else if (props.selectedDates.state === _const["default"].STATES.IN_SELECTION) {
-      if ((0, _dayjs["default"])(props.selectedDates.firstClickDate).isAfter((0, _dayjs["default"])(date), 'day')) {
-        props.setSelectedDates(_objectSpread(_objectSpread({}, props.selectedDates), {}, {
+        state: CalendarConst.STATES.IN_SELECTION,
+      })
+    } else if (
+      props.selectedDates.state === CalendarConst.STATES.IN_SELECTION
+    ) {
+      if (
+        dayjs(props.selectedDates.firstClickDate).isAfter(dayjs(date), 'day')
+      ) {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: date,
           endDate: props.selectedDates.firstClickDate,
-          state: _const["default"].STATES.SELECTED
-        }));
+          state: CalendarConst.STATES.SELECTED,
+        })
       } else {
-        props.setSelectedDates(_objectSpread(_objectSpread({}, props.selectedDates), {}, {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: props.selectedDates.firstClickDate,
           endDate: date,
-          state: _const["default"].STATES.SELECTED
-        }));
+          state: CalendarConst.STATES.SELECTED,
+        })
       }
     }
   }
 
-  function _onDayHover(date) {
-    if (props.selectedDates.state === _const["default"].STATES.IN_SELECTION) {
-      if ((0, _dayjs["default"])(props.selectedDates.firstClickDate).isSameOrAfter((0, _dayjs["default"])(date), 'day')) {
-        props.setSelectedDates(_objectSpread(_objectSpread({}, props.selectedDates), {}, {
+  function onDayHover(date) {
+    if (props.selectedDates.state === CalendarConst.STATES.IN_SELECTION) {
+      if (
+        dayjs(props.selectedDates.firstClickDate).isSameOrAfter(
+          dayjs(date),
+          'day',
+        )
+      ) {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: date,
           endDate: props.selectedDates.firstClickDate,
-          state: _const["default"].STATES.IN_SELECTION
-        }));
-      } else if ((0, _dayjs["default"])(props.selectedDates.firstClickDate).isSameOrBefore((0, _dayjs["default"])(date), 'day')) {
-        props.setSelectedDates(_objectSpread(_objectSpread({}, props.selectedDates), {}, {
+          state: CalendarConst.STATES.IN_SELECTION,
+        })
+      } else if (
+        dayjs(props.selectedDates.firstClickDate).isSameOrBefore(
+          dayjs(date),
+          'day',
+        )
+      ) {
+        props.setSelectedDates({
+          ...props.selectedDates,
           startDate: props.selectedDates.firstClickDate,
           endDate: date,
-          state: _const["default"].STATES.IN_SELECTION
-        }));
+          state: CalendarConst.STATES.IN_SELECTION,
+        })
       }
     }
   }
 
   function generateDayObject(day, iterableDay, isCurrentMonth) {
-    var currentDay = iterableDay.set('date', day + 1);
+    const currentDay = iterableDay.set('date', day + 1)
     return {
       day: day + 1,
       fullDate: currentDay.format('MM/DD/YYYY'),
@@ -160,74 +170,96 @@ var Calendar = function Calendar(props) {
       isHolyday: currentDayIsHolyday(currentDay),
       isSelected: currentDayIsSelected(currentDay),
       isHovered: currentDayIsHovered(currentDay),
-      isBlockedSelection: currentDayIsBlocked(currentDay)
-    };
+      isBlockedSelection: currentDayIsBlocked(currentDay),
+    }
   }
 
-  (0, _react.useEffect)(function () {
+  useEffect(() => {
     if (props.month != null && props.month >= 0 && props.month < 12) {
-      var numberOfDaysOfPreviousMonth = Array.from(Array((0, _dayjs["default"])().set('year', props.year).set('month', props.month).add(-1, 'month').daysInMonth()).keys()).map(function (v) {
-        return v;
-      });
-      var currentMonth = (0, _dayjs["default"])().set('year', props.year).set('month', props.month);
-      var numberOfDaysOfThisMonth = currentMonth.daysInMonth();
-      var firstDayOfThisMonth = currentMonth.startOf('month').weekday();
-      var iterableDay = (0, _dayjs["default"])().set('year', props.year).set('month', props.month - 1);
-      var visibleDaysOfPreviousMonth = numberOfDaysOfPreviousMonth.splice(numberOfDaysOfPreviousMonth.length - firstDayOfThisMonth).map(function (day) {
-        return generateDayObject(day, iterableDay, false);
-      });
-      iterableDay = iterableDay.set('year', props.year).set('month', props.month);
-      var daysOnThisMonth = Array.from(Array(numberOfDaysOfThisMonth).keys()).map(function (day) {
-        return generateDayObject(day, iterableDay, true);
-      });
-      var totalDays = visibleDaysOfPreviousMonth.concat(daysOnThisMonth);
-      iterableDay = iterableDay.set('year', props.year).set('month', props.month + 1);
+      const numberOfDaysOfPreviousMonth = Array.from(
+        Array(
+          dayjs()
+            .set('year', props.year)
+            .set('month', props.month)
+            .add(-1, 'month')
+            .daysInMonth(),
+        ).keys(),
+      ).map(v => v)
 
+      const currentMonth = dayjs()
+        .set('year', props.year)
+        .set('month', props.month)
+      const numberOfDaysOfThisMonth = currentMonth.daysInMonth()
+      const firstDayOfThisMonth = currentMonth.startOf('month').weekday()
+
+      let iterableDay = dayjs()
+        .set('year', props.year)
+        .set('month', props.month - 1)
+      const visibleDaysOfPreviousMonth = numberOfDaysOfPreviousMonth
+        .splice(numberOfDaysOfPreviousMonth.length - firstDayOfThisMonth)
+        .map(day => generateDayObject(day, iterableDay, false))
+
+      iterableDay = iterableDay
+        .set('year', props.year)
+        .set('month', props.month)
+      const daysOnThisMonth = Array.from(
+        Array(numberOfDaysOfThisMonth).keys(),
+      ).map(day => generateDayObject(day, iterableDay, true))
+
+      let totalDays = visibleDaysOfPreviousMonth.concat(daysOnThisMonth)
+
+      iterableDay = iterableDay
+        .set('year', props.year)
+        .set('month', props.month + 1)
       if (35 - totalDays.length >= 0) {
-        var visibleDaysOfNextMonth = Array.from(Array(35 - totalDays.length).keys()).map(function (day) {
-          return generateDayObject(day, iterableDay, false);
-        });
-        totalDays = totalDays.concat(visibleDaysOfNextMonth);
+        const visibleDaysOfNextMonth = Array.from(
+          Array(35 - totalDays.length).keys(),
+        ).map(day => generateDayObject(day, iterableDay, false))
+        totalDays = totalDays.concat(visibleDaysOfNextMonth)
       } else {
-        var _visibleDaysOfNextMonth = Array.from(Array(42 - totalDays.length).keys()).map(function (day) {
-          return generateDayObject(day, iterableDay, false);
-        });
-
-        totalDays = totalDays.concat(_visibleDaysOfNextMonth);
+        const visibleDaysOfNextMonth = Array.from(
+          Array(42 - totalDays.length).keys(),
+        ).map(day => generateDayObject(day, iterableDay, false))
+        totalDays = totalDays.concat(visibleDaysOfNextMonth)
       }
 
-      setDates(totalDays);
+      setDates(totalDays)
     }
-  }, [props.month, props.dayWithSales, props.selectedDates]);
-  return /*#__PURE__*/_react["default"].createElement(CalendarContainer, null, /*#__PURE__*/_react["default"].createElement(CalendarGridHeader, null, _const["default"].DAYS_OF_WEEK.map(function (day) {
-    return /*#__PURE__*/_react["default"].createElement(DayOfWeek, {
-      key: day
-    }, day);
-  })), /*#__PURE__*/_react["default"].createElement(CalendarGrid, null, dates && dates.map(function (date, index) {
-    return /*#__PURE__*/_react["default"].createElement(_CalendarCell.CalendarCell, {
-      key: date.fullDate,
-      date: date,
-      daySale: date.sale,
-      id: "day".concat(index),
-      maxDateRange: props.maxDateRange,
-      onDayClick: function onDayClick() {
-        return _onDayClick(date.fullDate);
-      },
-      onDayHover: function onDayHover() {
-        return _onDayHover(date.fullDate);
-      }
-    });
-  })));
-};
+  }, [props.month, props.dayWithSales, props.selectedDates])
 
-var _default = Calendar;
-exports["default"] = _default;
+  return (
+    <CalendarContainer>
+      <CalendarGridHeader>
+        {CalendarConst.DAYS_OF_WEEK.map(day => (
+          <DayOfWeek key={day}>{day}</DayOfWeek>
+        ))}
+      </CalendarGridHeader>
+      <CalendarGrid>
+        {dates &&
+          dates.map((date, index) => (
+            <CalendarCell
+              key={date.fullDate}
+              date={date}
+              daySale={date.sale}
+              id={`day${index}`}
+              maxDateRange={props.maxDateRange}
+              onDayClick={() => onDayClick(date.fullDate)}
+              onDayHover={() => onDayHover(date.fullDate)}
+            />
+          ))}
+      </CalendarGrid>
+    </CalendarContainer>
+  )
+}
+
+export default Calendar
+
 Calendar.propTypes = {
-  selectedDates: _propTypes["default"].object,
-  setSelectedDates: _propTypes["default"].func,
-  month: _propTypes["default"].number,
-  year: _propTypes["default"].number,
-  holydays: _propTypes["default"].array,
-  maxDateRange: _propTypes["default"].number,
-  dayWithSales: _propTypes["default"].array
-};
+  selectedDates: PropTypes.object,
+  setSelectedDates: PropTypes.func,
+  month: PropTypes.number,
+  year: PropTypes.number,
+  holydays: PropTypes.array,
+  maxDateRange: PropTypes.number,
+  dayWithSales: PropTypes.array,
+}

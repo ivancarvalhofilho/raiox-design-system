@@ -1,46 +1,39 @@
-"use strict";
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import { Tokens } from "../tokens";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+const TabContainer = styled.div`
+  padding: 5px 0px;
+  font-family: ${Tokens.fonts.family.body};
+  font-weight: ${props =>
+    props.active
+      ? Tokens.fonts.weight.medium
+      : Tokens.fonts.weight.regular};
+  width: ${props => props.width}%;
+  text-align: center;
+  color: ${props =>
+    props.active
+      ? Tokens.colors.brand.primary.darkest
+      : Tokens.colors.neutral.dark['01']};
+  font-size: ${Tokens.fonts.fontSize.xxs};
+`
+const Tab = props => (
+  <TabContainer
+    width={props.width}
+    id={props.id}
+    onClick={props.onClick}
+    active={props.active}
+  >
+    {props.label}
+  </TabContainer>
+)
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+export default Tab
 
-var _react = _interopRequireDefault(require("react"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _tokens = require("../tokens");
-
-var _templateObject;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var TabContainer = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  padding: 5px 0px;\n  font-family: ", ";\n  font-weight: ", ";\n  width: ", "%;\n  text-align: center;\n  color: ", ";\n  font-size: ", ";\n"])), _tokens.Tokens.fonts.family.body, function (props) {
-  return props.active ? _tokens.Tokens.fonts.weight.medium : _tokens.Tokens.fonts.weight.regular;
-}, function (props) {
-  return props.width;
-}, function (props) {
-  return props.active ? _tokens.Tokens.colors.brand.primary.darkest : _tokens.Tokens.colors.neutral.dark['01'];
-}, _tokens.Tokens.fonts.fontSize.xxs);
-
-var Tab = function Tab(props) {
-  return /*#__PURE__*/_react["default"].createElement(TabContainer, {
-    width: props.width,
-    id: props.id,
-    onClick: props.onClick,
-    active: props.active
-  }, props.label);
-};
-
-var _default = Tab;
-exports["default"] = _default;
 Tab.propTypes = {
-  active: _propTypes["default"].bool,
-  label: _propTypes["default"].string,
-  onClick: _propTypes["default"].func,
-  width: _propTypes["default"].number
-};
+  active: PropTypes.bool,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  width: PropTypes.number,
+}
