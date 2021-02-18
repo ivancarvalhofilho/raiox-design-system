@@ -14,3 +14,25 @@ export { default as Table } from './components/Table'
 export { default as Tabs } from './components/Tabs'
 export { default as Datepicker } from './components/Datepicker'
 export { default as InputLabel } from './components/InputLabel'
+
+import fonts from "./tokens/fonts.tsx";
+import tokens from "./tokens/tokens.tsx";
+import icons from "./tokens/icons/icons";
+import colors from "./tokens/colors.tsx";
+import iconsAdquirentes from "./tokens/icons/iconsAdquirente";
+import illustrations from "./tokens/icons/illustrations";
+import iconsBanco from "./tokens/icons/iconsBanco";
+import './global.css'
+
+export const Tokens = {
+	colors,
+	fonts,
+	icons,
+	iconsAdquirentes,
+	iconsBanco,
+	illustrations,
+	...tokens
+}
+
+export * from './utils/clickHandleUtil'
+export * from './utils/FontUtil'
