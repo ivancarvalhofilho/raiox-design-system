@@ -14,6 +14,9 @@ const CardSelectorStyle = styled.div`
 	border-radius: ${Tokens.border.radius.sm};
 	user-select: none;
 	cursor: pointer;
+	
+	pointer-events: ${props => props.disabled && 'none'};
+  opacity: ${props => props.disabled && Tokens.opacity.level.medium};
 `
 const Title = styled.span`
 	${fontStyleMaker({
