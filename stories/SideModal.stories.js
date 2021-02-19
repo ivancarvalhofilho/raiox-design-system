@@ -3,7 +3,7 @@ import React from 'react'
 import SideModal from '../src/components/SideModal'
 
 export default {
-  title: 'Example/SideModal',
+  title: 'Components/SideModal',
   component: SideModal,
 }
 

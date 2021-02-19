@@ -1,11 +1,9 @@
 import React from 'react'
 
-import List from '../src/components/List'
-import { TextRow } from '../src/components/StyledComponents'
-import Icon from '../src/components/Icon'
+import { List, Icon, TextRow } from '../src'
 
 export default {
-  title: 'Example/List',
+  title: 'Components/List',
   component: List,
 }
 

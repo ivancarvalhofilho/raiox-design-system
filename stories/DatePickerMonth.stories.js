@@ -5,7 +5,7 @@ import { useState } from '@storybook/addons'
 import dayjs from 'dayjs'
 
 export default {
-  title: 'Example/DatePickerMonth',
+  title: 'Components/DatePickerMonth',
   component: DatePickerMonth,
 }
 

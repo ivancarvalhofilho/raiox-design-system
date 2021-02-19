@@ -5,7 +5,7 @@ import { useState } from '@storybook/addons'
 import CalendarConst from '../src/components/Calendar/const'
 
 export default {
-  title: 'Example/Calendar',
+  title: 'Components/Calendar',
   component: Calendar,
 }
 

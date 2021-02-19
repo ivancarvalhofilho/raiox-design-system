@@ -23,7 +23,7 @@ import colors from "./tokens/colors.tsx";
 import iconsAdquirentes from "./tokens/icons/iconsAdquirente";
 import illustrations from "./tokens/icons/illustrations";
 import iconsBanco from "./tokens/icons/iconsBanco";
-import './global.css'
+import './tokens/global.css'
 
 export const Tokens = {
 	colors,

@@ -4,7 +4,7 @@ import HeaderCalendar from '../src/components/HeaderCalendar'
 import { Tokens } from '../src/tokens'
 
 export default {
-  title: 'Example/HeaderCalendar',
+  title: 'Components/HeaderCalendar',
   component: HeaderCalendar,
 }
 

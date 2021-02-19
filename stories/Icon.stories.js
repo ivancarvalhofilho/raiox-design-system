@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Tokens } from '../src/tokens'
 
 export default {
-  title: 'Example/Icon',
+  title: 'Icons & Illustrations/Icons',
   component: Icon,
 }
 
@@ -18,7 +18,7 @@ const Title = styled.div`
 
 const Template = args => (
   <div>
-    <span style={{ display: 'flex', flexDirection: 'row' }}>
+    <span style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
       {Object.keys(Tokens.icons).map(key => (
         <span
           style={{
@@ -88,11 +88,11 @@ const Template3 = args => (
   </div>
 )
 
-export const Default = Template.bind({})
+export const Icons = Template.bind({})
 export const Adquirente = Template2.bind({})
 export const Banco = Template3.bind({})
 
-Default.args = {
+Icons.args = {
   size: '36px',
 }
 

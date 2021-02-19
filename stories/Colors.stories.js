@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Tokens } from '../src/tokens'
 
 export default {
-  title: 'Example/Color',
+  title: 'Tokens/Colors',
 }
 
 const ColorShower = styled.div`
@@ -47,6 +47,6 @@ const Template = args => (
   </div>
 )
 
-export const Default = Template.bind({})
+export const Colors = Template.bind({})
 
-Default.args = {}
+Colors.args = {}

@@ -3,7 +3,7 @@ import SideValuePanel from '../src/components/SideValuePanel'
 import { Tokens } from '../src/tokens'
 
 export default {
-  title: 'Example/SideValuePanel',
+  title: 'Components/SideValuePanel',
   component: SideValuePanel,
 }
 

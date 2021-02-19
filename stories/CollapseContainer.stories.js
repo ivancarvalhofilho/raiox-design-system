@@ -3,7 +3,7 @@ import React from 'react'
 import CollapseContainer from '../src/components/CollapseContainer'
 
 export default {
-  title: 'Example/CollapseContainer',
+  title: 'Components/CollapseContainer',
   component: CollapseContainer,
 }
 

@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import InputLabel from '../src/components/InputLabel'
 import {useAddonState} from "@storybook/client-api";
 
 export default {
-  title: 'Example/InputLabel',
+  title: 'Components/InputLabel',
   component: InputLabel,
 }
 
 const Template = args => {
-  const [text, setText] = useAddonState('text', '')
+  const [text, setText] = useState('text')
 
   return (<InputLabel {...args} text={text} setText={setText}/>)
 }

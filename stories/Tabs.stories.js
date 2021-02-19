@@ -4,7 +4,7 @@ import Tabs from '../src/components/Tabs'
 import { useState } from '@storybook/addons'
 
 export default {
-  title: 'Example/Tabs',
+  title: 'Components/Tabs',
   component: Tabs,
 }
 

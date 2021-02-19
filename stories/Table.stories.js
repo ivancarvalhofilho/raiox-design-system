@@ -4,7 +4,7 @@ import { useState } from '@storybook/addons'
 import { tableMock } from './mocks'
 
 export default {
-  title: 'Example/Table',
+  title: 'Components/Table',
   component: Table,
 }
 

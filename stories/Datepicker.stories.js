@@ -3,7 +3,7 @@ import Datepicker from '../src/components/Datepicker'
 import dayjs from 'dayjs'
 
 export default {
-  title: 'Example/Datepicker',
+  title: 'Components/Datepicker',
   component: Datepicker,
 }
 
