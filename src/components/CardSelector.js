@@ -38,6 +38,7 @@ const TitlesContainer = styled.div`
 	display: flex;
 	flex-flow: column;
 	flex: 1;
+	min-height: 50px;
 	padding: 0 16px;
 	height: 100%;
 	justify-content: space-evenly;
@@ -58,7 +59,6 @@ const DescriptionText = styled.div`
 `
 const UpperContainer = styled.div`
 	display: flex;
-	height: 80px;
 	justify-content: space-between;
 	align-items: center;
 	padding: 16px;
@@ -69,15 +69,15 @@ const CardSelector = props => (
 	<CardSelectorStyle disabled={props.disabled} selected={props.selected} onClick={()=> props.setSelected()}>
 			<div>
 				<UpperContainer>
-					<Icon path={Tokens.illustrations.establishRadial} size={'51px'}/>
+					<Icon path={props.icon} size={'51px'}/>
 					<TitlesContainer>
-						<Title>Adicionar um CNPJ</Title>
-						<Subtitle>Tenho um estabelecimento com CNPJ</Subtitle>
+						<Title>{props.title}</Title>
+						<Subtitle>{props.subtitle}</Subtitle>
 					</TitlesContainer>
 					<BigRadio active={props.selected} disabled={props.disabled} size={18}/>
 				</UpperContainer>
 				<DescriptionText>
-					Quem tem CNPJ pode adicionar todos os meios de pagamentos disponíveis no Raio-X.
+					{props.description}
 				</DescriptionText>
 			</div>
 	</CardSelectorStyle>
@@ -89,4 +89,8 @@ CardSelector.propTypes = {
 	selected: PropTypes.bool,
 	setSelected: PropTypes.func,
 	disabled: PropTypes.bool,
+	title: PropTypes.string,
+	subtitle: PropTypes.string,
+	description: PropTypes.string,
+	icon: PropTypes.object,
 }
