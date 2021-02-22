@@ -14,7 +14,7 @@ const BigRadioStyle = styled.div`
 	
 	& > span {
 		position: absolute;
-		border: 4px solid ${Tokens.colors.neutral.dark["02"]};
+		border: 2px solid ${Tokens.colors.neutral.dark["02"]};
 		width: inherit;
 		height: inherit;
 		${props => props.active && `border-color: ${Tokens.colors.brand.primary.darkest}`};

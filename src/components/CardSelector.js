@@ -74,7 +74,7 @@ const CardSelector = props => (
 						<Title>Adicionar um CNPJ</Title>
 						<Subtitle>Tenho um estabelecimento com CNPJ</Subtitle>
 					</TitlesContainer>
-					<BigRadio active={props.selected} disabled={props.disabled}/>
+					<BigRadio active={props.selected} disabled={props.disabled} size={18}/>
 				</UpperContainer>
 				<DescriptionText>
 					Quem tem CNPJ pode adicionar todos os meios de pagamentos disponíveis no Raio-X.
