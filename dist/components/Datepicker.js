@@ -57,7 +57,7 @@ const Date = styled.div`
   display: flex;
   align-items: center;
 
-  color: ${Tokens.colors.neutral.dark["03"]};
+  color: ${Tokens.colors.brand.primary.darkest};
 `
 
 const DatepickerContainer = styled.div`

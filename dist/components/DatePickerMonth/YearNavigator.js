@@ -13,8 +13,8 @@ const YearNavigatorStyle = styled.div`
   margin-bottom: ${Tokens.spacing.stack.xxxs};
   ${fontStyleMaker({
     fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontWeight: "regular",
+    fontSize: "sm"
   })};
   color: ${Tokens.colors.neutral.dark.base};
 `
