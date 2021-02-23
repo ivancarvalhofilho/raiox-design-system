@@ -36,5 +36,4 @@ Default.args = {
   title: 'Adicionar um CNPJ',
   subtitle: 'Tenho um estabelecimento com CNPJ',
   description: 'Quem tem CNPJ pode adicionar todos os meios de pagamentos disponíveis no Raio-X.',
-  descriptionTooltip: 'A optional tooltip',
 }
