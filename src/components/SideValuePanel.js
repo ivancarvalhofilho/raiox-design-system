@@ -9,8 +9,8 @@ import { Tokens } from "../tokens";
 const Title = styled.div`
   ${fontStyleMaker({
     fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontWeight: "regular",
+    fontSize: "xs"
   })};
   color: ${Tokens.colors.neutral.dark["01"]};
   margin-bottom: 8px;
