@@ -16,9 +16,33 @@ const Title = styled.div`
   color: ${Tokens.colors.neutral.dark.base};
 `
 
+const appearencesList = [
+  'default',
+  'light',
+  'primary',
+  'danger',
+  'info',
+  'warning',
+  'success',
+  'dark',
+  'default-disabled'
+]
+
 const Template = args => (
   <div>
-    <span style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
+    <div style={{paddingBottom: '10px'}}>
+      <h2>Appearances:</h2>
+      <div style={{display: "flex", flexFlow: "row", justifyContent: 'space-between'}}>
+        {appearencesList.map((appearance)=> (
+          <div style={{display: "flex", flexFlow: 'column', alignItems: 'center'}}>
+            <Icon appearance={appearance} path={Tokens.icons.info} size={21} style={appearance === 'light' ? {background: 'gray', padding: '5px', borderRadius: '2px'} : {padding: '5px'}}/>
+            {appearance}
+          </div>
+        ))}
+      </div>
+    </div>
+    <h2>Icon List:</h2>
+    <span style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr' }}>
       {Object.keys(Tokens.icons).map(key => (
         <span
           style={{
@@ -30,7 +54,9 @@ const Template = args => (
           }}
         >
           <Icon path={Tokens.icons[key]} {...args} />
-          {key}
+          <span>
+            {key}
+          </span>
         </span>
       ))}
     </span>

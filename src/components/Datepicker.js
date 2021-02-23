@@ -281,12 +281,14 @@ const Datepicker = props => {
                           <Icon
                             path={Tokens.icons['double-arrow-left']}
                             size="14px"
+                            appearance="primary"
                             id={`previousYear${index}`}
                             style={{ marginRight: '8px' }}
                             onClick={() => changeYear(index, false)}
                           />
                           <Icon
                             path={Tokens.icons['single-arrow-left']}
+                            appearance="primary"
                             size="14px"
                             id={`previousMonth${index}`}
                             onClick={() => changeMonth(index, false)}
@@ -301,6 +303,7 @@ const Datepicker = props => {
                           <Icon
                             path={Tokens.icons['single-arrow-right']}
                             size="14px"
+                            appearance="primary"
                             style={{ marginRight: '8px' }}
                             id={`nextMonth${index}`}
                             onClick={() => changeMonth(index, true)}
@@ -308,6 +311,7 @@ const Datepicker = props => {
                           <Icon
                             path={Tokens.icons['double-arrow-right']}
                             size="14px"
+                            appearance="primary"
                             id={`nextYear${index}`}
                             onClick={() => changeYear(index, true)}
                           />

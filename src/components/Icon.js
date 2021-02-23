@@ -8,12 +8,14 @@ const Svg = styled(SVGInline)`
   display: inline-flex;
   transition-duration: 0.2s;
   cursor: ${props => props.onClick && !props.disabled && 'pointer'};
+  ${props => !!props.fill && `color: ${props.fill}`};
   -webkit-animation: ${props => props.spin && 'spin 2s infinite linear'};
   transition-property: transform;
   transform: rotate(-${props => props.rotate}deg);
 `
 const Icon = props => {
   function getIconSvgColor(props) {
+    debugger
     switch (props.appearance) {
       case 'default':
         return Tokens.colors.neutral.dark['02']
@@ -33,8 +35,6 @@ const Icon = props => {
         return Tokens.colors.neutral.dark.base
       case 'default-disabled':
         return Tokens.colors.neutral.dark['02']
-      case 'primary-disabled':
-        return Tokens.colors.brand.primary.darkest
       default:
         return props.appearance || Tokens.colors.neutral.dark['02']
     }
