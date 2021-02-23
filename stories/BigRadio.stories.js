@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-
-import CardSelector from "../src/components/CardSelector";
 import BigRadio from "../src/components/BigRadio";
 
 export default {

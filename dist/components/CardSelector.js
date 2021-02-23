@@ -28,7 +28,7 @@ const Title = styled.span`
 `
 const Subtitle = styled.span`
 	${fontStyleMaker({
-		fontFamily: "head",
+		fontFamily: "body",
 		fontWeight: "regular",
 		fontSize: "xs" 
 	})};

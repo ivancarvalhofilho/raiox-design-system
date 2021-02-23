@@ -9,7 +9,7 @@ export default {
 }
 
 const Template = args => {
-  const [text, setText] = useState('text')
+  const [text, setText] = useState('')
 
   return (<InputLabel {...args} text={text} setText={setText}/>)
 }

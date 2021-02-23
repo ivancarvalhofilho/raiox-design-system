@@ -4,6 +4,7 @@ import { mountWithTheme } from '../utils/testUtil'
 import { TextRow } from '../components/StyledComponents'
 import List from '../components/List'
 import Icon from '../components/Icon'
+import {Tokens} from "../tokens";
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')
