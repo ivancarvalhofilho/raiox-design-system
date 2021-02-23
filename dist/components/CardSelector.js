@@ -78,6 +78,11 @@ const CardSelector = props => (
 				</UpperContainer>
 				<DescriptionText>
 					{props.description}
+					{props.descriptionTooltip && (
+						<div style={{display: "flex"}}>
+							<Icon path={Tokens.icons.info}  size={21}/>
+						</div>
+					)}
 				</DescriptionText>
 			</div>
 	</CardSelectorStyle>

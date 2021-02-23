@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import {Tokens} from "../tokens";
 
 const HeaderContainer = styled.div`
   display: flex;
