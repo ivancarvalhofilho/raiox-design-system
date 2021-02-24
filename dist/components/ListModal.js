@@ -43,6 +43,7 @@ const Row = styled.div`
 		font-weight: ${Tokens.fonts.weight.medium};
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
+	background: ${Tokens.colors.neutral.light.base};
 	cursor: pointer;
 `
 const AllItemsSpan = styled.span`
@@ -58,6 +59,7 @@ const AddButton = styled.span`
 		fontWeight: "medium",
 		fontFamily: "head"
 	})};
+	background: ${Tokens.colors.neutral.light.base};
 	color: ${Tokens.colors.brand.primary.darkest};
 `
 const AllItemsRow = styled(Row)`
@@ -85,7 +87,7 @@ const ListModal = props => {
 	const activeItemIcon = <RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={Tokens.icons["check-rounded"]}/>
 
 	return (
-		<ListModalStyle disabled={props.disabled} opened={props.opened}>
+		<ListModalStyle disabled={props.disabled} opened={props.opened} className={props.className}>
 			<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
 				<AllItemsSpan>Todos os estabelecimentos</AllItemsSpan>
 				{props.activeItem === 0 && activeItemIcon}

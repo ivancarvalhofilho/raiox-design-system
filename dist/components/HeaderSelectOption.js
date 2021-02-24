@@ -53,7 +53,7 @@ const HeaderSelectOption = props => (
 	<HeaderSelectOptionStyle disabled={props.disabled} onClick={props.setOpened} size={props.size || '21'}>
 		<Label>{props.label}</Label>
 		<TitleContainer>
-			<Title>{props.title}</Title>
+			<Title>{props.value}</Title>
 			<ChevronIcon opened={props.opened} path={Tokens.icons['chevron-down']} appearance={'light'} size={12}/>
 		</TitleContainer>
 	</HeaderSelectOptionStyle>
@@ -66,6 +66,6 @@ HeaderSelectOption.propTypes = {
 	setActive: PropTypes.func,
 	disabled: PropTypes.bool,
 	size: PropTypes.string,
-	title: PropTypes.string,
+	value: PropTypes.string,
 	label: PropTypes.string,
 }
