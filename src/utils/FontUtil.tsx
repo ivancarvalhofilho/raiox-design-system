@@ -16,5 +16,6 @@ export const fontStyleMaker = ({
     fontFamily: Tokens.fonts.family[fontFamily],
     fontWeight: Tokens.fonts.weight[fontWeight],
     fontSize: Tokens.fonts.fontSize[fontSize],
+    lineHeight: Tokens.fonts.fontSize[fontSize],
   }
 }

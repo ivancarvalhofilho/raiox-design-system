@@ -18,7 +18,7 @@ const Template = args => {
 export const Default = Template.bind({})
 Default.args = {
   label: 'Conta',
-  title: 'Demo Stone 12.839.955/0001-16',
+  value: 'Demo Stone 12.839.955/0001-16',
   opened: false,
   disabled: false,
 }
