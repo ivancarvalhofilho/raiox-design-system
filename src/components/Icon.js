@@ -15,7 +15,6 @@ const Svg = styled(SVGInline)`
 `
 const Icon = props => {
   function getIconSvgColor(props) {
-    debugger
     switch (props.appearance) {
       case 'default':
         return Tokens.colors.neutral.dark['02']

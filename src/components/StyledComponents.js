@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Tokens } from "../tokens";
+import { fontStyleMaker } from "../utils/FontUtil";
 
 const TextRow = styled.div`
   display: flex;
@@ -31,10 +32,36 @@ const Container = styled.div`
   box-shadow: ${Tokens.shadow.level1};
 `
 
-export const FlexCenter = styled.span`
+const FlexCenter = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
-export  { TextRow, Divider, Container }
+const Title = styled.span`
+	${fontStyleMaker({
+		fontFamily: "head",
+		fontWeight: "medium",
+		fontSize:"sm"
+	})};
+	color: ${Tokens.colors.neutral.dark.base};
+	padding-bottom: ${Tokens.spacing.inline.quarck};
+`
+const Subtitle = styled.span`
+	${fontStyleMaker({
+  fontFamily: "body",
+  fontWeight: "regular",
+  fontSize: "xs"
+})};
+	color: ${Tokens.colors.neutral.dark["01"]};
+`
+const TitlesContainer = styled.div`
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+	min-height: 50px;
+	padding: 0 16px;
+	height: 100%;
+	justify-content: space-evenly;
+`
+export  { TextRow, Divider, Container, FlexCenter, Title, Subtitle, TitlesContainer }

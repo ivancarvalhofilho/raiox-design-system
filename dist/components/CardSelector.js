@@ -5,6 +5,7 @@ import { Tokens } from '../tokens'
 import { fontStyleMaker }from '../utils/FontUtil'
 import Icon from "./Icon";
 import BigRadio from "./BigRadio";
+import {Subtitle, Title, TitlesContainer} from "./StyledComponents";
 
 const CardSelectorStyle = styled.div`
 	transition: 0.15s;
@@ -18,32 +19,6 @@ const CardSelectorStyle = styled.div`
 	pointer-events: ${props => props.disabled && 'none'};
   opacity: ${props => props.disabled && Tokens.opacity.level.medium};
 `
-const Title = styled.span`
-	${fontStyleMaker({
-		fontFamily: "head",
-		fontWeight: "medium",
-		fontSize:"sm" 
-	})};
-	color: ${Tokens.colors.neutral.dark.base};
-`
-const Subtitle = styled.span`
-	${fontStyleMaker({
-		fontFamily: "body",
-		fontWeight: "regular",
-		fontSize: "xs" 
-	})};
-	color: ${Tokens.colors.neutral.dark["01"]};
-`
-const TitlesContainer = styled.div`
-	display: flex;
-	flex-flow: column;
-	flex: 1;
-	min-height: 50px;
-	padding: 0 16px;
-	height: 100%;
-	justify-content: space-evenly;
-`
-
 const DescriptionText = styled.div`
 	background: ${Tokens.colors.neutral.light["02"]};
 	padding: ${Tokens.spacing.squish.nano};
