@@ -34,6 +34,7 @@ const ListModalStyle = styled.div`
 const Row = styled.div`
 	padding: ${Tokens.spacing.inset.xs};
 	display: flex;
+	align-items: center;
 	&:hover {
 		background: ${Tokens.colors.brand.primary.light};
 	}
@@ -71,6 +72,13 @@ const AddButtonRow = styled(Row)`
 const RadialWhiteBackgroundIcon = styled(Icon)`
 	background: ${Tokens.colors.neutral.light.base};
 	border-radius: ${Tokens.border.radius.circular};
+	height: 100%;
+`
+
+const TitleGreen = styled(Title)`
+	${props => props.selected && `
+		color: ${Tokens.colors.brand.primary.darkest};
+	`};
 `
 
 const ListModal = props => {
@@ -80,19 +88,21 @@ const ListModal = props => {
 		<ListModalStyle disabled={props.disabled} opened={props.opened}>
 			<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
 				<AllItemsSpan>Todos os estabelecimentos</AllItemsSpan>
-				{activeItemIcon}
+				{props.activeItem === 0 && activeItemIcon}
 			</AllItemsRow>
+			<Divider horizontal/>
 
 			<div className={'custom-scrollbar'} style={{overflowY: 'auto'}}>
-				{props.itemsList.map((item) => (
+				{props.itemsList.map((item, index) => (
 					<>
-						<Divider horizontal/>
 						<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
 							<TitlesContainer style={{padding: 0}}>
-								<Title>{item.title}</Title>
+								<TitleGreen selected={item.id === props.activeItem}>{item.title}</TitleGreen>
 								<Subtitle>{item.subtitle}</Subtitle>
 							</TitlesContainer>
+							{item.id === props.activeItem && activeItemIcon}
 						</Row>
+						{props.itemsList.length - 1 !== index && (<Divider horizontal/>)}
 					</>
 				))}
 			</div>
