@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ListModal from "../src/components/ListModal";
+import {handleOutsideDivClick} from "../src/utils";
 
 export default {
   title: 'Components/ListModal',
@@ -7,18 +8,24 @@ export default {
 }
 
 const Template = args => {
-  const [activeItem, setActiveItem] = useState(args.activeItemIndex)
+  const [activeItem, setActiveItem] = useState(args.activeItem)
+  const [opened, setOpened] = useState(args.opened)
+
+  const wrapperRef = handleOutsideDivClick(
+    () => !!opened && setOpened(false),
+  )
+
   return (
-    <div>
-      <ListModal {...args} activeItem={activeItem} setActiveItem={setActiveItem} onOutsideClick={() => alert('Clicks para fora dele, escondem o componente')}/>
-      <span style={{marginTop: '20px', display: 'block'}}>(obs: existe uma animação ao abrir, mas não é possível visualiza-la no storybook)</span>
+    <div ref={wrapperRef} style={{display: 'inline-block'}}>
+      <span onClick={(e) => {setOpened(!opened)}}> Click para abrir/fechar </span>
+      <ListModal {...args} opened={opened} activeItem={activeItem} setActiveItem={setActiveItem} />
     </div>
   )
 }
 
 export const Default = Template.bind({})
 Default.args = {
-  activeItemIndex: 0,
+  activeItem: 0,
   itemsList: [
     {id: 1, title: 'Estab1', subtitle:'cnpj1'},
     {id: 2, title: 'Estab2', subtitle:'cnpj2'},

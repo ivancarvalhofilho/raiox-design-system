@@ -76,12 +76,8 @@ const RadialWhiteBackgroundIcon = styled(Icon)`
 const ListModal = props => {
 	const activeItemIcon = <RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={Tokens.icons["check-rounded"]}/>
 
-	const wrapperRef = handleOutsideDivClick(
-		() => !!props.onOutsideClick && props.onOutsideClick(false),
-	)
-
 	return (
-		<ListModalStyle disabled={props.disabled} opened={props.opened} ref={wrapperRef}>
+		<ListModalStyle disabled={props.disabled} opened={props.opened}>
 			<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
 				<AllItemsSpan>Todos os estabelecimentos</AllItemsSpan>
 				{activeItemIcon}
