@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import Icon from "./Icon";
 import {Divider, Subtitle, Title, TitlesContainer} from "./StyledComponents";
-import {fontStyleMaker, handleOutsideDivClick, Tokens} from "../index";
+import {Tokens} from "../tokens";
+import {fontStyleMaker} from "../utils";
 
 
 const ListModalStyle = styled.div`
