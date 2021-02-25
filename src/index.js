@@ -16,6 +16,9 @@ export { default as Tabs } from './components/Tabs'
 export { default as Datepicker } from './components/Datepicker'
 export { default as InputLabel } from './components/InputLabel'
 export { default as Loading } from './components/Loading'
+export { default as HeaderSelectOption } from './components/HeaderSelectOption'
+export { default as ListModal } from './components/ListModal'
+export { default as IconText } from './components/IconText'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";
