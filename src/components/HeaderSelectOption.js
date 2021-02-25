@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Tokens } from '../tokens'
 import {fontStyleMaker} from "../utils/FontUtil";
 import Icon from "./Icon";
-import {light} from "@material-ui/core/styles/createPalette";
 
 const HeaderSelectOptionStyle = styled.div`
 	display: flex;
@@ -54,7 +53,7 @@ const HeaderSelectOption = props => (
 		<Label>{props.label}</Label>
 		<TitleContainer>
 			<Title>{props.value}</Title>
-			<ChevronIcon opened={props.opened} path={Tokens.icons['chevron-down']} appearance={'light'} size={12}/>
+			<ChevronIcon opened={props.opened} path={Tokens.icons['chevron-down']} appearance={'light'} size={Tokens.iconSize.sm}/>
 		</TitleContainer>
 	</HeaderSelectOptionStyle>
 )

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import IconText from "../src/components/IconText";
-import {Tokens} from "../src";
+import {Tokens} from "../src/tokens";
 
 export default {
   title: 'Components/IconText',

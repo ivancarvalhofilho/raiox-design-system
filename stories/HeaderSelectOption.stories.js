@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import HeaderSelectOption from "../src/components/HeaderSelectOption";
-import {Tokens} from "../src";
+import {Tokens} from "../src/tokens";
 
 export default {
   title: 'Components/HeaderSelectOption',
