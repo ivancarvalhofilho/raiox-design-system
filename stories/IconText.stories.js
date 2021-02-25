@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import IconText from "../src/components/IconText";
 import {Tokens} from "../src/tokens";
-import {appearencesList} from "./Icon.stories";
+import {appearencesList} from "../src/components/Icon";
 
 export default {
   title: 'Components/IconText',

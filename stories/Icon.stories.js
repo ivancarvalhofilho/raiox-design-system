@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Icon from '../src/components/Icon'
+import Icon, {appearencesList} from '../src/components/Icon'
 import styled from 'styled-components'
 import { Tokens } from '../src/tokens'
 
@@ -15,18 +15,6 @@ const Title = styled.div`
   font-size: ${Tokens.fonts.fontSize.xl};
   color: ${Tokens.colors.neutral.dark.base};
 `
-
-export const appearencesList = [
-  'default',
-  'light',
-  'primary',
-  'danger',
-  'info',
-  'warning',
-  'success',
-  'dark',
-  'default-disabled'
-]
 
 const Template = args => (
   <div>

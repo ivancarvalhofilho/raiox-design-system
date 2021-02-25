@@ -48,6 +48,18 @@ export function getIconSvgSize(size) {
   return Tokens.iconSize[size] || Tokens.iconSize.sm
 }
 
+export const appearencesList = [
+  'default',
+  'light',
+  'primary',
+  'danger',
+  'info',
+  'warning',
+  'success',
+  'dark',
+  'default-disabled'
+]
+
 const Icon = props => {
 
   return (
