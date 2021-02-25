@@ -5,6 +5,7 @@ import Icon from "./Icon";
 import {Divider, TitlesContainer} from "./StyledComponents";
 import {Tokens} from "../tokens";
 import {fontStyleMaker} from "../utils";
+import {Loading} from "../index";
 
 
 const ListModalStyle = styled.div`
@@ -100,7 +101,7 @@ const Subtitle = styled.span`
 	${fontStyleMaker({
 		fontFamily: "body",
 		fontWeight: "regular",
-		fontSize:"xs"
+		fontSize:"xxs"
 	})};
 	color: ${Tokens.colors.neutral.dark['01']};
 	padding-bottom: ${Tokens.spacing.inline.quarck};
@@ -115,24 +116,31 @@ const ListModal = props => {
 	return (
 		<ListModalStyle disabled={props.disabled} opened={props.opened} className={props.className}>
 			<div className={'custom-scrollbar'} style={{overflowY: 'auto', background: Tokens.colors.neutral.light.base}}>
-				<AllItemsRow onClick={() => props.setActiveItem(0)}>
-					<AllItemsSpan  selected={props.activeItem === 0}>Todos os estabelecimentos</AllItemsSpan>
-					{props.activeItem === 0 && activeItemIcon}
-				</AllItemsRow>
-				<Divider horizontal/>
-
-				{props.itemsList.map((item, index) => (
+				{props.isLoadingList ? (
+					<Loading />
+				) : (
 					<>
-						<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
-							<TitlesContainer style={{padding: 0}}>
-								<Title selected={item.id === props.activeItem}>{item.title}</Title>
-								<Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>
-							</TitlesContainer>
-							{item.id === props.activeItem && activeItemIcon}
-						</Row>
-						{props.itemsList.length - 1 !== index && (<Divider horizontal/>)}
+						<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
+							<AllItemsSpan  selected={props.activeItem === 0}>Todos os estabelecimentos</AllItemsSpan>
+							{props.activeItem === 0 && activeItemIcon}
+						</AllItemsRow>
+						<Divider horizontal/>
+
+						{props.itemsList.map((item, index) => (
+							<>
+								<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
+									<TitlesContainer style={{padding: 0}}>
+										<Title selected={item.id === props.activeItem}>{item.title}</Title>
+										<Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>
+									</TitlesContainer>
+									{item.id === props.activeItem && activeItemIcon}
+								</Row>
+								{props.itemsList.length - 1 !== index && (<Divider horizontal/>)}
+							</>
+						))}
 					</>
-				))}
+				)}
+
 			</div>
 
 			{props.hasAddButton && (
@@ -159,4 +167,5 @@ ListModal.propTypes = {
 	disabled: PropTypes.bool,
 	hasAddButton: PropTypes.bool,
 	activeItem: PropTypes.number,
+	isLoadingList: PropTypes.bool,
 }
