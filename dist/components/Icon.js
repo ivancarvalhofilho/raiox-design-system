@@ -13,41 +13,42 @@ const Svg = styled(SVGInline)`
   transition-property: transform;
   transform: rotate(-${props => props.rotate}deg);
 `
-const Icon = props => {
-  function getIconSvgColor(props) {
-    switch (props.appearance) {
-      case 'default':
-        return Tokens.colors.neutral.dark['02']
-      case 'primary':
-        return Tokens.colors.brand.primary.darkest
-      case 'light':
-        return Tokens.colors.neutral.light.base
-      case 'danger':
-        return Tokens.colors.feedback.danger.dark
-      case 'info':
-        return Tokens.colors.feedback.info.dark
-      case 'warning':
-        return Tokens.colors.feedback.warning.dark
-      case 'success':
-        return Tokens.colors.feedback.success.dark
-      case 'dark':
-        return Tokens.colors.neutral.dark.base
-      case 'default-disabled':
-        return Tokens.colors.neutral.dark['02']
-      default:
-        return props.appearance || Tokens.colors.neutral.dark['02']
-    }
+export function getIconSvgColor(appearance) {
+  switch (appearance) {
+    case 'default':
+      return Tokens.colors.neutral.dark['02']
+    case 'primary':
+      return Tokens.colors.brand.primary.darkest
+    case 'light':
+      return Tokens.colors.neutral.light.base
+    case 'danger':
+      return Tokens.colors.feedback.danger.dark
+    case 'info':
+      return Tokens.colors.feedback.info.dark
+    case 'warning':
+      return Tokens.colors.feedback.warning.dark
+    case 'success':
+      return Tokens.colors.feedback.success.dark
+    case 'dark':
+      return Tokens.colors.neutral.dark.base
+    case 'default-disabled':
+      return Tokens.colors.neutral.dark['02']
+    default:
+      return props.appearance || Tokens.colors.neutral.dark['02']
   }
+}
 
-  function getIconSvgSize(props) {
-    if (
-      props.size &&
-      !Object.keys(Tokens.iconSize).includes(props.size)
-    ) {
-      return props.size
-    }
-    return Tokens.iconSize[props.size] || Tokens.iconSize.sm
+export function getIconSvgSize(size) {
+  if (
+    size &&
+    !Object.keys(Tokens.iconSize).includes(size)
+  ) {
+    return size
   }
+  return Tokens.iconSize[size] || Tokens.iconSize.sm
+}
+
+const Icon = props => {
 
   return (
     <Svg
@@ -58,8 +59,8 @@ const Icon = props => {
       className={props.className}
       style={{ ...props.style }}
       svg={props.path ? props.path : Tokens.icons[props.name]}
-      fill={getIconSvgColor(props)}
-      width={getIconSvgSize(props)}
+      fill={getIconSvgColor(props.appearance)}
+      width={getIconSvgSize(props.size)}
     />
   )
 }

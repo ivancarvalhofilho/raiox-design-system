@@ -60,8 +60,9 @@ const AddButton = styled.span`
 		fontWeight: "medium",
 		fontFamily: "head"
 	})};
-	background: ${Tokens.colors.neutral.light.base};
+	background: inherit;
 	color: ${Tokens.colors.brand.primary.darkest};
+	
 `
 const AllItemsRow = styled(Row)`
 	justify-content: space-between;

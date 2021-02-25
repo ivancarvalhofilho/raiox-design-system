@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
-import Icon from "./Icon";
+import Icon, {getIconSvgColor} from "./Icon";
 import {fontStyleMaker} from "../utils/FontUtil";
 
 const IconTextStyle = styled.div`
@@ -22,16 +22,20 @@ const IconSpan = styled.span`
 		fontWeight: "regular",
 		fontSize: "xs"
 	})};
-	color: ${Tokens.colors.neutral.light.base};
+	color: ${props => props.color};
 	padding-left: ${Tokens.spacing.stack.nano};
 `
 
-const IconText = props => (
-	<IconTextStyle disabled={props.disabled}>
-		<Icon path={props.icon} size={21} appearance={'light'}/>
-		<IconSpan> {props.label}</IconSpan>
-	</IconTextStyle>
-)
+const IconText = props => {
+	const color = props.appearance || 'light'
+	const iconSize = props.iconSize || 'lg'
+	return (
+		<IconTextStyle disabled={props.disabled}>
+			<Icon path={props.icon} size={iconSize} appearance={color}/>
+			<IconSpan color={getIconSvgColor(color)}> {props.label}</IconSpan>
+		</IconTextStyle>
+	)
+}
 
 export default IconText
 
@@ -39,4 +43,5 @@ IconText.propTypes = {
 	disabled: PropTypes.bool,
 	icon: PropTypes.any,
 	label: PropTypes.string,
+	appearance: PropTypes.string,
 }

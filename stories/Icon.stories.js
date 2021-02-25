@@ -16,7 +16,7 @@ const Title = styled.div`
   color: ${Tokens.colors.neutral.dark.base};
 `
 
-const appearencesList = [
+export const appearencesList = [
   'default',
   'light',
   'primary',

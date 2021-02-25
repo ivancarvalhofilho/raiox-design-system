@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import IconText from "../src/components/IconText";
 import {Tokens} from "../src/tokens";
+import {appearencesList} from "./Icon.stories";
 
 export default {
   title: 'Components/IconText',
@@ -10,8 +11,10 @@ export default {
 const Template = args => {
   const [active, setActive] = useState(args.active)
   const selectedIcon = args.iconSelector || 'applications'
+  const appearence = args.appearance || 'light'
+
   return (
-    <div style={{background: Tokens.colors.brand.secondary.dark, width: '200px', padding: Tokens.spacing.inset.nano}}>
+    <div style={{...(appearence === 'light' ? {background: Tokens.colors.brand.secondary.dark} : {}), width: '200px', padding: Tokens.spacing.inset.nano}}>
       <IconText {...args} active={active} setActive={() => setActive(!active)} icon={Tokens.icons[selectedIcon]}/>
     </div>
     )
@@ -24,6 +27,20 @@ Default.argTypes = {
       type: 'select',
       options: [
         ...Object.keys(Tokens.icons)
+      ],
+    },
+  },
+  appearance: {
+    control: {
+      type: 'select',
+      options: appearencesList,
+    },
+  },
+  iconSize: {
+    control: {
+      type: 'select',
+      options: [
+        ...Object.keys(Tokens.iconSize)
       ],
     },
   },
