@@ -49,10 +49,10 @@ const Title = styled.span`
 `
 const Subtitle = styled.span`
 	${fontStyleMaker({
-  fontFamily: "body",
-  fontWeight: "regular",
-  fontSize: "xs"
-})};
+		fontFamily: "body",
+		fontWeight: "regular",
+		fontSize: "xs"
+	})};
 	color: ${Tokens.colors.neutral.dark["01"]};
 `
 const TitlesContainer = styled.div`

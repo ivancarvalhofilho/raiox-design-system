@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Icon from "./Icon";
-import {Divider, Subtitle, Title, TitlesContainer} from "./StyledComponents";
+import {Divider, TitlesContainer} from "./StyledComponents";
 import {Tokens} from "../tokens";
 import {fontStyleMaker} from "../utils";
 
@@ -50,9 +50,13 @@ const Row = styled.div`
 const AllItemsSpan = styled.span`
 	${fontStyleMaker({
 		fontSize: "sm",
-		fontWeight: "medium",
-		fontFamily: "head"
+		fontWeight: "regular",
+		fontFamily: "body"
 	})};
+	color: ${Tokens.colors.neutral.dark.base};
+	${props => props.selected && `
+		color: ${Tokens.colors.brand.primary.darkest};
+	`};
 `
 const AddButton = styled.span`
 	${fontStyleMaker({
@@ -60,7 +64,7 @@ const AddButton = styled.span`
 		fontWeight: "medium",
 		fontFamily: "head"
 	})};
-	background: inherit;
+	background: transparent;
 	color: ${Tokens.colors.brand.primary.darkest};
 	
 `
@@ -79,7 +83,27 @@ const RadialWhiteBackgroundIcon = styled(Icon)`
 	height: 100%;
 `
 
-const TitleGreen = styled(Title)`
+const Title = styled.span`
+	${fontStyleMaker({
+		fontFamily: "body",
+		fontWeight: "regular",
+		fontSize:"xs"
+	})};
+	color: ${Tokens.colors.neutral.dark.base};
+	padding-bottom: ${Tokens.spacing.inline.quarck};
+	${props => props.selected && `
+		color: ${Tokens.colors.brand.primary.darkest};
+	`};
+`
+
+const Subtitle = styled.span`
+	${fontStyleMaker({
+		fontFamily: "body",
+		fontWeight: "regular",
+		fontSize:"xs"
+	})};
+	color: ${Tokens.colors.neutral.dark['01']};
+	padding-bottom: ${Tokens.spacing.inline.quarck};
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
@@ -90,19 +114,19 @@ const ListModal = props => {
 
 	return (
 		<ListModalStyle disabled={props.disabled} opened={props.opened} className={props.className}>
-			<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
-				<AllItemsSpan>Todos os estabelecimentos</AllItemsSpan>
-				{props.activeItem === 0 && activeItemIcon}
-			</AllItemsRow>
-			<Divider horizontal/>
+			<div className={'custom-scrollbar'} style={{overflowY: 'auto', background: Tokens.colors.neutral.light.base}}>
+				<AllItemsRow onClick={() => props.setActiveItem(0)}>
+					<AllItemsSpan  selected={props.activeItem === 0}>Todos os estabelecimentos</AllItemsSpan>
+					{props.activeItem === 0 && activeItemIcon}
+				</AllItemsRow>
+				<Divider horizontal/>
 
-			<div className={'custom-scrollbar'} style={{overflowY: 'auto'}}>
 				{props.itemsList.map((item, index) => (
 					<>
 						<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
 							<TitlesContainer style={{padding: 0}}>
-								<TitleGreen selected={item.id === props.activeItem}>{item.title}</TitleGreen>
-								<Subtitle>{item.subtitle}</Subtitle>
+								<Title selected={item.id === props.activeItem}>{item.title}</Title>
+								<Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>
 							</TitlesContainer>
 							{item.id === props.activeItem && activeItemIcon}
 						</Row>
@@ -116,7 +140,7 @@ const ListModal = props => {
 					<Divider horizontal/>
 					<AddButtonRow onClick={props.onclick}>
 						<RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={Tokens.icons.add}/>
-						<AddButton>Todos os estabelecimentos</AddButton>
+						<AddButton>Adicionar estabelecimento</AddButton>
 					</AddButtonRow>
 				</>
 			)}

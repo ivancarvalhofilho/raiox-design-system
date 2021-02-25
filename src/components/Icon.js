@@ -34,7 +34,7 @@ export function getIconSvgColor(appearance) {
     case 'default-disabled':
       return Tokens.colors.neutral.dark['02']
     default:
-      return props.appearance || Tokens.colors.neutral.dark['02']
+      return appearance || Tokens.colors.neutral.dark['02']
   }
 }
 
