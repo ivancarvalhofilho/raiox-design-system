@@ -120,11 +120,15 @@ const ListModal = props => {
 					<Loading />
 				) : (
 					<>
-						<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
-							<AllItemsSpan  selected={props.activeItem === 0}>Todos os estabelecimentos</AllItemsSpan>
-							{props.activeItem === 0 && activeItemIcon}
-						</AllItemsRow>
-						<Divider horizontal/>
+						{props.hasAllItemsButton && (
+							<>
+								<AllItemsRow selected={props.activeItem === 0} onClick={() => props.setActiveItem(0)}>
+									<AllItemsSpan  selected={props.activeItem === 0}>Todos os estabelecimentos</AllItemsSpan>
+									{props.activeItem === 0 && activeItemIcon}
+								</AllItemsRow>
+								<Divider horizontal/>
+							</>
+						)}
 
 						{props.itemsList.map((item, index) => (
 							<>
@@ -168,4 +172,5 @@ ListModal.propTypes = {
 	hasAddButton: PropTypes.bool,
 	activeItem: PropTypes.number,
 	isLoadingList: PropTypes.bool,
+	hasAllItemsButton: PropTypes.bool,
 }

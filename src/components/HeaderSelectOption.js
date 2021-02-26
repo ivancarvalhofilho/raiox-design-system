@@ -26,6 +26,7 @@ const Label = styled.span`
 	color: ${Tokens.colors.brand.secondary.light};
 	padding-bottom: ${Tokens.spacing.inline.quarck};
 `
+
 const Title = styled.span`
 	${fontStyleMaker({
 		fontSize:"xs",
@@ -34,6 +35,9 @@ const Title = styled.span`
 	})};
 	color: ${Tokens.colors.neutral.light.base};
 	padding-right: ${Tokens.spacing.stack.nano};
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `
 
 const TitleContainer = styled.div`
@@ -41,6 +45,7 @@ const TitleContainer = styled.div`
 	align-items: center;
 	display: flex;
 `
+
 const ChevronIcon = styled(Icon)`
 	transition: .25s;
 	${props => props.opened ? 
@@ -49,7 +54,7 @@ const ChevronIcon = styled(Icon)`
 `
 
 const HeaderSelectOption = props => (
-	<HeaderSelectOptionStyle disabled={props.disabled} onClick={props.setOpened} size={props.size || '21'}>
+	<HeaderSelectOptionStyle disabled={props.disabled} onClick={props.setOpened} size={props.size || '21'} style={props.style}>
 		<Label>{props.label}</Label>
 		<TitleContainer>
 			<Title>{props.value}</Title>
@@ -67,4 +72,5 @@ HeaderSelectOption.propTypes = {
 	size: PropTypes.string,
 	value: PropTypes.string,
 	label: PropTypes.string,
+	style: PropTypes.object,
 }

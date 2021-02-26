@@ -38,6 +38,7 @@ Default.args = {
   hasAddButton: true,
   opened: true,
   isLoadingList: false,
+  hasAllItemsButton: true,
   onclick: () => alert("Ação para redirecionar para outra página"),
 }
 
