@@ -47,10 +47,12 @@ const Row = styled.div`
 	`};
 	background: ${Tokens.colors.neutral.light.base};
 	cursor: pointer;
+	min-height: 48px;
+	box-sizing: border-box;
 `
 const AllItemsSpan = styled.span`
 	${fontStyleMaker({
-		fontSize: "sm",
+		fontSize: "xs",
 		fontWeight: "regular",
 		fontFamily: "body"
 	})};
@@ -61,7 +63,7 @@ const AllItemsSpan = styled.span`
 `
 const AddButton = styled.span`
 	${fontStyleMaker({
-		fontSize: "sm",
+		fontSize: "xs",
 		fontWeight: "medium",
 		fontFamily: "head"
 	})};
@@ -95,6 +97,10 @@ const Title = styled.span`
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
 `
 
 const Subtitle = styled.span`
@@ -108,6 +114,11 @@ const Subtitle = styled.span`
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
 `
 
 const ListModal = props => {
@@ -133,7 +144,7 @@ const ListModal = props => {
 						{props.itemsList.map((item, index) => (
 							<>
 								<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
-									<TitlesContainer style={{padding: 0}}>
+									<TitlesContainer style={{padding: 0, width:'0%'}}>
 										<Title selected={item.id === props.activeItem}>{item.title}</Title>
 										<Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>
 									</TitlesContainer>
