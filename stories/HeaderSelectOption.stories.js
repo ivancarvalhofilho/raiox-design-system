@@ -11,7 +11,7 @@ const Template = args => {
   const [opened, setOpened] = useState(args.opened)
 
   return (<div style={{background: Tokens.colors.brand.secondary.dark, width: '300px', padding: Tokens.spacing.inset.nano}}>
-    <HeaderSelectOption {...args} opened={opened} setOpened={() => setOpened(!opened)}/>
+    <HeaderSelectOption {...args} opened={opened} setOpened={() => setOpened(!opened)} style={{background: 'black'}}/>
   </div>)
 }
 
