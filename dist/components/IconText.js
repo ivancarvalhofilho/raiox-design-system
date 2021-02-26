@@ -31,7 +31,7 @@ const IconText = props => {
 	const iconSize = props.iconSize || 'lg'
 	return (
 		<IconTextStyle disabled={props.disabled} onClick={props.onClick}>
-			<Icon path={props.icon} size={iconSize} appearance={color}/>
+			<Icon path={props.icon} size={iconSize} appearance={color} ref={props.ref}/>
 			<IconSpan color={getIconSvgColor(color)}> {props.label}</IconSpan>
 		</IconTextStyle>
 	)
@@ -45,4 +45,5 @@ IconText.propTypes = {
 	label: PropTypes.string,
 	appearance: PropTypes.string,
 	onClick: PropTypes.func,
+	ref: PropTypes.any,
 }

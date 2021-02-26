@@ -44,7 +44,7 @@ const TitleContainer = styled.div`
 	align-items: center;
 	display: flex;
 	justify-content: flex-start;
-	width: inherit;
+	max-width: inherit;
 `
 
 const ChevronIcon = styled(Icon)`
