@@ -19,6 +19,7 @@ export { default as Loading } from './components/Loading'
 export { default as HeaderSelectOption } from './components/HeaderSelectOption'
 export { default as ListModal } from './components/ListModal'
 export { default as IconText } from './components/IconText'
+export { default as Card } from './components/Card'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";
