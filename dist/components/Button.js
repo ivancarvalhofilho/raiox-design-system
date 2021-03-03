@@ -67,7 +67,7 @@ const LoadingBubbles = styled.div`
 	
 	& > span {
 		opacity: 0;
-		background: white;
+		background: ${props => props.secondary ? Tokens.colors.brand.primary.darkest : Tokens.colors.neutral.light.base};
 		width: 5px;
 		height: 5px;
 		margin-right: 2px;
@@ -113,7 +113,7 @@ const Button = props => {
 			as={buttonType}
 			className={props.className}>
 			<span>{props.text}</span>
-			{props.loading && (<LoadingBubbles><span/><span/><span/><span/></LoadingBubbles>)}
+			{props.loading && (<LoadingBubbles secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
 		</ButtonPrimary>
 	)
 }
