@@ -20,6 +20,7 @@ export { default as HeaderSelectOption } from './components/HeaderSelectOption'
 export { default as ListModal } from './components/ListModal'
 export { default as IconText } from './components/IconText'
 export { default as Card } from './components/Card'
+export { default as Button } from './components/Button'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";

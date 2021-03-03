@@ -43,8 +43,11 @@ const tokens = {
         squish: {
             quarck: '4px 8px',
             nano: '8px 16px',
+            xnano: '8px 24px',
             xs: '16px 24px',
             sm: '16px 32px',
+            md: '16px 40px',
+            lg: '16px 48px',
         },
         inline: {
             quarck: '4px',
