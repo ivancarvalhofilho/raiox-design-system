@@ -11,10 +11,10 @@ const SuspendedLabel = styled.div`
   padding: 4px;
   color: ${Tokens.colors.neutral.dark["01"]};
   ${fontStyleMaker({
-    fontFamily: "body",
-		fontWeight: "regular",
-		fontSize: "xs"
-	})};
+	fontFamily: "body",
+	fontWeight: "regular",
+	fontSize: "xs"
+})};
   background: inherit;
   transition: 0.25s;
   top: 0;
@@ -27,7 +27,7 @@ function makeLabelSuspended() {
 	return {
 		top: '-25px',
 		...fontStyleMaker({
-    fontFamily: "body",
+			fontFamily: "body",
 			fontWeight: "regular",
 			fontSize: "xxs"
 		})
@@ -44,21 +44,22 @@ const InputLabelStyled = styled.input`
   transition: 0.25s;
   color: ${Tokens.colors.neutral.dark.base};
   ${fontStyleMaker({
-    fontFamily: "body",
-		fontWeight: "regular",
-		fontSize: "xs"
-	})};
-		
+	fontFamily: "body",
+	fontWeight: "regular",
+	fontSize: "xs"
+})};
+  width: inherit;
+
 
   &:focus {
     outline: none;
 		box-shadow: 0 0 0 2px ${Tokens.colors.brand.primary.darkest};
   }
-  
+
   &:focus + div {
     ${makeLabelSuspended()};
   }
-  
+
 	${props => props.hasError && `
 		box-shadow: 0 0 0 2px ${Tokens.colors.feedback.danger.dark} !important;
 	`}
@@ -83,7 +84,7 @@ const SpanError = styled.span`
 	margin-top: ${Tokens.spacing.inline.nano};
 `
 const InputLabel = props => (
-	<InputLabelContainer disabled={props.disabled}>
+	<InputLabelContainer disabled={props.disabled} style={props.style} className={props.className}>
 		<InputLabelStyled type="text" value={props.text} hasError={props.error} onChange={(text) => {
 			props.setText(text.target.value)
 		}}/>

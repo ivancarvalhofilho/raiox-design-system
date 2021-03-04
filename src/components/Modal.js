@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 import { Tokens } from '../tokens'
+import {handleOutsideDivClick} from "../utils";
 
 const BackgroundContainer = styled.div`
   position: absolute;
@@ -23,6 +24,7 @@ const ModalHeader = styled.div`
 const Title = styled.div``
 const ModalContent = styled.div`
   padding: 20px;
+  height: 100%;
 `
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
@@ -41,7 +43,7 @@ const ModalContainer = styled.div`
 const Modal = props => {
   const [show, setShow] = useState(props.show)
   const [height, setHeight] = useState(0)
-  const ref = useRef()
+  const ref = handleOutsideDivClick(() => props.onClickOut())
 
   useEffect(() => {
     setHeight(ref.current.clientHeight)
@@ -53,7 +55,9 @@ const Modal = props => {
   return (
     <BackgroundContainer
       show={props.show ? props.show : show}
-      onClick={() => props.onClickOut()}
+      onClick={props.onClickOut}
+      style={props.style}
+      className={props.className}
     >
       <ModalContainer
         ref={ref}
