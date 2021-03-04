@@ -41,7 +41,7 @@ const UpperContainer = styled.div`
 `
 
 const CardSelector = props => (
-	<CardSelectorStyle disabled={props.disabled} selected={props.selected} onClick={()=> props.setSelected()}>
+	<CardSelectorStyle disabled={props.disabled} selected={props.selected} onClick={()=> props.setSelected()} style={props.style} className={props.className}>
 			<div>
 				<UpperContainer>
 					<Icon path={props.icon} size={'51px'}/>
@@ -68,4 +68,6 @@ CardSelector.propTypes = {
 	subtitle: PropTypes.string,
 	description: PropTypes.string,
 	icon: PropTypes.object,
+	style: PropTypes.any,
+	className: PropTypes.any,
 }

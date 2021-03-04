@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Card, {animationSpawnEnum} from "../src/components/Card";
+import Button from "../src/components/Button";
 
 export default {
   title: 'Components/Card',
@@ -7,8 +8,19 @@ export default {
 }
 
 const Template = args => {
-  debugger
-  return (<Card {...args} style={{width: '300px'}} > Conteúdo </Card>)
+  const footerElement = args.withFooter && (
+    <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+      <Button secondary text={'Botao'}/>
+      <Button primary text={'Botao'}/>
+    </div>
+  );
+
+  return (<Card {...args} style={{width: '400px'}} footerChildren={footerElement}>
+    Conteúdo<br/>
+    Conteúdo<br/>
+    Conteúdo<br/>
+    Conteúdo<br/>
+  </Card>)
 }
 
 export const Default = Template.bind({})
@@ -24,4 +36,5 @@ Default.argTypes = {
 }
 Default.args = {
   disabled: false,
+  withFooter: true,
 }

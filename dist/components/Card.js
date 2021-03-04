@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
+import {Divider} from "./StyledComponents";
 
 const CardStyle = styled.div`
 	display: flex;
@@ -10,7 +11,7 @@ const CardStyle = styled.div`
 	height: inherit;
 	width: inherit;
 	position: relative;
-	padding: ${Tokens.spacing.inset.xs};
+	flex-flow: column;
 	
 	background: ${Tokens.colors.neutral.light.base};
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
@@ -22,6 +23,15 @@ const CardStyle = styled.div`
   ${props => pickAnimation(props.animationSpawn)};
 `
 
+const CardContent = styled.div`
+	padding: ${Tokens.spacing.inset.xs};
+`
+const CardFooter = styled.div`
+	padding: 16px;
+`
+const CardFooterContainer = styled.div`
+	width: 100%;
+`
 const pickAnimation = (orientation) => {
 	let translate = ''
 	switch (orientation) {
@@ -61,7 +71,12 @@ export const animationSpawnEnum = [
 ]
 const Card = props => (
 	<CardStyle disabled={props.disabled} style={props.style} animationSpawn={props.animationSpawn}>
-		{	props.children }
+		<CardContent> {	props.children } </CardContent>
+		{!!props.footerChildren &&
+		<CardFooterContainer>
+			<Divider horizontal style={{width: '100%'}}/>
+			<CardFooter> {props.footerChildren} </CardFooter>
+		</CardFooterContainer>}
 	</CardStyle>
 )
 
@@ -71,4 +86,5 @@ Card.propTypes = {
 	animationSpawn: PropTypes.string,
 	children: PropTypes.any,
 	style: PropTypes.any,
+	footerChildren: PropTypes.any,
 }
