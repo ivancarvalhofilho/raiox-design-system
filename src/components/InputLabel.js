@@ -17,7 +17,7 @@ const SuspendedLabel = styled.div`
 	})};
   background: inherit;
   transition: 0.25s;
-  top: 16px;
+  top: 0;
   pointer-events: none;
   user-select: none;
   ${props => props.hasText && makeLabelSuspended()}
@@ -25,7 +25,7 @@ const SuspendedLabel = styled.div`
 
 function makeLabelSuspended() {
 	return {
-		top: '-9px',
+		top: '-25px',
 		...fontStyleMaker({
     fontFamily: "body",
 			fontWeight: "regular",
@@ -69,6 +69,7 @@ const InputLabelContainer = styled.div`
     opacity:${Tokens.opacity.level.medium};
     pointer-events: none;
   `};
+  position: relative;
 `
 const SpanError = styled.span`
 	position: relative;

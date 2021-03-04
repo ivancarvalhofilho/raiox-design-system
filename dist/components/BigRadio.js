@@ -20,6 +20,7 @@ const BigRadioStyle = styled.div`
 		${props => props.active && `border-color: ${Tokens.colors.brand.primary.darkest}`};
 		border-radius: ${Tokens.border.radius.circular};
 		transition: 0.15s;
+		box-sizing: border-box;
 	}
 	
 	&::before {
@@ -31,8 +32,8 @@ const BigRadioStyle = styled.div`
 		height: 0;
 		width: 0;
 		${props => props.active && `
-			height: ${props.size * 0.70}px;
-			width: ${props.size * 0.70}px;
+			height: ${props.size * 0.50}px;
+			width: ${props.size * 0.50}px;
 		`};
 	}
 	
@@ -41,7 +42,7 @@ const BigRadioStyle = styled.div`
 `
 
 const BigRadio = props => (
-	<BigRadioStyle disabled={props.disabled} active={props.active} onClick={()=> props.setActive()} size={props.size || '21'}>
+	<BigRadioStyle disabled={props.disabled} active={props.active} onClick={()=> props.setActive()} size={props.size || '20'}>
 		<span />
 	</BigRadioStyle>
 )

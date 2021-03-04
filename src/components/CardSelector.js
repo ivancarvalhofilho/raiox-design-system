@@ -49,7 +49,7 @@ const CardSelector = props => (
 						<Title>{props.title}</Title>
 						<Subtitle>{props.subtitle}</Subtitle>
 					</TitlesContainer>
-					<BigRadio active={props.selected} disabled={props.disabled} size={18}/>
+					<BigRadio active={props.selected} disabled={props.disabled} size={20}/>
 				</UpperContainer>
 				<DescriptionText>
 					{props.description}
