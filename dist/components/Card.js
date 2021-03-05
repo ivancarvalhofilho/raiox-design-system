@@ -70,7 +70,7 @@ export const animationSpawnEnum = [
 	'down',
 ]
 const Card = props => (
-	<CardStyle disabled={props.disabled} style={props.style} animationSpawn={props.animationSpawn}>
+	<CardStyle disabled={props.disabled} style={props.style} className={props.className} animationSpawn={props.animationSpawn}>
 		<CardContent> {	props.children } </CardContent>
 		{!!props.footerChildren &&
 		<CardFooterContainer>
