@@ -25,6 +25,7 @@ const CardStyle = styled.div`
 
 const CardContent = styled.div`
 	padding: ${Tokens.spacing.inset.xs};
+	width: 100%;
 `
 const CardFooter = styled.div`
 	padding: 16px;

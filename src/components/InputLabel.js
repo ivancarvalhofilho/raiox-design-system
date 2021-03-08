@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
-import { Tokens } from '../tokens'
-import { fontStyleMaker }from '../utils/FontUtil'
+import {Tokens} from '../tokens'
+import {fontStyleMaker} from '../utils/FontUtil'
 
 const SuspendedLabel = styled.div`
   position: absolute;
@@ -44,10 +44,10 @@ const InputLabelStyled = styled.input`
   transition: 0.25s;
   color: ${Tokens.colors.neutral.dark.base};
   ${fontStyleMaker({
-	fontFamily: "body",
-	fontWeight: "regular",
-	fontSize: "xs"
-})};
+		fontFamily: "body",
+		fontWeight: "regular",
+		fontSize: "xs"
+	})};
   width: inherit;
 
 
@@ -79,19 +79,28 @@ const SpanError = styled.span`
 	${fontStyleMaker({
 		fontWeight: "regular",
 		fontFamily: "body",
-		fontSize:"xs"
+		fontSize: "xs"
 	})};
 	margin-top: ${Tokens.spacing.inline.nano};
 `
-const InputLabel = props => (
-	<InputLabelContainer disabled={props.disabled} style={props.style} className={props.className}>
-		<InputLabelStyled type="text" value={props.text} hasError={props.error} onChange={(text) => {
-			props.setText(text.target.value)
-		}}/>
-		<SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
-		{props.error && (<SpanError>{props.errorLabel}</SpanError>)}
-	</InputLabelContainer>
-)
+const InputLabel = props => {
+	return (
+		<InputLabelContainer disabled={props.disabled} style={props.style} className={props.className}>
+			<InputLabelStyled type="text" value={props.text} hasError={props.error}
+				onChange={(text) => {
+					props.setText(text.target.value)
+				}}
+				onKeyDown={(event) => {
+					if (!!props.submitOnEnter && event.key === 'Enter') {
+						props.submitOnEnter()
+					}
+				}}
+			/>
+			<SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
+			{props.error && (<SpanError>{props.errorLabel}</SpanError>)}
+		</InputLabelContainer>
+	)
+}
 
 export default InputLabel
 
@@ -99,6 +108,7 @@ InputLabel.propTypes = {
 	state: PropTypes.string,
 	text: PropTypes.string,
 	setText: PropTypes.func,
+	submitOnEnter: PropTypes.func,
 	disabled: PropTypes.bool,
 	error: PropTypes.bool,
 	errorLabel: PropTypes.string,
