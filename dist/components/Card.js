@@ -52,7 +52,6 @@ const pickAnimation = (orientation) => {
 			translate = 'translateY('
 			break;
 	}
-	debugger
 	return `
 	@keyframes cardSpawnAnimation${orientation} {
     from {

@@ -29,7 +29,7 @@ const InfoLabelStyle = styled.div`
 `
 
 const InfoLabel = props => (
-	<InfoLabelStyle disabled={props.disabled} onClick={()=> props.onClick()}>
+	<InfoLabelStyle disabled={props.disabled} onClick={()=> props.onClick()} style={props.style}>
 		<Icon path={Tokens.icons.question} appearance={'info'} size={14} style={{marginRight: Tokens.spacing.stack.nano}}/>
 		<span style={{ flex: 1, position:"relative", top:'1px' }}> {props.text} </span>
 		<Icon path={Tokens.icons["chevron-right"]} appearance={'info'} size={8} style={{marginLeft: Tokens.spacing.stack.nano}}/>
