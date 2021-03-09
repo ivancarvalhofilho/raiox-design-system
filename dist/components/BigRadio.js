@@ -53,5 +53,5 @@ BigRadio.propTypes = {
 	active: PropTypes.bool,
 	setActive: PropTypes.func,
 	disabled: PropTypes.bool,
-	size: PropTypes.string,
+	size: PropTypes.any,
 }

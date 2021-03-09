@@ -26,6 +26,7 @@ const CardStyle = styled.div`
 const CardContent = styled.div`
 	padding: ${Tokens.spacing.inset.xs};
 	width: 100%;
+	box-sizing: border-box;
 `
 const CardFooter = styled.div`
 	padding: 16px;
@@ -34,6 +35,8 @@ const CardFooterContainer = styled.div`
 	width: 100%;
 `
 const pickAnimation = (orientation) => {
+	if(!orientation) return ''
+
 	let translate = ''
 	switch (orientation) {
 		case 'left':
@@ -49,7 +52,7 @@ const pickAnimation = (orientation) => {
 			translate = 'translateY('
 			break;
 	}
-
+	debugger
 	return `
 	@keyframes cardSpawnAnimation${orientation} {
     from {
@@ -61,7 +64,7 @@ const pickAnimation = (orientation) => {
       transform: ${translate}0px);
     }
   };
-  animation: cardSpawnAnimation${orientation} 0.5s;
+  animation: cardSpawnAnimation${orientation} 0.5s;'
   `
 }
 export const animationSpawnEnum = [
@@ -87,5 +90,6 @@ Card.propTypes = {
 	animationSpawn: PropTypes.string,
 	children: PropTypes.any,
 	style: PropTypes.any,
+	className: PropTypes.any,
 	footerChildren: PropTypes.any,
 }

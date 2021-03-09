@@ -67,7 +67,7 @@ CardSelector.propTypes = {
 	title: PropTypes.string,
 	subtitle: PropTypes.string,
 	description: PropTypes.string,
-	icon: PropTypes.object,
+	icon: PropTypes.any,
 	style: PropTypes.any,
 	className: PropTypes.any,
 }
