@@ -106,14 +106,17 @@ const InputLabel = (props) => {
         onChange={(text) => {
           props.setText(text.target.value)
         }}
-        onKeyDown={(event) => {
-          if (!!props.submitOnEnter && event.key === 'Enter') {
-            props.submitOnEnter()
-          }
-        }}
-      />
-      <SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
-      {props.error && <SpanError>{props.errorLabel}</SpanError>}
+        autoFocus={props.autofocus}
+				name={props.label}
+				id={props.label}
+				onKeyDown={(event) => {
+					if (!!props.submitOnEnter && event.key === 'Enter') {
+						props.submitOnEnter()
+					}
+				}}
+			/>
+			<SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
+			{props.error && <SpanError>{props.errorLabel}</SpanError>}
     </InputLabelContainer>
   )
 }
@@ -130,4 +133,5 @@ InputLabel.propTypes = {
   error: PropTypes.bool,
   errorLabel: PropTypes.string,
   inputType: PropTypes.string,
+	autofocus: PropTypes.bool,
 }
