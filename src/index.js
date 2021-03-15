@@ -22,6 +22,7 @@ export { default as IconText } from './components/IconText'
 export { default as Card } from './components/Card'
 export { default as CardSelector } from './components/CardSelector'
 export { default as Button } from './components/Button'
+export  InfoLabel  from './components/InfoLabel'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";
