@@ -16,7 +16,7 @@ const ListModalStyle = styled.div`
 	flex-flow: column;
 	box-shadow: 0 0 8px rgba(0, 39, 64, 0.1);
 	user-select: none;
-	
+
 	& > div:first-child {
 		border-top-left-radius: ${Tokens.border.radius.sm};
 		border-top-right-radius: ${Tokens.border.radius.sm};
@@ -25,7 +25,7 @@ const ListModalStyle = styled.div`
 		border-bottom-left-radius: ${Tokens.border.radius.sm};
 		border-bottom-right-radius: ${Tokens.border.radius.sm};
 	}
-	
+
 	transition: 0.25s;
   filter: opacity(${props => (props.opened ? 1 : 0)});
   clip-path: inset(-20% -20% ${props => (props.opened ? '-20' : '120')}% -20%);
@@ -52,10 +52,10 @@ const Row = styled.div`
 `
 const AllItemsSpan = styled.span`
 	${fontStyleMaker({
-		fontSize: "xs",
-		fontWeight: "regular",
-		fontFamily: "body"
-	})};
+	fontSize: "xs",
+	fontWeight: "regular",
+	fontFamily: "body"
+})};
 	color: ${Tokens.colors.neutral.dark.base};
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
@@ -63,13 +63,13 @@ const AllItemsSpan = styled.span`
 `
 const AddButton = styled.span`
 	${fontStyleMaker({
-		fontSize: "xs",
-		fontWeight: "medium",
-		fontFamily: "head"
-	})};
+	fontSize: "xs",
+	fontWeight: "medium",
+	fontFamily: "head"
+})};
 	background: transparent;
 	color: ${Tokens.colors.brand.primary.darkest};
-	
+
 `
 const AllItemsRow = styled(Row)`
 	justify-content: space-between;
@@ -88,12 +88,11 @@ const RadialWhiteBackgroundIcon = styled(Icon)`
 
 const Title = styled.span`
 	${fontStyleMaker({
-		fontFamily: "body",
-		fontWeight: "regular",
-		fontSize:"xs"
-	})};
+	fontFamily: "body",
+	fontWeight: "regular",
+	fontSize:"xs"
+})};
 	color: ${Tokens.colors.neutral.dark.base};
-	padding-bottom: ${Tokens.spacing.inline.quarck};
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
@@ -105,16 +104,16 @@ const Title = styled.span`
 
 const Subtitle = styled.span`
 	${fontStyleMaker({
-		fontFamily: "body",
-		fontWeight: "regular",
-		fontSize:"xxs"
-	})};
+	fontFamily: "body",
+	fontWeight: "regular",
+	fontSize:"xxs"
+})};
 	color: ${Tokens.colors.neutral.dark['01']};
-	padding-bottom: ${Tokens.spacing.inline.quarck};
+  padding-top: ${Tokens.spacing.inline.quarck};
 	${props => props.selected && `
 		color: ${Tokens.colors.brand.primary.darkest};
 	`};
-	
+
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -146,7 +145,7 @@ const ListModal = props => {
 								<Row selected={item.id === props.activeItem} onClick={() => props.setActiveItem(item.id)}>
 									<TitlesContainer style={{padding: 0, width:'0%'}}>
 										<Title selected={item.id === props.activeItem}>{item.title}</Title>
-										<Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>
+										{item.subtitle && <Subtitle selected={item.id === props.activeItem}>{item.subtitle}</Subtitle>}
 									</TitlesContainer>
 									{item.id === props.activeItem && activeItemIcon}
 								</Row>
