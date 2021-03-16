@@ -80,8 +80,7 @@ const Modal = props => {
   )
 }
 
-export default Modal
-
+export { Modal }
 Modal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,

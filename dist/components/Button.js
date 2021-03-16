@@ -118,8 +118,7 @@ const Button = props => {
 	)
 }
 
-export default Button
-
+export { Button }
 Button.propTypes = {
 	disabled: PropTypes.bool,
 	primary: PropTypes.bool,

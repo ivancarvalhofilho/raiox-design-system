@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { List, Icon, TextRow } from '../src'
+import {Icon, List, TextRow} from '../src'
 import {Tokens} from "../src/tokens";
 
 export default {

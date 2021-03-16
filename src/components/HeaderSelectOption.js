@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
 import {fontStyleMaker} from "../utils/FontUtil";
-import Icon from "./Icon";
+import {Icon} from "./Icon";
 
 const HeaderSelectOptionStyle = styled.div`
 	display: flex;
@@ -64,8 +64,7 @@ const HeaderSelectOption = props => (
 	</HeaderSelectOptionStyle>
 )
 
-export default HeaderSelectOption
-
+export { HeaderSelectOption }
 HeaderSelectOption.propTypes = {
 	opened: PropTypes.bool,
 	setActive: PropTypes.func,

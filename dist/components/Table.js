@@ -589,4 +589,4 @@ Table.propTypes = {
   total: PropTypes.number,
 }
 
-export default Table
+export { Table }

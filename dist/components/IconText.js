@@ -37,8 +37,7 @@ const IconText = props => {
 	)
 }
 
-export default IconText
-
+export { IconText }
 IconText.propTypes = {
 	disabled: PropTypes.bool,
 	icon: PropTypes.any,

@@ -36,8 +36,7 @@ const InfoLabel = props => (
 	</InfoLabelStyle>
 )
 
-export default InfoLabel
-
+export { InfoLabel }
 InfoLabel.propTypes = {
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,

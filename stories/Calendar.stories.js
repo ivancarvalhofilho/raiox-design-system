@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Calendar from '../src/components/Calendar/Calendar'
-import { useState } from '@storybook/addons'
+import {Calendar} from '../src'
+import {useState} from '@storybook/addons'
 import CalendarConst from '../src/components/Calendar/const'
 
 export default {

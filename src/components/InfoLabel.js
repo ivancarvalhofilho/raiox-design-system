@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
-import Icon from "./Icon";
+import {Icon} from "./Icon";
 import {fontStyleMaker} from "../utils/FontUtil";
 
 const InfoLabelStyle = styled.div`
@@ -36,8 +36,7 @@ const InfoLabel = props => (
 	</InfoLabelStyle>
 )
 
-export default InfoLabel
-
+export { InfoLabel }
 InfoLabel.propTypes = {
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,

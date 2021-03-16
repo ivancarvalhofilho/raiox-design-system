@@ -64,8 +64,7 @@ const HeaderSelectOption = props => (
 	</HeaderSelectOptionStyle>
 )
 
-export default HeaderSelectOption
-
+export { HeaderSelectOption }
 HeaderSelectOption.propTypes = {
 	opened: PropTypes.bool,
 	setActive: PropTypes.func,

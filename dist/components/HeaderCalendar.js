@@ -118,8 +118,7 @@ const HeaderCalendar = props => (
   </Container>
 )
 
-export default HeaderCalendar
-
+export { HeaderCalendar }
 HeaderCalendar.propTypes = {
   month: PropTypes.number,
   values: PropTypes.array,

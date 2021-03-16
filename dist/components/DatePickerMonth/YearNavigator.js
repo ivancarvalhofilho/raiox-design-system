@@ -87,4 +87,4 @@ YearNavigator.propTypes = {
   disableLeft: PropTypes.bool,
 }
 
-export default YearNavigator
+export { YearNavigator }

@@ -45,8 +45,7 @@ const List = props => (
   </ListContainer>
 )
 
-export default List
-
+export { List }
 List.propTypes = {
   align: PropTypes.array,
   header: PropTypes.array,

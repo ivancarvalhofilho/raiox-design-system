@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CollapseContainer from '../src/components/CollapseContainer'
+import {CollapseContainer} from '../src'
 
 export default {
   title: 'Components/CollapseContainer',

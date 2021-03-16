@@ -77,4 +77,4 @@ DatePickerMonth.propTypes = {
   showAllYears: PropTypes.bool,
 }
 
-export default DatePickerMonth
+export { DatePickerMonth }

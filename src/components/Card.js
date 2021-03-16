@@ -83,7 +83,7 @@ const Card = props => (
 	</CardStyle>
 )
 
-export default Card
+export {Card}
 
 Card.propTypes = {
 	animationSpawn: PropTypes.string,

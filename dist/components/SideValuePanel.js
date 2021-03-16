@@ -129,8 +129,7 @@ const SideValuePanel = props => (
   </Container>
 )
 
-export default SideValuePanel
-
+export { SideValuePanel }
 SideValuePanel.propTypes = {
   showTooltip: PropTypes.bool,
   checkValue: PropTypes.array,

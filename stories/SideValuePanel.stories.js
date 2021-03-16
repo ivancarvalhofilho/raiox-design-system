@@ -1,6 +1,6 @@
 import React from 'react'
-import SideValuePanel from '../src/components/SideValuePanel'
-import { Tokens } from '../src/tokens'
+import {SideValuePanel} from '../src'
+import {Tokens} from '../src/tokens'
 
 export default {
   title: 'Components/SideValuePanel',

@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import InfoLabel from "../src/components/InfoLabel";
+import React from 'react'
+import {InfoLabel} from "../src";
 
 export default {
   title: 'Components/InfoLabel',

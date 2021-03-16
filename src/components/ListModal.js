@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import Icon from "./Icon";
+import {Icon} from "./Icon";
 import {Divider, TitlesContainer} from "./StyledComponents";
 import {Tokens} from "../tokens";
 import {fontStyleMaker} from "../utils";
@@ -171,8 +171,7 @@ const ListModal = props => {
 	)
 }
 
-export default ListModal
-
+export { ListModal }
 ListModal.propTypes = {
 	opened: PropTypes.bool,
 	onclick: PropTypes.func,

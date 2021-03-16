@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import ListHeader from './ListHeader'
+import {ListHeader} from './ListHeader'
 
 import styled from 'styled-components'
 
@@ -45,8 +45,7 @@ const List = props => (
   </ListContainer>
 )
 
-export default List
-
+export { List }
 List.propTypes = {
   align: PropTypes.array,
   header: PropTypes.array,

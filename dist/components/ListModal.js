@@ -171,8 +171,7 @@ const ListModal = props => {
 	)
 }
 
-export default ListModal
-
+export { ListModal }
 ListModal.propTypes = {
 	opened: PropTypes.bool,
 	onclick: PropTypes.func,

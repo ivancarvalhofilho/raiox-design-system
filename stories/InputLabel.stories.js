@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
-import InputLabel from '../src/components/InputLabel'
-import {useAddonState} from "@storybook/client-api";
+import {InputLabel} from '../src'
 
 export default {
   title: 'Components/InputLabel',

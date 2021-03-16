@@ -69,8 +69,7 @@ const CollapseContainer = props => {
   )
 }
 
-export default CollapseContainer
-
+export { CollapseContainer }
 CollapseContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,

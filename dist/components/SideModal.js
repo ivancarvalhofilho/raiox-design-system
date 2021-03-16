@@ -89,8 +89,7 @@ const SideModal = props => {
   )
 }
 
-export default SideModal
-
+export { SideModal }
 SideModal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,

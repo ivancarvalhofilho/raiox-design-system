@@ -429,8 +429,7 @@ const Datepicker = props => {
   )
 }
 
-export default Datepicker
-
+export { Datepicker }
 Datepicker.propTypes = {
   alignContainer: PropTypes.string,
   dates: PropTypes.array,

@@ -58,8 +58,7 @@ const CardSelector = props => (
 	</CardSelectorStyle>
 )
 
-export default CardSelector
-
+export { CardSelector }
 CardSelector.propTypes = {
 	selected: PropTypes.bool,
 	setSelected: PropTypes.func,

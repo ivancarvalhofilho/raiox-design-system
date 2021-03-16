@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import Card, {animationSpawnEnum} from "../src/components/Card";
-import Button from "../src/components/Button";
+import React from 'react'
+import {animationSpawnEnum } from "../src/components/Card";
+import {Button, Card} from "../src";
 
 export default {
   title: 'Components/Card',

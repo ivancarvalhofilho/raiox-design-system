@@ -43,8 +43,7 @@ const Tabs = props => (
   </Container>
 )
 
-export default Tabs
-
+export { Tabs }
 Tabs.propTypes = {
   disabled: PropTypes.bool,
   onTabClick: PropTypes.func,

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Datepicker from '../src/components/Datepicker'
+import React, {useState} from 'react'
+import {Datepicker} from '../src'
 import dayjs from 'dayjs'
 
 export default {

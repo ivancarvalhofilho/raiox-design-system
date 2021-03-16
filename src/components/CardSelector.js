@@ -3,8 +3,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
 import { fontStyleMaker }from '../utils/FontUtil'
-import Icon from "./Icon";
-import BigRadio from "./BigRadio";
+import {Icon} from "./Icon";
+import {BigRadio} from "./BigRadio";
 import {Subtitle, Title, TitlesContainer} from "./StyledComponents";
 
 const CardSelectorStyle = styled.div`
@@ -58,8 +58,7 @@ const CardSelector = props => (
 	</CardSelectorStyle>
 )
 
-export default CardSelector
-
+export { CardSelector }
 CardSelector.propTypes = {
 	selected: PropTypes.bool,
 	setSelected: PropTypes.func,

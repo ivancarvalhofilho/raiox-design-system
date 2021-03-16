@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
-import CardSelector from "../src/components/CardSelector";
-import Icon from "../src/components/Icon";
+import {CardSelector} from "../src";
 import {Tokens} from "../src/tokens";
 
 export default {

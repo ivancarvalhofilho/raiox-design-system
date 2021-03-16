@@ -121,8 +121,7 @@ const InputLabel = (props) => {
   )
 }
 
-export default InputLabel
-
+export { InputLabel }
 InputLabel.propTypes = {
   state: PropTypes.string,
   text: PropTypes.string,

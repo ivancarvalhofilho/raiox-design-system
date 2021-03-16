@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import Icon from './Icon'
+import {Icon} from './Icon'
 import styled from 'styled-components'
 import { UnmountClosed } from 'react-collapse'
 import {
@@ -69,8 +69,7 @@ const CollapseContainer = props => {
   )
 }
 
-export default CollapseContainer
-
+export { CollapseContainer }
 CollapseContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
