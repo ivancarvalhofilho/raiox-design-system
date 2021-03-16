@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
 import {fontStyleMaker} from "../utils/FontUtil";
-import Icon from "./Icon";
+import {Icon} from "./Icon";
 
 const HeaderSelectOptionStyle = styled.div`
 	display: flex;

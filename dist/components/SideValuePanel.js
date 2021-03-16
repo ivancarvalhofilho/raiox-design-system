@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { fontStyleMaker }from '../utils/FontUtil.tsx'
 import { Divider, FlexCenter, TextRow } from './StyledComponents'
-import Icon from './Icon'
+import {Icon} from './Icon'
 import { Tokens } from "../tokens";
 
 const Title = styled.div`

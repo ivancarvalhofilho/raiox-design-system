@@ -74,4 +74,4 @@ const LoadingIndicator = () => (
 	</Wrapper>
 )
 
-export { Loading }
+export { LoadingIndicator as Loading }
