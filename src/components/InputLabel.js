@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { useRef } from 'react'
+import React, {useRef, useState} from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
 import { fontStyleMaker } from '../utils/FontUtil'
+import {Icon} from "./Icon";
 
 const SuspendedLabel = styled.div`
   position: absolute;
@@ -44,12 +45,11 @@ const InputLabelStyled = styled.input`
   transition: 0.25s;
   color: ${Tokens.colors.neutral.dark.base};
   ${fontStyleMaker({
-  fontFamily: 'body',
-  fontWeight: 'regular',
-  fontSize: 'xs',
-})};
+    fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 'xs',
+  })};
   width: inherit;
-
   &:focus {
     outline: none;
     box-shadow: inset 0 0 0 2px ${Tokens.colors.brand.primary.darkest};
@@ -58,7 +58,9 @@ const InputLabelStyled = styled.input`
   &:focus + div {
     ${makeLabelSuspended()};
   }
-
+  ${props => props.isPasswordType && `
+    padding-right: 100px;
+  `}
   ${(props) =>
   props.hasError &&
   `
@@ -85,14 +87,44 @@ const SpanError = styled.span`
   display: flex;
   color: ${Tokens.colors.feedback.danger.dark};
   ${fontStyleMaker({
-  fontWeight: 'regular',
-  fontFamily: 'body',
-  fontSize: 'xs',
-})};
+    fontWeight: 'regular',
+    fontFamily: 'body',
+    fontSize: 'xs',
+  })};
   margin-top: ${Tokens.spacing.inline.nano};
 `
+const PasswordEyeContainer = styled.div`
+  display: flex;
+  top: 0;
+  right: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  & > span {
+    ${fontStyleMaker({
+      fontFamily: "body",
+      fontSize:"xxs",
+      fontWeight:"regular"
+    })};
+    margin-left: ${Tokens.spacing.stack.nano};
+    color: ${Tokens.colors.neutral.dark["01"]};
+  }
+  height: 48px;
+  margin-right: ${Tokens.spacing.stack.xxxs};
+  
+  cursor: pointer;
+  user-select: none;
+`
 const InputLabel = (props) => {
-  const inputType = props.inputType || 'text'
+  const [visiblePassword, setVisiblePassword] = useState(false)
+
+  let inputType = props.inputType || 'text'
+
+  if(inputType === 'password'){
+    inputType = visiblePassword ? 'text' : 'password'
+  }
+
+  const isPasswordType = props.inputType === 'password';
   return (
     <InputLabelContainer
       disabled={props.disabled}
@@ -115,9 +147,14 @@ const InputLabel = (props) => {
             props.submitOnEnter()
           }
         }}
+        isPasswordType={isPasswordType}
       />
       <SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
       {props.error && <SpanError>{props.errorLabel}</SpanError>}
+      {isPasswordType && <PasswordEyeContainer onClick={() => setVisiblePassword(!visiblePassword)}>
+        <Icon path={visiblePassword ? Tokens.icons["eye-closed"] : Tokens.icons.eye} appearance={props.error ? 'danger': 'primary'} size={20}/>
+        <span>{visiblePassword ? 'Esconder' : 'Mostrar'}</span>
+      </PasswordEyeContainer>}
     </InputLabelContainer>
   )
 }

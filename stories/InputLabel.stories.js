@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 
 import {InputLabel} from '../src'
+import {Tokens} from "../src/tokens";
+import {appearencesList} from "../src/components/Icon";
 
 export default {
   title: 'Components/InputLabel',
@@ -10,10 +12,21 @@ export default {
 const Template = args => {
   const [text, setText] = useState('')
 
-  return (<InputLabel {...args} text={text} setText={setText}/>)
+  return (<div style={{width: 300}}><InputLabel {...args} text={text} setText={setText}/></div>)
 }
 
 export const Default = Template.bind({})
+Default.argTypes = {
+  inputType: {
+    control: {
+      type: 'select',
+      options: [
+        'text',
+        'password'
+      ],
+    },
+  },
+}
 Default.args = {
   label: 'Label do Input',
   error: false,

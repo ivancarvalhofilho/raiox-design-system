@@ -73,5 +73,6 @@ const TextAsButton = styled.div`
 	})};
 	color: ${Tokens.colors.brand.primary.darkest};
 	cursor: pointer;
+	line-height: 21px;
 `
 export  { TextRow, Divider, Container, FlexCenter, Title, Subtitle, TitlesContainer, TextAsButton }
