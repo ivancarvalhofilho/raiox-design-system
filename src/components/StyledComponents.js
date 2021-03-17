@@ -64,4 +64,14 @@ const TitlesContainer = styled.div`
 	height: 100%;
 	justify-content: space-evenly;
 `
-export  { TextRow, Divider, Container, FlexCenter, Title, Subtitle, TitlesContainer }
+const TextAsButton = styled.div`
+	display: flex;
+	${fontStyleMaker({
+		fontWeight:"medium",
+		fontSize:"sm",
+		fontFamily:"head"
+	})};
+	color: ${Tokens.colors.brand.primary.darkest};
+	cursor: pointer;
+`
+export  { TextRow, Divider, Container, FlexCenter, Title, Subtitle, TitlesContainer, TextAsButton }
