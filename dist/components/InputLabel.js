@@ -25,7 +25,7 @@ const SuspendedLabel = styled.div`
 
 function makeLabelSuspended() {
   return {
-    top: '-24px',
+    top: '-22px',
     ...fontStyleMaker({
       fontFamily: 'body',
       fontWeight: 'regular',
