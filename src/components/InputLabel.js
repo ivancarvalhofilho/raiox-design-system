@@ -92,6 +92,7 @@ const SpanError = styled.span`
 	fontSize: 'xs',
 })};
   margin-top: ${Tokens.spacing.inline.nano};
+	text-align: start;
 `
 const PasswordEyeContainer = styled.div`
   display: flex;
