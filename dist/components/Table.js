@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Tokens } from '../tokens'
-import Icon from './Icon'
+import {Icon} from './Icon'
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -589,4 +589,4 @@ Table.propTypes = {
   total: PropTypes.number,
 }
 
-export default Table
+export { Table }

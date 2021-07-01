@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Tokens } from '../src/tokens'
+import {Tokens} from '../src/tokens'
 
 export default {
   title: 'Tokens/Colors',

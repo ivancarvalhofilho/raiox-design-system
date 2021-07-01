@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SideModal from '../src/components/SideModal'
+import {SideModal} from '../src'
 
 export default {
   title: 'Components/SideModal',

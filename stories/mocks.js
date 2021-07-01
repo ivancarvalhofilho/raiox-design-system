@@ -1,4 +1,4 @@
-import Table from '../src/components/Table'
+import {Table} from '../src/components/Table'
 import React from 'react'
 
 export const tableMock = {

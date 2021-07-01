@@ -87,4 +87,4 @@ MonthList.propTypes = {
   showAllMonthsActive: PropTypes.bool,
 }
 
-export default MonthList
+export { MonthList }

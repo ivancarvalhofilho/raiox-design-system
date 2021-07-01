@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Icon, {appearencesList} from '../src/components/Icon'
+import {appearencesList, Icon} from '../src/components/Icon'
 import styled from 'styled-components'
-import { Tokens } from '../src/tokens'
+import {Tokens} from '../src/tokens'
 
 export default {
   title: 'Icons & Illustrations/Icons',

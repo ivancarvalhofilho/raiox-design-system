@@ -30,8 +30,7 @@ const ListHeader = props => (
   </HeaderContainer>
 )
 
-export default ListHeader
-
+export { ListHeader }
 ListHeader.propTypes = {
   align: PropTypes.array,
   data: PropTypes.array,

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import DatePickerMonth from '../src/components/DatePickerMonth/DatePickerMonth'
-import { useState } from '@storybook/addons'
+import {DatePickerMonth} from '../src'
+import {useState} from '@storybook/addons'
 import dayjs from 'dayjs'
 
 export default {

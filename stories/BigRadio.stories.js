@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import BigRadio from "../src/components/BigRadio";
+import {BigRadio} from "../src/components/BigRadio";
 
 export default {
   title: 'Components/BigRadio',

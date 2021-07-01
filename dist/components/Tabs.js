@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Tab from './Tab'
+import {Tab} from './Tab'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
 
@@ -43,8 +43,7 @@ const Tabs = props => (
   </Container>
 )
 
-export default Tabs
-
+export { Tabs }
 Tabs.propTypes = {
   disabled: PropTypes.bool,
   onTabClick: PropTypes.func,

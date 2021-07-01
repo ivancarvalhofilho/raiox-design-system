@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import Icon from './Icon'
+import {Icon} from './Icon'
 import dayjs from 'dayjs'
 import { fontStyleMaker }from '../utils/FontUtil'
 import { Tokens } from '../tokens'
@@ -118,8 +118,7 @@ const HeaderCalendar = props => (
   </Container>
 )
 
-export default HeaderCalendar
-
+export { HeaderCalendar }
 HeaderCalendar.propTypes = {
   month: PropTypes.number,
   values: PropTypes.array,

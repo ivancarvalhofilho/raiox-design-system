@@ -29,8 +29,7 @@ const Tab = props => (
   </TabContainer>
 )
 
-export default Tab
-
+export { Tab }
 Tab.propTypes = {
   active: PropTypes.bool,
   label: PropTypes.string,

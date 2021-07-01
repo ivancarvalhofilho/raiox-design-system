@@ -252,8 +252,7 @@ const Calendar = props => {
   )
 }
 
-export default Calendar
-
+export { Calendar }
 Calendar.propTypes = {
   selectedDates: PropTypes.object,
   setSelectedDates: PropTypes.func,

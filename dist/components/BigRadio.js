@@ -47,7 +47,7 @@ const BigRadio = props => (
 	</BigRadioStyle>
 )
 
-export default BigRadio
+export {BigRadio}
 
 BigRadio.propTypes = {
 	active: PropTypes.bool,

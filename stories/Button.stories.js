@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import Button, {buttonSizes} from "../src/components/Button";
+import React from 'react'
+import {Button, buttonSizes} from "../src/components/Button";
 
 export default {
   title: 'Components/Button',

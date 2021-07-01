@@ -1,7 +1,7 @@
 import React from 'react'
-import Table from '../src/components/Table'
-import { useState } from '@storybook/addons'
-import { tableMock } from './mocks'
+import {Table} from '../src'
+import {useState} from '@storybook/addons'
+import {tableMock} from './mocks'
 
 export default {
   title: 'Components/Table',

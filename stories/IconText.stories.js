@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import IconText from "../src/components/IconText";
+import {IconText} from "../src";
 import {Tokens} from "../src/tokens";
 import {appearencesList} from "../src/components/Icon";
 

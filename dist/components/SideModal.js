@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import Icon from './Icon'
+import {Icon} from './Icon'
 import { Tokens } from '../tokens'
 import {fontStyleMaker} from '../utils/FontUtil'
 
@@ -89,8 +89,7 @@ const SideModal = props => {
   )
 }
 
-export default SideModal
-
+export { SideModal }
 SideModal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,

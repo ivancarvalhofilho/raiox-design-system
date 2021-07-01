@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import YearNavigator from './YearNavigator'
-import MonthList from './MonthList'
+import {YearNavigator} from './YearNavigator'
+import {MonthList} from './MonthList'
 import dayjs from 'dayjs'
 import { Tokens } from '../../tokens'
 import { Divider } from '../StyledComponents'
@@ -77,4 +77,4 @@ DatePickerMonth.propTypes = {
   showAllYears: PropTypes.bool,
 }
 
-export default DatePickerMonth
+export { DatePickerMonth }

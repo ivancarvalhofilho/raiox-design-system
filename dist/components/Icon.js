@@ -76,8 +76,7 @@ const Icon = props => {
     />
   )
 }
-export default Icon
-
+export { Icon }
 Icon.propTypes = {
   appearance: PropTypes.string,
   className: PropTypes.string,

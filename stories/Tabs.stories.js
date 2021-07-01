@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Tabs from '../src/components/Tabs'
-import { useState } from '@storybook/addons'
+import {Tabs} from '../src'
+import {useState} from '@storybook/addons'
 
 export default {
   title: 'Components/Tabs',

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import Icon from './Icon'
+import {Icon} from './Icon'
 import { Tokens } from '../tokens'
 import {handleOutsideDivClick} from "../utils";
 
@@ -80,8 +80,7 @@ const Modal = props => {
   )
 }
 
-export default Modal
-
+export { Modal }
 Modal.propTypes = {
   children: PropTypes.any,
   closable: PropTypes.bool,

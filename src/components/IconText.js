@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { Tokens } from '../tokens'
-import Icon, {getIconSvgColor} from "./Icon";
 import {fontStyleMaker} from "../utils/FontUtil";
+import {getIconSvgColor, Icon} from "./Icon";
 
 const IconTextStyle = styled.div`
 	display: flex;
@@ -37,8 +37,7 @@ const IconText = props => {
 	)
 }
 
-export default IconText
-
+export { IconText }
 IconText.propTypes = {
 	disabled: PropTypes.bool,
 	icon: PropTypes.any,

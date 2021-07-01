@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import ListHeader from "../src/components/ListHeader";
+import React from 'react'
+import {ListHeader} from "../src";
 
 export default {
   title: 'Components/List',

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import ListModal from "../src/components/ListModal";
+import {ListModal} from "../src";
 import {handleOutsideDivClick} from "../src/utils";
 
 export default {

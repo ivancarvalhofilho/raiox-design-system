@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Icon } from './index'
+import { Icon } from '../'
 import { Tokens } from '../tokens'
 import { Divider } from './StyledComponents'
 import dayjs from 'dayjs'
@@ -429,8 +429,7 @@ const Datepicker = props => {
   )
 }
 
-export default Datepicker
-
+export { Datepicker }
 Datepicker.propTypes = {
   alignContainer: PropTypes.string,
   dates: PropTypes.array,
