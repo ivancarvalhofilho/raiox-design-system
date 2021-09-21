@@ -126,6 +126,19 @@ const InputLabel = (props) => {
 	}
 
 	const isPasswordType = props.inputType === 'password';
+
+	function camelize(str) {
+		return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+			return index === 0 ? word.toLowerCase() : word.toUpperCase();
+		}).replace(/\s+/g, '');
+	}
+
+	function getTestID() {
+		return props.testID || (
+			camelize(props.label).replace(/\W/gm,'')
+		);
+	}
+
 	return (
 		<InputLabelContainer
 			disabled={props.disabled}
@@ -150,6 +163,7 @@ const InputLabel = (props) => {
 				}}
 				onBlur={props.onBlur}
 				isPasswordType={isPasswordType}
+				testID={getTestID()}
 			/>
 			<SuspendedLabel hasText={!!props.text}>{props.label}</SuspendedLabel>
 			{props.error && <SpanError>{props.errorLabel}</SpanError>}
@@ -175,4 +189,5 @@ InputLabel.propTypes = {
 	errorLabel: PropTypes.string,
 	inputType: PropTypes.string,
 	autofocus: PropTypes.bool,
+	testID: PropTypes.string,
 }
