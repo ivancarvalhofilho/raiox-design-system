@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Tokens} from '../tokens'
 import {fontStyleMaker} from "../utils/FontUtil";
+import {camelize} from "../utils/testUtil";
 
 const ButtonPrimary = styled.div`
 	display: flex;
@@ -110,6 +111,7 @@ const Button = props => {
 			onClick={props.onClick}
 			style={props.style}
 			loading={props.loading}
+			id={camelize(props.text)}
 			as={buttonType}
 			className={props.className}>
 			<span>{props.text}</span>
