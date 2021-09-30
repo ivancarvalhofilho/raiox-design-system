@@ -23,6 +23,7 @@ export { Card } from './components/Card'
 export { CardSelector } from './components/CardSelector'
 export { Button } from './components/Button'
 export { InfoLabel } from './components/InfoLabel'
+export { InputFilter } from './components/InputFilter'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";
