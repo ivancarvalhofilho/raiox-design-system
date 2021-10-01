@@ -40,6 +40,13 @@ const ButtonSecondary = styled(ButtonPrimary)`
 	background: ${Tokens.colors.neutral.light.base};
 	color: ${Tokens.colors.brand.primary.darkest};
 	border: ${Tokens.border.width.hairline} solid ${Tokens.colors.brand.primary.darkest};
+	transition: 0.25s;
+	
+	&:hover {
+		background: ${Tokens.colors.brand.primary.darkest};
+		color: ${Tokens.colors.neutral.light.base};
+		border: ${Tokens.border.width.hairline} solid ${Tokens.colors.brand.primary.darkest};
+	}
 `
 const ButtonDanger = styled(ButtonPrimary)`
 	background: ${Tokens.colors.feedback.danger.darkest};
