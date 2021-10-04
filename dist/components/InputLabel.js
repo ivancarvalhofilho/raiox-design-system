@@ -72,7 +72,7 @@ const InputLabelStyled = styled.input`
 		-webkit-background-clip: text;
 	}
 `
-const InputLabelContainer = styled.div`
+export const InputLabelContainer = styled.div`
 	background: ${Tokens.colors.neutral.light.base};
 	${(props) =>
 		props.disabled &&

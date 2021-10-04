@@ -1,20 +1,28 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, {useRef, useState} from 'react'
 import {Icon} from './Icon'
 import styled from 'styled-components'
-import { UnmountClosed } from 'react-collapse'
+import {UnmountClosed} from 'react-collapse'
 import {
-  Container as StyledContainer,
-  Divider as DividerStyled,
+    Container as StyledContainer,
+    Divider as DividerStyled,
 } from './StyledComponents'
-import { Tokens } from "../tokens";
-import { fontStyleMaker }from "../utils/FontUtil";
+import {Tokens} from "../tokens";
+import {fontStyleMaker, handleOutsideDivClick} from "../utils";
 
+const Container = styled(StyledContainer)`
+  box-shadow: ${Tokens.shadow.level0};
+  padding: 0;
+  background: white;
+  margin-top: ${Tokens.spacing.inline.xxxs};
+  margin-bottom: ${Tokens.spacing.inline.xxxs};
+`
 const Header = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: ${Tokens.spacing.inset.xs};
 `
 const Button = styled.div`
   display: flex;
@@ -22,55 +30,68 @@ const Button = styled.div`
 `
 
 const Divider = styled(DividerStyled)`
-  margin-top: ${Tokens.spacing.stack.xxxs};
-`
-
-const Container = styled(StyledContainer)`
-  box-shadow: ${Tokens.shadow.level0};
-  padding: ${Tokens.spacing.inset.xs};
-  background: white;
+  width: 90%;
+  margin: auto;
+  position: relative;
 `
 const Body = styled.div`
-  margin-top: ${Tokens.spacing.stack.xxxs};
   ${fontStyleMaker({
     fontFamily: "body",
     fontWeight: "regular",
     fontSize: "xs"
   })};
+  line-height: 21px;
   color: ${Tokens.colors.neutral.dark.base};
+  padding: ${Tokens.spacing.inset.xs};
 `
 const Title = styled.span`
   ${fontStyleMaker({
     fontFamily: "body",
     fontWeight: "regular",
-    fontSize: "xs"
+    fontSize: "xs",
   })};
+  line-height: 21px;
   color: ${Tokens.colors.brand.secondary.dark};
 `
 const CollapseContainer = props => {
-  const [opened, setOpened] = useState(false)
-  return (
-    <Container>
-      <Header id="header" onClick={() => setOpened(!opened)}>
-        <Title>{props.title}</Title>
-        <Button>
-          <Icon
-            path={Tokens.icons['chevron-down']}
-            size="16px"
-            rotate={opened ? 180 : 0}
-          />
-        </Button>
-      </Header>
-      <UnmountClosed isOpened={opened}>
-        <Divider horizontal />
-        <Body id="children">{props.children}</Body>
-      </UnmountClosed>
-    </Container>
-  )
+    const [opened, setOpened] = useState(false)
+
+    const openRef = useRef()
+    openRef.current = opened
+
+    const wrapperRef = handleOutsideDivClick(
+        () => {
+            if (openRef.current){
+                setTimeout(() => {
+                    setOpened(false)
+                }, 50)
+            }
+        },
+    )
+
+    return (
+        <Container ref={wrapperRef}>
+            <Header id="header" onClick={() => setOpened(!opened)}>
+                <Title>{props.title}</Title>
+                <Button>
+                    <Icon
+                        path={Tokens.icons['chevron-down']}
+                        size="16px"
+                        rotate={opened ? 180 : 0}
+                        appearance={opened ? 'primary' : 'default'}
+                    />
+                </Button>
+            </Header>
+            <UnmountClosed isOpened={opened} style={{padding: 0}}>
+                <Divider horizontal/>
+                <Body id="children">{props.children}</Body>
+            </UnmountClosed>
+        </Container>
+    )
 }
 
-export { CollapseContainer }
+export {CollapseContainer}
 CollapseContainer.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
 }
