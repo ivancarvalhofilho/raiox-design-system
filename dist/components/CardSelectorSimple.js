@@ -20,6 +20,8 @@ const CardSelectorSimpleStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 8px;
+  margin-top: 8px;
 `
 
 const Title = styled.span`
@@ -27,14 +29,13 @@ const Title = styled.span`
     fontFamily: "body",
     fontWeight: "regular",
     fontSize:"xs"
-})};
+  })};
   color: ${Tokens.colors.brand.secondary.dark};
 `
 const CardSelectorSimple = props => (
     <CardSelectorSimpleStyle
         disabled={props.disabled}
-        selected={props.selected}
-        onClick={() => props.setSelected()}
+        onClick={() => props.onClick()}
         style={props.style}
         className={props.className}
     >
@@ -45,13 +46,9 @@ const CardSelectorSimple = props => (
 
 export {CardSelectorSimple}
 CardSelectorSimple.propTypes = {
-    selected: PropTypes.bool,
-    setSelected: PropTypes.func,
+    onClick: PropTypes.func,
     disabled: PropTypes.bool,
     title: PropTypes.string,
-    subtitle: PropTypes.string,
-    description: PropTypes.string,
-    icon: PropTypes.any,
     style: PropTypes.any,
     className: PropTypes.any,
 }

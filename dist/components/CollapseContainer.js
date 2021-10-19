@@ -14,8 +14,8 @@ const Container = styled(StyledContainer)`
   box-shadow: ${Tokens.shadow.level0};
   padding: 0;
   background: white;
-  margin-top: ${Tokens.spacing.inline.xxxs};
-  margin-bottom: ${Tokens.spacing.inline.xxxs};
+  margin-top: ${Tokens.spacing.inline.nano};
+  margin-bottom: ${Tokens.spacing.inline.nano};
 `
 const Header = styled.div`
   cursor: pointer;
@@ -30,8 +30,8 @@ const Button = styled.div`
 `
 
 const Divider = styled(DividerStyled)`
-  width: 90%;
-  margin: auto;
+  width: auto;
+  margin: auto 16px;
   position: relative;
 `
 const Body = styled.div`
@@ -64,14 +64,14 @@ const CollapseContainer = props => {
             if (openRef.current){
                 setTimeout(() => {
                     setOpened(false)
-                }, 50)
+                }, 100)
             }
         },
     )
 
     return (
         <Container ref={wrapperRef}>
-            <Header id="header" onClick={() => setOpened(!opened)}>
+            <Header id="header" onClick={() => {setOpened(!opened); props.onClick?.call()}}>
                 <Title>{props.title}</Title>
                 <Button>
                     <Icon
@@ -94,4 +94,5 @@ export {CollapseContainer}
 CollapseContainer.propTypes = {
     children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     title: PropTypes.string,
+    onclick: PropTypes.func
 }
