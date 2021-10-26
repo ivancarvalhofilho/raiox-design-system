@@ -25,6 +25,7 @@ export { Button } from './components/Button'
 export { InfoLabel } from './components/InfoLabel'
 export { InputFilter } from './components/InputFilter'
 export { CardSelectorSimple } from './components/CardSelectorSimple'
+export { TextDynamic } from './components/TextDynamic'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";

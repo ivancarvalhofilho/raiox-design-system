@@ -58,7 +58,6 @@
     "sass-loader": "^10.1.1"
   },
   "dependencies": {
-    "react-infinite-scroll-component": "^5.1.0",
     "@material-ui/core": "^4.11.3",
     "@storybook/addons": "^6.1.11",
     "@storybook/client-api": "^6.1.11",
@@ -71,12 +70,14 @@
     "react-collapse": "^5.1.0",
     "react-dom": "^16.6.1",
     "react-fast-image": "0.0.30",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-redux": "^7.2.1",
     "react-scripts": "2.1.1",
     "react-svg": "^11.2.4",
     "react-svg-inline": "^2.1.1",
     "styled-components": "^5.2.0",
-    "typescript": "^4.1.5"
+    "typescript": "^4.1.5",
+    "uuidv4": "^6.2.12"
   },
   "standard": {
     "globals": [
