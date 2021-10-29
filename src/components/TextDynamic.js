@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import {Tokens} from '../tokens'
-import uuidv4, {uuid} from "uuidv4";
 
 const DefaultText = styled.span`
 `
@@ -50,8 +49,7 @@ const TextDynamic = props => {
 
                         return (
                             <DefaultText
-                                as={TextStyle}
-                                key={uuid()}>{`${word} `}
+                                as={TextStyle}>{`${word} `}
                             </DefaultText>
                         )
                     }
