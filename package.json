@@ -15,7 +15,8 @@
     "build-storybook": "build-storybook",
     "deploy": "build-storybook && firebase deploy",
     "test:coverage": "npm test -- --coverage",
-    "test:update": "npm test -- --coverage -u"
+    "test:update": "npm test -- --coverage -u",
+    "jsp": "webpack ./src/webComponents/ButtonWeb.js"
   },
   "repository": {
     "type": "git",
@@ -55,15 +56,20 @@
     "prop-types": "^15.7.2",
     "react-is": "^16.13.1",
     "sass": "^1.32.7",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@storybook/addons": "^6.1.11",
     "@storybook/client-api": "^6.1.11",
     "chroma-js": "^2.1.0",
+    "clean-webpack-plugin": "^4.0.0",
     "dayjs": "^1.10.4",
+    "dotenv-webpack": "^7.0.3",
     "emotion": "^10.0.27",
+    "html-webpack-plugin": "^5.4.0",
     "jest-styled-components": "^7.0.3",
     "ramda": "^0.27.1",
     "react": "^16.6.1",
@@ -75,8 +81,11 @@
     "react-scripts": "2.1.1",
     "react-svg": "^11.2.4",
     "react-svg-inline": "^2.1.1",
+    "react-to-webcomponent": "^1.5.1",
     "styled-components": "^5.2.0",
-    "typescript": "^4.1.5"
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "webpack-dev-server": "^4.3.1"
   },
   "standard": {
     "globals": [
