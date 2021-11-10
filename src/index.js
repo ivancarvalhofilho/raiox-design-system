@@ -1,3 +1,5 @@
+import coreColors from "./tokens/coreColors";
+
 export { HeaderCalendar } from './components/HeaderCalendar'
 export { Icon } from './components/Icon'
 export { CollapseContainer } from './components/CollapseContainer'
@@ -38,6 +40,7 @@ import './tokens/global.css'
 
 export const Tokens = {
 	colors,
+	coreColors,
 	fonts,
 	icons,
 	iconsAdquirentes,

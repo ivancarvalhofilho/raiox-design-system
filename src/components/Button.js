@@ -18,9 +18,9 @@ const ButtonPrimary = styled.div`
 	${props =>  
 		props.size === 'container' && 'width: 100%;' || 'width: fit-content;'
 	};
-	background: ${Tokens.colors.brand.primary.darkest};
+	background: ${props => props.tokensColors.brand.primary.darkest};
 	border-radius: ${Tokens.border.radius.sm};
-	color:${Tokens.colors.neutral.light.base};
+	color:${props => props.tokensColors.neutral.light.base};
 	cursor: pointer;
 	user-select: none;
 	${fontStyleMaker({
@@ -37,19 +37,19 @@ const ButtonPrimary = styled.div`
   }`}
 `
 const ButtonSecondary = styled(ButtonPrimary)`
-	background: ${Tokens.colors.neutral.light.base};
-	color: ${Tokens.colors.brand.primary.darkest};
-	border: ${Tokens.border.width.hairline} solid ${Tokens.colors.brand.primary.darkest};
+	background: ${props => props.tokensColors.neutral.light.base};
+	color: ${props => props.tokensColors.brand.primary.darkest};
+	border: ${Tokens.border.width.hairline} solid ${props => props.tokensColors.brand.primary.darkest};
 	transition: 0.25s;
 	
 	&:hover {
-		background: ${Tokens.colors.brand.primary.darkest};
-		color: ${Tokens.colors.neutral.light.base};
-		border: ${Tokens.border.width.hairline} solid ${Tokens.colors.brand.primary.darkest};
+		background: ${props => props.tokensColors.brand.primary.darkest};
+		color: ${props => props.tokensColors.neutral.light.base};
+		border: ${Tokens.border.width.hairline} solid ${props => props.tokensColors.brand.primary.darkest};
 	}
 `
 const ButtonDanger = styled(ButtonPrimary)`
-	background: ${Tokens.colors.feedback.danger.darkest};
+	background: ${props => props.tokensColors.feedback.danger.darkest};
 `
 const LoadingBubbles = styled.div`
 	position:absolute;
@@ -75,7 +75,7 @@ const LoadingBubbles = styled.div`
 	
 	& > span {
 		opacity: 0;
-		background: ${props => props.secondary ? Tokens.colors.brand.primary.darkest : Tokens.colors.neutral.light.base};
+		background: ${props => props.secondary ? props.tokensColors.brand.primary.darkest : props.tokensColors.neutral.light.base};
 		width: 5px;
 		height: 5px;
 		margin-right: 2px;
@@ -111,9 +111,12 @@ const Button = props => {
 
 	const buttonSize = props.size || 'lg'
 
+	const tokensColors = props.customColors || Tokens.colors
+
 	return (
 		<ButtonPrimary
 			disabled={props.disabled}
+			tokensColors={tokensColors}
 			size={buttonSize}
 			onClick={props.onClick}
 			style={props.style}
@@ -122,7 +125,7 @@ const Button = props => {
 			as={buttonType}
 			className={props.className}>
 			<span>{props.text}</span>
-			{props.loading && (<LoadingBubbles secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
+			{props.loading && (<LoadingBubbles tokensColors={tokensColors} secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
 		</ButtonPrimary>
 	)
 }
@@ -139,4 +142,5 @@ Button.propTypes = {
 	className: PropTypes.any,
 	style: PropTypes.any,
 	onClick: PropTypes.func,
+	customColors: PropTypes.object,
 }

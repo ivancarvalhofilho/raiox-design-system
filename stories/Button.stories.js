@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button, buttonSizes} from "../src/components/Button";
+import {Tokens} from "../src";
 
 export default {
   title: 'Components/Button',
@@ -7,6 +8,8 @@ export default {
 }
 
 const Template = args => (<Button {...args} />)
+
+const TemplateCore = args => (<Button {...args} customColors={Tokens.coreColors} />)
 
 let argTypes = {
   size: {
@@ -25,5 +28,8 @@ let args = {
 };
 
 export const Default = Template.bind({})
+export const CoreButton = TemplateCore.bind({})
+CoreButton.argTypes = { ...argTypes }
+CoreButton.args = {...args}
 Default.argTypes = { ...argTypes }
 Default.args = {...args}
