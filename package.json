@@ -16,7 +16,7 @@
     "deploy": "build-storybook && firebase deploy",
     "test:coverage": "npm test -- --coverage",
     "test:update": "npm test -- --coverage -u",
-    "jsp": "webpack ./src/webComponents/ButtonWeb.js"
+    "build:webcomponents": "webpack ./src/webComponents/* -o ./.webComponentsBuild"
   },
   "repository": {
     "type": "git",
@@ -67,6 +67,7 @@
     "chroma-js": "^2.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "dayjs": "^1.10.4",
+    "dompurify": "^2.3.3",
     "dotenv-webpack": "^7.0.3",
     "emotion": "^10.0.27",
     "html-webpack-plugin": "^5.4.0",
@@ -76,6 +77,7 @@
     "react-collapse": "^5.1.0",
     "react-dom": "^16.6.1",
     "react-fast-image": "0.0.30",
+    "react-html-parser": "^2.0.2",
     "react-infinite-scroll-component": "^5.1.0",
     "react-redux": "^7.2.1",
     "react-scripts": "2.1.1",
