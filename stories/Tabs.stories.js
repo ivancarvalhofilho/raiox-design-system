@@ -17,9 +17,5 @@ export const Default = Template.bind({})
 export const Disabled = Template.bind({})
 Default.args = {
   tabs: ['Categorias', 'Maquininhas', 'Banco'],
-}
-
-Disabled.args = {
-  tabs: ['Categorias', 'Maquininhas', 'Banco'],
-  disabled: true,
+  disabled: false,
 }

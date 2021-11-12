@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
+import {Tokens} from "../tokens";
 
 // Converte os nomes de props do react para nomes válidos para o html
 export const convertPropsToHtmlProps = (attributes) => {
@@ -39,7 +40,10 @@ const parseHtmlValue = (attrValue) => {
         }
         else throw 1
     } catch {
-        if (attrValue === 'true' || attrValue === 'false') {
+        if (attrValue.startsWith("icon:")) {
+            attrValue = attrValue.replace("icon:","")
+            value = Tokens.icons[attrValue]
+        } else if (attrValue === 'true' || attrValue === 'false') {
             value = attrValue === 'true';
         } else if (!isNaN(attrValue) && attrValue !== '') {
             value = +attrValue;
@@ -51,7 +55,7 @@ const parseHtmlValue = (attrValue) => {
             const removeTraillingComma = onlyDoubleQuotes.replace(/,[\s\\n]*\]/, "]")
             const goodJsonString = removeTraillingComma
             value = JSON.parse(goodJsonString);
-        } else if(attrValue?.trim().startsWith("<")){
+        } else if(attrValue?.trim().startsWith("<") && !attrValue?.trim().startsWith("<svg")){
             value = ReactHtmlParser(attrValue)
         }
     }

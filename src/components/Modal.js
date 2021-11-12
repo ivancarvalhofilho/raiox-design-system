@@ -6,7 +6,7 @@ import { Tokens } from '../tokens'
 import {handleOutsideDivClick} from "../utils";
 
 const BackgroundContainer = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 1000;
   height: 100%;

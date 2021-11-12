@@ -2,35 +2,10 @@
 <html>
 <head>
     <!--    Template de import do Web-Components (JSP)-->
-    <script defer src="js/main.b12e194e567f4ee7fbe9.js"></script></head>
+</head>
 <body>
 <div id="root">
-    oi
-    <r-button on-click="() => {alert('oi')}" text="oioi"></r-button>
-
-    <r-calendar
-            month="0"
-            year="2020"
-            max-date-range="7"
-            day-with-sales="[
-                { day: '01/01/2020', sale: 50, type: 'A' },
-                { day: '01/13/2020', sale: 700.55, type: 'R' },
-                { day: '02/01/2020', sale: 500, type: 'R' },
-              ]"
-            holydays ="['01/24/2020', '04/01/2020']"
-            on-click="() => {alert('oi')}"
-            text="oioi"
-    ></r-calendar>
-
-    <r-card id="oioi" child="<b>oia</b>" footer-children="<r-button text='ok'></r-button>"/>
-
-    <script>
-        window.addEventListener("useEffect_selectedDates",
-            ({detail})=> {
-                document.getElementById("oioi").innerHTML = detail.selectedDates.startDate + ' a ' + detail.selectedDates.endDate
-            })
-
-    </script>
+    <r-icon path="icon:token"></r-icon>
 </div>
 </body>
 </html>

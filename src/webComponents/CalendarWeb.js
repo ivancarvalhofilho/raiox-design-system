@@ -34,7 +34,7 @@ const CalendarWeb = htmlProps => {
         <Calendar {...reactProps}
                   selectedDates={selectedDates}
                   setSelectedDates={setSelectedDates}>
-            {props.children}
+            {reactProps.children}
         </Calendar>
     )
 }
