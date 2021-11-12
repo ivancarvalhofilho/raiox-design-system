@@ -79,3 +79,4 @@ workspace.xml
 /web/node_modules/
 .idea/raiox-design-system.iml
 .idea/workspace.xml
+/.webComponentsBuild/

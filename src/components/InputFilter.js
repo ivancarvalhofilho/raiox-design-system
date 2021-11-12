@@ -92,6 +92,7 @@ const InputFilter = props => {
                     value={props.text}
                     hasError={props.error}
                     maxLength={props.maxLength}
+                    placeholder={props.placeholder}
                     onChange={(text) => {
                         props.setText(text.target.value)
                     }}
@@ -116,6 +117,7 @@ const InputFilter = props => {
 export {InputFilter}
 
 InputFilter.propTypes = {
+    placeholder: PropTypes.string,
     active: PropTypes.bool,
     setActive: PropTypes.func,
     disabled: PropTypes.bool,

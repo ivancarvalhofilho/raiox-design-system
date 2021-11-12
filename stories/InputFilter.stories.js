@@ -18,4 +18,5 @@ Default.args = {
   active: false,
   disabled: false,
   error:'',
+  placeholder:'Qual a sua dúvida?',
 }
