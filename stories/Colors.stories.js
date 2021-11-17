@@ -50,5 +50,5 @@ const Template = args => (
 export const RaioXColors = Template.bind({})
 export const CoreColors = Template.bind({})
 
-CoreColors.args = {colors: Tokens.colors}
-RaioXColors.args = {colors: Tokens.coreColors}
+CoreColors.args = {colors: Tokens.coreColors}
+RaioXColors.args = {colors: Tokens.colors}
