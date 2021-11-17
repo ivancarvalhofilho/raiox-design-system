@@ -4,16 +4,16 @@ const coreColors = {
     ...Colors,
     brand: {
         primary: {
-            darkest: '#0077B3',
-            dark: '#0077B3', // A mudar
-            medium: '#C7E1EE',
+            darkest: '#0068AB',
+            dark: '#1A72AB',
+            medium: '#26A9FF',
             light: '#EDF8FD'
         },
         secondary: {
-            darkest: '#0C395D',
-            dark: '#595A5C', // A mudar
-            medium: '#979899', // A mudar
-            light: '#E0E0E0' // A mudar
+            darkest: '#17375F',
+            dark: '#004D7F',
+            medium: '#6B809D',
+            light: '#F8F9FD'
         },
         background: {base:'#F8F9FD'},
     },

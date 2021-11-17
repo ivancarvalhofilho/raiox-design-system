@@ -4,7 +4,7 @@ import {
     convertPropsToHtmlProps, mapHtmlPropsToReactProps,
 } from "../utils/webComponentUtil";
 import reactToWebComponent from "react-to-webcomponent";
-import {InputToken} from "../components/InputToken";
+import {InputToken} from "../components/Inputs/InputToken";
 import {useEffect, useState} from "react";
 import {Tokens} from "../index";
 

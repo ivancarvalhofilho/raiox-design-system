@@ -1,7 +1,7 @@
 import React from 'react'
 import toJson from 'enzyme-to-json'
 import { mountWithTheme } from '../utils/testUtil'
-import Tabs from '../components/Tabs'
+import Tabs from '../components/Tabs/Tabs'
 
 it('should render', () => {
   const spy = jest.spyOn(global.console, 'error')

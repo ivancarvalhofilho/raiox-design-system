@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import {Tokens} from '../tokens'
-import {camelize} from "../utils/stringUtil";
-import {Icon} from "./Icon";
-import {fontStyleMaker} from "../utils";
+import {Tokens} from '../../tokens'
+import {camelize} from "../../utils/stringUtil";
+import {Icon} from "../Icon";
+import {fontStyleMaker} from "../../utils";
 import {InputLabelContainer} from "./InputLabel";
 
 const InputFilterStyled = styled.input`

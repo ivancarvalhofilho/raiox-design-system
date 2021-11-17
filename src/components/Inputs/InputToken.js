@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import { Tokens } from '../tokens'
-import {Icon} from "./Icon";
-import {fontStyleMaker} from "../utils";
+import { Tokens } from '../../tokens'
+import {Icon} from "../Icon";
+import {fontStyleMaker} from "../../utils";
 
 const TextInput = styled.input`
 	width: 40px;

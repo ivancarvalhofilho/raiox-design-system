@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {InputToken} from "../src/components/InputToken";
+import {InputToken} from "../src/components/Inputs/InputToken";
 import {Tokens} from "../src";
 
 export default {

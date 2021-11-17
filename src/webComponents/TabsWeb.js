@@ -4,37 +4,28 @@ import {
     convertPropsToHtmlProps, mapHtmlPropsToReactProps,
 } from "../utils/webComponentUtil";
 import reactToWebComponent from "react-to-webcomponent";
-import {Tabs} from "../components/Tabs";
 import {useEffect, useState} from "react";
-import CalendarConst from "../components/Calendar/const";
+import {TabsCore} from "../components/Tabs/TabsCore";
 
 const TabsWeb = htmlProps => {
-    const reactProps = mapHtmlPropsToReactProps(Tabs.propTypes, htmlProps)
+    const reactProps = mapHtmlPropsToReactProps(TabsCore.propTypes, htmlProps)
     const [tabActive, onTabClick] = useState(0)
 
     useEffect(() => {
         window.dispatchEvent(new CustomEvent('useEffect_tabActive', { detail: { tabActive: tabActive, identifier: htmlProps.identifier  } }));
-
-        /*
-            Usar seguinte código no JSP para ouvir a mudança de State
-            window.addEventListener("useEffect_selectedDates",
-                ({detail})=> {
-                    console.log(detail.selectedDates.startDate + ' a ' + detail.selectedDates.endDate)
-                })
-        */
     },[tabActive])
 
     return (
-        <Tabs {...reactProps}
+        <TabsCore {...reactProps}
               tabActive={tabActive}
               onTabClick={onTabClick}>
             {reactProps.children}
-        </Tabs>
+        </TabsCore>
     )
 }
 
 TabsWeb.propTypes = {
-    ...convertPropsToHtmlProps(Tabs.propTypes)
+    ...convertPropsToHtmlProps(TabsCore.propTypes)
 };
 
 customElements.define("r-tabs", reactToWebComponent(TabsWeb, React, ReactDOM));
