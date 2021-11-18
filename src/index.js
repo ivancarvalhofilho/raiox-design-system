@@ -29,6 +29,7 @@ export { InfoLabel } from './components/InfoLabel'
 export { InputFilter } from './components/Inputs/InputFilter'
 export { CardSelectorSimple } from './components/CardSelectorSimple'
 export { InputToken } from './components/Inputs/InputToken'
+export { SimpleToast } from './components/SimpleToast'
 export { TextDynamic } from './components/TextDynamic'
 
 import fonts from "./tokens/fonts.tsx";
