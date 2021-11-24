@@ -39,13 +39,12 @@ const ButtonPrimary = styled.div`
 const ButtonSecondary = styled(ButtonPrimary)`
 	background: ${props => props.tokensColors.neutral.light.base};
 	color: ${props => props.tokensColors.brand.primary.darkest};
-	border: ${Tokens.border.width.hairline} solid ${props => props.tokensColors.brand.primary.darkest};
+	box-shadow: 0 0 0 1px ${props => props.tokensColors.brand.primary.darkest};
 	transition: 0.25s;
 	
 	&:hover {
 		background: ${props => props.tokensColors.brand.primary.darkest};
 		color: ${props => props.tokensColors.neutral.light.base};
-		border: ${Tokens.border.width.hairline} solid ${props => props.tokensColors.brand.primary.darkest};
 	}
 `
 const ButtonDanger = styled(ButtonPrimary)`

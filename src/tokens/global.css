@@ -45,3 +45,14 @@
 .ReactCollapse--collapse {
   transition: height 300ms;
 }
+
+@keyframes modalSpawnAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+};

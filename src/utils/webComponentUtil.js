@@ -32,6 +32,7 @@ export const mapHtmlPropsToReactProps = (originalProps, propValues) => {
 // Converte strings em tipos do JS (int, bool, function, json, array)
 const parseHtmlValue = (attrValue) => {
     if(attrValue == null) return attrValue
+    if(typeof attrValue !== 'string') return attrValue
 
     let value = attrValue
     try {
@@ -40,7 +41,7 @@ const parseHtmlValue = (attrValue) => {
         }
         else throw 1
     } catch {
-        if (attrValue.startsWith("icon:")) {
+        if (!!attrValue.startsWith && attrValue.startsWith("icon:")) {
             attrValue = attrValue.replace("icon:","")
             value = Tokens.icons[attrValue]
         } else if (attrValue === 'true' || attrValue === 'false') {

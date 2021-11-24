@@ -9,8 +9,9 @@ export default {
 
 const Template = args => {
   const [tokenTyped, setTokenTyped] = useState('')
+
   return (<>
-    <InputToken {...args} onUpdateValue={setTokenTyped} customColor={Tokens.coreColors}/>
+    <InputToken {...args} onUpdateValue={setTokenTyped} customColors={Tokens.coreColors}/>
     <span><br/>Token digitado: {tokenTyped}</span>
   </>)
 }

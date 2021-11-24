@@ -9,7 +9,16 @@ import {useEffect, useState} from "react";
 
 const SimpleToastWeb = htmlProps => {
     const reactProps = mapHtmlPropsToReactProps(SimpleToast.propTypes, htmlProps)
-    const [visible, setVisible] = useState(htmlProps.visible)
+    const [visible, setVisible] = useState(reactProps.isVisible)
+
+    useEffect(()=>{
+        const setStateVisible = ({detail}) => {
+            if(htmlProps.identifier === detail.identifier){
+                setVisible(detail.visible)
+            }
+        }
+        window.addEventListener("setState_setVisible", setStateVisible)
+    })
 
     return (
         <SimpleToast {...reactProps}

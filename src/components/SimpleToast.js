@@ -79,6 +79,7 @@ const SimpleToast = props => {
 
 export { SimpleToast }
 SimpleToast.propTypes = {
+	identifier:  PropTypes.string,
 	isVisible:  PropTypes.bool,
 	setInvisible:  PropTypes.func,
 	type:  PropTypes.string,

@@ -13,9 +13,9 @@ const TextInput = styled.input`
 	text-align: center;
 	
 	border: none;
-	color: ${props => props.customColor.neutral.dark.base};
-	box-shadow: 0 0 0 1px ${props => props.customColor.neutral.dark["02"]};
-	${props => props.activeInput && `box-shadow: 0 0 0 2px ${props.customColor.brand.primary.darkest};`};
+	color: ${props => props.customColors.neutral.dark.base};
+	box-shadow: 0 0 0 1px ${props => props.customColors.neutral.dark["02"]};
+	${props => props.activeInput && `box-shadow: 0 0 0 2px ${props.customColors.brand.primary.darkest};`};
 	
 	&:focus{
 		outline: none;
@@ -40,10 +40,6 @@ const InputToken = props => {
 	const [isSecureText, setIsSecureText] = useState(props.tokenType === 'password')
 
 	const elRefs = React.useRef([])
-
-	// useEffect(() => {
-	// 	reference && reference({ ...ref, clearInputData })
-	// }, [])
 
 	useEffect(() => {
 		props.onUpdateValue && props.onUpdateValue(tokenTyped.join('').replace(/\s/g, ''))
@@ -92,7 +88,7 @@ const InputToken = props => {
 		return (
 			<TextInput
 				activeInput={activeInputIndex === currentIndex}
-				customColor={props.customColor}
+				customColors={props.customColors}
 				ref={(ref) => {
 					elRefs.current[currentIndex] = ref
 					if (elRefs && elRefs.current.length === props.numberOfInputs) {
@@ -163,5 +159,7 @@ InputToken.propTypes = {
 	exportInputRef: PropTypes.func,
 	disabled: PropTypes.bool,
 	onlyNumbers: PropTypes.bool,
+	numberOfInputs: PropTypes.number,
+	customColors: PropTypes.object,
 	size: PropTypes.any,
 }

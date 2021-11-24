@@ -13,7 +13,7 @@ const InputTokenWeb = htmlProps => {
     const [tokenTyped, setTokenTyped] = useState('')
 
     useEffect(() => {
-        window.dispatchEvent(new CustomEvent('useEffect_input_token', {detail: {tokenTyped: tokenTyped, identifier: htmlProps.identifier}}));
+        window.dispatchEvent(new CustomEvent('useEffect_tokenTyped', {detail: {tokenTyped: tokenTyped, identifier: htmlProps.identifier}}));
     }, [tokenTyped])
 
     return (

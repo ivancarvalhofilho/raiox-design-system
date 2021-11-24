@@ -8,7 +8,7 @@ const TabsCoreContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   pointer-events: ${props => props.disabled && 'none'};
-  min-height: 30px;
+  min-height: 44px;
   padding-left: 8px;
 `
 const Container = styled.div`
@@ -43,7 +43,7 @@ const TabContainer = styled.div`
       props.active
           ? Tokens.coreColors.neutral.light.base
           : Tokens.coreColors.neutral.light["02"]};
-  font-size: ${Tokens.fonts.fontSize.xxs};
+  font-size: ${Tokens.fonts.fontSize.sm};
   transition: 0.2s all, 0s font-weight, 0s width;
 
   border: 1px solid ${Tokens.coreColors.neutral.dark['03']};
@@ -52,8 +52,8 @@ const TabContainer = styled.div`
   height: 100%;
   ${props =>
       props.active
-              ? 'padding: 5px 10px;'
-              : 'padding: 4px 10px;'};
+              ? 'padding: 10px 16px;'
+              : 'padding: 8px 16px;'};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
