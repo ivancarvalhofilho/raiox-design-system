@@ -30,6 +30,7 @@ const ModalContent = styled.div`
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
+  height: ${props => (props.height+'px') || '100%'};
   width: 520px;
   transition: 0.5s;
   background: white;
@@ -47,7 +48,8 @@ const Modal = props => {
       style={props.style}
       className={props.className}
     >
-      <ModalContainer>
+      <ModalContainer
+      height={props.height}>
         <ModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
@@ -77,4 +79,5 @@ Modal.propTypes = {
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string,
+  height: PropTypes.number,
 }

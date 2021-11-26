@@ -27,7 +27,6 @@ const SimpleToastStyle = styled.div`
 	}
 	color: ${props => props.fontColor};
 
-	pointer-events: ${props => props.disabled && 'none'};
   	opacity: ${props => props.disabled && Tokens.opacity.level.medium};
 `
 

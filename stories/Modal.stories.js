@@ -14,6 +14,7 @@ Default.args = {
   closable: true,
   onClose: () => {alert("oi")},
   show: true,
+  height: 300
 }
 
 Default.parameters = { layout: 'fullscreen' }
