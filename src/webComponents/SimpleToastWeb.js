@@ -24,14 +24,14 @@ const SimpleToastWeb = htmlProps => {
         <SimpleToast {...reactProps}
                      isVisible={visible}
                      setInvisible={setVisible}
-                     type={reactProps.toastType || 'success'}>
+                     type={reactProps.type || 'success'}>
             {reactProps.children}
         </SimpleToast>
     )
 }
 
 SimpleToastWeb.propTypes = {
-    ...convertPropsToHtmlProps(SimpleToast.propTypes)
+    ...convertPropsToHtmlProps(SimpleToast.propTypes),
 };
 
 customElements.define("r-simple-toast", reactToWebComponent(SimpleToastWeb, React, ReactDOM));

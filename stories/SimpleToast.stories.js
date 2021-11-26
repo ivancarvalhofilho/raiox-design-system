@@ -24,6 +24,11 @@ const Template = args => {
         <p></p>
         <SimpleToast {...args}
                      isVisible={true}
+                     type={args.toastType || 'info'}/>
+        <p></p>
+
+        <SimpleToast {...args}
+                     isVisible={true}
                      type={args.toastType || 'error'}/>
         <p></p>
 

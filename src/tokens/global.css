@@ -55,4 +55,13 @@
     opacity: 1;
     transform: translateY(0px);
   }
-};
+}
+
+@keyframes simpleToastProgressBar {
+  from {
+    width:0%;
+  }
+  to {
+    width:100%;
+  }
+}

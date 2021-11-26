@@ -10,7 +10,9 @@ import {Tokens} from "../tokens";
 const ButtonWeb = htmlProps => {
     const reactProps = mapHtmlPropsToReactProps(Button.propTypes, htmlProps)
     return (
-        <Button {...reactProps} customColors={Tokens.coreColors}>
+        <Button
+            {...reactProps}
+            customColors={Tokens.coreColors}>
             {reactProps.children}
         </Button>
     )

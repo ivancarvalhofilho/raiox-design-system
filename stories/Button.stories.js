@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button, buttonSizes} from "../src/components/Button";
-import {Tokens} from "../src";
+import {Tokens} from "../src/tokens";
 
 export default {
   title: 'Components/Button',

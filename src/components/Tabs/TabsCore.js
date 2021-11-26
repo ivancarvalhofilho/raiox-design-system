@@ -35,7 +35,7 @@ const Bar = styled.div`
   transition: transform 0.3s linear;
 `
 const TabContainer = styled.div`
-  font-family: ${Tokens.fonts.family.body};
+  font-family: ${Tokens.fonts.family.head};
   font-weight: ${Tokens.fonts.weight.medium};
   text-align: center;
   color: ${Tokens.coreColors.brand.secondary.darkest};
