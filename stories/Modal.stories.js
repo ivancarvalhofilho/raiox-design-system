@@ -7,13 +7,14 @@ export default {
   component: Modal,
 }
 
-const Template = args => <Modal {...args} />
+const Template = args => <Modal {...args} >Body dinamico <br/>Body dinamico <br/>Body dinamico <br/></Modal>
 
 export const Default = Template.bind({})
 Default.args = {
   closable: true,
-  onClose: () => {},
+  onClose: () => {alert("oi")},
   show: true,
+  height: 300
 }
 
 Default.parameters = { layout: 'fullscreen' }

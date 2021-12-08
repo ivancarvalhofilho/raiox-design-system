@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {InputFilter} from "../src/components/InputFilter";
+import {InputFilter} from "../src/components/Inputs/InputFilter";
 import {InputLabel} from "../src";
 
 export default {

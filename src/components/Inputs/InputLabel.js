@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, {useRef, useState} from 'react'
 import styled from 'styled-components'
-import {Tokens} from '../tokens'
-import {fontStyleMaker} from '../utils/FontUtil'
-import {Icon} from "./Icon";
-import {camelize} from "../utils/stringUtil";
+import {Tokens} from '../../tokens'
+import {fontStyleMaker} from '../../utils/FontUtil'
+import {Icon} from "../Icon";
+import {camelize} from "../../utils/stringUtil";
 
 const SuspendedLabel = styled.div`
 	position: absolute;

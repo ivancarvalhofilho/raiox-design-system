@@ -15,14 +15,14 @@ const ColorShower = styled.div`
 const Template = args => (
   <div>
     <span style={{ display: 'flex', flexDirection: 'column' }}>
-      {Object.keys(Tokens.colors).map(key => (
+      {Object.keys(args.colors).map(key => (
         <div>
           <h1>{key}</h1>
-          {Object.keys(Tokens.colors[key]).map(keyStyle => (
+          {Object.keys(args.colors[key]).map(keyStyle => (
             <div>
               <h2>{keyStyle}</h2>
               <span style={{ display: 'flex', flexDirection: 'row' }}>
-                {Object.keys(Tokens.colors[key][keyStyle]).map(keyColor => (
+                {Object.keys(args.colors[key][keyStyle]).map(keyColor => (
                   <span
                     style={{
                       display: 'flex',
@@ -33,7 +33,7 @@ const Template = args => (
                     }}
                   >
                     <ColorShower
-                      color={Tokens.colors[key][keyStyle][keyColor]}
+                      color={args.colors[key][keyStyle][keyColor]}
                     />
                     {keyColor}
                   </span>
@@ -47,6 +47,8 @@ const Template = args => (
   </div>
 )
 
-export const Colors = Template.bind({})
+export const RaioXColors = Template.bind({})
+export const CoreColors = Template.bind({})
 
-Colors.args = {}
+CoreColors.args = {colors: Tokens.coreColors}
+RaioXColors.args = {colors: Tokens.colors}

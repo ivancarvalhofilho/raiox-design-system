@@ -8,7 +8,7 @@ import {fontStyleMaker} from "../utils";
 import {InputLabelContainer} from "./InputLabel";
 
 const InputFilterStyled = styled.input`
-  padding: 8px 8px 8px 44px;
+  padding: 16px 16px 16px 44px;
   box-shadow: inset 0 0 0 1px ${Tokens.colors.neutral.dark['03']};
   border: none;
   box-sizing: border-box;
@@ -21,12 +21,23 @@ const InputFilterStyled = styled.input`
     fontWeight: 'regular',
     fontSize: 'xs',
   })};
-  line-height: 24px;
   width: inherit;
 
   &:focus {
     outline: none;
     box-shadow: inset 0 0 0 2px ${Tokens.colors.brand.primary.darkest};
+  }
+
+  ${props => props.isPasswordType && `
+    padding-right: 100px;
+  `}
+  ${(props) =>
+          props.hasError &&
+          `
+		box-shadow: inset 0 0 0 2px ${Tokens.colors.feedback.danger.dark} !important;
+	`}
+  &:-webkit-autofill {
+    -webkit-background-clip: text;
   }
 `
 const SpanError = styled.span`
@@ -69,7 +80,6 @@ const SpanCancel = styled.span`
     fontSize: 'xs',
   })};
   cursor: pointer;
-  word-break: normal;
 `
 const DivInput = styled.div`
   position: relative;
@@ -92,7 +102,6 @@ const InputFilter = props => {
                     value={props.text}
                     hasError={props.error}
                     maxLength={props.maxLength}
-                    placeholder={props.placeholder}
                     onChange={(text) => {
                         props.setText(text.target.value)
                     }}
@@ -117,7 +126,6 @@ const InputFilter = props => {
 export {InputFilter}
 
 InputFilter.propTypes = {
-    placeholder: PropTypes.string,
     active: PropTypes.bool,
     setActive: PropTypes.func,
     disabled: PropTypes.bool,

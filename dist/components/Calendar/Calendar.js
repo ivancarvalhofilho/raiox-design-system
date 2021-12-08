@@ -3,9 +3,12 @@ import { CalendarCell } from './CalendarCell'
 import dayjs from '../../utils/dayjs'
 import styled from 'styled-components'
 import CalendarConst from './const'
-import { fontStyleMaker }from '../../utils/FontUtil'
+import { fontStyleMaker }from '../../utils'
 import PropTypes from 'prop-types'
 import { Tokens } from "../../tokens";
+import reactToWebComponent from "react-to-webcomponent";
+import ReactDOM from "react-dom";
+import {Button} from "../Button";
 
 const isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
 const isSameOrAfter = require('dayjs/plugin/isSameOrAfter');
@@ -262,3 +265,7 @@ Calendar.propTypes = {
   maxDateRange: PropTypes.number,
   dayWithSales: PropTypes.array,
 }
+
+const MyCalendar = reactToWebComponent(Calendar, React, ReactDOM);
+customElements.define("my-calendar", MyCalendar);
+
