@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {Icon} from './Icon'
 import { Tokens } from '../tokens'
-import {handleOutsideDivClick} from "../utils";
 
 const BackgroundContainer = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 1000;
   height: 100%;
@@ -15,6 +14,7 @@ const BackgroundContainer = styled.div`
   overflow: hidden;
   left: 0;
   display: ${props => (props.show ? 'flex' : 'none')};
+  align-items: center;
   justify-content: center;
 `
 const ModalHeader = styled.div`
@@ -24,46 +24,32 @@ const ModalHeader = styled.div`
 const Title = styled.div``
 const ModalContent = styled.div`
   padding: 20px;
+  box-sizing: border-box;
   height: 100%;
 `
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
+  height: ${props => (props.height+'px') || '100%'};
   width: 520px;
-  transition: top 0.5s;
+  transition: 0.5s;
   background: white;
   position: absolute;
-  top: ${props =>
-    props.show
-      ? `calc(50% - ${props.top / 2}px)`
-      : `-${props.top ? props.top : 5000}px`};
   padding: 17px;
-  height: 436px;
+  
+  animation: modalSpawnAnimation 0.5s;
+  animation-iteration-count: 1;
 `
 const Modal = props => {
-  const [show, setShow] = useState(props.show)
-  const [height, setHeight] = useState(0)
-  const ref = handleOutsideDivClick(() => props.onClickOut())
-
-  useEffect(() => {
-    setHeight(ref.current.clientHeight)
-    setTimeout(() => {
-      setShow(props.show)
-    }, 500)
-  }, [props.show])
-
   return (
     <BackgroundContainer
-      show={props.show ? props.show : show}
+      show={props.show}
       onClick={props.onClickOut}
       style={props.style}
       className={props.className}
     >
       <ModalContainer
-        ref={ref}
-        show={!props.show ? props.show : show}
-        top={height}
-      >
+      height={props.height}>
         <ModalHeader>
           <Title>{props.title}</Title>
           {props.closable && (
@@ -71,6 +57,11 @@ const Modal = props => {
               size="16px"
               onClick={props.onClose}
               path={Tokens.icons.close}
+              style={{
+                position: 'absolute',
+                right: '16px',
+                top: '16px',
+              }}
             />
           )}
         </ModalHeader>
@@ -88,4 +79,5 @@ Modal.propTypes = {
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string,
+  height: PropTypes.number,
 }

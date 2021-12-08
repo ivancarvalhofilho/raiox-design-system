@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { Tokens } from "../tokens";
+import { Tokens } from "../../tokens";
 
 const TabContainer = styled.div`
   padding: 5px 0px;
