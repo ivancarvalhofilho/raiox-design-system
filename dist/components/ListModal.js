@@ -161,8 +161,8 @@ const ListModal = props => {
 				<>
 					<Divider horizontal/>
 					<AddButtonRow onClick={props.onclick}>
-						<RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={Tokens.icons.add}/>
-						<AddButton>Adicionar estabelecimento</AddButton>
+						<RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={props.addButtonIcon ? props.addButtonIcon : Tokens.icons.add}/>
+						<AddButton>{ props.addButtonText != null ? props.addButtonText : 'Adicionar estabelecimento'}</AddButton>
 					</AddButtonRow>
 				</>
 			)}
@@ -179,6 +179,8 @@ ListModal.propTypes = {
 	itemsList: PropTypes.array,
 	disabled: PropTypes.bool,
 	hasAddButton: PropTypes.bool,
+	addButtonText : PropTypes.string, 
+	addButtonIcon : PropTypes.any, 
 	activeItem: PropTypes.number,
 	isLoadingList: PropTypes.bool,
 	hasAllItemsButton: PropTypes.bool,
