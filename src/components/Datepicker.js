@@ -10,7 +10,7 @@ import { fontStyleMaker } from '../utils/FontUtil'
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
-  width: 342px;
+  min-width: 342px;
   height: 40px;
   display: flex;
   cursor: pointer;

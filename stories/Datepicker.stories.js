@@ -10,7 +10,7 @@ export default {
 const Template = args => {
   const [dates, setDates] = useState([dayjs(), dayjs().add(1, 'month')])
   return (
-    <div style={{ width: '900px', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
       <Datepicker
         {...args}
         dates={dates}
