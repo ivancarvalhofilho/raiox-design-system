@@ -162,7 +162,7 @@ const ListModal = props => {
 					<Divider horizontal/>
 					<AddButtonRow onClick={props.onclick}>
 						<RadialWhiteBackgroundIcon appearance={'primary'} size={16} path={props.addButtonIcon ? props.addButtonIcon : Tokens.icons.add}/>
-						<AddButton>{ props.addButtonText != null ? props.addButtonText : 'Adicionar estabelecimento'}</AddButton>
+						<AddButton>{ props.addButtonText  ? props.addButtonText : 'Adicionar estabelecimento'}</AddButton>
 					</AddButtonRow>
 				</>
 			)}
