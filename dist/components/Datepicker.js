@@ -5,7 +5,7 @@ import { Icon } from '../'
 import { Tokens } from '../tokens'
 import { Divider } from './StyledComponents'
 import dayjs from 'dayjs'
-import { fontStyleMaker }from "../utils/FontUtil";
+import { fontStyleMaker } from '../utils/FontUtil'
 
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
@@ -22,7 +22,10 @@ const ContainerDatepicker = styled.div`
 `
 
 const CalendarIcon = styled.div`
-  background: ${Tokens.colors.brand.primary.darkest};
+  background: ${props =>
+    props.customStyle?.iconContainerbackgroundColor
+      ? props.customStyle?.iconContainerbackgroundColor
+      : Tokens.colors.brand.primary.darkest};
   border-radius: 0 5px 5px 0;
   width: 40px;
   height: 40px;
@@ -37,9 +40,9 @@ const ContainerDate = styled.div`
 `
 const Text = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
   color: ${Tokens.colors.neutral.dark.base};
   display: flex;
@@ -48,16 +51,17 @@ const Text = styled.div`
 `
 const Date = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
-  color: ${Tokens.colors.neutral.dark.base};
+  color: ${props =>
+    props.customStyle?.fontColor
+      ? props.customStyle?.fontColor
+      : Tokens.colors.brand.primary.darkest};
   line-height: 15px;
   display: flex;
   align-items: center;
-
-  color: ${Tokens.colors.brand.primary.darkest};
 `
 
 const DatepickerContainer = styled.div`
@@ -91,9 +95,9 @@ const MonthContainer = styled.div`
 `
 const MonthTitle = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "regular",
-    fontSize: "xs"
+    fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 'xs',
   })};
   color: ${Tokens.colors.neutral.dark.base};
 `
@@ -121,9 +125,9 @@ const BlockMessage = styled.div`
   display: flex;
   align-items: center;
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xs',
   })};
   color: ${Tokens.colors.neutral.dark.dark};
 `
@@ -139,11 +143,14 @@ const Day = styled.div`
   background-color: ${props =>
     props.selected && Tokens.colors.brand.primary.medium};
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
-  color: ${props => props.disabled ? Tokens.colors.neutral.dark['02'] : Tokens.colors.neutral.dark.base};
+  color: ${props =>
+    props.disabled
+      ? Tokens.colors.neutral.dark['02']
+      : Tokens.colors.neutral.dark.base};
   ${props =>
     (props.first || props.last) &&
     `color: ${Tokens.colors.neutral.light.base};
@@ -165,11 +172,11 @@ const DayBackground = styled.div`
 
 const DayHeader = styled(Day)`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "regular",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 'xxs',
   })};
-  color: ${Tokens.colors.neutral.dark['01']}
+  color: ${Tokens.colors.neutral.dark['01']};
 `
 
 const Datepicker = props => {
@@ -255,13 +262,13 @@ const Datepicker = props => {
       >
         <ContainerDate>
           <Text>Período</Text>
-          <Date>
+          <Date customStyle={props.customStyle}>
             {`${dayjs(props.dates[0]).format('DD MMM')} - ${dayjs(
               props.dates[1],
             ).format('DD MMM')}`}
           </Date>
         </ContainerDate>
-        <CalendarIcon>
+        <CalendarIcon customStyle={props.customStyle}>
           <Icon path={Tokens.icons.calendar} size="22px" appearance="light" />
         </CalendarIcon>
       </ButtonContainer>
@@ -439,4 +446,5 @@ Datepicker.propTypes = {
   onClose: PropTypes.func,
   onSelectDay: PropTypes.func,
   style: PropTypes.object,
+  customStyle: PropTypes.object,
 }
