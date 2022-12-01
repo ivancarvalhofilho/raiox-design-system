@@ -68,7 +68,8 @@ const DatepickerContainer = styled.div`
   background: #ffffff;
   box-shadow: ${Tokens.shadow.level1};
   border-radius: ${Tokens.border.sm};
-  width: 514px;
+  ${props => (!props.showOneMonthPerTime ? 'width: 514px;' : null)}
+  ${props => (props.showOneMonthPerTime ? 'min-width: 300px;' : null)}
   ${props =>
     props.alignContainer === 'center'
       ? 'left: -150px'
@@ -182,10 +183,11 @@ const DayHeader = styled(Day)`
 const Datepicker = props => {
   const [opened, setOpened] = useState(false)
   const [daysCalendar, setDaysCalendar] = useState([])
-  const [months, setMonths] = useState([
-    dayjs(props.dates[0]),
-    dayjs(props.dates[0]).add(1, 'month'),
-  ])
+  const [months, setMonths] = useState(
+    props.showOneMonthPerTime
+      ? [dayjs(props.dates[0])]
+      : [dayjs(props.dates[0]), dayjs(props.dates[0]).add(1, 'month')],
+  )
   const [today] = useState(dayjs())
   const [firstClick, setFirstClick] = useState(true)
   const [secondDateHover, setSecondDateHover] = useState(null)
@@ -215,6 +217,7 @@ const Datepicker = props => {
       ]
     })
     setDaysCalendar(dates)
+    console.log(months)
   }, [months])
 
   useEffect(() => {
@@ -276,6 +279,7 @@ const Datepicker = props => {
         <DatepickerContainer
           id="container"
           alignContainer={props.alignContainer}
+          showOneMonthPerTime={props.showOneMonthPerTime}
         >
           <Container>
             {months.map((date, index) => (
@@ -305,25 +309,21 @@ const Datepicker = props => {
                     </div>
                     <MonthTitle>{date.format('MMMM YYYY')}</MonthTitle>
                     <div style={{ minWidth: '30px' }}>
-                      {index === 1 && (
-                        <>
-                          <Icon
-                            path={Tokens.icons['single-arrow-right']}
-                            size="14px"
-                            appearance="primary"
-                            style={{ marginRight: '8px' }}
-                            id={`nextMonth${index}`}
-                            onClick={() => changeMonth(index, true)}
-                          />
-                          <Icon
-                            path={Tokens.icons['double-arrow-right']}
-                            size="14px"
-                            appearance="primary"
-                            id={`nextYear${index}`}
-                            onClick={() => changeYear(index, true)}
-                          />
-                        </>
-                      )}
+                      <Icon
+                        path={Tokens.icons['single-arrow-right']}
+                        size="14px"
+                        appearance="primary"
+                        style={{ marginRight: '8px' }}
+                        id={`nextMonth${index}`}
+                        onClick={() => changeMonth(index, true)}
+                      />
+                      <Icon
+                        path={Tokens.icons['double-arrow-right']}
+                        size="14px"
+                        appearance="primary"
+                        id={`nextYear${index}`}
+                        onClick={() => changeYear(index, true)}
+                      />
                     </div>
                   </MonthHeader>
                   <CalendarContainer>
@@ -350,6 +350,7 @@ const Datepicker = props => {
                             dayMonth.isSameOrBefore(props.minDate)) ||
                           disabledByRange
                         const isToday = dayMonth.isSame(today, 'day')
+
                         return (
                           <DayBackground
                             key={date + indexDay}
@@ -389,6 +390,11 @@ const Datepicker = props => {
                             {Math.sign(day) === 1 && (
                               <Day
                                 onMouseOver={() => {
+                                  if (!firstClick) {
+                                    setSecondDateHover(dayMonth)
+                                  }
+                                }}
+                                onFocus={() => {
                                   if (!firstClick) {
                                     setSecondDateHover(dayMonth)
                                   }
@@ -447,4 +453,5 @@ Datepicker.propTypes = {
   onSelectDay: PropTypes.func,
   style: PropTypes.object,
   customStyle: PropTypes.object,
+  showOneMonthPerTime: PropTypes.bool,
 }

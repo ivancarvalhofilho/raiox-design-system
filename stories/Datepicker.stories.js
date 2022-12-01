@@ -39,4 +39,5 @@ Default.args = {
     iconContainerbackgroundColor: '#00A868',
     fontColor: '#00A868',
   },
+  showOneMonthPerTime: true,
 }
