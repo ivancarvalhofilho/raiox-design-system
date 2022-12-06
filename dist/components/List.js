@@ -29,7 +29,7 @@ const List = props => (
     <ListHeader
       data={props.header}
       align={props.align}
-      nowRrapRow={props.nowRapRow}
+      nowRapRow={props.nowRapRow}
     />
     <ListData style={props.styleData} className="custom-scrollbar">
       {props.rows.map((row, index) => (
