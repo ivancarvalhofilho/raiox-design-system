@@ -26,11 +26,13 @@ const Column = styled.div`
 const ListData = styled.div``
 const List = props => (
   <ListContainer style={props.style}>
-    <ListHeader
-      data={props.header}
-      align={props.align}
-      nowRapRow={props.nowRapRow}
-    />
+    {props.header && (
+      <ListHeader
+        data={props.header}
+        align={props.align}
+        nowRapRow={props.nowRapRow}
+      />
+    )}
     <ListData style={props.styleData} className="custom-scrollbar">
       {props.rows.map((row, index) => (
         <Row key={index} size={props.rowSize}>
