@@ -24,14 +24,16 @@ const ModalHeader = styled.div`
 `
 const Title = styled.div``
 const ModalContent = styled.div`
-  padding: ${Tokens.spacing.inline.xxxs};
+  ${(props) => 
+    !props.ignoreInsidePadding && `padding: ${Tokens.spacing.inline.xxxs};`}
   box-sizing: border-box;
   height: 100%;
 `
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
-  height: ${(props) => (props.height ? `${props.height}px` : '100%')};
+  ${(props) => 
+    !props.ignoreHeight && `height: ${(props) => (props.height ? `${props.height}px` : '100%')};`}
   width: ${(props) => (props.width ? `${props.width}px` : '520px')};
   transition: 0.5s;
   background: white;
@@ -74,6 +76,7 @@ const Modal = (props) => {
         height={props.height}
         width={props.width}
         ref={modalBodyRef}
+        ignoreHeight={props.ignoreHeight}
       >
         <ModalHeader>
           <Title>{props.title}</Title>
@@ -90,7 +93,7 @@ const Modal = (props) => {
             />
           )}
         </ModalHeader>
-        <ModalContent>{props.children}</ModalContent>
+        <ModalContent ignoreInsidePadding={props.ignoreInsidePadding}>{props.children}</ModalContent>
       </ModalContainer>
     </BackgroundContainer>
   )
@@ -108,4 +111,6 @@ Modal.propTypes = {
   title: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.number,
+  ignoreHeight: PropTypes.bool,
+  ignoreInsidePadding: PropTypes.bool,
 }
