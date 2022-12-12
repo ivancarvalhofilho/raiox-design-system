@@ -33,7 +33,7 @@ const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
   ${(props) => 
-    !props.ignoreHeight && `height: ${(props) => (props.height ? `${props.height}px` : '100%')};`}
+    !props.ignoreHeight && `height: ${props.height ? `${props.height}px` : '100%'};`}
   width: ${(props) => (props.width ? `${props.width}px` : '520px')};
   transition: 0.5s;
   background: white;
