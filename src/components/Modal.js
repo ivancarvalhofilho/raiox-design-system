@@ -38,7 +38,8 @@ const ModalContainer = styled.div`
   transition: 0.5s;
   background: white;
   position: absolute;
-  padding: ${Tokens.spacing.inline.xxxs};
+  ${(props) => 
+    !props.ignoreModalPadding && `padding: ${Tokens.spacing.inline.xxxs};`}
 
   animation: modalSpawnAnimation 0.5s;
   animation-iteration-count: 1;
@@ -77,6 +78,7 @@ const Modal = (props) => {
         width={props.width}
         ref={modalBodyRef}
         ignoreHeight={props.ignoreHeight}
+        ignoreModalPadding={props.ignoreModalPadding}
       >
         <ModalHeader>
           <Title>{props.title}</Title>
@@ -113,4 +115,5 @@ Modal.propTypes = {
   width: PropTypes.number,
   ignoreHeight: PropTypes.bool,
   ignoreInsidePadding: PropTypes.bool,
+  ignoreModalPadding: PropTypes.bool,
 }
