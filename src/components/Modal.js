@@ -14,7 +14,7 @@ const BackgroundContainer = styled.div`
   top: 0;
   overflow: hidden;
   left: 0;
-  display: ${(props) => (props.show ? 'flex' : 'none')};
+  display: ${props => (props.show ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
 `
@@ -24,7 +24,7 @@ const ModalHeader = styled.div`
 `
 const Title = styled.div``
 const ModalContent = styled.div`
-  ${(props) => 
+  ${props =>
     !props.ignoreInsidePadding && `padding: ${Tokens.spacing.inline.xxxs};`}
   box-sizing: border-box;
   height: 100%;
@@ -32,19 +32,22 @@ const ModalContent = styled.div`
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
-  ${(props) => 
-    !props.ignoreHeight && `height: ${props.height ? `${props.height}px` : '100%'};`}
-  width: ${(props) => (props.width ? `${props.width}px` : '520px')};
+  ${props =>
+    !props.useAutoHeight &&
+    !props.ignoreHeight &&
+    `height: ${props.height ? `${props.height}px` : '100%'};`}
+  ${props => props.useAutoHeight && 'height: auto;'}
+  width: ${props => (props.width ? `${props.width}px` : '520px')};
   transition: 0.5s;
   background: white;
   position: absolute;
-  ${(props) => 
+  ${props =>
     !props.ignoreModalPadding && `padding: ${Tokens.spacing.inline.xxxs};`}
 
   animation: modalSpawnAnimation 0.5s;
   animation-iteration-count: 1;
 `
-const Modal = (props) => {
+const Modal = props => {
   const openRef = useRef()
   openRef.current = props.show
 
@@ -79,6 +82,7 @@ const Modal = (props) => {
         ref={modalBodyRef}
         ignoreHeight={props.ignoreHeight}
         ignoreModalPadding={props.ignoreModalPadding}
+        useAutoHeight={props.useAutoHeight}
       >
         <ModalHeader>
           <Title>{props.title}</Title>
@@ -95,7 +99,9 @@ const Modal = (props) => {
             />
           )}
         </ModalHeader>
-        <ModalContent ignoreInsidePadding={props.ignoreInsidePadding}>{props.children}</ModalContent>
+        <ModalContent ignoreInsidePadding={props.ignoreInsidePadding}>
+          {props.children}
+        </ModalContent>
       </ModalContainer>
     </BackgroundContainer>
   )
@@ -112,6 +118,7 @@ Modal.propTypes = {
   show: PropTypes.bool,
   title: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  useAutoHeight: PropTypes.bool,
   width: PropTypes.number,
   ignoreHeight: PropTypes.bool,
   ignoreInsidePadding: PropTypes.bool,
