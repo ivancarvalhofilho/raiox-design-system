@@ -21,6 +21,8 @@ const BackgroundContainer = styled.div`
 const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  ${props => props.hasRelativeIcon && 'position: relative;'}
+  
 `
 const Title = styled.div``
 const ModalContent = styled.div`
@@ -84,7 +86,7 @@ const Modal = props => {
         ignoreModalPadding={props.ignoreModalPadding}
         useAutoHeight={props.useAutoHeight}
       >
-        <ModalHeader>
+        <ModalHeader hasRelativeIcon={props.hasRelativeIcon}>
           <Title>{props.title}</Title>
           {props.closable && (
             <Icon
@@ -123,4 +125,5 @@ Modal.propTypes = {
   ignoreHeight: PropTypes.bool,
   ignoreInsidePadding: PropTypes.bool,
   ignoreModalPadding: PropTypes.bool,
+  hasRelativeIcon: PropTypes.bool,
 }
