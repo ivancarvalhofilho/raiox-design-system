@@ -22,7 +22,6 @@ const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
   ${props => props.hasRelativeIcon && 'position: relative;'}
-  
 `
 const Title = styled.div``
 const ModalContent = styled.div`
