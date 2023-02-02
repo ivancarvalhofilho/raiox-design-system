@@ -173,6 +173,15 @@ const SpanValue = styled.span`
   display: flex;
   align-items: center;
 `
+
+// Limitar tamanho de nome do estabelecimento para evitar quebra de linha 
+const NameValue = styled.p`
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
 const Children = styled.div`
   position: absolute;
   transition: 2s;
@@ -213,7 +222,7 @@ function Table(props) {
   const itemsHeader = useRef([])
   const [colsWidth, setColsWidth] = useState([])
   const [colHeadersWidth, setColHeadersWidth] = useState([])
-
+  
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
     handleResize()
@@ -249,7 +258,7 @@ function Table(props) {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
+ 
   return (
     <TableContainer minWidth={props.minWidth ? props.minWidth : null}>
       <DisplayGrid>
@@ -517,21 +526,27 @@ function Table(props) {
                           last={indexCol === cols.length}
                         >
                           {key !== 'colors' && (
-                            <SpanValue>
-                              {props.data[key].template
-                                ? props.data[key].template(
-                                    value,
-                                    props.data[key].params &&
-                                      props.data[key].params.map(
-                                        (param) =>
-                                          props.data[param] &&
-                                          props.data[param].values[indexRow],
-                                      ),
-                                    props.dispatch,
-                                    props.subdata && props.subdata[indexRow],
-                                  )
-                                : value}
-                            </SpanValue>
+                            key === 'nomeEstabelecimento' ? (
+                              <NameValue title={value}>
+                                {value}
+                              </NameValue>
+                            ) : (
+                              <SpanValue>
+                                {props.data[key].template
+                                  ? props.data[key].template(
+                                      value,
+                                      props.data[key].params &&
+                                        props.data[key].params.map(
+                                          (param) =>
+                                            props.data[param] &&
+                                            props.data[param].values[indexRow],
+                                        ),
+                                      props.dispatch,
+                                      props.subdata && props.subdata[indexRow],
+                                    )
+                                  : value}
+                              </SpanValue>
+                            )
                           )}
                           {indexCol === colsOriginalWithoutColor.length &&
                             props.isMultiple && (
