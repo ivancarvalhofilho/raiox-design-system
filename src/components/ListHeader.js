@@ -13,6 +13,7 @@ const HeaderContainer = styled.div`
   font-size: ${Tokens.fonts.fontSize.xxs};
 
   ${props => props.ignoreWidth && `justify-content: space-between;`}
+  ${props => props.headerStyle}
 `
 const Column = styled.div`
   ${props => !props.ignoreWidth && `width: ${props => props.width}%;`}
@@ -41,4 +42,5 @@ ListHeader.propTypes = {
   data: PropTypes.array,
   nowRapRow: PropTypes.any,
   ignoreWidth: PropTypes.bool,
+  headerStyle: PropTypes.object,
 }

@@ -30,6 +30,7 @@ const List = props => (
       <ListHeader
         data={props.header}
         align={props.align}
+        headerStyle={props.headerStyle || {}}
         nowRapRow={props.nowRapRow}
       />
     )}
@@ -62,4 +63,5 @@ List.propTypes = {
   style: PropTypes.object,
   styleData: PropTypes.object,
   nowRapRow: PropTypes.bool,
+  headerStyle: PropTypes.object,
 }
