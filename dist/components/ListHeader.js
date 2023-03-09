@@ -13,6 +13,7 @@ const HeaderContainer = styled.div`
   font-size: ${Tokens.fonts.fontSize.xxs};
 
   ${props => props.ignoreWidth && `justify-content: space-between;`}
+  ${props => props.headerStyle}
 `
 const Column = styled.div`
   ${props => !props.ignoreWidth && `width: ${props => props.width}%;`}
@@ -20,18 +21,19 @@ const Column = styled.div`
 `
 const ListHeader = props => (
   <HeaderContainer ignoreWidth={props.ignoreWidth}>
-    {props.data.map((key, index) => (
-      <Column
-        key={index}
-        width={
-          props.nowRapRow && index === 0 ? 100 / 2 : 100 / props.data.length
-        }
-        align={props.align[index]}
-        ignoreWidth={props.ignoreWidth}
-      >
-        {key}
-      </Column>
-    ))}
+    {props.data &&
+      props.data.map((key, index) => (
+        <Column
+          key={index}
+          width={
+            props.nowRapRow && index === 0 ? 100 / 2 : 100 / props.data.length
+          }
+          align={props.align[index]}
+          ignoreWidth={props.ignoreWidth}
+        >
+          {key}
+        </Column>
+      ))}
   </HeaderContainer>
 )
 
@@ -41,4 +43,5 @@ ListHeader.propTypes = {
   data: PropTypes.array,
   nowRapRow: PropTypes.any,
   ignoreWidth: PropTypes.bool,
+  headerStyle: PropTypes.object,
 }
