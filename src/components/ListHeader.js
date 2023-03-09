@@ -21,18 +21,19 @@ const Column = styled.div`
 `
 const ListHeader = props => (
   <HeaderContainer ignoreWidth={props.ignoreWidth}>
-    {props.data.map((key, index) => (
-      <Column
-        key={index}
-        width={
-          props.nowRapRow && index === 0 ? 100 / 2 : 100 / props.data.length
-        }
-        align={props.align[index]}
-        ignoreWidth={props.ignoreWidth}
-      >
-        {key}
-      </Column>
-    ))}
+    {props.data &&
+      props.data.map((key, index) => (
+        <Column
+          key={index}
+          width={
+            props.nowRapRow && index === 0 ? 100 / 2 : 100 / props.data.length
+          }
+          align={props.align[index]}
+          ignoreWidth={props.ignoreWidth}
+        >
+          {key}
+        </Column>
+      ))}
   </HeaderContainer>
 )
 
