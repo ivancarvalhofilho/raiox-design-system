@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {ListHeader} from './ListHeader'
+import { ListHeader } from './ListHeader'
 
 import styled from 'styled-components'
 
@@ -26,7 +26,13 @@ const Column = styled.div`
 const ListData = styled.div``
 const List = props => (
   <ListContainer style={props.style}>
-    <ListHeader data={props.header} align={props.align} />
+    {props.header && (
+      <ListHeader
+        data={props.header}
+        align={props.align}
+        nowRapRow={props.nowRapRow}
+      />
+    )}
     <ListData style={props.styleData} className="custom-scrollbar">
       {props.rows.map((row, index) => (
         <Row key={index} size={props.rowSize}>
@@ -34,7 +40,9 @@ const List = props => (
             <Column
               key={index}
               align={props.align[index]}
-              width={100 / row.length}
+              width={
+                props.nowRapRow && index === 0 ? 100 / 2 : 100 / row.length
+              }
             >
               {column}
             </Column>
@@ -53,4 +61,5 @@ List.propTypes = {
   rows: PropTypes.array,
   style: PropTypes.object,
   styleData: PropTypes.object,
+  nowRapRow: PropTypes.bool,
 }

@@ -6,6 +6,7 @@ const fonts = {
         body: 'Roboto',
         condensed: 'Roboto Condensed',
         monospace: 'Roboto Mono',
+        sharon: 'Sharon Sans'
     },
     weight: {
         bold: '700',

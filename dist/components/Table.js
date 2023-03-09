@@ -4,11 +4,15 @@ import styled from 'styled-components'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Tokens } from '../tokens'
-import {Icon} from './Icon'
+import { Icon } from './Icon'
+
+const TableContainer = styled.div`
+  min-width: ${({ minWidth }) => minWidth};
+`
 
 const LoaderContainer = styled.div`
   display: flex;
-  width: ${props => props.cols * '100'}%;
+  width: ${(props) => props.cols * '100'}%;
   justify-content: center;
   flex-direction: column;
   min-width: fit-content;
@@ -28,15 +32,15 @@ const LoaderContainer = styled.div`
 const Container = styled.div`
   display: inline-grid;
   position: relative;
-  margin-right: ${props => props.optional && '-12px'};
+  margin-right: ${(props) => props.optional && '-12px'};
   overflow: overlay;
   font-size: 14px;
-  min-width: ${props => !props.optional && 'fit-content'};
+  min-width: ${(props) => !props.optional && 'fit-content'};
   width: 100%;
   height: auto !important;
-  max-height: ${props => props.maxheight};
+  max-height: ${(props) => props.maxheight};
   color: ${Tokens.colors.neutral.dark.base};
-  grid-template-columns: ${props =>
+  grid-template-columns: ${(props) =>
     (props.hasColor ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
@@ -53,16 +57,16 @@ const Container = styled.div`
 const ContainerInfinite = styled(InfiniteScroll)`
   display: inline-grid;
   position: relative;
-  margin-right: ${props => props.optional && '-12px'};
+  margin-right: ${(props) => props.optional && '-12px'};
   overflow: auto;
   font-size: 14px;
   height: auto !important;
-  max-height: ${props => props.maxheight};
-  min-width: ${props => !props.optional && 'fit-content'};
+  max-height: ${(props) => props.maxheight};
+  min-width: ${(props) => !props.optional && 'fit-content'};
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
   color: ${Tokens.colors.neutral.dark.base};
-  grid-template-columns: ${props =>
+  grid-template-columns: ${(props) =>
     (props.hasColor ? '8px ' : '') +
     props.cols
       .splice(props.color ? 1 : 0)
@@ -108,14 +112,14 @@ const DisplayGrid = styled.div`
 const ContainerHeader = styled.div`
   display: inline-grid;
   font-size: 14px;
-  border: ${props =>
+  border: ${(props) =>
     `${Tokens.border.width.hairline} solid ${Tokens.colors.neutral.dark['03']}`};
-  overflow: ${props => props.optional && 'hidden'};
+  overflow: ${(props) => props.optional && 'hidden'};
   background-color: #f2f5f7;
-  min-width: ${props => !props.optional && 'fit-content'};
+  min-width: ${(props) => !props.optional && 'fit-content'};
   width: 100%;
   color: ${Tokens.colors.neutral.dark.base};
-  grid-template-columns: ${props =>
+  grid-template-columns: ${(props) =>
     props.colsWidth.length > 0
       ? (props.hasColor ? '8px ' : '') +
         props.colsWidth.reduce(
@@ -128,13 +132,15 @@ const ContainerHeader = styled.div`
 const Column = styled.div`
   display: inline-grid;
   transition: 2s;
-  grid-template-rows: ${props =>
+  grid-template-rows: ${(props) =>
     props.rows.reduce(
       (x, y, index) =>
-        `${x} ${`${(props.size || 48) +
+        `${x} ${`${
+          (props.size || 48) +
           (index === props.indexRowOpened && props.indexRowOpened != null
             ? props.childrenHeight
-            : 0)}px`}`,
+            : 0)
+        }px`}`,
       '',
     )};
 `
@@ -143,17 +149,17 @@ const Row = styled.div`
   display: flex;
   //width: 100%;
   align-items: center;
-  justify-content: ${props =>
+  justify-content: ${(props) =>
     props.justify === 'right'
       ? 'flex-end'
       : (props.justify === 'left' && 'flex-start') || 'center'};
-  cursor: ${props => props.clicable && 'pointer'};
-  border-bottom: ${props => props.border && '1px solid #e7e7e7'};
-  background-color: ${props => props.color || 'white'};
+  cursor: ${(props) => props.clicable && 'pointer'};
+  border-bottom: ${(props) => props.border && '1px solid #e7e7e7'};
+  background-color: ${(props) => props.color || 'white'};
   padding: 5px;
   max-height: 48px;
-  padding-left: ${props => props.first && '10%'};
-  padding-right: ${props => props.last && '10%'};
+  padding-left: ${(props) => props.first && '10%'};
+  padding-right: ${(props) => props.last && '10%'};
 `
 
 const Value = styled.div`
@@ -167,14 +173,23 @@ const SpanValue = styled.span`
   display: flex;
   align-items: center;
 `
+
+// Limitar tamanho de nome do estabelecimento para evitar quebra de linha 
+const NameValue = styled.p`
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
 const Children = styled.div`
   position: absolute;
   transition: 2s;
   cursor: auto;
-  border-left: 8px ${props => props.color} solid;
+  border-left: 8px ${(props) => props.color} solid;
   left: 0;
   width: 100%;
-  top: ${props => props.top};
+  top: ${(props) => props.top};
 `
 const Collapse = styled.div`
   padding: 0 20px;
@@ -183,14 +198,16 @@ const Collapse = styled.div`
 `
 
 function Table(props) {
-  const hasColor = Object.keys(props.data).find(key => key === 'colors')
+  const hasColor = Object.keys(props.data).find((key) => key === 'colors')
   const keys = Object.keys(props.data)
   const refChildren = useRef()
   const indexOptional =
-    keys.findIndex(key => props.data[key].optional) +
-    keys.filter(key => props.data[key].optional).length
-  const colsOriginal = keys.filter(key => !props.data[key].optional)
-  const colsOriginalWithoutColor = colsOriginal.filter(key => key !== 'colors')
+    keys.findIndex((key) => props.data[key].optional) +
+    keys.filter((key) => props.data[key].optional).length
+  const colsOriginal = keys.filter((key) => !props.data[key].optional)
+  const colsOriginalWithoutColor = colsOriginal.filter(
+    (key) => key !== 'colors',
+  )
   const cols = keys.slice(indexOptional, keys.length)
   const colsOptional = keys.slice(0, indexOptional)
   const optionalHeader = useRef()
@@ -205,14 +222,17 @@ function Table(props) {
   const itemsHeader = useRef([])
   const [colsWidth, setColsWidth] = useState([])
   const [colHeadersWidth, setColHeadersWidth] = useState([])
-
+  
   useEffect(() => {
     setChildrenSize(refChildren.current ? refChildren.current.clientHeight : 0)
     handleResize()
   }, [props.children])
 
   useEffect(() => {
-    handleResize()
+    // tempo para pegar medidas do DOM renderizado
+    setTimeout(() => {
+      handleResize()
+    }, 500)
   }, [props.data])
 
   const handleResize = () => {
@@ -224,12 +244,12 @@ function Table(props) {
           }
           return item && item.clientWidth
         })
-        .filter(item => item !== null),
+        .filter((item) => item !== null),
     )
   }
 
   useEffect(() => {
-    setColsWidth(items.current.map(item => item && item.clientWidth))
+    setColsWidth(items.current.map((item) => item && item.clientWidth))
   }, [colHeadersWidth])
 
   useEffect(() => {
@@ -238,9 +258,9 @@ function Table(props) {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
+ 
   return (
-    <div>
+    <TableContainer minWidth={props.minWidth ? props.minWidth : null}>
       <DisplayGrid>
         {props.complete && (
           <ContainerHeader
@@ -267,7 +287,7 @@ function Table(props) {
                   title={props.data[key].title}
                 >
                   <Value
-                    ref={ref => {
+                    ref={(ref) => {
                       itemsHeader.current[indexCol] = ref
                     }}
                   >
@@ -312,7 +332,7 @@ function Table(props) {
                 title={props.data[key].title}
               >
                 <Value
-                  ref={ref => {
+                  ref={(ref) => {
                     itemsHeader.current[indexCol] = ref
                   }}
                 >
@@ -353,7 +373,7 @@ function Table(props) {
                 onMouseEnter={() => {
                   setOptionalMouse(false)
                 }}
-                onScroll={e => {
+                onScroll={(e) => {
                   optionalHeader.current.scrollLeft =
                     optionalContent.current.scrollLeft
 
@@ -384,7 +404,7 @@ function Table(props) {
                         border={indexRow !== props.data[key].values.length - 1}
                         first={indexCol === 0}
                         last={indexCol === cols.length}
-                        ref={ref =>
+                        ref={(ref) =>
                           indexRow === 0 && key !== 'colors'
                             ? (items.current[indexCol] = ref)
                             : null
@@ -396,7 +416,7 @@ function Table(props) {
                                 value,
                                 props.data[key].params &&
                                   props.data[key].params.map(
-                                    param =>
+                                    (param) =>
                                       props.data[param] &&
                                       props.data[param].values[indexRow],
                                   ),
@@ -482,9 +502,10 @@ function Table(props) {
                       <React.Fragment key={indexRow}>
                         <Row
                           id={`item${indexCol}${indexRow}`}
+                          /* eslint-disable-next-line react/no-children-prop */
                           children={props.indexRowOpened === indexRow}
                           justify={props.data[key].justify}
-                          ref={ref =>
+                          ref={(ref) =>
                             indexRow === 0 && key !== 'colors'
                               ? (items.current[indexCol] = ref)
                               : null
@@ -505,21 +526,27 @@ function Table(props) {
                           last={indexCol === cols.length}
                         >
                           {key !== 'colors' && (
-                            <SpanValue>
-                              {props.data[key].template
-                                ? props.data[key].template(
-                                    value,
-                                    props.data[key].params &&
-                                      props.data[key].params.map(
-                                        param =>
-                                          props.data[param] &&
-                                          props.data[param].values[indexRow],
-                                      ),
-                                    props.dispatch,
-                                    props.subdata && props.subdata[indexRow],
-                                  )
-                                : value}
-                            </SpanValue>
+                            key === 'nomeEstabelecimento' ? (
+                              <NameValue title={value}>
+                                {value}
+                              </NameValue>
+                            ) : (
+                              <SpanValue>
+                                {props.data[key].template
+                                  ? props.data[key].template(
+                                      value,
+                                      props.data[key].params &&
+                                        props.data[key].params.map(
+                                          (param) =>
+                                            props.data[param] &&
+                                            props.data[param].values[indexRow],
+                                        ),
+                                      props.dispatch,
+                                      props.subdata && props.subdata[indexRow],
+                                    )
+                                  : value}
+                              </SpanValue>
+                            )
                           )}
                           {indexCol === colsOriginalWithoutColor.length &&
                             props.isMultiple && (
@@ -539,7 +566,7 @@ function Table(props) {
                               <Children
                                 id="children"
                                 color={props.data.colors.values[indexRow]}
-                                onClick={e => {
+                                onClick={(e) => {
                                   e.stopPropagation()
                                 }}
                                 ref={refChildren}
@@ -567,7 +594,7 @@ function Table(props) {
           </DisplayGrid>
         </Scroll>
       )}
-    </div>
+    </TableContainer>
   )
 }
 
@@ -587,6 +614,7 @@ Table.propTypes = {
   orderBy: PropTypes.string,
   subdata: PropTypes.array,
   total: PropTypes.number,
+  minWidth: PropTypes.string,
 }
 
 export { Table }

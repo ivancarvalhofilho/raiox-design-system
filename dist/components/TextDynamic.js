@@ -41,7 +41,7 @@ const TextDynamic = props => {
                             textStyleCounter += BOLD_COUNTER
                         }
 
-                        if (props.italicIndex.includes(index)) {
+                        if (props.italicIndex && props.italicIndex.includes(index)) {
                             textStyleCounter += ITALIC_COUNTER
                         }
 

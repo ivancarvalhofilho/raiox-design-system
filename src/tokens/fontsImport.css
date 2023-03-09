@@ -8,7 +8,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
 
 /*Mark Pro*/
-
 @font-face {
     font-family: 'Mark Pro';
     font-style: normal;
@@ -46,6 +45,43 @@
     src: local('Mark Pro Bold'), url('font-files/MARKPROBOLD.woff') format('woff');
 }
 
+/*Sharon Sans*/
+@font-face {
+    font-family: 'Sharon Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sharon Sans Regular'), url('font-files/SharonSans-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Sharon Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Sharon Sans Regular'), url('font-files/SharonSans-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Sharon Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Sharon Sans Light'), url('font-files/SharonSans-Light.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Sharon Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Sharon Sans Medium'), url('font-files/SharonSans-Medium.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Sharon Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Sharon Sans Bold'), url('font-files/SharonSans-Bold.otf') format('otf');
+}
+
+/*Consolas*/
 @font-face {
     font-family: 'Consolas';
     font-style: normal;

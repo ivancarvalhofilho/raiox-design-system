@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import {Icon} from './Icon'
+import { Icon } from './Icon'
 import { Tokens } from '../tokens'
+import { handleOutsideDivClick } from '../utils'
 
 const BackgroundContainer = styled.div`
   position: fixed;
@@ -20,37 +21,71 @@ const BackgroundContainer = styled.div`
 const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  ${props => props.hasRelativeIcon && 'position: relative;'}
 `
 const Title = styled.div``
 const ModalContent = styled.div`
-  padding: 20px;
+  ${props =>
+    !props.ignoreInsidePadding && `padding: ${Tokens.spacing.inline.xxxs};`}
   box-sizing: border-box;
   height: 100%;
 `
 const ModalContainer = styled.div`
   box-shadow: 0px 0px 8px rgba(0, 39, 64, 0.1);
   border-radius: 5px;
-  height: ${props => (props.height+'px') || '100%'};
-  width: 520px;
+  ${props =>
+    !props.useAutoHeight &&
+    !props.ignoreHeight &&
+    `height: ${props.height ? `${props.height}px` : '100%'};`}
+  ${props => props.useAutoHeight && 'height: auto;'}
+  width: ${props => (props.width ? `${props.width}px` : '520px')};
   transition: 0.5s;
   background: white;
   position: absolute;
-  padding: 17px;
-  
+  ${props =>
+    !props.ignoreModalPadding && `padding: ${Tokens.spacing.inline.xxxs};`}
+
   animation: modalSpawnAnimation 0.5s;
   animation-iteration-count: 1;
 `
 const Modal = props => {
+  const openRef = useRef()
+  openRef.current = props.show
+
+  const modalBodyRef = handleOutsideDivClick(() => {
+    if (openRef.current) {
+      props.onClickOut(false)
+    }
+  })
+
+  function onKeyboardHit(event) {
+    if (event.key === 'Escape') {
+      props.onClose()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', onKeyboardHit)
+    return () => {
+      document.removeEventListener('keydown', onKeyboardHit)
+    }
+  }, [])
+
   return (
     <BackgroundContainer
       show={props.show}
-      onClick={props.onClickOut}
       style={props.style}
       className={props.className}
     >
       <ModalContainer
-      height={props.height}>
-        <ModalHeader>
+        height={props.height}
+        width={props.width}
+        ref={modalBodyRef}
+        ignoreHeight={props.ignoreHeight}
+        ignoreModalPadding={props.ignoreModalPadding}
+        useAutoHeight={props.useAutoHeight}
+      >
+        <ModalHeader hasRelativeIcon={props.hasRelativeIcon}>
           <Title>{props.title}</Title>
           {props.closable && (
             <Icon
@@ -65,7 +100,9 @@ const Modal = props => {
             />
           )}
         </ModalHeader>
-        <ModalContent>{props.children}</ModalContent>
+        <ModalContent ignoreInsidePadding={props.ignoreInsidePadding}>
+          {props.children}
+        </ModalContent>
       </ModalContainer>
     </BackgroundContainer>
   )
@@ -74,10 +111,18 @@ const Modal = props => {
 export { Modal }
 Modal.propTypes = {
   children: PropTypes.any,
+  style: PropTypes.any,
+  className: PropTypes.any,
   closable: PropTypes.bool,
   onClickOut: PropTypes.func,
   onClose: PropTypes.func,
   show: PropTypes.bool,
   title: PropTypes.string,
-  height: PropTypes.number,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  useAutoHeight: PropTypes.bool,
+  width: PropTypes.number,
+  ignoreHeight: PropTypes.bool,
+  ignoreInsidePadding: PropTypes.bool,
+  ignoreModalPadding: PropTypes.bool,
+  hasRelativeIcon: PropTypes.bool,
 }

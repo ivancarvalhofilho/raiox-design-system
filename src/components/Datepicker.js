@@ -5,12 +5,12 @@ import { Icon } from '../'
 import { Tokens } from '../tokens'
 import { Divider } from './StyledComponents'
 import dayjs from 'dayjs'
-import { fontStyleMaker }from "../utils/FontUtil";
+import { fontStyleMaker } from '../utils/FontUtil'
 
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
-  width: 342px;
+  min-width: 342px;
   height: 40px;
   display: flex;
   cursor: pointer;
@@ -22,7 +22,10 @@ const ContainerDatepicker = styled.div`
 `
 
 const CalendarIcon = styled.div`
-  background: ${Tokens.colors.brand.primary.darkest};
+  background: ${props =>
+    props.customStyle?.iconContainerbackgroundColor
+      ? props.customStyle?.iconContainerbackgroundColor
+      : Tokens.colors.brand.primary.darkest};
   border-radius: 0 5px 5px 0;
   width: 40px;
   height: 40px;
@@ -37,9 +40,9 @@ const ContainerDate = styled.div`
 `
 const Text = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
   color: ${Tokens.colors.neutral.dark.base};
   display: flex;
@@ -48,23 +51,25 @@ const Text = styled.div`
 `
 const Date = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
-  color: ${Tokens.colors.neutral.dark.base};
+  color: ${props =>
+    props.customStyle?.fontColor
+      ? props.customStyle?.fontColor
+      : Tokens.colors.brand.primary.darkest};
   line-height: 15px;
   display: flex;
   align-items: center;
-
-  color: ${Tokens.colors.brand.primary.darkest};
 `
 
 const DatepickerContainer = styled.div`
   background: #ffffff;
   box-shadow: ${Tokens.shadow.level1};
   border-radius: ${Tokens.border.sm};
-  width: 514px;
+  ${props => (!props.showOneMonthPerTime ? 'width: 514px;' : null)}
+  ${props => (props.showOneMonthPerTime ? 'min-width: 300px;' : null)}
   ${props =>
     props.alignContainer === 'center'
       ? 'left: -150px'
@@ -91,9 +96,9 @@ const MonthContainer = styled.div`
 `
 const MonthTitle = styled.div`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "regular",
-    fontSize: "xs"
+    fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 'xs',
   })};
   color: ${Tokens.colors.neutral.dark.base};
 `
@@ -121,9 +126,9 @@ const BlockMessage = styled.div`
   display: flex;
   align-items: center;
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xs',
   })};
   color: ${Tokens.colors.neutral.dark.dark};
 `
@@ -139,11 +144,14 @@ const Day = styled.div`
   background-color: ${props =>
     props.selected && Tokens.colors.brand.primary.medium};
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "medium",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'medium',
+    fontSize: 'xxs',
   })};
-  color: ${props => props.disabled ? Tokens.colors.neutral.dark['02'] : Tokens.colors.neutral.dark.base};
+  color: ${props =>
+    props.disabled
+      ? Tokens.colors.neutral.dark['02']
+      : Tokens.colors.neutral.dark.base};
   ${props =>
     (props.first || props.last) &&
     `color: ${Tokens.colors.neutral.light.base};
@@ -165,20 +173,21 @@ const DayBackground = styled.div`
 
 const DayHeader = styled(Day)`
   ${fontStyleMaker({
-    fontFamily: "body",
-    fontWeight: "regular",
-    fontSize: "xxs"
+    fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 'xxs',
   })};
-  color: ${Tokens.colors.neutral.dark['01']}
+  color: ${Tokens.colors.neutral.dark['01']};
 `
 
 const Datepicker = props => {
   const [opened, setOpened] = useState(false)
   const [daysCalendar, setDaysCalendar] = useState([])
-  const [months, setMonths] = useState([
-    dayjs(props.dates[0]),
-    dayjs(props.dates[0]).add(1, 'month'),
-  ])
+  const [months, setMonths] = useState(
+    props.showOneMonthPerTime
+      ? [dayjs(props.dates[0])]
+      : [dayjs(props.dates[0]), dayjs(props.dates[0]).add(1, 'month')],
+  )
   const [today] = useState(dayjs())
   const [firstClick, setFirstClick] = useState(true)
   const [secondDateHover, setSecondDateHover] = useState(null)
@@ -208,6 +217,7 @@ const Datepicker = props => {
       ]
     })
     setDaysCalendar(dates)
+    console.log(months)
   }, [months])
 
   useEffect(() => {
@@ -255,13 +265,13 @@ const Datepicker = props => {
       >
         <ContainerDate>
           <Text>Período</Text>
-          <Date>
+          <Date customStyle={props.customStyle}>
             {`${dayjs(props.dates[0]).format('DD MMM')} - ${dayjs(
               props.dates[1],
             ).format('DD MMM')}`}
           </Date>
         </ContainerDate>
-        <CalendarIcon>
+        <CalendarIcon customStyle={props.customStyle}>
           <Icon path={Tokens.icons.calendar} size="22px" appearance="light" />
         </CalendarIcon>
       </ButtonContainer>
@@ -269,6 +279,7 @@ const Datepicker = props => {
         <DatepickerContainer
           id="container"
           alignContainer={props.alignContainer}
+          showOneMonthPerTime={props.showOneMonthPerTime}
         >
           <Container>
             {months.map((date, index) => (
@@ -298,25 +309,21 @@ const Datepicker = props => {
                     </div>
                     <MonthTitle>{date.format('MMMM YYYY')}</MonthTitle>
                     <div style={{ minWidth: '30px' }}>
-                      {index === 1 && (
-                        <>
-                          <Icon
-                            path={Tokens.icons['single-arrow-right']}
-                            size="14px"
-                            appearance="primary"
-                            style={{ marginRight: '8px' }}
-                            id={`nextMonth${index}`}
-                            onClick={() => changeMonth(index, true)}
-                          />
-                          <Icon
-                            path={Tokens.icons['double-arrow-right']}
-                            size="14px"
-                            appearance="primary"
-                            id={`nextYear${index}`}
-                            onClick={() => changeYear(index, true)}
-                          />
-                        </>
-                      )}
+                      <Icon
+                        path={Tokens.icons['single-arrow-right']}
+                        size="14px"
+                        appearance="primary"
+                        style={{ marginRight: '8px' }}
+                        id={`nextMonth${index}`}
+                        onClick={() => changeMonth(index, true)}
+                      />
+                      <Icon
+                        path={Tokens.icons['double-arrow-right']}
+                        size="14px"
+                        appearance="primary"
+                        id={`nextYear${index}`}
+                        onClick={() => changeYear(index, true)}
+                      />
                     </div>
                   </MonthHeader>
                   <CalendarContainer>
@@ -343,6 +350,7 @@ const Datepicker = props => {
                             dayMonth.isSameOrBefore(props.minDate)) ||
                           disabledByRange
                         const isToday = dayMonth.isSame(today, 'day')
+
                         return (
                           <DayBackground
                             key={date + indexDay}
@@ -382,6 +390,11 @@ const Datepicker = props => {
                             {Math.sign(day) === 1 && (
                               <Day
                                 onMouseOver={() => {
+                                  if (!firstClick) {
+                                    setSecondDateHover(dayMonth)
+                                  }
+                                }}
+                                onFocus={() => {
                                   if (!firstClick) {
                                     setSecondDateHover(dayMonth)
                                   }
@@ -439,4 +452,6 @@ Datepicker.propTypes = {
   onClose: PropTypes.func,
   onSelectDay: PropTypes.func,
   style: PropTypes.object,
+  customStyle: PropTypes.object,
+  showOneMonthPerTime: PropTypes.bool,
 }
