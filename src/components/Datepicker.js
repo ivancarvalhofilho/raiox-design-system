@@ -343,13 +343,14 @@ const Datepicker = props => {
                           Math.abs(
                             dayjs(props.dates[0]).diff(dayMonth, 'day'),
                           ) > props.maxRange
-                        const disabled =
-                          (props.maxDate &&
-                            dayMonth.isSameOrAfter(props.maxDate)) ||
-                          (props.minDate &&
-                            dayMonth.isSameOrBefore(props.minDate)) ||
-                          disabledByRange
+                        const greaterThanToday = props.maxDate &&
+                        dayMonth.isSameOrAfter(props.maxDate)
+                        const lessThanMinDate = props.minDate &&
+                        dayMonth.isSameOrBefore(props.minDate)
+                        const disabled = greaterThanToday || lessThanMinDate || disabledByRange
                         const isToday = dayMonth.isSame(today, 'day')
+
+                        const tooltipText = greaterThanToday ? null : disabledByRange ? props.tooltipText : null
 
                         return (
                           <DayBackground
@@ -364,11 +365,7 @@ const Datepicker = props => {
                               firstClick &&
                               dayMonth.isSame(props.dates[1])
                             }
-                            data-tooltip={
-                              disabledByRange
-                                ? 'Não é possível selecionar um período maior que 120 dias'
-                                : ''
-                            }
+                            data-tooltip={tooltipText}
                             selected={
                               Math.sign(day) === 1 &&
                               ((dayMonth.isSameOrAfter(dayjs(props.dates[0])) &&
@@ -442,7 +439,10 @@ const Datepicker = props => {
   )
 }
 
-export { Datepicker }
+Datepicker.defaultProps = {
+  tooltipText: `Não é possível selecionar um período maior que 120 dias`
+}
+
 Datepicker.propTypes = {
   alignContainer: PropTypes.string,
   dates: PropTypes.array,
@@ -454,4 +454,7 @@ Datepicker.propTypes = {
   style: PropTypes.object,
   customStyle: PropTypes.object,
   showOneMonthPerTime: PropTypes.bool,
+  tooltipText: PropTypes.string,
 }
+
+export { Datepicker }

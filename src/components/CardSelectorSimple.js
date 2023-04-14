@@ -40,15 +40,28 @@ const CardSelectorSimple = props => (
         className={props.className}
     >
         <Title>{props.title}</Title>
-        <Icon path={Tokens.icons["single-arrow-right"]} size={'16px'}/>
+        {props.arrowIcon &&
+        <Icon path={Tokens.icons["single-arrow-right"]} size='md'/>
+        }
+        {(!props.arrowIcon && props.rightIcon) && (props.rightIcon)}
     </CardSelectorSimpleStyle>
 )
 
-export {CardSelectorSimple}
-CardSelectorSimple.propTypes = {
-    onClick: PropTypes.func,
-    disabled: PropTypes.bool,
-    title: PropTypes.string,
-    style: PropTypes.any,
-    className: PropTypes.any,
+CardSelectorSimple.defaultProps = {
+  arrowIcon: true,
 }
+
+CardSelectorSimple.propTypes = {
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  title: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+  ]),
+  style: PropTypes.any,
+  className: PropTypes.any,
+  arrowIcon: PropTypes.bool,
+  rightIcon: PropTypes.element,
+}
+
+export {CardSelectorSimple}
