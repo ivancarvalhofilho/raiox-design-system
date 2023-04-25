@@ -56,6 +56,16 @@ const ButtonSecondary = styled(ButtonPrimary)`
 const ButtonDanger = styled(ButtonPrimary)`
   background: ${props => props.tokensColors.feedback.danger.darkest};
 `
+
+const DangerOutline = styled(ButtonSecondary)`
+  color: ${props => props.tokensColors.feedback.danger.darkest};
+  box-shadow: 0 0 0 1px ${props => props.tokensColors.feedback.danger.darkest};
+  &:hover {
+    background: ${props => props.tokensColors.feedback.danger.darkest};
+    color: ${props => props.tokensColors.neutral.light.base};
+  }
+`
+
 const LoadingBubbles = styled.div`
   position: absolute;
   display: flex;
@@ -116,7 +126,8 @@ const Button = props => {
     const buttonType =
         props.primary && ButtonPrimary ||
         props.secondary && ButtonSecondary ||
-        props.danger && ButtonDanger || ButtonPrimary
+        props.danger && ButtonDanger || 
+        props.dangerOutline && DangerOutline || ButtonPrimary
 
     const buttonSize = props.size || 'lg'
 
@@ -135,7 +146,7 @@ const Button = props => {
             className={props.className}>
             <span>{props.text}</span>
             {props.loading && (<LoadingBubbles tokensColors={tokensColors}
-                                               secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
+            secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
         </ButtonPrimary>
     )
 }
@@ -146,6 +157,7 @@ Button.propTypes = {
     primary: PropTypes.bool,
     secondary: PropTypes.bool,
     danger: PropTypes.bool,
+    dangerOutline: PropTypes.bool,
     loading: PropTypes.bool,
     size: PropTypes.string,
     text: PropTypes.string,

@@ -342,7 +342,7 @@ const Datepicker = props => {
                           !firstClick &&
                           Math.abs(
                             dayjs(props.dates[0]).diff(dayMonth, 'day'),
-                          ) > props.maxRange
+                          ) >= props.maxRange
                         const greaterThanToday = props.maxDate &&
                         dayMonth.isSameOrAfter(props.maxDate)
                         const lessThanMinDate = props.minDate &&
