@@ -60,10 +60,20 @@ const ButtonDanger = styled(ButtonPrimary)`
 const DangerOutline = styled(ButtonSecondary)`
   color: ${props => props.tokensColors.feedback.danger.darkest};
   box-shadow: 0 0 0 1px ${props => props.tokensColors.feedback.danger.darkest};
+  
   &:hover {
-    background: ${props => props.tokensColors.feedback.danger.darkest};
-    color: ${props => props.tokensColors.neutral.light.base};
+      background: ${props => props.tokensColors.feedback.danger.darkest};
+      color: ${props => props.tokensColors.neutral.light.base};
   }
+
+  ${({loading, tokensColors}) => loading &&
+    `
+      &:hover > div > span {
+        background: ${tokensColors.neutral.light.base};
+      }
+    `
+  }
+  
 `
 
 const LoadingBubbles = styled.div`
@@ -90,7 +100,11 @@ const LoadingBubbles = styled.div`
 
   & > span {
     opacity: 0;
-    background: ${props => props.secondary ? props.tokensColors.brand.primary.darkest : props.tokensColors.neutral.light.base};
+    background: ${props => props.secondary 
+      ? props.tokensColors.brand.primary.darkest 
+      : props.dangerOutline
+      ? props.tokensColors.feedback.danger.darkest
+      : props.tokensColors.neutral.light.base};
     width: 5px;
     height: 5px;
     margin-right: 2px;
@@ -146,7 +160,7 @@ const Button = props => {
             className={props.className}>
             <span>{props.text}</span>
             {props.loading && (<LoadingBubbles tokensColors={tokensColors}
-            secondary={props.secondary}><span/><span/><span/><span/></LoadingBubbles>)}
+            secondary={props.secondary} dangerOutline={props.dangerOutline}><span/><span/><span/><span/></LoadingBubbles>)}
         </ButtonPrimary>
     )
 }
