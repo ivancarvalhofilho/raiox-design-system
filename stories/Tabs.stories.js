@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { Tabs, TabsCore } from '../src'
+import TabsWithBadge from '../src/components/Tabs/TabsWithBadge/TabsWithBadge'
 
 export default {
   title: 'Components/Tabs',
@@ -17,8 +18,15 @@ const TemplateCore = (args) => {
   return <TabsCore {...args} tabActive={tabActive} onTabClick={setTabActive} />
 }
 
+const TemplateWithBadge = (args) => {
+  const [tabActive, setTabActive] = useState(0)
+  return <TabsWithBadge {...args} tabActive={tabActive} onTabClick={setTabActive} />
+}
+
 export const Default = Template.bind({})
 export const TabCore = TemplateCore.bind({})
+export const TabWithBadge = TemplateWithBadge.bind({})
+
 Default.args = {
   tabs: ['Categorias', 'Maquininhas', 'Banco'],
   disabled: false,
@@ -37,4 +45,10 @@ Default.args = {
 TabCore.args = {
   tabs: ['Categorias', 'Maquininhas', 'Banco'],
   disabled: false,
+}
+TabWithBadge.args = {
+  tabs: ['Pedente', 'Em andamento', 'Concluído'],
+  disabled: false,
+  tabWidth: 70,
+  badges: [3, 17, 9],
 }
