@@ -69,7 +69,7 @@ const TabsWithBadge = (props) => (
   </Container>
 )
 
-export default TabsWithBadge
+export { TabsWithBadge }
 
 TabsWithBadge.propTypes = {
   disabled: PropTypes.bool,
