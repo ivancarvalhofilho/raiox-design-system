@@ -32,6 +32,7 @@ export { CardSelectorSimple } from './components/CardSelectorSimple'
 export { InputToken } from './components/Inputs/InputToken'
 export { SimpleToast } from './components/SimpleToast'
 export { TextDynamic } from './components/TextDynamic'
+export { HorizontalList } from './components/HorizontalList'
 
 import fonts from "./tokens/fonts.tsx";
 import tokens from "./tokens/tokens.tsx";
@@ -40,7 +41,7 @@ import colors from "./tokens/colors.tsx";
 import iconsAdquirentes from "./tokens/icons/iconsAdquirente";
 import illustrations from "./tokens/icons/illustrations";
 import iconsBanco from "./tokens/icons/iconsBanco";
-import './tokens/global.css'
+import './tokens/global.css';
 
 export const Tokens = {
 	colors,
