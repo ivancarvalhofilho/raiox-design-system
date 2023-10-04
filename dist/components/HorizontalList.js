@@ -18,7 +18,7 @@ const List = styled.ul`
   gap: 0;
   max-width: 100%;
   grid-auto-flow: column;
-  padding-bottom: 16px;
+  padding-bottom: ${({ scroll }) => scroll ? '16px' : 0};
   overflow-x: auto;
 
   &::-webkit-scrollbar-track{
@@ -60,6 +60,8 @@ const ListItem = styled.li`
 
   &:first-child {
     border-left: none;
+    padding-left: 0;
+    width: calc(160px + (96px*.5));
   }
 `
 const Title = styled.p`
@@ -125,11 +127,11 @@ const HorizontalList = (props) => {
   }
 
   const onMouseMove = (e) => {
-    if(!isDown) return
+    if (!isDown) return
     e.preventDefault()
     const x = slider.current && (e.pageX - slider.current.offsetLeft)
     const walk = x && (x - startX) * 1.6
-    if(slider.current && walk)
+    if (slider.current && walk)
       slider.current.scrollLeft = scrollLeft - walk
   }
 
@@ -137,23 +139,30 @@ const HorizontalList = (props) => {
     isDown = false
     slider.current && slider.current.classList.remove('active')
   }
-  
+
   return (
     <ListContainer>
-      <List ref={slider} onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-        { 
+      <List
+        ref={slider}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        scroll={props.list.length >= 4}
+      >
+        {
           props.list.map((item, index) => (
             <ListItem key={`estab${index}`}>
-            {item.labelsKey.map((key) => (
-              <>
-                <Title>{key[0]}</Title>
-                <Value>{item[key[1]]}</Value>
-              </>
-            ))}
+              {item.labelsKey.map((key, i) => (
+                <div key={`labels${i}`}>
+                  <Title>{key[0]}</Title>
+                  <Value>{item[key[1]]}</Value>
+                </div>
+              ))}
             </ListItem>
           ))
         }
-        
+
       </List>
     </ListContainer>
   )
@@ -163,4 +172,4 @@ HorizontalList.propTypes = {
   list: PropTypes.array,
 }
 
-export {HorizontalList}
+export { HorizontalList }
