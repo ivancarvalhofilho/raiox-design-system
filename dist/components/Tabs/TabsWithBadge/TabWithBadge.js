@@ -54,18 +54,20 @@ const TabWithBadge = (props) => (
     onClick={props.onClick}
     active={props.active}
     fontStyle={props.fontStyle}
+    className={props.className}
   >
     {props.label}<Badge active={props.active} label={props.badge} />
   </TabContainer>
 )
 
-export default TabWithBadge 
+export default TabWithBadge
 
 TabWithBadge.propTypes = {
   active: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
   onClick: PropTypes.func,
   width: PropTypes.number,
   fontStyle: PropTypes.any,
   badge: PropTypes.number,
+  className: PropTypes.string,
 }

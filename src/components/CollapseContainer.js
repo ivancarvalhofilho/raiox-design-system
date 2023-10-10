@@ -17,7 +17,13 @@ const Container = styled(StyledContainer)`
   margin-top: ${Tokens.spacing.inline.nano};
   margin-bottom: ${Tokens.spacing.inline.nano};
 
-  ${({ borderLeft }) => borderLeft && `border-left: 6px solid ${borderLeft};`}
+  ${({ borderLeft }) => borderLeft &&
+    `
+    &#mainContainer {
+      border-left: 6px solid ${borderLeft};
+    }
+    `
+  }
 `
 const Header = styled.div`
   cursor: pointer;
@@ -77,7 +83,7 @@ const CollapseContainer = props => {
   }
 
   return (
-    <Container ref={wrapperRef} borderLeft={props.borderLeft}>
+    <Container ref={wrapperRef} borderLeft={props.borderLeft} className={props.className} id='mainContainer'>
       <Header id="header" onClick={handleClick}>
         {props.customHeader ? props.customHeader : <Title>{props.title}</Title>}
         <Button>
@@ -108,4 +114,5 @@ CollapseContainer.propTypes = {
   onClick: PropTypes.func,
   customHeader: PropTypes.object,
   borderLeft: PropTypes.string,
+  className: PropTypes.string,
 }
