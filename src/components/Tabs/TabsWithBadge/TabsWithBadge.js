@@ -7,7 +7,7 @@ import { Tokens } from '../../../tokens'
 const TabsContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  width: ${({width}) => width+'%' || auto};
+  width: ${({ width }) => width + '%' || auto};
   pointer-events: ${(props) => props.disabled && 'none'};
   ${(props) =>
     props.customStyle?.containerPadding
@@ -55,6 +55,7 @@ const TabsWithBadge = (props) => (
           onClick={() => !props.disabled && props.onTabClick(index)}
           active={props.tabActive === index}
           fontStyle={props.customStyle}
+          className={props.className}
         />
       ))}
     </TabsContainer>
@@ -81,6 +82,7 @@ TabsWithBadge.propTypes = {
   customStyle: PropTypes.object,
   tabWidth: PropTypes.number,
   style: PropTypes.object,
-  badges: PropTypes.arrayOf(PropTypes.number),
+  badges: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string, PropTypes.number)),
+  className: PropTypes.string,
 }
 

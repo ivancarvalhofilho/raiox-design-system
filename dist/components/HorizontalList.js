@@ -9,6 +9,7 @@ const ListContainer = styled.div`
   padding-top: 16px;
   padding-bottom: 16px;
   overflow-x: hidden;
+  font-family: inherit;
 `
 const List = styled.ul`
   list-style: none;
@@ -67,9 +68,7 @@ const ListItem = styled.li`
 const Title = styled.p`
   margin: 0;
   color: #595A5C;
-  font-family: Roboto;
   font-size: 13px;
-  font-style: normal;
   font-weight: 400;
   line-height: 11px; /* 84.615% */
   letter-spacing: 0.6px;
@@ -78,9 +77,7 @@ const Title = styled.p`
 const Value = styled.p`
   margin: 0;
   color: #303133;
-  font-family: Roboto;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: 22px; /* 157.143% */
   max-width: 160px;
@@ -92,12 +89,11 @@ const Value = styled.p`
 
 /**
  * @typedef {[string,string]} LabelsKey - Array contento na primeira posição a label(título) a ser exibida e segunda posição a chave do objeto com valor
+ * @template T
  * @typedef {{
- *  labelsKey: LabelsKey[];
- *  [key: string]: string;
- * }} List - Objeto com valores a serem exibidos e seu array de labelsKey
- * @param {object} props
- * @param {List | List[]} props.list
+ *  [Property in keyof T]: string | LabelsKey[];
+ * } & {labelsKey: LabelsKey[];}} List - Objeto com valores a serem exibidos e seu array de labelsKey
+ * @param {{list: List[] | any[]}} props 
  * @example <HorizontalList list={[{
  *    nome: 'Horti Fruti',
       cnpj: "12323132132112",
