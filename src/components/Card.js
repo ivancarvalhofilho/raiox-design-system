@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import {Tokens} from '../tokens'
-import {Divider} from "./StyledComponents";
+import { Tokens } from '../tokens'
+import { Divider } from './StyledComponents'
 
 const CardStyle = styled.div`
   display: flex;
@@ -16,6 +16,7 @@ const CardStyle = styled.div`
   background: ${Tokens.colors.neutral.light.base};
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   border-radius: ${Tokens.border.radius.sm};
+  border-top: ${props => props.color && `6px solid ${props.color}`};
 
   pointer-events: ${props => props.disabled && 'none'};
   opacity: ${props => props.disabled && Tokens.opacity.level.medium};
@@ -34,25 +35,25 @@ const CardFooter = styled.div`
 const CardFooterContainer = styled.div`
   width: 100%;
 `
-const pickAnimation = (orientation) => {
-    if (!orientation) return ''
+const pickAnimation = orientation => {
+  if (!orientation) return ''
 
-    let translate = ''
-    switch (orientation) {
-        case 'left':
-            translate = 'translateX(-'
-            break;
-        case 'right':
-            translate = 'translateX('
-            break;
-        case 'up':
-            translate = 'translateY(-'
-            break;
-        case 'down':
-            translate = 'translateY('
-            break;
-    }
-    return `
+  let translate = ''
+  switch (orientation) {
+    case 'left':
+      translate = 'translateX(-'
+      break
+    case 'right':
+      translate = 'translateX('
+      break
+    case 'up':
+      translate = 'translateY(-'
+      break
+    case 'down':
+      translate = 'translateY('
+      break
+  }
+  return `
 	@keyframes cardSpawnAnimation${orientation} {
     from {
       opacity: 0.2;
@@ -66,30 +67,33 @@ const pickAnimation = (orientation) => {
   animation: cardSpawnAnimation${orientation} 0.5s;'
   `
 }
-export const animationSpawnEnum = [
-    'left',
-    'right',
-    'up',
-    'down',
-]
+export const animationSpawnEnum = ['left', 'right', 'up', 'down']
 const Card = props => (
-    <CardStyle disabled={props.disabled} style={props.style} className={props.className}
-               animationSpawn={props.animationSpawn}>
-        <CardContent> {props.children} </CardContent>
-        {!!props.footerChildren &&
-        <CardFooterContainer>
-            <Divider horizontal style={{width: '100%'}}/>
-            <CardFooter> {props.footerChildren} </CardFooter>
-        </CardFooterContainer>}
-    </CardStyle>
+  <CardStyle
+    disabled={props.disabled}
+    style={props.style}
+    className={props.className}
+    color={props.topColor}
+    animationSpawn={props.animationSpawn}
+  >
+    <CardContent> {props.children} </CardContent>
+    {!!props.footerChildren && (
+      <CardFooterContainer>
+        <Divider horizontal style={{ width: '100%' }} />
+        <CardFooter> {props.footerChildren} </CardFooter>
+      </CardFooterContainer>
+    )}
+  </CardStyle>
 )
 
-export {Card}
+export { Card }
 
 Card.propTypes = {
-    animationSpawn: PropTypes.string,
-    children: PropTypes.any,
-    style: PropTypes.any,
-    className: PropTypes.any,
-    footerChildren: PropTypes.any,
+  animationSpawn: PropTypes.string,
+  children: PropTypes.any,
+  style: PropTypes.any,
+  className: PropTypes.any,
+  footerChildren: PropTypes.any,
+  topColor: PropTypes.string,
+  disabled: PropTypes.boolean,
 }
