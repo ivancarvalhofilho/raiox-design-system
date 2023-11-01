@@ -82,7 +82,7 @@ TabsWithBadge.propTypes = {
   customStyle: PropTypes.object,
   tabWidth: PropTypes.number,
   style: PropTypes.object,
-  badges: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string, PropTypes.number)),
+  badges: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   className: PropTypes.string,
 }
 
