@@ -64,7 +64,7 @@ export default TabWithBadge
 
 TabWithBadge.propTypes = {
   active: PropTypes.bool,
-  label: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func,
   width: PropTypes.number,
   fontStyle: PropTypes.any,

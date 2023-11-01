@@ -38,7 +38,7 @@ Badge.defaultProps = {
 
 Badge.propTypes = {
   active: PropTypes.bool,
-  label: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func,
   size: PropTypes.number,
   color: PropTypes.string,
