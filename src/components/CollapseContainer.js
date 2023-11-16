@@ -69,6 +69,7 @@ const CollapseContainer = props => {
 
   const wrapperRef = handleOutsideDivClick(
     () => {
+      if (!props.collapseOnOutsideClick) return
       if (openRef.current) {
         setTimeout(() => {
           setOpened(false)
@@ -104,6 +105,11 @@ const CollapseContainer = props => {
 }
 
 export { CollapseContainer }
+
+CollapseContainer.defaultProps = {
+  collapseOnOutsideClick: true
+}
+
 CollapseContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -115,4 +121,5 @@ CollapseContainer.propTypes = {
   customHeader: PropTypes.object,
   borderLeft: PropTypes.string,
   className: PropTypes.string,
+  collapseOnOutsideClick: PropTypes.bool
 }
