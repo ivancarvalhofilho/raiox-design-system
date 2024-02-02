@@ -175,15 +175,23 @@ const Button = props => {
       as={buttonType}
       className={props.className}
     >
-      {props.icon && (
+      {props.icon && props.icon?.position === 'before-text' && (
         <Icon
-          size={24}
+          size={props.icon.size || 24}
           path={props.icon}
           style={{ marginRight: Tokens.spacing.stack.nano }}
-          appearance="warning"
+          appearance={props.icon?.appearance || 'warning'}
         />
       )}
       <span>{props.text}</span>
+      {props.icon && props.icon?.position === 'after-text' && (
+        <Icon
+          size={props.icon.size || 24}
+          path={props.icon}
+          style={{ marginRight: Tokens.spacing.stack.nano }}
+          appearance={props.icon?.appearance || 'warning'}
+        />
+      )}
       {props.loading && (
         <LoadingBubbles
           tokensColors={tokensColors}
@@ -214,6 +222,6 @@ Button.propTypes = {
   onClick: PropTypes.func,
   customColors: PropTypes.object,
   secondaryIcon: PropTypes.bool,
-  icon: PropTypes.string,
+  icon: PropTypes.any,
   dangerOutline: PropTypes.bool,
 }
