@@ -178,7 +178,7 @@ const Button = props => {
       {props.icon && props.icon?.position === 'before-text' && (
         <Icon
           size={props.icon.size || 24}
-          path={props.icon}
+          path={props.icon.path}
           style={{ marginRight: Tokens.spacing.stack.nano }}
           appearance={props.icon?.appearance || 'warning'}
         />
@@ -187,7 +187,7 @@ const Button = props => {
       {props.icon && props.icon?.position === 'after-text' && (
         <Icon
           size={props.icon.size || 24}
-          path={props.icon}
+          path={props.icon.path}
           style={{ marginRight: Tokens.spacing.stack.nano }}
           appearance={props.icon?.appearance || 'warning'}
         />
