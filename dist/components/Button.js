@@ -179,7 +179,10 @@ const Button = props => {
         <Icon
           size={props.icon.size || 24}
           path={props.icon.path}
-          style={{ marginRight: Tokens.spacing.stack.nano }}
+          style={{
+            marginRight: Tokens.spacing.stack.nano,
+            ...props.icon.style,
+          }}
           appearance={props.icon?.appearance || 'warning'}
         />
       )}
@@ -188,7 +191,7 @@ const Button = props => {
         <Icon
           size={props.icon.size || 24}
           path={props.icon.path}
-          style={{ marginRight: Tokens.spacing.stack.nano }}
+          style={{ marginLeft: Tokens.spacing.stack.nano, ...props.icon.style }}
           appearance={props.icon?.appearance || 'warning'}
         />
       )}
