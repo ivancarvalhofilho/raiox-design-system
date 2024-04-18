@@ -65,6 +65,6 @@ const Colors = {
             facebook: '#1877F2',
         },
     }
-}
+} as const
 
 export default Colors

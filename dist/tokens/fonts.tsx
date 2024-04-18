@@ -24,7 +24,8 @@ const fonts = {
         lg: '24px',
         llg: '28px',
         xl: '32px',
-    },}
+    },
+} as const
 export type FontFamilyType = keyof typeof fonts.family
 export type FontWeightType = keyof typeof fonts.weight
 export type FontSizeType = keyof typeof fonts.fontSize

@@ -14,7 +14,7 @@ const coreColors = {
             medium: '#6B809D',
             light: '#F8F9FD'
         },
-        background: {base:'#F8F9FD'},
+        background: { base: '#F8F9FD' },
     },
 
     neutral: {
@@ -69,6 +69,6 @@ const coreColors = {
             facebook: '#1877F2',
         },
     },
-}
+} as const
 
 export default coreColors

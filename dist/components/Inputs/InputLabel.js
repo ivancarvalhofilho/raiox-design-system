@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import React, {useRef, useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import {Tokens} from '../../tokens'
-import {fontStyleMaker} from '../../utils/FontUtil'
-import {Icon} from "../Icon";
-import {camelize} from "../../utils/stringUtil";
+import { Tokens } from '../../tokens'
+import { fontStyleMaker } from '../../utils/FontUtil'
+import { Icon } from "../Icon";
+import { camelize } from "../../utils/stringUtil";
 
 const SuspendedLabel = styled.div`
 	position: absolute;
@@ -13,10 +13,10 @@ const SuspendedLabel = styled.div`
 	padding: 4px;
 	color: ${Tokens.colors.neutral.dark['01']};
 	${fontStyleMaker({
-		fontFamily: 'body',
-		fontWeight: 'regular',
-		fontSize: 'xs',
-	})};
+	fontFamily: 'body',
+	fontWeight: 'regular',
+	fontSize: 'xs',
+})};
 	background: inherit;
 	transition: 0.25s;
 	top: 0;
@@ -46,10 +46,10 @@ const InputLabelStyled = styled.input`
 	transition: 0.25s;
 	color: ${Tokens.colors.neutral.dark.base};
 	${fontStyleMaker({
-		fontFamily: 'body',
-		fontWeight: 'regular',
-		fontSize: 'xs',
-	})};
+	fontFamily: 'body',
+	fontWeight: 'regular',
+	fontSize: 'xs',
+})};
 	width: inherit;
 	&:focus {
 		outline: none;
@@ -88,10 +88,10 @@ const SpanError = styled.span`
 	display: flex;
 	color: ${Tokens.colors.feedback.danger.dark};
 	${fontStyleMaker({
-		fontWeight: 'regular',
-		fontFamily: 'body',
-		fontSize: 'xs',
-	})};
+	fontWeight: 'regular',
+	fontFamily: 'body',
+	fontSize: 'xs',
+})};
 	margin-top: ${Tokens.spacing.inline.nano};
 	text-align: start;
 `
@@ -104,10 +104,10 @@ const PasswordEyeContainer = styled.div`
 	justify-content: center;
 	& > span {
 		${fontStyleMaker({
-			fontFamily: "body",
-			fontSize: "xxs",
-			fontWeight: "regular"
-		})};
+	fontFamily: "body",
+	fontSize: "xxs",
+	fontWeight: "regular"
+})};
 		margin-left: ${Tokens.spacing.stack.nano};
 		color: ${Tokens.colors.neutral.dark["01"]};
 	}
@@ -157,17 +157,18 @@ const InputLabel = (props) => {
 			{props.error && <SpanError>{props.errorLabel}</SpanError>}
 			{isPasswordType && <PasswordEyeContainer onClick={() => setVisiblePassword(!visiblePassword)}>
 				<Icon path={visiblePassword ? Tokens.icons["eye-closed"] : Tokens.icons.eye}
-					  appearance={props.error ? 'danger' : 'primary'} size={20}/>
+					appearance={props.error ? 'danger' : 'primary'} size={20} />
 				<span>{visiblePassword ? 'Esconder' : 'Mostrar'}</span>
 			</PasswordEyeContainer>}
 		</InputLabelContainer>
 	)
 }
 
-export {InputLabel}
+export { InputLabel }
 InputLabel.propTypes = {
 	state: PropTypes.string,
 	text: PropTypes.string,
+	label: PropTypes.string,
 	setText: PropTypes.func,
 	onBlur: PropTypes.func,
 	maxLength: PropTypes.number,
@@ -177,4 +178,5 @@ InputLabel.propTypes = {
 	errorLabel: PropTypes.string,
 	inputType: PropTypes.string,
 	autofocus: PropTypes.bool,
+	style: PropTypes.object,
 }

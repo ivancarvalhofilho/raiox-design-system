@@ -81,5 +81,5 @@ const tokens = {
         md: '16px',
         lg: '24px',
     },
-}
+} as const
 export default tokens;

@@ -31,6 +31,8 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: ${Tokens.spacing.inset.xs};
+
+  ${({ minHeight }) => minHeight && 'min-height:' + minHeight + 'px;'}
 `
 const Button = styled.div`
   display: flex;
@@ -85,7 +87,7 @@ const CollapseContainer = props => {
 
   return (
     <Container ref={wrapperRef} borderLeft={props.borderLeft} className={props.className} id='mainContainer'>
-      <Header id="header" onClick={handleClick}>
+      <Header id="header" onClick={handleClick} minHeight={props.minHeight}>
         {props.customHeader ? props.customHeader : <Title>{props.title}</Title>}
         <Button>
           <Icon
@@ -121,5 +123,6 @@ CollapseContainer.propTypes = {
   customHeader: PropTypes.object,
   borderLeft: PropTypes.string,
   className: PropTypes.string,
-  collapseOnOutsideClick: PropTypes.bool
+  collapseOnOutsideClick: PropTypes.bool,
+  minHeight: PropTypes.number,
 }
