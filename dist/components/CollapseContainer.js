@@ -99,7 +99,7 @@ const CollapseContainer = props => {
         </Button>
       </Header>
       <UnmountClosed isOpened={opened} style={{ padding: 0 }}>
-        <Divider horizontal />
+        {props.showDivider && <Divider horizontal />}
         <Body id="children">{props.children}</Body>
       </UnmountClosed>
     </Container>
@@ -109,7 +109,8 @@ const CollapseContainer = props => {
 export { CollapseContainer }
 
 CollapseContainer.defaultProps = {
-  collapseOnOutsideClick: true
+  collapseOnOutsideClick: true,
+  showDivider: true
 }
 
 CollapseContainer.propTypes = {
@@ -125,4 +126,5 @@ CollapseContainer.propTypes = {
   className: PropTypes.string,
   collapseOnOutsideClick: PropTypes.bool,
   minHeight: PropTypes.number,
+  showDivider: PropTypes.bool
 }
