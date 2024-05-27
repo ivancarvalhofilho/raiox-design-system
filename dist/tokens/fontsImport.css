@@ -7,91 +7,149 @@
 /*Roboto Mono*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
 
+/* Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 /*Mark Pro*/
 @font-face {
-    font-family: 'Mark Pro';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Mark Pro Regular'), url('font-files/MARKPRO.woff') format('woff');
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Mark Pro Regular'),
+    url('./font-files/MarkPro.ttf') format('ttf');
 }
 
 @font-face {
-    font-family: 'Mark Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Mark Pro Regular'), url('font-files/MARKPRO.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Mark Pro';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Mark Pro Light'), url('font-files/MARKPROLIGHT.woff') format('woff');
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Mark Pro Regular'),
+    url('./font-files/MarkPro.ttf') format('ttf');
 }
 
 @font-face {
-    font-family: 'Mark Pro';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Mark Pro Medium'), url('font-files/MARKPROMEDIUM.woff') format('woff');
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Mark Pro Light'),
+    url('./font-files/MarkPro-Book.ttf') format('ttf');
 }
 
+@font-face {
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Mark Pro Medium'),
+    url('./font-files/MarkPro-Medium.ttf') format('ttf');
+}
 
 @font-face {
-    font-family: 'Mark Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Mark Pro Bold'), url('font-files/MARKPROBOLD.woff') format('woff');
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Mark Pro Bold'),
+    url('./font-files/MarkPro-Bold.ttf') format('ttf');
 }
 
 /*Sharon Sans*/
 @font-face {
-    font-family: 'Sharon Sans';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Sharon Sans Regular'), url('font-files/SharonSans-Regular.otf') format('otf');
+  font-family: 'Sharon Sans';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Sharon Sans Regular'),
+    url('./font-files/SharonSans-Regular.otf') format('openType');
 }
 
 @font-face {
-    font-family: 'Sharon Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Sharon Sans Regular'), url('font-files/SharonSans-Regular.otf') format('otf');
+  font-family: 'Sharon Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Sharon Sans Regular'),
+    url('./font-files/SharonSans-Regular.otf') format('openType');
 }
 
 @font-face {
-    font-family: 'Sharon Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Sharon Sans Light'), url('font-files/SharonSans-Light.otf') format('otf');
+  font-family: 'Sharon Sans';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Sharon Sans Light'),
+    url('./font-files/SharonSans-Light.otf') format('openType');
 }
 
 @font-face {
-    font-family: 'Sharon Sans';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Sharon Sans Medium'), url('font-files/SharonSans-Medium.otf') format('otf');
+  font-family: 'Sharon Sans';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Sharon Sans Medium'),
+    url('./font-files/SharonSans-Medium.otf') format('openType');
 }
 
 @font-face {
-    font-family: 'Sharon Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Sharon Sans Bold'), url('font-files/SharonSans-Bold.otf') format('otf');
+  font-family: 'Sharon Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Sharon Sans Bold'),
+    url('./font-files/SharonSans-Bold.otf') format('openType');
 }
 
 /*Consolas*/
 @font-face {
-    font-family: 'Consolas';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Consolas'), url('font-files/Consolas.woff') format('woff');
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Consolas'),
+    url('./font-files/Consolas.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Consolas';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Consolas Bold'), url('font-files/Consolas-Bold.woff') format('woff');
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Consolas Bold'),
+    url('./font-files/Consolas-Bold.woff') format('woff');
+}
+/* Product Sans */
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Product Sans Regular'),
+    url('./font-files/ProductSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Product Sans Light'),
+    url('./font-files/ProductSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Product Sans Medium'),
+    url('./font-files/ProductSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Product Sans Bold'),
+    url('./font-files/ProductSans-Bold.ttf') format('truetype');
 }
