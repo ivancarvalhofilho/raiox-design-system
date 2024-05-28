@@ -2,7 +2,7 @@ import './fontsImport.css'
 
 const fonts = {
     family: {
-        head: 'Mark Pro',
+        head: 'Mark Pro, sans-serif',
         body: 'Roboto',
         condensed: 'Roboto Condensed',
         monospace: 'Roboto Mono',
@@ -25,6 +25,7 @@ const fonts = {
         llg: '28px',
         xl: '32px',
     },}
+    
 export type FontFamilyType = keyof typeof fonts.family
 export type FontWeightType = keyof typeof fonts.weight
 export type FontSizeType = keyof typeof fonts.fontSize
