@@ -119,6 +119,7 @@ const HeaderCalendar = props => (
 )
 
 export { HeaderCalendar }
+
 HeaderCalendar.propTypes = {
   month: PropTypes.number,
   values: PropTypes.array,

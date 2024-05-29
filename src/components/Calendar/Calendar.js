@@ -256,6 +256,7 @@ const Calendar = props => {
 }
 
 export { Calendar }
+
 Calendar.propTypes = {
   selectedDates: PropTypes.object,
   setSelectedDates: PropTypes.func,
@@ -266,6 +267,5 @@ Calendar.propTypes = {
   dayWithSales: PropTypes.array,
 }
 
-const MyCalendar = reactToWebComponent(Calendar, React, ReactDOM);
-customElements.define("my-calendar", MyCalendar);
-
+// const MyCalendar = reactToWebComponent(Calendar, React, ReactDOM);
+// customElements.define("my-calendar", MyCalendar);
