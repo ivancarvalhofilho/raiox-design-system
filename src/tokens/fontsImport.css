@@ -9,48 +9,39 @@
 
 /*Mark Pro*/
 @font-face {
-  font-family: 'Mark Pro';
-  font-style: normal;
-  font-weight: normal;
-  src:
-    local('Mark Pro Regular'),
-    url('./font-files/MarkPro.ttf') format('ttf');
+    font-family: 'Mark Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Regular'), url('font-files/MARKPRO.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Mark Pro';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local('Mark Pro Regular'),
-    url('./font-files/MarkPro.ttf') format('ttf');
+    font-family: 'Mark Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Mark Pro Regular'), url('font-files/MARKPRO.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Mark Pro';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    local('Mark Pro Light'),
-    url('./font-files/MarkPro-Book.ttf') format('ttf');
+    font-family: 'Mark Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Mark Pro Light'), url('font-files/MARKPROLIGHT.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Mark Pro';
-  font-style: normal;
-  font-weight: 500;
-  src:
-    local('Mark Pro Medium'),
-    url('./font-files/MarkPro-Medium.ttf') format('ttf');
+    font-family: 'Mark Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Mark Pro Medium'), url('font-files/MARKPROMEDIUM.woff') format('woff');
 }
 
+
 @font-face {
-  font-family: 'Mark Pro';
-  font-style: normal;
-  font-weight: 700;
-  src:
-    local('Mark Pro Bold'),
-    url('./font-files/MarkPro-Bold.ttf') format('ttf');
+    font-family: 'Mark Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Mark Pro Bold'), url('font-files/MARKPROBOLD.woff') format('woff');
 }
 
 /*Sharon Sans*/
