@@ -23,10 +23,10 @@ const ButtonPrimary = styled.div`
   cursor: pointer;
   user-select: none;
   ${fontStyleMaker({
-    fontFamily: 'head',
-    fontSize: 'xs',
-    fontWeight: 'medium',
-  })};
+      fontFamily: 'head',
+      fontSize: 'xs',
+      fontWeight: 'medium',
+    })};
 
   pointer-events: ${props => props.disabled && 'none'};
   opacity: ${props => props.disabled && Tokens.opacity.level.medium};
@@ -119,9 +119,9 @@ const LoadingBubbles = styled.div`
   & > span {
     opacity: 0;
     background: ${props =>
-      props.secondary
-        ? props.tokensColors.brand.primary.darkest
-        : props.dangerOutline
+    props.secondary
+      ? props.tokensColors.brand.primary.darkest
+      : props.dangerOutline
         ? props.tokensColors.feedback.danger.darkest
         : props.tokensColors.neutral.light.base};
     width: 5px;
@@ -171,7 +171,7 @@ const Button = props => {
       onClick={props.onClick}
       style={props.style}
       loading={props.loading}
-      id={camelize(props.text)}
+      id={props.id || camelize(props.text)}
       as={buttonType}
       className={props.className}
     >
@@ -227,4 +227,5 @@ Button.propTypes = {
   secondaryIcon: PropTypes.bool,
   icon: PropTypes.any,
   dangerOutline: PropTypes.bool,
+  id: PropTypes.string
 }
