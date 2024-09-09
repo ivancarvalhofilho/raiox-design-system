@@ -64,7 +64,7 @@ const Title = styled.span`
   color: ${Tokens.colors.brand.secondary.dark};
 `
 const CollapseContainer = props => {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(!props.collapsed || false)
 
   const openRef = useRef()
   openRef.current = opened
@@ -110,7 +110,8 @@ export { CollapseContainer }
 
 CollapseContainer.defaultProps = {
   collapseOnOutsideClick: true,
-  showDivider: true
+  showDivider: true,
+  collapsed: true
 }
 
 CollapseContainer.propTypes = {
@@ -126,5 +127,6 @@ CollapseContainer.propTypes = {
   className: PropTypes.string,
   collapseOnOutsideClick: PropTypes.bool,
   minHeight: PropTypes.number,
-  showDivider: PropTypes.bool
+  showDivider: PropTypes.bool,
+  collapsed: PropTypes.bool
 }
